@@ -1,0 +1,19 @@
+# Eden symbol mapping per broker
+# default mapping used if broker not matched
+
+default_broker: default
+
+default:
+  XAUUSD: XAUUSD
+  EURUSD: EURUSD
+  US30: US30
+  NAS100: NAS100
+
+brokers:
+  # Example: broker that appends 'm' to FX symbols
+  broker_a:
+    XAUUSD: XAUUSDm
+    EURUSD: EURUSDm
+  # Example: broker using '.r' suffix
+  broker_b:
+    EURUSD: EURUSD.r

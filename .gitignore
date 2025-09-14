@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.joblib
+
+# Virtual env and build artifacts
+.venv/
+build/
+dist/
+*.spec
+
+# Test & tooling caches
+.pytest_cache/
+.eggs/
+*.egg-info/
+
+data/cache/
+logs/
+results/
+examples/results/
+models/*.joblib
+models/strategies_db/
+
+# IDE/editor
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

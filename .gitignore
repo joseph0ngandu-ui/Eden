@@ -29,3 +29,7 @@ models/strategies_db/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Executable files (too large for GitHub)
+*.exe
+*.zip

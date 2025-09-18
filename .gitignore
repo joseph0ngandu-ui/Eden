@@ -1,0 +1,18 @@
+# Eden Bot: local runtime artifacts
+# Logs and runtime state
+complete_opt.log
+complete_opt.err.log
+complete_opt.log.meta
+complete_opt.pid
+last_complete_results.json
+
+# Results JSON (large/dated)
+eden_complete_mt5_results_*.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

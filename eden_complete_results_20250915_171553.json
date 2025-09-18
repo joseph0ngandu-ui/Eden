@@ -1,0 +1,333 @@
+{
+  "summary": {
+    "initial_balance": 10000.0,
+    "final_balance": 207982.35974960832,
+    "total_return_percentage": 1979.8235974960833,
+    "total_trades": 724,
+    "winning_trades": 436,
+    "win_rate": 0.6022099447513812,
+    "avg_monthly_return": 34.09308777082296,
+    "target_achieved": true,
+    "months_meeting_target": 9,
+    "total_months": 9
+  },
+  "monthly_results": {
+    "2025-01": {
+      "month": "2025-01",
+      "trades": 69,
+      "wins": 40,
+      "win_rate": 0.5797101449275363,
+      "total_return": 27.32356296849203,
+      "best_trade": 2.3770677902121293,
+      "worst_trade": -0.8045427848444797,
+      "strategy_breakdown": {
+        "Quantitative": {
+          "trades": 39,
+          "wins": 21,
+          "return": 11.084755085719271
+        },
+        "AI Generated": {
+          "trades": 4,
+          "wins": 3,
+          "return": 3.280189086005225
+        },
+        "Price Action": {
+          "trades": 24,
+          "wins": 16,
+          "return": 14.15679147356147
+        },
+        "ICT": {
+          "trades": 2,
+          "wins": 0,
+          "return": -1.198172676793925
+        }
+      }
+    },
+    "2025-02": {
+      "month": "2025-02",
+      "trades": 78,
+      "wins": 51,
+      "win_rate": 0.6538461538461539,
+      "total_return": 46.026591330558446,
+      "best_trade": 2.4558957856661783,
+      "worst_trade": -0.8564771249631105,
+      "strategy_breakdown": {
+        "Quantitative": {
+          "trades": 36,
+          "wins": 20,
+          "return": 10.92161784861179
+        },
+        "Price Action": {
+          "trades": 33,
+          "wins": 24,
+          "return": 28.431599564088415
+        },
+        "AI Generated": {
+          "trades": 7,
+          "wins": 5,
+          "return": 3.6415430795016426
+        },
+        "ICT": {
+          "trades": 2,
+          "wins": 2,
+          "return": 3.031830838356628
+        }
+      }
+    },
+    "2025-03": {
+      "month": "2025-03",
+      "trades": 92,
+      "wins": 50,
+      "win_rate": 0.5434782608695652,
+      "total_return": 31.35482575528831,
+      "best_trade": 2.5437835442656915,
+      "worst_trade": -0.9501766511181848,
+      "strategy_breakdown": {
+        "ICT": {
+          "trades": 1,
+          "wins": 1,
+          "return": 2.5437835442656915
+        },
+        "Price Action": {
+          "trades": 48,
+          "wins": 26,
+          "return": 16.666807982149958
+        },
+        "Quantitative": {
+          "trades": 39,
+          "wins": 20,
+          "return": 8.028061922253515
+        },
+        "AI Generated": {
+          "trades": 4,
+          "wins": 3,
+          "return": 4.116172306619138
+        }
+      }
+    },
+    "2025-04": {
+      "month": "2025-04",
+      "trades": 72,
+      "wins": 42,
+      "win_rate": 0.5833333333333334,
+      "total_return": 15.982281825994685,
+      "best_trade": 2.3787649495203302,
+      "worst_trade": -1.246344771795098,
+      "strategy_breakdown": {
+        "ICT": {
+          "trades": 2,
+          "wins": 1,
+          "return": 0.4088862434413054
+        },
+        "Quantitative": {
+          "trades": 34,
+          "wins": 20,
+          "return": 4.375724635816788
+        },
+        "Price Action": {
+          "trades": 28,
+          "wins": 19,
+          "return": 10.628779138924319
+        },
+        "AI Generated": {
+          "trades": 8,
+          "wins": 2,
+          "return": 0.5688918078122694
+        }
+      }
+    },
+    "2025-05": {
+      "month": "2025-05",
+      "trades": 102,
+      "wins": 60,
+      "win_rate": 0.5882352941176471,
+      "total_return": 41.99996787874682,
+      "best_trade": 2.1888327160394025,
+      "worst_trade": -0.8877569679942794,
+      "strategy_breakdown": {
+        "Quantitative": {
+          "trades": 39,
+          "wins": 22,
+          "return": 9.415535575473363
+        },
+        "Price Action": {
+          "trades": 52,
+          "wins": 32,
+          "return": 26.930060714485265
+        },
+        "AI Generated": {
+          "trades": 9,
+          "wins": 4,
+          "return": 1.920052926629943
+        },
+        "ICT": {
+          "trades": 2,
+          "wins": 2,
+          "return": 3.7343186621582483
+        }
+      }
+    },
+    "2025-06": {
+      "month": "2025-06",
+      "trades": 81,
+      "wins": 49,
+      "win_rate": 0.6049382716049383,
+      "total_return": 36.8625723317348,
+      "best_trade": 2.204704922046158,
+      "worst_trade": -0.8073648680304649,
+      "strategy_breakdown": {
+        "Quantitative": {
+          "trades": 34,
+          "wins": 17,
+          "return": 6.649851972568088
+        },
+        "Price Action": {
+          "trades": 40,
+          "wins": 27,
+          "return": 26.04234390961358
+        },
+        "AI Generated": {
+          "trades": 7,
+          "wins": 5,
+          "return": 4.170376449553148
+        }
+      }
+    },
+    "2025-07": {
+      "month": "2025-07",
+      "trades": 85,
+      "wins": 63,
+      "win_rate": 0.7411764705882353,
+      "total_return": 55.87961789920981,
+      "best_trade": 2.0400836046140407,
+      "worst_trade": -0.8011735363954317,
+      "strategy_breakdown": {
+        "Quantitative": {
+          "trades": 42,
+          "wins": 30,
+          "return": 20.447582161652157
+        },
+        "ICT": {
+          "trades": 1,
+          "wins": 1,
+          "return": 1.4960729465474951
+        },
+        "Price Action": {
+          "trades": 39,
+          "wins": 31,
+          "return": 34.220709397167546
+        },
+        "AI Generated": {
+          "trades": 3,
+          "wins": 1,
+          "return": -0.2847466061573754
+        }
+      }
+    },
+    "2025-08": {
+      "month": "2025-08",
+      "trades": 101,
+      "wins": 57,
+      "win_rate": 0.5643564356435643,
+      "total_return": 36.61577802549496,
+      "best_trade": 2.8158396069825025,
+      "worst_trade": -0.9340565695202526,
+      "strategy_breakdown": {
+        "Quantitative": {
+          "trades": 48,
+          "wins": 21,
+          "return": 3.9350288488652057
+        },
+        "AI Generated": {
+          "trades": 11,
+          "wins": 6,
+          "return": 5.7765787291834725
+        },
+        "Price Action": {
+          "trades": 39,
+          "wins": 28,
+          "return": 23.413471211371835
+        },
+        "ICT": {
+          "trades": 3,
+          "wins": 2,
+          "return": 3.49069923607445
+        }
+      }
+    },
+    "2025-09": {
+      "month": "2025-09",
+      "trades": 44,
+      "wins": 24,
+      "win_rate": 0.5454545454545454,
+      "total_return": 14.79259192188678,
+      "best_trade": 1.8749427658295572,
+      "worst_trade": -0.8515474483843605,
+      "strategy_breakdown": {
+        "AI Generated": {
+          "trades": 7,
+          "wins": 3,
+          "return": 2.0875145361867102
+        },
+        "Price Action": {
+          "trades": 15,
+          "wins": 10,
+          "return": 9.276249194215191
+        },
+        "Quantitative": {
+          "trades": 21,
+          "wins": 11,
+          "return": 4.2098630225501115
+        },
+        "ICT": {
+          "trades": 1,
+          "wins": 0,
+          "return": -0.7810348310652288
+        }
+      }
+    }
+  },
+  "strategy_breakdown": {
+    "Quantitative": {
+      "trades": 332,
+      "wins": 182,
+      "total_return": 79.0680210735103,
+      "avg_duration": 38.73185267900158,
+      "win_rate": 0.5481927710843374,
+      "avg_return_per_trade": 0.2381566899804527
+    },
+    "AI Generated": {
+      "trades": 60,
+      "wins": 32,
+      "total_return": 25.276572315334178,
+      "avg_duration": 18.910588185744032,
+      "win_rate": 0.5333333333333333,
+      "avg_return_per_trade": 0.42127620525556964
+    },
+    "Price Action": {
+      "trades": 318,
+      "wins": 213,
+      "total_return": 189.76681258557764,
+      "avg_duration": 24.795178276209917,
+      "win_rate": 0.6698113207547169,
+      "avg_return_per_trade": 0.5967509829735146
+    },
+    "ICT": {
+      "trades": 14,
+      "wins": 9,
+      "total_return": 12.726383962984665,
+      "avg_duration": 15.107591472430357,
+      "win_rate": 0.6428571428571429,
+      "avg_return_per_trade": 0.9090274259274761
+    }
+  },
+  "monte_carlo": {
+    "mean_return": 307.7896311993947,
+    "std_return": 23.2490429532221,
+    "percentile_5": 268.69159273397116,
+    "percentile_95": 346.8490144904301,
+    "probability_of_loss": 0.0,
+    "probability_of_target": 1.0
+  },
+  "total_trades": 724
+}

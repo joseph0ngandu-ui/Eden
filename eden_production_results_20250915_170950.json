@@ -1,0 +1,79 @@
+{
+  "summary": {
+    "initial_balance": 10000.0,
+    "final_balance": 10000.0,
+    "total_return_percentage": 0.0,
+    "total_trades": 0,
+    "winning_trades": 0,
+    "overall_win_rate": 0.0,
+    "target_achieved": false
+  },
+  "monthly_results": {},
+  "symbol_results": {
+    "XAUUSD": {
+      "symbol": "XAUUSD",
+      "signals": 11,
+      "trades": 0,
+      "htf_bias": "HTFBias(daily='bullish', h4='bearish', h1='bullish', overall='bullish', confidence=0.6666666666666666, reversal_probability=0.3)",
+      "data_bars": {
+        "D1": 258,
+        "H4": 1500,
+        "H1": 6000,
+        "M15": 15000,
+        "M5": 45000
+      }
+    },
+    "EURUSD": {
+      "symbol": "EURUSD",
+      "signals": 58,
+      "trades": 0,
+      "htf_bias": "HTFBias(daily='bullish', h4='bullish', h1='bearish', overall='bullish', confidence=0.6666666666666666, reversal_probability=0.1)",
+      "data_bars": {
+        "D1": 258,
+        "H4": 1500,
+        "H1": 6000,
+        "M15": 15000,
+        "M5": 45000
+      }
+    },
+    "GBPUSD": {
+      "symbol": "GBPUSD",
+      "signals": 72,
+      "trades": 0,
+      "htf_bias": "HTFBias(daily='bearish', h4='bearish', h1='bearish', overall='bearish', confidence=1.0, reversal_probability=0.1)",
+      "data_bars": {
+        "D1": 258,
+        "H4": 1500,
+        "H1": 6000,
+        "M15": 15000,
+        "M5": 45000
+      }
+    },
+    "USDJPY": {
+      "symbol": "USDJPY",
+      "signals": 126,
+      "trades": 0,
+      "htf_bias": "HTFBias(daily='bearish', h4='bullish', h1='bearish', overall='bearish', confidence=0.6666666666666666, reversal_probability=0.3)",
+      "data_bars": {
+        "D1": 258,
+        "H4": 1500,
+        "H1": 6000,
+        "M15": 15000,
+        "M5": 45000
+      }
+    },
+    "USDCHF": {
+      "symbol": "USDCHF",
+      "signals": 65,
+      "trades": 0,
+      "htf_bias": "HTFBias(daily='bearish', h4='bearish', h1='bearish', overall='bearish', confidence=1.0, reversal_probability=0.1)",
+      "data_bars": {
+        "D1": 258,
+        "H4": 1500,
+        "H1": 6000,
+        "M15": 15000,
+        "M5": 45000
+      }
+    }
+  }
+}

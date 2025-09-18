@@ -1,0 +1,110 @@
+{
+  "summary": {
+    "initial_balance": 10000.0,
+    "final_balance": 19365.76049524907,
+    "total_return_percentage": 93.65760495249069,
+    "total_trades": 127,
+    "winning_trades": 70,
+    "win_rate": 0.5511811023622047,
+    "avg_monthly_return": 7.4438554101862655,
+    "target_achieved": false,
+    "months_meeting_target": 4,
+    "total_months": 9
+  },
+  "monthly_results": {
+    "2025-01": {
+      "month": "2025-01",
+      "trades": 20,
+      "wins": 11,
+      "win_rate": 0.55,
+      "total_return": 15.008644174933329,
+      "best_trade": 2.6286843306717493,
+      "worst_trade": -0.719592039419241
+    },
+    "2025-02": {
+      "month": "2025-02",
+      "trades": 16,
+      "wins": 11,
+      "win_rate": 0.6875,
+      "total_return": 10.298489982345403,
+      "best_trade": 2.71555024911175,
+      "worst_trade": -0.6338472697657439
+    },
+    "2025-03": {
+      "month": "2025-03",
+      "trades": 16,
+      "wins": 6,
+      "win_rate": 0.375,
+      "total_return": 5.3777686578134265,
+      "best_trade": 3.562904780637911,
+      "worst_trade": -0.8452249409727975
+    },
+    "2025-04": {
+      "month": "2025-04",
+      "trades": 12,
+      "wins": 6,
+      "win_rate": 0.5,
+      "total_return": 1.809202321076632,
+      "best_trade": 1.7140633968472143,
+      "worst_trade": -0.6148080388619184
+    },
+    "2025-05": {
+      "month": "2025-05",
+      "trades": 13,
+      "wins": 5,
+      "win_rate": 0.38461538461538464,
+      "total_return": 2.334977615537851,
+      "best_trade": 2.0063910036745503,
+      "worst_trade": -0.6976022999171656
+    },
+    "2025-06": {
+      "month": "2025-06",
+      "trades": 14,
+      "wins": 7,
+      "win_rate": 0.5,
+      "total_return": 4.172497243232673,
+      "best_trade": 2.7146586809289364,
+      "worst_trade": -1.0021397088465895
+    },
+    "2025-07": {
+      "month": "2025-07",
+      "trades": 15,
+      "wins": 9,
+      "win_rate": 0.6,
+      "total_return": 7.692335917035465,
+      "best_trade": 2.5002437373288435,
+      "worst_trade": -0.7444950074303675
+    },
+    "2025-08": {
+      "month": "2025-08",
+      "trades": 14,
+      "wins": 9,
+      "win_rate": 0.6428571428571429,
+      "total_return": 10.600012147501394,
+      "best_trade": 2.0311654074578165,
+      "worst_trade": -0.6976364188530858
+    },
+    "2025-09": {
+      "month": "2025-09",
+      "trades": 7,
+      "wins": 6,
+      "win_rate": 0.8571428571428571,
+      "total_return": 9.700770632200223,
+      "best_trade": 3.086035613909594,
+      "worst_trade": -0.01476821178126013
+    }
+  },
+  "monte_carlo": {
+    "mean_return": 66.65491899079743,
+    "std_return": 12.116387315263804,
+    "min_return": 27.708568345763908,
+    "max_return": 106.35015016134196,
+    "percentile_5": 46.85534425279392,
+    "percentile_25": 58.7377967268006,
+    "percentile_75": 74.72392976922671,
+    "percentile_95": 86.64628266684889,
+    "probability_of_loss": 0.0,
+    "probability_of_target": 0.581
+  },
+  "total_trades": 127
+}

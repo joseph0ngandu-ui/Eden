@@ -1,0 +1,94 @@
+# Eden VIX 100 Trading Bot Configuration
+
+# Trading Parameters
+trading:
+  symbol: "Volatility 100 Index"  # Primary VIX 100 symbol
+  alternative_symbols: ["VIX100", "Volatility100", "Vol100", "VIX 100"]
+  
+  # Position Management
+  lot_size: 0.01              # Starting lot size
+  max_positions: 3            # Maximum concurrent positions
+  max_daily_trades: 10        # Maximum trades per day
+  
+  # Risk Management
+  stop_loss_pips: 50         # Stop loss in pips
+  take_profit_pips: 100      # Take profit in pips
+  max_drawdown_percent: 5    # Maximum drawdown percentage
+  risk_per_trade_percent: 1  # Risk per trade as % of account
+  
+  # Trading Hours (UTC)
+  trading_hours:
+    start: "07:00"           # Start trading time
+    end: "21:00"             # End trading time
+    days: [1, 2, 3, 4, 5]    # Monday to Friday
+
+# Strategy Parameters
+strategy:
+  # RSI Settings
+  rsi_period: 14
+  rsi_overbought: 70
+  rsi_oversold: 30
+  
+  # Moving Average Settings
+  sma_period: 20
+  
+  # Signal Filters
+  minimum_signal_strength: 0.6
+  require_volume_confirmation: false
+  
+  # Advanced Features
+  use_volatility_filter: true
+  volatility_threshold: 2.0
+  
+# MetaTrader 5 Settings
+mt5:
+  # Connection settings
+  timeout: 30               # Connection timeout in seconds
+  login: null              # MT5 login (leave null to use current)
+  password: null           # MT5 password (leave null to use current)
+  server: null             # MT5 server (leave null to use current)
+  
+  # Trading settings
+  deviation: 20            # Price deviation for orders
+  magic_number: 234000     # Magic number for bot orders
+  comment_prefix: "Eden VIX100 Bot"
+
+# Logging Configuration
+logging:
+  level: "INFO"            # DEBUG, INFO, WARNING, ERROR
+  log_to_file: true
+  log_file: "eden_vix100_bot.log"
+  max_log_size_mb: 10
+  backup_count: 5
+
+# Monitoring and Alerts
+monitoring:
+  enable_console_output: true
+  update_interval: 60      # Status update interval in seconds
+  
+  # Performance tracking
+  track_performance: true
+  save_trades_to_csv: true
+  trades_file: "trades_history.csv"
+  
+# Safety Features
+safety:
+  enable_emergency_stop: true
+  max_consecutive_losses: 5
+  pause_after_losses_minutes: 60
+  
+  # Account protection
+  min_account_balance: 100  # Minimum account balance to continue trading
+  max_daily_loss: 50       # Maximum daily loss before stopping
+
+# Development/Testing
+development:
+  demo_mode: true          # Set to false for live trading
+  simulation_mode: false   # Use for testing without MT5
+  log_all_signals: true    # Log all trading signals, not just executed ones
+  
+# Notifications (Future feature)
+notifications:
+  enabled: false
+  email: null
+  webhook_url: null

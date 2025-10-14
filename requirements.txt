@@ -1,0 +1,30 @@
+# Eden VIX 100 Trading Bot Requirements
+# Core dependencies for automated trading
+
+# MetaTrader 5 integration
+MetaTrader5>=5.0.37
+
+# Data analysis and numerical computing
+pandas>=2.0.0
+numpy>=1.21.0
+
+# Technical analysis
+TA-Lib>=0.4.25
+talib-binary>=0.4.19  # Fallback for TA-Lib
+
+# Utilities
+python-dotenv>=1.0.0
+PyYAML>=6.0.0
+requests>=2.28.0
+
+# Logging and monitoring
+psutil>=5.9.0
+
+# Optional: Enhanced technical analysis
+scikit-learn>=1.0.0  # For ML-based features
+scipy>=1.7.0  # For statistical analysis
+
+# Development and testing
+pytest>=7.0.0
+black>=23.0.0
+flake8>=6.0.0

@@ -1,54 +1,60 @@
-# 🚀 Eden Trading System - Complete Setup Guide
+# 🚀 Eden VIX 100 Trading Bot - Setup Guide
 
 ## 📋 Overview
 
-This guide will help you set up the **Eden Trading System** - a professional hybrid C++/Python algorithmic trading platform with advanced ML capabilities and GPU acceleration.
+This guide will help you set up the **Eden VIX 100 Trading Bot** - a specialized Python bot for automated VIX 100 trading via MetaTrader 5.
 
 ## 🎯 What You Have Successfully Completed
 
 ✅ **Git Installation & Configuration**  
-✅ **Repository Cloning** - Eden bot downloaded from GitHub  
+✅ **Repository Cloning** - Eden VIX 100 bot downloaded from GitHub  
 ✅ **Auto-Push Setup** - Changes will be automatically committed and pushed  
-✅ **Architecture Analysis** - Complete understanding of the system components  
+✅ **Bot Conversion** - Converted from hybrid system to pure Python VIX 100 bot
 
 ## 🔧 Required Dependencies (Manual Installation Needed)
 
 Since the automated installers require user interaction, please install these manually:
 
-### 1. **Python 3.11** (Critical)
+### 1. **Python 3.11+** (Critical)
 ```powershell
 # Download and install from: https://www.python.org/downloads/
 # Or use Windows Store: search for "Python 3.11"
 # After installation, verify with: python --version
 ```
 
-### 2. **CMake 3.22+** (For C++ Build)
+### 2. **MetaTrader 5** (Required for trading)
 ```powershell
-# Download from: https://cmake.org/download/
-# Or use: winget install Kitware.CMake
-# Verify with: cmake --version
+# Download from: https://www.metatrader5.com/en/download
+# Install and set up with your broker account
+# Ensure it's running and logged in before starting the bot
 ```
 
-### 3. **Qt6** (For GUI)
-```powershell
-# Download Qt6 from: https://www.qt.io/download
-# Install Qt6.6.0+ with these components:
-# - Qt Quick
-# - Qt Charts  
-# - Qt Network
-# - Qt SQL
-# - MSVC 2022 64-bit compiler
-```
-
-### 4. **Python Packages**
+### 3. **Python Packages**
 Once Python is installed, run in the Eden directory:
 ```bash
-cd worker/python
 pip install -r requirements.txt
-pip install pyzmq onnxruntime MetaTrader5
 ```
 
+This will install:
+- MetaTrader5 Python library
+- pandas and numpy for data analysis
+- TA-Lib for technical indicators
+- Other required packages
+
 ## 🎮 Usage Instructions
+
+### **Running the VIX 100 Trading Bot**
+```bash
+# Run the main trading bot
+python eden_vix100_bot.py
+```
+
+### **Configuration**
+Edit `config.yaml` to customize:
+- Trading parameters (lot size, risk management)
+- Strategy settings (RSI periods, thresholds)
+- MT5 connection settings
+- Logging and monitoring options
 
 ### **Automatic Git Sync**
 To push your changes automatically:
@@ -56,60 +62,37 @@ To push your changes automatically:
 ./auto_push_setup.ps1 -CommitMessage "Your custom message here"
 ```
 
-### **Building Eden** (After installing dependencies)
-```powershell
-# Run the build script
-./build.ps1 -BuildType Release -Install
-
-# Or manual build:
-mkdir build
-cd build
-cmake ..
-cmake --build . --config Release
-```
-
-### **Running Eden**
-```bash
-# Python-only mode (strategies and backtesting)
-cd worker/python
-python Eden.py
-
-# Full GUI mode (after C++ build)
-./build/Eden.exe
-```
-
-## 🏗️ System Architecture
+## 🏧 Bot Architecture
 
 ```
-Eden Trading System
-├── 🖥️  C++ Qt6 Frontend (Professional UI)
-├── 🐍 Python Backend (Trading Logic)
-├── ⚡ GPU Acceleration (CUDA/DirectML) 
+Eden VIX 100 Trading Bot
+├── 🐍 Python Core (Main Bot Logic)
 ├── 📊 MetaTrader 5 Integration
-├── 🤖 ML Pipeline (LightGBM/Neural Networks)
-└── 🔄 ZeroMQ IPC Communication
+├── 📈 Technical Analysis (RSI, Moving Averages)
+├── 🛡️ Risk Management (Stop Loss, Position Limits)
+├── 📁 Configuration Management (YAML)
+└── 📝 Logging & Monitoring
 ```
 
-## 📈 Trading Strategies Available
+## 📈 VIX 100 Trading Strategy
 
-1. **ICT Strategy** - Inner Circle Trading methodology
-   - Fair Value Gaps (FVG) detection
-   - Liquidity sweep analysis
-   - Order block identification
+The bot uses a **RSI + Moving Average** strategy specifically optimized for VIX 100:
 
-2. **Mean Reversion** - Statistical trading
-   - Bollinger Bands
-   - Z-score analysis
-   - Oversold/overbought conditions
+**🔴 Buy Signals:**
+- RSI below 30 (oversold)
+- Price below 20-period moving average
+- Risk management: 50-pip stop loss, 100-pip take profit
 
-3. **Momentum** - Trend following
-   - Moving average crossovers
-   - Momentum indicators
+**🔴 Sell Signals:**
+- RSI above 70 (overbought)
+- Price above 20-period moving average
+- Risk management: 50-pip stop loss, 100-pip take profit
 
-4. **ML-Generated** - AI-powered trading
-   - LightGBM models
-   - Feature engineering pipeline
-   - Reinforcement learning
+**🛡️ Safety Features:**
+- Maximum 3 concurrent positions
+- Maximum 5 consecutive losses before pause
+- Daily loss limits
+- Emergency stop functionality
 
 ## 🎨 Features Highlights
 

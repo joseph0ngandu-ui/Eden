@@ -1,93 +1,85 @@
-# Eden VIX 100 Trading Bot Configuration
-
-# Trading Parameters
 trading:
-  symbol: "Volatility 100 Index"  # Primary VIX 100 symbol
-  alternative_symbols: ["VIX100", "Volatility100", "Vol100", "VIX 100"]
-  
-  # Position Management
-  lot_size: 0.01              # Starting lot size
-  max_positions: 3            # Maximum concurrent positions
-  max_daily_trades: 10        # Maximum trades per day
-  
-  # Risk Management
-  stop_loss_pips: 50         # Stop loss in pips
-  take_profit_pips: 100      # Take profit in pips
-  max_drawdown_percent: 5    # Maximum drawdown percentage
-  risk_per_trade_percent: 1  # Risk per trade as % of account
-  
-  # Trading Hours (UTC)
+  symbol: Volatility 100 Index
+  alternative_symbols:
+  - VIX100
+  - Volatility100
+  - Vol100
+  - VIX 100
+  lot_size: 0.01
+  max_positions: 3
+  max_daily_trades: 10
+  stop_loss_pips: 50
+  take_profit_pips: 100
+  max_drawdown_percent: 5
+  risk_per_trade_percent: 1
   trading_hours:
-    start: "07:00"           # Start trading time
-    end: "21:00"             # End trading time
-    days: [1, 2, 3, 4, 5]    # Monday to Friday
-
-# Strategy Parameters
+    start: 07:00
+    end: '21:00'
+    days:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
 strategy:
-  # RSI Settings
   rsi_period: 14
   rsi_overbought: 70
   rsi_oversold: 30
-  
-  # Moving Average Settings
   sma_period: 20
-  
-  # Signal Filters
   minimum_signal_strength: 0.6
   require_volume_confirmation: false
-  
-  # Advanced Features
   use_volatility_filter: true
   volatility_threshold: 2.0
-  
-# MetaTrader 5 Settings
+  ict_ml:
+    exec_timeframe: M1
+    context_timeframes:
+    - M5
+    - M15
+    - M30
+    - H1
+    - H4
+    min_confluences: 2
+    rr: 5.75
+    confidence_threshold: 0.7
+    rsi_period: 11
+    sma_period: 34
+    swing_lookback: 6
+    cooldown_bars_after_loss: 15
+    stop_after_losses: 1
+    pause_bars_after_streak: 25
+    require_sweep: false
+    require_bias_align: true
+    updated_at: '2025-10-15T12:12:44.431397Z'
 mt5:
-  # Connection settings
-  timeout: 30               # Connection timeout in seconds
-  login: null              # MT5 login (leave null to use current)
-  password: null           # MT5 password (leave null to use current)
-  server: null             # MT5 server (leave null to use current)
-  
-  # Trading settings
-  deviation: 20            # Price deviation for orders
-  magic_number: 234000     # Magic number for bot orders
-  comment_prefix: "Eden VIX100 Bot"
-
-# Logging Configuration
+  timeout: 30
+  login: null
+  password: null
+  server: null
+  deviation: 20
+  magic_number: 234000
+  comment_prefix: Eden VIX100 Bot
 logging:
-  level: "INFO"            # DEBUG, INFO, WARNING, ERROR
+  level: INFO
   log_to_file: true
-  log_file: "eden_vix100_bot.log"
+  log_file: eden_vix100_bot.log
   max_log_size_mb: 10
   backup_count: 5
-
-# Monitoring and Alerts
 monitoring:
   enable_console_output: true
-  update_interval: 60      # Status update interval in seconds
-  
-  # Performance tracking
+  update_interval: 60
   track_performance: true
   save_trades_to_csv: true
-  trades_file: "trades_history.csv"
-  
-# Safety Features
+  trades_file: trades_history.csv
 safety:
   enable_emergency_stop: true
   max_consecutive_losses: 5
   pause_after_losses_minutes: 60
-  
-  # Account protection
-  min_account_balance: 100  # Minimum account balance to continue trading
-  max_daily_loss: 50       # Maximum daily loss before stopping
-
-# Development/Testing
+  min_account_balance: 100
+  max_daily_loss: 50
 development:
-  demo_mode: true          # Set to false for live trading
-  simulation_mode: false   # Use for testing without MT5
-  log_all_signals: true    # Log all trading signals, not just executed ones
-  
-# Notifications (Future feature)
+  demo_mode: true
+  simulation_mode: false
+  log_all_signals: true
 notifications:
   enabled: false
   email: null

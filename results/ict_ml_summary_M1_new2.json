@@ -1,0 +1,34 @@
+{
+  "stats": {
+    "trades": 47,
+    "wins": 25,
+    "losses": 22,
+    "win_rate": 53.191489361702125,
+    "total_pnl_points": 14767.426470588305,
+    "point": 0.01,
+    "ml_used": true,
+    "ml_rows": 2806,
+    "confidence_threshold": 0.7,
+    "rr": 5.75,
+    "min_confluences": 2,
+    "max_consecutive_losses": 1,
+    "score": 14831.256257822348
+  },
+  "params": {
+    "min_confluences": 2,
+    "rr": 5.75,
+    "confidence_threshold": 0.7,
+    "rsi_period": 11,
+    "sma_period": 34,
+    "swing_lookback": 6,
+    "bias_timeframes": [
+      "H1",
+      "H4"
+    ],
+    "cooldown_bars_after_loss": 15,
+    "stop_after_losses": 1,
+    "pause_bars_after_streak": 25,
+    "require_sweep": false,
+    "require_bias_align": true
+  }
+}

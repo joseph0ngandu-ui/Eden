@@ -13,6 +13,7 @@ from ..utils.types import Trade
 @dataclass
 class Analyzer:
     trades: List[Trade]
+    starting_cash: float = 100000.0
 
     def equity_curve(self) -> pd.Series:
         if not self.trades:
@@ -20,7 +21,7 @@ class Analyzer:
         # cumulative PnL over time
         df = pd.DataFrame([t.__dict__ for t in self.trades]).sort_values("close_time")
         pnl = df["pnl"].cumsum()
-        base = 100000.0
+        base = float(self.starting_cash)
         equity = base + pnl
         equity.index = df["close_time"]
         return equity

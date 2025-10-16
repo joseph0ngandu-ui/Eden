@@ -24,6 +24,8 @@ class Trade:
     exit_price: float
     pnl: float
     strategy: str
+    tag: Optional[str] = None
+    rrr: float = 0.0
 
 @dataclass
 class Signal:

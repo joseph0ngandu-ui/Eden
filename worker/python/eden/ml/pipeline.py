@@ -23,6 +23,14 @@ def create_features_for_ml(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Series]:
     ret = feat['close'].pct_change().shift(-1).fillna(0.0)
     y = (ret > 0).astype(int)
     X = feat.drop(columns=['open','high','low','close','volume'])
+    
+    # Filter out non-numeric columns (datetime, object, etc.)
+    numeric_columns = X.select_dtypes(include=[np.number]).columns
+    X = X[numeric_columns]
+    
+    # Fill any remaining NaN values
+    X = X.fillna(0.0)
+    
     return X, y
 
 

@@ -273,27 +273,42 @@ class EdenRunner:
         if self.args.ml_optimization:
             self.logger.info("🔬 Running advanced ML hyperparameter optimization")
             
-            # Define parameter grid for optimization
-            param_grid = {
-                'n_estimators': [100, 200, 300],
-                'max_depth': [8, 10, 12, None],
-                'min_samples_split': [2, 5, 10],
-                'min_samples_leaf': [1, 2, 4],
-                'max_features': ['sqrt', 'log2', None]
-            }
+            # Check if we have enough data for cross-validation
+            min_class_size = min(sum(y_train == 0), sum(y_train == 1))
             
-            # Use GridSearchCV for hyperparameter optimization
-            rf = RandomForestClassifier(random_state=42, n_jobs=-1)
-            grid_search = GridSearchCV(
-                rf, param_grid, cv=3, scoring='roc_auc', 
-                n_jobs=-1, verbose=1
-            )
-            
-            grid_search.fit(X_train, y_train)
-            model = grid_search.best_estimator_
-            
-            self.logger.info(f"Best parameters: {grid_search.best_params_}")
-            self.logger.info(f"Best CV score: {grid_search.best_score_:.3f}")
+            if min_class_size >= 3:  # Minimum for 3-fold CV
+                # Define parameter grid for optimization
+                param_grid = {
+                    'n_estimators': [50, 100, 200],
+                    'max_depth': [6, 8, 10, None],
+                    'min_samples_split': [2, 5],
+                    'min_samples_leaf': [1, 2],
+                    'max_features': ['sqrt', 'log2']
+                }
+                
+                # Use GridSearchCV for hyperparameter optimization
+                rf = RandomForestClassifier(random_state=42, n_jobs=-1)
+                cv_folds = min(3, min_class_size)
+                grid_search = GridSearchCV(
+                    rf, param_grid, cv=cv_folds, scoring='roc_auc', 
+                    n_jobs=-1, verbose=1
+                )
+                
+                grid_search.fit(X_train, y_train)
+                model = grid_search.best_estimator_
+                
+                self.logger.info(f"Best parameters: {grid_search.best_params_}")
+                self.logger.info(f"Best CV score: {grid_search.best_score_:.3f}")
+            else:
+                self.logger.warning(f"Insufficient data for CV (min class size: {min_class_size}), using default parameters")
+                model = RandomForestClassifier(
+                    n_estimators=100, 
+                    max_depth=8,
+                    min_samples_split=2,
+                    min_samples_leaf=1,
+                    random_state=42,
+                    n_jobs=-1
+                )
             
         elif self.args.ml_extensive_optimization:
             self.logger.info("Running extensive ML optimization")

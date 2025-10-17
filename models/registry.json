@@ -1,0 +1,12 @@
+[
+  {
+    "name": "sample_model",
+    "type": "RandomForest",
+    "auc": 0.5
+  },
+  {
+    "name": "sample_model",
+    "type": "RandomForest",
+    "auc": 0.5
+  }
+]

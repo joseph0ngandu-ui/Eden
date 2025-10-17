@@ -1,0 +1,19 @@
+2025-10-17 12:57:42,928 - INFO - Connected to MT5 - Account: 5872145
+2025-10-17 12:57:42,928 - INFO - Balance: 10020.35
+2025-10-17 12:57:42,928 - INFO - Equity: 10020.35
+2025-10-17 12:57:42,946 - INFO - Market Analysis - RSI overbought (84.60) and price above SMA
+2025-10-17 12:57:42,946 - INFO - Signal: SELL - RSI overbought (84.60) and price above SMA
+2025-10-17 12:57:42,946 - ERROR - Order failed: 10027
+2025-10-17 12:57:42,946 - ERROR - Order execution failed
+2025-10-17 12:58:43,038 - INFO - Market Analysis - RSI overbought (84.71) and price above SMA
+2025-10-17 12:58:43,038 - INFO - Signal: SELL - RSI overbought (84.71) and price above SMA
+2025-10-17 12:58:43,038 - ERROR - Order failed: 10027
+2025-10-17 12:58:43,038 - ERROR - Order execution failed
+2025-10-17 12:59:43,068 - INFO - Market Analysis - RSI overbought (76.59) and price above SMA
+2025-10-17 12:59:43,068 - INFO - Signal: SELL - RSI overbought (76.59) and price above SMA
+2025-10-17 12:59:43,068 - ERROR - Order failed: 10027
+2025-10-17 12:59:43,068 - ERROR - Order execution failed
+2025-10-17 13:00:01,195 - INFO - Disconnected from MT5
+2025-10-17 13:00:01,195 - INFO - Bot stopped successfully
+2025-10-17 13:00:01,195 - INFO - Disconnected from MT5
+2025-10-17 13:00:01,195 - INFO - Bot stopped successfully

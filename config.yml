@@ -1,0 +1,11 @@
+# Eden default config
+symbols: ["XAUUSD", "EURUSD", "US30", "NAS100", "GBPUSD"]
+timeframe: "1D"
+start: "2018-01-01"
+end: "2023-12-31"
+starting_cash: 100000
+commission_bps: 1.0
+slippage_bps: 1.0
+broker: "paper"
+strategy: "ensemble"
+log_level: "INFO"

@@ -242,13 +242,27 @@ class EdenRunner:
     
     def _train_ml_model(self, df_features, model_path):
         """Train ML model with extensive optimization if requested"""
-        from eden.ml.pipeline import create_features_for_ml
-        X, y = create_features_for_ml(df_features)
+        from eden.ml.pipeline import create_features_for_ml, get_feature_alignment
+        
+        # Get feature alignment for consistent training/prediction
+        if self.args.ml_fix_features:
+            feature_alignment = get_feature_alignment(df_features)
+            self.logger.info(f"Using feature alignment with {len(feature_alignment)} features")
+            X, y = create_features_for_ml(df_features, feature_alignment)
+            
+            # Save feature alignment for prediction consistency
+            alignment_path = model_path.parent / "feature_alignment.json"
+            import json
+            with open(alignment_path, 'w') as f:
+                json.dump(feature_alignment, f)
+        else:
+            X, y = create_features_for_ml(df_features)
+        
         # Create models directory if it doesn't exist
         model_path.parent.mkdir(parents=True, exist_ok=True)
         
         # Train model directly
-        from sklearn.model_selection import train_test_split
+        from sklearn.model_selection import train_test_split, GridSearchCV
         from sklearn.metrics import roc_auc_score
         from sklearn.ensemble import RandomForestClassifier
         import joblib
@@ -256,7 +270,32 @@ class EdenRunner:
         
         X_train, X_test, y_train, y_test = train_test_split(X.fillna(0.0), y, test_size=0.25, random_state=42)
         
-        if self.args.ml_extensive_optimization:
+        if self.args.ml_optimization:
+            self.logger.info("🔬 Running advanced ML hyperparameter optimization")
+            
+            # Define parameter grid for optimization
+            param_grid = {
+                'n_estimators': [100, 200, 300],
+                'max_depth': [8, 10, 12, None],
+                'min_samples_split': [2, 5, 10],
+                'min_samples_leaf': [1, 2, 4],
+                'max_features': ['sqrt', 'log2', None]
+            }
+            
+            # Use GridSearchCV for hyperparameter optimization
+            rf = RandomForestClassifier(random_state=42, n_jobs=-1)
+            grid_search = GridSearchCV(
+                rf, param_grid, cv=3, scoring='roc_auc', 
+                n_jobs=-1, verbose=1
+            )
+            
+            grid_search.fit(X_train, y_train)
+            model = grid_search.best_estimator_
+            
+            self.logger.info(f"Best parameters: {grid_search.best_params_}")
+            self.logger.info(f"Best CV score: {grid_search.best_score_:.3f}")
+            
+        elif self.args.ml_extensive_optimization:
             self.logger.info("Running extensive ML optimization")
             # Use more sophisticated parameters for extensive optimization
             model = RandomForestClassifier(
@@ -264,18 +303,21 @@ class EdenRunner:
                 max_depth=10,
                 min_samples_split=5,
                 min_samples_leaf=2,
-                random_state=42
+                random_state=42,
+                n_jobs=-1
             )
         else:
-            model = RandomForestClassifier(n_estimators=50, random_state=42)
+            model = RandomForestClassifier(n_estimators=50, random_state=42, n_jobs=-1)
             
-        model.fit(X_train, y_train)
+        if not self.args.ml_optimization:  # Grid search already fits the model
+            model.fit(X_train, y_train)
+            
         prob = model.predict_proba(X_test)[:,1]
         auc = float(roc_auc_score(y_test, prob)) if len(np.unique(y_test)) > 1 else 0.5
         
         # Save model directly
         joblib.dump(model, model_path)
-        self.logger.info(f"Model trained with AUC: {auc:.3f}")
+        self.logger.info(f"🎯 Model trained with AUC: {auc:.3f}")
         return X, y
     
     def _verify_strategies(self, strategies, df_features):
@@ -661,7 +703,7 @@ class EdenRunner:
     
     def _apply_adaptive_weighting(self, strategies, df_features):
         """Apply adaptive weighting based on historical performance"""
-        if not self.args.adaptive_strategy_weighting:
+        if not (self.args.adaptive_strategy_weighting or self.args.ml_strategy_weighting):
             return strategies
             
         self.logger.info("⚖️ Applying adaptive strategy weighting...")
@@ -689,9 +731,17 @@ class EdenRunner:
                             sharpe = max(0, metrics.get('sharpe', 0))
                             profit_factor = max(0, metrics.get('profit_factor', 0))
                             win_rate = max(0, metrics.get('win_rate', 0) / 100)
+                            net_pnl = metrics.get('net_pnl', 0)
                             
-                            # Weighted scoring
-                            score = (sharpe * 0.4 + profit_factor * 0.3 + win_rate * 0.3)
+                            # Enhanced weighting for ML strategies
+                            if self.args.ml_strategy_weighting and 'ml' in strategy.name.lower():
+                                # Give ML strategies bonus weight if they perform well
+                                ml_bonus = 0.3 if (sharpe > 0.5 and net_pnl > 0) else 0.0
+                                score = (sharpe * 0.5 + profit_factor * 0.25 + win_rate * 0.25 + ml_bonus)
+                            else:
+                                # Standard weighting for other strategies
+                                score = (sharpe * 0.4 + profit_factor * 0.3 + win_rate * 0.3)
+                                
                             strategy_weights[strategy.name] = max(0.1, score)  # Minimum 10% weight
                         else:
                             strategy_weights[strategy.name] = 0.1
@@ -712,7 +762,7 @@ class EdenRunner:
                 weight = strategy_weights.get(strategy.name, 0.2)
                 # Store weight for signal adjustment
                 strategy.adaptive_weight = weight
-                self.logger.info(f"Strategy {strategy.name}: weight = {weight:.3f}")
+                self.logger.info(f"✅ Strategy {strategy.name}: weight = {weight:.3f}")
                 
             return strategies
             
@@ -830,7 +880,153 @@ class EdenRunner:
         except Exception as e:
             self.logger.error(f"Auto ML evolution failed: {e}")
             return strategies
+            
+    def _apply_htf_ict_bias(self, signals, df_features):
+        """Apply higher timeframe ICT bias to all strategy entries"""
+        self.logger.info("🔍 Applying HTF ICT bias to signals...")
         
+        try:
+            import pandas as pd
+            
+            # Calculate HTF bias indicators
+            df_htf = df_features.copy()
+            
+            # Higher timeframe trend bias (using 4H equivalent)
+            df_htf['htf_trend'] = (df_htf['close'] > df_htf['ema_200']).astype(int)
+            df_htf['htf_momentum'] = df_htf['rsi_14'] > 50
+            df_htf['htf_bias_score'] = (df_htf['htf_trend'] + df_htf['htf_momentum']) / 2
+            
+            # Apply bias filter to signals
+            if not signals.empty:
+                # Merge HTF bias with signals
+                signals_with_bias = signals.merge(
+                    df_htf[['htf_bias_score']], 
+                    left_index=True, right_index=True, how='left'
+                )
+                
+                # Filter signals based on HTF bias
+                bias_threshold = 0.5
+                biased_signals = signals_with_bias[
+                    signals_with_bias['htf_bias_score'] >= bias_threshold
+                ].copy()
+                
+                self.logger.info(f"✅ HTF bias applied: {len(signals)} -> {len(biased_signals)} signals")
+                return biased_signals
+            
+            return signals
+            
+        except Exception as e:
+            self.logger.error(f"HTF ICT bias application failed: {e}")
+            return signals
+    
+    def _postprocess_comprehensive_metrics(self, metrics, trades, output_dir):
+        """Compute comprehensive performance metrics"""
+        self.logger.info("📊 Computing comprehensive performance metrics...")
+        
+        try:
+            import pandas as pd
+            import json
+            
+            # Enhanced metrics computation
+            comprehensive_metrics = metrics.copy()
+            
+            if trades:
+                trades_df = pd.DataFrame(trades)
+                
+                # Risk-adjusted returns
+                daily_returns = trades_df.groupby(trades_df['entry_time'].dt.date)['pnl'].sum()
+                if len(daily_returns) > 1:
+                    comprehensive_metrics['volatility'] = daily_returns.std()
+                    comprehensive_metrics['risk_adjusted_return'] = (
+                        comprehensive_metrics.get('net_pnl', 0) / comprehensive_metrics['volatility']
+                        if comprehensive_metrics['volatility'] > 0 else 0
+                    )
+                
+                # Strategy contribution analysis
+                if 'strategy' in trades_df.columns:
+                    strategy_pnl = trades_df.groupby('strategy')['pnl'].sum()
+                    comprehensive_metrics['strategy_contributions'] = strategy_pnl.to_dict()
+                
+                # HTF alignment metrics
+                comprehensive_metrics['avg_trade_duration'] = (
+                    (trades_df['exit_time'] - trades_df['entry_time']).mean().total_seconds() / 3600
+                    if 'exit_time' in trades_df.columns else 0
+                )
+                
+            # Save comprehensive metrics
+            comp_metrics_file = output_dir / "comprehensive_metrics.json"
+            with open(comp_metrics_file, 'w') as f:
+                json.dump(comprehensive_metrics, f, indent=2, default=str)
+                
+            self.logger.info(f"✅ Comprehensive metrics saved to: {comp_metrics_file}")
+            
+        except Exception as e:
+            self.logger.error(f"Comprehensive metrics computation failed: {e}")
+    
+    def _generate_enhanced_equity_curve(self, analyzer, output_dir):
+        """Generate enhanced equity curve visualization"""
+        self.logger.info("📈 Generating enhanced equity curve...")
+        
+        try:
+            import matplotlib.pyplot as plt
+            import matplotlib.dates as mdates
+            
+            # Create enhanced plot
+            fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
+            
+            # Main equity curve
+            equity_curve = analyzer.equity_curve
+            ax1.plot(equity_curve.index, equity_curve['equity'], 'b-', linewidth=2, label='Equity')
+            ax1.fill_between(equity_curve.index, equity_curve['equity'], alpha=0.3)
+            ax1.set_title('Enhanced Equity Curve', fontsize=14, fontweight='bold')
+            ax1.set_ylabel('Portfolio Value ($)')
+            ax1.grid(True, alpha=0.3)
+            ax1.legend()
+            
+            # Drawdown plot
+            drawdown = analyzer.drawdown_curve
+            ax2.fill_between(drawdown.index, drawdown['drawdown'], 0, 
+                           color='red', alpha=0.5, label='Drawdown')
+            ax2.set_title('Drawdown Analysis')
+            ax2.set_ylabel('Drawdown (%)')
+            ax2.set_xlabel('Time')
+            ax2.grid(True, alpha=0.3)
+            ax2.legend()
+            
+            # Format x-axis
+            for ax in [ax1, ax2]:
+                ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+                ax.xaxis.set_major_locator(mdates.DayLocator(interval=1))
+                plt.setp(ax.xaxis.get_majorticklabels(), rotation=45)
+            
+            plt.tight_layout()
+            
+            # Save enhanced plot
+            enhanced_plot_file = output_dir / "enhanced_equity_curve.png"
+            plt.savefig(enhanced_plot_file, dpi=300, bbox_inches='tight')
+            plt.close()
+            
+            self.logger.info(f"✅ Enhanced equity curve saved to: {enhanced_plot_file}")
+            
+        except Exception as e:
+            self.logger.error(f"Enhanced equity curve generation failed: {e}")
+    
+    def _export_optimization_results(self, output_dir):
+        """Export optimization results to JSON"""
+        self.logger.info("💾 Exporting optimization results...")
+        
+        try:
+            import json
+            
+            opt_results_file = output_dir / "optimization_results.json"
+            with open(opt_results_file, 'w') as f:
+                json.dump(self.optimization_results, f, indent=2, default=str)
+                
+            self.logger.info(f"✅ Optimization results exported to: {opt_results_file}")
+            
+        except Exception as e:
+            self.logger.error(f"Optimization results export failed: {e}")
+    
     def run_phase3_ml_ict(self):
         """Run Phase 3 ML-enabled ICT strategy"""
         self.logger.info("Starting Phase 3 ML ICT Run")
@@ -1017,6 +1213,22 @@ class EdenRunner:
         self.logger.info(f"Results saved to: {output_dir}")
         self.logger.info("=" * 60)
         
+        # Apply HTF ICT bias if enabled
+        if self.args.htf_ict_bias:
+            self._apply_htf_ict_bias(combined_signals, df_features)
+        
+        # Comprehensive postprocessing if enabled
+        if self.args.postprocess_metrics:
+            self._postprocess_comprehensive_metrics(metrics, trades, output_dir)
+            
+        # Generate equity curve plot if enabled
+        if self.args.equity_curve_plot:
+            self._generate_enhanced_equity_curve(analyzer, output_dir)
+            
+        # Export optimization results if enabled
+        if self.args.optimization_results_json and hasattr(self, 'optimization_results'):
+            self._export_optimization_results(output_dir)
+        
         # Final checkpoint with results
         self.create_git_checkpoint("phase3_complete", f"Phase 3 completed - PnL: ${metrics.get('net_pnl', 0):.2f}, Trades: {metrics.get('trades', 0)}")
         
@@ -1089,6 +1301,15 @@ def main():
     parser.add_argument("--strategy-threshold-optimizer", action="store_true", help="Optimize strategy confidence thresholds")
     parser.add_argument("--daily-performance-feedback", action="store_true", help="Enable daily performance feedback loop")
     parser.add_argument("--auto-ml-strategy-evolution", action="store_true", help="Enable automatic ML strategy evolution")
+    
+    # New ML feature fix and optimization parameters
+    parser.add_argument("--ml-fix-features", action="store_true", help="Automatically align ML features with strategy pipeline")
+    parser.add_argument("--ml-optimization", action="store_true", help="Run advanced hyperparameter tuning for ML models")
+    parser.add_argument("--ml-strategy-weighting", action="store_true", help="Dynamically adjust strategy contribution based on performance")
+    parser.add_argument("--htf-ict-bias", action="store_true", help="Apply HTF bias to all strategy entries")
+    parser.add_argument("--postprocess-metrics", action="store_true", help="Compute comprehensive performance metrics")
+    parser.add_argument("--equity-curve-plot", action="store_true", help="Generate equity curve visualization")
+    parser.add_argument("--optimization-results-json", action="store_true", help="Export optimization results to JSON")
     
     # Data management
     parser.add_argument("--mt5-online", action="store_true", help="Use MT5 for live data")

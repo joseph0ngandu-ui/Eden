@@ -11,12 +11,20 @@ class MLGeneratedStrategy(StrategyBase):
     def __init__(self, model_path: Path | None = None):
         self.model_path = model_path or Path("models/sample_model.joblib")
         self.model = None
+        self.feature_alignment = None
         try:
             import joblib
             if self.model_path.exists():
                 self.model = joblib.load(self.model_path)
+                
+                # Load feature alignment if available
+                alignment_path = self.model_path.parent / "feature_alignment.json"
+                if alignment_path.exists():
+                    with open(alignment_path, 'r') as f:
+                        self.feature_alignment = json.load(f)
         except Exception:
             self.model = None
+            self.feature_alignment = None
 
     def on_data(self, df: pd.DataFrame) -> pd.DataFrame:
         if self.model is None:
@@ -34,7 +42,23 @@ class MLGeneratedStrategy(StrategyBase):
         else:
             # Example: model outputs prob_up; convert to signals
             import numpy as np
-            feats = df.select_dtypes(include=['float64','float32','int64','int32']).fillna(0.0)
+            
+            # Apply feature alignment if available
+            if self.feature_alignment:
+                # Align features to match training
+                feats = df.drop(columns=['open','high','low','close','volume'], errors='ignore')
+                feats = feats.select_dtypes(include=[np.number])
+                
+                # Add missing features as zeros
+                for feature in self.feature_alignment:
+                    if feature not in feats.columns:
+                        feats[feature] = 0.0
+                        
+                # Remove extra features and reorder
+                feats = feats[self.feature_alignment].fillna(0.0)
+            else:
+                feats = df.select_dtypes(include=['float64','float32','int64','int32']).fillna(0.0)
+            
             prob = self.model.predict_proba(feats)[:, 1]
             buy = prob > 0.6
             sell = prob < 0.4
@@ -45,4 +69,3 @@ class MLGeneratedStrategy(StrategyBase):
                 elif s:
                     signals.append({"timestamp": ts, "side": "sell", "confidence": float(1-p)})
             return pd.DataFrame(signals, columns=["timestamp", "side", "confidence"])
-            return pd.DataFrame(signals)

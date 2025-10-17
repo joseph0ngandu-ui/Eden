@@ -17,21 +17,49 @@ class TrainResult:
     metrics: dict
 
 
-def create_features_for_ml(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Series]:
+def create_features_for_ml(df: pd.DataFrame, feature_alignment=None) -> Tuple[pd.DataFrame, pd.Series]:
+    """Create features for ML training with optional feature alignment"""
     feat = build_feature_pipeline(df)
     # Simple target: next-period return > 0
     ret = feat['close'].pct_change().shift(-1).fillna(0.0)
     y = (ret > 0).astype(int)
-    X = feat.drop(columns=['open','high','low','close','volume'])
+    X = feat.drop(columns=['open','high','low','close','volume'], errors='ignore')
     
     # Filter out non-numeric columns (datetime, object, etc.)
     numeric_columns = X.select_dtypes(include=[np.number]).columns
     X = X[numeric_columns]
     
+    # Apply feature alignment if provided
+    if feature_alignment is not None:
+        # Align features to match expected feature names
+        expected_features = set(feature_alignment)
+        current_features = set(X.columns)
+        
+        # Add missing features as zeros
+        missing_features = expected_features - current_features
+        for feature in missing_features:
+            X[feature] = 0.0
+            
+        # Remove extra features not in alignment
+        extra_features = current_features - expected_features
+        if extra_features:
+            X = X.drop(columns=list(extra_features), errors='ignore')
+            
+        # Reorder columns to match alignment
+        X = X[sorted(expected_features.intersection(X.columns))]
+    
     # Fill any remaining NaN values
     X = X.fillna(0.0)
     
     return X, y
+
+
+def get_feature_alignment(df: pd.DataFrame) -> list:
+    """Get standard feature alignment for consistent ML training/prediction"""
+    feat = build_feature_pipeline(df)
+    X = feat.drop(columns=['open','high','low','close','volume'], errors='ignore')
+    numeric_columns = X.select_dtypes(include=[np.number]).columns
+    return sorted(numeric_columns.tolist())
 
 
 def train_model(X: pd.DataFrame, y: pd.Series, model_dir: Path = Path("models"), use_optuna: bool = True) -> TrainResult:

@@ -16,7 +16,7 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'worker' / 'python'))
 
 from eden.data.mtf_fetcher import MTFDataFetcher
-from eden.features.htf_ict_bias import calculate_htf_bias, align_htf_to_execution_tf, compute_micro_features
+from eden.features.htf_ict_bias import calculate_htf_bias, align_htf_to_execution_tf, compute_micro_features, build_htf_context
 from eden.features.feature_pipeline import build_feature_pipeline
 from eden.backtest.engine import BacktestEngine
 from eden.backtest.analyzer import Analyzer
@@ -45,6 +45,19 @@ class BacktestConfig:
     per_order_risk_fraction: float = 0.02  # 2% risk per trade
     min_trade_value: float = 0.50         # $0.50 minimum for micro accounts
     growth_factor: float = 0.5            # Conservative growth scaling
+    # Phase-2 additions
+    enable_vol_norm: bool = True
+    htf_strict_mode: bool = False
+    conf_cut_low: float = 0.55
+    conf_cut_mid: float = 0.70
+    conf_cut_high: float = 0.85
+    risk_mult_low: float = 0.35
+    risk_mult_mid: float = 0.60
+    risk_mult_high: float = 1.00
+    volatility_cap: float = 3.0
+    controller_enable: bool = False
+    # Phase-3 additions
+    enable_stage_pipeline: bool = False
 
 
 def _prepare_execution_frames(raw: Dict[str, pd.DataFrame], execution_tfs: List[str], htf_tfs: List[str]) -> Dict[str, pd.DataFrame]:
@@ -58,6 +71,12 @@ def _prepare_execution_frames(raw: Dict[str, pd.DataFrame], execution_tfs: List[
         raise RuntimeError("Missing HTF data (1H/4H) to compute bias")
 
     htf_bias = calculate_htf_bias(df_15m, df_1h, df_4h)
+    # Build additional HTF context and align
+    try:
+        htf_ctx = build_htf_context(df_1h, df_4h)
+    except Exception:
+        import pandas as _pd
+        htf_ctx = _pd.DataFrame(index=df_1h.index if df_1h is not None else df_4h.index)
 
     out: Dict[str, pd.DataFrame] = {}
 
@@ -71,7 +90,13 @@ def _prepare_execution_frames(raw: Dict[str, pd.DataFrame], execution_tfs: List[
         feat = pd.concat([feat, micro], axis=1)
         # Align bias
         bias = align_htf_to_execution_tf(feat, htf_bias)
-        feat = pd.concat([feat, bias], axis=1)
+        # Align HTF context too
+        try:
+            ctx_aligned = align_htf_to_execution_tf(feat, htf_ctx)
+        except Exception:
+            import pandas as _pd
+            ctx_aligned = _pd.DataFrame(index=feat.index)
+        feat = pd.concat([feat, bias, ctx_aligned], axis=1)
         out[tf] = feat
     return out
 
@@ -108,6 +133,18 @@ def _run_one_strategy(symbol: str, tf_df: pd.DataFrame, strategy_name: str, cfg:
         per_order_risk_fraction=cfg.per_order_risk_fraction,
         min_trade_value=cfg.min_trade_value,
         growth_factor=cfg.growth_factor,
+        enable_volatility_normalization=cfg.enable_vol_norm,
+        htf_strict_mode=cfg.htf_strict_mode,
+        conf_cut_low=cfg.conf_cut_low,
+        conf_cut_mid=cfg.conf_cut_mid,
+        conf_cut_high=cfg.conf_cut_high,
+        risk_mult_low=cfg.risk_mult_low,
+        risk_mult_mid=cfg.risk_mult_mid,
+        risk_mult_high=cfg.risk_mult_high,
+        volatility_cap=cfg.volatility_cap,
+        controller_enable=cfg.controller_enable,
+        enable_stage_pipeline=cfg.enable_stage_pipeline,
+        decision_log_path=(out_dir.parent / 'logs' / 'decision_log.csv'),
     )
     trades = eng.run(tf_df, signals, symbol=symbol, risk_manager=None)
 

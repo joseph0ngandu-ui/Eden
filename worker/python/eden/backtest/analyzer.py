@@ -50,10 +50,9 @@ class Analyzer:
 
     def plot_equity_curve(self, save_path=None):
         eq = self.equity_curve()
-        if eq.empty:
-            return
         plt.figure(figsize=(8, 4))
-        plt.plot(eq.index, eq.values)
+        if not eq.empty:
+            plt.plot(eq.index, eq.values)
         plt.title("Equity Curve")
         plt.tight_layout()
         if save_path:

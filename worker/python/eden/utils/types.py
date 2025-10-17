@@ -26,6 +26,13 @@ class Trade:
     strategy: str
     tag: Optional[str] = None
     rrr: float = 0.0
+    # Phase-2 telemetry (optional)
+    model_confidence: Optional[float] = None
+    risk_multiplier: Optional[float] = None
+    volatility_factor: Optional[float] = None
+    final_risk_usd: Optional[float] = None
+    blocked_by_htf_strict: Optional[bool] = None
+    ml_override: Optional[bool] = None
 
 @dataclass
 class Signal:

@@ -204,6 +204,14 @@ def main(results_root: Path = Path('results')) -> Dict:
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description='Postprocess Eden results')
-    parser.add_argument('--output-dir', type=str, default='results')
+    parser.add_argument('--output-dir', type=str, default=None)
+    parser.add_argument('--baseline', type=str, default=None)
+    parser.add_argument('--compare', type=str, default=None)
+    parser.add_argument('--out', type=str, default=None)
     args = parser.parse_args()
-    main(Path(args.output_dir))
+    if args.baseline and args.compare:
+        # Comparison mode
+        from scripts_compare_phase2 import compare_runs
+        compare_runs(Path(args.baseline), Path(args.compare), Path(args.out).parent)
+    else:
+        main(Path(args.output_dir or 'results'))

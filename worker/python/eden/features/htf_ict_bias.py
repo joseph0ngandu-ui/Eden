@@ -298,6 +298,45 @@ def detect_liquidity_features(df: pd.DataFrame) -> Dict[str, pd.Series]:
     return features
 
 
+def build_htf_context(df_1h: pd.DataFrame, df_4h: pd.DataFrame, lookback: int = 10) -> pd.DataFrame:
+    """Build additional HTF context features used for strict gating.
+    Returns a DataFrame indexed like df_1h with columns:
+      - HTF_FVG_BULL, HTF_FVG_BEAR (0/1)
+      - HTF_OB_COUNT_BULL, HTF_OB_COUNT_BEAR (ints over lookback)
+      - HTF_RECENT_SWEEP_HIGH, HTF_RECENT_SWEEP_LOW (0/1 over last lookback)
+    """
+    idx = df_1h.index if df_1h is not None and not df_1h.empty else df_4h.index
+    out = pd.DataFrame(index=idx)
+    try:
+        fvg1 = detect_fair_value_gaps(df_1h)
+        ob1 = detect_order_blocks(df_1h)
+        sw1 = detect_liquidity_sweeps(df_1h)
+    except Exception:
+        fvg1 = pd.DataFrame(index=idx); ob1 = pd.DataFrame(index=idx); sw1 = pd.DataFrame(index=idx)
+    try:
+        fvg4 = detect_fair_value_gaps(df_4h)
+        ob4 = detect_order_blocks(df_4h)
+        sw4 = detect_liquidity_sweeps(df_4h)
+    except Exception:
+        fvg4 = pd.DataFrame(index=idx); ob4 = pd.DataFrame(index=idx); sw4 = pd.DataFrame(index=idx)
+
+    bull_fvg = (fvg1.get('fvg_bull', 0).fillna(0) + fvg4.get('fvg_bull', 0).fillna(0))
+    bear_fvg = (fvg1.get('fvg_bear', 0).fillna(0) + fvg4.get('fvg_bear', 0).fillna(0))
+    out['HTF_FVG_BULL'] = (bull_fvg > 0).astype(int)
+    out['HTF_FVG_BEAR'] = (bear_fvg > 0).astype(int)
+
+    ob_bull = (ob1.get('ob_bull', 0).fillna(0) + ob4.get('ob_bull', 0).fillna(0)).rolling(lookback).sum()
+    ob_bear = (ob1.get('ob_bear', 0).fillna(0) + ob4.get('ob_bear', 0).fillna(0)).rolling(lookback).sum()
+    out['HTF_OB_COUNT_BULL'] = ob_bull.fillna(0).astype(int)
+    out['HTF_OB_COUNT_BEAR'] = ob_bear.fillna(0).astype(int)
+
+    sw_high = (sw1.get('sweep_high', 0).fillna(0) + sw4.get('sweep_high', 0).fillna(0)).rolling(lookback).max()
+    sw_low = (sw1.get('sweep_low', 0).fillna(0) + sw4.get('sweep_low', 0).fillna(0)).rolling(lookback).max()
+    out['HTF_RECENT_SWEEP_HIGH'] = (sw_high > 0).astype(int)
+    out['HTF_RECENT_SWEEP_LOW'] = (sw_low > 0).astype(int)
+    return out
+
+
 def align_htf_to_execution_tf(
     df_exec: pd.DataFrame,
     htf_bias: pd.DataFrame,

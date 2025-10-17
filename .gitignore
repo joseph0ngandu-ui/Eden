@@ -18,8 +18,11 @@ dist/
 *.egg-info/
 
 data/cache/
+data/layered/
+data/raw/
 logs/
 results/
+results_optimal/
 examples/results/
 models/*.joblib
 models/strategies_db/

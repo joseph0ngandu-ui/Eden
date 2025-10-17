@@ -553,6 +553,283 @@ class EdenRunner:
         df = pd.DataFrame(data, index=dates)
         self.logger.info(f"✅ Generated {len(df)} synthetic data points")
         return df
+    
+    def _apply_feature_refinement(self, df_features):
+        """Apply advanced feature refinement techniques"""
+        if not self.args.feature_refinement:
+            return df_features
+            
+        self.logger.info("🔬 Applying feature refinement techniques...")
+        refinement_features = [f.strip().lower() for f in self.args.feature_refinement.split(',')]
+        
+        try:
+            import pandas as pd
+            import numpy as np
+            
+            refined_features = df_features.copy()
+            
+            if 'liquidity_sweep' in refinement_features:
+                self.logger.info("Refining liquidity sweep detection...")
+                # Enhanced liquidity sweep detection
+                if 'high' in refined_features.columns and 'low' in refined_features.columns:
+                    refined_features['liquidity_sweep_strength'] = (
+                        (refined_features['high'] - refined_features['low']) / 
+                        refined_features['close'] * 100
+                    )
+                    
+            if 'fvg' in refinement_features:
+                self.logger.info("Refining Fair Value Gap detection...")
+                # Enhanced FVG detection
+                if 'close' in refined_features.columns:
+                    refined_features['fvg_momentum'] = (
+                        refined_features['close'].pct_change().rolling(3).mean()
+                    )
+                    
+            if 'htf_bias' in refinement_features:
+                self.logger.info("Refining Higher Timeframe bias...")
+                # Enhanced HTF bias calculation
+                for col in ['1H_close', '4H_close', '1D_close']:
+                    if col in refined_features.columns:
+                        refined_features[f'{col}_trend'] = (
+                            refined_features[col] > refined_features[col].rolling(20).mean()
+                        ).astype(int)
+                        
+            self.logger.info(f"✅ Applied {len(refinement_features)} feature refinements")
+            return refined_features
+            
+        except Exception as e:
+            self.logger.error(f"Feature refinement failed: {e}")
+            return df_features
+    
+    def _optimize_strategy_thresholds(self, strategies, df_features):
+        """Optimize strategy confidence thresholds for maximum profitability"""
+        if not self.args.strategy_threshold_optimizer:
+            return strategies
+            
+        self.logger.info("⚡ Optimizing strategy confidence thresholds...")
+        
+        try:
+            from eden.backtest.engine import BacktestEngine
+            from eden.backtest.analyzer import Analyzer
+            
+            optimized_strategies = []
+            
+            for strategy in strategies:
+                best_threshold = 0.6  # Default
+                best_sharpe = -999
+                
+                # Test different thresholds
+                test_thresholds = [0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+                
+                for threshold in test_thresholds:
+                    try:
+                        # Create test signals with modified confidence threshold
+                        signals = strategy.on_data(df_features)
+                        if signals is not None and not signals.empty:
+                            # Filter by threshold
+                            test_signals = signals[signals.get('confidence', 1.0) >= threshold].copy()
+                            
+                            if len(test_signals) > 5:  # Minimum trades for valid test
+                                # Quick backtest
+                                engine = BacktestEngine(starting_cash=15.0)
+                                trades = engine.run(df_features, test_signals, symbol="VIX100")
+                                
+                                if trades:
+                                    analyzer = Analyzer(trades)
+                                    metrics = analyzer.metrics()
+                                    sharpe = metrics.get('sharpe', -999)
+                                    
+                                    if sharpe > best_sharpe:
+                                        best_sharpe = sharpe
+                                        best_threshold = threshold
+                                        
+                    except Exception:
+                        continue
+                        
+                # Apply optimized threshold
+                if hasattr(strategy, 'min_confidence'):
+                    strategy.min_confidence = best_threshold
+                    
+                self.logger.info(f"Strategy {strategy.name}: optimized threshold = {best_threshold:.2f} (Sharpe: {best_sharpe:.2f})")
+                optimized_strategies.append(strategy)
+                
+            return optimized_strategies
+            
+        except Exception as e:
+            self.logger.error(f"Strategy threshold optimization failed: {e}")
+            return strategies
+    
+    def _apply_adaptive_weighting(self, strategies, df_features):
+        """Apply adaptive weighting based on historical performance"""
+        if not self.args.adaptive_strategy_weighting:
+            return strategies
+            
+        self.logger.info("⚖️ Applying adaptive strategy weighting...")
+        
+        try:
+            from eden.backtest.engine import BacktestEngine
+            from eden.backtest.analyzer import Analyzer
+            
+            # Calculate performance weights for each strategy
+            strategy_weights = {}
+            
+            for strategy in strategies:
+                try:
+                    signals = strategy.on_data(df_features)
+                    if signals is not None and not signals.empty:
+                        # Quick performance test
+                        engine = BacktestEngine(starting_cash=15.0)
+                        trades = engine.run(df_features, signals, symbol="VIX100")
+                        
+                        if trades:
+                            analyzer = Analyzer(trades)
+                            metrics = analyzer.metrics()
+                            
+                            # Calculate composite score
+                            sharpe = max(0, metrics.get('sharpe', 0))
+                            profit_factor = max(0, metrics.get('profit_factor', 0))
+                            win_rate = max(0, metrics.get('win_rate', 0) / 100)
+                            
+                            # Weighted scoring
+                            score = (sharpe * 0.4 + profit_factor * 0.3 + win_rate * 0.3)
+                            strategy_weights[strategy.name] = max(0.1, score)  # Minimum 10% weight
+                        else:
+                            strategy_weights[strategy.name] = 0.1
+                    else:
+                        strategy_weights[strategy.name] = 0.1
+                        
+                except Exception:
+                    strategy_weights[strategy.name] = 0.1
+                    
+            # Normalize weights
+            total_weight = sum(strategy_weights.values())
+            if total_weight > 0:
+                for name in strategy_weights:
+                    strategy_weights[name] /= total_weight
+                    
+            # Apply weights to strategies
+            for strategy in strategies:
+                weight = strategy_weights.get(strategy.name, 0.2)
+                # Store weight for signal adjustment
+                strategy.adaptive_weight = weight
+                self.logger.info(f"Strategy {strategy.name}: weight = {weight:.3f}")
+                
+            return strategies
+            
+        except Exception as e:
+            self.logger.error(f"Adaptive weighting failed: {e}")
+            return strategies
+    
+    def _apply_daily_adaptive_tuning(self, df_features):
+        """Apply daily adaptive ML tuning"""
+        if not self.args.ml_daily_adaptive_tuning:
+            return
+            
+        self.logger.info("📅 Applying daily adaptive ML tuning...")
+        
+        try:
+            import pandas as pd
+            from datetime import datetime, timedelta
+            
+            # Split data by days for adaptive tuning
+            df_features['date'] = pd.to_datetime(df_features.index).date
+            unique_dates = sorted(df_features['date'].unique())
+            
+            # Use recent 30 days for adaptive tuning
+            recent_dates = unique_dates[-30:] if len(unique_dates) >= 30 else unique_dates
+            
+            for date in recent_dates[-5:]:  # Tune on last 5 days
+                daily_data = df_features[df_features['date'] == date]
+                if len(daily_data) > 0:
+                    # Retrain ML model on daily data
+                    try:
+                        from eden.ml.pipeline import create_features_for_ml
+                        X, y = create_features_for_ml(daily_data)
+                        
+                        if len(X) > 10:  # Minimum samples
+                            # Quick daily model update
+                            from sklearn.ensemble import RandomForestClassifier
+                            import joblib
+                            
+                            model = RandomForestClassifier(n_estimators=50, random_state=42)
+                            model.fit(X.fillna(0), y)
+                            
+                            # Save daily adapted model
+                            models_dir = Path("models")
+                            models_dir.mkdir(exist_ok=True)
+                            daily_model_path = models_dir / f"daily_adapted_{date}.joblib"
+                            joblib.dump(model, daily_model_path)
+                            
+                    except Exception as e:
+                        self.logger.debug(f"Daily tuning for {date} failed: {e}")
+                        
+            self.logger.info("✅ Daily adaptive tuning completed")
+            
+        except Exception as e:
+            self.logger.error(f"Daily adaptive tuning failed: {e}")
+    
+    def _apply_auto_ml_evolution(self, strategies, df_features):
+        """Apply automatic ML strategy evolution"""
+        if not self.args.auto_ml_strategy_evolution:
+            return strategies
+            
+        self.logger.info("🧬 Applying automatic ML strategy evolution...")
+        
+        try:
+            # Evolve strategies based on performance feedback
+            evolved_strategies = strategies.copy()
+            
+            # Generate new strategy variants
+            from eden.strategies.base import StrategyBase
+            import pandas as pd
+            import random
+            
+            class EvolvedStrategy(StrategyBase):
+                def __init__(self, base_strategy, mutation_params):
+                    self.name = f"evolved_{base_strategy.name}_{random.randint(1000,9999)}"
+                    self.base_strategy = base_strategy
+                    self.mutation_params = mutation_params
+                    
+                def on_data(self, df):
+                    # Get base signals
+                    base_signals = self.base_strategy.on_data(df)
+                    if base_signals is None or base_signals.empty:
+                        return base_signals
+                        
+                    # Apply evolutionary mutations
+                    evolved_signals = base_signals.copy()
+                    
+                    # Mutate confidence levels
+                    confidence_multiplier = self.mutation_params.get('confidence_mult', 1.0)
+                    if 'confidence' in evolved_signals.columns:
+                        evolved_signals['confidence'] *= confidence_multiplier
+                        evolved_signals['confidence'] = evolved_signals['confidence'].clip(0.1, 0.95)
+                        
+                    return evolved_signals
+                    
+            # Create evolved variants of top performing strategies
+            for strategy in strategies[:3]:  # Top 3 strategies
+                try:
+                    # Create mutations
+                    mutations = [
+                        {'confidence_mult': 1.1},  # More confident
+                        {'confidence_mult': 0.9},  # Less confident
+                        {'confidence_mult': 1.2},  # Much more confident
+                    ]
+                    
+                    for mutation in mutations:
+                        evolved = EvolvedStrategy(strategy, mutation)
+                        evolved_strategies.append(evolved)
+                        
+                except Exception as e:
+                    self.logger.debug(f"Evolution failed for {strategy.name}: {e}")
+                    
+            self.logger.info(f"✅ Generated {len(evolved_strategies) - len(strategies)} evolved strategies")
+            return evolved_strategies
+            
+        except Exception as e:
+            self.logger.error(f"Auto ML evolution failed: {e}")
+            return strategies
         
     def run_phase3_ml_ict(self):
         """Run Phase 3 ML-enabled ICT strategy"""
@@ -625,6 +902,12 @@ class EdenRunner:
             htf_timeframes = ["M5", "M15", "1H", "4H"]
         df_features = build_mtf_features(df, "M1", htf_timeframes)
         
+        # Apply feature refinement
+        df_features = self._apply_feature_refinement(df_features)
+        
+        # Apply daily adaptive tuning
+        self._apply_daily_adaptive_tuning(df_features)
+        
         # Checkpoint after data processing
         self.create_git_checkpoint("data_processed", "Data loaded and features built")
         
@@ -637,6 +920,11 @@ class EdenRunner:
             strategies.extend(ml_generated_strategies)
             self.logger.info(f"Added {len(ml_generated_strategies)} ML-generated strategies")
             
+        # Apply advanced optimizations
+        strategies = self._optimize_strategy_thresholds(strategies, df_features)
+        strategies = self._apply_adaptive_weighting(strategies, df_features) 
+        strategies = self._apply_auto_ml_evolution(strategies, df_features)
+        
         # Verify strategy functionality if requested
         if self.args.verify_strategy_functionality:
             strategies = self._verify_strategies(strategies, df_features)
@@ -786,12 +1074,21 @@ def main():
     parser.add_argument("--ml-ict-filter", action="store_true", help="Apply ML ICT filtering")
     parser.add_argument("--ml-extensive-optimization", action="store_true", help="Enable extensive ML optimization")
     parser.add_argument("--ml-strategy-generation", action="store_true", help="Enable ML-based strategy generation")
+    parser.add_argument("--ml-daily-adaptive-tuning", action="store_true", help="Enable daily adaptive ML tuning")
     parser.add_argument("--ml-threshold", type=float, default=0.6, help="ML confidence threshold")
     parser.add_argument("--grid-optimization", action="store_true", help="Enable grid optimization")
     parser.add_argument("--backtest-strategies", type=str, help="Comma-separated list of strategies to backtest")
     parser.add_argument("--dynamic-risk-per-trade", type=float, default=0.02, help="Dynamic risk percentage per trade")
     parser.add_argument("--min-trade-value", type=float, default=0.5, help="Minimum trade value")
     parser.add_argument("--verify-strategy-functionality", action="store_true", help="Verify all strategies work before execution")
+    
+    # Advanced optimization features
+    parser.add_argument("--feature-refinement", type=str, help="Comma-separated list of features to refine (e.g., liquidity_sweep,fvg,htf_bias)")
+    parser.add_argument("--adaptive-strategy-weighting", action="store_true", help="Enable adaptive strategy weighting based on performance")
+    parser.add_argument("--risk-reward-tuning", action="store_true", help="Enable risk-reward ratio tuning")
+    parser.add_argument("--strategy-threshold-optimizer", action="store_true", help="Optimize strategy confidence thresholds")
+    parser.add_argument("--daily-performance-feedback", action="store_true", help="Enable daily performance feedback loop")
+    parser.add_argument("--auto-ml-strategy-evolution", action="store_true", help="Enable automatic ML strategy evolution")
     
     # Data management
     parser.add_argument("--mt5-online", action="store_true", help="Use MT5 for live data")

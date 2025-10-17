@@ -219,7 +219,9 @@ class EdenRunner:
                 stop_atr_multiplier=getattr(self.args, 'ict_stop_atr', 1.0),
                 tp_atr_multiplier=getattr(self.args, 'ict_tp_atr', 3.0),
                 killzones_enabled=getattr(self.args, 'ict_killzones_enabled', False),
-                killzones=getattr(self.args, 'ict_killzones', 'london,ny')
+                killzones=getattr(self.args, 'ict_killzones', 'london,ny'),
+                london_window=getattr(self.args, 'ict_kz_london', '07-10'),
+                ny_window=getattr(self.args, 'ict_kz_ny', '12-16')
             )
             strategies.append(ict_strategy)
             
@@ -1718,6 +1720,8 @@ def main():
     parser.add_argument("--ict-tp-atr", type=float, default=3.0, help="ICT take-profit ATR multiplier")
     parser.add_argument("--ict-killzones-enabled", action="store_true", help="Enable ICT kill zone gating")
     parser.add_argument("--ict-killzones", type=str, default="london,ny", help="Comma list of kill zones: london,ny")
+    parser.add_argument("--ict-kz-london", type=str, default="07-10", help="London killzone window as HH-HH (UTC)")
+    parser.add_argument("--ict-kz-ny", type=str, default="12-16", help="New York killzone window as HH-HH (UTC)")
     parser.add_argument("--backtest-strategies", type=str, help="Comma-separated list of strategies to backtest")
     parser.add_argument("--dynamic-risk-per-trade", type=float, default=0.02, help="Dynamic risk percentage per trade")
     parser.add_argument("--min-trade-value", type=float, default=0.5, help="Minimum trade value")

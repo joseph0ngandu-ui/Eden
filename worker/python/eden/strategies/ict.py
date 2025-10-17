@@ -17,7 +17,9 @@ class ICTStrategy(StrategyBase):
         tp_atr_multiplier: float = 2.0,
         min_confidence: float = 0.6,
         killzones_enabled: bool = False,
-        killzones: str = "london,ny"  # comma-separated: london (07-10), ny (12-16)
+        killzones: str = "london,ny",  # comma-separated labels
+        london_window: str = "07-10",
+        ny_window: str = "12-16"
     ):
         self.require_htf_bias = require_htf_bias
         self.ml_fallback_on_neutral = ml_fallback_on_neutral
@@ -26,6 +28,8 @@ class ICTStrategy(StrategyBase):
         self.min_confidence = min_confidence
         self.killzones_enabled = killzones_enabled
         self.killzones = {k.strip().lower() for k in killzones.split(',') if k.strip()}
+        self.london_window = london_window
+        self.ny_window = ny_window
 
     def _col_scalar(self, df: pd.DataFrame, name: str, idx: int, default=0):
         col = df.get(name)
@@ -207,16 +211,22 @@ class ICTStrategy(StrategyBase):
             'atr': float(atr_val)
         }
 
+    def _parse_window(self, s: str, default: tuple[int,int]) -> tuple[int,int]:
+        try:
+            a,b = s.split('-'); return (int(a), int(b))
+        except Exception:
+            return default
+
     def _in_killzone(self, ts) -> bool:
         try:
             t = pd.to_datetime(ts, utc=True).time()
         except Exception:
             return True  # if unknown, don't block
         h = t.hour
-        # London: 07:00-10:59 UTC
-        in_london = (7 <= h <= 10)
-        # New York: 12:00-16:59 UTC
-        in_ny = (12 <= h <= 16)
+        lw = self._parse_window(getattr(self, 'london_window', '07-10'), (7,10))
+        nw = self._parse_window(getattr(self, 'ny_window', '12-16'), (12,16))
+        in_london = (lw[0] <= h <= lw[1])
+        in_ny = (nw[0] <= h <= nw[1])
         allow = True
         if 'london' in self.killzones and 'ny' in self.killzones:
             allow = in_london or in_ny

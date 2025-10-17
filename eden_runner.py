@@ -309,6 +309,7 @@ class EdenRunner:
                     random_state=42,
                     n_jobs=-1
                 )
+                model.fit(X_train, y_train)
             
         elif self.args.ml_extensive_optimization:
             self.logger.info("Running extensive ML optimization")

@@ -28,25 +28,22 @@ def create_features_for_ml(df: pd.DataFrame, feature_alignment=None) -> Tuple[pd
     # Filter out non-numeric columns (datetime, object, etc.)
     numeric_columns = X.select_dtypes(include=[np.number]).columns
     X = X[numeric_columns]
+
+    # Drop duplicate columns before alignment
+    if X.columns.duplicated().any():
+        X = X.loc[:, ~X.columns.duplicated()]
     
-    # Apply feature alignment if provided
+    # Apply feature alignment if provided (preserve order; fill missing with 0)
     if feature_alignment is not None:
-        # Align features to match expected feature names
-        expected_features = set(feature_alignment)
-        current_features = set(X.columns)
-        
-        # Add missing features as zeros
-        missing_features = expected_features - current_features
-        for feature in missing_features:
-            X[feature] = 0.0
-            
-        # Remove extra features not in alignment
-        extra_features = current_features - expected_features
-        if extra_features:
-            X = X.drop(columns=list(extra_features), errors='ignore')
-            
-        # Reorder columns to match alignment
-        X = X[sorted(expected_features.intersection(X.columns))]
+        # De-duplicate alignment while preserving order
+        seen = set()
+        ordered = []
+        for f in feature_alignment:
+            if f not in seen:
+                seen.add(f)
+                ordered.append(f)
+        # Reindex columns to exact alignment (missing filled with 0.0)
+        X = X.reindex(columns=ordered, fill_value=0.0)
     
     # Fill any remaining NaN values
     X = X.fillna(0.0)
@@ -58,8 +55,15 @@ def get_feature_alignment(df: pd.DataFrame) -> list:
     """Get standard feature alignment for consistent ML training/prediction"""
     feat = build_feature_pipeline(df)
     X = feat.drop(columns=['open','high','low','close','volume'], errors='ignore')
-    numeric_columns = X.select_dtypes(include=[np.number]).columns
-    return sorted(numeric_columns.tolist())
+    numeric_columns = X.select_dtypes(include=[np.number]).columns.tolist()
+    # De-duplicate while preserving order
+    seen = set()
+    ordered = []
+    for f in numeric_columns:
+        if f not in seen:
+            seen.add(f)
+            ordered.append(f)
+    return ordered
 
 
 def train_model(X: pd.DataFrame, y: pd.Series, model_dir: Path = Path("models"), use_optuna: bool = True) -> TrainResult:

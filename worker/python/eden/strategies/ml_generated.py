@@ -45,17 +45,17 @@ class MLGeneratedStrategy(StrategyBase):
             
             # Apply feature alignment if available
             if self.feature_alignment:
-                # Align features to match training
+                # De-duplicate while preserving order
+                ordered = []
+                seen = set()
+                for f in self.feature_alignment:
+                    if f not in seen:
+                        seen.add(f)
+                        ordered.append(f)
+                # Align features to exact training order and fill missing with 0
                 feats = df.drop(columns=['open','high','low','close','volume'], errors='ignore')
                 feats = feats.select_dtypes(include=[np.number])
-                
-                # Add missing features as zeros
-                for feature in self.feature_alignment:
-                    if feature not in feats.columns:
-                        feats[feature] = 0.0
-                        
-                # Remove extra features and reorder
-                feats = feats[self.feature_alignment].fillna(0.0)
+                feats = feats.reindex(columns=ordered, fill_value=0.0).fillna(0.0)
             else:
                 feats = df.select_dtypes(include=['float64','float32','int64','int32']).fillna(0.0)
             

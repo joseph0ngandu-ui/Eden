@@ -247,14 +247,19 @@ class EdenRunner:
         # Get feature alignment for consistent training/prediction
         if self.args.ml_fix_features:
             feature_alignment = get_feature_alignment(df_features)
-            self.logger.info(f"Using feature alignment with {len(feature_alignment)} features")
-            X, y = create_features_for_ml(df_features, feature_alignment)
+            # Ensure unique, ordered alignment
+            seen = set(); ordered = []
+            for f in feature_alignment:
+                if f not in seen:
+                    seen.add(f); ordered.append(f)
+            self.logger.info(f"Using feature alignment with {len(ordered)} features")
+            X, y = create_features_for_ml(df_features, ordered)
             
-            # Save feature alignment for prediction consistency
+            # Save the exact training column order for inference consistency
             alignment_path = model_path.parent / "feature_alignment.json"
             import json
             with open(alignment_path, 'w') as f:
-                json.dump(feature_alignment, f)
+                json.dump(list(X.columns), f)
         else:
             X, y = create_features_for_ml(df_features)
         

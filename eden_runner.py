@@ -216,8 +216,10 @@ class EdenRunner:
             self.logger.info("Adding ICT strategy")
             ict_strategy = ICTStrategy(
                 min_confidence=self.args.ml_threshold,
-                stop_atr_multiplier=1.2,
-                tp_atr_multiplier=1.5
+                stop_atr_multiplier=getattr(self.args, 'ict_stop_atr', 1.0),
+                tp_atr_multiplier=getattr(self.args, 'ict_tp_atr', 3.0),
+                killzones_enabled=getattr(self.args, 'ict_killzones_enabled', False),
+                killzones=getattr(self.args, 'ict_killzones', 'london,ny')
             )
             strategies.append(ict_strategy)
             
@@ -1711,6 +1713,11 @@ def main():
     parser.add_argument("--ml-strategy-generation", action="store_true", help="Enable ML-based strategy generation")
     parser.add_argument("--ml-daily-adaptive-tuning", action="store_true", help="Enable daily adaptive ML tuning")
     parser.add_argument("--ml-threshold", type=float, default=0.6, help="ML confidence threshold")
+    # ICT tuning
+    parser.add_argument("--ict-stop-atr", type=float, default=1.0, help="ICT stop ATR multiplier")
+    parser.add_argument("--ict-tp-atr", type=float, default=3.0, help="ICT take-profit ATR multiplier")
+    parser.add_argument("--ict-killzones-enabled", action="store_true", help="Enable ICT kill zone gating")
+    parser.add_argument("--ict-killzones", type=str, default="london,ny", help="Comma list of kill zones: london,ny")
     parser.add_argument("--backtest-strategies", type=str, help="Comma-separated list of strategies to backtest")
     parser.add_argument("--dynamic-risk-per-trade", type=float, default=0.02, help="Dynamic risk percentage per trade")
     parser.add_argument("--min-trade-value", type=float, default=0.5, help="Minimum trade value")

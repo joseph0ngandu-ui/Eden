@@ -15,13 +15,17 @@ class ICTStrategy(StrategyBase):
         ml_fallback_on_neutral: bool = True,
         stop_atr_multiplier: float = 1.2,
         tp_atr_multiplier: float = 2.0,
-        min_confidence: float = 0.6
+        min_confidence: float = 0.6,
+        killzones_enabled: bool = False,
+        killzones: str = "london,ny"  # comma-separated: london (07-10), ny (12-16)
     ):
         self.require_htf_bias = require_htf_bias
         self.ml_fallback_on_neutral = ml_fallback_on_neutral
         self.stop_atr_multiplier = stop_atr_multiplier
         self.tp_atr_multiplier = tp_atr_multiplier
         self.min_confidence = min_confidence
+        self.killzones_enabled = killzones_enabled
+        self.killzones = {k.strip().lower() for k in killzones.split(',') if k.strip()}
 
     def _col_scalar(self, df: pd.DataFrame, name: str, idx: int, default=0):
         col = df.get(name)
@@ -203,6 +207,25 @@ class ICTStrategy(StrategyBase):
             'atr': float(atr_val)
         }
 
+    def _in_killzone(self, ts) -> bool:
+        try:
+            t = pd.to_datetime(ts, utc=True).time()
+        except Exception:
+            return True  # if unknown, don't block
+        h = t.hour
+        # London: 07:00-10:59 UTC
+        in_london = (7 <= h <= 10)
+        # New York: 12:00-16:59 UTC
+        in_ny = (12 <= h <= 16)
+        allow = True
+        if 'london' in self.killzones and 'ny' in self.killzones:
+            allow = in_london or in_ny
+        elif 'london' in self.killzones:
+            allow = in_london
+        elif 'ny' in self.killzones:
+            allow = in_ny
+        return allow
+
     def on_data(self, df: pd.DataFrame) -> pd.DataFrame:
         """
         Generate ICT trading signals with HTF bias validation and trade tagging
@@ -227,6 +250,9 @@ class ICTStrategy(StrategyBase):
             
             # If signal found and meets confidence threshold
             if signal and signal['confidence'] >= self.min_confidence:
+                # Kill zone gating
+                if self.killzones_enabled and not self._in_killzone(df.index[idx]):
+                    continue
                 # Calculate stop and TP
                 stop_tp = self.calculate_stop_tp(df, idx, signal['side'])
                 signal.update(stop_tp)

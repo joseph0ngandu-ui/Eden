@@ -60,8 +60,9 @@ class MLGeneratedStrategy(StrategyBase):
                 feats = df.select_dtypes(include=['float64','float32','int64','int32']).fillna(0.0)
             
             prob = self.model.predict_proba(feats)[:, 1]
-            buy = prob > 0.6
-            sell = prob < 0.4
+            # Relaxed thresholds to increase signal volume for HF scenarios
+            buy = prob > 0.55
+            sell = prob < 0.45
             signals = []
             for ts, b, s, p in zip(df.index, buy, sell, prob):
                 if b:

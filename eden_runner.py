@@ -535,24 +535,27 @@ class EdenRunner:
                         self.logger.info(f"Fetching {symbol} data via yfinance ({ticker})...")
                         stock = yf.Ticker(ticker)
                         
-                        # Get multiple timeframes
-                        periods = {
-                            '1d': start_date,
-                            '1h': '2y',  # Last 2 years for intraday
-                            '5m': '60d'  # Last 60 days for minute data
-                        }
+                        # Prefer 5m intraday (last ~60 days), then 60m (last ~2y), then daily
+                        for interval, period in [('5m','60d'), ('60m','2y'), ('1d', None)]:
+                            try:
+                                if period:
+                                    df = stock.history(period=period, interval=interval)
+                                else:
+                                    df = stock.history(start=start_date, end=end_date, interval=interval)
+                                if df is not None and not df.empty:
+                                    df = df.rename(columns={
+                                        'Open': 'open', 'High': 'high', 'Low': 'low', 
+                                        'Close': 'close', 'Volume': 'volume'
+                                    })
+                                    df.index = pd.to_datetime(df.index, utc=True)
+                                    out = df[[c for c in ['open','high','low','close','volume'] if c in df.columns]].copy()
+                                    if not out.empty:
+                                        self.logger.info(f"✅ Fetched {len(out)} records from yfinance @ {interval}")
+                                        return out
+                            except Exception as ie:
+                                self.logger.debug(f"yfinance {interval} fetch failed: {ie}")
                         
-                        df_daily = stock.history(start=start_date, end=end_date, interval='1d')
-                        if not df_daily.empty:
-                            # Convert to expected format
-                            df_daily = df_daily.rename(columns={
-                                'Open': 'open', 'High': 'high', 'Low': 'low', 
-                                'Close': 'close', 'Volume': 'volume'
-                            })
-                            df_daily.index = pd.to_datetime(df_daily.index)
-                            
-                            self.logger.info(f"✅ Fetched {len(df_daily)} daily records from yfinance")
-                            return df_daily
+                        # If nothing returned, continue to next source
                             
                 except Exception as e:
                     self.logger.warning(f"Failed to fetch from {source}: {e}")
@@ -767,6 +770,14 @@ class EdenRunner:
                 except Exception:
                     strategy_weights[strategy.name] = 0.1
                     
+            # Optionally refine weights with PPO agent
+            try:
+                if getattr(self.args, 'weighting', None) and self.args.weighting.lower().startswith('ppo'):
+                    from eden.ml.ppo_agent import select_strategy_weights
+                    strategy_weights = select_strategy_weights(strategy_weights)
+            except Exception:
+                pass
+            
             # Normalize weights
             total_weight = sum(strategy_weights.values())
             if total_weight > 0:
@@ -921,7 +932,7 @@ class EdenRunner:
                 )
                 
                 # Filter signals based on HTF bias
-                bias_threshold = 0.5
+                bias_threshold = getattr(self, 'htf_bias_threshold', 0.5)
                 biased_signals = signals_with_bias[
                     signals_with_bias['htf_bias_score'] >= bias_threshold
                 ].copy()
@@ -948,9 +959,17 @@ class EdenRunner:
             
             if trades:
                 trades_df = pd.DataFrame(trades)
+                # Normalize timestamps if present
+                if 'entry_time' in trades_df.columns:
+                    trades_df['entry_time'] = pd.to_datetime(trades_df['entry_time'], errors='coerce')
+                if 'exit_time' in trades_df.columns:
+                    trades_df['exit_time'] = pd.to_datetime(trades_df['exit_time'], errors='coerce')
                 
                 # Risk-adjusted returns
-                daily_returns = trades_df.groupby(trades_df['entry_time'].dt.date)['pnl'].sum()
+                if 'entry_time' in trades_df.columns:
+                    daily_returns = trades_df.groupby(trades_df['entry_time'].dt.date)['pnl'].sum()
+                else:
+                    daily_returns = pd.Series(dtype=float)
                 if len(daily_returns) > 1:
                     comprehensive_metrics['volatility'] = daily_returns.std()
                     comprehensive_metrics['risk_adjusted_return'] = (
@@ -991,7 +1010,7 @@ class EdenRunner:
             fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
             
             # Main equity curve
-            equity_curve = analyzer.equity_curve
+            equity_curve = analyzer.equity_curve() if callable(getattr(analyzer, 'equity_curve', None)) else analyzer.equity_curve
             ax1.plot(equity_curve.index, equity_curve['equity'], 'b-', linewidth=2, label='Equity')
             ax1.fill_between(equity_curve.index, equity_curve['equity'], alpha=0.3)
             ax1.set_title('Enhanced Equity Curve', fontsize=14, fontweight='bold')
@@ -1000,7 +1019,7 @@ class EdenRunner:
             ax1.legend()
             
             # Drawdown plot
-            drawdown = analyzer.drawdown_curve
+            drawdown = analyzer.drawdown_curve() if callable(getattr(analyzer, 'drawdown_curve', None)) else analyzer.drawdown_curve
             ax2.fill_between(drawdown.index, drawdown['drawdown'], 0, 
                            color='red', alpha=0.5, label='Drawdown')
             ax2.set_title('Drawdown Analysis')
@@ -1042,6 +1061,383 @@ class EdenRunner:
             
         except Exception as e:
             self.logger.error(f"Optimization results export failed: {e}")
+    
+    def _relax_thresholds_for_frequency(self):
+        """Adjust thresholds based on frequency priority and trade-thresholds flags"""
+        # Adjust ML threshold
+        if getattr(self.args, 'trade_thresholds', None) == 'lower':
+            self.args.ml_threshold = max(0.2, min(0.5, self.args.ml_threshold - 0.1))
+        elif getattr(self.args, 'trade_thresholds', None) == 'higher':
+            self.args.ml_threshold = min(0.9, max(0.6, self.args.ml_threshold + 0.1))
+        
+        # Adjust HTF bias sensitivity
+        self.htf_bias_threshold = 0.5
+        if getattr(self.args, 'frequency_priority', None) == 'high':
+            self.htf_bias_threshold = 0.3
+        elif getattr(self.args, 'frequency_priority', None) == 'conservative':
+            self.htf_bias_threshold = 0.7
+        
+    def _apply_anomaly_filter(self, df_features):
+        """Mark anomaly periods using IsolationForest to avoid abnormal events"""
+        try:
+            from sklearn.ensemble import IsolationForest
+            import numpy as np
+            
+            feat = df_features.select_dtypes(include=[np.number]).fillna(0.0)
+            model = IsolationForest(n_estimators=100, contamination=0.01, random_state=42)
+            score = model.fit_predict(feat)
+            df_features = df_features.copy()
+            df_features['anomaly'] = (score == -1).astype(int)
+            return df_features
+        except Exception:
+            return df_features
+        
+    def _filter_signals_with_ml(self, df_features, signals):
+        """Optional XGBoost filter and ensemble logic to refine entries"""
+        try:
+            import numpy as np
+            import pandas as pd
+            # Feature set aligned to training
+            from eden.ml.pipeline import get_feature_alignment, create_features_for_ml
+            alignment = get_feature_alignment(df_features)
+            X, _ = create_features_for_ml(df_features, alignment)
+            
+            selected = set()
+            if getattr(self.args, 'ensemble_filter', None):
+                selected = {s.strip().lower() for s in self.args.ensemble_filter.split(',')}
+            
+            # XGBoost filter
+            use_xgb = (not selected) or ('xgboost' in selected)
+            if use_xgb:
+                try:
+                    import xgboost as xgb
+                    xgb_model = xgb.XGBClassifier(
+                        n_estimators=200, max_depth=6, learning_rate=0.05,
+                        subsample=0.8, colsample_bytree=0.8, random_state=42
+                    )
+                    # Heuristic training target from future returns
+                    target = (df_features['close'].pct_change().shift(-1) > 0).astype(int).reindex(X.index).fillna(0)
+                    xgb_model.fit(X.values, target.values)
+                    xgb_prob = xgb_model.predict_proba(X.values)[:,1]
+                except Exception:
+                    xgb_prob = np.full(len(X), 0.5)
+            else:
+                xgb_prob = np.full(len(X), 0.5)
+            
+            # LSTM directional probability (optional)
+            use_lstm = (not selected) or ('lstm-proxy' in selected)
+            if use_lstm:
+                try:
+                    from eden.ml.lstm_model import infer_lstm_probability
+                    lstm_prob = infer_lstm_probability(df_features)
+                except Exception:
+                    lstm_prob = np.full(len(X), 0.5)
+            else:
+                lstm_prob = np.full(len(X), 0.5)
+            
+            # Combine into ensemble score
+            # Equal weights for selected components
+            weights = []
+            probs = []
+            if use_xgb: 
+                weights.append(1.0); probs.append(xgb_prob)
+            if use_lstm:
+                weights.append(1.0); probs.append(lstm_prob)
+            if not weights:
+                weights = [1.0]; probs = [np.full(len(X), 0.5)]
+            ensemble_prob = sum(p*w for p,w in zip(probs, weights)) / sum(weights)
+            ens = pd.Series(ensemble_prob, index=X.index, name='ensemble_prob')
+            
+            # Attach ensemble prob to signals and filter
+            if not signals.empty:
+                sig = signals.join(ens, how='left')
+                sig['ensemble_prob'] = sig['ensemble_prob'].fillna(sig.get('confidence', 0.5))
+                threshold = max(0.3, self.args.ml_threshold - 0.1)
+                return sig[sig['ensemble_prob'] >= threshold]
+            return signals
+        except Exception:
+            return signals
+        
+    def run_phase3_weekly_profit_loop(self):
+        """Walk-forward weekly optimization loop to reach profitability targets"""
+        self.logger.info("Starting weekly profit optimization loop")
+        from eden.data.loader import DataLoader
+        from eden.features.feature_pipeline import build_mtf_features
+        from eden.backtest.engine import BacktestEngine
+        from eden.backtest.analyzer import Analyzer
+        import pandas as pd
+        import numpy as np
+        
+        # Prepare output directory
+        out_dir = Path(self.args.output_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Load data (reuse main loader logic)
+        dl = DataLoader(cache_dir=Path("data/cache"))
+        df = None
+        if self.args.fetch_full_historical_data:
+            exec_tfs = (self.args.execution_tf.split(',') if self.args.execution_tf else ['M1','M5'])
+            top_tfs = (self.args.topdown_tf.split(',') if self.args.topdown_tf else ['M15','1H','4H'])
+            df = self._fetch_comprehensive_data("Volatility 100 Index", self.args.start_date, self.args.end_date, exec_tfs + top_tfs)
+        # Try local CSV if provided
+        if (df is None or df.empty) and getattr(self.args, 'store_local_data', None):
+            from pathlib import Path as _Path
+            local_path = _Path(self.args.store_local_data)
+            if local_path.exists():
+                try:
+                    self.logger.info(f"Using local data file: {local_path}")
+                    df = dl.load_csv(local_path)
+                except Exception:
+                    pass
+        if df is None or df.empty:
+            df = dl.get_ohlcv("Volatility 100 Index", "M1", self.args.start_date, self.args.end_date, allow_network=True, prefer_mt5=self.args.mt5_online)
+        if df is None or df.empty:
+            raise RuntimeError("Failed to load market data for weekly loop")
+        
+        # Build features on base M1 and align HTFs
+        htf_timeframes = (self.args.topdown_tf.split(',') if self.args.topdown_tf else ["M15","1H","4H"]) 
+        df_features = build_mtf_features(df, "M1", htf_timeframes)
+        df_features = self._apply_feature_refinement(df_features)
+        if getattr(self.args, 'anomaly_filter', None) and self.args.anomaly_filter.lower() == 'isolationforest':
+            df_features = self._apply_anomaly_filter(df_features)
+        
+        # Relax thresholds if requested
+        self._relax_thresholds_for_frequency()
+        
+        # Prepare weekly windows
+        df_features['week'] = pd.to_datetime(df_features.index).to_period('W').astype(str)
+        weeks = sorted(df_features['week'].unique())
+        
+        cumulative_trades = []
+        weekly_summary = []
+        starting_cash = 10.0
+        
+        for wk in weeks:
+            wk_df = df_features[df_features['week'] == wk].drop(columns=['week'])
+            # Accept shorter windows when only daily data is available
+            if len(wk_df) < 5:
+                continue
+            
+            # Setup strategies
+            strategies = self._setup_strategies(wk_df)
+            strategies = self._optimize_strategy_thresholds(strategies, wk_df)
+            strategies = self._apply_adaptive_weighting(strategies, wk_df)
+            
+            # Generate signals
+            import pandas as pd
+            all_signals = []
+            for s in strategies:
+                try:
+                    sig = s.on_data(wk_df)
+                    if sig is not None and not sig.empty:
+                        sig['strategy'] = s.name
+                        # Apply ensemble ML filter
+                        sig = self._filter_signals_with_ml(wk_df, sig)
+                        # Apply HTF bias if enabled but relaxed by threshold
+                        if self.args.htf_ict_bias:
+                            hsig = self._apply_htf_ict_bias(sig, wk_df)
+                        else:
+                            hsig = sig
+                        all_signals.append(hsig)
+                except Exception as e:
+                    self.logger.debug(f"Signal generation failed for {s.name}: {e}")
+            if not all_signals:
+                continue
+            combined = pd.concat(all_signals, ignore_index=True)
+            
+            # Backtest per week
+            engine = BacktestEngine(
+                starting_cash=starting_cash,
+                per_order_risk_fraction=self.args.dynamic_risk_per_trade,
+                min_trade_value=self.args.min_trade_value,
+                commission_bps=1.0,
+                slippage_bps=1.0
+            )
+            trades = engine.run(wk_df, combined, symbol="VIX100")
+            cumulative_trades.extend(trades or [])
+            analyzer = Analyzer(trades or [], starting_cash=starting_cash)
+            metrics = analyzer.metrics()
+            
+            # Compute weekly profit ratio
+            weekly_pnl = metrics.get('net_pnl', 0.0)
+            weekly_profit_ratio = (weekly_pnl / starting_cash) if starting_cash > 0 else 0.0
+            weekly_dd = metrics.get('max_drawdown_pct', 0.0) / 100.0
+            weekly_summary.append({"week": wk, "pnl": weekly_pnl, "profit_ratio": weekly_profit_ratio, "dd": weekly_dd, "trades": metrics.get('trades', 0)})
+            
+            # Adjust thresholds if below target
+            target = self.args.weekly_target or 0.5
+            max_dd = self.args.max_drawdown_per_week or 0.2
+            if weekly_profit_ratio < target:
+                # Lower ML threshold and HTF bias to increase frequency
+                self.args.ml_threshold = max(0.2, self.args.ml_threshold - 0.05)
+                self.htf_bias_threshold = max(0.2, getattr(self, 'htf_bias_threshold', 0.5) - 0.05)
+            
+            # Stop if drawdown exceeded
+            if self.args.drawdown_control == 'enabled' and weekly_dd > max_dd:
+                self.logger.warning(f"Weekly drawdown {weekly_dd:.2%} exceeded limit {max_dd:.2%}; stopping loop")
+                break
+            
+            # Git checkpoint per week
+            self.create_git_checkpoint("weekly_cycle", f"Week {wk} complete - profit {weekly_profit_ratio:.2%}")
+        
+        # Save cumulative outputs
+        out_dir.mkdir(parents=True, exist_ok=True)
+        import json
+        (out_dir / "weekly_summary.json").write_text(json.dumps(weekly_summary, indent=2))
+        
+        # Save trades and metrics
+        try:
+            import pandas as pd
+            trades_df = pd.DataFrame(cumulative_trades)
+            if not trades_df.empty and self.args.trades_csv:
+                trades_df.to_csv(out_dir / "trades.csv", index=False)
+        except Exception:
+            pass
+        
+        self.logger.info("Weekly optimization loop completed")
+    
+    def run_continuous_loop(self):
+        """Continuous monitoring, training, backtesting loop"""
+        import importlib
+        from datetime import datetime
+        from eden.data.loader import DataLoader
+        from eden.features.feature_pipeline import build_mtf_features
+        from eden.backtest.engine import BacktestEngine
+        from eden.backtest.analyzer import Analyzer
+        import pandas as pd
+        
+        out_dir = Path(self.args.output_dir)
+        (out_dir / 'cycles').mkdir(parents=True, exist_ok=True)
+        
+        cycle = 1
+        while True:
+            start_ts = datetime.utcnow().isoformat()
+            self.logger.info(f"=== Cycle {cycle} — Start {start_ts} ===")
+            self.create_git_checkpoint("cycle_start", f"Cycle {cycle} start")
+            report = {
+                'cycle': cycle,
+                'start': start_ts,
+                'analysis': {},
+                'ml': {},
+                'signals': {},
+                'errors': []
+            }
+            try:
+                # Reload key strategy modules (auto-reload on changes)
+                for mod in [
+                    'eden.strategies.ict',
+                    'eden.strategies.price_action',
+                    'eden.strategies.momentum',
+                    'eden.strategies.mean_reversion',
+                    'eden.strategies.ml_generated'
+                ]:
+                    try:
+                        importlib.invalidate_caches()
+                        importlib.reload(importlib.import_module(mod))
+                    except Exception as e:
+                        self.logger.debug(f"Module reload failed: {mod}: {e}")
+                        report['errors'].append(f"reload_failed:{mod}")
+                
+                # Load data (offline preferred)
+                dl = DataLoader(cache_dir=Path("data/cache"))
+                df = None
+                if (self.args.offline_only or self.args.use_local_data_if_available) and self.args.store_local_data:
+                    try:
+                        df = dl.load_csv(Path(self.args.store_local_data))
+                        self.logger.info(f"Loaded local data: {self.args.store_local_data}")
+                    except Exception as e:
+                        report['errors'].append(f"local_load_failed:{e}")
+                if df is None or df.empty:
+                    # Offline mode blocks external network
+                    allow_net = False if self.args.offline_only else True
+                    df = dl.get_ohlcv(
+                        "Volatility 100 Index",
+                        "M1",
+                        self.args.start_date,
+                        self.args.end_date,
+                        allow_network=allow_net,
+                        prefer_mt5=self.args.mt5_online
+                    )
+                if df is None or df.empty:
+                    raise RuntimeError("No data available for cycle")
+                
+                # Build features
+                htf_timeframes = (self.args.topdown_tf.split(',') if self.args.topdown_tf else ["M15","1H","4H"]) 
+                df_features = build_mtf_features(df, "M1", htf_timeframes)
+                df_features = self._apply_feature_refinement(df_features)
+                if getattr(self.args, 'anomaly_filter', None) and self.args.anomaly_filter.lower() == 'isolationforest':
+                    df_features = self._apply_anomaly_filter(df_features)
+                self._relax_thresholds_for_frequency()
+                
+                # ML (train each cycle if enabled)
+                if self.args.ml_enabled:
+                    try:
+                        model_path = Path("models/sample_model.joblib")
+                        self._train_ml_model(df_features, model_path)
+                        report['ml']['trained'] = True
+                    except Exception as e:
+                        report['ml']['trained'] = False
+                        report['errors'].append(f"ml_train_failed:{e}")
+                
+                # Strategies
+                strategies = self._setup_strategies(df_features)
+                strategies = self._optimize_strategy_thresholds(strategies, df_features)
+                strategies = self._apply_adaptive_weighting(strategies, df_features)
+                
+                # Signals per strategy
+                all_signals = []
+                for s in strategies:
+                    try:
+                        sig = s.on_data(df_features)
+                        if sig is not None and not sig.empty:
+                            sig['strategy'] = s.name
+                            sig = self._filter_signals_with_ml(df_features, sig)
+                            if self.args.htf_ict_bias:
+                                sig = self._apply_htf_ict_bias(sig, df_features)
+                            report['signals'][s.name] = int(len(sig))
+                            all_signals.append(sig)
+                        else:
+                            report['signals'][s.name] = 0
+                    except Exception as e:
+                        report['errors'].append(f"signal_failed:{s.name}:{e}")
+                
+                # Backtest
+                trades = []
+                metrics = {}
+                if all_signals:
+                    combined = pd.concat(all_signals, ignore_index=True)
+                    engine = BacktestEngine(
+                        starting_cash=10.0,
+                        per_order_risk_fraction=self.args.dynamic_risk_per_trade,
+                        min_trade_value=self.args.min_trade_value,
+                        commission_bps=1.0,
+                        slippage_bps=1.0
+                    )
+                    trades = engine.run(df_features, combined, symbol="VIX100")
+                    analyzer = Analyzer(trades or [], starting_cash=10.0)
+                    metrics = analyzer.metrics()
+                
+                # Save cycle artifacts
+                cycle_dir = out_dir / 'cycles' / f"cycle_{cycle:05d}"
+                cycle_dir.mkdir(parents=True, exist_ok=True)
+                import json
+                (cycle_dir / 'report.json').write_text(json.dumps({**report, 'metrics': metrics}, indent=2, default=str))
+                if trades and self.args.trades_csv:
+                    import pandas as pd
+                    pd.DataFrame(trades).to_csv(cycle_dir / 'trades.csv', index=False)
+                
+                self.create_git_checkpoint("cycle_complete", f"Cycle {cycle} complete")
+                self.logger.info(f"=== Cycle {cycle} — Complete — trades: {len(trades or [])}, pnl: {metrics.get('net_pnl',0)} ===")
+            except Exception as e:
+                self.logger.error(f"Cycle {cycle} failed: {e}")
+                report['errors'].append(str(e))
+            
+            # Heartbeat/sleep
+            try:
+                time.sleep(max(1, int(self.args.cycle_interval)))
+            except Exception:
+                time.sleep(5)
+            cycle += 1
     
     def run_phase3_ml_ict(self):
         """Run Phase 3 ML-enabled ICT strategy"""
@@ -1265,12 +1661,18 @@ class EdenRunner:
             # Setup data storage
             self.setup_data_storage()
             
-            # Run the main phase 3 process
-            if self.args.phase3:
-                self.run_phase3_ml_ict()
+            # Route to continuous or weekly loops if configured
+            if self.args.continuous_loop:
+                self.run_continuous_loop()
+            elif self.args.weekly_target is not None:
+                self.run_phase3_weekly_profit_loop()
             else:
-                self.logger.error("No valid phase specified")
-                return 1
+                # Run the main phase 3 process
+                if self.args.phase3:
+                    self.run_phase3_ml_ict()
+                else:
+                    self.logger.error("No valid phase specified")
+                    return 1
                 
             self.logger.info(f"Execution completed in {time.time() - self.start_time:.1f}s")
             return 0
@@ -1304,7 +1706,6 @@ def main():
     parser.add_argument("--ml-strategy-generation", action="store_true", help="Enable ML-based strategy generation")
     parser.add_argument("--ml-daily-adaptive-tuning", action="store_true", help="Enable daily adaptive ML tuning")
     parser.add_argument("--ml-threshold", type=float, default=0.6, help="ML confidence threshold")
-    parser.add_argument("--grid-optimization", action="store_true", help="Enable grid optimization")
     parser.add_argument("--backtest-strategies", type=str, help="Comma-separated list of strategies to backtest")
     parser.add_argument("--dynamic-risk-per-trade", type=float, default=0.02, help="Dynamic risk percentage per trade")
     parser.add_argument("--min-trade-value", type=float, default=0.5, help="Minimum trade value")
@@ -1324,15 +1725,48 @@ def main():
     parser.add_argument("--ml-strategy-weighting", action="store_true", help="Dynamically adjust strategy contribution based on performance")
     parser.add_argument("--htf-ict-bias", action="store_true", help="Apply HTF bias to all strategy entries")
     parser.add_argument("--postprocess-metrics", action="store_true", help="Compute comprehensive performance metrics")
+    parser.add_argument("--metrics-full", action="store_true", help="Alias for postprocess metrics")
     parser.add_argument("--equity-curve-plot", action="store_true", help="Generate equity curve visualization")
+    parser.add_argument("--equity-curve", action="store_true", help="Alias for equity curve plot")
     parser.add_argument("--optimization-results-json", action="store_true", help="Export optimization results to JSON")
+    
+    # Profitability and frequency controls
+    parser.add_argument("--frequency-priority", type=str, choices=["high","ultra-high","balanced","conservative"], help="Prioritize trade frequency vs purity")
+    parser.add_argument("--trade-thresholds", type=str, choices=["lower","default","higher","adaptive-relaxed"], help="Adjust trade thresholds for ML and filters")
+    parser.add_argument("--drawdown-control", type=str, choices=["enabled","disabled","moderate"], default="enabled", help="Enable weekly drawdown control")
+    parser.add_argument("--weekly-target", type=float, help="Weekly profit target as fraction (e.g., 0.5 for 50%)")
+    parser.add_argument("--max-drawdown-per-week", type=float, help="Max weekly drawdown as fraction (e.g., 0.2 for 20%)")
+    parser.add_argument("--trades-csv", action="store_true", help="Export trades CSV explicitly")
+    
+    # Continuous loop controls
+    parser.add_argument("--continuous-loop", action="store_true", help="Run an infinite monitoring/learning loop")
+    parser.add_argument("--cycle-interval", type=int, default=300, help="Seconds to sleep between loop cycles")
+    parser.add_argument("--offline-only", action="store_true", help="Disallow external API calls; use only local/cached data")
+    parser.add_argument("--loop-until-target", action="store_true", help="Alias to run continuous loop until target met")
+    
+    # Filters and ensemble controls
+    parser.add_argument("--ensemble-filter", type=str, help="Comma-separated list of ensemble filters to apply (e.g., XGBoost,LSTM-proxy)")
+    parser.add_argument("--anomaly-filter", type=str, help="Anomaly filter to use (e.g., IsolationForest)")
+    parser.add_argument("--weighting", type=str, help="Strategy weighting policy (e.g., PPO-style, heuristic, none)")
     
     # Data management
     parser.add_argument("--mt5-online", action="store_true", help="Use MT5 for live data")
     parser.add_argument("--store-local-data", type=str, help="Path to store local data")
+    parser.add_argument("--offline-data-cache", type=str, help="Alias for store-local-data")
+    parser.add_argument("--offline-data", type=str, help="Alias for store-local-data (file path)")
     parser.add_argument("--use-local-data-if-available", action="store_true", help="Use local data if available")
     parser.add_argument("--fetch-full-historical-data", action="store_true", help="Fetch comprehensive historical data")
-    parser.add_argument("--multi-timeframe", type=str, help="Comma-separated list of timeframes to analyze")
+    parser.add_argument("--execution-tf", type=str, help="Comma-separated execution timeframes (e.g., M1,M5)")
+    parser.add_argument("--execution-tfs", type=str, help="Alias for execution-tf")
+    parser.add_argument("--topdown-tf", type=str, help="Comma-separated higher timeframes (e.g., M15,1H,4H)")
+    parser.add_argument("--topdown-tfs", type=str, help="Alias for topdown-tf")
+    parser.add_argument("--multi-timeframe", type=str, help="Comma-separated list of timeframes to analyze (deprecated)")
+    
+    # Optimization controls
+    parser.add_argument("--grid-optimization", action="store_true", help="Enable grid optimization")
+    parser.add_argument("--grid-optimization-budget", type=int, default=20, help="Budget for grid optimization runs")
+    parser.add_argument("--grid-budget", type=int, help="Alias for grid-optimization-budget")
+    parser.add_argument("--walk-forward-windows", type=int, help="Limit number of weekly windows in walk-forward loop")
     
     # Output and logging
     parser.add_argument("--output-dir", type=str, default="results", help="Output directory")
@@ -1356,6 +1790,32 @@ def main():
     parser.add_argument("--git-commit-message", type=str, help="Custom git commit message template")
     
     args = parser.parse_args()
+    
+    # Apply alias arguments
+    if args.metrics_full:
+        args.postprocess_metrics = True
+    if args.equity_curve:
+        args.equity_curve_plot = True
+    if args.offline_data_cache and not args.store_local_data:
+        args.store_local_data = args.offline_data_cache
+    if args.offline_data and not args.store_local_data:
+        args.store_local_data = args.offline_data
+        args.use_local_data_if_available = True
+    if args.execution_tfs and not args.execution_tf:
+        args.execution_tf = args.execution_tfs
+    if args.topdown_tfs and not args.topdown_tf:
+        args.topdown_tf = args.topdown_tfs
+    if args.grid_budget and not args.grid_optimization_budget:
+        args.grid_optimization_budget = args.grid_budget
+    if args.loop_until_target:
+        args.continuous_loop = True
+    # Normalize choice aliases
+    if args.frequency_priority == 'ultra-high':
+        args.frequency_priority = 'high'
+    if args.trade_thresholds == 'adaptive-relaxed':
+        args.trade_thresholds = 'lower'
+    if args.drawdown_control == 'moderate':
+        args.drawdown_control = 'enabled'
     
     # Install required packages if missing
     try:

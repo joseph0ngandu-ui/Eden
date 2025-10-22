@@ -1,13 +1,11 @@
 from __future__ import annotations
 import logging
-import os
 import time
 import uuid
 from pathlib import Path
 from typing import Any, Dict, Optional
 
 import optuna  # type: ignore
-import pandas as pd
 
 from ..cli import run_backtest
 from ..utils.storage import init_db, insert_run, insert_metrics
@@ -56,9 +54,13 @@ def run_parameter_sweep(
         for name, spec in search_space.items():
             t = spec.get("type")
             if t == "int":
-                params[name] = trial.suggest_int(name, spec.get("low", 0), spec.get("high", 10))
+                params[name] = trial.suggest_int(
+                    name, spec.get("low", 0), spec.get("high", 10)
+                )
             elif t == "float":
-                params[name] = trial.suggest_float(name, spec.get("low", 0.0), spec.get("high", 1.0))
+                params[name] = trial.suggest_float(
+                    name, spec.get("low", 0.0), spec.get("high", 1.0)
+                )
             elif t == "categorical":
                 params[name] = trial.suggest_categorical(name, spec.get("choices", []))
         return params
@@ -88,6 +90,7 @@ def run_parameter_sweep(
             if not metrics_path.exists():
                 raise RuntimeError("metrics.json not found")
             import json
+
             metrics = json.loads(metrics_path.read_text())
 
             # Constraints filtering
@@ -100,31 +103,37 @@ def run_parameter_sweep(
                     return -1e9
 
             score = _objective_from_metrics(metrics, objective)
-            insert_run(run_id, {
-                "created_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-                "symbol": ",".join(symbols),
-                "timeframe": timeframe,
-                "strategy": strategy,
-                "params": params,
-                "status": "completed",
-                "metrics": metrics,
-                "results_path": str(result_dir),
-                "env_snapshot": {"objective": objective},
-            })
+            insert_run(
+                run_id,
+                {
+                    "created_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                    "symbol": ",".join(symbols),
+                    "timeframe": timeframe,
+                    "strategy": strategy,
+                    "params": params,
+                    "status": "completed",
+                    "metrics": metrics,
+                    "results_path": str(result_dir),
+                    "env_snapshot": {"objective": objective},
+                },
+            )
             insert_metrics(run_id, metrics)
             return float(score)
         except Exception as e:
-            insert_run(run_id, {
-                "created_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-                "symbol": ",".join(symbols),
-                "timeframe": timeframe,
-                "strategy": strategy,
-                "params": params,
-                "status": f"error: {e}",
-                "metrics": {},
-                "results_path": "results",
-                "env_snapshot": {"objective": objective},
-            })
+            insert_run(
+                run_id,
+                {
+                    "created_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                    "symbol": ",".join(symbols),
+                    "timeframe": timeframe,
+                    "strategy": strategy,
+                    "params": params,
+                    "status": f"error: {e}",
+                    "metrics": {},
+                    "results_path": "results",
+                    "env_snapshot": {"objective": objective},
+                },
+            )
             raise
 
     sampler = optuna.samplers.TPESampler()

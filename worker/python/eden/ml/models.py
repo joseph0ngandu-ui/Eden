@@ -1,6 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
-from typing import Any, Optional
+from typing import Any
 
 
 @dataclass
@@ -18,6 +18,7 @@ class LightGBMWrapper:
     def predict_proba(self, X):
         # LightGBM binary predict can produce raw scores; convert to pseudo proba via logistic
         import numpy as np
+
         try:
             proba = self.model.predict(X)
             # If 1D, map to two-class proba

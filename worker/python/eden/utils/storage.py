@@ -1,6 +1,5 @@
 from __future__ import annotations
 import logging
-import os
 import sqlite3
 from pathlib import Path
 from typing import Any, Dict, Iterable
@@ -43,7 +42,7 @@ SCHEMA = [
       pnl REAL,
       tags_json TEXT
     );
-    """
+    """,
 ]
 
 
@@ -88,18 +87,25 @@ def insert_run(run_id: str, payload: Dict[str, Any], db_path: Path | str = DEFAU
         con.close()
 
 
-def insert_metrics(run_id: str, metrics: Dict[str, float], db_path: Path | str = DEFAULT_DB):
+def insert_metrics(
+    run_id: str, metrics: Dict[str, float], db_path: Path | str = DEFAULT_DB
+):
     con = _connect(db_path)
     try:
         cur = con.cursor()
         for k, v in metrics.items():
-            cur.execute("INSERT INTO metrics (run_id, metric_name, metric_value) VALUES (?, ?, ?)", (run_id, k, float(v)))
+            cur.execute(
+                "INSERT INTO metrics (run_id, metric_name, metric_value) VALUES (?, ?, ?)",
+                (run_id, k, float(v)),
+            )
         con.commit()
     finally:
         con.close()
 
 
-def insert_trades(run_id: str, trades: Iterable[Dict[str, Any]], db_path: Path | str = DEFAULT_DB):
+def insert_trades(
+    run_id: str, trades: Iterable[Dict[str, Any]], db_path: Path | str = DEFAULT_DB
+):
     con = _connect(db_path)
     try:
         cur = con.cursor()

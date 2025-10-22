@@ -17,9 +17,9 @@ class PaperBroker(BrokerInterface):
 
     def place_order(self, symbol: str, side: str, qty: float, price: float):
         slip = price * (self.slippage_bps / 10000.0)
-        exec_price = price + slip if side == 'buy' else price - slip
+        exec_price = price + slip if side == "buy" else price - slip
         notional = exec_price * qty
-        if side == 'buy':
+        if side == "buy":
             self.cash -= notional
             self.positions[symbol] = self.positions.get(symbol, 0.0) + qty
         else:

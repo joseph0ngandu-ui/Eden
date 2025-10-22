@@ -9,7 +9,7 @@ class PriceActionStrategy(StrategyBase):
 
     def on_data(self, df: pd.DataFrame) -> pd.DataFrame:
         # Simple price action: engulfing patterns
-        o, c = df['open'], df['close']
+        o, c = df["open"], df["close"]
         prev_o, prev_c = o.shift(1), c.shift(1)
         bull_engulf = (c > o) & (prev_c < prev_o) & (c > prev_o) & (o < prev_c)
         bear_engulf = (c < o) & (prev_c > prev_o) & (c < prev_o) & (o > prev_c)

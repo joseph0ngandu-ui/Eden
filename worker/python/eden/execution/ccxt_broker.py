@@ -18,7 +18,9 @@ class CCXTBroker(BrokerInterface):
         self.log = logging.getLogger("eden.execution.ccxt_broker")
         if ccxt is None:
             self.exchange = None
-            self.log.warning("ccxt not installed; CCXTBroker disabled. Fallback to paper recommended.")
+            self.log.warning(
+                "ccxt not installed; CCXTBroker disabled. Fallback to paper recommended."
+            )
         else:
             try:
                 cls = getattr(ccxt, self.exchange_name)
@@ -29,7 +31,9 @@ class CCXTBroker(BrokerInterface):
 
     def place_order(self, *args, **kwargs):
         if self.exchange is None:
-            raise RuntimeError("CCXTBroker unavailable (ccxt missing or exchange init failed)")
+            raise RuntimeError(
+                "CCXTBroker unavailable (ccxt missing or exchange init failed)"
+            )
         raise NotImplementedError
 
     def cancel_order(self, order_id: str):

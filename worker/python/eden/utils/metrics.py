@@ -23,7 +23,7 @@ def profit_factor(pnls):
     gross_profit = arr[arr > 0].sum()
     gross_loss = -arr[arr < 0].sum()
     if gross_loss <= 0:
-        return float('inf') if gross_profit > 0 else 0.0
+        return float("inf") if gross_profit > 0 else 0.0
     return float(gross_profit / (gross_loss + 1e-12))
 
 

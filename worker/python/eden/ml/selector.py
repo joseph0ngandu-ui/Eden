@@ -13,9 +13,10 @@ log = logging.getLogger("eden.ml.selector")
 # Simple placeholder selector: choose strategies based on volatility/trend proxies.
 # In Phase 2 this can be replaced with a trained classifier.
 
+
 def _is_trending(df) -> bool:
     try:
-        close = df['close']
+        close = df["close"]
         ma_fast = close.rolling(20).mean()
         ma_slow = close.rolling(50).mean()
         trend = (ma_fast - ma_slow).abs().mean()
@@ -26,8 +27,9 @@ def _is_trending(df) -> bool:
 
 def _is_high_vol(df) -> bool:
     try:
-        import numpy as np
-        ret = df['close'].pct_change().dropna()
+        pass
+
+        ret = df["close"].pct_change().dropna()
         vol = ret.rolling(50).std().iloc[-1]
         return bool(vol > ret.std())
     except Exception:
@@ -37,7 +39,13 @@ def _is_high_vol(df) -> bool:
 def select_strategies_for_symbol(symbol: str, timeframe: str, df) -> List[StrategyBase]:
     trending = _is_trending(df)
     high_vol = _is_high_vol(df)
-    log.info("Selector %s %s -> trending=%s high_vol=%s", symbol, timeframe, trending, high_vol)
+    log.info(
+        "Selector %s %s -> trending=%s high_vol=%s",
+        symbol,
+        timeframe,
+        trending,
+        high_vol,
+    )
 
     out: List[StrategyBase] = []
     if trending:

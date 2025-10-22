@@ -23,11 +23,14 @@ class ParamCache:
 
     def key(self, symbol: str, timeframe: str, params: Dict[str, Any]) -> str:
         # Stable key independent of dict order
-        return json.dumps({
-            "symbol": symbol.upper(),
-            "timeframe": timeframe.upper(),
-            "params": params,
-        }, sort_keys=True)
+        return json.dumps(
+            {
+                "symbol": symbol.upper(),
+                "timeframe": timeframe.upper(),
+                "params": params,
+            },
+            sort_keys=True,
+        )
 
     def load_seen(self) -> set[str]:
         seen: set[str] = set()
@@ -39,7 +42,13 @@ class ParamCache:
                         continue
                     try:
                         rec = json.loads(line)
-                        seen.add(self.key(rec.get("symbol",""), rec.get("timeframe",""), rec.get("params", {})))
+                        seen.add(
+                            self.key(
+                                rec.get("symbol", ""),
+                                rec.get("timeframe", ""),
+                                rec.get("params", {}),
+                            )
+                        )
                     except Exception:
                         continue
         except Exception:
@@ -76,10 +85,14 @@ def param_grid() -> Iterable[Dict[str, Any]]:
 
 
 def _score_from_metrics(metrics: Dict[str, float]) -> float:
-    return float(metrics.get("sharpe", 0.0)) * 1000.0 + float(metrics.get("net_pnl", 0.0))
+    return float(metrics.get("sharpe", 0.0)) * 1000.0 + float(
+        metrics.get("net_pnl", 0.0)
+    )
 
 
-def evaluate_params_feat(feat: pd.DataFrame, symbol: str, params: Dict[str, Any]) -> Tuple[float, Dict[str, float]]:
+def evaluate_params_feat(
+    feat: pd.DataFrame, symbol: str, params: Dict[str, Any]
+) -> Tuple[float, Dict[str, float]]:
     strat = RuleBasedParamStrategy(params=params)
     sig = strat.on_data(feat)
     eng = BacktestEngine(starting_cash=100000.0)
@@ -90,9 +103,15 @@ def evaluate_params_feat(feat: pd.DataFrame, symbol: str, params: Dict[str, Any]
     return score, metrics
 
 
-def evaluate_params(df: pd.DataFrame, symbol: str, timeframe: str, params: Dict[str, Any]) -> Tuple[float, Dict[str, float]]:
+def evaluate_params(
+    df: pd.DataFrame, symbol: str, timeframe: str, params: Dict[str, Any]
+) -> Tuple[float, Dict[str, float]]:
     # Build features (include higher timeframe context for robustness)
-    extras = ["1D", "1W", "1MO"] if timeframe.upper() in ("M1", "5M", "15M", "1H", "4H") else ["1W", "1MO"]
+    extras = (
+        ["1D", "1W", "1MO"]
+        if timeframe.upper() in ("M1", "5M", "15M", "1H", "4H")
+        else ["1W", "1MO"]
+    )
     try:
         feat = build_mtf_features(df, timeframe, extras)
     except Exception:
@@ -100,10 +119,15 @@ def evaluate_params(df: pd.DataFrame, symbol: str, timeframe: str, params: Dict[
     return evaluate_params_feat(feat, symbol, params)
 
 
-def run_grid_search(df: pd.DataFrame, symbol: str, timeframe: str, budget: int = 40,
-                    cache_path: Optional[Path] = None,
-                    trials_out: Optional[Path] = None,
-                    precomputed_feat: Optional[pd.DataFrame] = None) -> Tuple[Dict[str, Any], Dict[str, float]]:
+def run_grid_search(
+    df: pd.DataFrame,
+    symbol: str,
+    timeframe: str,
+    budget: int = 40,
+    cache_path: Optional[Path] = None,
+    trials_out: Optional[Path] = None,
+    precomputed_feat: Optional[pd.DataFrame] = None,
+) -> Tuple[Dict[str, Any], Dict[str, float]]:
     cache = ParamCache(cache_path or Path("data/cache/opt_cache.jsonl"))
     seen = cache.load_seen()
     best_params: Dict[str, Any] = {}
@@ -129,13 +153,19 @@ def run_grid_search(df: pd.DataFrame, symbol: str, timeframe: str, budget: int =
         total += 1
         if trials_out:
             with trials_out.open("a", encoding="utf-8") as f:
-                f.write(json.dumps({
-                    "symbol": symbol.upper(),
-                    "timeframe": timeframe.upper(),
-                    "params": params,
-                    "score": score,
-                    "metrics": metrics,
-                }, sort_keys=True) + "\n")
+                f.write(
+                    json.dumps(
+                        {
+                            "symbol": symbol.upper(),
+                            "timeframe": timeframe.upper(),
+                            "params": params,
+                            "score": score,
+                            "metrics": metrics,
+                        },
+                        sort_keys=True,
+                    )
+                    + "\n"
+                )
         if score > best_score:
             best_score = score
             best_params = params

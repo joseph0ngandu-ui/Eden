@@ -6,12 +6,12 @@ Provides optional minimal UI progress using Tkinter.
 import sys
 import subprocess
 import threading
-import time
 from typing import List
 
 try:
     import tkinter as tk
     from tkinter import ttk
+
     TK_AVAILABLE = True
 except Exception:
     TK_AVAILABLE = False
@@ -39,8 +39,20 @@ def _is_installed(name: str) -> bool:
 
 def _pip_install(spec: str) -> bool:
     try:
-        r = subprocess.run([sys.executable, "-m", "pip", "install", spec, "--upgrade", "--no-cache-dir"],
-                           capture_output=True, text=True, timeout=600)
+        r = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "pip",
+                "install",
+                spec,
+                "--upgrade",
+                "--no-cache-dir",
+            ],
+            capture_output=True,
+            text=True,
+            timeout=600,
+        )
         return r.returncode == 0
     except Exception:
         return False
@@ -72,7 +84,7 @@ def _install_with_ui(missing: List[tuple]) -> bool:
         total = len(missing)
         for i, (_, spec) in enumerate(missing, 1):
             status.set(f"Installing {spec} ({i}/{total}) ...")
-            bar['value'] = int((i-1) / total * 100)
+            bar["value"] = int((i - 1) / total * 100)
             root.update_idletasks()
             ok = _pip_install(spec)
             if not ok:
@@ -81,7 +93,7 @@ def _install_with_ui(missing: List[tuple]) -> bool:
                 done["result"] = False
                 root.after(600, root.destroy)
                 return
-        bar['value'] = 100
+        bar["value"] = 100
         status.set("All dependencies installed. Launching Eden...")
         root.update_idletasks()
         done["result"] = True
@@ -92,14 +104,14 @@ def _install_with_ui(missing: List[tuple]) -> bool:
     root.geometry("480x140")
     root.resizable(False, False)
     frm = ttk.Frame(root, padding=12)
-    frm.pack(fill='both', expand=True)
+    frm.pack(fill="both", expand=True)
     lbl = ttk.Label(frm, text="Preparing your environment...")
-    lbl.pack(anchor='w')
-    bar = ttk.Progressbar(frm, length=440, mode='determinate', maximum=100)
+    lbl.pack(anchor="w")
+    bar = ttk.Progressbar(frm, length=440, mode="determinate", maximum=100)
     bar.pack(pady=8)
     status = tk.StringVar(value="Checking packages ...")
     st = ttk.Label(frm, textvariable=status)
-    st.pack(anchor='w')
+    st.pack(anchor="w")
 
     t = threading.Thread(target=worker, daemon=True)
     t.start()

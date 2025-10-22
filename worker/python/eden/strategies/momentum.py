@@ -9,8 +9,16 @@ class MomentumStrategy(StrategyBase):
 
     def on_data(self, df: pd.DataFrame) -> pd.DataFrame:
         # Momentum: EMA50 crosses EMA200
-        ema50 = df['ema_50'] if 'ema_50' in df.columns else df['close'].ewm(span=50, adjust=False).mean()
-        ema200 = df['ema_200'] if 'ema_200' in df.columns else df['close'].ewm(span=200, adjust=False).mean()
+        ema50 = (
+            df["ema_50"]
+            if "ema_50" in df.columns
+            else df["close"].ewm(span=50, adjust=False).mean()
+        )
+        ema200 = (
+            df["ema_200"]
+            if "ema_200" in df.columns
+            else df["close"].ewm(span=200, adjust=False).mean()
+        )
         cross_up = (ema50 > ema200) & (ema50.shift(1) <= ema200.shift(1))
         cross_dn = (ema50 < ema200) & (ema50.shift(1) >= ema200.shift(1))
         signals = []

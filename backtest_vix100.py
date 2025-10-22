@@ -77,7 +77,9 @@ def connect_and_resolve_symbol(primary: str, alternatives: List[str]) -> Optiona
     return sym
 
 
-def fetch_rates(symbol: str, timeframe: int, start: datetime, end: datetime) -> Optional[pd.DataFrame]:
+def fetch_rates(
+    symbol: str, timeframe: int, start: datetime, end: datetime
+) -> Optional[pd.DataFrame]:
     rates = mt5.copy_rates_range(symbol, timeframe, start, end)
     if rates is None:
         print(f"Failed to fetch rates: {mt5.last_error()}")
@@ -86,22 +88,24 @@ def fetch_rates(symbol: str, timeframe: int, start: datetime, end: datetime) -> 
     if df.empty:
         print("No data returned for the requested range.")
         return None
-    df['time'] = pd.to_datetime(df['time'], unit='s')
+    df["time"] = pd.to_datetime(df["time"], unit="s")
     return df
 
 
-def simulate(df: pd.DataFrame,
-             symbol: str,
-             rsi_period: int,
-             sma_period: int,
-             rsi_overbought: float,
-             rsi_oversold: float,
-             sl_pips: float,
-             tp_pips: float) -> Dict[str, Any]:
+def simulate(
+    df: pd.DataFrame,
+    symbol: str,
+    rsi_period: int,
+    sma_period: int,
+    rsi_overbought: float,
+    rsi_oversold: float,
+    sl_pips: float,
+    tp_pips: float,
+) -> Dict[str, Any]:
     # Indicators
     df = df.copy()
-    df['rsi'] = rsi(df['close'], rsi_period)
-    df['sma'] = df['close'].rolling(window=sma_period).mean()
+    df["rsi"] = rsi(df["close"], rsi_period)
+    df["sma"] = df["close"].rolling(window=sma_period).mean()
 
     # Get point size
     sinfo = mt5.symbol_info(symbol)
@@ -118,11 +122,11 @@ def simulate(df: pd.DataFrame,
     trades: List[Dict[str, Any]] = []
 
     def signal(row) -> str:
-        if np.isnan(row['rsi']) or np.isnan(row['sma']):
+        if np.isnan(row["rsi"]) or np.isnan(row["sma"]):
             return "WAIT"
-        if row['rsi'] < rsi_oversold and row['close'] < row['sma']:
+        if row["rsi"] < rsi_oversold and row["close"] < row["sma"]:
             return "BUY"
-        if row['rsi'] > rsi_overbought and row['close'] > row['sma']:
+        if row["rsi"] > rsi_overbought and row["close"] > row["sma"]:
             return "SELL"
         return "WAIT"
 
@@ -130,71 +134,141 @@ def simulate(df: pd.DataFrame,
 
     for i in range(start_idx, len(rows)):
         row = rows.iloc[i]
-        cur_time = row['time']
-        close = float(row['close'])
-        high = float(row['high'])
-        low = float(row['low'])
+        cur_time = row["time"]
+        close = float(row["close"])
+        high = float(row["high"])
+        low = float(row["low"])
         sig = signal(row)
 
         # Manage open position
         if open_pos is not None:
-            side = open_pos['side']
+            side = open_pos["side"]
             # Conservative: assume SL hit before TP if both touched same bar
-            if side == 'LONG':
-                if low <= open_pos['sl']:
-                    exit_px = open_pos['sl']
-                    pnl = exit_px - open_pos['entry_price']
-                    trades.append({**open_pos, "exit_price": exit_px, "exit_time": cur_time, "reason": "SL", "pnl": pnl})
+            if side == "LONG":
+                if low <= open_pos["sl"]:
+                    exit_px = open_pos["sl"]
+                    pnl = exit_px - open_pos["entry_price"]
+                    trades.append(
+                        {
+                            **open_pos,
+                            "exit_price": exit_px,
+                            "exit_time": cur_time,
+                            "reason": "SL",
+                            "pnl": pnl,
+                        }
+                    )
                     open_pos = None
-                elif high >= open_pos['tp']:
-                    exit_px = open_pos['tp']
-                    pnl = exit_px - open_pos['entry_price']
-                    trades.append({**open_pos, "exit_price": exit_px, "exit_time": cur_time, "reason": "TP", "pnl": pnl})
+                elif high >= open_pos["tp"]:
+                    exit_px = open_pos["tp"]
+                    pnl = exit_px - open_pos["entry_price"]
+                    trades.append(
+                        {
+                            **open_pos,
+                            "exit_price": exit_px,
+                            "exit_time": cur_time,
+                            "reason": "TP",
+                            "pnl": pnl,
+                        }
+                    )
                     open_pos = None
             else:  # SHORT
-                if high >= open_pos['sl']:
-                    exit_px = open_pos['sl']
-                    pnl = open_pos['entry_price'] - exit_px
-                    trades.append({**open_pos, "exit_price": exit_px, "exit_time": cur_time, "reason": "SL", "pnl": pnl})
+                if high >= open_pos["sl"]:
+                    exit_px = open_pos["sl"]
+                    pnl = open_pos["entry_price"] - exit_px
+                    trades.append(
+                        {
+                            **open_pos,
+                            "exit_price": exit_px,
+                            "exit_time": cur_time,
+                            "reason": "SL",
+                            "pnl": pnl,
+                        }
+                    )
                     open_pos = None
-                elif low <= open_pos['tp']:
-                    exit_px = open_pos['tp']
-                    pnl = open_pos['entry_price'] - exit_px
-                    trades.append({**open_pos, "exit_price": exit_px, "exit_time": cur_time, "reason": "TP", "pnl": pnl})
+                elif low <= open_pos["tp"]:
+                    exit_px = open_pos["tp"]
+                    pnl = open_pos["entry_price"] - exit_px
+                    trades.append(
+                        {
+                            **open_pos,
+                            "exit_price": exit_px,
+                            "exit_time": cur_time,
+                            "reason": "TP",
+                            "pnl": pnl,
+                        }
+                    )
                     open_pos = None
 
             # Flip on opposite signal if still open
             if open_pos is not None:
-                if (open_pos['side'] == 'LONG' and sig == 'SELL') or (open_pos['side'] == 'SHORT' and sig == 'BUY'):
+                if (open_pos["side"] == "LONG" and sig == "SELL") or (
+                    open_pos["side"] == "SHORT" and sig == "BUY"
+                ):
                     exit_px = close
-                    pnl = (exit_px - open_pos['entry_price']) if open_pos['side'] == 'LONG' else (open_pos['entry_price'] - exit_px)
-                    trades.append({**open_pos, "exit_price": exit_px, "exit_time": cur_time, "reason": "Flip", "pnl": pnl})
+                    pnl = (
+                        (exit_px - open_pos["entry_price"])
+                        if open_pos["side"] == "LONG"
+                        else (open_pos["entry_price"] - exit_px)
+                    )
+                    trades.append(
+                        {
+                            **open_pos,
+                            "exit_price": exit_px,
+                            "exit_time": cur_time,
+                            "reason": "Flip",
+                            "pnl": pnl,
+                        }
+                    )
                     open_pos = None
 
         # Enter new position if none open
         if open_pos is None:
-            if sig == 'BUY':
+            if sig == "BUY":
                 entry = close
                 sl = entry - (sl_pips * point)
                 tp = entry + (tp_pips * point)
-                open_pos = {"side": "LONG", "entry_price": entry, "entry_time": cur_time, "sl": sl, "tp": tp}
-            elif sig == 'SELL':
+                open_pos = {
+                    "side": "LONG",
+                    "entry_price": entry,
+                    "entry_time": cur_time,
+                    "sl": sl,
+                    "tp": tp,
+                }
+            elif sig == "SELL":
                 entry = close
                 sl = entry + (sl_pips * point)
                 tp = entry - (tp_pips * point)
-                open_pos = {"side": "SHORT", "entry_price": entry, "entry_time": cur_time, "sl": sl, "tp": tp}
+                open_pos = {
+                    "side": "SHORT",
+                    "entry_price": entry,
+                    "entry_time": cur_time,
+                    "sl": sl,
+                    "tp": tp,
+                }
 
     # Close any open position at last close
     if open_pos is not None:
         last_row = rows.iloc[-1]
-        close_px = float(last_row['close'])
-        pnl = (close_px - open_pos['entry_price']) if open_pos['side'] == 'LONG' else (open_pos['entry_price'] - close_px)
-        trades.append({**open_pos, "exit_price": close_px, "exit_time": last_row['time'], "reason": "EOD", "pnl": pnl})
+        close_px = float(last_row["close"])
+        pnl = (
+            (close_px - open_pos["entry_price"])
+            if open_pos["side"] == "LONG"
+            else (open_pos["entry_price"] - close_px)
+        )
+        trades.append(
+            {
+                **open_pos,
+                "exit_price": close_px,
+                "exit_time": last_row["time"],
+                "reason": "EOD",
+                "pnl": pnl,
+            }
+        )
         open_pos = None
 
-    total_pnl = float(np.nansum([t['pnl'] for t in trades]))
-    wins = sum(1 for t in trades if t['pnl'] > 0)
-    losses = sum(1 for t in trades if t['pnl'] <= 0)
+    total_pnl = float(np.nansum([t["pnl"] for t in trades]))
+    wins = sum(1 for t in trades if t["pnl"] > 0)
+    losses = sum(1 for t in trades if t["pnl"] <= 0)
     stats = {
         "trades": len(trades),
         "wins": wins,
@@ -207,18 +281,36 @@ def simulate(df: pd.DataFrame,
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Backtest RSI+SMA strategy on MT5 data")
-    parser.add_argument("--symbol", default="Volatility 100 Index", help="Primary symbol name")
-    parser.add_argument("--alt-symbols", nargs="*", default=["VIX100", "Volatility100", "Vol100", "VIX 100"], help="Fallback symbols to try")
-    parser.add_argument("--days", type=int, default=7, help="Number of days back from now")
-    parser.add_argument("--timeframe", default="M1", choices=["M1", "M5", "M15", "M30", "H1", "H4", "D1"], help="Bar timeframe")
+    parser = argparse.ArgumentParser(
+        description="Backtest RSI+SMA strategy on MT5 data"
+    )
+    parser.add_argument(
+        "--symbol", default="Volatility 100 Index", help="Primary symbol name"
+    )
+    parser.add_argument(
+        "--alt-symbols",
+        nargs="*",
+        default=["VIX100", "Volatility100", "Vol100", "VIX 100"],
+        help="Fallback symbols to try",
+    )
+    parser.add_argument(
+        "--days", type=int, default=7, help="Number of days back from now"
+    )
+    parser.add_argument(
+        "--timeframe",
+        default="M1",
+        choices=["M1", "M5", "M15", "M30", "H1", "H4", "D1"],
+        help="Bar timeframe",
+    )
     parser.add_argument("--rsi-period", type=int, default=14)
     parser.add_argument("--sma-period", type=int, default=20)
     parser.add_argument("--rsi-overbought", type=float, default=70)
     parser.add_argument("--rsi-oversold", type=float, default=30)
     parser.add_argument("--sl-pips", type=float, default=50)
     parser.add_argument("--tp-pips", type=float, default=100)
-    parser.add_argument("--csv", type=str, default=None, help="Optional path to save trades CSV")
+    parser.add_argument(
+        "--csv", type=str, default=None, help="Optional path to save trades CSV"
+    )
 
     args = parser.parse_args()
 
@@ -233,15 +325,30 @@ def main():
         df = fetch_rates(symbol, tf, start, end)
         if df is None:
             return
-        res = simulate(df, symbol, args.rsi_period, args.sma_period, args.rsi_overbought, args.rsi_oversold, args.sl_pips, args.tp_pips)
+        res = simulate(
+            df,
+            symbol,
+            args.rsi_period,
+            args.sma_period,
+            args.rsi_overbought,
+            args.rsi_oversold,
+            args.sl_pips,
+            args.tp_pips,
+        )
         trades = res["trades"]
         stats = res["stats"]
 
         print("\nBacktest Summary")
         print("================")
-        print(f"Symbol: {symbol}  Timeframe: {args.timeframe}  Window: {args.days}d  Bars: {len(df)}")
-        print(f"Trades: {stats['trades']}  Wins: {stats['wins']}  Losses: {stats['losses']}  Win%: {stats['win_rate']:.2f}%")
-        print(f"Total PnL: {stats['total_pnl_points']:.2f} points (point={stats['point']})")
+        print(
+            f"Symbol: {symbol}  Timeframe: {args.timeframe}  Window: {args.days}d  Bars: {len(df)}"
+        )
+        print(
+            f"Trades: {stats['trades']}  Wins: {stats['wins']}  Losses: {stats['losses']}  Win%: {stats['win_rate']:.2f}%"
+        )
+        print(
+            f"Total PnL: {stats['total_pnl_points']:.2f} points (point={stats['point']})"
+        )
 
         if args.csv and trades:
             tdf = pd.DataFrame(trades)

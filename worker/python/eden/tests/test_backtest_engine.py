@@ -6,11 +6,11 @@ from eden.strategies.momentum import MomentumStrategy
 
 
 def test_backtest_engine_basic_flow():
-    p = Path(__file__).resolve().parents[1] / 'data' / 'sample_data' / 'EURUSD_1D.csv'
+    p = Path(__file__).resolve().parents[1] / "data" / "sample_data" / "EURUSD_1D.csv"
     dl = DataLoader()
     df = dl.load_csv(p)
     feat = build_feature_pipeline(df)
     sig = MomentumStrategy().on_data(feat)
     eng = BacktestEngine(starting_cash=10000)
-    trades = eng.run(feat, sig, symbol='EURUSD', risk_manager=None)
+    trades = eng.run(feat, sig, symbol="EURUSD", risk_manager=None)
     assert isinstance(trades, list)

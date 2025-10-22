@@ -5,15 +5,14 @@ Professional loading screen with inspirational quotes
 """
 
 import sys
-import random
 from PySide6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QLabel, 
                                QProgressBar, QGraphicsDropShadowEffect)
-from PySide6.QtCore import Qt, QTimer, QPropertyAnimation, QEasingCurve, QRect
-from PySide6.QtGui import QFont, QPalette, QColor
+from PySide6.QtCore import Qt, QTimer, QPropertyAnimation, QEasingCurve
+from PySide6.QtGui import QColor
 
 # Import Apple-style theme manager
 try:
-    from theme_manager import get_theme_manager, get_theme_colors, get_theme_color
+    from theme_manager import get_theme_colors, get_theme_color
     THEME_MANAGER_AVAILABLE = True
 except ImportError:
     THEME_MANAGER_AVAILABLE = False
@@ -302,7 +301,7 @@ class SplashScreen(QWidget):
             self.current_quote_index = 0
             
         quote = quotes[self.current_quote_index]
-        self.quote_label.setText(f""{quote}"")
+        self.quote_label.setText(f'"{quote}"')
         self.current_quote_index += 1
         
     def fade_out_and_close(self):

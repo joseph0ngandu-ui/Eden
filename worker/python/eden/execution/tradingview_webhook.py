@@ -18,8 +18,8 @@ class TradingViewWebhookServer:
 
         class Handler(BaseHTTPRequestHandler):
             def do_POST(self):  # noqa: N802
-                length = int(self.headers.get('Content-Length', 0))
-                body = self.rfile.read(length).decode('utf-8')
+                length = int(self.headers.get("Content-Length", 0))
+                body = self.rfile.read(length).decode("utf-8")
                 try:
                     data = json.loads(body)
                 except Exception:

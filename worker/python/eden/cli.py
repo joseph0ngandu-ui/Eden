@@ -95,7 +95,9 @@ def _make_strategy(name: str, cfg: EdenConfig) -> list[StrategyBase]:
             PriceActionStrategy(),
             MLGeneratedStrategy(),
         ]
-    logging.getLogger(__name__).warning("Unknown strategy '%s', falling back to ensemble", name)
+    logging.getLogger(__name__).warning(
+        "Unknown strategy '%s', falling back to ensemble", name
+    )
     return [ICTStrategy(), MeanReversionStrategy(), MomentumStrategy()]
 
 
@@ -106,13 +108,16 @@ def _bundled_sample_dir() -> Path:
     return Path(__file__).parent / "data" / "sample_data"
 
 
-def run_backtest(config_path: Optional[str], ci_short: bool = False, overrides: Optional[dict] = None):
+def run_backtest(
+    config_path: Optional[str], ci_short: bool = False, overrides: Optional[dict] = None
+):
     cfg = load_config(config_path)
     # Apply runtime overrides from caller (e.g., UI)
     runtime = overrides or {}
     if overrides:
         try:
             from pydantic import ValidationError  # type: ignore
+
             cfg = EdenConfig(**{**cfg.model_dump(), **overrides})
         except Exception:
             cfg = EdenConfig(**{**cfg.model_dump(), **overrides})
@@ -121,7 +126,9 @@ def run_backtest(config_path: Optional[str], ci_short: bool = False, overrides: 
     logger.info("Starting backtest")
 
     dl = DataLoader(cache_dir=Path("data/cache"))
-    symbols = cfg.symbols[:2] if (ci_short or os.getenv("CI") == "true") else cfg.symbols
+    symbols = (
+        cfg.symbols[:2] if (ci_short or os.getenv("CI") == "true") else cfg.symbols
+    )
 
     # Load data for each symbol (prefer MT5 when possible)
     data_map = {}
@@ -138,13 +145,21 @@ def run_backtest(config_path: Optional[str], ci_short: bool = False, overrides: 
         try:
             if os.getenv("CI") != "true":
                 from .data.transforms import normalize_timeframe  # type: ignore
+
                 base = normalize_timeframe(cfg.timeframe)
                 ladder = ["M1", "5M", "15M", "1H", "4H", "1D", "1W", "1MO"]
                 # Pull one notch up for cache warm if available
                 if base in ladder:
                     idx = ladder.index(base)
                     for extra in ladder[idx + 1 : idx + 3]:
-                        _ = dl.get_ohlcv(sym, extra, cfg.start, cfg.end, allow_network=True, prefer_mt5=True)
+                        _ = dl.get_ohlcv(
+                            sym,
+                            extra,
+                            cfg.start,
+                            cfg.end,
+                            allow_network=True,
+                            prefer_mt5=True,
+                        )
         except Exception:
             pass
         if df is None or df.empty:
@@ -158,7 +173,9 @@ def run_backtest(config_path: Optional[str], ci_short: bool = False, overrides: 
         data_map[sym] = df
 
     # Strategy selection: support dynamic selection via runtime flag or strategy == "dynamic"
-    dynamic_strategy = bool(runtime.get("dynamic_strategy")) or (str(cfg.strategy).lower() in ("dynamic", "auto"))
+    dynamic_strategy = bool(runtime.get("dynamic_strategy")) or (
+        str(cfg.strategy).lower() in ("dynamic", "auto")
+    )
     strategies: list[StrategyBase]
     if dynamic_strategy:
         try:
@@ -175,6 +192,7 @@ def run_backtest(config_path: Optional[str], ci_short: bool = False, overrides: 
     risk = RiskManager()
 
     import pandas as pd
+
     all_trades = []
 
     def _choose_extra_tfs(tf: str) -> list[str]:
@@ -205,11 +223,15 @@ def run_backtest(config_path: Optional[str], ci_short: bool = False, overrides: 
             df_feat = build_feature_pipeline(df)
 
         # Strategy list resolution
-        if dynamic_strategy and 'close' in df_feat.columns:
+        if dynamic_strategy and "close" in df_feat.columns:
             try:
                 selected = select_strategies_for_symbol(sym, cfg.timeframe, df_feat)
                 strategies = selected if selected else _make_strategy(cfg.strategy, cfg)
-                logger.info("Dynamic strategy for %s: %s", sym, ",".join([s.name for s in strategies]))
+                logger.info(
+                    "Dynamic strategy for %s: %s",
+                    sym,
+                    ",".join([s.name for s in strategies]),
+                )
             except Exception as e:
                 logger.warning("Dynamic strategy selection failed for %s: %s", sym, e)
                 strategies = _make_strategy(cfg.strategy, cfg)
@@ -227,10 +249,10 @@ def run_backtest(config_path: Optional[str], ci_short: bool = False, overrides: 
             if sigs is None or sigs.empty:
                 continue
             # Ensure required cols
-            if 'confidence' not in sigs.columns:
-                sigs['confidence'] = 0.5
+            if "confidence" not in sigs.columns:
+                sigs["confidence"] = 0.5
             if min_confidence > 0:
-                sigs = sigs[sigs['confidence'] >= min_confidence]
+                sigs = sigs[sigs["confidence"] >= min_confidence]
             sigs["strategy"] = strat.name
             signals_list.append(sigs)
         if not signals_list:
@@ -241,9 +263,10 @@ def run_backtest(config_path: Optional[str], ci_short: bool = False, overrides: 
         if runtime.get("use_reversal_scorer"):
             try:
                 from .ml.reversal import score_reversals  # type: ignore
+
                 signals = score_reversals(df_feat, signals)
                 if min_confidence > 0:
-                    signals = signals[signals['confidence'] >= min_confidence]
+                    signals = signals[signals["confidence"] >= min_confidence]
             except Exception as e:
                 logger.warning("Reversal scoring failed: %s", e)
 
@@ -267,6 +290,7 @@ def run_train(config_path: Optional[str]):
     configure_logging(cfg.log_level)
     # For brevity, call into ML pipeline minimal path
     from .ml.pipeline import minimal_train_entry
+
     minimal_train_entry(cfg)
 
 
@@ -276,7 +300,9 @@ def run_paper(config_path: Optional[str]):
     logger = logging.getLogger("eden.cli")
 
     broker = PaperBroker(slippage_bps=cfg.slippage_bps)
-    logger.info("Paper trading session bootstrap complete. In tests we do not open network connections.")
+    logger.info(
+        "Paper trading session bootstrap complete. In tests we do not open network connections."
+    )
 
 
 def run_live(config_path: Optional[str], confirm: bool):
@@ -285,18 +311,22 @@ def run_live(config_path: Optional[str], confirm: bool):
     logger = logging.getLogger("eden.cli")
 
     if os.getenv("EDEN_LIVE") != "1":
-        logger.warning("EDEN_LIVE is not set to 1; refusing to run live. Falling back to paper broker.")
+        logger.warning(
+            "EDEN_LIVE is not set to 1; refusing to run live. Falling back to paper broker."
+        )
         return run_paper(config_path)
     if not (confirm or os.getenv("EDEN_CONFIRM_LIVE") == "1"):
-        logger.error("Live trading requires --confirm or EDEN_CONFIRM_LIVE=1. Aborting.")
+        logger.error(
+            "Live trading requires --confirm or EDEN_CONFIRM_LIVE=1. Aborting."
+        )
         return
 
     if is_mt5_available():
-        broker = MT5Broker.from_env()
+        MT5Broker.from_env()
         logger.info("Live trading on MT5 started in safe mode.")
     else:
         logger.warning("MT5 not available; falling back to PaperBroker.")
-        broker = PaperBroker()
+        PaperBroker()
     # Here we would wire strategies to live stream; left as safe no-op for CI.
 
 
@@ -311,9 +341,15 @@ def main():
     parser.add_argument("--config", type=str, default=None)
     parser.add_argument("--ci-short", action="store_true")
     # ML strategy discovery and pruning
-    parser.add_argument("--discover", action="store_true", help="Run ML-based strategy discovery")
-    parser.add_argument("--prune", action="store_true", help="Prune underperforming strategies")
-    parser.add_argument("--retune", type=str, default=None, help="Retune a specific strategy by id")
+    parser.add_argument(
+        "--discover", action="store_true", help="Run ML-based strategy discovery"
+    )
+    parser.add_argument(
+        "--prune", action="store_true", help="Prune underperforming strategies"
+    )
+    parser.add_argument(
+        "--retune", type=str, default=None, help="Retune a specific strategy by id"
+    )
     args = parser.parse_args()
 
     if args.init:
@@ -331,13 +367,22 @@ def main():
     if args.discover or args.prune or args.retune:
         # Load one sample dataset and run discovery/prune/retune
         from .data.loader import DataLoader
+
         dl = DataLoader()
         sample = Path(__file__).parent / "data" / "sample_data" / "XAUUSD_1D.csv"
         df = dl.load_csv(sample)
         from .ml.discovery import StrategyDiscovery
+
         sd = StrategyDiscovery()
         if args.discover:
-            sd.discover_strategies(df, generations=2, population_size=10, elite_size=3, min_trades=3, min_sharpe=0.0)
+            sd.discover_strategies(
+                df,
+                generations=2,
+                population_size=10,
+                elite_size=3,
+                min_trades=3,
+                min_sharpe=0.0,
+            )
         if args.prune:
             sd.prune_underperforming(min_expectancy=0.0)
         if args.retune:

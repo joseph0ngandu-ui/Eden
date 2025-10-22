@@ -45,7 +45,7 @@ def check_python():
         version_parts = version.split()[1].split('.')
         major, minor = int(version_parts[0]), int(version_parts[1])
         if major < 3 or (major == 3 and minor < 8):
-        print(f"{Colors.RED}Python 3.8+ required, found {version}{Colors.END}")
+            print(f"{Colors.RED}Python 3.8+ required, found {version}{Colors.END}")
             return False
         return True
     except Exception as e:

@@ -6,7 +6,6 @@ full-screen UI, and top-down multi-timeframe analysis.
 """
 
 import sys
-import os
 from pathlib import Path
 
 # Add project root to Python path
@@ -24,6 +23,7 @@ def _bootstrap_dependencies() -> bool:
         import numpy  # type: ignore
         import pandas  # type: ignore
         import requests  # type: ignore
+
         return True
     except Exception:
         # Attempt to self-heal using bootstrapper
@@ -35,10 +35,15 @@ def _bootstrap_dependencies() -> bool:
             if bootstrap_script.exists():
                 print("Missing dependencies detected. Launching installer...")
                 import subprocess
-                result = subprocess.run([sys.executable, str(bootstrap_script)], shell=False)
+
+                result = subprocess.run(
+                    [sys.executable, str(bootstrap_script)], shell=False
+                )
                 return result.returncode == 0
             else:
-                print("Missing dependencies and no installer available. Please run: pip install -r requirements.txt")
+                print(
+                    "Missing dependencies and no installer available. Please run: pip install -r requirements.txt"
+                )
                 return False
         # Use bootstrap module
         try:
@@ -55,6 +60,7 @@ def main():
         # Configure logging first
         try:
             from eden.logging_conf import configure_logging
+
             configure_logging("INFO")
         except Exception:
             pass
@@ -65,6 +71,7 @@ def main():
                 # Last-chance fallback to CLI
                 print("Continuing in CLI mode due to unresolved GUI dependencies...")
                 from eden.cli import main as cli_main
+
                 cli_main()
                 return
 
@@ -72,12 +79,14 @@ def main():
         if len(sys.argv) > 1:
             # CLI mode
             from eden.cli import main as cli_main
+
             cli_main()
         else:
             # GUI mode - show splash screen then main UI
             try:
                 # Prefer the modern PySide6 UI; it manages its own splash/app lifecycle
                 from run_ui import run_main_ui
+
                 run_main_ui(None)
 
             except ImportError as e:
@@ -85,6 +94,7 @@ def main():
                 print(f"GUI dependencies not available: {e}")
                 print("Running in CLI mode...")
                 from eden.cli import main as cli_main
+
                 cli_main()
 
     except KeyboardInterrupt:

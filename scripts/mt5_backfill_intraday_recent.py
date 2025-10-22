@@ -30,16 +30,17 @@ for tf in intraday_timeframes:
             continue
         layered_file = Path("data/layered") / f"{symbol.upper()}_{tf.upper()}.csv"
         print(f"[OK] {symbol} {tf}: {len(df)} rows merged -> {layered_file}")
-        
+
         # Show date range for verification
         if not df.empty:
-            first_date = df.index[0].strftime('%Y-%m-%d %H:%M')
-            last_date = df.index[-1].strftime('%Y-%m-%d %H:%M')
+            first_date = df.index[0].strftime("%Y-%m-%d %H:%M")
+            last_date = df.index[-1].strftime("%Y-%m-%d %H:%M")
             print(f"    Data range: {first_date} to {last_date}")
-            
+
     except Exception as e:
         print(f"[ERROR] {symbol} {tf}: {e}")
         import traceback
+
         print(f"    Details: {traceback.format_exc()}")
 
 print("\nIntraday backfill complete!")

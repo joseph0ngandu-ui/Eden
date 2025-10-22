@@ -1,8 +1,6 @@
 from __future__ import annotations
-import json
 from dataclasses import dataclass
 from typing import List
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -29,15 +27,22 @@ class Analyzer:
     def metrics(self) -> dict:
         eq = self.equity_curve()
         if eq.empty:
-            return {"net_pnl": 0.0, "sharpe": 0.0, "max_dd": 0.0, "trades": 0, "profit_factor": 0.0, "max_consec_losses": 0}
+            return {
+                "net_pnl": 0.0,
+                "sharpe": 0.0,
+                "max_dd": 0.0,
+                "trades": 0,
+                "profit_factor": 0.0,
+                "max_consec_losses": 0,
+            }
         returns = eq.pct_change().fillna(0.0)
         net_pnl = float(eq.iloc[-1] - eq.iloc[0])
         sh = float(sharpe(returns.values))
         dd, dd_idx = max_drawdown(eq.values)
         # Trade series stats
         tdf = pd.DataFrame([t.__dict__ for t in self.trades])
-        pf = float(profit_factor(tdf['pnl'].values)) if not tdf.empty else 0.0
-        mcl = int(max_consecutive_losses(tdf['pnl'].values)) if not tdf.empty else 0
+        pf = float(profit_factor(tdf["pnl"].values)) if not tdf.empty else 0.0
+        mcl = int(max_consecutive_losses(tdf["pnl"].values)) if not tdf.empty else 0
         out = {
             "net_pnl": net_pnl,
             "sharpe": sh,

@@ -16,23 +16,24 @@ class RuleBasedParamStrategy(StrategyBase):
 
     def on_data(self, df: pd.DataFrame) -> pd.DataFrame:
         # Generic rule templates with parameters
-        rsi_col = df.get('rsi_14')
-        ema_fast = df.get('ema_50')
-        ema_slow = df.get('ema_200')
-        macd_hist = df.get('macd_hist')
+        rsi_col = df.get("rsi_14")
+        ema_fast = df.get("ema_50")
+        ema_slow = df.get("ema_200")
+        macd_hist = df.get("macd_hist")
 
         import pandas as pd
+
         signals = []
-        th_buy_rsi = float(self.params.get('buy_rsi_max', 35))
-        th_sell_rsi = float(self.params.get('sell_rsi_min', 65))
-        use_cross = bool(self.params.get('use_ema_cross', True))
-        macd_bias = float(self.params.get('macd_hist_bias', 0.0))
+        th_buy_rsi = float(self.params.get("buy_rsi_max", 35))
+        th_sell_rsi = float(self.params.get("sell_rsi_min", 65))
+        use_cross = bool(self.params.get("use_ema_cross", True))
+        macd_bias = float(self.params.get("macd_hist_bias", 0.0))
 
         # Conditions
         if rsi_col is None:
-            rsi_col = df['close'].rolling(14).apply(lambda x: 50, raw=False)
-        cond_buy = (rsi_col < th_buy_rsi)
-        cond_sell = (rsi_col > th_sell_rsi)
+            rsi_col = df["close"].rolling(14).apply(lambda x: 50, raw=False)
+        cond_buy = rsi_col < th_buy_rsi
+        cond_sell = rsi_col > th_sell_rsi
         if use_cross and ema_fast is not None and ema_slow is not None:
             cond_buy = cond_buy & (ema_fast > ema_slow)
             cond_sell = cond_sell & (ema_fast < ema_slow)

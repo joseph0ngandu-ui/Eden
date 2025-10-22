@@ -2,6 +2,7 @@
 HTF-ICT Bias Module
 Implements higher timeframe bias calculation with ICT liquidity concepts
 """
+
 from __future__ import annotations
 import numpy as np
 import pandas as pd
@@ -18,26 +19,28 @@ def calculate_ema_slope(series: pd.Series, period: int, lookback: int = 5) -> pd
     return slope
 
 
-def detect_swing_points(df: pd.DataFrame, lookback: int = 10) -> Tuple[pd.Series, pd.Series]:
+def detect_swing_points(
+    df: pd.DataFrame, lookback: int = 10
+) -> Tuple[pd.Series, pd.Series]:
     """
     Detect swing highs and lows
     Returns: (swing_highs, swing_lows) as boolean Series
     """
-    high = df['high']
-    low = df['low']
-    
+    high = df["high"]
+    low = df["low"]
+
     swing_high = pd.Series(False, index=df.index)
     swing_low = pd.Series(False, index=df.index)
-    
+
     for i in range(lookback, len(df) - lookback):
         # Swing high: highest point in window
-        if high.iloc[i] == high.iloc[i-lookback:i+lookback+1].max():
+        if high.iloc[i] == high.iloc[i - lookback : i + lookback + 1].max():
             swing_high.iloc[i] = True
-        
+
         # Swing low: lowest point in window
-        if low.iloc[i] == low.iloc[i-lookback:i+lookback+1].min():
+        if low.iloc[i] == low.iloc[i - lookback : i + lookback + 1].min():
             swing_low.iloc[i] = True
-    
+
     return swing_high, swing_low
 
 
@@ -47,22 +50,26 @@ def detect_break_of_structure(df: pd.DataFrame, swing_lookback: int = 20) -> pd.
     Returns: Series with values {1: bullish BOS, -1: bearish BOS, 0: no BOS}
     """
     swing_highs, swing_lows = detect_swing_points(df, lookback=5)
-    
+
     bos = pd.Series(0, index=df.index, dtype=int)
-    
+
     # Track recent swing points
-    recent_high = df['high'].rolling(swing_lookback).max()
-    recent_low = df['low'].rolling(swing_lookback).min()
-    
+    recent_high = df["high"].rolling(swing_lookback).max()
+    recent_low = df["low"].rolling(swing_lookback).min()
+
     # Bullish BOS: price breaks above recent swing high
-    bullish_break = (df['close'] > recent_high.shift(1)) & (df['close'].shift(1) <= recent_high.shift(2))
-    
+    bullish_break = (df["close"] > recent_high.shift(1)) & (
+        df["close"].shift(1) <= recent_high.shift(2)
+    )
+
     # Bearish BOS: price breaks below recent swing low
-    bearish_break = (df['close'] < recent_low.shift(1)) & (df['close'].shift(1) >= recent_low.shift(2))
-    
+    bearish_break = (df["close"] < recent_low.shift(1)) & (
+        df["close"].shift(1) >= recent_low.shift(2)
+    )
+
     bos[bullish_break] = 1
     bos[bearish_break] = -1
-    
+
     return bos
 
 
@@ -72,110 +79,118 @@ def detect_fair_value_gaps(df: pd.DataFrame, min_gap_pips: float = 5.0) -> pd.Da
     Returns DataFrame with fvg_bull, fvg_bear columns
     """
     result = pd.DataFrame(index=df.index)
-    result['fvg_bull'] = 0
-    result['fvg_bear'] = 0
-    result['fvg_bull_size'] = 0.0
-    result['fvg_bear_size'] = 0.0
-    
+    result["fvg_bull"] = 0
+    result["fvg_bear"] = 0
+    result["fvg_bull_size"] = 0.0
+    result["fvg_bear_size"] = 0.0
+
     # Bullish FVG: gap between candle[i-2].low and candle[i].high, with candle[i-1] not filling it
     for i in range(2, len(df)):
-        gap_up = df['low'].iloc[i] - df['high'].iloc[i-2]
-        gap_down = df['low'].iloc[i-2] - df['high'].iloc[i]
-        
+        gap_up = df["low"].iloc[i] - df["high"].iloc[i - 2]
+        gap_down = df["low"].iloc[i - 2] - df["high"].iloc[i]
+
         # Bullish FVG
         if gap_up > min_gap_pips:
             # Check if middle candle doesn't fill the gap
-            if df['low'].iloc[i-1] > df['high'].iloc[i-2]:
-                result['fvg_bull'].iloc[i] = 1
-                result['fvg_bull_size'].iloc[i] = gap_up
-        
+            if df["low"].iloc[i - 1] > df["high"].iloc[i - 2]:
+                result["fvg_bull"].iloc[i] = 1
+                result["fvg_bull_size"].iloc[i] = gap_up
+
         # Bearish FVG
         if gap_down > min_gap_pips:
-            if df['high'].iloc[i-1] < df['low'].iloc[i-2]:
-                result['fvg_bear'].iloc[i] = 1
-                result['fvg_bear_size'].iloc[i] = gap_down
-    
+            if df["high"].iloc[i - 1] < df["low"].iloc[i - 2]:
+                result["fvg_bear"].iloc[i] = 1
+                result["fvg_bear_size"].iloc[i] = gap_down
+
     return result
 
 
-def detect_order_blocks(df: pd.DataFrame, volume_threshold: float = 1.5) -> pd.DataFrame:
+def detect_order_blocks(
+    df: pd.DataFrame, volume_threshold: float = 1.5
+) -> pd.DataFrame:
     """
     Detect Order Blocks (OB) - 3-candle engulfing patterns with volume spike
     Returns DataFrame with ob_bull, ob_bear columns
     """
     result = pd.DataFrame(index=df.index)
-    result['ob_bull'] = 0
-    result['ob_bear'] = 0
-    result['ob_bull_price'] = np.nan
-    result['ob_bear_price'] = np.nan
-    
+    result["ob_bull"] = 0
+    result["ob_bear"] = 0
+    result["ob_bull_price"] = np.nan
+    result["ob_bear_price"] = np.nan
+
     # Calculate average volume for threshold
-    if 'volume' in df.columns:
-        avg_volume = df['volume'].rolling(20).mean()
+    if "volume" in df.columns:
+        avg_volume = df["volume"].rolling(20).mean()
     else:
         # If no volume, use True Range as proxy
         avg_volume = pd.Series(1.0, index=df.index)
         volume_threshold = 1.0
-    
+
     for i in range(3, len(df)):
-        current_vol = df['volume'].iloc[i] if 'volume' in df.columns else 1.0
-        
+        current_vol = df["volume"].iloc[i] if "volume" in df.columns else 1.0
+
         # Bullish OB: strong bullish candle with volume spike
-        body_size = df['close'].iloc[i] - df['open'].iloc[i]
-        if (body_size > 0 and 
-            df['close'].iloc[i] > df['high'].iloc[i-1] and
-            current_vol > avg_volume.iloc[i] * volume_threshold):
-            result['ob_bull'].iloc[i] = 1
-            result['ob_bull_price'].iloc[i] = df['low'].iloc[i]
-        
+        body_size = df["close"].iloc[i] - df["open"].iloc[i]
+        if (
+            body_size > 0
+            and df["close"].iloc[i] > df["high"].iloc[i - 1]
+            and current_vol > avg_volume.iloc[i] * volume_threshold
+        ):
+            result["ob_bull"].iloc[i] = 1
+            result["ob_bull_price"].iloc[i] = df["low"].iloc[i]
+
         # Bearish OB: strong bearish candle with volume spike
-        body_size = df['open'].iloc[i] - df['close'].iloc[i]
-        if (body_size > 0 and 
-            df['close'].iloc[i] < df['low'].iloc[i-1] and
-            current_vol > avg_volume.iloc[i] * volume_threshold):
-            result['ob_bear'].iloc[i] = 1
-            result['ob_bear_price'].iloc[i] = df['high'].iloc[i]
-    
+        body_size = df["open"].iloc[i] - df["close"].iloc[i]
+        if (
+            body_size > 0
+            and df["close"].iloc[i] < df["low"].iloc[i - 1]
+            and current_vol > avg_volume.iloc[i] * volume_threshold
+        ):
+            result["ob_bear"].iloc[i] = 1
+            result["ob_bear_price"].iloc[i] = df["high"].iloc[i]
+
     return result
 
 
-def detect_liquidity_sweeps(df: pd.DataFrame, atr_multiplier: float = 1.5) -> pd.DataFrame:
+def detect_liquidity_sweeps(
+    df: pd.DataFrame, atr_multiplier: float = 1.5
+) -> pd.DataFrame:
     """
     Detect liquidity sweeps - long wicks that reverse quickly
     Returns DataFrame with sweep_high, sweep_low columns
     """
     result = pd.DataFrame(index=df.index)
-    result['sweep_high'] = 0
-    result['sweep_low'] = 0
-    result['sweep_high_size'] = 0.0
-    result['sweep_low_size'] = 0.0
-    
+    result["sweep_high"] = 0
+    result["sweep_low"] = 0
+    result["sweep_high_size"] = 0.0
+    result["sweep_low_size"] = 0.0
+
     # Calculate ATR
-    high_low = df['high'] - df['low']
-    high_close = abs(df['high'] - df['close'].shift(1))
-    low_close = abs(df['low'] - df['close'].shift(1))
+    high_low = df["high"] - df["low"]
+    high_close = abs(df["high"] - df["close"].shift(1))
+    low_close = abs(df["low"] - df["close"].shift(1))
     true_range = pd.concat([high_low, high_close, low_close], axis=1).max(axis=1)
     atr = true_range.rolling(14).mean()
-    
+
     for i in range(1, len(df)):
-        upper_wick = df['high'].iloc[i] - max(df['open'].iloc[i], df['close'].iloc[i])
-        lower_wick = min(df['open'].iloc[i], df['close'].iloc[i]) - df['low'].iloc[i]
-        
+        upper_wick = df["high"].iloc[i] - max(df["open"].iloc[i], df["close"].iloc[i])
+        lower_wick = min(df["open"].iloc[i], df["close"].iloc[i]) - df["low"].iloc[i]
+
         # High liquidity sweep
         if upper_wick > atr.iloc[i] * atr_multiplier:
             # Check if price closed back inside prior body
-            prior_high = max(df['open'].iloc[i-1], df['close'].iloc[i-1])
-            if df['close'].iloc[i] < prior_high:
-                result['sweep_high'].iloc[i] = 1
-                result['sweep_high_size'].iloc[i] = upper_wick
-        
+            prior_high = max(df["open"].iloc[i - 1], df["close"].iloc[i - 1])
+            if df["close"].iloc[i] < prior_high:
+                result["sweep_high"].iloc[i] = 1
+                result["sweep_high_size"].iloc[i] = upper_wick
+
         # Low liquidity sweep
         if lower_wick > atr.iloc[i] * atr_multiplier:
-            prior_low = min(df['open'].iloc[i-1], df['close'].iloc[i-1])
-            if df['close'].iloc[i] > prior_low:
-                result['sweep_low'].iloc[i] = 1
-                result['sweep_low_size'].iloc[i] = lower_wick
-    
+            prior_low = min(df["open"].iloc[i - 1], df["close"].iloc[i - 1])
+            if df["close"].iloc[i] > prior_low:
+                result["sweep_low"].iloc[i] = 1
+                result["sweep_low_size"].iloc[i] = lower_wick
+
     return result
 
 
@@ -186,7 +201,7 @@ def calculate_htf_bias(
     df_1d: Optional[pd.DataFrame] = None,
     ema_weight: float = 0.4,
     bos_weight: float = 0.3,
-    liquidity_weight: float = 0.3
+    liquidity_weight: float = 0.3,
 ) -> pd.DataFrame:
     """
     Calculate HTF bias combining trend, structure, and liquidity
@@ -194,77 +209,83 @@ def calculate_htf_bias(
     """
     # Calculate components for each timeframe
     htf_scores = []
-    
-    for df_htf, name in [(df_1h, '1H'), (df_4h, '4H')]:
+
+    for df_htf, name in [(df_1h, "1H"), (df_4h, "4H")]:
         if df_htf is None or df_htf.empty:
             continue
-        
+
         # Trend component (EMA slopes)
-        ema50_slope = calculate_ema_slope(df_htf['close'], 50, lookback=3)
-        ema200_slope = calculate_ema_slope(df_htf['close'], 200, lookback=5)
+        ema50_slope = calculate_ema_slope(df_htf["close"], 50, lookback=3)
+        ema200_slope = calculate_ema_slope(df_htf["close"], 200, lookback=5)
         trend_score = np.sign(ema50_slope + ema200_slope * 0.5)
-        
+
         # Structure component (BOS)
         bos = detect_break_of_structure(df_htf)
         bos_score = bos.rolling(5).sum() / 5  # Average recent BOS
-        
+
         # Liquidity component
         sweeps = detect_liquidity_sweeps(df_htf)
-        liquidity_score = (sweeps['sweep_low'] - sweeps['sweep_high']).rolling(5).sum() / 5
-        
+        liquidity_score = (sweeps["sweep_low"] - sweeps["sweep_high"]).rolling(
+            5
+        ).sum() / 5
+
         # Weighted combination
         htf_score = (
-            trend_score * ema_weight +
-            bos_score * bos_weight +
-            liquidity_score * liquidity_weight
+            trend_score * ema_weight
+            + bos_score * bos_weight
+            + liquidity_score * liquidity_weight
         )
-        
+
         htf_scores.append(htf_score)
-    
+
     # Average across timeframes
     if htf_scores:
         combined_score = sum(htf_scores) / len(htf_scores)
     else:
-        combined_score = pd.Series(0, index=df_15m.index if df_15m is not None else df_1h.index)
-    
+        combined_score = pd.Series(
+            0, index=df_15m.index if df_15m is not None else df_1h.index
+        )
+
     # Convert to discrete bias
     result = pd.DataFrame(index=combined_score.index)
-    result['HTF_BIAS'] = 0
-    result.loc[combined_score > 0.2, 'HTF_BIAS'] = 1
-    result.loc[combined_score < -0.2, 'HTF_BIAS'] = -1
-    result['HTF_BIAS_STRENGTH'] = abs(combined_score)
-    
+    result["HTF_BIAS"] = 0
+    result.loc[combined_score > 0.2, "HTF_BIAS"] = 1
+    result.loc[combined_score < -0.2, "HTF_BIAS"] = -1
+    result["HTF_BIAS_STRENGTH"] = abs(combined_score)
+
     return result
 
 
-def compute_micro_features(df: pd.DataFrame, atr_multiplier: float = 1.2) -> pd.DataFrame:
+def compute_micro_features(
+    df: pd.DataFrame, atr_multiplier: float = 1.2
+) -> pd.DataFrame:
     """
     Compute micro-timeframe features (M1/M5)
     Returns DataFrame with micro FVG, OB, and sweep features
     """
     result = pd.DataFrame(index=df.index)
-    
+
     # Micro FVGs
     fvg = detect_fair_value_gaps(df, min_gap_pips=2.0)
     result = pd.concat([result, fvg], axis=1)
-    
+
     # Micro Order Blocks
     ob = detect_order_blocks(df, volume_threshold=1.3)
     result = pd.concat([result, ob], axis=1)
-    
+
     # Micro Liquidity Sweeps
     sweeps = detect_liquidity_sweeps(df, atr_multiplier=atr_multiplier)
     result = pd.concat([result, sweeps], axis=1)
-    
+
     # Micro imbalance (consecutive candles in same direction)
-    result['micro_imbalance_bull'] = (
-        (df['close'] > df['open']).astype(int).rolling(3).sum() >= 2
+    result["micro_imbalance_bull"] = (
+        (df["close"] > df["open"]).astype(int).rolling(3).sum() >= 2
     ).astype(int)
-    
-    result['micro_imbalance_bear'] = (
-        (df['close'] < df['open']).astype(int).rolling(3).sum() >= 2
+
+    result["micro_imbalance_bear"] = (
+        (df["close"] < df["open"]).astype(int).rolling(3).sum() >= 2
     ).astype(int)
-    
+
     return result
 
 
@@ -274,42 +295,40 @@ def detect_liquidity_features(df: pd.DataFrame) -> Dict[str, pd.Series]:
     Returns dict of liquidity-related features
     """
     features = {}
-    
+
     # FVG features
     fvg = detect_fair_value_gaps(df)
-    features['fvg_bull'] = fvg['fvg_bull']
-    features['fvg_bear'] = fvg['fvg_bear']
-    features['fvg_bull_size'] = fvg['fvg_bull_size']
-    features['fvg_bear_size'] = fvg['fvg_bear_size']
-    
+    features["fvg_bull"] = fvg["fvg_bull"]
+    features["fvg_bear"] = fvg["fvg_bear"]
+    features["fvg_bull_size"] = fvg["fvg_bull_size"]
+    features["fvg_bear_size"] = fvg["fvg_bear_size"]
+
     # Order Block features
     ob = detect_order_blocks(df)
-    features['ob_bull'] = ob['ob_bull']
-    features['ob_bear'] = ob['ob_bear']
-    
+    features["ob_bull"] = ob["ob_bull"]
+    features["ob_bear"] = ob["ob_bear"]
+
     # Liquidity Sweep features
     sweeps = detect_liquidity_sweeps(df)
-    features['sweep_high'] = sweeps['sweep_high']
-    features['sweep_low'] = sweeps['sweep_low']
-    
+    features["sweep_high"] = sweeps["sweep_high"]
+    features["sweep_low"] = sweeps["sweep_low"]
+
     # Structure features
-    features['bos'] = detect_break_of_structure(df)
-    
+    features["bos"] = detect_break_of_structure(df)
+
     return features
 
 
 def align_htf_to_execution_tf(
-    df_exec: pd.DataFrame,
-    htf_bias: pd.DataFrame,
-    method: str = 'ffill'
+    df_exec: pd.DataFrame, htf_bias: pd.DataFrame, method: str = "ffill"
 ) -> pd.DataFrame:
     """
     Align HTF bias features to execution timeframe index
     """
     # Reindex HTF features to match execution TF
     aligned = htf_bias.reindex(df_exec.index, method=method)
-    
+
     # Fill any remaining NaNs
     aligned = aligned.fillna(0)
-    
+
     return aligned

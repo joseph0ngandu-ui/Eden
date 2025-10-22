@@ -3,13 +3,14 @@
 # Used by backtests, trading, and other system components unless overridden
 
 extends: ./profiles/current.yaml
-profile: rapid-optimized
+profile: conservative-real-data
 
 # Override settings can be added here if needed for global defaults
 # The extends directive will load the base configuration first
 
 # Version and metadata
-config_version: "1.0.0"
-default_profile: "rapid-optimized"
+config_version: "1.1.0"
+default_profile: "conservative-real-data"
 created_at: "2025-10-22T17:02:00Z"
-description: "Repository default configuration using rapid-optimized profile"
+updated_at: "2025-10-22T17:18:00Z"
+description: "Repository default configuration using conservative real-data validated profile"

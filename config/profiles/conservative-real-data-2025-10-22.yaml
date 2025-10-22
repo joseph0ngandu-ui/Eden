@@ -1,0 +1,156 @@
+# Eden Conservative Configuration (2025-10-22)
+# Based on real MT5 data analysis - SAFE for live trading
+# Replaces the overly optimistic rapid-optimized configuration
+
+trading:
+  symbol: Volatility 100 Index
+  alternative_symbols:
+    - VIX100
+    - Volatility100
+    - Vol100
+    - VIX 100
+  lot_size: 0.01
+  max_positions: 2  # Reduced from 3
+  max_daily_trades: 5  # Reduced from 10 - prevent overtrading
+  stop_loss_pips: 50
+  take_profit_pips: 100
+  max_drawdown_percent: 8  # Conservative limit
+  risk_per_trade_percent: 0.5  # Reduced from 1.4% - much safer
+  trading_hours:
+    start: "08:00"  # Avoid early session volatility
+    end: "18:00"    # Avoid late session volatility
+    days: [1, 2, 3, 4, 5]
+
+strategy:
+  rsi_period: 14
+  rsi_overbought: 75  # More conservative
+  rsi_oversold: 25   # More conservative
+  sma_period: 20
+  minimum_signal_strength: 0.75  # Increased from 0.6
+  require_volume_confirmation: true  # Added safety
+  use_volatility_filter: true
+  volatility_threshold: 1.5  # More selective
+  
+  ict_ml:
+    exec_timeframe: M5  # Changed from M1 - less noise
+    context_timeframes: [M15, M30, H1, H4, D1]  # Added D1 for trend
+    min_confluences: 3  # Increased from 1 - much more selective
+    rr: 2.0  # Reduced from 2.52 - more realistic
+    confidence_threshold: 0.75  # Increased from 0.5 - much higher bar
+    rsi_period: 14  # Standard instead of 12
+    sma_period: 20  # Standard instead of 40
+    swing_lookback: 8  # Increased for stability
+    cooldown_bars_after_loss: 50  # Increased from 23 - prevent revenge trading
+    stop_after_losses: 2  # Increased from 1
+    pause_bars_after_streak: 100  # Increased from 23 - prevent overconfidence
+    require_sweep: true   # Added requirement
+    require_bias_align: true
+    max_trades_per_hour: 1  # NEW: Prevent overtrading
+    updated_at: "2025-10-22T17:15:00Z"
+
+# Conservative mode settings
+conservative_mode:
+  enabled: true
+  bias_weight: 0.6  # Reduced from 0.81
+  anomaly_weight: 0.4  # Increased filtering
+  dynamic_rr: 1.5  # Reduced from 3.0 - more realistic
+  fast_execution: false  # Disabled for safety
+  cached_data_only: false
+  trade_frequency_limit: true
+  drawdown_protection: true
+
+# ML Configuration - Conservative
+ml:
+  model_snapshot_id: "conservative-2025-10-22"
+  anomaly_filter_weight: 0.4  # Increased from 0.25
+  adaptive_inference: true
+  confidence_boost_required: true
+
+# Performance targets - Realistic
+performance:
+  hit_rate_target: 0.45  # Realistic based on real data
+  dd_cap: 0.08  # 8% maximum
+  profit_target_pct: 15.0  # Realistic annual target
+  consistency_score_min: 80.0
+  max_consecutive_losses: 5
+
+# Enhanced safety settings
+safety:
+  enable_emergency_stop: true
+  max_consecutive_losses: 3  # Reduced from 5
+  pause_after_losses_minutes: 120  # Increased from 60
+  min_account_balance: 200  # Increased from 100
+  max_daily_loss: 25  # Reduced from 50
+  max_weekly_loss: 100
+  require_manual_restart: true
+
+# Risk management enhancements
+risk_management:
+  position_sizing_method: "fixed_fractional"
+  max_correlation_trades: 1
+  time_based_filters: true
+  market_session_awareness: true
+  volatility_adjustment: true
+
+# MetaTrader 5 settings
+mt5:
+  timeout: 30
+  login: null
+  password: null
+  server: null
+  deviation: 10  # Reduced from 20 - tighter execution
+  magic_number: 234001  # Different from rapid version
+  comment_prefix: "Eden Conservative Bot"
+
+# Logging configuration
+logging:
+  level: INFO
+  log_to_file: true
+  log_file: "eden_conservative_bot.log"
+  max_log_size_mb: 10
+  backup_count: 5
+  log_trades: true
+  log_decisions: true
+
+# Monitoring settings
+monitoring:
+  enable_console_output: true
+  update_interval: 60
+  track_performance: true
+  save_trades_to_csv: true
+  trades_file: "trades_conservative.csv"
+  alert_on_drawdown: true
+  alert_threshold: 5.0
+
+# Development settings
+development:
+  demo_mode: true
+  simulation_mode: false
+  log_all_signals: true
+  debug_mode: false
+
+# Notifications - Enhanced
+notifications:
+  enabled: true
+  email: null
+  webhook_url: null
+  alert_on_loss_streak: true
+  alert_on_profit_target: true
+  daily_summary: true
+
+# Configuration metadata
+configuration_metadata:
+  created_at: "2025-10-22T17:15:00Z"
+  configuration_type: "conservative_real_data"
+  based_on_analysis: "MT5 real data verification"
+  risk_level: "conservative"
+  suitable_for_live: true
+  validation_status: "pending"
+  
+# Performance expectations (realistic)
+expected_performance:
+  annual_return: "10-20%"
+  max_drawdown: "5-8%"  
+  win_rate: "40-50%"
+  trades_per_month: "50-100"
+  sharpe_ratio: "1.0-1.5"

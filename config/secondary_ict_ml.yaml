@@ -1,0 +1,25 @@
+metadata:
+  name: secondary_ict_ml
+  description: Optimized M1 ICT+ML configuration from 2025-10-22 optimization runs
+  created_at: '2025-10-22T15:08:35Z'
+strategy:
+  ict_ml:
+    exec_timeframe: M1
+    context_timeframes:
+    - M5
+    - M15
+    - M30
+    - H1
+    - H4
+    min_confluences: 6
+    rr: 2.5
+    confidence_threshold: 0.8
+    rsi_period: 12
+    sma_period: 32
+    swing_lookback: 7
+    cooldown_bars_after_loss: 6
+    stop_after_losses: 1
+    pause_bars_after_streak: 59
+    require_sweep: false
+    require_bias_align: true
+    updated_at: '2025-10-22T15:08:35Z'

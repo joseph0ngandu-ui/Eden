@@ -33,3 +33,34 @@ Thumbs.db
 # Executable files (too large for GitHub)
 *.exe
 *.zip
+
+# Data and cache directories
+data/
+cache/
+outputs/
+logs/
+models/
+secrets/
+
+# Model artifacts
+*.ckpt
+*.onnx
+*.pth
+*.h5
+*.pkl
+*.joblib
+
+# Environment and secrets
+.env
+.env.local
+.env.production
+api_keys.encrypted
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

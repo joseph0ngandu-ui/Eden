@@ -6,6 +6,9 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 **Python Version:** 3.11+ required
 
+**Supported Trading Symbols:** VIX75, VIX100, VIX50, VIX25, StepIndex, Boom1000, Crash1000, Boom500, Crash500, XAUUSD
+- Note: VIX100, StepIndex, and Boom1000 show negative performance in recent optimizations; focus on VIX75, Crash1000, XAUUSD
+
 **Installation:**
 ```bash
 # Install core dependencies
@@ -41,14 +44,26 @@ flake8 worker/python/eden --count --select=E9,F63,F7,F82 --show-source --statist
 
 ### Tests
 ```bash
+# Set PYTHONPATH first (required for all tests)
+$env:PYTHONPATH = "$(Get-Location)\\worker\\python"
+
 # Run all tests
-$env:PYTHONPATH = "$(Get-Location)\\worker\\python"; python -m pytest worker/python/eden/tests/ -q
+python -m pytest worker/python/eden/tests/ -q
+
+# Run with verbose output
+python -m pytest worker/python/eden/tests/ -v
 
 # Run single test file
 python -m pytest worker/python/eden/tests/test_data_loader.py -q
 
 # Run specific test
 python -m pytest worker/python/eden/tests/test_backtest_engine.py::test_backtest_engine_basic_flow -q
+
+# Run tests with coverage
+python -m pytest worker/python/eden/tests/ --cov=eden --cov-report=html
+
+# Run only failed tests
+python -m pytest --lf
 ```
 
 ### Run Applications
@@ -124,6 +139,9 @@ python scripts/run_backtests.py
 
 # Show all available options
 .\eden.bat --help
+
+# Quick backtest with UI
+$env:PYTHONPATH = "$(Get-Location)\\worker\\python"; python -c "from eden.ui_components import main; main()"
 ```
 
 ## Architecture Overview
@@ -241,3 +259,16 @@ strategy: ensemble
 **Dynamic Risk Sizing:**
 - Position size = (equity * risk_per_order_fraction) / stop_distance * confidence * growth_mult
 - Parameters in BacktestEngine: `per_order_risk_fraction=0.02`, `min_trade_value=0.50`, `growth_factor=0.5`
+
+## Quick Reference
+
+**Key Documentation Files:**
+- `QUICKSTART.md`: Optimized strategy configuration (+776% average return)
+- `OPTIMIZATION_SUMMARY.md`: Detailed performance analysis and optimal configurations
+- `MULTI_INSTRUMENT_SYSTEM.md`: Multi-asset trading system overview
+- `SETUP_GUIDE.md`: Detailed installation and setup instructions
+
+**Important Notes:**
+- Always verify strategies on demo accounts before live trading
+- The optimal Bollinger Bands strategy (Period=18, StdDev=1.5, RSI=30) achieved +8,175% improvement
+- Focus on high-performing symbols: VIX75, Crash1000, XAUUSD, Crash500, Boom500

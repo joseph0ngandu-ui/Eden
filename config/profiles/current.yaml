@@ -1,7 +1,0 @@
-# Current Eden Configuration Profile Pointer
-# This file points to the currently active configuration profile
-# Change the extends path to switch to a different profile
-
-extends: ./conservative-real-data-2025-10-22.yaml
-name: conservative-real-data-current
-description: Current conservative configuration based on real MT5 data analysis

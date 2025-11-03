@@ -26,6 +26,7 @@ from trade_journal import TradeJournal
 from health_monitor import HealthMonitor, RiskManager, HealthStatus, RiskLevel
 from volatility_adapter import VolatilityAdapter
 from risk_ladder import RiskLadder, PositionSizer, RiskTier
+from exit_logic import ExitManager, ExitConfig  # v1.2: Advanced exit logic
 
 logging.basicConfig(
     level=logging.INFO,
@@ -123,6 +124,20 @@ class TradingBot:
         
         # Volatility adaptation
         self.volatility_adapter = VolatilityAdapter(base_hold_bars=self.HOLD_BARS)
+        
+        # v1.2: Advanced exit logic
+        exit_config = ExitConfig(
+            min_hold_bars=3,
+            max_hold_bars=4,
+            breakeven_move_ratio=0.8,
+            min_reward_ratio=1.5,
+            max_reward_ratio=2.0,
+            atr_period=14,
+            trailing_stop_enable=True,
+            use_momentum_exit=True
+        )
+        self.exit_manager = ExitManager(config=exit_config)
+        logger.info("Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP")
         
         # Growth mode & Risk Ladder
         growth_config = self.config.get_growth_mode_config()

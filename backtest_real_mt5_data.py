@@ -13,8 +13,15 @@ import json
 class RealMT5Backtest:
     """Live MT5 data backtest"""
     
-    SYMBOLS = ['VIX75', 'VIX100', 'VIX50', 'VIX25', 'StepIndex', 
-               'Boom1000', 'Crash1000', 'Boom500', 'Crash500', 'XAUUSD']
+    # 6 profitable trading symbols (correct full names from MT5)
+    SYMBOLS = [
+        'Volatility 75 Index',
+        'Boom 500 Index',
+        'Crash 500 Index',
+        'Volatility 100 Index',
+        'Boom 1000 Index',
+        'Step Index'
+    ]
     
     def __init__(self):
         self.initial_capital = 100
@@ -26,9 +33,9 @@ class RealMT5Backtest:
         """Connect to MT5"""
         print("Connecting to MT5...", end=" ")
         if not mt5.initialize():
-            print(f"✗ Failed: {mt5.last_error()}")
+            print(f"[FAILED] {mt5.last_error()}")
             return False
-        print("✓ Connected")
+        print("[OK]")
         return True
     
     def get_risk_tier(self, balance):
@@ -77,7 +84,7 @@ class RealMT5Backtest:
     def simulate_trades(self, df, signals, risk_tier):
         """Simulate trades from signals"""
         trades = []
-        position_size = self.balance * risk_tier
+        position_size = max(0.01, self.balance * risk_tier)  # Ensure minimum lot size
         
         for sig_idx, sig_type in signals:
             entry_price = df['close'].iloc[sig_idx]
@@ -86,8 +93,11 @@ class RealMT5Backtest:
             exit_idx = min(sig_idx + 5, len(df) - 1)
             exit_price = df['close'].iloc[exit_idx]
             
-            profit_pips = (exit_price - entry_price) * 100
-            profit = (profit_pips / 100) * position_size
+            # Calculate profit: price difference * lot size
+            # For indices: price move = (exit_price - entry_price)
+            # Profit = price_move * position_size_in_lots (simplified)
+            price_change_ratio = (exit_price - entry_price) / entry_price if entry_price > 0 else 0
+            profit = position_size * price_change_ratio
             
             trades.append({
                 'entry': entry_price,
@@ -109,6 +119,24 @@ class RealMT5Backtest:
         print(f"REAL MT5 BACKTEST - Risk Ladder Strategy")
         print(f"Period: {start_date.date()} to {end_date.date()}")
         print(f"{'='*80}\n")
+        
+        # Check data availability
+        print("Checking symbol data availability...")
+        available = []
+        for symbol in self.SYMBOLS:
+            test_data = self.fetch_symbol_data(symbol, start_date, start_date + timedelta(days=7))
+            if test_data is not None and len(test_data) > 0:
+                available.append(symbol)
+                print(f"  [OK] {symbol}: {len(test_data)} bars available")
+            else:
+                print(f"  [XX] {symbol}: No data available")
+        
+        if not available:
+            print("\n[ERROR] No symbols have available data!")
+            mt5.shutdown()
+            return
+        
+        print(f"\nProceeding with {len(available)} symbols: {available}\n")
         
         # Calculate months between start and end dates
         months = []
@@ -141,22 +169,30 @@ class RealMT5Backtest:
             
             month_trades = 0
             symbols_processed = 0
+            available_symbols = []
             
             for symbol in self.SYMBOLS:
                 df = self.fetch_symbol_data(symbol, month_start, month_end)
                 
                 if df is not None and len(df) >= 20:
+                    available_symbols.append(symbol)
                     df, signals = self.calculate_signals(df)
                     if signals:
                         trades = self.simulate_trades(df, signals, risk_tier)
                         month_trades += len(trades)
                         self.all_trades.extend(trades)
                         symbols_processed += 1
+                else:
+                    if df is None:
+                        pass  # No data for this symbol
+                    else:
+                        pass  # Insufficient data (< 20 bars)
             
             month_end_balance = self.balance
             month_profit = month_end_balance - month_start_balance
             month_return = (month_profit / month_start_balance * 100) if month_start_balance > 0 else 0
             
+            print(f"  Symbols with Data: {available_symbols}")
             print(f"  Symbols Processed: {symbols_processed}/{len(self.SYMBOLS)}")
             print(f"  Trades Executed: {month_trades}")
             print(f"  Closing Balance: ${month_end_balance:,.2f}")
@@ -227,7 +263,7 @@ class RealMT5Backtest:
         with open(output_file, 'w') as f:
             json.dump(results, f, indent=2)
         
-        print(f"\n✓ Results saved to {output_file}")
+        print(f"\n[OK] Results saved to {output_file}")
 
 
 def main():

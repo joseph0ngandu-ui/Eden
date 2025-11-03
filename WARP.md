@@ -2,21 +2,20 @@
 
 This file provides guidance to WARP (warp.dev) when working with code in this repository.
 
-## Environment Setup
+## Prerequisites
 
-**Python Version:** 3.11+ (as specified in README.md)
+**Python Version:** 3.11+ required
 
 **Installation:**
 ```bash
-# Install dependencies
-pip install -r requirements.txt
-pip install -r worker/python/requirements.txt
+# Install core dependencies
+python -m pip install -r requirements.txt
 
-# Set Python path (required for imports)
-# Linux/macOS:
-export PYTHONPATH="$(pwd)/worker/python:$PYTHONPATH"
-# Windows PowerShell:
-$env:PYTHONPATH = "$(Get-Location)\\worker\\python;$env:PYTHONPATH"
+# Install Python worker dependencies  
+python -m pip install -r worker/python/requirements.txt
+
+# Set Python path for imports (Windows PowerShell)
+$env:PYTHONPATH = "$(Get-Location)\worker\python;$env:PYTHONPATH"
 ```
 
 ## Common Commands
@@ -129,31 +128,116 @@ python scripts/run_backtests.py
 
 ## Architecture Overview
 
-This repository contains two main trading systems:
+### Two Main Trading Systems
 
-### 1. Standalone VIX 100 Bot (`eden_vix100_bot.py`)
+**1. Standalone VIX 100 Bot** (`eden_vix100_bot.py`)
 - Direct MetaTrader 5 integration for VIX 100 trading
 - Self-contained with RSI/SMA strategies
 - Configuration via `config.yaml`
-- Runs independently of the Eden system
+- Runs independently
 
-### 2. Eden Multi-Asset System (`worker/python/eden/`)
+**2. Eden Multi-Asset System** (`worker/python/eden/`)
 - Comprehensive backtesting engine with ML capabilities
 - Multi-timeframe strategy framework (ICT, momentum, mean reversion, ML-generated)
-- CLI orchestrates: Data loading → Feature engineering → Strategy execution → Analysis
-- Supports paper trading, live trading (via MT5/CCXT), and strategy optimization
-- Results saved to `results/` directory with metrics, trades, and equity curves
+- CLI orchestrates: Data → Features → Strategies → Backtest → Analysis
+- Supports paper trading, live trading (MT5/CCXT), optimization
+- Results saved to `results/` with JSON metrics, CSV trades, equity curve PNGs
 
-**Key Flow:** 
+### Core Data Flow
 ```
-Data Sources (MT5/Yahoo/CSV) → Feature Pipeline → Strategy Registry → Backtest Engine → Analyzer → Results
+Data Sources (MT5/Yahoo/CSV) 
+  → DataLoader (yfinance, MTFDataFetcher) 
+  → Feature Pipeline (build_feature_pipeline, build_mtf_features)
+  → Strategy Registry (ICTStrategy, MomentumStrategy, etc.)
+  → BacktestEngine.run()
+  → Analyzer → Results (JSON, CSV, PNG)
 ```
 
-The CLI (`eden.cli`) coordinates these components, while standalone scripts provide specific workflows like optimized backtesting.
+### Key Modules
 
-## Configuration Notes
+**Data Layer** (`worker/python/eden/data/`)
+- `loader.py`: Multi-provider data fetching (yfinance, MT5, dukascopy, alpha_vantage, stooq) with caching
+- `mtf_fetcher.py`: Multi-timeframe data fetcher for VIX100 via MT5
+- `transforms.py`: Timeframe normalization, OHLCV resampling
 
-- **VIX100 Bot:** Edit `config.yaml` for trading parameters, risk settings, and MT5 connection details
-- **Eden System:** Uses `worker/python/config.yml` as default, supports `--config` override
-- **Sample Data:** Located in `worker/python/eden/data/sample_data/` for offline testing
-- **MetaTrader 5:** Required for live data and trading (both systems support fallback to historical data)
+**Strategy Layer** (`worker/python/eden/strategies/`)
+- `base.py`: StrategyBase interface
+- `ict.py`: ICT strategy with multi-timeframe bias
+- `momentum.py`: Momentum strategy
+- `mean_reversion.py`: Mean reversion strategy
+- `price_action.py`: Price action strategy
+- `ml_generated.py`: ML-generated strategies
+
+**Backtesting** (`worker/python/eden/backtest/`)
+- `engine.py`: Core engine with dynamic risk sizing (equity-based position sizing)
+- `analyzer.py`: Performance metrics (Sharpe, drawdown, win rate, trades)
+- `monte_carlo.py`: Bootstrap simulation
+- `walkforward.py`: Walk-forward optimization
+
+**Risk Management** (`worker/python/eden/risk/`)
+- `risk_manager.py`: Controls, position limits, daily loss limits
+- `position_sizing.py`: Dynamic sizing based on equity and stop distance
+
+**ML Components** (`worker/python/eden/ml/`)
+- `discovery.py`: Strategy discovery via genetic algorithm
+- `selector.py`: Automated strategy selection
+- `lstm_model.py`: LSTM models for prediction
+- `ppo_agent.py`: Reinforcement learning agent
+- `pipeline.py`: ML training pipeline
+
+**CLI & Config**
+- `cli.py`: Command-line interface for all operations
+- `config.py`: Pydantic config model with YAML loading
+- `config_manager.py`: Advanced config management with profiles
+
+## Configuration System
+
+**Profile-based Configuration:**
+- `config/default.yaml` → `config/profiles/current.yaml` → `config/profiles/rapid-optimized-2025-10-22.yaml`
+- Switch profiles by editing `config/profiles/current.yaml`
+
+**Default Settings** (from `config.yml`):
+```yaml
+symbols: [XAUUSD, EURUSD, US30, NAS100, GBPUSD]
+timeframe: 1D
+start: 2018-01-01
+end: 2023-12-31
+starting_cash: 100000
+commission_bps: 1.0
+slippage_bps: 1.0
+strategy: ensemble
+```
+
+**Environment Variables:**
+- `PYTHONPATH`: Required to include `worker/python` directory
+- `EDEN_LOG_LEVEL`: Override logging level
+- `EDEN_LIVE=1`: Enable live trading mode
+- `EDEN_CONFIRM_LIVE=1`: Auto-confirm live trading without prompt
+- `MT5_LOGIN`, `MT5_PASSWORD`, `MT5_SERVER`: MetaTrader 5 credentials
+
+## Data Sources & Caching
+
+**Data Providers** (priority order):
+1. MetaTrader 5 (preferred when available)
+2. Yahoo Finance (yfinance) - most reliable for backtesting
+3. Dukascopy (FX data)
+4. Alpha Vantage (FX pairs with API key)
+5. Stooq (daily indices)
+
+**Caching Strategy:**
+- Raw cache: `data/cache/<symbol>_<timeframe>_<start>_<end>.csv` (by date range)
+- Layered cache: `data/layered/<SYMBOL>_<TIMEFRAME>.csv` (cumulative across runs)
+- Sample data fallback: `worker/python/eden/data/sample_data/`
+
+## Performance Optimization Notes
+
+**Optimal Configuration** (from OPTIMIZATION_SUMMARY.md):
+- Primary: ML Generated M1 (70% allocation) - Expected +15%/month, Sharpe 0.92
+- Secondary: Momentum M5 (30% allocation) - Expected +8%/month, Sharpe 2.08
+- Starting Balance: $15 (micro account optimized)
+- Risk per Trade: 2% of equity with $0.50 minimum
+- Max Drawdown Alert: 25%, Emergency Stop: 50%
+
+**Dynamic Risk Sizing:**
+- Position size = (equity * risk_per_order_fraction) / stop_distance * confidence * growth_mult
+- Parameters in BacktestEngine: `per_order_risk_fraction=0.02`, `min_trade_value=0.50`, `growth_factor=0.5`

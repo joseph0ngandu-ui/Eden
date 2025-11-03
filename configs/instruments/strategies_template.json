@@ -1,0 +1,110 @@
+{
+  "ict_strategies": {
+    "htf_bias": {
+      "method": "HTFBias",
+      "description": "Higher Timeframe Bias - enter with HTF trend aligned",
+      "entry_model": "enter with HTF trend aligned, confirmation candle closes, stop below last swing low/high",
+      "timeframes": ["15M", "1H", "4H"],
+      "filters": ["liquidity_sweep", "FVG"],
+      "killzones": ["07:00-10:00", "13:00-15:00"],
+      "optimize_params": ["stop_distance", "risk_per_trade_pct"],
+      "risk_per_trade_pct": 1.0,
+      "take_profit_ratio": 2.0
+    },
+    "smart_money_liquidity": {
+      "method": "LiquiditySweep",
+      "description": "Smart Money - enter after liquidity sweep",
+      "entry_model": "enter after liquidity sweep confirmed with volume spike, stop beyond sweep extreme",
+      "targets": ["stoploss_hunt", "liquidity_nodes"],
+      "optimize_params": ["risk_per_trade_pct"],
+      "risk_per_trade_pct": 0.8,
+      "volume_multiplier": 1.5
+    },
+    "fvg_entry": {
+      "method": "FVG",
+      "description": "Fair Value Gap - enter on FVG touch",
+      "entry_model": "enter on FVG touch with trend alignment and volume confirmation, stop beyond FVG",
+      "timeframes": ["5M", "15M"],
+      "confirm_filters": ["volume_spike", "trend_align"],
+      "optimize_params": ["risk_per_trade_pct", "FVG_threshold"],
+      "risk_per_trade_pct": 1.2,
+      "FVG_threshold": 0.5
+    },
+    "killzone_scalper": {
+      "method": "KillzoneScalper",
+      "description": "Killzone Scalping - trade during specific hours",
+      "entry_model": "enter during killzone when price aligns with HTF bias, stop below nearest swing",
+      "killzones": ["07:00-09:00", "14:00-15:00"],
+      "optimize_params": ["risk_per_trade_pct"],
+      "risk_per_trade_pct": 0.5,
+      "min_move_requirement": 10
+    }
+  },
+  "gold_strategies": {
+    "breakout_volume": {
+      "method": "BreakoutVolume",
+      "description": "Gold Breakout - volume confirmation",
+      "entry_model": "enter on breakout candle above resistance/below support confirmed by 50% volume spike, ICT trend alignment required",
+      "timeframe": "15m",
+      "stop_loss_at_swing": true,
+      "take_profit_risk_ratio": 2.0,
+      "optimize_params": ["stop_distance", "take_profit_ratio"],
+      "risk_per_trade_pct": 1.0
+    },
+    "false_breakout": {
+      "method": "FalseBreakoutMR",
+      "description": "Gold Mean Reversion - fake breakout entry",
+      "entry_model": "enter on reversal candle closing back within previous day range after fake breakout, ICT FVG confirmation optional",
+      "timeframe": "5m",
+      "stop_loss": 1.5,
+      "take_profit": 1.0,
+      "exit_end_of_day": true,
+      "optimize_params": ["stop_distance", "take_profit_ratio"],
+      "risk_per_trade_pct": 0.8
+    },
+    "ema_trend": {
+      "method": "EMA_Crossover",
+      "description": "Gold Trend - EMA crossover with RSI",
+      "entry_model": "enter long when 20EMA crosses above 50EMA and RSI>50, short when opposite, ICT HTF trend filter applies",
+      "fast_period": 20,
+      "slow_period": 50,
+      "trend_filter": "RSI14",
+      "stop_loss_at_ATR": true,
+      "risk_per_trade_pct": 1.0,
+      "optimize_params": ["fast_period", "slow_period", "risk_per_trade_pct"]
+    },
+    "bollinger_rsi": {
+      "method": "BollingerRSI",
+      "description": "Gold Reversion - Bollinger + RSI divergence",
+      "entry_model": "enter when price touches upper/lower Bollinger and RSI divergence confirmed, ICT FVG trend alignment optional",
+      "BB_period": 20,
+      "BB_std": 2,
+      "RSI_period": 14,
+      "divergence_filter": true,
+      "stop_loss_at_band": true,
+      "optimize_params": ["BB_period", "BB_std", "RSI_period"],
+      "risk_per_trade_pct": 0.9
+    }
+  },
+  "ml_strategy": {
+    "method": "ML_Adaptive",
+    "description": "Machine Learning - adaptive prediction model",
+    "entry_model": "generate signal from model prediction with ICT features, ATR-based stop, predicted target for take profit",
+    "features": ["price", "volume", "ATR", "HTF_bias", "liquidity_nodes", "FVGs"],
+    "model": "XGBoost",
+    "rolling_window": "30D",
+    "prediction_horizon": "5M",
+    "risk_per_trade_pct": 0.5,
+    "stop_loss": "ML_predicted_ATR",
+    "take_profit": "ML_predicted_target",
+    "enable_pruning": true,
+    "optimize_params": ["model_hyperparameters", "risk_per_trade_pct"],
+    "hyperparameters": {
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "n_estimators": 100,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8
+    }
+  }
+}

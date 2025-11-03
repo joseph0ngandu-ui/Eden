@@ -1,0 +1,15 @@
+{
+  "instruments": [
+    "VIX75",
+    "VIX100",
+    "VIX50",
+    "VIX25",
+    "StepIndex",
+    "Boom1000",
+    "Crash1000",
+    "Boom500",
+    "Crash500",
+    "XAUUSD"
+  ],
+  "description": "Eden multi-instrument trading pool - Synthetic indices + Gold, NO FOREX"
+}

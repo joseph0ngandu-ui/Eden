@@ -35,42 +35,15 @@ class DataLoader:
     def get_symbol_mapping(
         self, symbol: str, exchange_hint: Optional[str] = None
     ) -> str:
-        # Load optional broker mapping from config file
-        try:
-            import yaml  # type: ignore
-
-            cfg_path = (
-                Path(__file__).resolve().parent.parent / "config" / "symbol_map.yaml"
-            )
-            mapping_cfg = {}
-            if cfg_path.exists():
-                with open(cfg_path, "r", encoding="utf-8") as f:
-                    mapping_cfg = yaml.safe_load(f) or {}
-            # Broker hint key
-            broker_key = (
-                exchange_hint or mapping_cfg.get("default_broker") or "default"
-            ).lower()
-            broker_map = mapping_cfg.get("brokers", {}).get(broker_key, {})
-            # Try broker-specific mapping then default mapping
-            mapped = broker_map.get(symbol.upper()) or mapping_cfg.get(
-                "default", {}
-            ).get(symbol.upper())
-            if mapped:
-                return mapped
-        except Exception:
-            pass
-        # Built-in mapping for Yahoo Finance (yfinance)
+        # Eden supports only VIX 100 and XAUUSD
         s = symbol.upper()
         mapping = {
-            "US30": "^DJI",
-            "NAS100": "^NDX",
             "XAUUSD": "GC=F",
+            "GOLD": "GC=F",
         }
         if s in mapping:
             return mapping[s]
-        # Generic FX mapping: EURUSD -> EURUSD=X
-        if len(s) == 6 and s.isalpha():
-            return f"{s}=X"
+        # VIX 100 is traded via MT5 directly
         return s
 
     def _stooq_symbol(self, symbol: str) -> str:

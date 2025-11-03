@@ -1,11 +1,22 @@
-# Eden default config
-symbols: ["XAUUSD", "EURUSD", "US30", "NAS100", "GBPUSD"]
-timeframe: "1D"
-start: "2018-01-01"
-end: "2023-12-31"
+# Eden Trading Bot - Synthetic Indices Only
+# NO FOREX - Only VIX, Boom, Crash, Step indices and XAUUSD
+symbols:
+  - "VIX 25"
+  - "VIX 50"
+  - "VIX 75"
+  - "VIX 100"
+  - "Boom 1000"
+  - "Boom 500"
+  - "Crash 1000"
+  - "Crash 500"
+  - "Step Index"
+  - "XAUUSD"
+timeframe: "1H"
+start: "2025-10-20"
+end: "2025-11-03"
 starting_cash: 100000
 commission_bps: 1.0
 slippage_bps: 1.0
-broker: "paper"
-strategy: "ensemble"
+broker: "mt5"
+strategy: "ml_generated"
 log_level: "INFO"

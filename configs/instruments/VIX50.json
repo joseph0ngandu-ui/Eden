@@ -1,0 +1,120 @@
+{
+  "symbol": "VIX50",
+  "description": "Eden multi-instrument config for VIX50",
+  "data": {
+    "resolution": "1m",
+    "source": "MetaTrader5",
+    "fallback_source": "historical_cache"
+  },
+  "risk": {
+    "max_daily_risk_pct": 2.0,
+    "max_concurrent_trades": 2,
+    "stop_loss_pct": 2.0,
+    "take_profit_ratio": 2.0
+  },
+  "strategies": {
+    "htf_bias": {
+      "method": "HTFBias",
+      "description": "Higher Timeframe Bias - enter with HTF trend aligned",
+      "entry_model": "enter with HTF trend aligned, confirmation candle closes, stop below last swing low/high",
+      "timeframes": [
+        "15M",
+        "1H",
+        "4H"
+      ],
+      "filters": [
+        "liquidity_sweep",
+        "FVG"
+      ],
+      "killzones": [
+        "07:00-10:00",
+        "13:00-15:00"
+      ],
+      "optimize_params": [
+        "stop_distance",
+        "risk_per_trade_pct"
+      ],
+      "risk_per_trade_pct": 1.0,
+      "take_profit_ratio": 2.0
+    },
+    "smart_money_liquidity": {
+      "method": "LiquiditySweep",
+      "description": "Smart Money - enter after liquidity sweep",
+      "entry_model": "enter after liquidity sweep confirmed with volume spike, stop beyond sweep extreme",
+      "targets": [
+        "stoploss_hunt",
+        "liquidity_nodes"
+      ],
+      "optimize_params": [
+        "risk_per_trade_pct"
+      ],
+      "risk_per_trade_pct": 0.8,
+      "volume_multiplier": 1.5
+    },
+    "fvg_entry": {
+      "method": "FVG",
+      "description": "Fair Value Gap - enter on FVG touch",
+      "entry_model": "enter on FVG touch with trend alignment and volume confirmation, stop beyond FVG",
+      "timeframes": [
+        "5M",
+        "15M"
+      ],
+      "confirm_filters": [
+        "volume_spike",
+        "trend_align"
+      ],
+      "optimize_params": [
+        "risk_per_trade_pct",
+        "FVG_threshold"
+      ],
+      "risk_per_trade_pct": 1.2,
+      "FVG_threshold": 0.5
+    },
+    "killzone_scalper": {
+      "method": "KillzoneScalper",
+      "description": "Killzone Scalping - trade during specific hours",
+      "entry_model": "enter during killzone when price aligns with HTF bias, stop below nearest swing",
+      "killzones": [
+        "07:00-09:00",
+        "14:00-15:00"
+      ],
+      "optimize_params": [
+        "risk_per_trade_pct"
+      ],
+      "risk_per_trade_pct": 0.5,
+      "min_move_requirement": 10
+    },
+    "ML_Adaptive": {
+      "method": "ML_Adaptive",
+      "description": "Machine Learning - adaptive prediction model",
+      "entry_model": "generate signal from model prediction with ICT features, ATR-based stop, predicted target for take profit",
+      "features": [
+        "price",
+        "volume",
+        "ATR",
+        "HTF_bias",
+        "liquidity_nodes",
+        "FVGs"
+      ],
+      "model": "XGBoost",
+      "rolling_window": "30D",
+      "prediction_horizon": "5M",
+      "risk_per_trade_pct": 0.5,
+      "stop_loss": "ML_predicted_ATR",
+      "take_profit": "ML_predicted_target",
+      "enable_pruning": true,
+      "optimize_params": [
+        "model_hyperparameters",
+        "risk_per_trade_pct"
+      ],
+      "hyperparameters": {
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "n_estimators": 100,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+      }
+    }
+  },
+  "instrument_type": "synthetic_index"
+}

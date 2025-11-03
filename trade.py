@@ -23,16 +23,12 @@ from trading_bot import TradingBot
 
 
 DEFAULT_SYMBOLS = [
-    "Volatility 75 Index",
-    "Volatility 100 Index",
-    "Volatility 50 Index",
-    "Volatility 25 Index",
-    "Step Index",
-    "Boom 1000 Index",
-    "Crash 1000 Index",
-    "Boom 500 Index",
-    "Crash 500 Index",
-    "XAUUSD",
+    "Volatility 75 Index",    # $1,229,078 ✓ PRIMARY DRIVER
+    "Volatility 100 Index",   # $28,027 ✓
+    "Boom 1000 Index",        # $17,731 ✓
+    "Boom 500 Index",         # $87,321 ✓
+    "Crash 500 Index",        # $36,948 ✓
+    "XAUUSD",                 # $23,681 ✓
 ]
 
 DEFAULT_INTERVAL = 300  # 5 minutes

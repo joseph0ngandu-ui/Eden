@@ -22,16 +22,12 @@ from backtest_engine import BacktestEngine, print_backtest_report
 
 
 DEFAULT_SYMBOLS = [
-    "Volatility 75 Index",
-    "Volatility 100 Index",
-    "Volatility 50 Index",
-    "Volatility 25 Index",
-    "Step Index",
-    "Boom 1000 Index",
-    "Crash 1000 Index",
-    "Boom 500 Index",
-    "Crash 500 Index",
-    "XAUUSD",
+    "Volatility 75 Index",    # $1,229,078 ✓ PRIMARY DRIVER
+    "Volatility 100 Index",   # $28,027 ✓
+    "Boom 1000 Index",        # $17,731 ✓
+    "Boom 500 Index",         # $87,321 ✓
+    "Crash 500 Index",        # $36,948 ✓
+    "XAUUSD",                 # $23,681 ✓
 ]
 
 DEFAULT_START = datetime(2025, 8, 1)
@@ -48,7 +44,14 @@ Examples:
   python backtest.py
   python backtest.py --start 2025-08-01 --end 2025-10-31
   python backtest.py --symbols "Volatility 75 Index" "Volatility 100 Index"
+  python backtest.py --backtest --start 2025-11-01 --end 2025-11-30 --symbols "VIX75"
         """
+    )
+    
+    parser.add_argument(
+        "--backtest",
+        action="store_true",
+        help="Enable backtest mode (runs from CLI with dynamic parameters)"
     )
     
     parser.add_argument(
@@ -78,6 +81,13 @@ Examples:
         help="Enable verbose output"
     )
     
+    parser.add_argument(
+        "--config",
+        type=str,
+        default=None,
+        help="Path to strategy.yml config file"
+    )
+    
     return parser.parse_args()
 
 
@@ -101,8 +111,12 @@ def main():
     # Initialize engine
     engine = BacktestEngine()
     
+    mode = "BACKTEST" if args.backtest else "ANALYSIS"
+    
     print(f"\n{'='*100}")
-    print(f"BACKTEST - MA(3,10) Strategy | M5 Timeframe")
+    print(f"{mode} - MA(3,10) Strategy | M5 Timeframe")
+    if args.backtest:
+        print(f"Mode: Backtest (CLI with dynamic parameters)")
     print(f"{'='*100}")
     print(f"\nPeriod: {start_date.date()} to {end_date.date()}")
     print(f"Symbols: {len(args.symbols)}")
@@ -110,6 +124,8 @@ def main():
     print(f"  Fast MA: {engine.FAST_MA_PERIOD}")
     print(f"  Slow MA: {engine.SLOW_MA_PERIOD}")
     print(f"  Hold Duration: {engine.HOLD_BARS} bars")
+    if args.config:
+        print(f"  Config: {args.config}")
     print(f"\n{'='*100}\n")
     
     # Run backtest
@@ -119,7 +135,7 @@ def main():
     print_backtest_report(results)
     
     print(f"\n{'='*100}")
-    print("✓ Backtest complete")
+    print(f"✓ {mode} complete")
     print(f"{'='*100}\n")
 
 

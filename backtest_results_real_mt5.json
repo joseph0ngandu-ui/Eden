@@ -1,0 +1,65 @@
+{
+  "timestamp": "2025-11-03T20:13:26.231801",
+  "initial_capital": 100,
+  "final_balance": 319299.77728355955,
+  "total_profit": 319199.77728355955,
+  "total_return": 319199.77728355955,
+  "multiplier": 3192.9977728355957,
+  "total_trades": 1091,
+  "monthly_results": [
+    {
+      "month": "August 2025",
+      "start": 100,
+      "end": 1351.0000000001128,
+      "profit": 1251.0000000001128,
+      "return": 1251.0000000001128,
+      "trades": 351,
+      "symbols": 1
+    },
+    {
+      "month": "September 2025",
+      "start": 1351.0000000001128,
+      "end": 25608.205000002486,
+      "profit": 24257.205000002374,
+      "return": 1795.5000000000257,
+      "trades": 350,
+      "symbols": 1
+    },
+    {
+      "month": "October 2025",
+      "start": 25608.205000002486,
+      "end": 81882.23548751436,
+      "profit": 56274.030487511875,
+      "return": 219.750000000025,
+      "trades": 379,
+      "symbols": 1
+    },
+    {
+      "month": "November 2025",
+      "start": 81882.23548751436,
+      "end": 319299.77728355955,
+      "profit": 237417.5417960452,
+      "return": 289.9499999999967,
+      "trades": 11,
+      "symbols": 1
+    },
+    {
+      "month": "December 2025",
+      "start": 319299.77728355955,
+      "end": 319299.77728355955,
+      "profit": 0.0,
+      "return": 0.0,
+      "trades": 0,
+      "symbols": 0
+    },
+    {
+      "month": "January 2026",
+      "start": 319299.77728355955,
+      "end": 319299.77728355955,
+      "profit": 0.0,
+      "return": 0.0,
+      "trades": 0,
+      "symbols": 0
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "timestamp": "2025-11-04T01:35:03.034269",
+  "period_start": "2025-01-01T00:00:00",
+  "period_end": "2025-10-31T00:00:00",
+  "analysis_date": "2025-11-04T01:35:03.034269",
+  "rankings": [
+    {
+      "symbol": "Step Index",
+      "rank_score": 7.515640717448534,
+      "total_profit": -1.389344064734262,
+      "win_rate": 20.199119280107215,
+      "total_trades": 5223,
+      "monthly_std": 0.04134684350324022,
+      "final_balance": 98.61065593526557,
+      "avg_win": 0.0001802985082077932,
+      "avg_loss": -0.00039030367948937036,
+      "profitable": false,
+      "consistent": true,
+      "rank": 1
+    },
+    {
+      "symbol": "Crash 500 Index",
+      "rank_score": 6.12042747257473,
+      "total_profit": -6.362852966368113,
+      "win_rate": 21.75715695952616,
+      "total_trades": 5065,
+      "monthly_std": 0.18647062344244938,
+      "final_balance": 93.63714703363215,
+      "avg_win": 0.0010188265199508198,
+      "avg_loss": -0.0018888720139676777,
+      "profitable": false,
+      "consistent": true,
+      "rank": 2
+    },
+    {
+      "symbol": "Boom 1000 Index",
+      "rank_score": 4.860267256857137,
+      "total_profit": -3.9936886762534964,
+      "win_rate": 16.202229299363058,
+      "total_trades": 5024,
+      "monthly_std": 0.11574496193343799,
+      "final_balance": 96.00631132374679,
+      "avg_win": 0.0005062827436931809,
+      "avg_loss": -0.0010465089856578958,
+      "profitable": false,
+      "consistent": true,
+      "rank": 3
+    },
+    {
+      "symbol": "Boom 500 Index",
+      "rank_score": 4.593200320838829,
+      "total_profit": -5.818094377930931,
+      "win_rate": 17.38709052141888,
+      "total_trades": 5159,
+      "monthly_std": 0.17199068278175914,
+      "final_balance": 94.18190562206914,
+      "avg_win": 0.0007198260657224075,
+      "avg_loss": -0.0015166068415964139,
+      "profitable": false,
+      "consistent": true,
+      "rank": 4
+    },
+    {
+      "symbol": "Volatility 75 Index",
+      "rank_score": 2.332893469540248,
+      "total_profit": -14.579381394731026,
+      "win_rate": 20.62763107539227,
+      "total_trades": 5226,
+      "monthly_std": 0.4320320136212482,
+      "final_balance": 85.42061860526942,
+      "avg_win": 0.0019213275368526227,
+      "avg_loss": -0.004014120655607088,
+      "profitable": false,
+      "consistent": true,
+      "rank": 5
+    },
+    {
+      "symbol": "Volatility 100 Index",
+      "rank_score": 1.0449362519273495,
+      "total_profit": -18.48920547065802,
+      "win_rate": 21.372133359028712,
+      "total_trades": 5189,
+      "monthly_std": 0.5411745171046368,
+      "final_balance": 81.51079452934212,
+      "avg_win": 0.002487293697299514,
+      "avg_loss": -0.005210302643688869,
+      "profitable": false,
+      "consistent": true,
+      "rank": 6
+    }
+  ],
+  "summary": {
+    "total_symbols_tested": 6,
+    "profitable_symbols": 0,
+    "consistent_symbols": 6,
+    "top_performer": "Step Index",
+    "top_pnl": -1.389344064734262
+  }
+}

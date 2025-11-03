@@ -83,6 +83,9 @@ class RiskLadder:
         self.equity_step_size = equity_step_size
         self.equity_step_drawdown_limit = equity_step_drawdown_limit
         
+        # Risk tiers configuration (must be first)
+        self.tiers = self._build_default_tiers()
+        
         # Current state
         self.current_balance = initial_balance
         self.peak_balance = initial_balance
@@ -94,9 +97,6 @@ class RiskLadder:
         
         # Position size history
         self.position_history: List[Dict] = []
-        
-        # Risk tiers configuration
-        self.tiers = self._build_default_tiers()
     
     def _build_default_tiers(self) -> List[RiskTierConfig]:
         """Build default risk tier configuration."""

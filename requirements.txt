@@ -10,7 +10,6 @@ numpy>=1.21.0
 
 # Technical analysis
 TA-Lib>=0.4.25
-talib-binary>=0.4.19  # Fallback for TA-Lib
 
 # Utilities
 python-dotenv>=1.0.0

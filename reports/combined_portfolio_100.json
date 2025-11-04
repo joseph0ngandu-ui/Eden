@@ -1,13 +1,12 @@
 {
   "start_equity": 100.0,
-  "end_equity": -3.5641696111709062e-09,
-  "return_percent": -100.00000000356417,
+  "end_equity": 2.7034187792120444e-09,
+  "return_percent": -99.99999999729658,
   "selected": {
-    "Volatility 100 Index": "VB",
-    "Boom 1000 Index": "MA",
-    "Crash 500 Index": "MA",
-    "Volatility 75 Index": "VB",
     "Boom 500 Index": "MA",
-    "XAUUSD": "VB"
+    "Boom 1000 Index": "MA",
+    "Volatility 75 Index": "VB",
+    "XAUUSD": "VB",
+    "Crash 500 Index": "MA"
   }
 }

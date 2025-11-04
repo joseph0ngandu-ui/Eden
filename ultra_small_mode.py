@@ -12,7 +12,7 @@ import json
 import pandas as pd
 from itertools import product
 
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent / 'scripts'))
 from backtest_volatility_burst import VBBacktester
 
 START = datetime(2025,1,1)

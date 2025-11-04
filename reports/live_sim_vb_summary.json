@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-11-04T08:51:44.400550",
+  "start_equity": 100.0,
+  "end_equity": 82.28879226996969,
+  "return_percent": -17.71120773003031,
+  "period": {
+    "start": "2025-10-21T08:51:23.411450",
+    "end": "2025-11-04T08:51:23.411450"
+  },
+  "selected_symbols": [
+    "Volatility 75 Index",
+    "Crash 500 Index",
+    "Boom 1000 Index",
+    "XAUUSD"
+  ],
+  "per_symbol_stats": {
+    "Volatility 75 Index": {
+      "symbol": "Volatility 75 Index",
+      "total_trades": 44,
+      "winning_trades": 20,
+      "losing_trades": 22,
+      "total_pnl": -432.50399999998626,
+      "pnl_percent": -432.50399999998626,
+      "win_rate": 45.45454545454545,
+      "avg_win": 216.19907142857193,
+      "avg_loss": -216.20388311688293,
+      "profit_factor": 0.9090706769746406,
+      "max_profit": 259.2994285714303,
+      "min_profit": -256.5720000000001
+    },
+    "Crash 500 Index": {
+      "symbol": "Crash 500 Index",
+      "total_trades": 6,
+      "winning_trades": 3,
+      "losing_trades": 3,
+      "total_pnl": 2.620499999999538,
+      "pnl_percent": 2.620499999999538,
+      "win_rate": 50.0,
+      "avg_win": 4.466757142857053,
+      "avg_loss": -3.593257142857207,
+      "profit_factor": 1.2430942081994376,
+      "max_profit": 5.489700000000084,
+      "min_profit": -4.166228571428746
+    },
+    "XAUUSD": {
+      "symbol": "XAUUSD",
+      "total_trades": 42,
+      "winning_trades": 19,
+      "losing_trades": 23,
+      "total_pnl": -23.993142857143084,
+      "pnl_percent": -23.993142857143084,
+      "win_rate": 45.23809523809524,
+      "avg_win": 7.614676691729312,
+      "avg_loss": -7.333565217391305,
+      "profit_factor": 0.857752662818114,
+      "max_profit": 11.442000000000007,
+      "min_profit": -12.120857142857403
+    }
+  },
+  "risk_ladder": [
+    [
+      30,
+      0.2
+    ],
+    [
+      100,
+      0.1
+    ],
+    [
+      500,
+      0.05
+    ],
+    [
+      1000,
+      0.03
+    ],
+    [
+      Infinity,
+      0.01
+    ]
+  ]
+}

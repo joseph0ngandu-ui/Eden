@@ -1,0 +1,156 @@
+{
+  "Volatility 75 Index": {
+    "symbol": "Volatility 75 Index",
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.2
+    },
+    "stats": {
+      "symbol": "Volatility 75 Index",
+      "total_trades": 506,
+      "winning_trades": 238,
+      "losing_trades": 241,
+      "total_pnl": 2228.7180000001536,
+      "pnl_percent": 2228.7180000001536,
+      "win_rate": 47.03557312252965,
+      "avg_win": 407.9838943577437,
+      "avg_loss": -393.65746413752214,
+      "profit_factor": 1.0234919781119411,
+      "max_profit": 579.7714285714319,
+      "min_profit": -621.1611428571341
+    }
+  },
+  "Volatility 100 Index": {
+    "symbol": "Volatility 100 Index",
+    "overrides": {
+      "confidence_threshold": 0.8,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.2
+    },
+    "stats": {
+      "symbol": "Volatility 100 Index",
+      "total_trades": 183,
+      "winning_trades": 92,
+      "losing_trades": 88,
+      "total_pnl": 41.32971428571477,
+      "pnl_percent": 41.32971428571477,
+      "win_rate": 50.27322404371585,
+      "avg_win": 8.722285714285727,
+      "avg_loss": -8.649097402597409,
+      "profit_factor": 1.0543011394477773,
+      "max_profit": 12.94628571428575,
+      "min_profit": -13.306285714285877
+    }
+  },
+  "Boom 500 Index": {
+    "symbol": "Boom 500 Index",
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.0
+    },
+    "stats": {
+      "symbol": "Boom 500 Index",
+      "total_trades": 67,
+      "winning_trades": 19,
+      "losing_trades": 41,
+      "total_pnl": -78.7776428571442,
+      "pnl_percent": -78.7776428571442,
+      "win_rate": 28.35820895522388,
+      "avg_win": 6.977661654135198,
+      "avg_loss": -5.154956445992999,
+      "profit_factor": 0.6272701925855243,
+      "max_profit": 9.602678571428442,
+      "min_profit": -7.647714285713846
+    }
+  },
+  "Crash 500 Index": {
+    "symbol": "Crash 500 Index",
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.2
+    },
+    "stats": {
+      "symbol": "Crash 500 Index",
+      "total_trades": 61,
+      "winning_trades": 32,
+      "losing_trades": 27,
+      "total_pnl": 36.39237857142825,
+      "pnl_percent": 36.39237857142825,
+      "win_rate": 52.459016393442624,
+      "avg_win": 4.852898437499974,
+      "avg_loss": -4.403717460317441,
+      "profit_factor": 1.3060745574986776,
+      "max_profit": 7.499464285714112,
+      "min_profit": -6.661542857142649
+    }
+  },
+  "Boom 1000 Index": {
+    "symbol": "Boom 1000 Index",
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.0
+    },
+    "stats": {
+      "symbol": "Boom 1000 Index",
+      "total_trades": 9,
+      "winning_trades": 7,
+      "losing_trades": 2,
+      "total_pnl": 51.418642857137456,
+      "pnl_percent": 51.418642857137456,
+      "win_rate": 77.77777777777779,
+      "avg_win": 10.41520408163238,
+      "avg_loss": -10.743892857144601,
+      "profit_factor": 3.3929242194063987,
+      "max_profit": 15.254057142858073,
+      "min_profit": -13.923785714287078
+    }
+  },
+  "Step Index": {
+    "symbol": "Step Index",
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.2
+    },
+    "stats": {
+      "symbol": "Step Index",
+      "total_trades": 421,
+      "winning_trades": 193,
+      "losing_trades": 217,
+      "total_pnl": -80.32285714285172,
+      "pnl_percent": -80.32285714285172,
+      "win_rate": 45.843230403800476,
+      "avg_win": 3.2801480384900663,
+      "avg_loss": -3.2875181040158274,
+      "profit_factor": 0.8874070336060833,
+      "max_profit": 3.968571428571522,
+      "min_profit": -4.140000000000327
+    }
+  },
+  "XAUUSD": {
+    "symbol": "XAUUSD",
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.2
+    },
+    "stats": {
+      "symbol": "XAUUSD",
+      "total_trades": 629,
+      "winning_trades": 322,
+      "losing_trades": 295,
+      "total_pnl": 155.75114285714426,
+      "pnl_percent": 155.75114285714426,
+      "win_rate": 51.19236883942766,
+      "avg_win": 3.6121357586512954,
+      "avg_loss": -3.4147680387409247,
+      "profit_factor": 1.154613716011469,
+      "max_profit": 13.728857142857123,
+      "min_profit": -19.42542857142871
+    }
+  }
+}

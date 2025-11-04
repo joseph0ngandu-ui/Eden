@@ -1,0 +1,17 @@
+{
+  "best_overrides": {
+    "confidence_threshold": 0.6,
+    "tp_atr_multiplier": 2.0,
+    "sl_atr_multiplier": 1.2
+  },
+  "c10": {
+    "start": 10.0,
+    "end": 18.674874842511294,
+    "return_pct": 86.74874842511294
+  },
+  "c50": {
+    "start": 50.0,
+    "end": 136.24912025548429,
+    "return_pct": 172.49824051096857
+  }
+}

@@ -1,0 +1,2090 @@
+[
+  {
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.2
+    },
+    "total_pnl": 1864.1509714287304,
+    "total_trades": 1563,
+    "win_rate": 46.38515674984005,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 506,
+        "winning_trades": 238,
+        "losing_trades": 241,
+        "total_pnl": 2228.7180000001536,
+        "pnl_percent": 2228.7180000001536,
+        "win_rate": 47.03557312252965,
+        "avg_win": 407.9838943577437,
+        "avg_loss": -393.65746413752214,
+        "profit_factor": 1.0234919781119411,
+        "max_profit": 579.7714285714319,
+        "min_profit": -621.1611428571341
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 506,
+        "winning_trades": 234,
+        "losing_trades": 253,
+        "total_pnl": -189.3274285714291,
+        "pnl_percent": -189.3274285714291,
+        "win_rate": 46.24505928853755,
+        "avg_win": 8.220216117216124,
+        "avg_loss": -8.351217391304356,
+        "profit_factor": 0.9103927341205944,
+        "max_profit": 13.185428571428474,
+        "min_profit": -14.034000000000106
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 65,
+        "winning_trades": 23,
+        "losing_trades": 41,
+        "total_pnl": -117.90214285713955,
+        "pnl_percent": -117.90214285713955,
+        "win_rate": 35.38461538461539,
+        "avg_win": 5.784305590062183,
+        "avg_loss": -6.120516376306579,
+        "profit_factor": 0.5301602276504064,
+        "max_profit": 8.625085714285888,
+        "min_profit": -9.177257142857343
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 62,
+        "winning_trades": 35,
+        "losing_trades": 27,
+        "total_pnl": 15.459171428570244,
+        "pnl_percent": 15.459171428570242,
+        "win_rate": 56.451612903225815,
+        "avg_win": 3.838844081632604,
+        "avg_loss": -4.403717460317441,
+        "profit_factor": 1.1300178564863215,
+        "max_profit": 5.999571428571471,
+        "min_profit": -6.661542857142649
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 3,
+        "winning_trades": 2,
+        "losing_trades": 1,
+        "total_pnl": 7.526228571427055,
+        "pnl_percent": 7.526228571427055,
+        "win_rate": 66.66666666666666,
+        "avg_win": 12.117385714285774,
+        "avg_loss": -16.708542857144494,
+        "profit_factor": 1.4504419467200202,
+        "max_profit": 15.254057142858073,
+        "min_profit": -16.708542857144494
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 421,
+        "winning_trades": 193,
+        "losing_trades": 217,
+        "total_pnl": -80.32285714285172,
+        "pnl_percent": -80.32285714285172,
+        "win_rate": 45.843230403800476,
+        "avg_win": 3.2801480384900663,
+        "avg_loss": -3.2875181040158274,
+        "profit_factor": 0.8874070336060833,
+        "max_profit": 3.968571428571522,
+        "min_profit": -4.140000000000327
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.2
+    },
+    "total_pnl": 1310.2440857144672,
+    "total_trades": 2411,
+    "win_rate": 45.956034840315226,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 747,
+        "winning_trades": 351,
+        "losing_trades": 357,
+        "total_pnl": 1888.0225714287371,
+        "pnl_percent": 1888.022571428737,
+        "win_rate": 46.98795180722892,
+        "avg_win": 403.30010500610535,
+        "avg_loss": -391.2333733493396,
+        "profit_factor": 1.0135177083339737,
+        "max_profit": 599.3871428571292,
+        "min_profit": -621.1611428571341
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 753,
+        "winning_trades": 346,
+        "losing_trades": 377,
+        "total_pnl": -300.7705714285669,
+        "pnl_percent": -300.7705714285669,
+        "win_rate": 45.949535192563076,
+        "avg_win": 8.127004954583,
+        "avg_loss": -8.256536566881394,
+        "profit_factor": 0.9033735371058805,
+        "max_profit": 13.185428571428474,
+        "min_profit": -14.034000000000106
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 96,
+        "winning_trades": 35,
+        "losing_trades": 59,
+        "total_pnl": -165.58208571428077,
+        "pnl_percent": -165.58208571428077,
+        "win_rate": 36.45833333333333,
+        "avg_win": 5.6597265306123,
+        "avg_loss": -6.163940920096801,
+        "profit_factor": 0.5446945281539894,
+        "max_profit": 8.625085714285888,
+        "min_profit": -9.177257142857343
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 85,
+        "winning_trades": 44,
+        "losing_trades": 41,
+        "total_pnl": -6.995485714287497,
+        "pnl_percent": -6.995485714287497,
+        "win_rate": 51.76470588235295,
+        "avg_win": 3.8017948051947523,
+        "avg_loss": -4.250596515679429,
+        "profit_factor": 0.9598593745235244,
+        "max_profit": 5.999571428571471,
+        "min_profit": -6.661542857142649
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 9,
+        "winning_trades": 7,
+        "losing_trades": 2,
+        "total_pnl": 47.121085714283254,
+        "pnl_percent": 47.121085714283254,
+        "win_rate": 77.77777777777779,
+        "avg_win": 10.41520408163238,
+        "avg_loss": -12.892671428571703,
+        "profit_factor": 2.827436849505731,
+        "max_profit": 15.254057142858073,
+        "min_profit": -16.708542857144494
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 721,
+        "winning_trades": 325,
+        "losing_trades": 371,
+        "total_pnl": -151.551428571418,
+        "pnl_percent": -151.551428571418,
+        "win_rate": 45.07628294036061,
+        "avg_win": 3.2541626373626844,
+        "avg_loss": -3.2591759722757154,
+        "profit_factor": 0.8746632829557469,
+        "max_profit": 4.182857142857756,
+        "min_profit": -4.140000000000327
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.8,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.2
+    },
+    "total_pnl": -2074.0534285713484,
+    "total_trades": 288,
+    "win_rate": 47.56944444444444,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 105,
+        "winning_trades": 45,
+        "losing_trades": 53,
+        "total_pnl": -2115.383142857063,
+        "pnl_percent": -2115.383142857063,
+        "win_rate": 42.857142857142854,
+        "avg_win": 429.8501333333345,
+        "avg_loss": -404.87998382749277,
+        "profit_factor": 0.9014204428913561,
+        "max_profit": 570.2648571428581,
+        "min_profit": -588.8554285714345
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 183,
+        "winning_trades": 92,
+        "losing_trades": 88,
+        "total_pnl": 41.32971428571477,
+        "pnl_percent": 41.32971428571477,
+        "win_rate": 50.27322404371585,
+        "avg_win": 8.722285714285727,
+        "avg_loss": -8.649097402597409,
+        "profit_factor": 1.0543011394477773,
+        "max_profit": 12.94628571428575,
+        "min_profit": -13.306285714285877
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.8,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.0
+    },
+    "total_pnl": -3211.820285714163,
+    "total_trades": 293,
+    "win_rate": 36.86006825938566,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 105,
+        "winning_trades": 37,
+        "losing_trades": 55,
+        "total_pnl": -3149.47614285702,
+        "pnl_percent": -3149.47614285702,
+        "win_rate": 35.23809523809524,
+        "avg_win": 422.5148339768352,
+        "avg_loss": -341.5004545454531,
+        "profit_factor": 0.8323188100185128,
+        "max_profit": 532.0885714285687,
+        "min_profit": -490.7128571428475
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 188,
+        "winning_trades": 71,
+        "losing_trades": 97,
+        "total_pnl": -62.34414285714308,
+        "pnl_percent": -62.34414285714308,
+        "win_rate": 37.765957446808514,
+        "avg_win": 8.874398390342062,
+        "avg_loss": -7.13841678939618,
+        "profit_factor": 0.9099627913022217,
+        "max_profit": 12.94628571428575,
+        "min_profit": -11.088571428571413
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.8,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 0.8
+    },
+    "total_pnl": -4116.467142856983,
+    "total_trades": 293,
+    "win_rate": 29.351535836177472,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 105,
+        "winning_trades": 31,
+        "losing_trades": 61,
+        "total_pnl": -4016.0739999998405,
+        "pnl_percent": -4016.0739999998405,
+        "win_rate": 29.523809523809526,
+        "avg_win": 417.2525253456237,
+        "avg_loss": -277.88364402810123,
+        "profit_factor": 0.7630760928057208,
+        "max_profit": 532.0885714285687,
+        "min_profit": -392.57028571428964
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 188,
+        "winning_trades": 55,
+        "losing_trades": 104,
+        "total_pnl": -100.39314285714192,
+        "pnl_percent": -100.39314285714191,
+        "win_rate": 29.25531914893617,
+        "avg_win": 8.97032727272729,
+        "avg_loss": -5.709241758241759,
+        "profit_factor": 0.8309199851407316,
+        "max_profit": 12.94628571428575,
+        "min_profit": -8.870857142856948
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.8,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.2
+    },
+    "total_pnl": -6337.948571428551,
+    "total_trades": 274,
+    "win_rate": 22.99270072992701,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 102,
+        "winning_trades": 22,
+        "losing_trades": 56,
+        "total_pnl": -6152.995142857122,
+        "pnl_percent": -6152.995142857122,
+        "win_rate": 21.568627450980394,
+        "avg_win": 749.5241558441558,
+        "avg_loss": -404.33083163265263,
+        "profit_factor": 0.7282549222832193,
+        "max_profit": 950.4414285714302,
+        "min_profit": -588.8554285714345
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 172,
+        "winning_trades": 41,
+        "losing_trades": 89,
+        "total_pnl": -184.9534285714294,
+        "pnl_percent": -184.9534285714294,
+        "win_rate": 23.837209302325583,
+        "avg_win": 14.386306620209048,
+        "avg_loss": -8.705528089887645,
+        "profit_factor": 0.7612863470822758,
+        "max_profit": 21.577142857142917,
+        "min_profit": -13.306285714285877
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.8,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.2
+    },
+    "total_pnl": -6782.967857142838,
+    "total_trades": 284,
+    "win_rate": 31.338028169014088,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 105,
+        "winning_trades": 30,
+        "losing_trades": 57,
+        "total_pnl": -6627.263357142838,
+        "pnl_percent": -6627.263357142837,
+        "win_rate": 28.57142857142857,
+        "avg_win": 548.8718214285713,
+        "avg_loss": -405.1476842105259,
+        "profit_factor": 0.7130237127677312,
+        "max_profit": 712.8310714285763,
+        "min_profit": -588.8554285714345
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 179,
+        "winning_trades": 59,
+        "losing_trades": 93,
+        "total_pnl": -155.70450000000028,
+        "pnl_percent": -155.70450000000028,
+        "win_rate": 32.960893854748605,
+        "avg_win": 10.999158595641648,
+        "avg_loss": -8.652202764976963,
+        "profit_factor": 0.8064952959423239,
+        "max_profit": 16.1828571428573,
+        "min_profit": -13.306285714285877
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.8,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.0
+    },
+    "total_pnl": -6793.254999999921,
+    "total_trades": 282,
+    "win_rate": 16.666666666666664,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 102,
+        "winning_trades": 17,
+        "losing_trades": 56,
+        "total_pnl": -6554.029285714205,
+        "pnl_percent": -6554.029285714205,
+        "win_rate": 16.666666666666664,
+        "avg_win": 730.6155462184877,
+        "avg_loss": -338.8302423469374,
+        "profit_factor": 0.6545873932791986,
+        "max_profit": 886.6614285714313,
+        "min_profit": -490.7128571428475
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 180,
+        "winning_trades": 30,
+        "losing_trades": 95,
+        "total_pnl": -239.22571428571564,
+        "pnl_percent": -239.2257142857156,
+        "win_rate": 16.666666666666664,
+        "avg_win": 14.727523809523792,
+        "avg_loss": -7.168962406015046,
+        "profit_factor": 0.6487406027654703,
+        "max_profit": 21.577142857142917,
+        "min_profit": -11.088571428571413
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.8,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 0.8
+    },
+    "total_pnl": -6884.190571428459,
+    "total_trades": 282,
+    "win_rate": 12.411347517730496,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 102,
+        "winning_trades": 14,
+        "losing_trades": 61,
+        "total_pnl": -6632.289714285602,
+        "pnl_percent": -6632.289714285602,
+        "win_rate": 13.725490196078432,
+        "avg_win": 726.2430612244904,
+        "avg_loss": -275.4047962529257,
+        "profit_factor": 0.6052136260180586,
+        "max_profit": 886.6614285714313,
+        "min_profit": -392.57028571428964
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 180,
+        "winning_trades": 21,
+        "losing_trades": 99,
+        "total_pnl": -251.90085714285772,
+        "pnl_percent": -251.90085714285772,
+        "win_rate": 11.666666666666666,
+        "avg_win": 15.15204081632651,
+        "avg_loss": -5.758522366522368,
+        "profit_factor": 0.5581413181191254,
+        "max_profit": 21.577142857142917,
+        "min_profit": -8.870857142856948
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.8,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.0
+    },
+    "total_pnl": -7184.906071428508,
+    "total_trades": 291,
+    "win_rate": 23.02405498281787,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 105,
+        "winning_trades": 23,
+        "losing_trades": 57,
+        "total_pnl": -6979.017499999936,
+        "pnl_percent": -6979.017499999936,
+        "win_rate": 21.904761904761905,
+        "avg_win": 537.8790838509312,
+        "avg_loss": -339.4778320801992,
+        "profit_factor": 0.6393316678190478,
+        "max_profit": 664.9960714285698,
+        "min_profit": -490.7128571428475
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 186,
+        "winning_trades": 44,
+        "losing_trades": 99,
+        "total_pnl": -205.8885714285717,
+        "pnl_percent": -205.88857142857168,
+        "win_rate": 23.655913978494624,
+        "avg_win": 11.364740259740273,
+        "avg_loss": -7.130678210678219,
+        "profit_factor": 0.7083471616250738,
+        "max_profit": 16.1828571428573,
+        "min_profit": -11.088571428571413
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.8,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 0.8
+    },
+    "total_pnl": -7738.21449999988,
+    "total_trades": 291,
+    "win_rate": 17.525773195876287,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 105,
+        "winning_trades": 18,
+        "losing_trades": 62,
+        "total_pnl": -7530.372571428452,
+        "pnl_percent": -7530.372571428453,
+        "win_rate": 17.142857142857142,
+        "avg_win": 531.6619047619052,
+        "avg_loss": -275.81107834101203,
+        "profit_factor": 0.55963472225128,
+        "max_profit": 664.9960714285698,
+        "min_profit": -392.57028571428964
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 186,
+        "winning_trades": 33,
+        "losing_trades": 103,
+        "total_pnl": -207.84192857142773,
+        "pnl_percent": -207.84192857142773,
+        "win_rate": 17.741935483870968,
+        "avg_win": 11.58061688311691,
+        "avg_loss": -5.728177531206658,
+        "profit_factor": 0.6477269095325553,
+        "max_profit": 16.1828571428573,
+        "min_profit": -8.870857142856948
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.2
+    },
+    "total_pnl": -9844.788514285745,
+    "total_trades": 1440,
+    "win_rate": 25.624999999999996,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 461,
+        "winning_trades": 116,
+        "losing_trades": 230,
+        "total_pnl": -9208.012000000024,
+        "pnl_percent": -9208.012000000024,
+        "win_rate": 25.16268980477224,
+        "avg_win": 697.9619950738916,
+        "avg_loss": -392.05044968944105,
+        "profit_factor": 0.8978834616455049,
+        "max_profit": 966.2857142857247,
+        "min_profit": -621.1611428571341
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 465,
+        "winning_trades": 118,
+        "losing_trades": 242,
+        "total_pnl": -387.6791428571448,
+        "pnl_percent": -387.6791428571448,
+        "win_rate": 25.376344086021508,
+        "avg_win": 13.630145278450359,
+        "avg_loss": -8.248083825265647,
+        "profit_factor": 0.8057755033654547,
+        "max_profit": 21.975714285714275,
+        "min_profit": -14.034000000000106
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 61,
+        "winning_trades": 12,
+        "losing_trades": 40,
+        "total_pnl": -136.11399999999867,
+        "pnl_percent": -136.11399999999867,
+        "win_rate": 19.672131147540984,
+        "avg_win": 9.207773809523738,
+        "avg_loss": -6.1651821428570885,
+        "profit_factor": 0.4480536144512014,
+        "max_profit": 11.829571428571398,
+        "min_profit": -9.177257142857343
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 55,
+        "winning_trades": 21,
+        "losing_trades": 24,
+        "total_pnl": 20.81445714285792,
+        "pnl_percent": 20.81445714285792,
+        "win_rate": 38.18181818181819,
+        "avg_win": 6.114666666666662,
+        "avg_loss": -4.483064285714249,
+        "profit_factor": 1.193454519575533,
+        "max_profit": 9.999285714285634,
+        "min_profit": -6.661542857142649
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 3,
+        "winning_trades": 1,
+        "losing_trades": 1,
+        "total_pnl": -1.740685714288702,
+        "pnl_percent": -1.740685714288702,
+        "win_rate": 33.33333333333333,
+        "avg_win": 14.967857142855792,
+        "avg_loss": -16.708542857144494,
+        "profit_factor": 0.8958206152881613,
+        "max_profit": 14.967857142855792,
+        "min_profit": -16.708542857144494
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 395,
+        "winning_trades": 101,
+        "losing_trades": 209,
+        "total_pnl": -132.05714285714657,
+        "pnl_percent": -132.05714285714657,
+        "win_rate": 25.569620253164555,
+        "avg_win": 5.480480905233385,
+        "avg_loss": -3.2803144224197056,
+        "profit_factor": 0.8073805505198849,
+        "max_profit": 6.61428571428587,
+        "min_profit": -4.140000000000327
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.0
+    },
+    "total_pnl": -10701.971528571185,
+    "total_trades": 1631,
+    "win_rate": 36.72593500919682,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 525,
+        "winning_trades": 193,
+        "losing_trades": 268,
+        "total_pnl": -10138.455571428327,
+        "pnl_percent": -10138.455571428327,
+        "win_rate": 36.76190476190476,
+        "avg_win": 405.74411991117745,
+        "avg_loss": -330.0263832622596,
+        "profit_factor": 0.8853726246720026,
+        "max_profit": 579.7714285714319,
+        "min_profit": -517.6342857143027
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 532,
+        "winning_trades": 191,
+        "losing_trades": 283,
+        "total_pnl": -354.61728571428705,
+        "pnl_percent": -354.61728571428705,
+        "win_rate": 35.902255639097746,
+        "avg_win": 8.339389678384446,
+        "avg_loss": -6.881415951539633,
+        "profit_factor": 0.817905991636642,
+        "max_profit": 13.052571428571355,
+        "min_profit": -11.695000000000164
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 67,
+        "winning_trades": 21,
+        "losing_trades": 40,
+        "total_pnl": -90.44089999999778,
+        "pnl_percent": -90.44089999999778,
+        "win_rate": 31.343283582089555,
+        "avg_win": 5.609028571428618,
+        "avg_loss": -5.2057624999999685,
+        "profit_factor": 0.5656692943637059,
+        "max_profit": 7.682142857142935,
+        "min_profit": -7.647714285713846
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 65,
+        "winning_trades": 32,
+        "losing_trades": 31,
+        "total_pnl": 3.949814285712364,
+        "pnl_percent": 3.9498142857123635,
+        "win_rate": 49.23076923076923,
+        "avg_win": 3.730424999999954,
+        "avg_loss": -3.7233479262672957,
+        "profit_factor": 1.0342201068979795,
+        "max_profit": 6.21385714285725,
+        "min_profit": -5.551285714285768
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 3,
+        "winning_trades": 2,
+        "losing_trades": 1,
+        "total_pnl": 10.31098571428447,
+        "pnl_percent": 10.31098571428447,
+        "win_rate": 66.66666666666666,
+        "avg_win": 12.117385714285774,
+        "avg_loss": -13.923785714287078,
+        "profit_factor": 1.7405303360640243,
+        "max_profit": 15.254057142858073,
+        "min_profit": -13.923785714287078
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 439,
+        "winning_trades": 160,
+        "losing_trades": 240,
+        "total_pnl": -132.7185714285697,
+        "pnl_percent": -132.7185714285697,
+        "win_rate": 36.44646924829157,
+        "avg_win": 3.276267857142898,
+        "avg_loss": -2.737172619047639,
+        "profit_factor": 0.7979688808185408,
+        "max_profit": 3.968571428571522,
+        "min_profit": -3.449999999999818
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.2
+    },
+    "total_pnl": -13186.555842857193,
+    "total_trades": 1520,
+    "win_rate": 34.80263157894737,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 489,
+        "winning_trades": 165,
+        "losing_trades": 247,
+        "total_pnl": -12580.153285714332,
+        "pnl_percent": -12580.153285714332,
+        "win_rate": 33.74233128834356,
+        "avg_win": 514.0196493506492,
+        "avg_loss": -394.3052446500868,
+        "profit_factor": 0.8708315565921444,
+        "max_profit": 724.7142857142899,
+        "min_profit": -621.1611428571341
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 491,
+        "winning_trades": 166,
+        "losing_trades": 257,
+        "total_pnl": -417.777428571428,
+        "pnl_percent": -417.777428571428,
+        "win_rate": 33.80855397148676,
+        "avg_win": 10.290645438898462,
+        "avg_loss": -8.272469149527522,
+        "profit_factor": 0.8034936029498924,
+        "max_profit": 16.481785714285706,
+        "min_profit": -14.034000000000106
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 65,
+        "winning_trades": 20,
+        "losing_trades": 42,
+        "total_pnl": -113.83242857142977,
+        "pnl_percent": -113.83242857142977,
+        "win_rate": 30.76923076923077,
+        "avg_win": 7.042799999999852,
+        "avg_loss": -6.06401020408159,
+        "profit_factor": 0.5530522167421292,
+        "max_profit": 9.602678571428442,
+        "min_profit": -9.177257142857343
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 61,
+        "winning_trades": 32,
+        "losing_trades": 27,
+        "total_pnl": 36.39237857142825,
+        "pnl_percent": 36.39237857142825,
+        "win_rate": 52.459016393442624,
+        "avg_win": 4.852898437499974,
+        "avg_loss": -4.403717460317441,
+        "profit_factor": 1.3060745574986776,
+        "max_profit": 7.499464285714112,
+        "min_profit": -6.661542857142649
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 3,
+        "winning_trades": 2,
+        "losing_trades": 1,
+        "total_pnl": 13.584921428569942,
+        "pnl_percent": 13.58492142856994,
+        "win_rate": 66.66666666666666,
+        "avg_win": 15.146732142857218,
+        "avg_loss": -16.708542857144494,
+        "profit_factor": 1.8130524334000253,
+        "max_profit": 19.067571428571682,
+        "min_profit": -16.708542857144494
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 411,
+        "winning_trades": 144,
+        "losing_trades": 218,
+        "total_pnl": -124.77000000000226,
+        "pnl_percent": -124.77000000000224,
+        "win_rate": 35.03649635036496,
+        "avg_win": 4.105208333333369,
+        "avg_loss": -3.28403669724774,
+        "profit_factor": 0.8257207509218893,
+        "max_profit": 4.960714285713948,
+        "min_profit": -4.140000000000327
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 0.8
+    },
+    "total_pnl": -14685.070485714074,
+    "total_trades": 1685,
+    "win_rate": 27.95252225519288,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 549,
+        "winning_trades": 155,
+        "losing_trades": 289,
+        "total_pnl": -13940.049428571212,
+        "pnl_percent": -13940.049428571212,
+        "win_rate": 28.233151183970858,
+        "avg_win": 405.9124811059914,
+        "avg_loss": -265.9393910034598,
+        "profit_factor": 0.8186223373349835,
+        "max_profit": 579.7714285714319,
+        "min_profit": -414.10742857144214
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 554,
+        "winning_trades": 143,
+        "losing_trades": 328,
+        "total_pnl": -574.434000000001,
+        "pnl_percent": -574.434000000001,
+        "win_rate": 25.812274368231048,
+        "avg_win": 8.55911088911089,
+        "avg_loss": -5.482886759581884,
+        "profit_factor": 0.6805837421918116,
+        "max_profit": 13.052571428571355,
+        "min_profit": -9.356000000000222
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 68,
+        "winning_trades": 21,
+        "losing_trades": 41,
+        "total_pnl": -51.51834285714176,
+        "pnl_percent": -51.51834285714176,
+        "win_rate": 30.88235294117647,
+        "avg_win": 5.609028571428618,
+        "avg_loss": -4.129462020905921,
+        "profit_factor": 0.695712191715592,
+        "max_profit": 7.682142857142935,
+        "min_profit": -6.118171428571259
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 66,
+        "winning_trades": 30,
+        "losing_trades": 31,
+        "total_pnl": 22.062228571428022,
+        "pnl_percent": 22.062228571428022,
+        "win_rate": 45.45454545454545,
+        "avg_win": 3.796022857142816,
+        "avg_loss": -2.961885714285692,
+        "profit_factor": 1.2402809768095138,
+        "max_profit": 6.21385714285725,
+        "min_profit": -4.441028571428433
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 3,
+        "winning_trades": 2,
+        "losing_trades": 0,
+        "total_pnl": 24.23477142857155,
+        "pnl_percent": 24.23477142857155,
+        "win_rate": 66.66666666666666,
+        "avg_win": 12.117385714285774,
+        "avg_loss": 0,
+        "profit_factor": 0,
+        "max_profit": 15.254057142858073,
+        "min_profit": 0.0
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 445,
+        "winning_trades": 120,
+        "losing_trades": 255,
+        "total_pnl": -165.36571428571915,
+        "pnl_percent": -165.36571428571915,
+        "win_rate": 26.96629213483146,
+        "avg_win": 3.283571428571463,
+        "avg_loss": -2.1937030812325284,
+        "profit_factor": 0.7043843340756288,
+        "max_profit": 3.968571428571522,
+        "min_profit": -2.7600000000002183
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.2
+    },
+    "total_pnl": -14797.655514285663,
+    "total_trades": 2179,
+    "win_rate": 25.424506654428637,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 669,
+        "winning_trades": 171,
+        "losing_trades": 337,
+        "total_pnl": -13696.349999999955,
+        "pnl_percent": -13696.349999999955,
+        "win_rate": 25.56053811659193,
+        "avg_win": 687.272882205514,
+        "avg_loss": -389.3768927511657,
+        "profit_factor": 0.8956230097697754,
+        "max_profit": 998.9785714285681,
+        "min_profit": -614.3220000000001
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 685,
+        "winning_trades": 169,
+        "losing_trades": 367,
+        "total_pnl": -712.8688571428557,
+        "pnl_percent": -712.8688571428557,
+        "win_rate": 24.671532846715326,
+        "avg_win": 13.474116652578195,
+        "avg_loss": -8.147124172829892,
+        "profit_factor": 0.7615818891596654,
+        "max_profit": 21.975714285714275,
+        "min_profit": -14.034000000000106
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 86,
+        "winning_trades": 19,
+        "losing_trades": 54,
+        "total_pnl": -164.75822857142612,
+        "pnl_percent": -164.75822857142612,
+        "win_rate": 22.093023255813954,
+        "avg_win": 9.112496240601487,
+        "avg_loss": -6.257326984126933,
+        "profit_factor": 0.5123990939552969,
+        "max_profit": 11.829571428571398,
+        "min_profit": -9.177257142857343
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 76,
+        "winning_trades": 26,
+        "losing_trades": 37,
+        "total_pnl": -5.080457142857085,
+        "pnl_percent": -5.080457142857085,
+        "win_rate": 34.21052631578947,
+        "avg_win": 6.0308736263736,
+        "avg_loss": -4.375220849420829,
+        "profit_factor": 0.9686165208030979,
+        "max_profit": 9.999285714285634,
+        "min_profit": -6.661542857142649
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 7,
+        "winning_trades": 3,
+        "losing_trades": 2,
+        "total_pnl": 23.299171428567206,
+        "pnl_percent": 23.299171428567206,
+        "win_rate": 42.857142857142854,
+        "avg_win": 16.345904761903512,
+        "avg_loss": -12.869271428571665,
+        "profit_factor": 1.9052249600097655,
+        "max_profit": 16.50728571428408,
+        "min_profit": -16.708542857144494
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 656,
+        "winning_trades": 166,
+        "losing_trades": 351,
+        "total_pnl": -241.89714285713762,
+        "pnl_percent": -241.89714285713762,
+        "win_rate": 25.304878048780488,
+        "avg_win": 5.411445783132564,
+        "avg_loss": -3.2484249084249095,
+        "profit_factor": 0.787846212058571,
+        "max_profit": 6.61428571428587,
+        "min_profit": -4.140000000000327
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.2
+    },
+    "total_pnl": -16158.86832857149,
+    "total_trades": 2312,
+    "win_rate": 35.16435986159169,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 715,
+        "winning_trades": 249,
+        "losing_trades": 359,
+        "total_pnl": -15195.501214285767,
+        "pnl_percent": -15195.501214285767,
+        "win_rate": 34.82517482517483,
+        "avg_win": 504.71680292598944,
+        "avg_loss": -392.3955017906884,
+        "profit_factor": 0.8921310228088978,
+        "max_profit": 749.2339285714261,
+        "min_profit": -614.3220000000001
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 729,
+        "winning_trades": 246,
+        "losing_trades": 388,
+        "total_pnl": -677.9854285714256,
+        "pnl_percent": -677.9854285714256,
+        "win_rate": 33.744855967078195,
+        "avg_win": 10.131445993031367,
+        "avg_loss": -8.170930780559644,
+        "profit_factor": 0.7861461353532107,
+        "max_profit": 16.481785714285706,
+        "min_profit": -14.034000000000106
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 90,
+        "winning_trades": 29,
+        "losing_trades": 55,
+        "total_pnl": -141.27563571428618,
+        "pnl_percent": -141.27563571428618,
+        "win_rate": 32.22222222222222,
+        "avg_win": 6.951269704433391,
+        "avg_loss": -6.233862857142809,
+        "profit_factor": 0.5879524492370323,
+        "max_profit": 9.602678571428442,
+        "min_profit": -9.177257142857343
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 82,
+        "winning_trades": 42,
+        "losing_trades": 38,
+        "total_pnl": 34.479835714284945,
+        "pnl_percent": 34.479835714284945,
+        "win_rate": 51.21951219512195,
+        "avg_win": 4.725599489795881,
+        "avg_loss": -4.315666917293212,
+        "profit_factor": 1.2102488711787422,
+        "max_profit": 7.499464285714112,
+        "min_profit": -6.661542857142649
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 8,
+        "winning_trades": 5,
+        "losing_trades": 3,
+        "total_pnl": 33.912685714283725,
+        "pnl_percent": 33.912685714283725,
+        "win_rate": 62.5,
+        "avg_win": 13.735199999999896,
+        "avg_loss": -11.587771428571918,
+        "profit_factor": 1.9755308551871433,
+        "max_profit": 19.067571428571682,
+        "min_profit": -16.708542857144494
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 688,
+        "winning_trades": 242,
+        "losing_trades": 368,
+        "total_pnl": -212.49857142857854,
+        "pnl_percent": -212.49857142857854,
+        "win_rate": 35.174418604651166,
+        "avg_win": 4.065495867768589,
+        "avg_loss": -3.2509472049689596,
+        "profit_factor": 0.8223773768753442,
+        "max_profit": 5.22857142857174,
+        "min_profit": -4.140000000000327
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.0
+    },
+    "total_pnl": -18182.58855714264,
+    "total_trades": 2520,
+    "win_rate": 36.11111111111111,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 776,
+        "winning_trades": 282,
+        "losing_trades": 400,
+        "total_pnl": -17256.82799999979,
+        "pnl_percent": -17256.82799999979,
+        "win_rate": 36.340206185567006,
+        "avg_win": 402.0363799392101,
+        "avg_loss": -326.57771785714266,
+        "profit_factor": 0.8678964680043741,
+        "max_profit": 599.3871428571292,
+        "min_profit": -517.6342857143027
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 791,
+        "winning_trades": 277,
+        "losing_trades": 417,
+        "total_pnl": -578.7545714285699,
+        "pnl_percent": -578.7545714285699,
+        "win_rate": 35.01896333754741,
+        "avg_win": 8.170947911294492,
+        "avg_loss": -6.815604659129842,
+        "profit_factor": 0.7963642669548505,
+        "max_profit": 13.052571428571355,
+        "min_profit": -11.695000000000164
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 99,
+        "winning_trades": 32,
+        "losing_trades": 62,
+        "total_pnl": -146.98652857142497,
+        "pnl_percent": -146.98652857142497,
+        "win_rate": 32.323232323232325,
+        "avg_win": 5.487583928571468,
+        "avg_loss": -5.203051843317934,
+        "profit_factor": 0.5443538653426849,
+        "max_profit": 7.682142857142935,
+        "min_profit": -7.647714285713846
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 90,
+        "winning_trades": 40,
+        "losing_trades": 45,
+        "total_pnl": -9.12381428571598,
+        "pnl_percent": -9.12381428571598,
+        "win_rate": 44.44444444444444,
+        "avg_win": 3.786702857142802,
+        "avg_loss": -3.568709523809513,
+        "profit_factor": 0.9431863458713127,
+        "max_profit": 6.21385714285725,
+        "min_profit": -5.551285714285768
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 9,
+        "winning_trades": 7,
+        "losing_trades": 2,
+        "total_pnl": 51.418642857137456,
+        "pnl_percent": 51.418642857137456,
+        "win_rate": 77.77777777777779,
+        "avg_win": 10.41520408163238,
+        "avg_loss": -10.743892857144601,
+        "profit_factor": 3.3929242194063987,
+        "max_profit": 15.254057142858073,
+        "min_profit": -13.923785714287078
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 755,
+        "winning_trades": 272,
+        "losing_trades": 415,
+        "total_pnl": -242.31428571427932,
+        "pnl_percent": -242.31428571427932,
+        "win_rate": 36.026490066225165,
+        "avg_win": 3.2525735294117943,
+        "avg_loss": -2.715697074010331,
+        "profit_factor": 0.784994486063055,
+        "max_profit": 4.182857142857756,
+        "min_profit": -3.449999999999818
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 0.8
+    },
+    "total_pnl": -21376.881971428287,
+    "total_trades": 2656,
+    "win_rate": 27.56024096385542,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 815,
+        "winning_trades": 233,
+        "losing_trades": 435,
+        "total_pnl": -20172.72285714256,
+        "pnl_percent": -20172.72285714256,
+        "win_rate": 28.588957055214724,
+        "avg_win": 402.8138884120176,
+        "avg_loss": -262.13415829228194,
+        "profit_factor": 0.823090299120981,
+        "max_profit": 599.3871428571292,
+        "min_profit": -414.10742857144214
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 840,
+        "winning_trades": 212,
+        "losing_trades": 484,
+        "total_pnl": -893.0714285714287,
+        "pnl_percent": -893.0714285714286,
+        "win_rate": 25.238095238095237,
+        "avg_win": 8.24973315363882,
+        "avg_loss": -5.4587083825265665,
+        "profit_factor": 0.6619733510744831,
+        "max_profit": 13.052571428571355,
+        "min_profit": -9.356000000000222
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 100,
+        "winning_trades": 29,
+        "losing_trades": 61,
+        "total_pnl": -94.871028571426,
+        "pnl_percent": -94.871028571426,
+        "win_rate": 28.999999999999996,
+        "avg_win": 5.550537931034499,
+        "avg_loss": -4.194043091334859,
+        "profit_factor": 0.6291733943603811,
+        "max_profit": 7.682142857142935,
+        "min_profit": -6.118171428571259
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 94,
+        "winning_trades": 39,
+        "losing_trades": 48,
+        "total_pnl": 9.08811428571289,
+        "pnl_percent": 9.08811428571289,
+        "win_rate": 41.48936170212766,
+        "avg_win": 3.731204395604343,
+        "avg_loss": -2.8422678571428435,
+        "profit_factor": 1.0666143107553603,
+        "max_profit": 6.21385714285725,
+        "min_profit": -4.441028571428433
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 9,
+        "winning_trades": 7,
+        "losing_trades": 1,
+        "total_pnl": 66.85522857142496,
+        "pnl_percent": 66.85522857142496,
+        "win_rate": 77.77777777777779,
+        "avg_win": 10.41520408163238,
+        "avg_loss": -6.0512000000017,
+        "profit_factor": 12.04825961320171,
+        "max_profit": 15.254057142858073,
+        "min_profit": -6.0512000000017
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 798,
+        "winning_trades": 212,
+        "losing_trades": 453,
+        "total_pnl": -292.1600000000135,
+        "pnl_percent": -292.1600000000135,
+        "win_rate": 26.56641604010025,
+        "avg_win": 3.2627223719676657,
+        "avg_loss": -2.171870072532359,
+        "profit_factor": 0.7030463191520165,
+        "max_profit": 4.182857142857756,
+        "min_profit": -2.7600000000002183
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.0
+    },
+    "total_pnl": -25087.846249999864,
+    "total_trades": 1594,
+    "win_rate": 25.84692597239649,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 510,
+        "winning_trades": 127,
+        "losing_trades": 269,
+        "total_pnl": -24235.138214285573,
+        "pnl_percent": -24235.138214285573,
+        "win_rate": 24.901960784313726,
+        "avg_win": 508.5272075365579,
+        "avg_loss": -330.17878651088637,
+        "profit_factor": 0.7271373743819954,
+        "max_profit": 724.7142857142899,
+        "min_profit": -517.6342857143027
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 516,
+        "winning_trades": 126,
+        "losing_trades": 282,
+        "total_pnl": -595.9014285714284,
+        "pnl_percent": -595.9014285714284,
+        "win_rate": 24.418604651162788,
+        "avg_win": 10.58928571428573,
+        "avg_loss": -6.844508611955427,
+        "profit_factor": 0.6912670064376892,
+        "max_profit": 16.31571428571442,
+        "min_profit": -11.695000000000164
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 67,
+        "winning_trades": 19,
+        "losing_trades": 41,
+        "total_pnl": -78.7776428571442,
+        "pnl_percent": -78.7776428571442,
+        "win_rate": 28.35820895522388,
+        "avg_win": 6.977661654135198,
+        "avg_loss": -5.154956445992999,
+        "profit_factor": 0.6272701925855243,
+        "max_profit": 9.602678571428442,
+        "min_profit": -7.647714285713846
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 64,
+        "winning_trades": 28,
+        "losing_trades": 31,
+        "total_pnl": 13.369214285713042,
+        "pnl_percent": 13.36921428571304,
+        "win_rate": 43.75,
+        "avg_win": 4.599749999999972,
+        "avg_loss": -3.7233479262672957,
+        "profit_factor": 1.115827203231806,
+        "max_profit": 7.4594999999999345,
+        "min_profit": -5.551285714285768
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 3,
+        "winning_trades": 2,
+        "losing_trades": 1,
+        "total_pnl": 16.369678571427357,
+        "pnl_percent": 16.369678571427357,
+        "win_rate": 66.66666666666666,
+        "avg_win": 15.146732142857218,
+        "avg_loss": -13.923785714287078,
+        "profit_factor": 2.1756629200800304,
+        "max_profit": 19.067571428571682,
+        "min_profit": -13.923785714287078
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 434,
+        "winning_trades": 110,
+        "losing_trades": 240,
+        "total_pnl": -207.76785714286052,
+        "pnl_percent": -207.7678571428605,
+        "win_rate": 25.34562211981567,
+        "avg_win": 4.080292207792214,
+        "avg_loss": -2.73583333333335,
+        "profit_factor": 0.6835701231452037,
+        "max_profit": 4.960714285713948,
+        "min_profit": -3.449999999999818
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 0.8
+    },
+    "total_pnl": -27298.519892857046,
+    "total_trades": 1650,
+    "win_rate": 18.90909090909091,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 534,
+        "winning_trades": 97,
+        "losing_trades": 285,
+        "total_pnl": -26296.534999999894,
+        "pnl_percent": -26296.53499999989,
+        "win_rate": 18.164794007490638,
+        "avg_win": 508.0573122238585,
+        "avg_loss": -265.186295739348,
+        "profit_factor": 0.6520614174182678,
+        "max_profit": 724.7142857142899,
+        "min_profit": -414.10742857144214
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 540,
+        "winning_trades": 87,
+        "losing_trades": 321,
+        "total_pnl": -796.3037857142846,
+        "pnl_percent": -796.3037857142846,
+        "win_rate": 16.11111111111111,
+        "avg_win": 11.014051724137955,
+        "avg_loss": -5.4658139741878085,
+        "profit_factor": 0.546143142911022,
+        "max_profit": 16.31571428571442,
+        "min_profit": -9.356000000000222
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 68,
+        "winning_trades": 19,
+        "losing_trades": 42,
+        "total_pnl": -39.23054285714534,
+        "pnl_percent": -39.23054285714534,
+        "win_rate": 27.941176470588236,
+        "avg_win": 6.977661654135198,
+        "avg_loss": -4.090621768707479,
+        "profit_factor": 0.7716580517506797,
+        "max_profit": 9.602678571428442,
+        "min_profit": -6.118171428571259
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 65,
+        "winning_trades": 28,
+        "losing_trades": 31,
+        "total_pnl": 36.97454285714275,
+        "pnl_percent": 36.97454285714275,
+        "win_rate": 43.07692307692308,
+        "avg_win": 4.599749999999972,
+        "avg_loss": -2.961885714285692,
+        "profit_factor": 1.4026918335124672,
+        "max_profit": 7.4594999999999345,
+        "min_profit": -4.441028571428433
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 3,
+        "winning_trades": 2,
+        "losing_trades": 0,
+        "total_pnl": 30.293464285714435,
+        "pnl_percent": 30.293464285714432,
+        "win_rate": 66.66666666666666,
+        "avg_win": 15.146732142857218,
+        "avg_loss": 0,
+        "profit_factor": 0,
+        "max_profit": 19.067571428571682,
+        "min_profit": 0.0
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 440,
+        "winning_trades": 79,
+        "losing_trades": 253,
+        "total_pnl": -233.71857142858244,
+        "pnl_percent": -233.71857142858246,
+        "win_rate": 17.954545454545453,
+        "avg_win": 4.076039783001784,
+        "avg_loss": -2.1965443252400134,
+        "profit_factor": 0.5794353843622624,
+        "max_profit": 4.960714285713948,
+        "min_profit": -2.7600000000002183
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.0
+    },
+    "total_pnl": -27744.680571428435,
+    "total_trades": 1524,
+    "win_rate": 18.04461942257218,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 493,
+        "winning_trades": 84,
+        "losing_trades": 258,
+        "total_pnl": -26773.672142857,
+        "pnl_percent": -26773.672142857,
+        "win_rate": 17.038539553752535,
+        "avg_win": 695.4970408163267,
+        "avg_loss": -330.2148200442963,
+        "profit_factor": 0.6857381415515851,
+        "max_profit": 966.2857142857247,
+        "min_profit": -517.6342857143027
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 492,
+        "winning_trades": 84,
+        "losing_trades": 270,
+        "total_pnl": -665.4192857142879,
+        "pnl_percent": -665.4192857142879,
+        "win_rate": 17.073170731707318,
+        "avg_win": 13.973639455782312,
+        "avg_loss": -6.811870370370377,
+        "profit_factor": 0.6382027638494419,
+        "max_profit": 21.577142857142917,
+        "min_profit": -11.695000000000164
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 63,
+        "winning_trades": 11,
+        "losing_trades": 38,
+        "total_pnl": -101.26364285714226,
+        "pnl_percent": -101.26364285714227,
+        "win_rate": 17.46031746031746,
+        "avg_win": 9.041155844155748,
+        "avg_loss": -5.282009398496197,
+        "profit_factor": 0.4954888365920767,
+        "max_profit": 11.829571428571398,
+        "min_profit": -7.647714285713846
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 58,
+        "winning_trades": 19,
+        "losing_trades": 28,
+        "total_pnl": 4.7375714285708455,
+        "pnl_percent": 4.7375714285708455,
+        "win_rate": 32.758620689655174,
+        "avg_win": 5.828368421052633,
+        "avg_loss": -3.785765306122471,
+        "profit_factor": 1.0446934677430166,
+        "max_profit": 8.206285714285514,
+        "min_profit": -5.551285714285768
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 3,
+        "winning_trades": 1,
+        "losing_trades": 1,
+        "total_pnl": 1.0440714285687136,
+        "pnl_percent": 1.0440714285687136,
+        "win_rate": 33.33333333333333,
+        "avg_win": 14.967857142855792,
+        "avg_loss": -13.923785714287078,
+        "profit_factor": 1.0749847383457936,
+        "max_profit": 14.967857142855792,
+        "min_profit": -13.923785714287078
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 415,
+        "winning_trades": 76,
+        "losing_trades": 229,
+        "total_pnl": -210.10714285714312,
+        "pnl_percent": -210.10714285714315,
+        "win_rate": 18.313253012048193,
+        "avg_win": 5.4650375939849924,
+        "avg_loss": -2.731222707423592,
+        "profit_factor": 0.6640704407112603,
+        "max_profit": 6.61428571428587,
+        "min_profit": -3.449999999999818
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 0.8
+    },
+    "total_pnl": -28143.083057142783,
+    "total_trades": 1592,
+    "win_rate": 12.876884422110551,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 521,
+        "winning_trades": 67,
+        "losing_trades": 278,
+        "total_pnl": -26990.691999999915,
+        "pnl_percent": -26990.691999999915,
+        "win_rate": 12.859884836852206,
+        "avg_win": 696.9663113006395,
+        "avg_loss": -265.0627153134632,
+        "profit_factor": 0.6337137796650602,
+        "max_profit": 966.2857142857247,
+        "min_profit": -414.10742857144214
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 520,
+        "winning_trades": 54,
+        "losing_trades": 308,
+        "total_pnl": -888.8848571428583,
+        "pnl_percent": -888.8848571428584,
+        "win_rate": 10.384615384615385,
+        "avg_win": 14.528650793650788,
+        "avg_loss": -5.4332207792207825,
+        "profit_factor": 0.468825230339292,
+        "max_profit": 21.577142857142917,
+        "min_profit": -9.356000000000222
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 64,
+        "winning_trades": 11,
+        "losing_trades": 39,
+        "total_pnl": -63.84391428571598,
+        "pnl_percent": -63.84391428571598,
+        "win_rate": 17.1875,
+        "avg_win": 9.041155844155748,
+        "avg_loss": -4.187093040293057,
+        "profit_factor": 0.6090310323964259,
+        "max_profit": 11.829571428571398,
+        "min_profit": -6.118171428571259
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 59,
+        "winning_trades": 19,
+        "losing_trades": 28,
+        "total_pnl": 26.458428571429067,
+        "pnl_percent": 26.458428571429067,
+        "win_rate": 32.20338983050847,
+        "avg_win": 5.828368421052633,
+        "avg_loss": -3.010020408163249,
+        "profit_factor": 1.3139327145385218,
+        "max_profit": 8.206285714285514,
+        "min_profit": -4.441028571428433
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 3,
+        "winning_trades": 1,
+        "losing_trades": 0,
+        "total_pnl": 14.967857142855792,
+        "pnl_percent": 14.967857142855792,
+        "win_rate": 33.33333333333333,
+        "avg_win": 14.967857142855792,
+        "avg_loss": 0,
+        "profit_factor": 0,
+        "max_profit": 14.967857142855792,
+        "min_profit": 0.0
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 425,
+        "winning_trades": 53,
+        "losing_trades": 243,
+        "total_pnl": -241.0885714285787,
+        "pnl_percent": -241.0885714285787,
+        "win_rate": 12.470588235294118,
+        "avg_win": 5.515094339622645,
+        "avg_loss": -2.19501469723695,
+        "profit_factor": 0.5480057422624013,
+        "max_profit": 6.61428571428587,
+        "min_profit": -2.7600000000002183
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.0
+    },
+    "total_pnl": -33942.40628571417,
+    "total_trades": 2430,
+    "win_rate": 25.80246913580247,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 748,
+        "winning_trades": 191,
+        "losing_trades": 393,
+        "total_pnl": -32582.774285714157,
+        "pnl_percent": -32582.774285714157,
+        "win_rate": 25.534759358288774,
+        "avg_win": 502.72362004487644,
+        "avg_loss": -327.2340603416935,
+        "profit_factor": 0.7466406078774673,
+        "max_profit": 749.2339285714261,
+        "min_profit": -511.9349999999977
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 766,
+        "winning_trades": 186,
+        "losing_trades": 416,
+        "total_pnl": -925.0107142857132,
+        "pnl_percent": -925.0107142857132,
+        "win_rate": 24.281984334203656,
+        "avg_win": 10.213894009216604,
+        "avg_loss": -6.790372596153849,
+        "profit_factor": 0.6725388163439425,
+        "max_profit": 16.31571428571442,
+        "min_profit": -11.695000000000164
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 94,
+        "winning_trades": 28,
+        "losing_trades": 59,
+        "total_pnl": -115.34553571428569,
+        "pnl_percent": -115.3455357142857,
+        "win_rate": 29.78723404255319,
+        "avg_win": 6.903799744897859,
+        "avg_loss": -5.231388619854673,
+        "profit_factor": 0.626292515818208,
+        "max_profit": 9.602678571428442,
+        "min_profit": -7.647714285713846
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 87,
+        "winning_trades": 35,
+        "losing_trades": 42,
+        "total_pnl": 10.235535714284651,
+        "pnl_percent": 10.235535714284651,
+        "win_rate": 40.229885057471265,
+        "avg_win": 4.636043877550972,
+        "avg_loss": -3.619666666666652,
+        "profit_factor": 1.0673275341999704,
+        "max_profit": 7.4594999999999345,
+        "min_profit": -5.551285714285768
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 8,
+        "winning_trades": 5,
+        "losing_trades": 3,
+        "total_pnl": 39.70657142856726,
+        "pnl_percent": 39.70657142856726,
+        "win_rate": 62.5,
+        "avg_win": 13.735199999999896,
+        "avg_loss": -9.656476190477406,
+        "profit_factor": 2.3706370262243737,
+        "max_profit": 19.067571428571682,
+        "min_profit": -13.923785714287078
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 727,
+        "winning_trades": 182,
+        "losing_trades": 408,
+        "total_pnl": -369.2178571428658,
+        "pnl_percent": -369.2178571428658,
+        "win_rate": 25.034387895460796,
+        "avg_win": 4.057476452119272,
+        "avg_loss": -2.7148984593837584,
+        "profit_factor": 0.6666741899081018,
+        "max_profit": 5.22857142857174,
+        "min_profit": -3.449999999999818
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.0
+    },
+    "total_pnl": -38047.330499999814,
+    "total_trades": 2315,
+    "win_rate": 17.840172786177106,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 712,
+        "winning_trades": 124,
+        "losing_trades": 372,
+        "total_pnl": -36488.065714285534,
+        "pnl_percent": -36488.065714285534,
+        "win_rate": 17.415730337078653,
+        "avg_win": 683.9909562211985,
+        "avg_loss": -326.08318356374775,
+        "profit_factor": 0.6991988452618068,
+        "max_profit": 998.9785714285681,
+        "min_profit": -511.9349999999977
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 729,
+        "winning_trades": 124,
+        "losing_trades": 399,
+        "total_pnl": -1032.4485714285724,
+        "pnl_percent": -1032.4485714285724,
+        "win_rate": 17.00960219478738,
+        "avg_win": 13.551635944700465,
+        "avg_loss": -6.7991263873970675,
+        "profit_factor": 0.6194231056832136,
+        "max_profit": 21.577142857142917,
+        "min_profit": -11.695000000000164
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 90,
+        "winning_trades": 18,
+        "losing_trades": 57,
+        "total_pnl": -139.58207142856918,
+        "pnl_percent": -139.58207142856918,
+        "win_rate": 20.0,
+        "avg_win": 9.005380952380923,
+        "avg_loss": -5.292612781954839,
+        "profit_factor": 0.5373158076052978,
+        "max_profit": 11.829571428571398,
+        "min_profit": -7.647714285713846
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 81,
+        "winning_trades": 22,
+        "losing_trades": 40,
+        "total_pnl": -16.70164285714327,
+        "pnl_percent": -16.70164285714327,
+        "win_rate": 27.160493827160494,
+        "avg_win": 5.927675324675295,
+        "avg_loss": -3.6777624999999943,
+        "profit_factor": 0.886468723462001,
+        "max_profit": 8.206285714285514,
+        "min_profit": -5.551285714285768
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 7,
+        "winning_trades": 3,
+        "losing_trades": 2,
+        "total_pnl": 27.588928571422002,
+        "pnl_percent": 27.588928571422,
+        "win_rate": 42.857142857142854,
+        "avg_win": 16.345904761903512,
+        "avg_loss": -10.724392857144267,
+        "profit_factor": 2.28626995201146,
+        "max_profit": 16.50728571428408,
+        "min_profit": -13.923785714287078
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 696,
+        "winning_trades": 122,
+        "losing_trades": 390,
+        "total_pnl": -398.1214285714259,
+        "pnl_percent": -398.1214285714259,
+        "win_rate": 17.52873563218391,
+        "avg_win": 5.410421545667476,
+        "avg_loss": -2.7133150183150203,
+        "profit_factor": 0.6237723342355932,
+        "max_profit": 6.61428571428587,
+        "min_profit": -3.449999999999818
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 0.8
+    },
+    "total_pnl": -39196.279307142766,
+    "total_trades": 2573,
+    "win_rate": 18.92732219199378,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 789,
+        "winning_trades": 148,
+        "losing_trades": 426,
+        "total_pnl": -37654.813071428456,
+        "pnl_percent": -37654.813071428456,
+        "win_rate": 18.75792141951838,
+        "avg_win": 499.9144908301155,
+        "avg_loss": -262.0707927565388,
+        "profit_factor": 0.662718691197329,
+        "max_profit": 749.2339285714261,
+        "min_profit": -409.5480000000098
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 819,
+        "winning_trades": 136,
+        "losing_trades": 474,
+        "total_pnl": -1172.1725714285699,
+        "pnl_percent": -1172.1725714285699,
+        "win_rate": 16.605616605616603,
+        "avg_win": 10.36386554621851,
+        "avg_loss": -5.446536467751661,
+        "profit_factor": 0.5459613776482987,
+        "max_profit": 16.31571428571442,
+        "min_profit": -9.356000000000222
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 95,
+        "winning_trades": 25,
+        "losing_trades": 58,
+        "total_pnl": -69.67676428571485,
+        "pnl_percent": -69.67676428571485,
+        "win_rate": 26.31578947368421,
+        "avg_win": 7.000401428571349,
+        "avg_loss": -4.218737931034458,
+        "profit_factor": 0.7152410171463468,
+        "max_profit": 9.602678571428442,
+        "min_profit": -6.118171428571259
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 90,
+        "winning_trades": 32,
+        "losing_trades": 45,
+        "total_pnl": 18.466385714285025,
+        "pnl_percent": 18.466385714285025,
+        "win_rate": 35.55555555555556,
+        "avg_win": 4.626328124999958,
+        "avg_loss": -2.879469206349192,
+        "profit_factor": 1.1425138098644236,
+        "max_profit": 7.4594999999999345,
+        "min_profit": -4.441028571428433
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 8,
+        "winning_trades": 5,
+        "losing_trades": 0,
+        "total_pnl": 68.67599999999948,
+        "pnl_percent": 68.67599999999948,
+        "win_rate": 62.5,
+        "avg_win": 13.735199999999896,
+        "avg_loss": 0,
+        "profit_factor": 0,
+        "max_profit": 19.067571428571682,
+        "min_profit": 0.0
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 772,
+        "winning_trades": 141,
+        "losing_trades": 441,
+        "total_pnl": -386.75928571430904,
+        "pnl_percent": -386.75928571430904,
+        "win_rate": 18.264248704663213,
+        "avg_win": 4.054635258358609,
+        "avg_loss": -2.173385163589281,
+        "profit_factor": 0.5964796310759313,
+        "max_profit": 5.22857142857174,
+        "min_profit": -2.7600000000002183
+      }
+    }
+  },
+  {
+    "overrides": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 0.8
+    },
+    "total_pnl": -41451.05425714271,
+    "total_trades": 2480,
+    "win_rate": 12.822580645161292,
+    "per_symbol": {
+      "Volatility 75 Index": {
+        "symbol": "Volatility 75 Index",
+        "total_trades": 761,
+        "winning_trades": 99,
+        "losing_trades": 411,
+        "total_pnl": -39696.672571428404,
+        "pnl_percent": -39696.672571428404,
+        "win_rate": 13.009198423127463,
+        "avg_win": 684.7765367965369,
+        "avg_loss": -261.53175112964857,
+        "profit_factor": 0.6306927261585444,
+        "max_profit": 998.9785714285681,
+        "min_profit": -409.5480000000098
+      },
+      "Volatility 100 Index": {
+        "symbol": "Volatility 100 Index",
+        "total_trades": 786,
+        "winning_trades": 89,
+        "losing_trades": 456,
+        "total_pnl": -1264.581714285714,
+        "pnl_percent": -1264.581714285714,
+        "win_rate": 11.323155216284988,
+        "avg_win": 13.732680577849125,
+        "avg_loss": -5.45348746867168,
+        "profit_factor": 0.4914803545959303,
+        "max_profit": 21.577142857142917,
+        "min_profit": -9.356000000000222
+      },
+      "Boom 500 Index": {
+        "symbol": "Boom 500 Index",
+        "total_trades": 92,
+        "winning_trades": 16,
+        "losing_trades": 56,
+        "total_pnl": -92.94968571428672,
+        "pnl_percent": -92.94968571428672,
+        "win_rate": 17.391304347826086,
+        "avg_win": 9.134919642857028,
+        "avg_loss": -4.269792857142842,
+        "profit_factor": 0.6112654941679714,
+        "max_profit": 11.829571428571398,
+        "min_profit": -6.118171428571259
+      },
+      "Crash 500 Index": {
+        "symbol": "Crash 500 Index",
+        "total_trades": 85,
+        "winning_trades": 21,
+        "losing_trades": 43,
+        "total_pnl": -1.1965714285720424,
+        "pnl_percent": -1.1965714285720424,
+        "win_rate": 24.705882352941178,
+        "avg_win": 5.9260544217686615,
+        "avg_loss": -2.9219468438538128,
+        "profit_factor": 0.9904764720195152,
+        "max_profit": 8.206285714285514,
+        "min_profit": -4.441028571428433
+      },
+      "Boom 1000 Index": {
+        "symbol": "Boom 1000 Index",
+        "total_trades": 7,
+        "winning_trades": 3,
+        "losing_trades": 0,
+        "total_pnl": 49.037714285710535,
+        "pnl_percent": 49.037714285710535,
+        "win_rate": 42.857142857142854,
+        "avg_win": 16.345904761903512,
+        "avg_loss": 0,
+        "profit_factor": 0,
+        "max_profit": 16.50728571428408,
+        "min_profit": 0.0
+      },
+      "Step Index": {
+        "symbol": "Step Index",
+        "total_trades": 749,
+        "winning_trades": 90,
+        "losing_trades": 429,
+        "total_pnl": -444.691428571442,
+        "pnl_percent": -444.691428571442,
+        "win_rate": 12.016021361815755,
+        "avg_win": 5.418095238095238,
+        "avg_loss": -2.1732400932401243,
+        "profit_factor": 0.5230270416043465,
+        "max_profit": 6.61428571428587,
+        "min_profit": -2.7600000000002183
+      }
+    }
+  }
+]

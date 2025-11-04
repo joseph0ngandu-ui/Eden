@@ -1,0 +1,182 @@
+[
+  {
+    "ov": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.2
+    },
+    "end10": 18.674874842511294,
+    "end50": 136.24912025548429,
+    "score": 94.92399509799557
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.2
+    },
+    "end10": 16.70802346812794,
+    "end50": 124.56355137960693,
+    "score": 81.27157484773488
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.2
+    },
+    "end10": 18.763169926622552,
+    "end50": 120.09076870787447,
+    "score": 78.85393863449703
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.2
+    },
+    "end10": 14.079568775065177,
+    "end50": 48.13385425575519,
+    "score": 2.2134230308203655
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.2
+    },
+    "end10": 13.196156247047094,
+    "end50": 46.127981953290345,
+    "score": -0.6758617996625613
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 0.8
+    },
+    "end10": 14.051890979370885,
+    "end50": 39.669679672657395,
+    "score": -6.27842934797172
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 0.8
+    },
+    "end10": 12.019713595500772,
+    "end50": 40.97609483732681,
+    "score": -7.004191567172416
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 0.8
+    },
+    "end10": 10.3001412513452,
+    "end50": 42.630443786065165,
+    "score": -7.069414962589635
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.0
+    },
+    "end10": 11.909547382803519,
+    "end50": 40.23984114059299,
+    "score": -7.850611476603488
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 0.8
+    },
+    "end10": 12.909710395958143,
+    "end50": 37.55898219223636,
+    "score": -9.5313074118055
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.0
+    },
+    "end10": 10.723518672303678,
+    "end50": 39.1216387391005,
+    "score": -10.154842588595825
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 0.8
+    },
+    "end10": 11.61835173286479,
+    "end50": 36.79044838631973,
+    "score": -11.591199880815479
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 0.8
+    },
+    "end10": 11.264616767883664,
+    "end50": 36.76658993885302,
+    "score": -11.968793293263312
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.2,
+      "sl_atr_multiplier": 1.2
+    },
+    "end10": 11.59514216201299,
+    "end50": 36.265613195070486,
+    "score": -12.139244642916523
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.0
+    },
+    "end10": 11.837185915503193,
+    "end50": 35.74486027040039,
+    "score": -12.41795381409642
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.6,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.0
+    },
+    "end10": 11.848579538584277,
+    "end50": 28.806500190138653,
+    "score": -19.34492027127707
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 1.5,
+      "sl_atr_multiplier": 1.0
+    },
+    "end10": 12.721115554404964,
+    "end50": 27.45431858911202,
+    "score": -19.824565856483016
+  },
+  {
+    "ov": {
+      "confidence_threshold": 0.7,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.0
+    },
+    "end10": 11.852421767490412,
+    "end50": 27.93049353523615,
+    "score": -20.21708469727344
+  }
+]

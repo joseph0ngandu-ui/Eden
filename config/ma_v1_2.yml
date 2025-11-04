@@ -1,0 +1,24 @@
+strategy:
+  name: MA_v1.2
+  description: "MA crossover with ATR exits and trailing"
+  timeframe: M5
+  version: 1.2
+
+risk:
+  confidence_threshold: 0.0   # not used; keep for symmetry
+  max_trades_per_day: 12
+  max_open_positions: 1
+  max_bars_in_trade: 20
+  skip_bars_after_open: 0
+
+indicators:
+  atr:
+    period: 14
+  ma:
+    fast_period: 3
+    slow_period: 10
+
+entry_exit:
+  tp_atr_multiplier: 1.5
+  sl_atr_multiplier: 1.0
+  trail_trigger_r: 0.8

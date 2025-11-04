@@ -3,10 +3,11 @@
 # Validated Performance: $1.32M PnL on $100k capital (Aug-Oct 2025)
 
 strategy:
-  name: "MA Crossover Strategy"
-  description: "Fast MA(3) crosses above Slow MA(10) on M5 timeframe with 5-bar fixed hold"
-  version: "1.0.0"
+  name: "ICT_PA_HYBRID"
+  description: "ICT context + Price Action confirmations (M5) with Risk Ladder compounding"
+  version: "0.2.0"
   status: "PRODUCTION"
+  ict_pa_config_path: "config/ict_pa.yml"
 
 parameters:
   fast_ma_period: 3

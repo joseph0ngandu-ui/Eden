@@ -27,6 +27,8 @@ from health_monitor import HealthMonitor, RiskManager, HealthStatus, RiskLevel
 from volatility_adapter import VolatilityAdapter
 from risk_ladder import RiskLadder, PositionSizer, RiskTier
 from exit_logic import ExitManager, ExitConfig  # v1.2: Advanced exit logic
+from strategies.signals import ICTPA
+import yaml
 
 logging.basicConfig(
     level=logging.INFO,
@@ -94,9 +96,14 @@ class TradingBot:
         strategy_params = self.config.get_strategy_params()
         risk_config = self.config.get_risk_management()
         
+        # Determine strategy mode
+        self.strategy_name = self.config.get_strategy_name()
+        self.strategy_mode = 'MA'
+        self.ictpa = None
+        
         # Strategy parameters (loaded from config)
-        self.FAST_MA = strategy_params['fast_ma_period']
-        self.SLOW_MA = strategy_params['slow_ma_period']
+        self.FAST_MA = strategy_params.get('fast_ma_period', 3)
+        self.SLOW_MA = strategy_params.get('slow_ma_period', 10)
         self.HOLD_BARS = strategy_params['hold_bars']
         self.TIMEFRAME = mt5.TIMEFRAME_M5
         self.MAX_POSITION_SIZE = risk_config['position_size']
@@ -139,6 +146,18 @@ class TradingBot:
         self.exit_manager = ExitManager(config=exit_config)
         logger.info("Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP")
         
+        # ICT-PA hybrid initialization (if selected)
+        if self.strategy_name == 'ICT_PA_HYBRID':
+            try:
+                cfg_path = self.config.get_parameter('strategy.ict_pa_config_path', 'config/ict_pa.yml')
+                with open(cfg_path, 'r') as f:
+                    ict_cfg = yaml.safe_load(f) or {}
+                self.ictpa = ICTPA(ict_cfg)
+                self.strategy_mode = 'ICTPA'
+                logger.info(f"ICT-PA hybrid enabled with config: {cfg_path}")
+            except Exception as e:
+                logger.error(f"Failed to initialize ICT-PA: {e}")
+        
         # Growth mode & Risk Ladder
         growth_config = self.config.get_growth_mode_config()
         self.growth_mode_enabled = growth_config['enabled']
@@ -169,7 +188,10 @@ class TradingBot:
         """Log startup banner with version and configuration."""
         version = self.config.get_version()
         banner = f"\n{'='*80}\n"
-        banner += f"Eden v{version} - MA({self.FAST_MA},{self.SLOW_MA}) Strategy | M5 Timeframe\n"
+        if self.strategy_mode == 'ICTPA':
+            banner += f"Eden v{version} - ICT/PA Hybrid Strategy | M5 Timeframe\n"
+        else:
+            banner += f"Eden v{version} - MA({self.FAST_MA},{self.SLOW_MA}) Strategy | M5 Timeframe\n"
         banner += f"HOLD={self.HOLD_BARS} bars | Symbols={len(self.symbols)}\n"
         banner += f"Risk Cap: {self.health_monitor.max_drawdown_percent}% | Max Positions: {self.risk_manager.max_concurrent_positions}\n"
         banner += f"{'='*80}\n"
@@ -447,6 +469,39 @@ class TradingBot:
         except Exception as e:
             logger.error(f"Error processing signal for {symbol}: {e}")
     
+    def _run_cycle_ictpa(self) -> None:
+        try:
+            if self.ictpa is None:
+                return
+            for symbol in self.symbols:
+                df = self.fetch_recent_data(symbol, bars=300)
+                if df is None or len(df) < 50:
+                    continue
+                df.attrs['symbol'] = symbol
+                sigs = self.ictpa.generate_signals(df)
+                sig_by_idx = {t.bar_index: t for t in sigs}
+                last_idx = len(df)-1
+                if symbol not in self.ictpa.open_positions and last_idx in sig_by_idx:
+                    t = sig_by_idx[last_idx]
+                    # Place broker order
+                    order_type = 'BUY' if t.direction == 'LONG' else 'SELL'
+                    ticket = self.place_order(symbol, order_type, atr=t.atr)
+                    if ticket is not None:
+                        self.ictpa.on_trade_open(t)
+                        logger.info(f"ICT-PA OPEN {symbol} {t.direction} @ {t.entry_price:.2f} TP {t.tp:.2f} SL {t.sl:.2f} conf {t.confidence:.2f}")
+                # Manage open using latest window
+                actions = self.ictpa.manage_position(df, symbol)
+                for a in actions:
+                    if a.get('action') == 'close':
+                        # Close broker position
+                        positions = mt5.positions_get(symbol=symbol)
+                        if positions:
+                            vol = positions[0].volume
+                            self.close_position(symbol, vol, f"ICT-PA {a.get('reason')}")
+                        logger.info(f"ICT-PA CLOSE {symbol} reason={a.get('reason')} R={a.get('r_value')}")
+        except Exception as e:
+            logger.error(f"ICT-PA cycle error: {e}")
+    
     def run_cycle(self) -> None:
         """Run one trading cycle with health monitoring."""
         try:
@@ -467,6 +522,9 @@ class TradingBot:
                 if self.risk_ladder:
                     self.risk_ladder.update_balance(account_info.balance)
             
+            if self.strategy_mode == 'ICTPA':
+                self._run_cycle_ictpa()
+                return
             for symbol in self.symbols:
                 # Fetch recent data
                 df = self.fetch_recent_data(symbol, bars=50)

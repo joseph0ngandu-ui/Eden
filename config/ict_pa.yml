@@ -6,8 +6,8 @@ strategy:
 
 params:
   atr_period: 14
-  tp_atr_mult: 3.0
-  sl_atr_mult: 0.8
+  tp_atr_mult: 2.0
+  sl_atr_mult: 1.0
   min_confidence: 0.60
   max_trades_per_day: 5
   skip_bars_after_open: 0

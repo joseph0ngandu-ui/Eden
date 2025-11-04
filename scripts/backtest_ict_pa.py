@@ -10,9 +10,11 @@ import json
 import argparse
 import pandas as pd
 import MetaTrader5 as mt5
+import yaml
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
 from strategies.signals import ICTPA
+from risk_ladder import RiskLadder
 
 SYMBOLS_DEFAULT = [
     'XAUUSD',
@@ -22,24 +24,32 @@ SYMBOLS_DEFAULT = [
 ]
 
 
-def fetch(symbol: str, start: datetime, end: datetime):
-    # Try MT5 first
-    if mt5.initialize():
-        try:
-            rates = mt5.copy_rates_range(symbol, mt5.TIMEFRAME_M5, start, end)
-            if rates is not None:
-                df = pd.DataFrame(rates)
-                df['time'] = pd.to_datetime(df['time'], unit='s')
-                return df.sort_values('time').reset_index(drop=True)
-        finally:
-            mt5.shutdown()
-    # Fallback to CSV (M1) -> resample to M5 if available
+def fetch_mt5(symbol: str, start: datetime, end: datetime):
+    if not mt5.initialize():
+        return None
+    try:
+        rates = mt5.copy_rates_range(symbol, mt5.TIMEFRAME_M5, start, end)
+        if rates is None:
+            return None
+        df = pd.DataFrame(rates)
+        df['time'] = pd.to_datetime(df['time'], unit='s')
+        return df.sort_values('time').reset_index(drop=True)
+    finally:
+        mt5.shutdown()
+
+
+def fetch(symbol: str, start: datetime, end: datetime, mt5_only: bool = True):
+    df = fetch_mt5(symbol, start, end)
+    if df is not None:
+        return df
+    if mt5_only:
+        return None
+    # Fallback to CSV (M1/M5)
     data_dir = Path('data/mt5_feeds')
     for name in [f"{symbol}_M5.csv", f"{symbol}_M1.csv"]:
         csv = data_dir / name
         if csv.exists():
             d = pd.read_csv(csv)
-            # normalize timestamp column name
             ts_col = 'time' if 'time' in d.columns else ('timestamp' if 'timestamp' in d.columns else None)
             if ts_col is None:
                 continue
@@ -54,9 +64,33 @@ def fetch(symbol: str, start: datetime, end: datetime):
     return None
 
 
-def backtest_symbol(strategy: ICTPA, symbol: str, start: datetime, end: datetime):
+def compute_consecutive(trade_pnls):
+    max_w = max_l = cur_w = cur_l = 0
+    for p in trade_pnls:
+        if p > 0:
+            cur_w += 1
+            cur_l = 0
+        elif p < 0:
+            cur_l += 1
+            cur_w = 0
+        max_w = max(max_w, cur_w)
+        max_l = max(max_l, cur_l)
+    return max_w, max_l
+
+
+def compute_drawdown(equity_curve):
+    peak = -1e18
+    max_dd = 0.0
+    for e in equity_curve:
+        peak = max(peak, e)
+        if peak > 0:
+            max_dd = max(max_dd, (peak - e) / peak)
+    return max_dd
+
+
+def backtest_symbol(strategy: ICTPA, symbol: str, start: datetime, end: datetime, start_equity: float, mt5_only: bool):
     print(f"Backtesting {symbol}...", end=' ')
-    df = fetch(symbol, start, end)
+    df = fetch(symbol, start, end, mt5_only=mt5_only)
     if df is None or len(df) < 100:
         print('FAILED')
         return None, []
@@ -115,6 +149,34 @@ def backtest_symbol(strategy: ICTPA, symbol: str, start: datetime, end: datetime
     prof = [t['profit'] for t in trades]
     wins = [p for p in prof if p>0]
     losses = [p for p in prof if p<0]
+
+    # Advanced metrics
+    max_wins_row, max_losses_row = compute_consecutive(prof)
+    # Holding times
+    hold_times = []
+    for t in trades:
+        try:
+            et = pd.to_datetime(t.get('exit_time'))
+            st = pd.to_datetime(t.get('entry_time'))
+            if pd.notna(et) and pd.notna(st):
+                hold_times.append((et - st).total_seconds())
+        except Exception:
+            pass
+    avg_hold_sec = float(pd.Series(hold_times).mean()) if hold_times else 0.0
+
+    # RiskLadder equity curve (using R values)
+    eq = start_equity
+    curve = [eq]
+    rl = RiskLadder(initial_balance=start_equity, growth_mode_enabled=True, high_aggression_below=30.0, equity_step_size=25.0, equity_step_drawdown_limit=0.10)
+    for t in trades:
+        r = float(t.get('r_value', 0.0) or 0.0)
+        risk_pct = rl.get_adjusted_risk_pct()
+        pnl = eq * (risk_pct/100.0) * r
+        eq += pnl
+        rl.update_balance(eq)
+        curve.append(eq)
+    max_dd_pct = compute_drawdown(curve) * 100.0
+
     stats = {
         'symbol': symbol,
         'total_trades': len(trades),
@@ -122,9 +184,14 @@ def backtest_symbol(strategy: ICTPA, symbol: str, start: datetime, end: datetime
         'losing_trades': len(losses),
         'total_pnl': sum(prof),
         'win_rate': (len(wins)/len(trades))*100.0 if trades else 0.0,
-        'profit_factor': (sum(wins)/abs(sum(losses))) if losses else 0.0
+        'profit_factor': (sum(wins)/abs(sum(losses))) if losses else 0.0,
+        'max_consecutive_wins': max_wins_row,
+        'max_consecutive_losses': max_losses_row,
+        'avg_hold_seconds': avg_hold_sec,
+        'max_drawdown_percent_ladder': max_dd_pct,
+        'end_equity_ladder': eq,
     }
-    print(f"{len(trades)} trades | PnL ${stats['total_pnl']:+.2f} | WR {stats['win_rate']:.1f}% | PF {stats['profit_factor']:.2f}")
+    print(f"{len(trades)} trades | PnL ${stats['total_pnl']:+.2f} | WR {stats['win_rate']:.1f}% | PF {stats['profit_factor']:.2f} | MaxDD {max_dd_pct:.1f}% | MaxWinRow {max_wins_row} | MaxLossRow {max_losses_row} | AvgHold {avg_hold_sec/60:.1f}m")
     return stats, trades
 
 
@@ -133,13 +200,20 @@ def main():
     ap.add_argument('--start', type=str, default='2025-01-01', help='YYYY-MM-DD')
     ap.add_argument('--end', type=str, default='2025-11-03', help='YYYY-MM-DD')
     ap.add_argument('--symbols', type=str, default=','.join(SYMBOLS_DEFAULT), help='Comma list of symbols')
+    ap.add_argument('--start-equity', type=float, default=1000.0)
+    ap.add_argument('--mt5-only', action='store_true', help='Require MT5 data only (no CSV fallback)')
+    ap.add_argument('--config', type=str, default='config/ict_pa.yml')
     args = ap.parse_args()
 
     start = datetime.fromisoformat(args.start)
     end = datetime.fromisoformat(args.end)
     symbols = [s.strip() for s in args.symbols.split(',') if s.strip()]
 
-    strat = ICTPA()
+    # Load YAML config for ICTPA
+    with open(args.config, 'r') as f:
+        ict_cfg = yaml.safe_load(f) or {}
+
+    strat = ICTPA(ict_cfg)
     per_symbol = {}
     all_trades = []
     wins = losses = 0
@@ -147,7 +221,7 @@ def main():
     tot_trades = 0
 
     for s in symbols:
-        stats, trades = backtest_symbol(strat, s, start, end)
+        stats, trades = backtest_symbol(strat, s, start, end, args.start_equity, args.mt5_only)
         if not stats:
             continue
         per_symbol[s] = stats
@@ -163,6 +237,8 @@ def main():
         'timestamp': datetime.now().isoformat(),
         'period': {'start': start.isoformat(), 'end': end.isoformat()},
         'symbols': symbols,
+        'params_source': args.config,
+        'start_equity': args.start_equity,
         'portfolio': {
             'total_trades': tot_trades,
             'wins': wins,

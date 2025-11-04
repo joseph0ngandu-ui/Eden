@@ -232,10 +232,13 @@ class TradingBot:
         if self.account_id and self.password and self.server:
             if not mt5.login(self.account_id, password=self.password, server=self.server):
                 logger.error(f"MT5 login failed: {mt5.last_error()}")
+                print("Connected to MT5: False")
                 return False
             logger.info(f"Connected to MT5 account {self.account_id}")
+            print("Connected to MT5: True")
         else:
             logger.info("Connected to MT5 (using existing terminal session)")
+            print("Connected to MT5: True (existing session)")
         
         # Get initial balance
         account_info = mt5.account_info()
@@ -584,6 +587,7 @@ class TradingBot:
         self.is_running = True
         logger.info(f"Starting live trading bot (checking every {check_interval}s)")
         logger.info(f"Trading symbols: {', '.join(self.symbols)}")
+        print(f"Trading enabled: {self.health_monitor.trading_enabled}")
         
         try:
             while self.is_running:

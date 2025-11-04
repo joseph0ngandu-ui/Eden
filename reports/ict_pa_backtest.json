@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-04T09:45:40.280596",
+  "timestamp": "2025-11-04T13:42:13.147039",
   "period": {
     "start": "2025-10-15T00:00:00",
     "end": "2025-11-03T00:00:00"
@@ -10,49 +10,71 @@
     "Crash 500 Index",
     "Boom 500 Index"
   ],
+  "params_source": "config/ict_pa.yml",
+  "start_equity": 1000.0,
   "portfolio": {
-    "total_trades": 249,
-    "wins": 81,
-    "losses": 168,
-    "win_rate": 32.53012048192771,
-    "total_pnl": 6063.081833333319
+    "total_trades": 253,
+    "wins": 110,
+    "losses": 143,
+    "win_rate": 43.47826086956522,
+    "total_pnl": 7785.513738095205
   },
   "per_symbol": {
     "XAUUSD": {
       "symbol": "XAUUSD",
       "total_trades": 54,
-      "winning_trades": 14,
-      "losing_trades": 40,
-      "total_pnl": 23.07257142857179,
-      "win_rate": 25.925925925925924,
-      "profit_factor": 1.1196096844238153
+      "winning_trades": 22,
+      "losing_trades": 32,
+      "total_pnl": 65.41928571428389,
+      "win_rate": 40.74074074074074,
+      "profit_factor": 1.3328632849837612,
+      "max_consecutive_wins": 4,
+      "max_consecutive_losses": 7,
+      "avg_hold_seconds": 1366.6666666666667,
+      "max_drawdown_percent_ladder": 8.88999191532021,
+      "end_equity_ladder": 1162.0223259149493
     },
     "Volatility 75 Index": {
       "symbol": "Volatility 75 Index",
-      "total_trades": 83,
-      "winning_trades": 30,
-      "losing_trades": 53,
-      "total_pnl": 5896.530285714267,
-      "win_rate": 36.144578313253014,
-      "profit_factor": 1.7416738284199362
+      "total_trades": 87,
+      "winning_trades": 42,
+      "losing_trades": 45,
+      "total_pnl": 7599.069285714257,
+      "win_rate": 48.275862068965516,
+      "profit_factor": 1.9085022743946258,
+      "max_consecutive_wins": 8,
+      "max_consecutive_losses": 5,
+      "avg_hold_seconds": 1844.8275862068965,
+      "max_drawdown_percent_ladder": 6.821240756668634,
+      "end_equity_ladder": 1518.7862769207038
     },
     "Crash 500 Index": {
       "symbol": "Crash 500 Index",
       "total_trades": 56,
-      "winning_trades": 16,
-      "losing_trades": 40,
-      "total_pnl": 13.190547619049994,
-      "win_rate": 28.57142857142857,
-      "profit_factor": 1.1407209036976644
+      "winning_trades": 20,
+      "losing_trades": 36,
+      "total_pnl": 5.572880952381183,
+      "win_rate": 35.714285714285715,
+      "profit_factor": 1.0531921155286201,
+      "max_consecutive_wins": 2,
+      "max_consecutive_losses": 6,
+      "avg_hold_seconds": 825.0,
+      "max_drawdown_percent_ladder": 6.849008026923147,
+      "end_equity_ladder": 1075.4151101556954
     },
     "Boom 500 Index": {
       "symbol": "Boom 500 Index",
       "total_trades": 56,
-      "winning_trades": 21,
-      "losing_trades": 35,
-      "total_pnl": 130.2884285714299,
-      "win_rate": 37.5,
-      "profit_factor": 1.8881145098528227
+      "winning_trades": 26,
+      "losing_trades": 30,
+      "total_pnl": 115.45228571428288,
+      "win_rate": 46.42857142857143,
+      "profit_factor": 1.73241655066409,
+      "max_consecutive_wins": 4,
+      "max_consecutive_losses": 11,
+      "avg_hold_seconds": 1360.7142857142858,
+      "max_drawdown_percent_ladder": 10.940391375834682,
+      "end_equity_ladder": 1239.1149589530853
     }
   }
 }

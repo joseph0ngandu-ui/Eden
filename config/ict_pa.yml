@@ -1,0 +1,21 @@
+strategy:
+  name: ICT_PA_HYBRID
+  description: "ICT context + Price Action confirmations with kill-zones and confidence scoring"
+  timeframe: M5
+  version: 0.1
+
+params:
+  atr_period: 14
+  tp_atr_mult: 1.8
+  sl_atr_mult: 1.2
+  min_confidence: 0.65
+  max_trades_per_day: 5
+  skip_bars_after_open: 0
+  killzones: ["LONDON", "NY"]
+  w_bias: 0.35
+  w_pa: 0.45
+  w_kz: 0.20
+
+logging:
+  level: INFO
+  file: logs/ict_pa.log

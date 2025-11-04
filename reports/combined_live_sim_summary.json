@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-11-04T13:35:52.783712",
+  "period": {
+    "start": "2025-01-01T00:00:00",
+    "end": "2025-11-03T00:00:00"
+  },
+  "symbols": [
+    "XAUUSD",
+    "Volatility 75 Index",
+    "Crash 500 Index",
+    "Boom 500 Index"
+  ],
+  "start_equity": 1000.0,
+  "end_equity": 51483.35854008489,
+  "return_percent": 5048.335854008489,
+  "max_drawdown_percent": 75.40546474855311,
+  "per_symbol": {
+    "XAUUSD": {
+      "trades": 6414,
+      "end_equity": 6332.386389820353,
+      "max_dd_pct": 43.27769278356072
+    },
+    "Volatility 75 Index": {
+      "trades": 10350,
+      "end_equity": 3868.225209882314,
+      "max_dd_pct": 63.50905985727019
+    },
+    "Crash 500 Index": {
+      "trades": 10442,
+      "end_equity": 1.9709075802832155e-44,
+      "max_dd_pct": 100.0
+    },
+    "Boom 500 Index": {
+      "trades": 10607,
+      "end_equity": 8469.548178220191,
+      "max_dd_pct": 69.26366885348071
+    }
+  },
+  "params_used": {
+    "ict": {
+      "min_confidence": 0.6,
+      "tp_atr_mult": 3.0,
+      "sl_atr_mult": 0.8,
+      "w_bias": 0.25,
+      "w_pa": 0.55,
+      "w_kz": 0.1
+    },
+    "ma": {
+      "fast_period": 3,
+      "slow_period": 10,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.0
+    }
+  }
+}

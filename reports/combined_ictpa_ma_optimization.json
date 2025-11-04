@@ -1,0 +1,500 @@
+{
+  "timestamp": "2025-11-04T13:30:59.627292",
+  "period": {
+    "start": "2025-01-01T00:00:00",
+    "end": "2025-11-03T00:00:00"
+  },
+  "symbols": [
+    "XAUUSD",
+    "Volatility 75 Index",
+    "Crash 500 Index",
+    "Boom 500 Index"
+  ],
+  "start_equity": 1000.0,
+  "top": [
+    {
+      "ict": {
+        "min_confidence": 0.6,
+        "tp_atr_mult": 3.0,
+        "sl_atr_mult": 0.8,
+        "w_bias": 0.25,
+        "w_pa": 0.55,
+        "w_kz": 0.1
+      },
+      "ma": {
+        "fast_period": 3,
+        "slow_period": 10,
+        "tp_atr_multiplier": 2.0,
+        "sl_atr_multiplier": 1.0
+      },
+      "portfolio": {
+        "end_equity": 51483.35854008489,
+        "max_dd_pct": 75.40546474855311,
+        "trades": 37813,
+        "per_symbol": {
+          "XAUUSD": {
+            "trades": 6414,
+            "end_equity": 6332.386389820353,
+            "max_dd_pct": 43.27769278356072
+          },
+          "Volatility 75 Index": {
+            "trades": 10350,
+            "end_equity": 3868.225209882314,
+            "max_dd_pct": 63.50905985727019
+          },
+          "Crash 500 Index": {
+            "trades": 10442,
+            "end_equity": 1.9709075802832155e-44,
+            "max_dd_pct": 100.0
+          },
+          "Boom 500 Index": {
+            "trades": 10607,
+            "end_equity": 8469.548178220191,
+            "max_dd_pct": 69.26366885348071
+          }
+        }
+      },
+      "score": 51332.54761058778
+    },
+    {
+      "ict": {
+        "min_confidence": 0.6,
+        "tp_atr_mult": 2.5,
+        "sl_atr_mult": 0.8,
+        "w_bias": 0.25,
+        "w_pa": 0.55,
+        "w_kz": 0.1
+      },
+      "ma": {
+        "fast_period": 3,
+        "slow_period": 10,
+        "tp_atr_multiplier": 2.0,
+        "sl_atr_multiplier": 1.0
+      },
+      "portfolio": {
+        "end_equity": 44382.54568789867,
+        "max_dd_pct": 86.14126266655755,
+        "trades": 37860,
+        "per_symbol": {
+          "XAUUSD": {
+            "trades": 6428,
+            "end_equity": 6100.811983294871,
+            "max_dd_pct": 35.35902825675218
+          },
+          "Volatility 75 Index": {
+            "trades": 10372,
+            "end_equity": 4465.998169366847,
+            "max_dd_pct": 56.02175563500889
+          },
+          "Crash 500 Index": {
+            "trades": 10445,
+            "end_equity": 3.285391491374634e-44,
+            "max_dd_pct": 100.0
+          },
+          "Boom 500 Index": {
+            "trades": 10615,
+            "end_equity": 8005.022139785986,
+            "max_dd_pct": 69.8031632599357
+          }
+        }
+      },
+      "score": 44210.263162565556
+    },
+    {
+      "ict": {
+        "min_confidence": 0.6,
+        "tp_atr_mult": 2.0,
+        "sl_atr_mult": 0.8,
+        "w_bias": 0.25,
+        "w_pa": 0.55,
+        "w_kz": 0.1
+      },
+      "ma": {
+        "fast_period": 3,
+        "slow_period": 10,
+        "tp_atr_multiplier": 2.0,
+        "sl_atr_multiplier": 1.0
+      },
+      "portfolio": {
+        "end_equity": 41164.88139115065,
+        "max_dd_pct": 81.56583118949621,
+        "trades": 37913,
+        "per_symbol": {
+          "XAUUSD": {
+            "trades": 6441,
+            "end_equity": 9024.54403185735,
+            "max_dd_pct": 38.27306057747287
+          },
+          "Volatility 75 Index": {
+            "trades": 10408,
+            "end_equity": 5138.219165514124,
+            "max_dd_pct": 56.389423174292894
+          },
+          "Crash 500 Index": {
+            "trades": 10446,
+            "end_equity": 2.513219350292639e-33,
+            "max_dd_pct": 100.0
+          },
+          "Boom 500 Index": {
+            "trades": 10618,
+            "end_equity": 6840.941603400038,
+            "max_dd_pct": 62.43844158820785
+          }
+        }
+      },
+      "score": 41001.74972877166
+    },
+    {
+      "ict": {
+        "min_confidence": 0.6,
+        "tp_atr_mult": 3.0,
+        "sl_atr_mult": 1.0,
+        "w_bias": 0.25,
+        "w_pa": 0.55,
+        "w_kz": 0.1
+      },
+      "ma": {
+        "fast_period": 3,
+        "slow_period": 10,
+        "tp_atr_multiplier": 2.0,
+        "sl_atr_multiplier": 1.0
+      },
+      "portfolio": {
+        "end_equity": 39527.410736880964,
+        "max_dd_pct": 95.43771449422582,
+        "trades": 37743,
+        "per_symbol": {
+          "XAUUSD": {
+            "trades": 6390,
+            "end_equity": 4612.78454307831,
+            "max_dd_pct": 39.57135721284505
+          },
+          "Volatility 75 Index": {
+            "trades": 10317,
+            "end_equity": 3954.388324257399,
+            "max_dd_pct": 59.038118342812865
+          },
+          "Crash 500 Index": {
+            "trades": 10438,
+            "end_equity": 3.55633921126207e-32,
+            "max_dd_pct": 100.0
+          },
+          "Boom 500 Index": {
+            "trades": 10598,
+            "end_equity": 3907.5482045180843,
+            "max_dd_pct": 70.67596010926795
+          }
+        }
+      },
+      "score": 39336.53530789251
+    },
+    {
+      "ict": {
+        "min_confidence": 0.6,
+        "tp_atr_mult": 2.5,
+        "sl_atr_mult": 0.8,
+        "w_bias": 0.25,
+        "w_pa": 0.55,
+        "w_kz": 0.1
+      },
+      "ma": {
+        "fast_period": 3,
+        "slow_period": 10,
+        "tp_atr_multiplier": 2.0,
+        "sl_atr_multiplier": 1.2
+      },
+      "portfolio": {
+        "end_equity": 38342.2230305118,
+        "max_dd_pct": 67.23197221956622,
+        "trades": 35652,
+        "per_symbol": {
+          "XAUUSD": {
+            "trades": 5809,
+            "end_equity": 4674.40579033648,
+            "max_dd_pct": 34.57921490556973
+          },
+          "Volatility 75 Index": {
+            "trades": 9447,
+            "end_equity": 3506.2898119804477,
+            "max_dd_pct": 52.24878767099571
+          },
+          "Crash 500 Index": {
+            "trades": 10118,
+            "end_equity": 7.507380148965654e-22,
+            "max_dd_pct": 100.0
+          },
+          "Boom 500 Index": {
+            "trades": 10278,
+            "end_equity": 6595.725223223655,
+            "max_dd_pct": 55.94869860502708
+          }
+        }
+      },
+      "score": 38207.75908607266
+    },
+    {
+      "ict": {
+        "min_confidence": 0.6,
+        "tp_atr_mult": 3.0,
+        "sl_atr_mult": 0.8,
+        "w_bias": 0.25,
+        "w_pa": 0.55,
+        "w_kz": 0.1
+      },
+      "ma": {
+        "fast_period": 3,
+        "slow_period": 10,
+        "tp_atr_multiplier": 2.0,
+        "sl_atr_multiplier": 1.2
+      },
+      "portfolio": {
+        "end_equity": 33912.851102130575,
+        "max_dd_pct": 75.85212366933692,
+        "trades": 35605,
+        "per_symbol": {
+          "XAUUSD": {
+            "trades": 5795,
+            "end_equity": 4290.134955838483,
+            "max_dd_pct": 38.63238989377212
+          },
+          "Volatility 75 Index": {
+            "trades": 9425,
+            "end_equity": 3052.699284340636,
+            "max_dd_pct": 58.76448755855264
+          },
+          "Crash 500 Index": {
+            "trades": 10115,
+            "end_equity": 8.197470301685907e-21,
+            "max_dd_pct": 100.0
+          },
+          "Boom 500 Index": {
+            "trades": 10270,
+            "end_equity": 6416.672157523628,
+            "max_dd_pct": 56.14946463767252
+          }
+        }
+      },
+      "score": 33761.1468547919
+    },
+    {
+      "ict": {
+        "min_confidence": 0.6,
+        "tp_atr_mult": 2.0,
+        "sl_atr_mult": 0.8,
+        "w_bias": 0.25,
+        "w_pa": 0.55,
+        "w_kz": 0.1
+      },
+      "ma": {
+        "fast_period": 3,
+        "slow_period": 10,
+        "tp_atr_multiplier": 2.0,
+        "sl_atr_multiplier": 1.2
+      },
+      "portfolio": {
+        "end_equity": 33269.13334789809,
+        "max_dd_pct": 61.88681444981581,
+        "trades": 35705,
+        "per_symbol": {
+          "XAUUSD": {
+            "trades": 5822,
+            "end_equity": 8056.674985813236,
+            "max_dd_pct": 32.192892738677195
+          },
+          "Volatility 75 Index": {
+            "trades": 9483,
+            "end_equity": 3704.191230072844,
+            "max_dd_pct": 50.53515603791063
+          },
+          "Crash 500 Index": {
+            "trades": 10119,
+            "end_equity": 1.5318848732521233e-21,
+            "max_dd_pct": 100.0
+          },
+          "Boom 500 Index": {
+            "trades": 10281,
+            "end_equity": 4618.046805359793,
+            "max_dd_pct": 56.28497701495985
+          }
+        }
+      },
+      "score": 33145.35971899846
+    },
+    {
+      "ict": {
+        "min_confidence": 0.6,
+        "tp_atr_mult": 2.5,
+        "sl_atr_mult": 1.0,
+        "w_bias": 0.25,
+        "w_pa": 0.55,
+        "w_kz": 0.1
+      },
+      "ma": {
+        "fast_period": 3,
+        "slow_period": 10,
+        "tp_atr_multiplier": 2.0,
+        "sl_atr_multiplier": 1.0
+      },
+      "portfolio": {
+        "end_equity": 32900.07487496801,
+        "max_dd_pct": 91.40778204656573,
+        "trades": 37803,
+        "per_symbol": {
+          "XAUUSD": {
+            "trades": 6408,
+            "end_equity": 5051.32052355911,
+            "max_dd_pct": 40.55590271178908
+          },
+          "Volatility 75 Index": {
+            "trades": 10344,
+            "end_equity": 5037.98968174014,
+            "max_dd_pct": 54.897482578960265
+          },
+          "Crash 500 Index": {
+            "trades": 10441,
+            "end_equity": 1.654572935212477e-45,
+            "max_dd_pct": 100.0
+          },
+          "Boom 500 Index": {
+            "trades": 10610,
+            "end_equity": 3305.85884807849,
+            "max_dd_pct": 77.2853954896986
+          }
+        }
+      },
+      "score": 32717.25931087488
+    },
+    {
+      "ict": {
+        "min_confidence": 0.6,
+        "tp_atr_mult": 2.0,
+        "sl_atr_mult": 1.0,
+        "w_bias": 0.25,
+        "w_pa": 0.55,
+        "w_kz": 0.1
+      },
+      "ma": {
+        "fast_period": 3,
+        "slow_period": 10,
+        "tp_atr_multiplier": 2.0,
+        "sl_atr_multiplier": 1.0
+      },
+      "portfolio": {
+        "end_equity": 30659.658762021867,
+        "max_dd_pct": 90.5372174703127,
+        "trades": 37866,
+        "per_symbol": {
+          "XAUUSD": {
+            "trades": 6423,
+            "end_equity": 8760.545862688803,
+            "max_dd_pct": 37.98812690527337
+          },
+          "Volatility 75 Index": {
+            "trades": 10388,
+            "end_equity": 4903.206844564059,
+            "max_dd_pct": 56.70813357777469
+          },
+          "Crash 500 Index": {
+            "trades": 10442,
+            "end_equity": 2.5253253314428856e-32,
+            "max_dd_pct": 100.0
+          },
+          "Boom 500 Index": {
+            "trades": 10613,
+            "end_equity": 3506.577969790609,
+            "max_dd_pct": 67.3554200959356
+          }
+        }
+      },
+      "score": 30478.58432708124
+    },
+    {
+      "ict": {
+        "min_confidence": 0.6,
+        "tp_atr_mult": 3.0,
+        "sl_atr_mult": 1.0,
+        "w_bias": 0.25,
+        "w_pa": 0.55,
+        "w_kz": 0.1
+      },
+      "ma": {
+        "fast_period": 3,
+        "slow_period": 10,
+        "tp_atr_multiplier": 2.0,
+        "sl_atr_multiplier": 1.2
+      },
+      "portfolio": {
+        "end_equity": 22014.003151805297,
+        "max_dd_pct": 71.92399774309969,
+        "trades": 35535,
+        "per_symbol": {
+          "XAUUSD": {
+            "trades": 5771,
+            "end_equity": 4212.000978129036,
+            "max_dd_pct": 36.09268162082614
+          },
+          "Volatility 75 Index": {
+            "trades": 9392,
+            "end_equity": 3475.1782219241823,
+            "max_dd_pct": 59.12223662318181
+          },
+          "Crash 500 Index": {
+            "trades": 10111,
+            "end_equity": 8.060327441036683e-22,
+            "max_dd_pct": 100.0
+          },
+          "Boom 500 Index": {
+            "trades": 10261,
+            "end_equity": 2939.5148237296844,
+            "max_dd_pct": 66.66476226269707
+          }
+        }
+      },
+      "score": 21870.1551563191
+    }
+  ],
+  "best": {
+    "ict": {
+      "min_confidence": 0.6,
+      "tp_atr_mult": 3.0,
+      "sl_atr_mult": 0.8,
+      "w_bias": 0.25,
+      "w_pa": 0.55,
+      "w_kz": 0.1
+    },
+    "ma": {
+      "fast_period": 3,
+      "slow_period": 10,
+      "tp_atr_multiplier": 2.0,
+      "sl_atr_multiplier": 1.0
+    },
+    "portfolio": {
+      "end_equity": 51483.35854008489,
+      "max_dd_pct": 75.40546474855311,
+      "trades": 37813,
+      "per_symbol": {
+        "XAUUSD": {
+          "trades": 6414,
+          "end_equity": 6332.386389820353,
+          "max_dd_pct": 43.27769278356072
+        },
+        "Volatility 75 Index": {
+          "trades": 10350,
+          "end_equity": 3868.225209882314,
+          "max_dd_pct": 63.50905985727019
+        },
+        "Crash 500 Index": {
+          "trades": 10442,
+          "end_equity": 1.9709075802832155e-44,
+          "max_dd_pct": 100.0
+        },
+        "Boom 500 Index": {
+          "trades": 10607,
+          "end_equity": 8469.548178220191,
+          "max_dd_pct": 69.26366885348071
+        }
+      }
+    },
+    "score": 51332.54761058778
+  }
+}

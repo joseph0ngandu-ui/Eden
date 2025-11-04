@@ -1,0 +1,23 @@
+{
+  "commit": "0aa572b",
+  "tag": "v1.3-progress",
+  "changed": [
+    "M\tREADME.md",
+    "A\tdocs/ARCHITECTURE.md",
+    "A\tdocs/BACKTESTING.md",
+    "A\tdocs/CONFIGURATION.md",
+    "A\tdocs/RISK_MANAGEMENT.md",
+    "A\tdocs/STRATEGIES.md",
+    "R100\tVOLATILITY_BURST_v1.3_README.md\tdocs/VOLATILITY_BURST_v1.3.md",
+    "R098\tbacktest_ma_v1_2.py\tscripts/backtest_ma_v1_2.py",
+    "R100\tbacktest_portfolio_runner.py\tscripts/backtest_portfolio_runner.py",
+    "R099\tbacktest_volatility_burst.py\tscripts/backtest_volatility_burst.py",
+    "R100\tcombined_portfolio_compound.py\tscripts/combined_portfolio_compound.py",
+    "R097\toptimize_vb_per_symbol.py\tscripts/optimize_vb_per_symbol.py",
+    "R097\toptimize_volatility_burst.py\tscripts/optimize_volatility_burst.py",
+    "R100\tportfolio_compound_batch.py\tscripts/portfolio_compound_batch.py",
+    "R100\tportfolio_compound_vb.py\tscripts/portfolio_compound_vb.py",
+    "R100\tsimulate_compound_vb.py\tscripts/simulate_compound_vb.py"
+  ],
+  "notes": "Structured repository: moved scripts/ and docs/. Updated README, added dry-run entries. Removed temp scripts and caches."
+}

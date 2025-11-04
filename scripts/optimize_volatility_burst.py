@@ -13,7 +13,7 @@ from datetime import datetime
 import json
 
 sys.path.insert(0, str(Path(__file__).parent))
-sys.path.insert(0, str(Path(__file__).parent / 'src'))
+sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
 
 from backtest_volatility_burst import VBBacktester
 

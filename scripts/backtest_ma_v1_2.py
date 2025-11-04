@@ -11,7 +11,7 @@ import numpy as np
 import MetaTrader5 as mt5
 import json
 
-sys.path.insert(0, str(Path(__file__).parent / 'src'))
+sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
 
 from ma_v1_2 import MA_v1_2
 

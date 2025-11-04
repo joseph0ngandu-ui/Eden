@@ -14,7 +14,7 @@ import numpy as np
 import MetaTrader5 as mt5
 import json
 
-sys.path.insert(0, str(Path(__file__).parent / 'src'))
+sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
 
 from volatility_burst_enhanced import VolatilityBurst
 

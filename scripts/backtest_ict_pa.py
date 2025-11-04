@@ -7,21 +7,19 @@ import sys
 from pathlib import Path
 from datetime import datetime
 import json
+import argparse
 import pandas as pd
 import MetaTrader5 as mt5
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
 from strategies.signals import ICTPA
 
-SYMBOLS = [
+SYMBOLS_DEFAULT = [
     'XAUUSD',
     'Volatility 75 Index',
     'Crash 500 Index',
     'Boom 500 Index',
 ]
-
-START = datetime(2023,1,1)
-END = datetime(2025,11,3)
 
 
 def fetch(symbol: str, start: datetime, end: datetime):
@@ -131,6 +129,16 @@ def backtest_symbol(strategy: ICTPA, symbol: str, start: datetime, end: datetime
 
 
 def main():
+    ap = argparse.ArgumentParser(description='Backtest ICT+PA hybrid')
+    ap.add_argument('--start', type=str, default='2025-01-01', help='YYYY-MM-DD')
+    ap.add_argument('--end', type=str, default='2025-11-03', help='YYYY-MM-DD')
+    ap.add_argument('--symbols', type=str, default=','.join(SYMBOLS_DEFAULT), help='Comma list of symbols')
+    args = ap.parse_args()
+
+    start = datetime.fromisoformat(args.start)
+    end = datetime.fromisoformat(args.end)
+    symbols = [s.strip() for s in args.symbols.split(',') if s.strip()]
+
     strat = ICTPA()
     per_symbol = {}
     all_trades = []
@@ -138,8 +146,8 @@ def main():
     tot_pnl = 0.0
     tot_trades = 0
 
-    for s in SYMBOLS:
-        stats, trades = backtest_symbol(strat, s, START, END)
+    for s in symbols:
+        stats, trades = backtest_symbol(strat, s, start, end)
         if not stats:
             continue
         per_symbol[s] = stats
@@ -153,8 +161,8 @@ def main():
 
     out = {
         'timestamp': datetime.now().isoformat(),
-        'period': {'start': START.isoformat(), 'end': END.isoformat()},
-        'symbols': SYMBOLS,
+        'period': {'start': start.isoformat(), 'end': end.isoformat()},
+        'symbols': symbols,
         'portfolio': {
             'total_trades': tot_trades,
             'wins': wins,

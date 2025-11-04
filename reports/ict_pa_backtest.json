@@ -1,7 +1,7 @@
 {
-  "timestamp": "2025-11-04T09:27:40.654855",
+  "timestamp": "2025-11-04T09:45:40.280596",
   "period": {
-    "start": "2023-01-01T00:00:00",
+    "start": "2025-10-15T00:00:00",
     "end": "2025-11-03T00:00:00"
   },
   "symbols": [
@@ -11,11 +11,48 @@
     "Boom 500 Index"
   ],
   "portfolio": {
-    "total_trades": 0,
-    "wins": 0,
-    "losses": 0,
-    "win_rate": 0.0,
-    "total_pnl": 0.0
+    "total_trades": 249,
+    "wins": 81,
+    "losses": 168,
+    "win_rate": 32.53012048192771,
+    "total_pnl": 6063.081833333319
   },
-  "per_symbol": {}
+  "per_symbol": {
+    "XAUUSD": {
+      "symbol": "XAUUSD",
+      "total_trades": 54,
+      "winning_trades": 14,
+      "losing_trades": 40,
+      "total_pnl": 23.07257142857179,
+      "win_rate": 25.925925925925924,
+      "profit_factor": 1.1196096844238153
+    },
+    "Volatility 75 Index": {
+      "symbol": "Volatility 75 Index",
+      "total_trades": 83,
+      "winning_trades": 30,
+      "losing_trades": 53,
+      "total_pnl": 5896.530285714267,
+      "win_rate": 36.144578313253014,
+      "profit_factor": 1.7416738284199362
+    },
+    "Crash 500 Index": {
+      "symbol": "Crash 500 Index",
+      "total_trades": 56,
+      "winning_trades": 16,
+      "losing_trades": 40,
+      "total_pnl": 13.190547619049994,
+      "win_rate": 28.57142857142857,
+      "profit_factor": 1.1407209036976644
+    },
+    "Boom 500 Index": {
+      "symbol": "Boom 500 Index",
+      "total_trades": 56,
+      "winning_trades": 21,
+      "losing_trades": 35,
+      "total_pnl": 130.2884285714299,
+      "win_rate": 37.5,
+      "profit_factor": 1.8881145098528227
+    }
+  }
 }

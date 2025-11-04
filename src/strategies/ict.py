@@ -35,7 +35,7 @@ class ICT:
         """
         if df.empty or 'time' not in df.columns:
             return HTFBias(None, 0.0)
-        d = df.set_index('time').resample(f'{self.htf_minutes}T').agg({'open':'first','high':'max','low':'min','close':'last'})
+        d = df.set_index('time').resample(f'{self.htf_minutes}min').agg({'open':'first','high':'max','low':'min','close':'last'})
         if len(d) < self.ma_period + 2:
             return HTFBias(None, 0.0)
         ma = d['close'].rolling(self.ma_period, min_periods=1).mean()

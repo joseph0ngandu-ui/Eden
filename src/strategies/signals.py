@@ -17,17 +17,17 @@ from .price_action import PriceAction
 @dataclass
 class ICTPAParams:
     atr_period: int = 14
-    tp_atr_mult: float = 1.8
-    sl_atr_mult: float = 1.2
-    min_confidence: float = 0.65
+    tp_atr_mult: float = 2.5
+    sl_atr_mult: float = 0.8
+    min_confidence: float = 0.60
     max_trades_per_day: int = 5
     skip_bars_after_open: int = 0
     killzones: List[str] = None  # e.g., ["LONDON","NY"]
     
-    # weights
-    w_bias: float = 0.35
-    w_pa: float = 0.45
-    w_kz: float = 0.20
+    # weights (best-performing observed)
+    w_bias: float = 0.25
+    w_pa: float = 0.55
+    w_kz: float = 0.10
 
 
 @dataclass

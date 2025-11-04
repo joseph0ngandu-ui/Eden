@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-11-04T09:04:56.362980",
+  "start_equity": 100.0,
+  "end_equity": 141.7134559670096,
+  "return_percent": 41.713455967009594,
+  "max_drawdown_percent": 32.07773026084144,
+  "ladder": {
+    "high_aggression_below": 20.0,
+    "equity_step_size": 25.0,
+    "equity_step_drawdown_limit": 0.1,
+    "pip_value": 10.0
+  },
+  "period": {
+    "start": "2025-10-21T09:04:54.805450",
+    "end": "2025-11-04T09:04:54.805450"
+  },
+  "best_config_used": "reports\\vb_v1.3_per_symbol_best_merged.json",
+  "selected_symbols": [
+    "Crash 500 Index",
+    "Volatility 75 Index",
+    "XAUUSD",
+    "Boom 1000 Index"
+  ]
+}

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Live-Sim (Paper) using VB v1.3 on current profitable symbols.
-- Uses per-symbol best params from reports/vb_v1.3_per_symbol_best.json
+- Prefers merged best params in reports/vb_v1.3_per_symbol_best_merged.json if present
+- Falls back to reports/vb_v1.3_per_symbol_best.json
 - Simulates recent period (last 14 days) on M5 MT5 data
 - No real orders; produces JSON/CSV in reports/
 """
@@ -10,6 +11,7 @@ import sys
 from pathlib import Path
 from datetime import datetime, timedelta
 import json
+import argparse
 import pandas as pd
 import MetaTrader5 as mt5
 
@@ -37,19 +39,37 @@ def risk_pct(equity: float) -> float:
 def load_profitable_symbols(best_path: Path) -> dict:
     with open(best_path, 'r') as f:
         data = json.load(f)
-    # Filter to profitable per-symbol stats
+    # Filter to profitable symbols; if merged file, require long-term profitability
     selected = {}
     for sym, info in data.items():
-        stats = info.get('stats', {})
-        if stats and float(stats.get('total_pnl', 0)) > 0:
-            selected[sym] = info['overrides']
+        # Prefer long-term profitability gate when available (merged file)
+        if 'long_term' in info and isinstance(info['long_term'], dict):
+            lt_stats = (info['long_term'] or {}).get('stats', {})
+            if lt_stats and float(lt_stats.get('total_pnl', 0) or 0) > 0:
+                selected[sym] = info['overrides']
+        else:
+            stats = info.get('stats', {})
+            if stats and float(stats.get('total_pnl', 0) or 0) > 0:
+                selected[sym] = info['overrides']
     return selected
 
 
-def main(start_equity: float = 100.0, days: int = 14):
-    best_cfg_path = REPORTS / 'vb_v1.3_per_symbol_best.json'
+def main():
+    ap = argparse.ArgumentParser(description='Live-sim VB v1.3 portfolio')
+    ap.add_argument('--start-equity', type=float, default=100.0)
+    ap.add_argument('--days', type=int, default=14)
+    ap.add_argument('--best', type=str, default='', help='Path to per-symbol best JSON to use')
+    args = ap.parse_args()
+
+    # Resolve best config path with preference for merged best
+    if args.best:
+        best_cfg_path = Path(args.best)
+    else:
+        merged = REPORTS / 'vb_v1.3_per_symbol_best_merged.json'
+        best_cfg_path = merged if merged.exists() else (REPORTS / 'vb_v1.3_per_symbol_best.json')
+
     if not best_cfg_path.exists():
-        print('Best-config file not found: reports/vb_v1.3_per_symbol_best.json')
+        print(f'Best-config file not found: {best_cfg_path}')
         sys.exit(1)
 
     selected = load_profitable_symbols(best_cfg_path)
@@ -57,7 +77,7 @@ def main(start_equity: float = 100.0, days: int = 14):
         print('No profitable symbols found in best-config file.')
         sys.exit(1)
 
-    start = datetime.now() - timedelta(days=days)
+    start = datetime.now() - timedelta(days=args.days)
     end = datetime.now()
 
     bt = VBBacktester('config/volatility_burst.yml')
@@ -85,7 +105,7 @@ def main(start_equity: float = 100.0, days: int = 14):
     df['exit_time'] = pd.to_datetime(df['exit_time'])
     df = df.sort_values('exit_time').reset_index(drop=True)
 
-    equity = start_equity
+    equity = args.start_equity
     equity_curve = [equity]
     results = []
     daily_counts = {}
@@ -123,21 +143,23 @@ def main(start_equity: float = 100.0, days: int = 14):
 
     summary = {
         'timestamp': datetime.now().isoformat(),
-        'start_equity': start_equity,
+        'start_equity': args.start_equity,
         'end_equity': equity,
-        'return_percent': (equity / start_equity - 1) * 100,
+        'return_percent': (equity / args.start_equity - 1) * 100,
         'period': {'start': start.isoformat(), 'end': end.isoformat()},
         'selected_symbols': list(selected.keys()),
         'per_symbol_stats': per_symbol_stats,
         'risk_ladder': RISK_LADDER,
+        'best_config_used': str(best_cfg_path),
     }
     out_json = REPORTS / 'live_sim_vb_summary.json'
     with open(out_json, 'w') as f:
         json.dump(summary, f, indent=2)
 
-    print(f"Live-sim VB portfolio: ${start_equity:.2f} -> ${equity:.2f} | Return {summary['return_percent']:.1f}% | Symbols {', '.join(selected.keys())}")
+    print(f"Live-sim VB portfolio: ${args.start_equity:.2f} -> ${equity:.2f} | Return {summary['return_percent']:.1f}% | Symbols {', '.join(selected.keys())}")
+    print(f"Best file: {best_cfg_path}")
     print(f"Reports written: {trades_csv.name}, {out_json.name}")
 
 
 if __name__ == '__main__':
-    main(100.0, 14)
+    main()

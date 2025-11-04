@@ -1,60 +1,60 @@
 {
-  "timestamp": "2025-11-04T08:51:44.400550",
+  "timestamp": "2025-11-04T09:02:18.207867",
   "start_equity": 100.0,
-  "end_equity": 82.28879226996969,
-  "return_percent": -17.71120773003031,
+  "end_equity": 135.88392935032718,
+  "return_percent": 35.88392935032718,
   "period": {
-    "start": "2025-10-21T08:51:23.411450",
-    "end": "2025-11-04T08:51:23.411450"
+    "start": "2025-10-21T09:02:17.519203",
+    "end": "2025-11-04T09:02:17.519203"
   },
   "selected_symbols": [
-    "Volatility 75 Index",
     "Crash 500 Index",
-    "Boom 1000 Index",
-    "XAUUSD"
+    "Volatility 75 Index",
+    "XAUUSD",
+    "Boom 1000 Index"
   ],
   "per_symbol_stats": {
-    "Volatility 75 Index": {
-      "symbol": "Volatility 75 Index",
-      "total_trades": 44,
-      "winning_trades": 20,
-      "losing_trades": 22,
-      "total_pnl": -432.50399999998626,
-      "pnl_percent": -432.50399999998626,
-      "win_rate": 45.45454545454545,
-      "avg_win": 216.19907142857193,
-      "avg_loss": -216.20388311688293,
-      "profit_factor": 0.9090706769746406,
-      "max_profit": 259.2994285714303,
-      "min_profit": -256.5720000000001
-    },
     "Crash 500 Index": {
       "symbol": "Crash 500 Index",
       "total_trades": 6,
       "winning_trades": 3,
       "losing_trades": 3,
-      "total_pnl": 2.620499999999538,
-      "pnl_percent": 2.620499999999538,
+      "total_pnl": 3.3169874999994136,
+      "pnl_percent": 3.316987499999414,
       "win_rate": 50.0,
-      "avg_win": 4.466757142857053,
+      "avg_win": 4.698919642857011,
       "avg_loss": -3.593257142857207,
-      "profit_factor": 1.2430942081994376,
-      "max_profit": 5.489700000000084,
+      "profit_factor": 1.3077048082121472,
+      "max_profit": 6.18618749999996,
       "min_profit": -4.166228571428746
+    },
+    "Volatility 75 Index": {
+      "symbol": "Volatility 75 Index",
+      "total_trades": 60,
+      "winning_trades": 34,
+      "losing_trades": 23,
+      "total_pnl": 2392.8685714285893,
+      "pnl_percent": 2392.8685714285893,
+      "win_rate": 56.666666666666664,
+      "avg_win": 219.20740336134494,
+      "avg_loss": -220.00796273291908,
+      "profit_factor": 1.472881811561765,
+      "max_profit": 259.2994285714303,
+      "min_profit": -255.21771428571083
     },
     "XAUUSD": {
       "symbol": "XAUUSD",
-      "total_trades": 42,
+      "total_trades": 43,
       "winning_trades": 19,
-      "losing_trades": 23,
-      "total_pnl": -23.993142857143084,
-      "pnl_percent": -23.993142857143084,
-      "win_rate": 45.23809523809524,
-      "avg_win": 7.614676691729312,
-      "avg_loss": -7.333565217391305,
-      "profit_factor": 0.857752662818114,
-      "max_profit": 11.442000000000007,
-      "min_profit": -12.120857142857403
+      "losing_trades": 24,
+      "total_pnl": -32.378428571428685,
+      "pnl_percent": -32.378428571428685,
+      "win_rate": 44.18604651162791,
+      "avg_win": 7.9118872180450985,
+      "avg_loss": -7.612678571428565,
+      "profit_factor": 0.8227823258505149,
+      "max_profit": 12.42699999999968,
+      "min_profit": -14.80199999999968
     }
   },
   "risk_ladder": [
@@ -78,5 +78,6 @@
       Infinity,
       0.01
     ]
-  ]
+  ],
+  "best_config_used": "reports\\vb_v1.3_per_symbol_best_merged.json"
 }

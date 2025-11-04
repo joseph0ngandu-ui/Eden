@@ -6,8 +6,11 @@ Shows MT5 connection status and trading enabled status.
 from pathlib import Path
 from datetime import datetime
 import argparse
+import sys
 import MetaTrader5 as mt5
 
+# Add project root to path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.trading_bot import TradingBot
 from src.config_loader import ConfigLoader
 

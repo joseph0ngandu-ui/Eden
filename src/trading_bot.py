@@ -21,13 +21,13 @@ from enum import Enum
 import time
 import logging
 
-from config_loader import ConfigLoader
-from trade_journal import TradeJournal
-from health_monitor import HealthMonitor, RiskManager, HealthStatus, RiskLevel
-from volatility_adapter import VolatilityAdapter
-from risk_ladder import RiskLadder, PositionSizer, RiskTier
-from exit_logic import ExitManager, ExitConfig  # v1.2: Advanced exit logic
-from strategies.signals import ICTPA
+from .config_loader import ConfigLoader
+from .trade_journal import TradeJournal
+from .health_monitor import HealthMonitor, RiskManager, HealthStatus, RiskLevel
+from .volatility_adapter import VolatilityAdapter
+from .risk_ladder import RiskLadder, PositionSizer, RiskTier
+from .exit_logic import ExitManager, ExitConfig  # v1.2: Advanced exit logic
+from .strategies.signals import ICTPA
 import yaml
 
 logging.basicConfig(
@@ -122,6 +122,13 @@ class TradingBot:
         self.password = password
         self.server = server
         
+        # Trading state - initialize early for use in growth mode
+        self.active_orders: Dict[str, LiveOrder] = {}
+        self.closed_orders: List[LiveOrder] = []
+        self.is_running = False
+        self.last_signals: Dict[str, int] = {}  # Track last signal per symbol
+        self.initial_balance = 0.0
+        
         # Trade journal
         self.trade_journal = TradeJournal(log_dir="logs")
         
@@ -184,11 +191,7 @@ class TradingBot:
             logger.info(f"Growth Mode enabled: {self.risk_ladder.current_tier.tier.value}")
         
         # Trading state
-        self.active_orders: Dict[str, LiveOrder] = {}
-        self.closed_orders: List[LiveOrder] = []
-        self.is_running = False
-        self.last_signals: Dict[str, int] = {}  # Track last signal per symbol
-        self.initial_balance = 0.0
+        # (already initialized above)
         
         # Log header with version and parameters
         self._log_startup_banner()

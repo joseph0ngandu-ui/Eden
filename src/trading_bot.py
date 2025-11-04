@@ -100,6 +100,14 @@ class TradingBot:
         self.strategy_name = self.config.get_strategy_name()
         self.strategy_mode = 'MA'
         self.ictpa = None
+        # Combined flags
+        self.enable_ma = bool(self.config.get_parameter('strategy.use_ma', True))
+        self.enable_ictpa = bool(self.config.get_parameter('strategy.use_ict_pa', False))
+        if self.strategy_name in ('ICT_PA_HYBRID', 'COMBINED'):
+            # If ICT-PA strategy or combined is selected and flag unspecified, default enable ICTPA
+            self.enable_ictpa = True
+        if self.strategy_name == 'COMBINED':
+            self.strategy_mode = 'DUAL'
         
         # Strategy parameters (loaded from config)
         self.FAST_MA = strategy_params.get('fast_ma_period', 3)
@@ -147,13 +155,14 @@ class TradingBot:
         logger.info("Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP")
         
         # ICT-PA hybrid initialization (if selected)
-        if self.strategy_name == 'ICT_PA_HYBRID':
+        if self.enable_ictpa:
             try:
                 cfg_path = self.config.get_parameter('strategy.ict_pa_config_path', 'config/ict_pa.yml')
                 with open(cfg_path, 'r') as f:
                     ict_cfg = yaml.safe_load(f) or {}
                 self.ictpa = ICTPA(ict_cfg)
-                self.strategy_mode = 'ICTPA'
+                if self.strategy_mode != 'DUAL':
+                    self.strategy_mode = 'ICTPA'
                 logger.info(f"ICT-PA hybrid enabled with config: {cfg_path}")
             except Exception as e:
                 logger.error(f"Failed to initialize ICT-PA: {e}")
@@ -188,7 +197,9 @@ class TradingBot:
         """Log startup banner with version and configuration."""
         version = self.config.get_version()
         banner = f"\n{'='*80}\n"
-        if self.strategy_mode == 'ICTPA':
+        if self.strategy_mode == 'DUAL':
+            banner += f"Eden v{version} - Combined: MA({self.FAST_MA},{self.SLOW_MA}) + ICT/PA Hybrid | M5 Timeframe\n"
+        elif self.strategy_mode == 'ICTPA':
             banner += f"Eden v{version} - ICT/PA Hybrid Strategy | M5 Timeframe\n"
         else:
             banner += f"Eden v{version} - MA({self.FAST_MA},{self.SLOW_MA}) Strategy | M5 Timeframe\n"
@@ -522,8 +533,12 @@ class TradingBot:
                 if self.risk_ladder:
                     self.risk_ladder.update_balance(account_info.balance)
             
-            if self.strategy_mode == 'ICTPA':
+            # Run ICT-PA cycle first if enabled
+            if self.enable_ictpa and self.ictpa is not None:
                 self._run_cycle_ictpa()
+            
+            # Then run MA if enabled
+            if not self.enable_ma:
                 return
             for symbol in self.symbols:
                 # Fetch recent data
@@ -543,9 +558,11 @@ class TradingBot:
                 # Calculate signal
                 signal = self.calculate_signal(df)
                 
-                # Process signal
+                # Process signal (skip if a position already open for symbol to avoid netting conflicts)
                 if signal != 0:
-                    self.process_signal(symbol, signal)
+                    existing = mt5.positions_get(symbol=symbol)
+                    if not existing:
+                        self.process_signal(symbol, signal)
                 
                 # Monitor positions
                 self.monitor_positions()

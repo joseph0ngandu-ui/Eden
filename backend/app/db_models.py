@@ -24,6 +24,7 @@ class User(Base):
     # Relationships
     trades = relationship("Trade", back_populates="user")
     bot_sessions = relationship("BotSession", back_populates="user")
+    mt5_accounts = relationship("MT5Account", back_populates="user")
 
 
 class Trade(Base):
@@ -83,6 +84,27 @@ class StrategyConfiguration(Base):
     is_active = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class MT5Account(Base):
+    """MetaTrader 5 account configuration."""
+    __tablename__ = "mt5_accounts"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    account_number = Column(String(50), nullable=False)
+    account_name = Column(String(255), nullable=True)
+    broker = Column(String(255), nullable=True)
+    server = Column(String(255), nullable=True)
+    password_encrypted = Column(String(500), nullable=True)  # Encrypted password
+    is_active = Column(Boolean, default=True)
+    is_primary = Column(Boolean, default=False)  # Primary trading account
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    last_synced = Column(DateTime, nullable=True)
+    
+    # Relationships
+    user = relationship("User", back_populates="mt5_accounts")
 
 
 class PerformanceMetric(Base):

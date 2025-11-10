@@ -196,6 +196,44 @@ class StrategyConfig(BaseSchema):
 # RISK MANAGEMENT MODELS
 # ============================================================================
 
+# ============================================================================
+# MT5 ACCOUNT MODELS
+# ============================================================================
+
+class MT5AccountBase(BaseModel):
+    """Base MT5 account model."""
+    account_number: str = Field(..., description="MT5 account number")
+    account_name: Optional[str] = Field(None, description="Display name for the account")
+    broker: Optional[str] = Field(None, description="Broker name (e.g., Exness, IC Markets)")
+    server: Optional[str] = Field(None, description="MT5 server name")
+
+class MT5AccountCreate(MT5AccountBase):
+    """Create MT5 account (includes password)."""
+    password: Optional[str] = Field(None, description="MT5 account password")
+    is_primary: bool = Field(default=True, description="Set as primary trading account")
+
+class MT5AccountUpdate(BaseModel):
+    """Update MT5 account (all fields optional)."""
+    account_name: Optional[str] = None
+    broker: Optional[str] = None
+    server: Optional[str] = None
+    password: Optional[str] = None
+    is_primary: Optional[bool] = None
+    is_active: Optional[bool] = None
+
+class MT5Account(MT5AccountBase):
+    """Complete MT5 account model (returned from API)."""
+    id: int
+    user_id: int
+    is_active: bool
+    is_primary: bool
+    created_at: datetime
+    updated_at: datetime
+    last_synced: Optional[datetime] = None
+    
+    class Config:
+        from_attributes = True
+
 class RiskTier(str, Enum):
     """Risk tier enumeration."""
     CONSERVATIVE = "CONSERVATIVE"

@@ -69,6 +69,29 @@ struct APIEndpoints {
         static let symbols = "\(baseURL)/strategy/symbols"
     }
     
+    // MARK: - MT5 Account Endpoints
+    
+    struct MT5Account {
+        /// Get all MT5 accounts
+        static let list = "\(baseURL)/account/mt5"
+        
+        /// Get primary MT5 account
+        static let primary = "\(baseURL)/account/mt5/primary"
+        
+        /// Create new MT5 account
+        static let create = "\(baseURL)/account/mt5"
+        
+        /// Update MT5 account by ID
+        static func update(accountId: Int) -> String {
+            return "\(baseURL)/account/mt5/\(accountId)"
+        }
+        
+        /// Delete MT5 account by ID
+        static func delete(accountId: Int) -> String {
+            return "\(baseURL)/account/mt5/\(accountId)"
+        }
+    }
+    
     // MARK: - Health & System Endpoints
     
     struct System {

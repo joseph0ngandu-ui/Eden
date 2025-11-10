@@ -28,9 +28,10 @@ from dotenv import load_dotenv
 
 from app.models import (
     Token, BotStatus, Trade, Position, PerformanceStats, 
-    StrategyConfig, UserRegister, UserLogin
+    StrategyConfig, UserRegister, UserLogin,
+    MT5Account, MT5AccountCreate, MT5AccountUpdate
 )
-from app.db_models import User
+from app.db_models import User, MT5Account as MT5AccountDB
 from app.auth import (
     authenticate_user, create_access_token, get_current_user,
     verify_password, get_password_hash, TOKEN_EXPIRE_MINUTES
@@ -405,6 +406,193 @@ async def system_status(current_user: User = Depends(get_current_user)):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to fetch system status"
+        )
+
+# ============================================================================
+# MT5 ACCOUNT ENDPOINTS
+# ============================================================================
+
+@app.get("/account/mt5", response_model=List[MT5Account])
+async def get_mt5_accounts(current_user: User = Depends(get_current_user)):
+    """Get all MT5 accounts for the current user."""
+    try:
+        db_session = get_db_session()
+        accounts = db_session.query(MT5AccountDB).filter(
+            MT5AccountDB.user_id == current_user.id
+        ).all()
+        
+        logger.info(f"Retrieved {len(accounts)} MT5 accounts for {current_user.email}")
+        return accounts
+    
+    except Exception as e:
+        logger.error(f"Error fetching MT5 accounts: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to fetch MT5 accounts"
+        )
+
+@app.get("/account/mt5/primary", response_model=MT5Account)
+async def get_primary_mt5_account(current_user: User = Depends(get_current_user)):
+    """Get the primary MT5 account for the current user."""
+    try:
+        db_session = get_db_session()
+        account = db_session.query(MT5AccountDB).filter(
+            MT5AccountDB.user_id == current_user.id,
+            MT5AccountDB.is_primary == True,
+            MT5AccountDB.is_active == True
+        ).first()
+        
+        if not account:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="No primary MT5 account configured"
+            )
+        
+        logger.info(f"Primary MT5 account retrieved for {current_user.email}")
+        return account
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error fetching primary MT5 account: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to fetch primary MT5 account"
+        )
+
+@app.post("/account/mt5", response_model=MT5Account)
+async def create_mt5_account(
+    account_data: MT5AccountCreate,
+    current_user: User = Depends(get_current_user)
+):
+    """Create a new MT5 account configuration."""
+    try:
+        db_session = get_db_session()
+        
+        # If setting as primary, unset other primary accounts
+        if account_data.is_primary:
+            db_session.query(MT5AccountDB).filter(
+                MT5AccountDB.user_id == current_user.id
+            ).update({"is_primary": False})
+        
+        # Create new account (password should be encrypted in production)
+        new_account = MT5AccountDB(
+            user_id=current_user.id,
+            account_number=account_data.account_number,
+            account_name=account_data.account_name,
+            broker=account_data.broker,
+            server=account_data.server,
+            password_encrypted=account_data.password,  # TODO: Encrypt in production
+            is_primary=account_data.is_primary
+        )
+        
+        db_session.add(new_account)
+        db_session.commit()
+        db_session.refresh(new_account)
+        
+        logger.info(f"✓ MT5 account created: {account_data.account_number} for {current_user.email}")
+        
+        return new_account
+    
+    except Exception as e:
+        logger.error(f"Error creating MT5 account: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to create MT5 account"
+        )
+
+@app.put("/account/mt5/{account_id}", response_model=MT5Account)
+async def update_mt5_account(
+    account_id: int,
+    account_data: MT5AccountUpdate,
+    current_user: User = Depends(get_current_user)
+):
+    """Update an existing MT5 account."""
+    try:
+        db_session = get_db_session()
+        
+        # Get account
+        account = db_session.query(MT5AccountDB).filter(
+            MT5AccountDB.id == account_id,
+            MT5AccountDB.user_id == current_user.id
+        ).first()
+        
+        if not account:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="MT5 account not found"
+            )
+        
+        # If setting as primary, unset other primary accounts
+        if account_data.is_primary:
+            db_session.query(MT5AccountDB).filter(
+                MT5AccountDB.user_id == current_user.id,
+                MT5AccountDB.id != account_id
+            ).update({"is_primary": False})
+        
+        # Update fields
+        update_data = account_data.dict(exclude_unset=True)
+        if "password" in update_data and update_data["password"]:
+            update_data["password_encrypted"] = update_data.pop("password")  # TODO: Encrypt
+        
+        for key, value in update_data.items():
+            if hasattr(account, key):
+                setattr(account, key, value)
+        
+        account.updated_at = datetime.utcnow()
+        db_session.commit()
+        db_session.refresh(account)
+        
+        logger.info(f"✓ MT5 account updated: {account.account_number} for {current_user.email}")
+        
+        return account
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error updating MT5 account: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to update MT5 account"
+        )
+
+@app.delete("/account/mt5/{account_id}")
+async def delete_mt5_account(
+    account_id: int,
+    current_user: User = Depends(get_current_user)
+):
+    """Delete an MT5 account (soft delete by setting is_active=False)."""
+    try:
+        db_session = get_db_session()
+        
+        # Get account
+        account = db_session.query(MT5AccountDB).filter(
+            MT5AccountDB.id == account_id,
+            MT5AccountDB.user_id == current_user.id
+        ).first()
+        
+        if not account:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="MT5 account not found"
+            )
+        
+        # Soft delete
+        account.is_active = False
+        account.updated_at = datetime.utcnow()
+        db_session.commit()
+        
+        logger.info(f"✓ MT5 account deleted: {account.account_number} for {current_user.email}")
+        
+        return {"status": "success", "message": "MT5 account deleted"}
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error deleting MT5 account: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to delete MT5 account"
         )
 
 # ============================================================================

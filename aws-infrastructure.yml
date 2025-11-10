@@ -119,12 +119,6 @@ Resources:
     Type: AWS::ECS::Cluster
     Properties:
       ClusterName: !Sub '${EnvironmentName}-eden-cluster'
-      CapacityProviders:
-        - FARGATE
-        - FARGATE_SPOT
-      DefaultCapacityProviderStrategy:
-        - CapacityProvider: FARGATE
-          Weight: 1
   
   # ECS Task Definition
   EdenTaskDefinition:
@@ -223,7 +217,7 @@ Resources:
     Properties:
       DBInstanceIdentifier: !Sub '${EnvironmentName}-eden-db'
       Engine: postgres
-      EngineVersion: '15.4'
+      EngineVersion: '15.8'
       DBInstanceClass: db.t3.micro
       AllocatedStorage: 20
       StorageType: gp2

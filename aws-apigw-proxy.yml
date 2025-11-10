@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Eden API Gateway (HTTP API) proxy to ECS task public IP'
+
+Parameters:
+  ApiName:
+    Type: String
+    Default: eden-http-api
+  TargetHost:
+    Type: String
+    Description: Public IP or hostname of the backend (ECS task)
+  TargetPort:
+    Type: Number
+    Default: 8000
+  StageName:
+    Type: String
+    Default: prod
+
+Resources:
+  EdenHttpApi:
+    Type: AWS::ApiGatewayV2::Api
+    Properties:
+      Name: !Ref ApiName
+      ProtocolType: HTTP
+
+  ProxyIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId: !Ref EdenHttpApi
+      IntegrationType: HTTP_PROXY
+      IntegrationUri: !Sub 'http://${TargetHost}:${TargetPort}/{proxy}'
+      PayloadFormatVersion: '1.0'
+      TimeoutInMillis: 29000
+      IntegrationMethod: ANY
+
+  EdenRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId: !Ref EdenHttpApi
+      RouteKey: 'ANY /{proxy+}'
+      Target: !Sub 'integrations/${ProxyIntegration}'
+
+  EdenStage:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId: !Ref EdenHttpApi
+      StageName: !Ref StageName
+      AutoDeploy: true
+
+Outputs:
+  ApiEndpoint:
+    Description: HTTPS endpoint for Eden API
+    Value: !Sub '${EdenHttpApi.ApiEndpoint}/${StageName}'

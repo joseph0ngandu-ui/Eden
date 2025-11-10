@@ -40,7 +40,13 @@ class Settings(BaseSettings):
     log_level: str = os.getenv("LOG_LEVEL", "INFO")
     
     # Trading Bot
-    symbols: list = ["EURUSD", "GBPUSD"]
+    @property
+    def symbols(self) -> list:
+        """Parse symbols from environment or use default."""
+        symbols_str = os.getenv("SYMBOLS", "EURUSD,GBPUSD")
+        if isinstance(symbols_str, str):
+            return [s.strip() for s in symbols_str.split(",")]
+        return symbols_str if isinstance(symbols_str, list) else ["EURUSD", "GBPUSD"]
     
     # AWS Configuration (for production)
     aws_region: Optional[str] = os.getenv("AWS_REGION")
@@ -53,6 +59,7 @@ class Settings(BaseSettings):
     
     class Config:
         env_file = ".env"
+        extra = "ignore"  # Ignore extra fields from .env file
 
 # Create global settings instance
 settings = Settings()

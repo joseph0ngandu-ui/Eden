@@ -46,37 +46,43 @@ def get_db_session() -> Session:
 def init_db():
     """Initialize database with schema and default data."""
     try:
+        # Import all models to ensure they are registered with Base
+        from app import db_models
+        
         # Create tables
         Base.metadata.create_all(bind=engine)
-        logger.info("Database tables created successfully")
+        logger.info("✓ Database tables created successfully")
         
         # Create default admin user if needed
         session = SessionLocal()
         try:
             # Check if admin user exists
-            from app.models import User
-            from app.auth import get_password_hash
+            from passlib.context import CryptContext
+            pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
             
-            admin = session.query(User).filter(User.email == "admin@eden.com").first()
+            admin = session.query(db_models.User).filter(
+                db_models.User.email == "admin@eden.com"
+            ).first()
+            
             if not admin:
                 # Create default admin user
-                admin_user = User(
+                admin_user = db_models.User(
                     email="admin@eden.com",
                     full_name="System Administrator",
-                    hashed_password=get_password_hash("admin123"),
+                    hashed_password=pwd_context.hash("admin123"),
                     is_active=True,
                     created_at=datetime.utcnow()
                 )
                 session.add(admin_user)
                 session.commit()
-                logger.info("Default admin user created: admin@eden.com / admin123")
+                logger.info("✓ Default admin user created: admin@eden.com / admin123")
             else:
-                logger.info("Admin user already exists")
+                logger.info("✓ Admin user already exists")
         
         except Exception as e:
-            logger.error(f"Error during database initialization: {e}")
+            logger.error(f"Error during user initialization: {e}")
             session.rollback()
-            raise
+            # Don't raise - tables are created, user creation is optional
         
         finally:
             session.close()

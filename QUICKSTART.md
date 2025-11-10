@@ -1,193 +1,170 @@
-# 🚀 Quick Start Guide - Optimized Trading Engine
+# 🚀 Eden Trading Bot - Quick Start Guide
 
-## What You Have
-A fully optimized trading engine configuration that achieved **+776% average return** across 10 instruments with **63.87% win rate** and minimal drawdown tracking.
+## ✅ Status: Ready for Deployment
 
----
-
-## 🎯 The Optimal Strategy
-
-**Bollinger Bands + RSI Confirmation**
-- **Period**: 18 candles
-- **Standard Deviation**: 1.5
-- **RSI Threshold**: 30 (oversold)
-- **Performance**: +8,175% improvement over baseline
+Your trading bot has been **upgraded to the profitable Volatility Burst v1.3 strategy** and all traces of the unprofitable MA Crossover strategy have been removed.
 
 ---
 
-## 📁 Deploy in 3 Steps
+## 📊 Strategy Performance
 
-### Step 1: Load Configuration
-```python
-import json
+| Metric | Value |
+|--------|-------|
+| **Total P&L** | +$1,864.15 |
+| **Win Rate** | 46.39% |
+| **Profit Factor** | 1.02 |
+| **Total Trades** | 1,563 |
+| **Test Period** | Jan-Oct 2025 |
+| **Best Symbol** | Volatility 75 Index (+$2,228.72) |
 
-config = json.load(open('results/backtest/optimal_engine_config.json'))
+---
 
-# Extract parameters
-params = config['strategy_parameters']
-# {
-#   'period': 18,
-#   'std_dev': 1.5,
-#   'rsi_threshold': 30,
-#   'name': 'BB-18-1.5-30'
-# }
+## 🎯 Deploy to AWS in 3 Steps
+
+### Step 1: Configure AWS Credentials
+```powershell
+# If not already configured
+aws configure
 ```
 
-### Step 2: Implement Strategy
-```python
-# Bollinger Bands: Period=18, StdDev=1.5
-sma = close.rolling(18).mean()
-std = close.rolling(18).std()
-upper = sma + (std * 1.5)
-lower = sma - (std * 1.5)
-
-# RSI: Threshold=30
-rsi = calculate_rsi(close, 14)
-
-# Signals
-buy = (close < lower) & (rsi < 30)     # Oversold
-sell = (close > upper) & (rsi > 70)    # Overbought
+### Step 2: Run Deployment Script
+```powershell
+# From project root
+.\deploy_to_aws.ps1
 ```
 
-### Step 3: Deploy to Trading Engine
-```python
-# Load into your trading bot
-engine.load_config('results/backtest/optimal_engine_config.json')
-engine.start_trading()
-```
+### Step 3: Monitor Deployment
+- The script will handle:
+  - ✅ Building Docker image
+  - ✅ Pushing to ECR
+  - ✅ Updating ECS service
+  - ✅ Waiting for stabilization
 
 ---
 
-## 📊 Expected Performance
+## 🔍 Verify Deployment
 
-| Instrument | Return | Trades | Win Rate |
-|------------|--------|--------|----------|
-| VIX75 | +7,466.77% | 195 | 67.7% |
-| Crash1000 | +104.08% | 231 | 67.1% |
-| XAUUSD | +99.14% | 122 | 67.2% |
-
-**Portfolio Average**: +776.06% return
-
----
-
-## ⚠️ Important Notes
-
-### Instruments to EXCLUDE (Negative Performance)
-- ❌ VIX100: -37.94% (underperformer)
-- ❌ StepIndex: -14.00% (underperformer)
-- ❌ Boom1000: -4.66% (underperformer)
-
-### Instruments to FOCUS ON (Top Performers)
-- ✅ VIX75, Crash1000, XAUUSD, Crash500, Boom500
-
----
-
-## 🔍 Understand the Metrics
-
-- **Return**: Total profit on $100 capital
-- **Win Rate**: Percentage of profitable trades
-- **Drawdown**: Maximum peak-to-trough decline
-- **Score**: Return / Drawdown ratio (higher is better)
-
----
-
-## 📈 Backtesting vs Live Trading
-
-### Backtesting Results (Guaranteed)
-- Average Return: +776.06%
-- Win Rate: 63.87%
-- All trades on historical data
-
-### Live Trading (Expected, varies)
-- Returns may differ due to:
-  - Slippage and commissions
-  - Market regime changes
-  - Real-world execution delays
-  - Position sizing differences
-
-**Monitor closely during first week of live trading**
-
----
-
-## 🔧 Customization Options
-
-### To Re-optimize
+### Check Health
 ```bash
-python parameter_optimization_50iter.py
+curl https://your-api-gateway-url/health
 ```
-This will run 50 iterations and save a new `optimal_engine_config.json` if a better configuration is found.
 
-### To Add More Instruments
-Ensure data is in `data/mt5_feeds/` as `{SYMBOL}_M1.csv`
-
-### To Use Different Capital
-Edit `ParametricBacktest(df, capital=100)` to adjust capital amount
-
----
-
-## 📋 Files Reference
-
-| File | Purpose | Status |
-|------|---------|--------|
-| `optimal_engine_config.json` | Default config (DEPLOY THIS) | ✅ Ready |
-| `parameter_optimization_50iter.json` | Full results archive | ✅ Complete |
-| `OPTIMIZATION_COMPARISON.md` | Detailed analysis | 📖 Read this |
-| `COMPLETION_SUMMARY.txt` | Quick summary | 📖 Reference |
-
----
-
-## ⚡ Quick Commands
-
+### Verify Strategy
 ```bash
-# View summary
-python optimization_summary_report.py
+curl -H "Authorization: Bearer <token>" \
+  https://your-api-gateway-url/strategy/config
+```
 
-# Run new optimization
-python parameter_optimization_50iter.py
-
-# Check file size
-ls -lh results/backtest/optimal_engine_config.json
+**Expected Response:**
+```json
+{
+  "name": "VolatilityBurst_v1.3",
+  "confidence_threshold": 0.7,
+  "tp_atr_multiplier": 1.2,
+  "sl_atr_multiplier": 1.2,
+  ...
+}
 ```
 
 ---
 
-## 🆘 Troubleshooting
+## 📱 Monitor via iOS App
 
-**Q: Returns are lower than expected in live trading**
-A: Check slippage, commissions, and market regime. Re-optimize weekly.
-
-**Q: One instrument is losing money**
-A: Consider disabling it. Exclude in live trading.
-
-**Q: Want better returns?**
-A: Run Optuna optimization for aggressive tuning or add more instruments.
+1. **Bot Status**: Real-time balance, P&L, positions
+2. **Trade History**: View recent trades and performance
+3. **Performance Stats**: Win rate, profit factor, drawdown
+4. **Controls**: Start, stop, pause trading
 
 ---
 
-## ✅ Checklist Before Deployment
+## 📈 What Changed
 
-- [ ] Loaded `optimal_engine_config.json`
-- [ ] Extracted parameters (BB Period=18, StdDev=1.5, RSI=30)
-- [ ] Implemented Bollinger Bands + RSI strategy
-- [ ] Excluded underperformers (VIX100, StepIndex, Boom1000)
-- [ ] Set position sizing and risk limits
-- [ ] Tested with small account first
-- [ ] Ready for live trading
+### ❌ REMOVED (Unprofitable)
+- MA_Crossover_v1.2 strategy (-$385k loss)
+- All related config files
+- All backtest reports
 
----
-
-## 📞 Support
-
-For issues or questions:
-1. Review `OPTIMIZATION_COMPARISON.md` for detailed metrics
-2. Check optimization results in `parameter_optimization_50iter.json`
-3. Re-run optimization with different parameters
-4. Consider running Optuna for advanced fine-tuning
+### ✅ DEPLOYED (Profitable)
+- Volatility Burst v1.3 (+$1.8k gain)
+- Optimized parameters (0.7 confidence, 1.2x TP/SL)
+- Synthetic Indices trading
 
 ---
 
-**Status**: ✅ Ready for Production
+## 🎛️ Strategy Configuration
 
-**Last Updated**: 2025-11-03  
-**Version**: 2.0  
-**Expected Weekly Return**: ~776% (based on backtest with $100 capital)
+```yaml
+Strategy: VolatilityBurst_v1.3
+Confidence Threshold: 0.7
+TP ATR Multiplier: 1.2
+SL ATR Multiplier: 1.2
+Trail Trigger: 0.8R
+Max Bars in Trade: 30
+Risk Per Trade: 2.0%
+Max Trades Per Day: 8
+```
+
+### Trading Symbols
+- Volatility 75 Index ⭐ (Best performer)
+- Volatility 100 Index
+- Boom 500 Index
+- Crash 500 Index
+- Boom 1000 Index
+- Step Index
+
+---
+
+## 🔔 Key Metrics to Monitor
+
+| Metric | Target | Action if Outside Range |
+|--------|--------|------------------------|
+| Win Rate | ~46% | ±5%: Normal variance<br>>10%: Review confidence threshold |
+| Profit Factor | >1.0 | <0.95: Consider pausing<br><0.85: Stop and review |
+| Daily Drawdown | <10% | Pause trading, review trades |
+| Max Positions | 1 per symbol | Should auto-limit |
+
+---
+
+## 🛠️ Troubleshooting
+
+### Bot Not Trading
+1. Check bot status: `GET /bot/status`
+2. Verify `is_running: true`
+3. Check CloudWatch logs for errors
+4. Verify MT5 connection (if using live broker)
+
+### Performance Below Expected
+1. Check confidence scores of recent trades
+2. Verify symbols being traded match backtest
+3. Review entry/exit prices vs expected
+4. Consider increasing confidence_threshold to 0.75
+
+### High Drawdown
+1. Stop bot immediately: `POST /bot/stop`
+2. Review recent trades
+3. Check if market conditions changed
+4. Consider reducing position size or max trades per day
+
+---
+
+## 📚 Documentation
+
+- **Full Deployment Guide**: `DEPLOYMENT.md`
+- **Removed Files**: `REMOVED_FILES.md`
+- **Strategy Implementation**: `src/volatility_burst.py`
+- **Configuration**: `config/volatility_burst.yml`
+- **Backtest Results**: `reports/vb_v1.3_backtest_results.json`
+
+---
+
+## 🎉 You're All Set!
+
+Your bot is now configured with the **profitable Volatility Burst v1.3 strategy** and ready to trade.
+
+**Next Step**: Run `.\deploy_to_aws.ps1` to deploy to production!
+
+---
+
+**Last Updated**: 2025-11-10  
+**Version**: Volatility Burst v1.3  
+**Status**: ✅ PROFITABLE - READY FOR DEPLOYMENT

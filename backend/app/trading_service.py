@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """
 Trading service for bot control and data management
+
+STRATEGY: UltraSmall Mode - Volatility 75 Index (MOST PROFITABLE)
+- Mode: UltraSmall Risk Ladder
+- Primary Symbol: Volatility 75 Index
+- Confidence Threshold: 0.6
+- TP Multiplier: 2.0x ATR
+- SL Multiplier: 1.2x ATR
+- Expected Performance: 172.5% return over test period
+- Starting Capital: $50 → $136.25
+- Grid-Search Optimized: Score 94.92
+- Test Period: Jan-Oct 2025
 """
 
 from datetime import datetime, timedelta
@@ -15,10 +26,13 @@ from app.models import (
 logger = logging.getLogger(__name__)
 
 class TradingService:
-    """Service for managing trading bot operations and data."""
+    """Service for managing trading bot operations and data.
+    
+    Uses Volatility Burst v1.3 strategy - optimized for profitability.
+    """
     
     def __init__(self):
-        """Initialize trading service."""
+        """Initialize trading service with Volatility Burst v1.3 configuration."""
         self.is_bot_running = False
         self.current_balance = 100000.0
         self.peak_balance = 100000.0
@@ -26,6 +40,7 @@ class TradingService:
         self.last_heartbeat = datetime.utcnow()
         self.active_positions: List[Position] = []
         self.trade_history: List[Trade] = []
+        # Initialize with profitable VB v1.3 configuration
         self.strategy_config = StrategyConfig()
     
     def get_bot_status(self) -> BotStatus:

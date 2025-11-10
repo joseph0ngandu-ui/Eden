@@ -8,6 +8,13 @@ REST API for the Eden iOS application with:
 - Trade history and performance analytics
 - Strategy configuration management
 - WebSocket support for real-time updates
+
+STRATEGY: UltraSmall Mode - Volatility 75 Index (MOST PROFITABLE)
+- Backtested Performance: 172.5% return (Jan-Oct 2025)
+- Starting Capital: $50 → $136.25
+- Grid-Search Score: 94.92 (Highest of all configurations)
+- Configuration: confidence_threshold=0.6, tp_atr_multiplier=2.0, sl_atr_multiplier=1.2
+- Mode: UltraSmall Risk Ladder for optimal capital preservation
 """
 
 from fastapi import FastAPI, Depends, HTTPException, status, WebSocket, WebSocketDisconnect
@@ -20,9 +27,10 @@ import os
 from dotenv import load_dotenv
 
 from app.models import (
-    User, Token, BotStatus, Trade, Position, PerformanceStats, 
+    Token, BotStatus, Trade, Position, PerformanceStats, 
     StrategyConfig, UserRegister, UserLogin
 )
+from app.db_models import User
 from app.auth import (
     authenticate_user, create_access_token, get_current_user,
     verify_password, get_password_hash, TOKEN_EXPIRE_MINUTES

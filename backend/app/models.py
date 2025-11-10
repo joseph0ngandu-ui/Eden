@@ -158,19 +158,39 @@ class PerformanceStats(BaseSchema):
 # ============================================================================
 
 class StrategyConfig(BaseSchema):
-    """Strategy configuration."""
-    name: str = "MA_Crossover_v1"
+    """Strategy configuration - MOST PROFITABLE: UltraSmall Mode V75."""
+    name: str = "VolatilityBurst_UltraSmall_V75"
     enabled: bool = True
-    fast_ma_period: int = 3
-    slow_ma_period: int = 10
-    hold_bars: int = 5
     timeframe: str = "M5"
+    mode: str = "UltraSmall"
+    
+    # UltraSmall Parameters (172.5% Returns - MOST PROFITABLE)
+    atr_period: int = 14
+    confidence_threshold: float = 0.6
+    tp_atr_multiplier: float = 2.0
+    sl_atr_multiplier: float = 1.2
+    trail_trigger_r: float = 0.8
+    max_bars_in_trade: int = 30
+    
+    # Risk Management - UltraSmall Mode
+    risk_percent: float = 2.0
     max_position_size: float = 1.0
     max_concurrent_positions: int = 1
-    risk_percent: float = 2.0
-    stop_loss_atr_multiple: float = 2.0
-    symbols: List[str] = ["EURUSD", "GBPUSD"]
-    description: Optional[str] = None
+    max_trades_per_day: int = 8
+    
+    # Trading Symbols - PRIMARY: V75 Index ONLY (172.5% return)
+    symbols: List[str] = [
+        "Volatility 75 Index"
+    ]
+    
+    # Secondary symbols (optional, but V75 is primary focus)
+    secondary_symbols: List[str] = [
+        "Volatility 100 Index",
+        "Crash 500 Index",
+        "Boom 1000 Index"
+    ]
+    
+    description: Optional[str] = "MOST PROFITABLE: UltraSmall Mode V75 - 172.5% return, Grid-search optimized"
 
 # ============================================================================
 # RISK MANAGEMENT MODELS

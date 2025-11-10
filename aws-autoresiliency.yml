@@ -1,0 +1,672 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Eden Auto-Resilient Infrastructure - Auto IP Update & Health Monitoring'
+
+Parameters:
+  EnvironmentName:
+    Description: Environment name (dev, staging, prod)
+    Type: String
+    Default: prod
+    AllowedValues:
+      - dev
+      - staging
+      - prod
+  
+  ECSClusterName:
+    Description: Name of the ECS Cluster
+    Type: String
+    Default: prod-eden-cluster
+  
+  ECSServiceName:
+    Description: Name of the ECS Service
+    Type: String
+    Default: prod-eden-service
+  
+  APIGatewayId:
+    Description: API Gateway ID
+    Type: String
+  
+  APIGatewayIntegrationId:
+    Description: API Gateway Integration ID
+    Type: String
+  
+  APIGatewayURL:
+    Description: API Gateway URL for health checks
+    Type: String
+  
+  NotificationEmail:
+    Description: Email address for SNS notifications (optional)
+    Type: String
+    Default: ''
+  
+  BackendPort:
+    Description: Backend container port
+    Type: String
+    Default: '8000'
+
+Conditions:
+  HasNotificationEmail: !Not [!Equals [!Ref NotificationEmail, '']]
+
+Resources:
+  # ============================================
+  # SNS Topic for Notifications
+  # ============================================
+  EdenNotificationTopic:
+    Type: AWS::SNS::Topic
+    Condition: HasNotificationEmail
+    Properties:
+      TopicName: !Sub '${EnvironmentName}-eden-autoresiliency-notifications'
+      DisplayName: Eden Auto-Resilience Notifications
+      Subscription:
+        - Endpoint: !Ref NotificationEmail
+          Protocol: email
+
+  # ============================================
+  # CloudWatch Log Groups
+  # ============================================
+  IPUpdateLambdaLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${EnvironmentName}-eden-ip-updater'
+      RetentionInDays: 7
+
+  HealthMonitorLambdaLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${EnvironmentName}-eden-health-monitor'
+      RetentionInDays: 7
+
+  AutoResiliencyLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/eden/${EnvironmentName}/autoresiliency'
+      RetentionInDays: 30
+
+  # ============================================
+  # IAM Role for IP Update Lambda
+  # ============================================
+  IPUpdateLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub '${EnvironmentName}-eden-ip-update-lambda-role'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: IPUpdateLambdaPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: !GetAtt IPUpdateLambdaLogGroup.Arn
+              - Effect: Allow
+                Action:
+                  - ecs:ListTasks
+                  - ecs:DescribeTasks
+                  - ecs:DescribeServices
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - ec2:DescribeNetworkInterfaces
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - apigateway:GET
+                  - apigateway:PATCH
+                  - apigateway:PUT
+                Resource: !Sub 'arn:aws:apigateway:${AWS::Region}::/apis/${APIGatewayId}/integrations/*'
+
+  # ============================================
+  # IAM Role for Health Monitor Lambda
+  # ============================================
+  HealthMonitorLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub '${EnvironmentName}-eden-health-monitor-lambda-role'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: HealthMonitorLambdaPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: !GetAtt HealthMonitorLambdaLogGroup.Arn
+              - Effect: Allow
+                Action:
+                  - ecs:DescribeServices
+                  - ecs:ListTasks
+                  - ecs:DescribeTasks
+                  - ecs:StopTask
+                  - ecs:UpdateService
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - sns:Publish
+                Resource: !If
+                  - HasNotificationEmail
+                  - !Ref EdenNotificationTopic
+                  - !Ref AWS::NoValue
+
+  # ============================================
+  # Lambda Function: IP Update
+  # ============================================
+  IPUpdateLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub '${EnvironmentName}-eden-ip-updater'
+      Description: Automatically updates API Gateway when ECS task IP changes
+      Runtime: python3.11
+      Handler: index.lambda_handler
+      Role: !GetAtt IPUpdateLambdaRole.Arn
+      Timeout: 60
+      MemorySize: 256
+      Environment:
+        Variables:
+          API_GATEWAY_ID: !Ref APIGatewayId
+          INTEGRATION_ID: !Ref APIGatewayIntegrationId
+          ECS_CLUSTER: !Ref ECSClusterName
+          ECS_SERVICE: !Ref ECSServiceName
+          BACKEND_PORT: !Ref BackendPort
+      Code:
+        ZipFile: |
+          import json
+          import os
+          import boto3
+          import logging
+          from datetime import datetime
+
+          # Configure logging
+          logger = logging.getLogger()
+          logger.setLevel(logging.INFO)
+
+          # Initialize AWS clients
+          ecs_client = boto3.client('ecs')
+          apigw_client = boto3.client('apigatewayv2')
+
+          # Environment variables
+          API_GATEWAY_ID = os.environ['API_GATEWAY_ID']
+          INTEGRATION_ID = os.environ['INTEGRATION_ID']
+          ECS_CLUSTER = os.environ['ECS_CLUSTER']
+          ECS_SERVICE = os.environ['ECS_SERVICE']
+          BACKEND_PORT = os.environ.get('BACKEND_PORT', '8000')
+
+          def get_latest_task_public_ip():
+              """Fetch the public IP of the latest running ECS task."""
+              try:
+                  logger.info(f"Fetching tasks for service: {ECS_SERVICE} in cluster: {ECS_CLUSTER}")
+                  response = ecs_client.list_tasks(
+                      cluster=ECS_CLUSTER,
+                      serviceName=ECS_SERVICE,
+                      desiredStatus='RUNNING'
+                  )
+                  
+                  if not response['taskArns']:
+                      logger.warning("No running tasks found")
+                      return None
+                  
+                  task_arn = response['taskArns'][0]
+                  logger.info(f"Describing task: {task_arn}")
+                  
+                  task_details = ecs_client.describe_tasks(
+                      cluster=ECS_CLUSTER,
+                      tasks=[task_arn]
+                  )
+                  
+                  if not task_details['tasks']:
+                      logger.error("Failed to describe task")
+                      return None
+                  
+                  task = task_details['tasks'][0]
+                  
+                  # Extract ENI ID
+                  eni_id = None
+                  for attachment in task.get('attachments', []):
+                      if attachment['type'] == 'ElasticNetworkInterface':
+                          for detail in attachment['details']:
+                              if detail['name'] == 'networkInterfaceId':
+                                  eni_id = detail['value']
+                                  break
+                  
+                  if not eni_id:
+                      logger.error("No ENI found")
+                      return None
+                  
+                  logger.info(f"Found ENI: {eni_id}")
+                  
+                  # Get public IP
+                  ec2_client = boto3.client('ec2')
+                  eni_response = ec2_client.describe_network_interfaces(
+                      NetworkInterfaceIds=[eni_id]
+                  )
+                  
+                  if not eni_response['NetworkInterfaces']:
+                      logger.error("Failed to describe network interface")
+                      return None
+                  
+                  association = eni_response['NetworkInterfaces'][0].get('Association', {})
+                  public_ip = association.get('PublicIp')
+                  
+                  if public_ip:
+                      logger.info(f"Found public IP: {public_ip}")
+                      return public_ip
+                  else:
+                      logger.error("No public IP associated")
+                      return None
+                      
+              except Exception as e:
+                  logger.error(f"Error: {str(e)}")
+                  raise
+
+          def update_api_gateway_integration(new_ip):
+              """Update API Gateway integration."""
+              try:
+                  new_uri = f"http://{new_ip}:{BACKEND_PORT}/{{proxy}}"
+                  logger.info(f"Updating to: {new_uri}")
+                  
+                  response = apigw_client.update_integration(
+                      ApiId=API_GATEWAY_ID,
+                      IntegrationId=INTEGRATION_ID,
+                      IntegrationUri=new_uri
+                  )
+                  
+                  logger.info(f"✅ Updated: {response['IntegrationUri']}")
+                  return {
+                      'success': True,
+                      'integration_id': response['IntegrationId'],
+                      'new_uri': response['IntegrationUri']
+                  }
+                  
+              except Exception as e:
+                  logger.error(f"Error: {str(e)}")
+                  raise
+
+          def lambda_handler(event, context):
+              """Main handler."""
+              try:
+                  logger.info(f"Event: {json.dumps(event)}")
+                  
+                  detail = event.get('detail', {})
+                  last_status = detail.get('lastStatus')
+                  
+                  if last_status != 'RUNNING':
+                      logger.info(f"Task not running: {last_status}")
+                      return {'statusCode': 200, 'body': json.dumps({'message': 'Task not running'})}
+                  
+                  new_ip = get_latest_task_public_ip()
+                  if not new_ip:
+                      return {'statusCode': 500, 'body': json.dumps({'error': 'No IP found'})}
+                  
+                  result = update_api_gateway_integration(new_ip)
+                  logger.info("✅ API Gateway updated")
+                  
+                  return {
+                      'statusCode': 200,
+                      'body': json.dumps({
+                          'message': 'Updated successfully',
+                          'timestamp': datetime.utcnow().isoformat(),
+                          'new_ip': new_ip,
+                          'integration_id': result['integration_id']
+                      })
+                  }
+                  
+              except Exception as e:
+                  logger.error(f"❌ Failed: {str(e)}")
+                  return {'statusCode': 500, 'body': json.dumps({'error': str(e)})}
+
+  # ============================================
+  # Lambda Function: Health Monitor
+  # ============================================
+  HealthMonitorLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub '${EnvironmentName}-eden-health-monitor'
+      Description: Monitors ECS service health and auto-heals
+      Runtime: python3.11
+      Handler: index.lambda_handler
+      Role: !GetAtt HealthMonitorLambdaRole.Arn
+      Timeout: 120
+      MemorySize: 256
+      Environment:
+        Variables:
+          ECS_CLUSTER: !Ref ECSClusterName
+          ECS_SERVICE: !Ref ECSServiceName
+          API_GATEWAY_URL: !Ref APIGatewayURL
+          SNS_TOPIC_ARN: !If
+            - HasNotificationEmail
+            - !Ref EdenNotificationTopic
+            - ''
+      Code:
+        ZipFile: |
+          import json
+          import os
+          import boto3
+          import logging
+          import time
+          from datetime import datetime
+
+          logger = logging.getLogger()
+          logger.setLevel(logging.INFO)
+
+          ecs_client = boto3.client('ecs')
+          sns_client = boto3.client('sns')
+
+          ECS_CLUSTER = os.environ['ECS_CLUSTER']
+          ECS_SERVICE = os.environ['ECS_SERVICE']
+          SNS_TOPIC_ARN = os.environ.get('SNS_TOPIC_ARN')
+          API_GATEWAY_URL = os.environ.get('API_GATEWAY_URL', '')
+
+          def check_service_health():
+              """Check ECS service health."""
+              try:
+                  logger.info(f"Checking: {ECS_SERVICE} in {ECS_CLUSTER}")
+                  response = ecs_client.describe_services(
+                      cluster=ECS_CLUSTER,
+                      services=[ECS_SERVICE]
+                  )
+                  
+                  if not response['services']:
+                      return {'healthy': False, 'reason': 'Service not found', 'running_tasks': 0, 'desired_tasks': 0}
+                  
+                  service = response['services'][0]
+                  running = service['runningCount']
+                  desired = service['desiredCount']
+                  
+                  is_healthy = running >= desired and running > 0
+                  
+                  return {
+                      'healthy': is_healthy,
+                      'reason': 'Healthy' if is_healthy else f'Mismatch: {running}/{desired}',
+                      'running_tasks': running,
+                      'desired_tasks': desired
+                  }
+                  
+              except Exception as e:
+                  logger.error(f"Error: {str(e)}")
+                  return {'healthy': False, 'reason': str(e), 'running_tasks': 0, 'desired_tasks': 0}
+
+          def get_unhealthy_tasks():
+              """Get unhealthy tasks."""
+              try:
+                  response = ecs_client.list_tasks(cluster=ECS_CLUSTER, serviceName=ECS_SERVICE)
+                  if not response['taskArns']:
+                      return []
+                  
+                  task_details = ecs_client.describe_tasks(cluster=ECS_CLUSTER, tasks=response['taskArns'])
+                  
+                  unhealthy = []
+                  for task in task_details['tasks']:
+                      status = task.get('lastStatus')
+                      health = task.get('healthStatus', 'UNKNOWN')
+                      if status != 'RUNNING' or health == 'UNHEALTHY':
+                          unhealthy.append({'taskArn': task['taskArn'], 'status': status, 'health': health})
+                  
+                  return unhealthy
+                  
+              except Exception as e:
+                  logger.error(f"Error: {str(e)}")
+                  return []
+
+          def restart_tasks(tasks):
+              """Stop unhealthy tasks."""
+              stopped = []
+              for task in tasks:
+                  try:
+                      logger.info(f"Stopping: {task['taskArn']}")
+                      ecs_client.stop_task(
+                          cluster=ECS_CLUSTER,
+                          task=task['taskArn'],
+                          reason='Auto-healing: unhealthy'
+                      )
+                      stopped.append(task['taskArn'])
+                      time.sleep(2)
+                  except Exception as e:
+                      logger.error(f"Failed to stop: {str(e)}")
+              
+              return stopped
+
+          def force_update():
+              """Force service update."""
+              try:
+                  logger.info(f"Forcing update: {ECS_SERVICE}")
+                  ecs_client.update_service(
+                      cluster=ECS_CLUSTER,
+                      service=ECS_SERVICE,
+                      forceNewDeployment=True
+                  )
+                  return True
+              except Exception as e:
+                  logger.error(f"Failed: {str(e)}")
+                  return False
+
+          def send_notification(subject, message):
+              """Send SNS notification."""
+              if not SNS_TOPIC_ARN:
+                  return
+              
+              try:
+                  sns_client.publish(TopicArn=SNS_TOPIC_ARN, Subject=subject, Message=message)
+                  logger.info("✅ Notification sent")
+              except Exception as e:
+                  logger.error(f"SNS error: {str(e)}")
+
+          def lambda_handler(event, context):
+              """Main handler."""
+              try:
+                  logger.info(f"=== Health Monitor Started ===")
+                  
+                  health = check_service_health()
+                  logger.info(f"Health: {health}")
+                  
+                  actions = []
+                  
+                  if not health['healthy']:
+                      logger.warning(f"⚠️ Unhealthy: {health['reason']}")
+                      
+                      unhealthy = get_unhealthy_tasks()
+                      
+                      if unhealthy:
+                          stopped = restart_tasks(unhealthy)
+                          actions.append(f"Stopped {len(stopped)} tasks")
+                      else:
+                          if force_update():
+                              actions.append("Forced redeployment")
+                      
+                      msg = f"""Eden Health Alert
+          
+          Service: {ECS_SERVICE}
+          Status: UNHEALTHY
+          Running: {health['running_tasks']}/{health['desired_tasks']}
+          Reason: {health['reason']}
+          
+          Actions: {', '.join(actions)}
+          Time: {datetime.utcnow().isoformat()}
+          """
+                      send_notification("🚨 Eden Auto-Healing", msg)
+                      logger.info("✅ Auto-healing complete")
+                      
+                      return {
+                          'statusCode': 200,
+                          'body': json.dumps({
+                              'message': 'Auto-healing triggered',
+                              'health': health,
+                              'actions': actions
+                          })
+                      }
+                  else:
+                      logger.info("✅ Service healthy")
+                      return {
+                          'statusCode': 200,
+                          'body': json.dumps({'message': 'Healthy', 'health': health})
+                      }
+                  
+              except Exception as e:
+                  logger.error(f"❌ Error: {str(e)}")
+                  if SNS_TOPIC_ARN:
+                      send_notification("🚨 Health Monitor Error", str(e))
+                  return {'statusCode': 500, 'body': json.dumps({'error': str(e)})}
+
+  # ============================================
+  # EventBridge Rule: ECS Task State Changes
+  # ============================================
+  ECSTaskStateChangeRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: !Sub '${EnvironmentName}-eden-ecs-task-state-change'
+      Description: Triggers IP update Lambda when ECS tasks start/stop
+      State: ENABLED
+      EventPattern:
+        source:
+          - aws.ecs
+        detail-type:
+          - ECS Task State Change
+        detail:
+          clusterArn:
+            - !Sub 'arn:aws:ecs:${AWS::Region}:${AWS::AccountId}:cluster/${ECSClusterName}'
+          lastStatus:
+            - RUNNING
+            - STOPPED
+      Targets:
+        - Arn: !GetAtt IPUpdateLambdaFunction.Arn
+          Id: IPUpdateLambdaTarget
+
+  # ============================================
+  # EventBridge Permission for IP Update Lambda
+  # ============================================
+  IPUpdateLambdaEventPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref IPUpdateLambdaFunction
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt ECSTaskStateChangeRule.Arn
+
+  # ============================================
+  # CloudWatch Alarm: API Gateway Health
+  # ============================================
+  APIHealthCheckAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub '${EnvironmentName}-eden-api-health-alarm'
+      AlarmDescription: Triggers when API Gateway health endpoint fails
+      ActionsEnabled: true
+      MetricName: 5XXError
+      Namespace: AWS/ApiGateway
+      Statistic: Sum
+      Period: 60
+      EvaluationPeriods: 2
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Dimensions:
+        - Name: ApiId
+          Value: !Ref APIGatewayId
+      TreatMissingData: notBreaching
+
+  # ============================================
+  # EventBridge Rule: CloudWatch Alarm State Change
+  # ============================================
+  HealthAlarmStateChangeRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: !Sub '${EnvironmentName}-eden-health-alarm-trigger'
+      Description: Triggers health monitor Lambda when alarm fires
+      State: ENABLED
+      EventPattern:
+        source:
+          - aws.cloudwatch
+        detail-type:
+          - CloudWatch Alarm State Change
+        detail:
+          alarmName:
+            - !Ref APIHealthCheckAlarm
+          state:
+            value:
+              - ALARM
+      Targets:
+        - Arn: !GetAtt HealthMonitorLambdaFunction.Arn
+          Id: HealthMonitorLambdaTarget
+
+  # ============================================
+  # EventBridge Permission for Health Monitor Lambda
+  # ============================================
+  HealthMonitorLambdaEventPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref HealthMonitorLambdaFunction
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt HealthAlarmStateChangeRule.Arn
+
+  # ============================================
+  # Scheduled Health Check (Every 5 minutes)
+  # ============================================
+  ScheduledHealthCheckRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: !Sub '${EnvironmentName}-eden-scheduled-health-check'
+      Description: Periodic health check every 5 minutes
+      State: ENABLED
+      ScheduleExpression: rate(5 minutes)
+      Targets:
+        - Arn: !GetAtt HealthMonitorLambdaFunction.Arn
+          Id: ScheduledHealthCheckTarget
+
+  ScheduledHealthCheckPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref HealthMonitorLambdaFunction
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt ScheduledHealthCheckRule.Arn
+
+Outputs:
+  IPUpdateLambdaArn:
+    Description: ARN of IP Update Lambda
+    Value: !GetAtt IPUpdateLambdaFunction.Arn
+    Export:
+      Name: !Sub '${EnvironmentName}-eden-ip-update-lambda-arn'
+
+  HealthMonitorLambdaArn:
+    Description: ARN of Health Monitor Lambda
+    Value: !GetAtt HealthMonitorLambdaFunction.Arn
+    Export:
+      Name: !Sub '${EnvironmentName}-eden-health-monitor-lambda-arn'
+
+  NotificationTopicArn:
+    Condition: HasNotificationEmail
+    Description: SNS Topic ARN for notifications
+    Value: !Ref EdenNotificationTopic
+    Export:
+      Name: !Sub '${EnvironmentName}-eden-notification-topic-arn'
+
+  ECSTaskStateChangeRuleName:
+    Description: EventBridge rule for ECS task state changes
+    Value: !Ref ECSTaskStateChangeRule
+
+  HealthAlarmName:
+    Description: CloudWatch alarm for API health
+    Value: !Ref APIHealthCheckAlarm
+
+  AutoResiliencyLogGroupName:
+    Description: CloudWatch log group for auto-resiliency logs
+    Value: !Ref AutoResiliencyLogGroup

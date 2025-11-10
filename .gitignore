@@ -39,6 +39,7 @@ dist/
 
 data/cache/
 logs/
+!logs/aws/README.md
 results/
 examples/results/
 models/*.joblib

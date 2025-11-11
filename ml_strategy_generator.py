@@ -23,6 +23,7 @@ from dataclasses import dataclass, asdict
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from datetime import timedelta
 
 # Local imports for Phase 2 real backtesting
 try:
@@ -192,7 +193,8 @@ class MLStrategyGenerator:
     def backtest_strategy(self, strategy: Strategy) -> Dict:
         """
         Backtest strategy on historical data (Phase 2). Falls back to synthetic if needed.
-        Returns performance metrics.
+        Performs simple forward-validation: split last 90 days into 60d train, 30d forward.
+        Returns performance metrics including forward test.
         """
         logger.info(f"Backtesting strategy: {strategy.name}")
         
@@ -200,17 +202,32 @@ class MLStrategyGenerator:
             try:
                 df = fetch_ohlc(self.symbol, timeframe=self.timeframe, days=90)
                 if df is not None and len(df) > 200:
+                    cutoff = df['time'].min() + (df['time'].max() - df['time'].min()) * 2/3
+                    train_df = df[df['time'] <= cutoff]
+                    test_df = df[df['time'] > cutoff]
+
+                    res_train = None
+                    res_test = None
+
                     if strategy.type in ("MA", "ML_GENERATED") and 'fast_period' in strategy.parameters:
-                        res = backtest_ma(df, strategy.parameters['fast_period'], strategy.parameters.get('slow_period', 10))
+                        res_train = backtest_ma(train_df, strategy.parameters['fast_period'], strategy.parameters.get('slow_period', 10))
+                        res_test = backtest_ma(test_df, strategy.parameters['fast_period'], strategy.parameters.get('slow_period', 10))
                     elif strategy.type == "RSI":
-                        res = backtest_rsi(df, strategy.parameters['period'], strategy.parameters['oversold'], strategy.parameters['overbought'])
-                    else:
-                        res = None
-                    if res:
-                        res['backtest_date'] = datetime.now().isoformat()
+                        res_train = backtest_rsi(train_df, strategy.parameters['period'], strategy.parameters['oversold'], strategy.parameters['overbought'])
+                        res_test = backtest_rsi(test_df, strategy.parameters['period'], strategy.parameters['oversold'], strategy.parameters['overbought'])
+
+                    if res_train and res_test:
+                        res = {
+                            **res_test,
+                            'train_win_rate': res_train['win_rate'],
+                            'train_profit_factor': res_train['profit_factor'],
+                            'forward_win_rate': res_test['win_rate'],
+                            'forward_profit_factor': res_test['profit_factor'],
+                            'backtest_date': datetime.now().isoformat(),
+                        }
                         strategy.backtest_results = res
-                        strategy.performance_score = (res['win_rate'] * 50) + (min(res['profit_factor'] / 3, 1) * 50)
-                        logger.info(f"Backtest complete (REAL): WR={res['win_rate']:.1%}, PF={res['profit_factor']:.2f}, Net=${res['net_profit']:.2f}")
+                        strategy.performance_score = (res['forward_win_rate'] * 50) + (min(res['forward_profit_factor'] / 3, 1) * 50)
+                        logger.info(f"Backtest (REAL) train WR={res['train_win_rate']:.1%} PF={res['train_profit_factor']:.2f} | forward WR={res['forward_win_rate']:.1%} PF={res['forward_profit_factor']:.2f}")
                         return res
             except Exception as e:
                 logger.error(f"Real backtest failed, falling back to synthetic: {e}")
@@ -249,17 +266,22 @@ class MLStrategyGenerator:
     def validate_strategy(self, strategy: Strategy) -> bool:
         """
         Validate if strategy meets minimum requirements.
-        Only profitable strategies are deployed.
+        Uses forward metrics if available; otherwise uses synthetic metrics.
+        Only profitable strategies are saved as validated.
         """
         if not strategy.backtest_results:
             return False
         
-        results = strategy.backtest_results
+        r = strategy.backtest_results
         
-        # Check minimum requirements
-        meets_winrate = results['win_rate'] >= self.min_winrate
-        meets_profit_factor = results['profit_factor'] >= self.min_profit_factor
-        is_profitable = results['net_profit'] > 0
+        # Prefer forward metrics if present
+        wr = r.get('forward_win_rate', r.get('win_rate', 0.0))
+        pf = r.get('forward_profit_factor', r.get('profit_factor', 0.0))
+        net = r.get('net_profit', 0.0)
+        
+        meets_winrate = wr >= self.min_winrate
+        meets_profit_factor = pf >= self.min_profit_factor
+        is_profitable = net > 0 or pf > 1.2  # net may not exist for forward-only metrics
         
         is_valid = meets_winrate and meets_profit_factor and is_profitable
         
@@ -351,6 +373,35 @@ class MLStrategyGenerator:
         self.save_strategies()
         logger.info(f"🛑 Deactivated strategy: {strategy.name}")
         return True
+
+    def phase_out_strategies(self) -> Dict[str, str]:
+        """Check active strategies and phase out if forward metrics degrade."""
+        phased = {}
+        for sid, strat in self.strategies.items():
+            if not strat.is_active:
+                continue
+            try:
+                # Re-evaluate last 30 days forward
+                df = fetch_ohlc(self.symbol, timeframe=self.timeframe, days=45) if self.use_real_backtest else None
+                if df is None or len(df) < 150:
+                    continue
+                recent_df = df[df['time'] > (df['time'].max() - (df['time'].max() - df['time'].min()) * 1/3)]
+                if strat.type in ("MA", "ML_GENERATED") and 'fast_period' in strat.parameters:
+                    res = backtest_ma(recent_df, strat.parameters['fast_period'], strat.parameters.get('slow_period', 10))
+                elif strat.type == "RSI":
+                    res = backtest_rsi(recent_df, strat.parameters['period'], strat.parameters['oversold'], strat.parameters['overbought'])
+                else:
+                    res = None
+                if not res:
+                    continue
+                if res['profit_factor'] < self.min_profit_factor or res['win_rate'] < self.min_winrate:
+                    strat.is_active = False
+                    phased[sid] = f"Degraded: WR={res['win_rate']:.1%}, PF={res['profit_factor']:.2f}"
+            except Exception as e:
+                logger.error(f"Phase-out check failed for {sid}: {e}")
+        if phased:
+            self.save_strategies()
+        return phased
 
 
 def main():

@@ -93,6 +93,7 @@ async def startup():
         async def strategy_loop():
             while True:
                 try:
+                    # Discovery cycle
                     strat = generator.generate_and_test_strategy()
                     if strat and ws_manager:
                         await ws_manager.broadcast_json({
@@ -106,6 +107,15 @@ async def startup():
                                 "validated": strat.is_validated,
                                 "active": strat.is_active,
                             }
+                        })
+
+                    # Phase-out cycle
+                    phased = generator.phase_out_strategies()
+                    for sid, reason in phased.items():
+                        await ws_manager.broadcast_json({
+                            "type": "strategy_phased_out",
+                            "strategy_id": sid,
+                            "reason": reason,
                         })
                 except Exception as e:
                     logger.error(f"Strategy discovery error: {e}")

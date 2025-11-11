@@ -24,6 +24,14 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
+# Local imports for Phase 2 real backtesting
+try:
+    from src.data_provider import fetch_ohlc
+    from src.strategy_backtester import backtest_ma, backtest_rsi
+    REAL_BACKTEST_AVAILABLE = True
+except Exception:
+    REAL_BACKTEST_AVAILABLE = False
+
 # Add src to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
@@ -58,7 +66,7 @@ class MLStrategyGenerator:
     Generates and validates trading strategies using ML techniques.
     """
     
-    def __init__(self, data_dir: str = "data", min_winrate: float = 0.55, min_profit_factor: float = 1.5):
+    def __init__(self, data_dir: str = "data", min_winrate: float = 0.55, min_profit_factor: float = 1.5, use_real_backtest: bool = True, symbol: str = "Volatility 75 Index", timeframe: str = "M5"):
         self.data_dir = Path(data_dir)
         self.data_dir.mkdir(exist_ok=True)
         
@@ -67,11 +75,14 @@ class MLStrategyGenerator:
         
         self.min_winrate = min_winrate
         self.min_profit_factor = min_profit_factor
+        self.use_real_backtest = use_real_backtest and REAL_BACKTEST_AVAILABLE
+        self.symbol = symbol
+        self.timeframe = timeframe
         
         self.strategies: Dict[str, Strategy] = {}
         self.load_strategies()
         
-        logger.info(f"ML Strategy Generator initialized (min_wr={min_winrate}, min_pf={min_profit_factor})")
+        logger.info(f"ML Strategy Generator initialized (min_wr={min_winrate}, min_pf={min_profit_factor}, real_backtest={self.use_real_backtest})")
     
     def load_strategies(self):
         """Load existing strategies from disk"""
@@ -180,29 +191,41 @@ class MLStrategyGenerator:
     
     def backtest_strategy(self, strategy: Strategy) -> Dict:
         """
-        Backtest strategy on historical data.
+        Backtest strategy on historical data (Phase 2). Falls back to synthetic if needed.
         Returns performance metrics.
         """
         logger.info(f"Backtesting strategy: {strategy.name}")
         
-        # Simulate backtest results (in production, use real historical data)
-        # This would connect to MT5 and get historical data
+        if self.use_real_backtest:
+            try:
+                df = fetch_ohlc(self.symbol, timeframe=self.timeframe, days=90)
+                if df is not None and len(df) > 200:
+                    if strategy.type in ("MA", "ML_GENERATED") and 'fast_period' in strategy.parameters:
+                        res = backtest_ma(df, strategy.parameters['fast_period'], strategy.parameters.get('slow_period', 10))
+                    elif strategy.type == "RSI":
+                        res = backtest_rsi(df, strategy.parameters['period'], strategy.parameters['oversold'], strategy.parameters['overbought'])
+                    else:
+                        res = None
+                    if res:
+                        res['backtest_date'] = datetime.now().isoformat()
+                        strategy.backtest_results = res
+                        strategy.performance_score = (res['win_rate'] * 50) + (min(res['profit_factor'] / 3, 1) * 50)
+                        logger.info(f"Backtest complete (REAL): WR={res['win_rate']:.1%}, PF={res['profit_factor']:.2f}, Net=${res['net_profit']:.2f}")
+                        return res
+            except Exception as e:
+                logger.error(f"Real backtest failed, falling back to synthetic: {e}")
         
+        # Fallback synthetic backtest
         num_trades = np.random.randint(50, 200)
         win_rate = np.random.uniform(0.45, 0.70)
-        
         winning_trades = int(num_trades * win_rate)
         losing_trades = num_trades - winning_trades
-        
         avg_win = np.random.uniform(40, 100)
         avg_loss = np.random.uniform(20, 60)
-        
         total_profit = winning_trades * avg_win
         total_loss = losing_trades * avg_loss
-        
         net_profit = total_profit - total_loss
         profit_factor = total_profit / total_loss if total_loss > 0 else 0
-        
         results = {
             "total_trades": num_trades,
             "winning_trades": winning_trades,
@@ -218,12 +241,9 @@ class MLStrategyGenerator:
             "sharpe_ratio": np.random.uniform(0.5, 2.5),
             "backtest_date": datetime.now().isoformat()
         }
-        
         strategy.backtest_results = results
         strategy.performance_score = (win_rate * 50) + (min(profit_factor / 3, 1) * 50)
-        
-        logger.info(f"Backtest complete: WR={win_rate:.1%}, PF={profit_factor:.2f}, Net=${net_profit:.2f}")
-        
+        logger.info(f"Backtest complete (SYNTHETIC): WR={win_rate:.1%}, PF={profit_factor:.2f}, Net=${net_profit:.2f}")
         return results
     
     def validate_strategy(self, strategy: Strategy) -> bool:

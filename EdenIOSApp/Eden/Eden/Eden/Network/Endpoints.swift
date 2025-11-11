@@ -13,8 +13,8 @@ struct APIEndpoints {
     
     // MARK: - Base Configuration
     
-    /// Base URL for API (Update this with AWS API Gateway URL after deployment)
-    static let baseURL = ProcessInfo.processInfo.environment["API_BASE_URL"] ?? "http://localhost:8000"
+    /// Base URL for API (Production: AWS EC2 Instance)
+    static let baseURL = ProcessInfo.processInfo.environment["API_BASE_URL"] ?? "https://13.50.226.20:8443"
     
     /// WebSocket base URL
     static let wsBaseURL = baseURL.replacingOccurrences(of: "http", with: "ws")
@@ -146,11 +146,11 @@ extension APIEndpoints {
         var baseURL: String {
             switch self {
             case .development:
-                return "http://localhost:8000"
+                return "https://13.50.226.20:8443"
             case .staging:
-                return "https://staging-api.eden-trading.com"  // Update with actual staging URL
+                return "https://13.50.226.20:8443"
             case .production:
-                return "https://api.eden-trading.com"  // Update with AWS API Gateway URL
+                return "https://13.50.226.20:8443"
             }
         }
     }

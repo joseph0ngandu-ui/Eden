@@ -65,11 +65,12 @@ def init_db():
             ).first()
             
             if not admin:
-                # Create default admin user
+                # Create default admin user with short password to avoid bcrypt length issues
+                default_password = "admin123"  # Keep it short for bcrypt
                 admin_user = db_models.User(
                     email="admin@eden.com",
                     full_name="System Administrator",
-                    hashed_password=pwd_context.hash("admin123"),
+                    hashed_password=pwd_context.hash(default_password),
                     is_active=True,
                     created_at=datetime.utcnow()
                 )

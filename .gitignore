@@ -63,6 +63,11 @@ logs/
 models/
 secrets/
 
+# Local DB and certs (do not commit)
+backend/eden_trading.db
+backend/ssl/*.pem
+backend/ssl/*.pfx
+
 # Model artifacts
 *.ckpt
 *.onnx
@@ -85,3 +90,10 @@ api_keys.encrypted
 # OS files
 .DS_Store
 Thumbs.db
+
+# iOS build artifacts
+EdenIOSApp/**/Build/
+EdenIOSApp/**/DerivedData/
+
+# Temp
+openapi.json

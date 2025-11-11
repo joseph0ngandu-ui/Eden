@@ -42,6 +42,7 @@ from app.database import init_db, get_db_session
 from app.trading_service import TradingService
 from app.websocket_manager import WebSocketManager
 from app.database import Base, engine
+from app.routers import strategies as strategies_router
 
 # Load environment variables
 load_dotenv()
@@ -69,6 +70,9 @@ app.add_middleware(
 # Initialize services
 trading_service = TradingService()
 ws_manager = WebSocketManager()
+
+# Routers
+app.include_router(strategies_router.router)
 
 # Strategy service (lazy import to avoid heavy deps at import time)
 try:
@@ -227,97 +231,7 @@ async def websocket_notifications(websocket: WebSocket):
         ws_manager.disconnect(websocket)
 
 # ============================================================================
-# STRATEGY MANAGEMENT ENDPOINTS
-# ============================================================================
-
-DATA_DIR = (Path(__file__).resolve().parent.parent / 'data')
-DATA_DIR.mkdir(exist_ok=True)
-STRATEGIES_FILE = DATA_DIR / 'strategies.json'
-VALIDATED_FILE = DATA_DIR / 'validated_strategies.json'
-
-
-def _load_json(path: Path) -> Dict:
-    if path.exists():
-        try:
-            return json.load(open(path, 'r'))
-        except Exception:
-            return {}
-    return {}
-
-
-def _save_json(path: Path, data: Dict):
-    with open(path, 'w') as f:
-        json.dump(data, f, indent=2, default=str)
-
-
-@app.get("/strategies")
-async def list_strategies():
-    return _load_json(STRATEGIES_FILE)
-
-
-@app.get("/strategies/validated")
-async def list_validated_strategies():
-    return _load_json(VALIDATED_FILE)
-
-
-@app.get("/strategies/active")
-async def list_active_strategies():
-    all_strats = _load_json(STRATEGIES_FILE)
-    return {k: v for k, v in all_strats.items() if v.get('is_active')}
-
-
-@app.put("/strategies/{strategy_id}/activate")
-async def activate_strategy(strategy_id: str):
-    all_strats = _load_json(STRATEGIES_FILE)
-    if strategy_id not in all_strats:
-        raise HTTPException(status_code=404, detail="Strategy not found")
-    # ensure validated
-    validated = _load_json(VALIDATED_FILE)
-    if strategy_id not in validated:
-        raise HTTPException(status_code=400, detail="Strategy not validated")
-    all_strats[strategy_id]['is_active'] = True
-    _save_json(STRATEGIES_FILE, all_strats)
-    # notify clients
-    await ws_manager.broadcast_json({"type": "strategy_activated", "strategy_id": strategy_id})
-    return {"status": "ok", "strategy_id": strategy_id}
-
-
-@app.put("/strategies/{strategy_id}/deactivate")
-async def deactivate_strategy(strategy_id: str):
-    all_strats = _load_json(STRATEGIES_FILE)
-    if strategy_id not in all_strats:
-        raise HTTPException(status_code=404, detail="Strategy not found")
-    all_strats[strategy_id]['is_active'] = False
-    _save_json(STRATEGIES_FILE, all_strats)
-    await ws_manager.broadcast_json({"type": "strategy_deactivated", "strategy_id": strategy_id})
-    return {"status": "ok", "strategy_id": strategy_id}
-
-
-@app.post("/strategies/discover")
-async def discover_strategy():
-    if MLStrategyGenerator is None:
-        raise HTTPException(status_code=500, detail="Strategy generator not available")
-    generator = MLStrategyGenerator(data_dir=str(DATA_DIR))
-    strat = generator.generate_and_test_strategy()
-    if strat:
-        await ws_manager.broadcast_json({
-            "type": "strategy_discovered",
-            "strategy": {
-                "id": strat.id,
-                "name": strat.name,
-                "type": strat.type,
-                "parameters": strat.parameters,
-                "performance": strat.backtest_results,
-                "validated": strat.is_validated,
-                "active": strat.is_active,
-            }
-        })
-        return {"status": "validated", "strategy": strat.id}
-    else:
-        return {"status": "rejected"}
-
-# ============================================================================
-# ORDER & JOURNAL ENDPOINTS
+# TRADING ENDPOINTS
 # ============================================================================
 
 @app.post("/orders/test")

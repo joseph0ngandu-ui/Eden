@@ -11,7 +11,9 @@ class WebSocketService: NSObject, URLSessionWebSocketDelegate {
     static let shared = WebSocketService()
     
     private var webSocketTask: URLSessionWebSocketTask?
-    private let baseURL = "wss://your-server.com/ws"
+    private var wsURL: String {
+        return APIEndpoints.wsBaseURL + "/ws/notifications"
+    }
     
     var onMessage: ((String) -> Void)?
     var onConnected: (() -> Void)?
@@ -24,7 +26,7 @@ class WebSocketService: NSObject, URLSessionWebSocketDelegate {
     // MARK: - Connection Management
     func connect() {
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
-        guard let url = URL(string: baseURL) else {
+        guard let url = URL(string: wsURL) else {
             print("Invalid WebSocket URL")
             return
         }

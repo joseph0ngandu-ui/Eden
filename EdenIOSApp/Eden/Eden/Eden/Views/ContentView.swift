@@ -33,8 +33,11 @@ struct ContentView: View {
                     AnalyticsView()
                         .tag(2)
                     
-                    SettingsView()
+                    StrategiesView()
                         .tag(3)
+                    
+                    SettingsView()
+                        .tag(4)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 

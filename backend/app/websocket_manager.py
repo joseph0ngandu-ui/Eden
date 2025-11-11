@@ -20,6 +20,8 @@ class WebSocketManager:
     async def connect(self, websocket: WebSocket, user_id: str = None):
         """Accept and store a WebSocket connection."""
         try:
+            await websocket.accept()
+            self.active_connections.append(websocket)
             if user_id:
                 self.connection_user_map[websocket] = user_id
                 logger.info(f"WebSocket connected for user: {user_id}")

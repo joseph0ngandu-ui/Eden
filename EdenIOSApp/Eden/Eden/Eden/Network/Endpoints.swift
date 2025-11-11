@@ -69,6 +69,16 @@ struct APIEndpoints {
         static let symbols = "\(baseURL)/strategy/symbols"
     }
     
+    // MARK: - Strategies (Discovery & Management)
+    struct Strategies {
+        static let list = "\(baseURL)/strategies"
+        static let validated = "\(baseURL)/strategies/validated"
+        static let active = "\(baseURL)/strategies/active"
+        static func activate(_ id: String) -> String { "\(baseURL)/strategies/\(id)/activate" }
+        static func deactivate(_ id: String) -> String { "\(baseURL)/strategies/\(id)/deactivate" }
+        static let discover = "\(baseURL)/strategies/discover"
+    }
+    
     // MARK: - MT5 Account Endpoints
     
     struct MT5Account {

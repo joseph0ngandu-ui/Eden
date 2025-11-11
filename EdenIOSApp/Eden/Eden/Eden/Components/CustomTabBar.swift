@@ -24,8 +24,12 @@ struct CustomTabBar: View {
                 selectedTab = 2
             }
             
-            TabBarButton(icon: "gearshape.fill", text: "Settings", isSelected: selectedTab == 3) {
+            TabBarButton(icon: "sparkles", text: "Strategies", isSelected: selectedTab == 3) {
                 selectedTab = 3
+            }
+            
+            TabBarButton(icon: "gearshape.fill", text: "Settings", isSelected: selectedTab == 4) {
+                selectedTab = 4
             }
         }
         .padding(8)

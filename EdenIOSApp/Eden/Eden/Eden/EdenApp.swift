@@ -15,6 +15,7 @@ struct EdenApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(botManager)
+                .onAppear { WebSocketService.shared.connect() }
                 .preferredColorScheme(.dark)
         }
     }

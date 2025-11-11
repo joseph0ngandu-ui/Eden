@@ -51,7 +51,8 @@ class TradeJournal:
         volume: float = 1.0,
         commission: float = 0.0,
         slippage: float = 0.0,
-        notes: str = ""
+        notes: str = "",
+        metadata: Dict[str, Any] = None,
     ) -> None:
         """
         Add a trade to the journal.
@@ -97,6 +98,12 @@ class TradeJournal:
             'status': 'CLOSED' if exit_price is not None else 'OPEN',
             'notes': notes,
         }
+        if metadata:
+            # Flatten a few common fields for analytics
+            trade['strategy_name'] = metadata.get('strategy_name')
+            trade['strategy_params'] = str(metadata.get('strategy_params'))
+            trade['mode'] = metadata.get('mode')
+            trade['ticket'] = metadata.get('ticket')
         
         self.trades.append(trade)
         logger.debug(f"Trade added: {symbol} {trade_type} @ {entry_price}")

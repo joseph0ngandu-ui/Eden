@@ -17,7 +17,7 @@ STRATEGY: UltraSmall Mode - Volatility 75 Index (MOST PROFITABLE)
 - Mode: UltraSmall Risk Ladder for optimal capital preservation
 """
 
-from fastapi import FastAPI, Depends, HTTPException, status, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, Depends, HTTPException, status, WebSocket, WebSocketDisconnect, Body
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from datetime import datetime, timedelta
@@ -315,6 +315,71 @@ async def discover_strategy():
         return {"status": "validated", "strategy": strat.id}
     else:
         return {"status": "rejected"}
+
+# ============================================================================
+# ORDER & JOURNAL ENDPOINTS
+# ============================================================================
+
+@app.post("/orders/test")
+async def place_test_order(payload: Dict[str, Any] = Body(...)):
+    """Place a small test order via MT5 with adaptive filling."""
+    symbol = payload.get('symbol', 'Volatility 75 Index')
+    side = payload.get('side', 'BUY').upper()
+    volume = float(payload.get('volume', 0.01))
+
+    try:
+        import MetaTrader5 as mt5
+        if not mt5.initialize():
+            raise HTTPException(status_code=500, detail=f"MT5 init failed: {mt5.last_error()}")
+        try:
+            si = mt5.symbol_info(symbol)
+            if si is None:
+                raise HTTPException(status_code=400, detail="Symbol not found")
+            if not si.visible:
+                mt5.symbol_select(symbol, True)
+            tick = mt5.symbol_info_tick(symbol)
+            if not tick:
+                raise HTTPException(status_code=400, detail="No tick")
+            price = tick.ask if side == 'BUY' else tick.bid
+            base = {
+                "action": mt5.TRADE_ACTION_DEAL,
+                "symbol": symbol,
+                "volume": volume,
+                "type": mt5.ORDER_TYPE_BUY if side=='BUY' else mt5.ORDER_TYPE_SELL,
+                "price": price,
+                "deviation": 20,
+                "comment": "Eden API test order",
+            }
+            tried = []
+            for fm in [getattr(mt5, 'ORDER_FILLING_FOK', None), getattr(mt5, 'ORDER_FILLING_IOC', None), getattr(mt5, 'ORDER_FILLING_RETURN', None)]:
+                if fm is None: continue
+                req = dict(base)
+                req['type_filling'] = fm
+                res = mt5.order_send(req)
+                tried.append({"fill": fm, "retcode": res.retcode, "comment": res.comment})
+                if res.retcode == mt5.TRADE_RETCODE_DONE:
+                    return {"status": "ok", "ticket": res.order, "tried": tried}
+            raise HTTPException(status_code=500, detail={"message": "Order failed", "tried": tried})
+        finally:
+            mt5.shutdown()
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/trades/logs")
+async def get_trade_logs(limit: int = 100):
+    import pandas as pd
+    import os
+    log_path = Path(__file__).resolve().parent.parent / 'logs' / 'trade_history.csv'
+    if not log_path.exists():
+        return []
+    try:
+        df = pd.read_csv(log_path)
+        return df.tail(limit).to_dict('records')
+    except Exception:
+        # fallback simple read
+        return []
 
 # ============================================================================
 # TRADING ENDPOINTS

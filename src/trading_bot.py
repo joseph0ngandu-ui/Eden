@@ -20,6 +20,7 @@ from dataclasses import dataclass
 from enum import Enum
 import time
 import logging
+import os
 
 from config_loader import ConfigLoader
 from trade_journal import TradeJournal
@@ -106,6 +107,9 @@ class TradingBot:
         self.account_id = account_id
         self.password = password
         self.server = server
+
+        # Modes
+        self.shadow_mode = bool(os.getenv('EDEN_SHADOW', '0') == '1') or bool(self.config.get_parameter('development.simulation_mode', False))
         
         # Trade journal
         self.trade_journal = TradeJournal(log_dir="logs")
@@ -285,7 +289,7 @@ class TradingBot:
         
         return 0  # NEUTRAL
     
-    def place_order(self, symbol: str, order_type: str, volume: float = None, comment: str = "", atr: float = None) -> Optional[int]:
+    def place_order(self, symbol: str, order_type: str, volume: float = None, comment: str = "", atr: float = None, strategy_name: str = None, strategy_params: Dict = None) -> Optional[int]:
         """
         Place a market order with dynamic position sizing.
         
@@ -318,28 +322,84 @@ class TradingBot:
                 logger.error(f"Symbol {symbol} not found")
                 return None
             
-            # Create order request
+            # Shadow/paper mode: log and skip live execution
+            price_tick = mt5.symbol_info_tick(symbol)
+            price = None
+            if price_tick:
+                price = price_tick.ask if order_type == "BUY" else price_tick.bid
+
+            if self.shadow_mode or (self.health_monitor and not self.health_monitor.trading_enabled):
+                self.trade_journal.add_trade(
+                    symbol=symbol,
+                    trade_type=order_type,
+                    entry_price=price or 0.0,
+                    entry_time=datetime.utcnow(),
+                    volume=volume,
+                    notes=f"PAPER | {comment}",
+                    metadata={
+                        'strategy_name': strategy_name or 'unknown',
+                        'strategy_params': strategy_params or {},
+                        'mode': 'PAPER'
+                    }
+                )
+                self.trade_journal.export_csv()
+                logger.info(f"Paper trade logged: {order_type} {volume}L {symbol}")
+                return 0
+
+            # Create order request with adaptive filling
             if order_type == "BUY":
                 action = mt5.ORDER_TYPE_BUY
             else:
                 action = mt5.ORDER_TYPE_SELL
             
-            request = {
+            base_request = {
                 "action": mt5.TRADE_ACTION_DEAL,
                 "symbol": symbol,
                 "volume": volume,
                 "type": action,
+                "price": price,
+                "deviation": 20,
                 "comment": comment,
-                "type_filling": mt5.ORDER_FILLING_IOC,
             }
+
+            tried = []
+            fill_modes = [
+                getattr(mt5, 'ORDER_FILLING_FOK', None),
+                getattr(mt5, 'ORDER_FILLING_IOC', None),
+                getattr(mt5, 'ORDER_FILLING_RETURN', None),
+            ]
+
+            result = None
+            for fm in [m for m in fill_modes if m is not None]:
+                req = dict(base_request)
+                req["type_filling"] = fm
+                result = mt5.order_send(req)
+                tried.append((fm, result.retcode, result.comment))
+                if result.retcode == mt5.TRADE_RETCODE_DONE:
+                    break
             
-            # Send order
-            result = mt5.order_send(request)
-            if result.retcode != mt5.TRADE_RETCODE_DONE:
-                logger.error(f"Order failed for {symbol}: {result.comment}")
+            if not result or result.retcode != mt5.TRADE_RETCODE_DONE:
+                logger.error(f"Order failed for {symbol}: {result.comment if result else 'NO_RESULT'} | tried={tried}")
                 return None
             
-            logger.info(f"Order placed: {order_type} {volume}L {symbol} at #{result.order}")
+            # Log live order
+            self.trade_journal.add_trade(
+                symbol=symbol,
+                trade_type=order_type,
+                entry_price=price or 0.0,
+                entry_time=datetime.utcnow(),
+                volume=volume,
+                notes=f"LIVE | ticket={result.order} | {comment}",
+                metadata={
+                    'strategy_name': strategy_name or 'unknown',
+                    'strategy_params': strategy_params or {},
+                    'mode': 'LIVE',
+                    'ticket': result.order,
+                }
+            )
+            self.trade_journal.export_csv()
+
+            logger.info(f"Order placed: {order_type} {volume}L {symbol} ticket #{result.order}")
             return result.order
         
         except Exception as e:

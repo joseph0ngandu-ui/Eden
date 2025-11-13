@@ -111,6 +111,9 @@ class BotManager: ObservableObject {
                 )
             }
         }
+        
+        // Save data for widgets
+        saveDataForWidgets()
     }
     
     // MARK: - API Data Fetching
@@ -168,6 +171,23 @@ class BotManager: ObservableObject {
         if let currentDrawdown = status.currentDrawdown {
             self.currentDrawdown = currentDrawdown
         }
+        
+        // Save data for widgets
+        saveDataForWidgets()
+    }
+    
+    // MARK: - Widget Data Management
+    private func saveDataForWidgets() {
+        SharedDataService.shared.saveBotStatus(
+            isRunning: isRunning,
+            balance: balance,
+            dailyPnL: dailyPnL,
+            activePositions: activePositions,
+            winRate: winRate,
+            totalTrades: totalTrades,
+            profitFactor: profitFactor,
+            riskTier: riskTier
+        )
     }
     
     deinit {

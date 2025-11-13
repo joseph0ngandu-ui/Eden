@@ -60,6 +60,7 @@ class DeploymentManager:
         self.status = ComponentStatus()
         self.backend_process: Optional[subprocess.Popen] = None
         self.optimizer_process: Optional[subprocess.Popen] = None
+        self.bot_process: Optional[subprocess.Popen] = None
         self.retry_count = {}
         self.max_retries = 3
     
@@ -199,6 +200,27 @@ class DeploymentManager:
             logger.error(f"Error starting optimizer: {e}")
             return False
     
+    def start_bot_runner(self) -> bool:
+        """Start the TradingBot runner (keeps running; respects PAPER/LIVE gating)."""
+        try:
+            logger.info("Starting bot runner...")
+            bot_script = self.eden_path / "bot_runner.py"
+            self.bot_process = subprocess.Popen(
+                [sys.executable, str(bot_script)],
+                cwd=str(self.eden_path),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE
+            )
+            time.sleep(2)
+            if self.bot_process.poll() is None:
+                logger.info("✓ Bot runner started")
+                return True
+            logger.error("Bot runner terminated unexpectedly")
+            return False
+        except Exception as e:
+            logger.error(f"Error starting bot runner: {e}")
+            return False
+
     def deploy_all_components(self) -> bool:
         """Deploy all Eden components."""
         logger.info("=" * 80)
@@ -224,9 +246,14 @@ class DeploymentManager:
             logger.warning("⚠ Backend API may have issues")
         
         # 4. Start Optimizer
-        logger.info("\n[4/4] Starting Autonomous Optimizer...")
+        logger.info("\n[4/5] Starting Autonomous Optimizer...")
         if not self.start_optimizer():
             logger.warning("⚠ Optimizer may have issues")
+
+        # 5. Start Bot Runner
+        logger.info("\n[5/5] Starting Bot Runner...")
+        if not self.start_bot_runner():
+            logger.warning("⚠ Bot runner may have issues")
         
         logger.info("\n" + "=" * 80)
         logger.info("✓ Eden deployment complete!")
@@ -264,6 +291,11 @@ class DeploymentManager:
                 if self.optimizer_process and self.optimizer_process.poll() is not None:
                     logger.warning("⚠ Optimizer stopped, attempting restart...")
                     self.start_optimizer()
+
+                # Check bot runner
+                if self.bot_process and self.bot_process.poll() is not None:
+                    logger.warning("⚠ Bot runner stopped, attempting restart...")
+                    self.start_bot_runner()
                 
                 # Log status
                 logger.info(f"Status: MT5={self.status.mt5_terminal} | "
@@ -357,6 +389,10 @@ class DeploymentManager:
         if self.optimizer_process:
             self.optimizer_process.terminate()
             logger.info("✓ Optimizer stopped")
+
+        if self.bot_process:
+            self.bot_process.terminate()
+            logger.info("✓ Bot runner stopped")
         
         logger.info("✓ Shutdown complete")
 

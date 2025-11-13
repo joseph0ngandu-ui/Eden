@@ -18,7 +18,7 @@ struct APIEndpoints {
     static let baseURL: String = {
         if let plist = plistBaseURL, !plist.isEmpty { return plist }
         if let env = ProcessInfo.processInfo.environment["API_BASE_URL"], !env.isEmpty { return env }
-        return "https://13.50.226.20:8443"
+        return "https://edenbot.duckdns.org:8443"
     }()
     
     /// WebSocket base URL (wss if https)
@@ -166,11 +166,11 @@ extension APIEndpoints {
         var baseURL: String {
             switch self {
             case .development:
-                return "https://13.50.226.20:8443"
+                return "https://edenbot.duckdns.org:8443"
             case .staging:
-                return "https://13.50.226.20:8443"
+                return "https://edenbot.duckdns.org:8443"
             case .production:
-                return "https://13.50.226.20:8443"
+                return "https://edenbot.duckdns.org:8443"
             }
         }
     }

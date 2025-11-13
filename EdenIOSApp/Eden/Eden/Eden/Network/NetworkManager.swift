@@ -47,10 +47,11 @@ extension NetworkManager: URLSessionDelegate {
             return
         }
 
-        #if DEBUG
-        // Debug-only bypass for local development
         let host = challenge.protectionSpace.host
-        if host == "localhost" || host == "127.0.0.1" {
+        
+        #if DEBUG
+        // Debug-only bypass for local development and DuckDNS self-signed cert
+        if host == "localhost" || host == "127.0.0.1" || host == "edenbot.duckdns.org" {
             let credential = URLCredential(trust: serverTrust)
             completionHandler(.useCredential, credential)
             return

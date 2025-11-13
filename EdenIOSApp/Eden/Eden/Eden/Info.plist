@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>API_BASE_URL</key>
-	<string>https://13.50.226.20:8443</string>
+	<string>https://edenbot.duckdns.org:8443</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -54,7 +54,7 @@
 		<false/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>13.50.226.20</key>
+			<key>edenbot.duckdns.org</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>

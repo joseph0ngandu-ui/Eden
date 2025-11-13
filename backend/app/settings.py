@@ -33,6 +33,10 @@ class Settings(BaseSettings):
     host: str = os.getenv("HOST", "0.0.0.0")
     port: int = int(os.getenv("PORT", "8000"))
     
+    # Optional direct TLS (only if terminating TLS in app instead of a reverse proxy)
+    ssl_certfile: Optional[str] = os.getenv("SSL_CERTFILE")
+    ssl_keyfile: Optional[str] = os.getenv("SSL_KEYFILE")
+    
     # CORS
     allowed_origins: list = ["*"]  # Default in development, restrict in production
     

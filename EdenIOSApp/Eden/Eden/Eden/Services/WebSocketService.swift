@@ -36,6 +36,19 @@ class WebSocketService: NSObject, URLSessionWebSocketDelegate {
         receiveMessage()
     }
     
+    /// Connect with JWT token to the authenticated updates endpoint
+    func connect(token: String) {
+        let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
+        let urlString = APIEndpoints.WebSocket.updates(token: token)
+        guard let url = URL(string: urlString) else {
+            print("Invalid WebSocket URL (token)")
+            return
+        }
+        webSocketTask = session.webSocketTask(with: url)
+        webSocketTask?.resume()
+        receiveMessage()
+    }
+    
     func disconnect() {
         webSocketTask?.cancel(with: .goingAway, reason: nil)
         webSocketTask = nil

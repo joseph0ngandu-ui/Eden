@@ -40,26 +40,24 @@ extension NetworkManager: URLSessionDelegate {
     /// WARNING: This bypasses certificate validation for self-signed certificates
     /// Only use this for development/testing with known servers
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        
-        // Check if this is a server trust challenge
+        // Default: perform standard validation
         guard challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
               let serverTrust = challenge.protectionSpace.serverTrust else {
             completionHandler(.performDefaultHandling, nil)
             return
         }
-        
-        // For development: Accept self-signed certificates from our known server
-        // In production with valid certificates, remove this or make it configurable
+
+        #if DEBUG
+        // Debug-only bypass for local development
         let host = challenge.protectionSpace.host
-        
-        // Only bypass SSL for our specific server
-        if host == "13.50.226.20" || host == "localhost" || host == "127.0.0.1" {
+        if host == "localhost" || host == "127.0.0.1" {
             let credential = URLCredential(trust: serverTrust)
             completionHandler(.useCredential, credential)
-        } else {
-            // For other hosts, use default handling
-            completionHandler(.performDefaultHandling, nil)
+            return
         }
+        #endif
+
+        completionHandler(.performDefaultHandling, nil)
     }
 }
 

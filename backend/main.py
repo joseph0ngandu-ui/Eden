@@ -839,4 +839,21 @@ async def api_info():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    try:
+        from app.settings import settings
+    except Exception:
+        settings = None
+
+    run_kwargs = {
+        "host": (settings.host if settings else "0.0.0.0"),
+        "port": (settings.port if settings else 8000),
+        "proxy_headers": True,
+        "forwarded_allow_ips": "*",
+    }
+
+    # Enable HTTPS if cert and key are provided via env/.env (direct TLS mode)
+    if settings and settings.ssl_certfile and settings.ssl_keyfile:
+        run_kwargs["ssl_certfile"] = settings.ssl_certfile
+        run_kwargs["ssl_keyfile"] = settings.ssl_keyfile
+
+    uvicorn.run(app, **run_kwargs)

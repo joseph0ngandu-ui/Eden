@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Production Live Trading Bot
 
@@ -181,17 +181,17 @@ class TradingBot:
     
     def _on_health_change(self, health_status: HealthStatus, risk_level: RiskLevel) -> None:
         """Callback for health status changes."""
-        logger.warning(f"⚠️ Health Status Changed: {health_status.value} | Risk: {risk_level.value}")
+        logger.warning(f"[WARN]️ Health Status Changed: {health_status.value} | Risk: {risk_level.value}")
         
         if health_status == HealthStatus.UNHEALTHY:
-            logger.error("❌ System UNHEALTHY - Pausing trades")
+            logger.error("[ERROR] System UNHEALTHY - Pausing trades")
         elif health_status == HealthStatus.DEGRADED:
-            logger.warning("⚠️ System DEGRADED - Monitor closely")
+            logger.warning("[WARN]️ System DEGRADED - Monitor closely")
         else:
-            logger.info("✓ System HEALTHY")
+            logger.info("[OK] System HEALTHY")
         
         if risk_level == RiskLevel.CRITICAL:
-            logger.error("🛑 CRITICAL RISK - Auto-disabling live trading")
+            logger.error("[STOP] CRITICAL RISK - Auto-disabling live trading")
             self.is_running = False
     
     def connect(self) -> bool:
@@ -515,7 +515,7 @@ class TradingBot:
             
             # Check if trading is disabled
             if not self.health_monitor.trading_enabled:
-                logger.warning("⚠️ Trading disabled due to risk level")
+                logger.warning("[WARN]️ Trading disabled due to risk level")
                 return
             
             # Update account balance
@@ -599,3 +599,4 @@ class TradingBot:
         """Stop live trading."""
         self.is_running = False
         logger.info("Bot stop signal received")
+

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Eden Deployment & Recovery Manager
 
@@ -80,7 +80,7 @@ class DeploymentManager:
     def start_mt5_terminal(self) -> bool:
         """Start MT5 terminal if not running."""
         if self.check_mt5_terminal():
-            logger.info("✓ MT5 terminal already running")
+            logger.info("[OK] MT5 terminal already running")
             return True
         
         try:
@@ -96,7 +96,7 @@ class DeploymentManager:
             for i in range(30):
                 time.sleep(1)
                 if self.check_mt5_terminal():
-                    logger.info("✓ MT5 terminal started")
+                    logger.info("[OK] MT5 terminal started")
                     return True
             
             logger.error("MT5 terminal failed to start within 30 seconds")
@@ -144,7 +144,7 @@ class DeploymentManager:
     def start_backend_api(self) -> bool:
         """Start the backend API server."""
         if self.check_backend_api():
-            logger.info("✓ Backend API already running")
+            logger.info("[OK] Backend API already running")
             return True
         
         try:
@@ -164,7 +164,7 @@ class DeploymentManager:
             for i in range(30):
                 time.sleep(1)
                 if self.check_backend_api():
-                    logger.info("✓ Backend API started at http://localhost:8000")
+                    logger.info("[OK] Backend API started at http://localhost:8000")
                     return True
             
             logger.warning("Backend API may not be fully ready")
@@ -189,7 +189,7 @@ class DeploymentManager:
             
             time.sleep(2)
             if self.optimizer_process.poll() is None:
-                logger.info("✓ Autonomous optimizer started")
+                logger.info("[OK] Autonomous optimizer started")
                 self.status.optimizer = True
                 return True
             else:
@@ -213,7 +213,7 @@ class DeploymentManager:
             )
             time.sleep(2)
             if self.bot_process.poll() is None:
-                logger.info("✓ Bot runner started")
+                logger.info("[OK] Bot runner started")
                 return True
             logger.error("Bot runner terminated unexpectedly")
             return False
@@ -238,25 +238,25 @@ class DeploymentManager:
         if not self.check_mt5_connection():
             logger.error("✗ MT5 connection failed")
             return False
-        logger.info("✓ MT5 connection verified")
+        logger.info("[OK] MT5 connection verified")
         
         # 3. Start Backend API
         logger.info("\n[3/4] Starting Backend API...")
         if not self.start_backend_api():
-            logger.warning("⚠ Backend API may have issues")
+            logger.warning("[WARN] Backend API may have issues")
         
         # 4. Start Optimizer
         logger.info("\n[4/5] Starting Autonomous Optimizer...")
         if not self.start_optimizer():
-            logger.warning("⚠ Optimizer may have issues")
+            logger.warning("[WARN] Optimizer may have issues")
 
         # 5. Start Bot Runner
         logger.info("\n[5/5] Starting Bot Runner...")
         if not self.start_bot_runner():
-            logger.warning("⚠ Bot runner may have issues")
+            logger.warning("[WARN] Bot runner may have issues")
         
         logger.info("\n" + "=" * 80)
-        logger.info("✓ Eden deployment complete!")
+        logger.info("[OK] Eden deployment complete!")
         logger.info("=" * 80)
         
         return True
@@ -273,28 +273,28 @@ class DeploymentManager:
                 
                 # Check MT5 terminal
                 if not self.check_mt5_terminal():
-                    logger.warning("⚠ MT5 terminal not running, attempting restart...")
+                    logger.warning("[WARN] MT5 terminal not running, attempting restart...")
                     self.start_mt5_terminal()
                 
                 # Check MT5 connection
                 if not self.check_mt5_connection():
-                    logger.warning("⚠ MT5 connection lost, attempting recovery...")
+                    logger.warning("[WARN] MT5 connection lost, attempting recovery...")
                     time.sleep(5)
                     self.check_mt5_connection()
                 
                 # Check backend API
                 if not self.check_backend_api():
-                    logger.warning("⚠ Backend API down, attempting restart...")
+                    logger.warning("[WARN] Backend API down, attempting restart...")
                     self.start_backend_api()
                 
                 # Check optimizer
                 if self.optimizer_process and self.optimizer_process.poll() is not None:
-                    logger.warning("⚠ Optimizer stopped, attempting restart...")
+                    logger.warning("[WARN] Optimizer stopped, attempting restart...")
                     self.start_optimizer()
 
                 # Check bot runner
                 if self.bot_process and self.bot_process.poll() is not None:
-                    logger.warning("⚠ Bot runner stopped, attempting restart...")
+                    logger.warning("[WARN] Bot runner stopped, attempting restart...")
                     self.start_bot_runner()
                 
                 # Log status
@@ -338,8 +338,8 @@ class DeploymentManager:
         
         # MT5 Status
         report.append("MT5 Status:")
-        report.append(f"  Terminal Running: {'✓' if self.status.mt5_terminal else '✗'}")
-        report.append(f"  Python Connection: {'✓' if self.status.mt5_connection else '✗'}")
+        report.append(f"  Terminal Running: {'[OK]' if self.status.mt5_terminal else '✗'}")
+        report.append(f"  Python Connection: {'[OK]' if self.status.mt5_connection else '✗'}")
         
         if mt5.initialize():
             info = mt5.terminal_info()
@@ -356,13 +356,13 @@ class DeploymentManager:
         
         # Backend API
         report.append("Backend API:")
-        report.append(f"  Status: {'✓ Running' if self.status.backend_api else '✗ Stopped'}")
+        report.append(f"  Status: {'[OK] Running' if self.status.backend_api else '✗ Stopped'}")
         report.append(f"  URL: http://localhost:8000")
         report.append("")
         
         # Optimizer
         report.append("Autonomous Optimizer:")
-        report.append(f"  Status: {'✓ Running' if self.status.optimizer else '✗ Stopped'}")
+        report.append(f"  Status: {'[OK] Running' if self.status.optimizer else '✗ Stopped'}")
         report.append("")
         
         # Performance Snapshot
@@ -384,17 +384,17 @@ class DeploymentManager:
         
         if self.backend_process:
             self.backend_process.terminate()
-            logger.info("✓ Backend API stopped")
+            logger.info("[OK] Backend API stopped")
         
         if self.optimizer_process:
             self.optimizer_process.terminate()
-            logger.info("✓ Optimizer stopped")
+            logger.info("[OK] Optimizer stopped")
 
         if self.bot_process:
             self.bot_process.terminate()
-            logger.info("✓ Bot runner stopped")
+            logger.info("[OK] Bot runner stopped")
         
-        logger.info("✓ Shutdown complete")
+        logger.info("[OK] Shutdown complete")
 
 
 def main():
@@ -423,3 +423,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

@@ -87,6 +87,9 @@ api_keys.encrypted
 *.temp
 *~
 
+# Archive folders
+**/archive/
+
 # OS files
 .DS_Store
 Thumbs.db

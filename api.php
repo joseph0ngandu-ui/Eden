@@ -17,9 +17,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 $config_file = __DIR__ . '/assets/js/config.js';
 $config_content = is_file($config_file) ? file_get_contents($config_file) : '';
 
-// Extract API_URL from config (simple extraction)
-preg_match('/API_URL:\s*[\'"]([^\'"]+)/', $config_content, $matches);
-$api_url = isset($matches[1]) ? $matches[1] : '';
+// Check if this is running on InfinityFree (override for Eden)
+if (strpos($_SERVER['HTTP_HOST'], '.infinityfree.com') !== false || strpos($_SERVER['HTTP_HOST'], '.epizy.com') !== false) {
+    // For InfinityFree deployment, extract from config
+    preg_match('/API_URL:\s*[\'"]([^\'"]+)/', $config_content, $matches);
+    $api_url = isset($matches[1]) ? $matches[1] : 'https://edenbot.duckdns.org:8443';
+} else {
+    // Direct deployment - use Eden backend
+    $api_url = 'https://edenbot.duckdns.org:8443';
+}
 
 if (empty($api_url)) {
     http_response_code(500);

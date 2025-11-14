@@ -4,7 +4,7 @@
   window.EDEN_CONFIG = {
     // Your server URL (no trailing slash)
     // For InfinityFree deployment, this will be set automatically to use api.php
-    API_URL: 'https://your-eden-backend.com/api', // Replace with your DNS backend URL
+    API_URL: 'https://edenbot.duckdns.org:8443', // Live Eden backend with Let's Encrypt
     
     // Authentication
     TOKEN_KEY: 'eden_token',

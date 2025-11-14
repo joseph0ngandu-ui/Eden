@@ -10,7 +10,7 @@
   // Set API URL based on environment
   const API_URL = isInfinityFree 
     ? window.location.origin + '/api.php'
-    : 'https://your-eden-backend.com/api'; // Replace with your DNS backend URL
+    : 'https://edenbot.duckdns.org:8443'; // Live Eden backend with Let's Encrypt
   
   // Update the global config
   window.EDEN_CONFIG = {
@@ -31,7 +31,9 @@
   const authMessage = document.getElementById('authMessage');
   if (authMessage) {
     if (isInfinityFree) {
-      authMessage.textContent = 'Deployed on InfinityFree with PHP proxy';
+      authMessage.textContent = 'Deployed on InfinityFree with PHP proxy routing to Eden';
+    } else if (API_URL.includes('edenbot.duckdns.org')) {
+      authMessage.textContent = 'Connected to Eden Trading Bot at ' + API_URL;
     } else if (API_URL.includes('your-server.com')) {
       authMessage.textContent = 'Demo mode - update API_URL in config.js to connect to your server';
     } else {

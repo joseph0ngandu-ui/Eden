@@ -13,36 +13,39 @@ try {
     New-Item -ItemType Directory -Force -Path $installPath | Out-Null
     New-Item -ItemType Directory -Force -Path $certOutputPath | Out-Null
 
-    # Get latest win-acme Windows x64 release info from GitHub
-    $githubHeaders = @{ 'User-Agent' = 'EdenSSLSetupScript/1.0' }
-    $release = Invoke-RestMethod -Uri "https://api.github.com/repos/win-acme/win-acme/releases/latest" -Headers $githubHeaders
-    if (-not $release -or -not $release.assets) {
-        throw "FATAL: Unable to retrieve win-acme release information from GitHub."
-    }
-
-    $asset = $release.assets | Where-Object { $_.name -like "win-acme.v*.x64.pluggable.zip" } | Select-Object -First 1
-    if (-not $asset) {
-        throw "FATAL: No suitable win-acme Windows x64 ZIP asset found in latest release."
-    }
-
-    $downloadUrl = $asset.browser_download_url
-    if (-not $downloadUrl) {
-        throw "FATAL: win-acme asset has no download URL."
-    }
-
-    # Download win-acme ZIP
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $zipPath -UseBasicParsing -Headers $githubHeaders
-
-    # Extract win-acme
-    Expand-Archive -Path $zipPath -DestinationPath $installPath -Force
-
-    # Locate wacs.exe
+    # Ensure win-acme (wacs.exe) is available
     $wacsPath = Join-Path $installPath "wacs.exe"
     if (-not (Test-Path $wacsPath)) {
-        # Some archives may extract into a subfolder; search for wacs.exe
-        $wacsPath = Get-ChildItem -Path $installPath -Recurse -Filter "wacs.exe" | Select-Object -First 1 -ExpandProperty FullName
-        if (-not $wacsPath) {
-            throw "FATAL: wacs.exe not found after extraction."
+        # Get latest win-acme Windows x64 release info from GitHub
+        $githubHeaders = @{ 'User-Agent' = 'EdenSSLSetupScript/1.0' }
+        $release = Invoke-RestMethod -Uri "https://api.github.com/repos/win-acme/win-acme/releases/latest" -Headers $githubHeaders
+        if (-not $release -or -not $release.assets) {
+            throw "FATAL: Unable to retrieve win-acme release information from GitHub."
+        }
+
+        $asset = $release.assets | Where-Object { $_.name -like "win-acme.v*.x64.pluggable.zip" } | Select-Object -First 1
+        if (-not $asset) {
+            throw "FATAL: No suitable win-acme Windows x64 ZIP asset found in latest release."
+        }
+
+        $downloadUrl = $asset.browser_download_url
+        if (-not $downloadUrl) {
+            throw "FATAL: win-acme asset has no download URL."
+        }
+
+        # Download win-acme ZIP
+        Invoke-WebRequest -Uri $downloadUrl -OutFile $zipPath -UseBasicParsing -Headers $githubHeaders
+
+        # Extract win-acme
+        Expand-Archive -Path $zipPath -DestinationPath $installPath -Force
+
+        # Locate wacs.exe in extracted content
+        $wacsPath = Join-Path $installPath "wacs.exe"
+        if (-not (Test-Path $wacsPath)) {
+            $wacsPath = Get-ChildItem -Path $installPath -Recurse -Filter "wacs.exe" | Select-Object -First 1 -ExpandProperty FullName
+            if (-not $wacsPath) {
+                throw "FATAL: wacs.exe not found after extraction."
+            }
         }
     }
 
@@ -62,15 +65,15 @@ try {
         throw "FATAL: win-acme certificate request failed with exit code $LASTEXITCODE."
     }
 
-    # Verify cert files
-    $fullchain = Join-Path $certOutputPath "fullchain.pem"
-    $key = Join-Path $certOutputPath "key.pem"
+    # Verify cert files (Lets Encrypt PEMs for edenbot.duckdns.org)
+    $certFile = Join-Path $certOutputPath "edenbot.duckdns.org-chain.pem"
+    $keyFile  = Join-Path $certOutputPath "edenbot.duckdns.org-key.pem"
 
-    if (-not (Test-Path $fullchain)) {
-        throw "FATAL: Missing certificate file: $fullchain"
+    if (-not (Test-Path $certFile)) {
+        throw "FATAL: Missing certificate file: $certFile"
     }
-    if (-not (Test-Path $key)) {
-        throw "FATAL: Missing key file: $key"
+    if (-not (Test-Path $keyFile)) {
+        throw "FATAL: Missing key file: $keyFile"
     }
 
     # Trigger renewal task handling

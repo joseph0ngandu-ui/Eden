@@ -4289,3 +4289,7 @@
 [2025-11-14 11:07:16] [BOT] 2025-11-14 11:07:16,925 - WARNING - MT5 connection check failed
 [2025-11-14 11:07:16] [BOT] 2025-11-14 11:07:16,984 - INFO - Trade history exported: logs\trade_history.csv (61 trades)
 [2025-11-14 11:07:17] [BOT] 2025-11-14 11:07:16,984 - INFO - Paper trade logged: BUY 1.0L Volatility 75 Index
+[2025-11-14 11:12:17] [BOT] 2025-11-14 11:12:17,103 - WARNING - MT5 connection check failed
+[2025-11-14 11:12:17] [BOT] 2025-11-14 11:12:17,204 - INFO - Trade history exported: logs\trade_history.csv (62 trades)
+[2025-11-14 11:12:17] [BOT] 2025-11-14 11:12:17,206 - INFO - Paper trade logged: BUY 1.0L Boom 500 Index
+[2025-11-14 11:17:17] [BOT] 2025-11-14 11:17:17,243 - WARNING - MT5 connection check failed

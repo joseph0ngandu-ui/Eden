@@ -64,7 +64,7 @@ Your server should return JSON responses with this structure:
 1. Create a new site in InfinityFree and open the File Manager (or use FTP).
 2. Update the API endpoint in `assets/js/config.js`:
    ```
-   API_URL: 'https://your-server.com/api'
+   API_URL: 'https://your-eden-backend.com/api'  // Replace with your Eden DNS backend URL
    ```
 3. Upload the entire project folder contents to the document root (usually `htdocs/`).
 4. Ensure `index.html` and `api.php` are in the root of `htdocs/`.

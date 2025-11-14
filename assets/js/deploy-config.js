@@ -10,7 +10,7 @@
   // Set API URL based on environment
   const API_URL = isInfinityFree 
     ? window.location.origin + '/api.php'
-    : 'http://localhost:8000'; // Local backend running on port 8000
+    : 'https://your-eden-backend.com/api'; // Replace with your DNS backend URL
   
   // Update the global config
   window.EDEN_CONFIG = {

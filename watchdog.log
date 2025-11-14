@@ -4280,3 +4280,12 @@
 [2025-11-14 10:32:15] [BOT] 2025-11-14 10:32:15,618 - INFO - Paper trade logged: BUY 1.0L Crash 500 Index
 [2025-11-14 10:37:15] [BOT] 2025-11-14 10:37:15,628 - WARNING - MT5 connection check failed
 [2025-11-14 10:42:15] [BOT] 2025-11-14 10:42:15,704 - WARNING - MT5 connection check failed
+[2025-11-14 10:47:15] [BOT] 2025-11-14 10:47:15,776 - WARNING - MT5 connection check failed
+[2025-11-14 10:47:16] [BOT] 2025-11-14 10:47:16,529 - INFO - Trade history exported: logs\trade_history.csv (60 trades)
+[2025-11-14 10:47:16] [BOT] 2025-11-14 10:47:16,531 - INFO - Paper trade logged: BUY 1.0L XAUUSD
+[2025-11-14 10:52:16] [BOT] 2025-11-14 10:52:16,538 - WARNING - MT5 connection check failed
+[2025-11-14 10:57:16] [BOT] 2025-11-14 10:57:16,683 - WARNING - MT5 connection check failed
+[2025-11-14 11:02:16] [BOT] 2025-11-14 11:02:16,870 - WARNING - MT5 connection check failed
+[2025-11-14 11:07:16] [BOT] 2025-11-14 11:07:16,925 - WARNING - MT5 connection check failed
+[2025-11-14 11:07:16] [BOT] 2025-11-14 11:07:16,984 - INFO - Trade history exported: logs\trade_history.csv (61 trades)
+[2025-11-14 11:07:17] [BOT] 2025-11-14 11:07:16,984 - INFO - Paper trade logged: BUY 1.0L Volatility 75 Index

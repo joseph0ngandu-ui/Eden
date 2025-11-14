@@ -21,4 +21,4 @@ if (Test-Path $logDir) {
 Write-Host "`n-------- Summary --------" -ForegroundColor Yellow
 Write-Host "Bot processes running: $(Get-Process -Name python -ErrorAction SilentlyContinue | Measure-Object).Count"
 Write-Host "Scheduled task status:"
-schtasks /query /tn "TradingBot" /fo LIST | Find-Str "Status"
+schtasks /query /tn "TradingBot" /fo LIST | findstr "Status"

@@ -1,3 +1,4 @@
 @echo off
 cd /d C:\Users\Administrator\Eden
-call run_bot_persistent.bat
+set PYTHONUNBUFFERED=1
+C:\Users\Administrator\Eden\venv\Scripts\python.exe watchdog.py

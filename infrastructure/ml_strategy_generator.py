@@ -97,11 +97,15 @@ class MLStrategyGenerator:
         
         self.strategies: Dict[str, Strategy] = {}
         self.load_strategies()
+
+        # Optionally bias symbol/timeframe based on live MT5 performance snapshot
+        self._load_live_preferences()
         
         logger.info(
             "ML Strategy Generator initialized "
             f"(min_wr={min_winrate}, min_pf={min_profit_factor}, "
-            f"min_trades={min_trades}, real_backtest={self.use_real_backtest})"
+            f"min_trades={min_trades}, real_backtest={self.use_real_backtest}, "
+            f"symbol={self.symbol}, timeframe={self.timeframe})"
         )
     
     def load_strategies(self):
@@ -114,6 +118,55 @@ class MLStrategyGenerator:
                     strategy = Strategy(**strategy_data)
                     self.strategies[strategy.id] = strategy
             logger.info(f"Loaded {len(self.strategies)} existing strategies")
+
+    def _load_live_preferences(self) -> None:
+        """Bias symbol/timeframe using live MT5 performance snapshot if available.
+
+        Reads logs/performance_snapshot.json written by AutonomousOptimizer and
+        maps the active strategy name to a preferred symbol/timeframe.
+        """
+        try:
+            project_root = Path(__file__).resolve().parent.parent
+            snapshot_file = project_root / 'logs' / 'performance_snapshot.json'
+            if not snapshot_file.exists():
+                return
+
+            with open(snapshot_file, 'r') as f:
+                snapshot = json.load(f)
+
+            active = snapshot.get('active_strategy')
+            if not active:
+                return
+
+            # Map known optimizer strategies to symbol/timeframe preferences
+            mapping = {
+                'Volatility_Burst_V1.3': {
+                    'symbol': 'Volatility 75 Index',
+                    'timeframe': 'M5',
+                },
+                'Moving_Average_V1.2': {
+                    'symbol': 'Volatility 75 Index',
+                    'timeframe': 'M5',
+                },
+                'ICT_ML_Strategy': {
+                    'symbol': 'Volatility 75 Index',
+                    'timeframe': 'M1',
+                },
+            }
+
+            pref = mapping.get(active)
+            if pref:
+                self.symbol = pref['symbol']
+                self.timeframe = pref['timeframe']
+                logger.info(
+                    "Live preferences loaded from MT5 snapshot: "
+                    "active_strategy=%s symbol=%s timeframe=%s",
+                    active,
+                    self.symbol,
+                    self.timeframe,
+                )
+        except Exception as e:
+            logger.error(f"Failed to load live preferences: {e}")
     
     def save_strategies(self):
         """Save strategies to disk"""
@@ -137,8 +190,8 @@ class MLStrategyGenerator:
             parameters={
                 "fast_period": fast_period,
                 "slow_period": slow_period,
-                "timeframe": "M5"
-            }
+                "timeframe": self.timeframe,
+            },
         )
     
     def generate_rsi_strategy(self, period: int, oversold: int, overbought: int) -> Strategy:
@@ -153,8 +206,8 @@ class MLStrategyGenerator:
                 "period": period,
                 "oversold": oversold,
                 "overbought": overbought,
-                "timeframe": "M5"
-            }
+                "timeframe": self.timeframe,
+            },
         )
     
     def generate_ml_strategy(self) -> Strategy:

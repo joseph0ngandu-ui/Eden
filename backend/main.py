@@ -236,20 +236,21 @@ async def websocket_notifications(websocket: WebSocket):
 
 @app.post("/orders/test")
 async def place_test_order(payload: Dict[str, Any] = Body(...)):
-    """Place a small test order via MT5 with adaptive filling.
+    """Place a small test order.
 
-    Uses an explicit MT5 terminal path first (env MT5_PATH or default install),
-    then falls back to the library's default discovery.
+    Primary path (when environment allows): send directly via MT5 from this process.
+    Fallback path (service/session constrained): enqueue the order for the TradingBot
+    process to execute via a file-based bridge.
     """
     symbol = payload.get('symbol', 'Volatility 75 Index')
     side = payload.get('side', 'BUY').upper()
     volume = float(payload.get('volume', 0.01))
 
+    # First try direct MT5 execution from this process
     try:
         import os
         import MetaTrader5 as mt5
 
-        # Prefer explicit path if provided, else default MT5 install location
         mt5_path = os.getenv('MT5_PATH', r"C:\\Program Files\\MetaTrader 5 Terminal\\terminal64.exe")
         initialized = False
         try:
@@ -257,46 +258,65 @@ async def place_test_order(payload: Dict[str, Any] = Body(...)):
         except Exception:
             initialized = False
 
-        if not initialized:
-            if not mt5.initialize():
-                raise HTTPException(status_code=500, detail=f"MT5 init failed: {mt5.last_error()}")
-
-        try:
-            si = mt5.symbol_info(symbol)
-            if si is None:
-                raise HTTPException(status_code=400, detail="Symbol not found")
-            if not si.visible:
-                mt5.symbol_select(symbol, True)
-            tick = mt5.symbol_info_tick(symbol)
-            if not tick:
-                raise HTTPException(status_code=400, detail="No tick")
-            price = tick.ask if side == 'BUY' else tick.bid
-            base = {
-                "action": mt5.TRADE_ACTION_DEAL,
-                "symbol": symbol,
-                "volume": volume,
-                "type": mt5.ORDER_TYPE_BUY if side=='BUY' else mt5.ORDER_TYPE_SELL,
-                "price": price,
-                "deviation": 20,
-                "comment": "Eden API test order",
-            }
-            tried = []
-            for fm in [getattr(mt5, 'ORDER_FILLING_FOK', None), getattr(mt5, 'ORDER_FILLING_IOC', None), getattr(mt5, 'ORDER_FILLING_RETURN', None)]:
-                if fm is None:
-                    continue
-                req = dict(base)
-                req['type_filling'] = fm
-                res = mt5.order_send(req)
-                tried.append({"fill": fm, "retcode": res.retcode, "comment": res.comment})
-                if res.retcode == mt5.TRADE_RETCODE_DONE:
-                    return {"status": "ok", "ticket": res.order, "tried": tried}
-            raise HTTPException(status_code=500, detail={"message": "Order failed", "tried": tried})
-        finally:
-            mt5.shutdown()
+        if initialized or mt5.initialize():
+            try:
+                si = mt5.symbol_info(symbol)
+                if si is None:
+                    raise HTTPException(status_code=400, detail="Symbol not found")
+                if not si.visible:
+                    mt5.symbol_select(symbol, True)
+                tick = mt5.symbol_info_tick(symbol)
+                if not tick:
+                    raise HTTPException(status_code=400, detail="No tick")
+                price = tick.ask if side == 'BUY' else tick.bid
+                base = {
+                    "action": mt5.TRADE_ACTION_DEAL,
+                    "symbol": symbol,
+                    "volume": volume,
+                    "type": mt5.ORDER_TYPE_BUY if side=='BUY' else mt5.ORDER_TYPE_SELL,
+                    "price": price,
+                    "deviation": 20,
+                    "comment": "Eden API test order",
+                }
+                tried = []
+                for fm in [getattr(mt5, 'ORDER_FILLING_FOK', None), getattr(mt5, 'ORDER_FILLING_IOC', None), getattr(mt5, 'ORDER_FILLING_RETURN', None)]:
+                    if fm is None:
+                        continue
+                    req = dict(base)
+                    req['type_filling'] = fm
+                    res = mt5.order_send(req)
+                    tried.append({"fill": fm, "retcode": res.retcode, "comment": res.comment})
+                    if res.retcode == mt5.TRADE_RETCODE_DONE:
+                        return {"status": "ok", "ticket": res.order, "tried": tried, "mode": "direct"}
+                raise HTTPException(status_code=500, detail={"message": "Order failed", "tried": tried})
+            finally:
+                mt5.shutdown()
     except HTTPException:
+        # Bubble up real validation errors (symbol not found, etc.)
         raise
+    except Exception:
+        # Fall through to queue-based bridge on MT5 init / IPC errors
+        pass
+
+    # Fallback: enqueue order for the TradingBot process to execute
+    try:
+        from pathlib import Path
+        queue_file = (Path(__file__).resolve().parent.parent / 'logs' / 'order_queue.jsonl').resolve()
+        queue_file.parent.mkdir(parents=True, exist_ok=True)
+
+        entry = {
+            "type": "test_order",
+            "symbol": symbol,
+            "side": side,
+            "volume": volume,
+            "requested_at": datetime.utcnow().isoformat(),
+        }
+        with open(queue_file, 'a', encoding='utf-8') as f:
+            f.write(json.dumps(entry) + "\n")
+
+        return {"status": "queued", "mode": "bridge", "symbol": symbol, "side": side, "volume": volume}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Failed to enqueue order: {e}")
 
 @app.get("/trades/logs")
 async def get_trade_logs(limit: int = 100):

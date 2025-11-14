@@ -21,6 +21,8 @@ from enum import Enum
 import time
 import logging
 import os
+from pathlib import Path
+import json
 
 from config_loader import ConfigLoader
 from trade_journal import TradeJournal
@@ -128,6 +130,9 @@ class TradingBot:
         
         # Volatility adaptation
         self.volatility_adapter = VolatilityAdapter(base_hold_bars=self.HOLD_BARS)
+
+        # External order bridge (API → bot via file queue)
+        self.order_queue_path = Path(__file__).resolve().parent.parent / 'logs' / 'order_queue.jsonl'
         
         # v1.2: Advanced exit logic
         exit_config = ExitConfig(
@@ -495,9 +500,8 @@ class TradingBot:
             logger.error(f"Error monitoring positions: {e}")
     
     def process_signal(self, symbol: str, signal: int) -> None:
-        """
-        Process trading signal and execute trades.
-        
+        """Process trading signal and execute trades.
+
         Args:
             symbol: Trading symbol
             signal: 1=BUY, -1=SELL, 0=NEUTRAL
@@ -523,6 +527,39 @@ class TradingBot:
         except Exception as e:
             logger.error(f"Error processing signal for {symbol}: {e}")
     
+    def _process_external_orders(self) -> None:
+        """Process any orders enqueued by the API via the file-based bridge."""
+        try:
+            if not self.order_queue_path.exists():
+                return
+
+            # Read and then truncate the queue file (simple at-most-once semantics)
+            with open(self.order_queue_path, 'r', encoding='utf-8') as f:
+                lines = [ln.strip() for ln in f.readlines() if ln.strip()]
+
+            if not lines:
+                return
+
+            # Clear the file immediately so we don't re-run the same commands
+            with open(self.order_queue_path, 'w', encoding='utf-8'):
+                pass
+
+            for line in lines:
+                try:
+                    cmd = json.loads(line)
+                except Exception:
+                    continue
+
+                if cmd.get('type') == 'test_order':
+                    sym = cmd.get('symbol', 'Volatility 75 Index')
+                    side = cmd.get('side', 'BUY')
+                    vol = float(cmd.get('volume', 0.01))
+                    comment = f"API-bridge test order ({side})"
+                    logger.info("Processing external test order from queue: %s %s %s", sym, side, vol)
+                    self.place_order(sym, side, volume=vol, comment=comment)
+        except Exception as e:
+            logger.error(f"Error processing external orders: {e}")
+
     def run_cycle(self) -> None:
         """Run one trading cycle with health monitoring."""
         try:
@@ -543,6 +580,9 @@ class TradingBot:
                 if self.risk_ladder:
                     self.risk_ladder.update_balance(account_info.balance)
             
+            # Process any external orders queued by the API
+            self._process_external_orders()
+
             for symbol in self.symbols:
                 # Fetch recent data
                 df = self.fetch_recent_data(symbol, bars=50)

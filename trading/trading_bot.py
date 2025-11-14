@@ -195,10 +195,26 @@ class TradingBot:
             self.is_running = False
     
     def connect(self) -> bool:
-        """Connect to MT5 terminal."""
-        if not mt5.initialize():
-            logger.error(f"MT5 initialization failed: {mt5.last_error()}")
-            return False
+        """Connect to MT5 terminal.
+
+        Tries an explicit terminal path first (env/known path), then falls back to the
+        default MetaTrader5 discovery so we don't get spurious 'x64 not found' errors.
+        """
+        # Prefer explicit path if provided
+        mt5_path = os.getenv("MT5_PATH", r"C:\\Program Files\\MetaTrader 5 Terminal\\terminal64.exe")
+        initialized = False
+
+        # Try with explicit path first
+        try:
+            initialized = mt5.initialize(path=mt5_path)
+        except Exception:
+            initialized = False
+
+        # Fallback to default discovery if needed
+        if not initialized:
+            if not mt5.initialize():
+                logger.error(f"MT5 initialization failed: {mt5.last_error()}")
+                return False
         
         if self.account_id and self.password and self.server:
             if not mt5.login(self.account_id, password=self.password, server=self.server):

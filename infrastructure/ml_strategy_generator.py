@@ -65,9 +65,23 @@ class Strategy:
 class MLStrategyGenerator:
     """
     Generates and validates trading strategies using ML techniques.
+
+    Smarter behaviour:
+    - Learns from top-N validated strategies instead of a single best one
+    - Applies stricter validation: requires minimum trades and profit factor
+    - Penalizes low-trade, noisy backtests
     """
     
-    def __init__(self, data_dir: str = "data", min_winrate: float = 0.55, min_profit_factor: float = 1.5, use_real_backtest: bool = True, symbol: str = "Volatility 75 Index", timeframe: str = "M5"):
+    def __init__(
+        self,
+        data_dir: str = "data",
+        min_winrate: float = 0.55,
+        min_profit_factor: float = 1.5,
+        min_trades: int = 100,
+        use_real_backtest: bool = True,
+        symbol: str = "Volatility 75 Index",
+        timeframe: str = "M5",
+    ):
         self.data_dir = Path(data_dir)
         self.data_dir.mkdir(exist_ok=True)
         
@@ -76,6 +90,7 @@ class MLStrategyGenerator:
         
         self.min_winrate = min_winrate
         self.min_profit_factor = min_profit_factor
+        self.min_trades = min_trades
         self.use_real_backtest = use_real_backtest and REAL_BACKTEST_AVAILABLE
         self.symbol = symbol
         self.timeframe = timeframe
@@ -83,7 +98,11 @@ class MLStrategyGenerator:
         self.strategies: Dict[str, Strategy] = {}
         self.load_strategies()
         
-        logger.info(f"ML Strategy Generator initialized (min_wr={min_winrate}, min_pf={min_profit_factor}, real_backtest={self.use_real_backtest})")
+        logger.info(
+            "ML Strategy Generator initialized "
+            f"(min_wr={min_winrate}, min_pf={min_profit_factor}, "
+            f"min_trades={min_trades}, real_backtest={self.use_real_backtest})"
+        )
     
     def load_strategies(self):
         """Load existing strategies from disk"""
@@ -139,41 +158,45 @@ class MLStrategyGenerator:
         )
     
     def generate_ml_strategy(self) -> Strategy:
+        """Generate ML-based strategy using a simple evolutionary step.
+
+        - Samples from the top-N validated strategies (not just the single best)
+        - Applies small, bounded mutations to avoid wild, untested configs
         """
-        Generate ML-based strategy using evolutionary algorithm.
-        This learns from successful strategies and creates variations.
-        """
-        # Get best performing strategies
+        # Get best performing validated strategies
+        validated = [s for s in self.strategies.values() if s.is_validated]
         best_strategies = sorted(
-            [s for s in self.strategies.values() if s.is_validated],
+            validated,
             key=lambda x: x.performance_score,
-            reverse=True
-        )[:3]
+            reverse=True,
+        )[:5]
         
         if not best_strategies:
             # No validated strategies yet, create random
             return self._create_random_strategy()
         
-        # Learn from best strategy
-        best = best_strategies[0]
-        params = best.parameters.copy()
+        # Sample a parent with probability proportional to performance_score
+        scores = np.array([max(s.performance_score, 1.0) for s in best_strategies], dtype=float)
+        probs = scores / scores.sum()
+        parent = np.random.choice(best_strategies, p=probs)
+        params = parent.parameters.copy()
         
-        # Mutate parameters slightly
-        if best.type == "MA":
+        # Mutate parameters slightly (local search around winners)
+        if parent.type == "MA" or (parent.type == "ML_GENERATED" and 'fast_period' in params):
             params['fast_period'] = max(2, params['fast_period'] + np.random.randint(-2, 3))
-            params['slow_period'] = max(params['fast_period'] + 1, params['slow_period'] + np.random.randint(-3, 4))
-        elif best.type == "RSI":
+            params['slow_period'] = max(params['fast_period'] + 1, params.get('slow_period', 10) + np.random.randint(-3, 4))
+        elif parent.type == "RSI":
             params['period'] = max(5, min(30, params['period'] + np.random.randint(-3, 4)))
             params['oversold'] = max(20, min(40, params['oversold'] + np.random.randint(-5, 6)))
             params['overbought'] = max(60, min(85, params['overbought'] + np.random.randint(-5, 6)))
         
-        strategy_id = f"ML_{best.type}_{int(datetime.now().timestamp())}"
+        strategy_id = f"ML_{parent.type}_{int(datetime.now().timestamp())}"
         
         return Strategy(
             id=strategy_id,
-            name=f"ML-Generated {best.type}",
+            name=f"ML-Generated {parent.type}",
             type="ML_GENERATED",
-            parameters=params
+            parameters=params,
         )
     
     def _create_random_strategy(self) -> Strategy:
@@ -264,10 +287,10 @@ class MLStrategyGenerator:
         return results
     
     def validate_strategy(self, strategy: Strategy) -> bool:
-        """
-        Validate if strategy meets minimum requirements.
+        """Validate if strategy meets minimum requirements.
+
         Uses forward metrics if available; otherwise uses synthetic metrics.
-        Only profitable strategies are saved as validated.
+        Only profitable, sufficiently traded strategies are saved as validated.
         """
         if not strategy.backtest_results:
             return False
@@ -278,20 +301,36 @@ class MLStrategyGenerator:
         wr = r.get('forward_win_rate', r.get('win_rate', 0.0))
         pf = r.get('forward_profit_factor', r.get('profit_factor', 0.0))
         net = r.get('net_profit', 0.0)
+        trades = r.get('total_trades', 0)
         
+        meets_trades = trades >= self.min_trades
         meets_winrate = wr >= self.min_winrate
         meets_profit_factor = pf >= self.min_profit_factor
         is_profitable = net > 0 or pf > 1.2  # net may not exist for forward-only metrics
         
-        is_valid = meets_winrate and meets_profit_factor and is_profitable
+        is_valid = meets_trades and meets_winrate and meets_profit_factor and is_profitable
         
         strategy.is_validated = is_valid
         
         if is_valid:
-            logger.info(f"✅ Strategy VALIDATED: {strategy.name}")
+            logger.info(
+                "✅ Strategy VALIDATED: %s | trades=%d WR=%.1f%% PF=%.2f net=%.2f",
+                strategy.name,
+                trades,
+                wr * 100,
+                pf,
+                net,
+            )
             self._save_validated_strategy(strategy)
         else:
-            logger.warning(f"❌ Strategy REJECTED: {strategy.name} (WR={results['win_rate']:.1%}, PF={results['profit_factor']:.2f})")
+            logger.warning(
+                "❌ Strategy REJECTED: %s | trades=%d WR=%.1f%% PF=%.2f net=%.2f",
+                strategy.name,
+                trades,
+                wr * 100,
+                pf,
+                net,
+            )
         
         return is_valid
     

@@ -236,15 +236,31 @@ async def websocket_notifications(websocket: WebSocket):
 
 @app.post("/orders/test")
 async def place_test_order(payload: Dict[str, Any] = Body(...)):
-    """Place a small test order via MT5 with adaptive filling."""
+    """Place a small test order via MT5 with adaptive filling.
+
+    Uses an explicit MT5 terminal path first (env MT5_PATH or default install),
+    then falls back to the library's default discovery.
+    """
     symbol = payload.get('symbol', 'Volatility 75 Index')
     side = payload.get('side', 'BUY').upper()
     volume = float(payload.get('volume', 0.01))
 
     try:
+        import os
         import MetaTrader5 as mt5
-        if not mt5.initialize():
-            raise HTTPException(status_code=500, detail=f"MT5 init failed: {mt5.last_error()}")
+
+        # Prefer explicit path if provided, else default MT5 install location
+        mt5_path = os.getenv('MT5_PATH', r"C:\\Program Files\\MetaTrader 5 Terminal\\terminal64.exe")
+        initialized = False
+        try:
+            initialized = mt5.initialize(path=mt5_path)
+        except Exception:
+            initialized = False
+
+        if not initialized:
+            if not mt5.initialize():
+                raise HTTPException(status_code=500, detail=f"MT5 init failed: {mt5.last_error()}")
+
         try:
             si = mt5.symbol_info(symbol)
             if si is None:
@@ -266,7 +282,8 @@ async def place_test_order(payload: Dict[str, Any] = Body(...)):
             }
             tried = []
             for fm in [getattr(mt5, 'ORDER_FILLING_FOK', None), getattr(mt5, 'ORDER_FILLING_IOC', None), getattr(mt5, 'ORDER_FILLING_RETURN', None)]:
-                if fm is None: continue
+                if fm is None:
+                    continue
                 req = dict(base)
                 req['type_filling'] = fm
                 res = mt5.order_send(req)

@@ -4,7 +4,7 @@
   window.EDEN_CONFIG = {
     // Your server URL (no trailing slash)
     // For InfinityFree deployment, this will be set automatically to use api.php
-    API_URL: 'https://your-server.com/api',
+    API_URL: 'http://localhost:8000',
     
     // Authentication
     TOKEN_KEY: 'eden_token',

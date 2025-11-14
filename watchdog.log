@@ -4278,3 +4278,5 @@
 [2025-11-14 10:32:15] [BOT] 2025-11-14 10:32:15,518 - WARNING - MT5 connection check failed
 [2025-11-14 10:32:15] [BOT] 2025-11-14 10:32:15,616 - INFO - Trade history exported: logs\trade_history.csv (59 trades)
 [2025-11-14 10:32:15] [BOT] 2025-11-14 10:32:15,618 - INFO - Paper trade logged: BUY 1.0L Crash 500 Index
+[2025-11-14 10:37:15] [BOT] 2025-11-14 10:37:15,628 - WARNING - MT5 connection check failed
+[2025-11-14 10:42:15] [BOT] 2025-11-14 10:42:15,704 - WARNING - MT5 connection check failed

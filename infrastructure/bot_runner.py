@@ -11,9 +11,12 @@ import json
 import time
 from pathlib import Path
 
-# Ensure project src is importable
+# Ensure trading modules are importable when running as a script
 import sys
-sys.path.insert(0, str(Path(__file__).resolve().parent / 'src'))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+TRADING_DIR = PROJECT_ROOT / 'trading'
+if str(TRADING_DIR) not in sys.path:
+    sys.path.insert(0, str(TRADING_DIR))
 
 from trading_bot import TradingBot
 

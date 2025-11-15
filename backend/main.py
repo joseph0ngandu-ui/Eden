@@ -337,11 +337,11 @@ async def get_trade_logs(limit: int = 100):
 # ============================================================================
 
 @app.get("/trades/open", response_model=List[Position])
-async def get_open_positions(current_user: User = Depends(get_current_user)):
-    """Get current open positions."""
+async def get_open_positions():
+    """Get current open positions (public read-only)."""
     try:
         positions = trading_service.get_open_positions()
-        logger.info(f"Fetched {len(positions)} open positions for {current_user.email}")
+        logger.info(f"Fetched {len(positions)} open positions (public)")
         return positions
     except Exception as e:
         logger.error(f"Error fetching positions: {e}")
@@ -406,11 +406,11 @@ async def close_position(
 # ============================================================================
 
 @app.get("/performance/stats", response_model=PerformanceStats)
-async def get_performance_stats(current_user: User = Depends(get_current_user)):
-    """Get comprehensive performance statistics."""
+async def get_performance_stats():
+    """Get comprehensive performance statistics (public read-only)."""
     try:
         stats = trading_service.calculate_performance_stats()
-        logger.info(f"Performance stats retrieved for {current_user.email}")
+        logger.info("Performance stats retrieved (public)")
         return stats
     except Exception as e:
         logger.error(f"Error calculating performance stats: {e}")
@@ -452,11 +452,11 @@ async def get_daily_summary(current_user: User = Depends(get_current_user)):
 # ============================================================================
 
 @app.get("/bot/status", response_model=BotStatus)
-async def get_bot_status(current_user: User = Depends(get_current_user)):
-    """Get current bot status including balance, positions, and performance."""
+async def get_bot_status_public():
+    """Get current bot status including balance, positions, and performance (public read-only)."""
     try:
         status_data = trading_service.get_bot_status()
-        logger.info(f"Bot status retrieved for {current_user.email}")
+        logger.info("Bot status retrieved (public)")
         return status_data
     except Exception as e:
         logger.error(f"Error fetching bot status: {e}")
@@ -512,11 +512,11 @@ async def pause_bot(current_user: User = Depends(get_current_user)):
 # ============================================================================
 
 @app.get("/strategy/config", response_model=StrategyConfig)
-async def get_strategy_config(current_user: User = Depends(get_current_user)):
-    """Get current strategy configuration."""
+async def get_strategy_config_public():
+    """Get current strategy configuration (public read-only)."""
     try:
         config = trading_service.get_strategy_config()
-        logger.info(f"Strategy config retrieved for {current_user.email}")
+        logger.info("Strategy config retrieved (public)")
         return config
     except Exception as e:
         logger.error(f"Error fetching strategy config: {e}")

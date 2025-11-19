@@ -43,6 +43,7 @@ from app.trading_service import TradingService
 from app.websocket_manager import WebSocketManager
 from app.database import Base, engine
 from app.routers import strategies as strategies_router
+from app import aws_bridge as aws_bridge_router
 
 # Load environment variables
 load_dotenv()
@@ -73,6 +74,7 @@ ws_manager = WebSocketManager()
 
 # Routers
 app.include_router(strategies_router.router)
+app.include_router(aws_bridge_router.router)
 
 # Strategy service (lazy import to avoid heavy deps at import time)
 try:
@@ -143,8 +145,8 @@ async def health():
 # AUTH ENDPOINTS
 # ============================================================================
 
-@app.post("/auth/register", response_model=Dict[str, str])
-async def register(user_data: UserRegister):
+@app.post("/auth/register-local", response_model=Dict[str, str])
+async def register_local(user_data: UserRegister):
     """Register a new user with email and password."""
     try:
         # Check if user already exists
@@ -183,8 +185,8 @@ async def register(user_data: UserRegister):
             detail="Registration failed"
         )
 
-@app.post("/auth/login", response_model=Token)
-async def login(credentials: UserLogin):
+@app.post("/auth/login-local", response_model=Token)
+async def login_local(credentials: UserLogin):
     """Authenticate user and return JWT token."""
     try:
         user = authenticate_user(credentials.email, credentials.password)

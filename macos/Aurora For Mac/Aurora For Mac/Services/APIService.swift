@@ -1,5 +1,5 @@
-import Foundation
 import Combine
+import Foundation
 
 class APIService: ObservableObject {
     static let shared = APIService()
@@ -27,7 +27,7 @@ class APIService: ObservableObject {
         let (data, response) = try await URLSession.shared.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200
+            httpResponse.statusCode == 200
         else {
             throw APIError.authenticationFailed
         }
@@ -35,6 +35,71 @@ class APIService: ObservableObject {
         let tokenResponse = try JSONDecoder().decode(TokenResponse.self, from: data)
         authToken = tokenResponse.accessToken
         return tokenResponse.accessToken
+    }
+
+    // MARK: - ML Endpoints
+
+    func startMLTraining(
+        symbol: String, modelType: String, dataLength: Int, epochs: Int = 50,
+        learningRate: Double = 0.001
+    ) async throws {
+        let endpoint = "/ml/train"
+        let body: [String: Any] = [
+            "symbol": symbol,
+            "model_type": modelType.lowercased(),
+            "data_length": dataLength,
+            "epochs": epochs,
+            "batch_size": 32,
+            "learning_rate": learningRate,
+        ]
+
+        guard let url = URL(string: baseURL + endpoint) else {
+            throw APIError.invalidURL
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        if let token = authToken {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+
+        request.httpBody = try JSONSerialization.data(withJSONObject: body)
+
+        let (_, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+            (200...299).contains(httpResponse.statusCode)
+        else {
+            throw APIError.requestFailed
+        }
+    }
+
+    func getMLStatus(symbol: String) async throws -> [String: Any] {
+        let endpoint = "/ml/status/\(symbol)"
+        guard let url = URL(string: baseURL + endpoint) else {
+            throw APIError.invalidURL
+        }
+
+        var request = URLRequest(url: url)
+        if let token = authToken {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse,
+            httpResponse.statusCode == 200
+        else {
+            throw APIError.requestFailed
+        }
+
+        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+            throw APIError.decodingFailed
+        }
+
+        return json
     }
 
     // MARK: - Strategies
@@ -47,7 +112,7 @@ class APIService: ObservableObject {
         let (data, response) = try await URLSession.shared.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200
+            httpResponse.statusCode == 200
         else {
             throw APIError.networkError
         }
@@ -69,7 +134,7 @@ class APIService: ObservableObject {
         let (_, response) = try await URLSession.shared.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200
+            httpResponse.statusCode == 200
         else {
             throw APIError.uploadFailed
         }
@@ -92,5 +157,8 @@ class APIService: ObservableObject {
         case networkError
         case uploadFailed
         case invalidResponse
+        case invalidURL
+        case requestFailed
+        case decodingFailed
     }
 }

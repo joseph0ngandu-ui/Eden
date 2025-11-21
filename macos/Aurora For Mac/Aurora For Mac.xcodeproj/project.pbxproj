@@ -6,6 +6,35 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A87F26D22ED0A80900346574 /* PositionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C02ED0A80900346574 /* PositionCard.swift */; };
+		A87F26D32ED0A80900346574 /* Aurora_For_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26CE2ED0A80900346574 /* Aurora_For_MacApp.swift */; };
+		A87F26D42ED0A80900346574 /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C12ED0A80900346574 /* StatCard.swift */; };
+		A87F26D52ED0A80900346574 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C52ED0A80900346574 /* ContentView.swift */; };
+		A87F26D62ED0A80900346574 /* Trade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B62ED0A80900346574 /* Trade.swift */; };
+		A87F26D72ED0A80900346574 /* StrategyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B02ED0A80900346574 /* StrategyViewModel.swift */; };
+		A87F26D82ED0A80900346574 /* MLTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C72ED0A80900346574 /* MLTrainingView.swift */; };
+		A87F26D92ED0A80900346574 /* BacktestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C42ED0A80900346574 /* BacktestView.swift */; };
+		A87F26DA2ED0A80900346574 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B92ED0A80900346574 /* AuthService.swift */; };
+		A87F26DB2ED0A80900346574 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26BD2ED0A80900346574 /* ErrorPresenter.swift */; };
+		A87F26DC2ED0A80900346574 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B52ED0A80900346574 /* Strategy.swift */; };
+		A87F26DD2ED0A80900346574 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B82ED0A80900346574 /* APIService.swift */; };
+		A87F26DE2ED0A80900346574 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C92ED0A80900346574 /* SettingsView.swift */; };
+		A87F26DF2ED0A80900346574 /* MLTrainingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B32ED0A80900346574 /* MLTrainingSession.swift */; };
+		A87F26E02ED0A80900346574 /* StrategyEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26CA2ED0A80900346574 /* StrategyEditorView.swift */; };
+		A87F26E12ED0A80900346574 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C82ED0A80900346574 /* MonitorView.swift */; };
+		A87F26E22ED0A80900346574 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26BB2ED0A80900346574 /* WebSocketService.swift */; };
+		A87F26E32ED0A80900346574 /* BacktestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B22ED0A80900346574 /* BacktestResult.swift */; };
+		A87F26E42ED0A80900346574 /* StrategyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26CB2ED0A80900346574 /* StrategyListView.swift */; };
+		A87F26E52ED0A80900346574 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B42ED0A80900346574 /* Position.swift */; };
+		A87F26E62ED0A80900346574 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26BA2ED0A80900346574 /* NotificationManager.swift */; };
+		A87F26E72ED0A80900346574 /* TradeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C22ED0A80900346574 /* TradeRow.swift */; };
+		A87F26E82ED0A80900346574 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C62ED0A80900346574 /* LoginView.swift */; };
+		A87F26E92ED0A80900346574 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A87F26D02ED0A80900346574 /* README.md */; };
+		A87F26EA2ED0A80900346574 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A87F26CF2ED0A80900346574 /* Info.plist */; };
+		A87F26EC2ED0A81500346574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87F26EB2ED0A81500346574 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A87F25252ED0792400346574 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,15 +56,34 @@
 		A87F25172ED0792200346574 /* Aurora For Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aurora For Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87F25242ED0792400346574 /* Aurora For MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aurora For MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87F252E2ED0792400346574 /* Aurora For MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aurora For MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A87F26B02ED0A80900346574 /* StrategyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyViewModel.swift; sourceTree = "<group>"; };
+		A87F26B22ED0A80900346574 /* BacktestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacktestResult.swift; sourceTree = "<group>"; };
+		A87F26B32ED0A80900346574 /* MLTrainingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTrainingSession.swift; sourceTree = "<group>"; };
+		A87F26B42ED0A80900346574 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		A87F26B52ED0A80900346574 /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
+		A87F26B62ED0A80900346574 /* Trade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trade.swift; sourceTree = "<group>"; };
+		A87F26B82ED0A80900346574 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		A87F26B92ED0A80900346574 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A87F26BA2ED0A80900346574 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A87F26BB2ED0A80900346574 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
+		A87F26BD2ED0A80900346574 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		A87F26C02ED0A80900346574 /* PositionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCard.swift; sourceTree = "<group>"; };
+		A87F26C12ED0A80900346574 /* StatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCard.swift; sourceTree = "<group>"; };
+		A87F26C22ED0A80900346574 /* TradeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeRow.swift; sourceTree = "<group>"; };
+		A87F26C42ED0A80900346574 /* BacktestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacktestView.swift; sourceTree = "<group>"; };
+		A87F26C52ED0A80900346574 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A87F26C62ED0A80900346574 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A87F26C72ED0A80900346574 /* MLTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTrainingView.swift; sourceTree = "<group>"; };
+		A87F26C82ED0A80900346574 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
+		A87F26C92ED0A80900346574 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A87F26CA2ED0A80900346574 /* StrategyEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyEditorView.swift; sourceTree = "<group>"; };
+		A87F26CB2ED0A80900346574 /* StrategyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyListView.swift; sourceTree = "<group>"; };
+		A87F26CD2ED0A80900346574 /* Aurora_For_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aurora_For_Mac.entitlements; sourceTree = "<group>"; };
+		A87F26CE2ED0A80900346574 /* Aurora_For_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aurora_For_MacApp.swift; sourceTree = "<group>"; };
+		A87F26CF2ED0A80900346574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A87F26D02ED0A80900346574 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A87F26EB2ED0A81500346574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		A87F257A2ED07BE700346574 /* Aurora For Mac */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Aurora For Mac";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A87F25142ED0792200346574 /* Frameworks */ = {
@@ -65,7 +113,7 @@
 		A87F250E2ED0792200346574 = {
 			isa = PBXGroup;
 			children = (
-				A87F257A2ED07BE700346574 /* Aurora For Mac */,
+				A87F26D12ED0A80900346574 /* Aurora For Mac */,
 				A87F25182ED0792200346574 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +126,104 @@
 				A87F252E2ED0792400346574 /* Aurora For MacUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A87F26AF2ED0A80900346574 /* ML */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ML;
+			sourceTree = "<group>";
+		};
+		A87F26B12ED0A80900346574 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26B02ED0A80900346574 /* StrategyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A87F26B72ED0A80900346574 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26B12ED0A80900346574 /* ViewModels */,
+				A87F26B22ED0A80900346574 /* BacktestResult.swift */,
+				A87F26B32ED0A80900346574 /* MLTrainingSession.swift */,
+				A87F26B42ED0A80900346574 /* Position.swift */,
+				A87F26B52ED0A80900346574 /* Strategy.swift */,
+				A87F26B62ED0A80900346574 /* Trade.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A87F26BC2ED0A80900346574 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26B82ED0A80900346574 /* APIService.swift */,
+				A87F26B92ED0A80900346574 /* AuthService.swift */,
+				A87F26BA2ED0A80900346574 /* NotificationManager.swift */,
+				A87F26BB2ED0A80900346574 /* WebSocketService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A87F26BE2ED0A80900346574 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26BD2ED0A80900346574 /* ErrorPresenter.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A87F26BF2ED0A80900346574 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A87F26C32ED0A80900346574 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26C02ED0A80900346574 /* PositionCard.swift */,
+				A87F26C12ED0A80900346574 /* StatCard.swift */,
+				A87F26C22ED0A80900346574 /* TradeRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A87F26CC2ED0A80900346574 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26C32ED0A80900346574 /* Components */,
+				A87F26C42ED0A80900346574 /* BacktestView.swift */,
+				A87F26C52ED0A80900346574 /* ContentView.swift */,
+				A87F26C62ED0A80900346574 /* LoginView.swift */,
+				A87F26C72ED0A80900346574 /* MLTrainingView.swift */,
+				A87F26C82ED0A80900346574 /* MonitorView.swift */,
+				A87F26C92ED0A80900346574 /* SettingsView.swift */,
+				A87F26CA2ED0A80900346574 /* StrategyEditorView.swift */,
+				A87F26CB2ED0A80900346574 /* StrategyListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A87F26D12ED0A80900346574 /* Aurora For Mac */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26AF2ED0A80900346574 /* ML */,
+				A87F26B72ED0A80900346574 /* Models */,
+				A87F26BC2ED0A80900346574 /* Services */,
+				A87F26BE2ED0A80900346574 /* Utilities */,
+				A87F26BF2ED0A80900346574 /* ViewModels */,
+				A87F26CC2ED0A80900346574 /* Views */,
+				A87F26CD2ED0A80900346574 /* Aurora_For_Mac.entitlements */,
+				A87F26CE2ED0A80900346574 /* Aurora_For_MacApp.swift */,
+				A87F26CF2ED0A80900346574 /* Info.plist */,
+				A87F26D02ED0A80900346574 /* README.md */,
+				A87F26EB2ED0A81500346574 /* Assets.xcassets */,
+			);
+			path = "Aurora For Mac";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,9 +240,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				A87F257A2ED07BE700346574 /* Aurora For Mac */,
 			);
 			name = "Aurora For Mac";
 			packageProductDependencies = (
@@ -194,6 +337,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A87F26E92ED0A80900346574 /* README.md in Resources */,
+				A87F26EC2ED0A81500346574 /* Assets.xcassets in Resources */,
+				A87F26EA2ED0A80900346574 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +364,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A87F26D22ED0A80900346574 /* PositionCard.swift in Sources */,
+				A87F26D32ED0A80900346574 /* Aurora_For_MacApp.swift in Sources */,
+				A87F26D42ED0A80900346574 /* StatCard.swift in Sources */,
+				A87F26D52ED0A80900346574 /* ContentView.swift in Sources */,
+				A87F26D62ED0A80900346574 /* Trade.swift in Sources */,
+				A87F26D72ED0A80900346574 /* StrategyViewModel.swift in Sources */,
+				A87F26D82ED0A80900346574 /* MLTrainingView.swift in Sources */,
+				A87F26D92ED0A80900346574 /* BacktestView.swift in Sources */,
+				A87F26DA2ED0A80900346574 /* AuthService.swift in Sources */,
+				A87F26DB2ED0A80900346574 /* ErrorPresenter.swift in Sources */,
+				A87F26DC2ED0A80900346574 /* Strategy.swift in Sources */,
+				A87F26DD2ED0A80900346574 /* APIService.swift in Sources */,
+				A87F26DE2ED0A80900346574 /* SettingsView.swift in Sources */,
+				A87F26DF2ED0A80900346574 /* MLTrainingSession.swift in Sources */,
+				A87F26E02ED0A80900346574 /* StrategyEditorView.swift in Sources */,
+				A87F26E12ED0A80900346574 /* MonitorView.swift in Sources */,
+				A87F26E22ED0A80900346574 /* WebSocketService.swift in Sources */,
+				A87F26E32ED0A80900346574 /* BacktestResult.swift in Sources */,
+				A87F26E42ED0A80900346574 /* StrategyListView.swift in Sources */,
+				A87F26E52ED0A80900346574 /* Position.swift in Sources */,
+				A87F26E62ED0A80900346574 /* NotificationManager.swift in Sources */,
+				A87F26E72ED0A80900346574 /* TradeRow.swift in Sources */,
+				A87F26E82ED0A80900346574 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -65,6 +65,12 @@ struct ErrorPresenter {
             return "Failed to upload strategy. Please try again."
         case .invalidResponse:
             return "Invalid response from server. Please contact support."
+        case .invalidURL:
+            return "Invalid URL. Please check your settings."
+        case .requestFailed:
+            return "Request failed. Please check the server status."
+        case .decodingFailed:
+            return "Failed to process server response."
         }
     }
 

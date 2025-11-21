@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 class APIService: ObservableObject {
     static let shared = APIService()
@@ -11,45 +12,6 @@ class APIService: ObservableObject {
     }
 
     private init() {}
-
-    // MARK: - ML Endpoints
-
-    func startMLTraining(
-        symbol: String, modelType: String, dataLength: Int, epochs: Int = 50,
-        learningRate: Double = 0.001
-    ) async throws {
-        let endpoint = "/ml/train"
-        let body: [String: Any] = [
-            "symbol": symbol,
-            "model_type": modelType.lowercased(),
-            "data_length": dataLength,
-            "epochs": epochs,
-            "batch_size": 32,
-            "learning_rate": learningRate,
-        ]
-
-        guard let url = URL(string: baseURL + endpoint) else {
-            throw APIError.invalidURL
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        if let token = authToken {
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-
-        request.httpBody = try JSONEncoder().encode(body)
-
-        let (_, response) = try await URLSession.shared.data(for: request)
-
-        guard let httpResponse = response as? HTTPURLResponse,
-            (200...299).contains(httpResponse.statusCode)
-        else {
-            throw APIError.requestFailed
-        }
-    }
 
     // MARK: - Authentication
 
@@ -65,7 +27,7 @@ class APIService: ObservableObject {
         let (data, response) = try await URLSession.shared.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse,
-            httpResponse.statusCode == 200
+              httpResponse.statusCode == 200
         else {
             throw APIError.authenticationFailed
         }
@@ -85,7 +47,7 @@ class APIService: ObservableObject {
         let (data, response) = try await URLSession.shared.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse,
-            httpResponse.statusCode == 200
+              httpResponse.statusCode == 200
         else {
             throw APIError.networkError
         }
@@ -107,7 +69,7 @@ class APIService: ObservableObject {
         let (_, response) = try await URLSession.shared.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse,
-            httpResponse.statusCode == 200
+              httpResponse.statusCode == 200
         else {
             throw APIError.uploadFailed
         }
@@ -130,8 +92,5 @@ class APIService: ObservableObject {
         case networkError
         case uploadFailed
         case invalidResponse
-        case invalidURL
-        case requestFailed
-        case decodingFailed
     }
 }

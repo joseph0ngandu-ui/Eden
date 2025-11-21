@@ -58,9 +58,7 @@ struct StrategyListView: View {
                                 }
 
                                 Button("Duplicate") {
-                                    var duplicate = strategy
-                                    duplicate.id = UUID().uuidString
-                                    duplicate.name = "\(strategy.name) (Copy)"
+                                    let duplicate = strategy.duplicated()
                                     editingStrategy = duplicate
                                     showingEditor = true
                                 }
@@ -165,3 +163,4 @@ struct StrategyRow: View {
         .environmentObject(StrategyViewModel())
         .frame(width: 800, height: 600)
 }
+

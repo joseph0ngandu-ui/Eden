@@ -219,6 +219,19 @@ async def login_local(credentials: UserLogin):
             detail="Login failed"
         )
 
+@app.post("/device/register")
+async def register_device(
+    payload: Dict[str, str] = Body(...),
+    current_user: User = Depends(get_current_user)
+):
+    """Register iOS device token for push notifications."""
+    token = payload.get("token")
+    if not token:
+        raise HTTPException(status_code=400, detail="Token required")
+        
+    trading_service.notification_service.register_device(token)
+    return {"status": "success", "message": "Device registered"}
+
 # ============================================================================
 # WEBSOCKET ENDPOINTS
 # ============================================================================

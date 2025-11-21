@@ -7,6 +7,7 @@ from fastapi import APIRouter, HTTPException, Body
 from typing import Dict, Any
 from pathlib import Path
 import json
+from datetime import datetime
 
 router = APIRouter(prefix="/strategies", tags=["strategies"])
 
@@ -28,6 +29,26 @@ def _load_json(path: Path) -> Dict:
 def _save_json(path: Path, data: Dict):
     with open(path, 'w') as f:
         json.dump(data, f, indent=2, default=str)
+
+
+@router.post("")
+async def upload_strategy(strategy: Dict[str, Any] = Body(...)):
+    """Upload a new strategy configuration (e.g. from Mac app)."""
+    strategy_id = strategy.get("id")
+    if not strategy_id:
+        raise HTTPException(status_code=400, detail="Strategy ID required")
+        
+    all_strats = _load_json(STRATEGIES_FILE)
+    
+    # Ensure it's marked as from external source
+    strategy["source"] = "mac_app_upload"
+    strategy["uploaded_at"] = datetime.utcnow().isoformat()
+    
+    # Save
+    all_strats[strategy_id] = strategy
+    _save_json(STRATEGIES_FILE, all_strats)
+    
+    return {"status": "success", "message": "Strategy uploaded", "id": strategy_id}
 
 
 @router.get("")

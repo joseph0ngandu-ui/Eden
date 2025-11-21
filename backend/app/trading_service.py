@@ -15,17 +15,26 @@ STRATEGY: UltraSmall Mode - Volatility 75 Index (MOST PROFITABLE)
 """
 
 from datetime import datetime, timedelta
-from typing import List, Optional
+from typing import List, Optional, Dict
 import logging
+import asyncio
 from pathlib import Path
+from sqlalchemy.orm import Session
 
 import pandas as pd
 import MetaTrader5 as mt5
 
+from app.database import get_db_session
 from app.models import (
     BotStatus, Trade, Position, PerformanceStats, 
     StrategyConfig, DirectionEnum
 )
+from app.db_models import (
+    Trade as TradeDB, 
+    Position as PositionDB,
+    PerformanceSnapshot
+)
+from app.notifications import NotificationService
 
 logger = logging.getLogger(__name__)
 

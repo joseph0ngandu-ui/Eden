@@ -1,10 +1,10 @@
 import SwiftUI
 
 @main
-struct AuroraMacApp: App {
+struct Aurora_For_MacApp: App {
     @StateObject private var authService = AuthService.shared
     @StateObject private var strategyViewModel = StrategyViewModel()
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -15,7 +15,7 @@ struct AuroraMacApp: App {
         .commands {
             CommandGroup(replacing: .newItem) {}
         }
-        
+
         Settings {
             SettingsView()
                 .environmentObject(authService)

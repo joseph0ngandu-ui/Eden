@@ -53,10 +53,13 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Initialize FastAPI app
+from app.routers import ml
+
 app = FastAPI(
-    title="Eden Trading Bot API",
+    title=settings.app_name,
     description="REST API for Eden iOS trading application",
-    version="1.0.0"
+    version=settings.app_version,
+    debug=settings.debug
 )
 
 # Add CORS middleware for AWS API Gateway compatibility

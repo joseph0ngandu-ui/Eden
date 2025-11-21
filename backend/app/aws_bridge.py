@@ -15,7 +15,7 @@ Exposed endpoints (local):
 All Authorization headers are forwarded as-is to AWS (JWT passthrough).
 """
 
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 import logging
 
 import requests
@@ -37,7 +37,7 @@ def _build_aws_url(path: str) -> str:
     return f"{base}{path}"
 
 
-def _forward_to_aws(method: str, path: str, *, request: Request, json_body: Any | None = None) -> JSONResponse:
+def _forward_to_aws(method: str, path: str, *, request: Request, json_body: Optional[Any] = None) -> JSONResponse:
     """Forward an HTTP request to AWS, preserving Authorization header.
 
     Raises HTTPException on upstream failure and returns a JSONResponse on success.

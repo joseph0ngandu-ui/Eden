@@ -11,9 +11,11 @@ import time
 import signal
 from datetime import datetime
 
-PYTHONPATH = "C:\\Users\\Administrator\\Eden\\trading;C:\\Users\\Administrator\\Eden"
-BOT_SCRIPT = "C:\\Users\\Administrator\\Eden\\infrastructure\\bot_runner.py"
-LOG_FILE = "C:\\Users\\Administrator\\Eden\\watchdog.log"
+# Get the absolute path of the directory containing this script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PYTHONPATH = f"{os.path.join(BASE_DIR, 'trading')};{BASE_DIR}"
+BOT_SCRIPT = os.path.join(BASE_DIR, "infrastructure", "bot_runner.py")
+LOG_FILE = os.path.join(BASE_DIR, "watchdog.log")
 
 def log(message):
     """Log message with timestamp."""
@@ -30,13 +32,19 @@ def start_bot():
     log("Starting trading bot...")
     
     try:
+        # Determine python executable
+        if os.path.exists(os.path.join(BASE_DIR, "venv", "Scripts", "python.exe")):
+            python_exe = os.path.join(BASE_DIR, "venv", "Scripts", "python.exe")
+        else:
+            python_exe = sys.executable
+
         # Start the bot process
         process = subprocess.Popen(
             [
-                "C:\\Users\\Administrator\\Eden\\venv\\Scripts\\python.exe",
+                python_exe,
                 BOT_SCRIPT
             ],
-            cwd="C:\\Users\\Administrator\\Eden",
+            cwd=BASE_DIR,
             env=env,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,

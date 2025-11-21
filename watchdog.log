@@ -1,0 +1,1463 @@
+[2025-11-21 14:20:09] Watchdog started
+[2025-11-21 14:20:09] Starting trading bot...
+[2025-11-21 14:20:10] Trading bot started with PID: 18948
+[2025-11-21 14:21:27] [BOT] 2025-11-21 14:21:27,171 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:21:27] [BOT] 2025-11-21 14:21:27,171 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:21:27] [BOT] 2025-11-21 14:21:27,178 - INFO -
+[2025-11-21 14:21:27] [BOT] ================================================================================
+[2025-11-21 14:21:27] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:21:27] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:21:27] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:21:27] [BOT] ================================================================================
+[2025-11-21 14:21:27] [BOT] 2025-11-21 14:21:27,232 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:21:27] [BOT] 2025-11-21 14:21:27,233 - ERROR - Failed to connect to MT5
+[2025-11-21 14:21:37] [BOT] 2025-11-21 14:21:37,247 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:21:37] [BOT] 2025-11-21 14:21:37,247 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:21:37] [BOT] 2025-11-21 14:21:37,247 - INFO -
+[2025-11-21 14:21:37] [BOT] ================================================================================
+[2025-11-21 14:21:37] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:21:37] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:21:37] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:21:37] [BOT] ================================================================================
+[2025-11-21 14:21:37] [BOT] 2025-11-21 14:21:37,260 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:21:37] [BOT] 2025-11-21 14:21:37,261 - ERROR - Failed to connect to MT5
+[2025-11-21 14:21:47] [BOT] 2025-11-21 14:21:47,290 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:21:47] [BOT] 2025-11-21 14:21:47,296 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:21:47] [BOT] 2025-11-21 14:21:47,303 - INFO -
+[2025-11-21 14:21:47] [BOT] ================================================================================
+[2025-11-21 14:21:47] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:21:47] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:21:47] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:21:47] [BOT] ================================================================================
+[2025-11-21 14:21:47] [BOT] 2025-11-21 14:21:47,323 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:21:47] [BOT] 2025-11-21 14:21:47,326 - ERROR - Failed to connect to MT5
+[2025-11-21 14:21:57] [BOT] 2025-11-21 14:21:57,338 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:21:57] [BOT] 2025-11-21 14:21:57,338 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:21:57] [BOT] 2025-11-21 14:21:57,338 - INFO -
+[2025-11-21 14:21:57] [BOT] ================================================================================
+[2025-11-21 14:21:57] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:21:57] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:21:57] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:21:57] [BOT] ================================================================================
+[2025-11-21 14:21:57] [BOT] 2025-11-21 14:21:57,373 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:21:57] [BOT] 2025-11-21 14:21:57,373 - ERROR - Failed to connect to MT5
+[2025-11-21 14:22:07] [BOT] 2025-11-21 14:22:07,398 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:22:07] [BOT] 2025-11-21 14:22:07,403 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:22:07] [BOT] 2025-11-21 14:22:07,405 - INFO -
+[2025-11-21 14:22:07] [BOT] ================================================================================
+[2025-11-21 14:22:07] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:22:07] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:22:07] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:22:07] [BOT] ================================================================================
+[2025-11-21 14:22:07] [BOT] 2025-11-21 14:22:07,419 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:22:07] [BOT] 2025-11-21 14:22:07,420 - ERROR - Failed to connect to MT5
+[2025-11-21 14:22:17] [BOT] 2025-11-21 14:22:17,447 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:22:17] [BOT] 2025-11-21 14:22:17,453 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:22:17] [BOT] 2025-11-21 14:22:17,453 - INFO -
+[2025-11-21 14:22:17] [BOT] ================================================================================
+[2025-11-21 14:22:17] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:22:17] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:22:17] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:22:17] [BOT] ================================================================================
+[2025-11-21 14:22:17] [BOT] 2025-11-21 14:22:17,462 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:22:17] [BOT] 2025-11-21 14:22:17,462 - ERROR - Failed to connect to MT5
+[2025-11-21 14:22:27] [BOT] 2025-11-21 14:22:27,476 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:22:27] [BOT] 2025-11-21 14:22:27,476 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:22:27] [BOT] 2025-11-21 14:22:27,476 - INFO -
+[2025-11-21 14:22:27] [BOT] ================================================================================
+[2025-11-21 14:22:27] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:22:27] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:22:27] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:22:27] [BOT] ================================================================================
+[2025-11-21 14:22:27] [BOT] 2025-11-21 14:22:27,493 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:22:27] [BOT] 2025-11-21 14:22:27,508 - ERROR - Failed to connect to MT5
+[2025-11-21 14:22:37] [BOT] 2025-11-21 14:22:37,522 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:22:37] [BOT] 2025-11-21 14:22:37,539 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:22:37] [BOT] 2025-11-21 14:22:37,542 - INFO -
+[2025-11-21 14:22:37] [BOT] ================================================================================
+[2025-11-21 14:22:37] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:22:37] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:22:37] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:22:37] [BOT] ================================================================================
+[2025-11-21 14:22:37] [BOT] 2025-11-21 14:22:37,553 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:22:37] [BOT] 2025-11-21 14:22:37,553 - ERROR - Failed to connect to MT5
+[2025-11-21 14:22:47] [BOT] 2025-11-21 14:22:47,587 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:22:47] [BOT] 2025-11-21 14:22:47,597 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:22:47] [BOT] 2025-11-21 14:22:47,599 - INFO -
+[2025-11-21 14:22:47] [BOT] ================================================================================
+[2025-11-21 14:22:47] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:22:47] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:22:47] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:22:47] [BOT] ================================================================================
+[2025-11-21 14:22:47] [BOT] 2025-11-21 14:22:47,621 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:22:47] [BOT] 2025-11-21 14:22:47,624 - ERROR - Failed to connect to MT5
+[2025-11-21 14:22:57] [BOT] 2025-11-21 14:22:57,716 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:22:57] [BOT] 2025-11-21 14:22:57,735 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:22:57] [BOT] 2025-11-21 14:22:57,740 - INFO -
+[2025-11-21 14:22:57] [BOT] ================================================================================
+[2025-11-21 14:22:57] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:22:57] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:22:57] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:22:57] [BOT] ================================================================================
+[2025-11-21 14:22:57] [BOT] 2025-11-21 14:22:57,762 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:22:57] [BOT] 2025-11-21 14:22:57,763 - ERROR - Failed to connect to MT5
+[2025-11-21 14:23:07] [BOT] 2025-11-21 14:23:07,777 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:23:07] [BOT] 2025-11-21 14:23:07,780 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:23:07] [BOT] 2025-11-21 14:23:07,783 - INFO -
+[2025-11-21 14:23:07] [BOT] ================================================================================
+[2025-11-21 14:23:07] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:23:07] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:23:07] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:23:07] [BOT] ================================================================================
+[2025-11-21 14:23:07] [BOT] 2025-11-21 14:23:07,800 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:23:07] [BOT] 2025-11-21 14:23:07,820 - ERROR - Failed to connect to MT5
+[2025-11-21 14:23:17] [BOT] 2025-11-21 14:23:17,831 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:23:17] [BOT] 2025-11-21 14:23:17,833 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:23:17] [BOT] 2025-11-21 14:23:17,840 - INFO -
+[2025-11-21 14:23:17] [BOT] ================================================================================
+[2025-11-21 14:23:17] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:23:17] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:23:17] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:23:17] [BOT] ================================================================================
+[2025-11-21 14:23:17] [BOT] 2025-11-21 14:23:17,858 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:23:17] [BOT] 2025-11-21 14:23:17,859 - ERROR - Failed to connect to MT5
+[2025-11-21 14:23:27] [BOT] 2025-11-21 14:23:27,862 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:23:27] [BOT] 2025-11-21 14:23:27,864 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:23:27] [BOT] 2025-11-21 14:23:27,870 - INFO -
+[2025-11-21 14:23:27] [BOT] ================================================================================
+[2025-11-21 14:23:27] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:23:27] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:23:27] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:23:27] [BOT] ================================================================================
+[2025-11-21 14:23:27] [BOT] 2025-11-21 14:23:27,879 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:23:27] [BOT] 2025-11-21 14:23:27,880 - ERROR - Failed to connect to MT5
+[2025-11-21 14:23:37] [BOT] 2025-11-21 14:23:37,907 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:23:37] [BOT] 2025-11-21 14:23:37,915 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:23:37] [BOT] 2025-11-21 14:23:37,917 - INFO -
+[2025-11-21 14:23:37] [BOT] ================================================================================
+[2025-11-21 14:23:37] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:23:37] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:23:37] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:23:37] [BOT] ================================================================================
+[2025-11-21 14:23:37] [BOT] 2025-11-21 14:23:37,965 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:23:37] [BOT] 2025-11-21 14:23:37,975 - ERROR - Failed to connect to MT5
+[2025-11-21 14:23:47] [BOT] 2025-11-21 14:23:47,980 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:23:47] [BOT] 2025-11-21 14:23:47,983 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:23:47] [BOT] 2025-11-21 14:23:47,985 - INFO -
+[2025-11-21 14:23:47] [BOT] ================================================================================
+[2025-11-21 14:23:47] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:23:47] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:23:47] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:23:47] [BOT] ================================================================================
+[2025-11-21 14:23:47] [BOT] 2025-11-21 14:23:47,995 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:23:47] [BOT] 2025-11-21 14:23:47,995 - ERROR - Failed to connect to MT5
+[2025-11-21 14:23:58] [BOT] 2025-11-21 14:23:58,007 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:23:58] [BOT] 2025-11-21 14:23:58,010 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:23:58] [BOT] 2025-11-21 14:23:58,014 - INFO -
+[2025-11-21 14:23:58] [BOT] ================================================================================
+[2025-11-21 14:23:58] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:23:58] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:23:58] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:23:58] [BOT] ================================================================================
+[2025-11-21 14:23:58] [BOT] 2025-11-21 14:23:58,017 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:23:58] [BOT] 2025-11-21 14:23:58,017 - ERROR - Failed to connect to MT5
+[2025-11-21 14:24:08] [BOT] 2025-11-21 14:24:08,027 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:24:08] [BOT] 2025-11-21 14:24:08,030 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:24:08] [BOT] 2025-11-21 14:24:08,030 - INFO -
+[2025-11-21 14:24:08] [BOT] ================================================================================
+[2025-11-21 14:24:08] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:24:08] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:24:08] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:24:08] [BOT] ================================================================================
+[2025-11-21 14:24:08] [BOT] 2025-11-21 14:24:08,035 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:24:08] [BOT] 2025-11-21 14:24:08,035 - ERROR - Failed to connect to MT5
+[2025-11-21 14:24:18] [BOT] 2025-11-21 14:24:18,052 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:24:18] [BOT] 2025-11-21 14:24:18,059 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:24:18] [BOT] 2025-11-21 14:24:18,059 - INFO -
+[2025-11-21 14:24:18] [BOT] ================================================================================
+[2025-11-21 14:24:18] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:24:18] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:24:18] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:24:18] [BOT] ================================================================================
+[2025-11-21 14:24:18] [BOT] 2025-11-21 14:24:18,088 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:24:18] [BOT] 2025-11-21 14:24:18,088 - ERROR - Failed to connect to MT5
+[2025-11-21 14:24:28] [BOT] 2025-11-21 14:24:28,098 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:24:28] [BOT] 2025-11-21 14:24:28,101 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:24:28] [BOT] 2025-11-21 14:24:28,101 - INFO -
+[2025-11-21 14:24:28] [BOT] ================================================================================
+[2025-11-21 14:24:28] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:24:28] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:24:28] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:24:28] [BOT] ================================================================================
+[2025-11-21 14:24:28] [BOT] 2025-11-21 14:24:28,107 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:24:28] [BOT] 2025-11-21 14:24:28,107 - ERROR - Failed to connect to MT5
+[2025-11-21 14:24:38] [BOT] 2025-11-21 14:24:38,109 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:24:38] [BOT] 2025-11-21 14:24:38,111 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:24:38] [BOT] 2025-11-21 14:24:38,113 - INFO -
+[2025-11-21 14:24:38] [BOT] ================================================================================
+[2025-11-21 14:24:38] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:24:38] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:24:38] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:24:38] [BOT] ================================================================================
+[2025-11-21 14:24:38] [BOT] 2025-11-21 14:24:38,127 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:24:38] [BOT] 2025-11-21 14:24:38,127 - ERROR - Failed to connect to MT5
+[2025-11-21 14:24:48] [BOT] 2025-11-21 14:24:48,141 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:24:48] [BOT] 2025-11-21 14:24:48,144 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:24:48] [BOT] 2025-11-21 14:24:48,144 - INFO -
+[2025-11-21 14:24:48] [BOT] ================================================================================
+[2025-11-21 14:24:48] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:24:48] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:24:48] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:24:48] [BOT] ================================================================================
+[2025-11-21 14:24:48] [BOT] 2025-11-21 14:24:48,156 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:24:48] [BOT] 2025-11-21 14:24:48,156 - ERROR - Failed to connect to MT5
+[2025-11-21 14:24:58] [BOT] 2025-11-21 14:24:58,159 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:24:58] [BOT] 2025-11-21 14:24:58,161 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:24:58] [BOT] 2025-11-21 14:24:58,162 - INFO -
+[2025-11-21 14:24:58] [BOT] ================================================================================
+[2025-11-21 14:24:58] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:24:58] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:24:58] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:24:58] [BOT] ================================================================================
+[2025-11-21 14:24:58] [BOT] 2025-11-21 14:24:58,168 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:24:58] [BOT] 2025-11-21 14:24:58,170 - ERROR - Failed to connect to MT5
+[2025-11-21 14:25:08] [BOT] 2025-11-21 14:25:08,183 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:25:08] [BOT] 2025-11-21 14:25:08,186 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:25:08] [BOT] 2025-11-21 14:25:08,186 - INFO -
+[2025-11-21 14:25:08] [BOT] ================================================================================
+[2025-11-21 14:25:08] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:25:08] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:25:08] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:25:08] [BOT] ================================================================================
+[2025-11-21 14:25:08] [BOT] 2025-11-21 14:25:08,190 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:25:08] [BOT] 2025-11-21 14:25:08,191 - ERROR - Failed to connect to MT5
+[2025-11-21 14:25:18] [BOT] 2025-11-21 14:25:18,203 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:25:18] [BOT] 2025-11-21 14:25:18,206 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:25:18] [BOT] 2025-11-21 14:25:18,206 - INFO -
+[2025-11-21 14:25:18] [BOT] ================================================================================
+[2025-11-21 14:25:18] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:25:18] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:25:18] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:25:18] [BOT] ================================================================================
+[2025-11-21 14:25:18] [BOT] 2025-11-21 14:25:18,217 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:25:18] [BOT] 2025-11-21 14:25:18,219 - ERROR - Failed to connect to MT5
+[2025-11-21 14:25:28] [BOT] 2025-11-21 14:25:28,237 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:25:28] [BOT] 2025-11-21 14:25:28,239 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:25:28] [BOT] 2025-11-21 14:25:28,239 - INFO -
+[2025-11-21 14:25:28] [BOT] ================================================================================
+[2025-11-21 14:25:28] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:25:28] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:25:28] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:25:28] [BOT] ================================================================================
+[2025-11-21 14:25:28] [BOT] 2025-11-21 14:25:28,255 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:25:28] [BOT] 2025-11-21 14:25:28,255 - ERROR - Failed to connect to MT5
+[2025-11-21 14:25:38] [BOT] 2025-11-21 14:25:38,259 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:25:38] [BOT] 2025-11-21 14:25:38,262 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:25:38] [BOT] 2025-11-21 14:25:38,263 - INFO -
+[2025-11-21 14:25:38] [BOT] ================================================================================
+[2025-11-21 14:25:38] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:25:38] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:25:38] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:25:38] [BOT] ================================================================================
+[2025-11-21 14:25:38] [BOT] 2025-11-21 14:25:38,268 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:25:38] [BOT] 2025-11-21 14:25:38,268 - ERROR - Failed to connect to MT5
+[2025-11-21 14:25:48] [BOT] 2025-11-21 14:25:48,279 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:25:48] [BOT] 2025-11-21 14:25:48,282 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:25:48] [BOT] 2025-11-21 14:25:48,282 - INFO -
+[2025-11-21 14:25:48] [BOT] ================================================================================
+[2025-11-21 14:25:48] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:25:48] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:25:48] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:25:48] [BOT] ================================================================================
+[2025-11-21 14:25:48] [BOT] 2025-11-21 14:25:48,285 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:25:48] [BOT] 2025-11-21 14:25:48,285 - ERROR - Failed to connect to MT5
+[2025-11-21 14:25:58] [BOT] 2025-11-21 14:25:58,294 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:25:58] [BOT] 2025-11-21 14:25:58,297 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:25:58] [BOT] 2025-11-21 14:25:58,298 - INFO -
+[2025-11-21 14:25:58] [BOT] ================================================================================
+[2025-11-21 14:25:58] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:25:58] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:25:58] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:25:58] [BOT] ================================================================================
+[2025-11-21 14:25:58] [BOT] 2025-11-21 14:25:58,301 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:25:58] [BOT] 2025-11-21 14:25:58,310 - ERROR - Failed to connect to MT5
+[2025-11-21 14:26:08] [BOT] 2025-11-21 14:26:08,319 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:26:08] [BOT] 2025-11-21 14:26:08,322 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:26:08] [BOT] 2025-11-21 14:26:08,322 - INFO -
+[2025-11-21 14:26:08] [BOT] ================================================================================
+[2025-11-21 14:26:08] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:26:08] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:26:08] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:26:08] [BOT] ================================================================================
+[2025-11-21 14:26:08] [BOT] 2025-11-21 14:26:08,326 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:26:08] [BOT] 2025-11-21 14:26:08,327 - ERROR - Failed to connect to MT5
+[2025-11-21 14:26:18] [BOT] 2025-11-21 14:26:18,340 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:26:18] [BOT] 2025-11-21 14:26:18,342 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:26:18] [BOT] 2025-11-21 14:26:18,343 - INFO -
+[2025-11-21 14:26:18] [BOT] ================================================================================
+[2025-11-21 14:26:18] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:26:18] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:26:18] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:26:18] [BOT] ================================================================================
+[2025-11-21 14:26:18] [BOT] 2025-11-21 14:26:18,355 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:26:18] [BOT] 2025-11-21 14:26:18,356 - ERROR - Failed to connect to MT5
+[2025-11-21 14:26:28] [BOT] 2025-11-21 14:26:28,359 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:26:28] [BOT] 2025-11-21 14:26:28,361 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:26:28] [BOT] 2025-11-21 14:26:28,362 - INFO -
+[2025-11-21 14:26:28] [BOT] ================================================================================
+[2025-11-21 14:26:28] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:26:28] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:26:28] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:26:28] [BOT] ================================================================================
+[2025-11-21 14:26:28] [BOT] 2025-11-21 14:26:28,375 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:26:28] [BOT] 2025-11-21 14:26:28,376 - ERROR - Failed to connect to MT5
+[2025-11-21 14:26:38] [BOT] 2025-11-21 14:26:38,386 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:26:38] [BOT] 2025-11-21 14:26:38,388 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:26:38] [BOT] 2025-11-21 14:26:38,389 - INFO -
+[2025-11-21 14:26:38] [BOT] ================================================================================
+[2025-11-21 14:26:38] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:26:38] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:26:38] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:26:38] [BOT] ================================================================================
+[2025-11-21 14:26:38] [BOT] 2025-11-21 14:26:38,401 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:26:38] [BOT] 2025-11-21 14:26:38,402 - ERROR - Failed to connect to MT5
+[2025-11-21 14:26:48] [BOT] 2025-11-21 14:26:48,408 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:26:48] [BOT] 2025-11-21 14:26:48,410 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:26:48] [BOT] 2025-11-21 14:26:48,411 - INFO -
+[2025-11-21 14:26:48] [BOT] ================================================================================
+[2025-11-21 14:26:48] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:26:48] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:26:48] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:26:48] [BOT] ================================================================================
+[2025-11-21 14:26:48] [BOT] 2025-11-21 14:26:48,417 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:26:48] [BOT] 2025-11-21 14:26:48,417 - ERROR - Failed to connect to MT5
+[2025-11-21 14:26:58] [BOT] 2025-11-21 14:26:58,435 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:26:58] [BOT] 2025-11-21 14:26:58,438 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:26:58] [BOT] 2025-11-21 14:26:58,438 - INFO -
+[2025-11-21 14:26:58] [BOT] ================================================================================
+[2025-11-21 14:26:58] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:26:58] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:26:58] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:26:58] [BOT] ================================================================================
+[2025-11-21 14:26:58] [BOT] 2025-11-21 14:26:58,446 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:26:58] [BOT] 2025-11-21 14:26:58,449 - ERROR - Failed to connect to MT5
+[2025-11-21 14:27:08] [BOT] 2025-11-21 14:27:08,452 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:27:08] [BOT] 2025-11-21 14:27:08,455 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:27:08] [BOT] 2025-11-21 14:27:08,455 - INFO -
+[2025-11-21 14:27:08] [BOT] ================================================================================
+[2025-11-21 14:27:08] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:27:08] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:27:08] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:27:08] [BOT] ================================================================================
+[2025-11-21 14:27:08] [BOT] 2025-11-21 14:27:08,469 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:27:08] [BOT] 2025-11-21 14:27:08,469 - ERROR - Failed to connect to MT5
+[2025-11-21 14:27:18] [BOT] 2025-11-21 14:27:18,520 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:27:18] [BOT] 2025-11-21 14:27:18,534 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:27:18] [BOT] 2025-11-21 14:27:18,538 - INFO -
+[2025-11-21 14:27:18] [BOT] ================================================================================
+[2025-11-21 14:27:18] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:27:18] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:27:18] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:27:18] [BOT] ================================================================================
+[2025-11-21 14:27:18] [BOT] 2025-11-21 14:27:18,564 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:27:18] [BOT] 2025-11-21 14:27:18,567 - ERROR - Failed to connect to MT5
+[2025-11-21 14:27:28] [BOT] 2025-11-21 14:27:28,577 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:27:28] [BOT] 2025-11-21 14:27:28,579 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:27:28] [BOT] 2025-11-21 14:27:28,580 - INFO -
+[2025-11-21 14:27:28] [BOT] ================================================================================
+[2025-11-21 14:27:28] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:27:28] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:27:28] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:27:28] [BOT] ================================================================================
+[2025-11-21 14:27:28] [BOT] 2025-11-21 14:27:28,583 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:27:28] [BOT] 2025-11-21 14:27:28,583 - ERROR - Failed to connect to MT5
+[2025-11-21 14:27:38] [BOT] 2025-11-21 14:27:38,595 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:27:38] [BOT] 2025-11-21 14:27:38,598 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:27:38] [BOT] 2025-11-21 14:27:38,599 - INFO -
+[2025-11-21 14:27:38] [BOT] ================================================================================
+[2025-11-21 14:27:38] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:27:38] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:27:38] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:27:38] [BOT] ================================================================================
+[2025-11-21 14:27:38] [BOT] 2025-11-21 14:27:38,608 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:27:38] [BOT] 2025-11-21 14:27:38,608 - ERROR - Failed to connect to MT5
+[2025-11-21 14:27:48] [BOT] 2025-11-21 14:27:48,621 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:27:48] [BOT] 2025-11-21 14:27:48,626 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:27:48] [BOT] 2025-11-21 14:27:48,626 - INFO -
+[2025-11-21 14:27:48] [BOT] ================================================================================
+[2025-11-21 14:27:48] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:27:48] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:27:48] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:27:48] [BOT] ================================================================================
+[2025-11-21 14:27:48] [BOT] 2025-11-21 14:27:48,640 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:27:48] [BOT] 2025-11-21 14:27:48,641 - ERROR - Failed to connect to MT5
+[2025-11-21 14:27:58] [BOT] 2025-11-21 14:27:58,657 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:27:58] [BOT] 2025-11-21 14:27:58,659 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:27:58] [BOT] 2025-11-21 14:27:58,659 - INFO -
+[2025-11-21 14:27:58] [BOT] ================================================================================
+[2025-11-21 14:27:58] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:27:58] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:27:58] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:27:58] [BOT] ================================================================================
+[2025-11-21 14:27:58] [BOT] 2025-11-21 14:27:58,662 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:27:58] [BOT] 2025-11-21 14:27:58,662 - ERROR - Failed to connect to MT5
+[2025-11-21 14:28:08] [BOT] 2025-11-21 14:28:08,675 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:28:08] [BOT] 2025-11-21 14:28:08,684 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:28:08] [BOT] 2025-11-21 14:28:08,685 - INFO -
+[2025-11-21 14:28:08] [BOT] ================================================================================
+[2025-11-21 14:28:08] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:28:08] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:28:08] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:28:08] [BOT] ================================================================================
+[2025-11-21 14:28:08] [BOT] 2025-11-21 14:28:08,695 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:28:08] [BOT] 2025-11-21 14:28:08,696 - ERROR - Failed to connect to MT5
+[2025-11-21 14:28:18] [BOT] 2025-11-21 14:28:18,700 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:28:18] [BOT] 2025-11-21 14:28:18,703 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:28:18] [BOT] 2025-11-21 14:28:18,703 - INFO -
+[2025-11-21 14:28:18] [BOT] ================================================================================
+[2025-11-21 14:28:18] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:28:18] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:28:18] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:28:18] [BOT] ================================================================================
+[2025-11-21 14:28:18] [BOT] 2025-11-21 14:28:18,716 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:28:18] [BOT] 2025-11-21 14:28:18,716 - ERROR - Failed to connect to MT5
+[2025-11-21 14:28:28] [BOT] 2025-11-21 14:28:28,726 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:28:28] [BOT] 2025-11-21 14:28:28,731 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:28:28] [BOT] 2025-11-21 14:28:28,732 - INFO -
+[2025-11-21 14:28:28] [BOT] ================================================================================
+[2025-11-21 14:28:28] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:28:28] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:28:28] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:28:28] [BOT] ================================================================================
+[2025-11-21 14:28:28] [BOT] 2025-11-21 14:28:28,737 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:28:28] [BOT] 2025-11-21 14:28:28,737 - ERROR - Failed to connect to MT5
+[2025-11-21 14:28:38] [BOT] 2025-11-21 14:28:38,754 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:28:38] [BOT] 2025-11-21 14:28:38,756 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:28:38] [BOT] 2025-11-21 14:28:38,756 - INFO -
+[2025-11-21 14:28:38] [BOT] ================================================================================
+[2025-11-21 14:28:38] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:28:38] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:28:38] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:28:38] [BOT] ================================================================================
+[2025-11-21 14:28:38] [BOT] 2025-11-21 14:28:38,759 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:28:38] [BOT] 2025-11-21 14:28:38,759 - ERROR - Failed to connect to MT5
+[2025-11-21 14:28:48] [BOT] 2025-11-21 14:28:48,778 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:28:48] [BOT] 2025-11-21 14:28:48,781 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:28:48] [BOT] 2025-11-21 14:28:48,781 - INFO -
+[2025-11-21 14:28:48] [BOT] ================================================================================
+[2025-11-21 14:28:48] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:28:48] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:28:48] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:28:48] [BOT] ================================================================================
+[2025-11-21 14:28:48] [BOT] 2025-11-21 14:28:48,784 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:28:48] [BOT] 2025-11-21 14:28:48,784 - ERROR - Failed to connect to MT5
+[2025-11-21 14:28:58] [BOT] 2025-11-21 14:28:58,787 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:28:58] [BOT] 2025-11-21 14:28:58,789 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:28:58] [BOT] 2025-11-21 14:28:58,789 - INFO -
+[2025-11-21 14:28:58] [BOT] ================================================================================
+[2025-11-21 14:28:58] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:28:58] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:28:58] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:28:58] [BOT] ================================================================================
+[2025-11-21 14:28:58] [BOT] 2025-11-21 14:28:58,796 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:28:58] [BOT] 2025-11-21 14:28:58,798 - ERROR - Failed to connect to MT5
+[2025-11-21 14:29:08] [BOT] 2025-11-21 14:29:08,812 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:29:08] [BOT] 2025-11-21 14:29:08,815 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:29:08] [BOT] 2025-11-21 14:29:08,815 - INFO -
+[2025-11-21 14:29:08] [BOT] ================================================================================
+[2025-11-21 14:29:08] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:29:08] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:29:08] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:29:08] [BOT] ================================================================================
+[2025-11-21 14:29:08] [BOT] 2025-11-21 14:29:08,818 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:29:08] [BOT] 2025-11-21 14:29:08,819 - ERROR - Failed to connect to MT5
+[2025-11-21 14:29:18] [BOT] 2025-11-21 14:29:18,840 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:29:18] [BOT] 2025-11-21 14:29:18,843 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:29:18] [BOT] 2025-11-21 14:29:18,843 - INFO -
+[2025-11-21 14:29:18] [BOT] ================================================================================
+[2025-11-21 14:29:18] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:29:18] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:29:18] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:29:18] [BOT] ================================================================================
+[2025-11-21 14:29:18] [BOT] 2025-11-21 14:29:18,846 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:29:18] [BOT] 2025-11-21 14:29:18,847 - ERROR - Failed to connect to MT5
+[2025-11-21 14:29:28] [BOT] 2025-11-21 14:29:28,853 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:29:28] [BOT] 2025-11-21 14:29:28,855 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:29:28] [BOT] 2025-11-21 14:29:28,855 - INFO -
+[2025-11-21 14:29:28] [BOT] ================================================================================
+[2025-11-21 14:29:28] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:29:28] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:29:28] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:29:28] [BOT] ================================================================================
+[2025-11-21 14:29:28] [BOT] 2025-11-21 14:29:28,859 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:29:28] [BOT] 2025-11-21 14:29:28,859 - ERROR - Failed to connect to MT5
+[2025-11-21 14:29:38] [BOT] 2025-11-21 14:29:38,874 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:29:38] [BOT] 2025-11-21 14:29:38,878 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:29:38] [BOT] 2025-11-21 14:29:38,880 - INFO -
+[2025-11-21 14:29:38] [BOT] ================================================================================
+[2025-11-21 14:29:38] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:29:38] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:29:38] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:29:38] [BOT] ================================================================================
+[2025-11-21 14:29:38] [BOT] 2025-11-21 14:29:38,892 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:29:38] [BOT] 2025-11-21 14:29:38,892 - ERROR - Failed to connect to MT5
+[2025-11-21 14:29:48] [BOT] 2025-11-21 14:29:48,903 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:29:48] [BOT] 2025-11-21 14:29:48,904 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:29:48] [BOT] 2025-11-21 14:29:48,905 - INFO -
+[2025-11-21 14:29:48] [BOT] ================================================================================
+[2025-11-21 14:29:48] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:29:48] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:29:48] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:29:48] [BOT] ================================================================================
+[2025-11-21 14:29:48] [BOT] 2025-11-21 14:29:48,913 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:29:48] [BOT] 2025-11-21 14:29:48,915 - ERROR - Failed to connect to MT5
+[2025-11-21 14:29:58] [BOT] 2025-11-21 14:29:58,927 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:29:58] [BOT] 2025-11-21 14:29:58,936 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:29:58] [BOT] 2025-11-21 14:29:58,936 - INFO -
+[2025-11-21 14:29:58] [BOT] ================================================================================
+[2025-11-21 14:29:58] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:29:58] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:29:58] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:29:58] [BOT] ================================================================================
+[2025-11-21 14:29:58] [BOT] 2025-11-21 14:29:58,944 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:29:58] [BOT] 2025-11-21 14:29:58,944 - ERROR - Failed to connect to MT5
+[2025-11-21 14:30:08] [BOT] 2025-11-21 14:30:08,964 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:30:08] [BOT] 2025-11-21 14:30:08,966 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:30:08] [BOT] 2025-11-21 14:30:08,970 - INFO -
+[2025-11-21 14:30:08] [BOT] ================================================================================
+[2025-11-21 14:30:08] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:30:08] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:30:08] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:30:08] [BOT] ================================================================================
+[2025-11-21 14:30:08] [BOT] 2025-11-21 14:30:08,982 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:30:08] [BOT] 2025-11-21 14:30:08,983 - ERROR - Failed to connect to MT5
+[2025-11-21 14:30:18] [BOT] 2025-11-21 14:30:18,996 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:30:19] [BOT] 2025-11-21 14:30:19,000 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:30:19] [BOT] 2025-11-21 14:30:19,000 - INFO -
+[2025-11-21 14:30:19] [BOT] ================================================================================
+[2025-11-21 14:30:19] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:30:19] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:30:19] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:30:19] [BOT] ================================================================================
+[2025-11-21 14:30:19] [BOT] 2025-11-21 14:30:19,006 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:30:19] [BOT] 2025-11-21 14:30:19,007 - ERROR - Failed to connect to MT5
+[2025-11-21 14:30:29] [BOT] 2025-11-21 14:30:29,011 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:30:29] [BOT] 2025-11-21 14:30:29,014 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:30:29] [BOT] 2025-11-21 14:30:29,014 - INFO -
+[2025-11-21 14:30:29] [BOT] ================================================================================
+[2025-11-21 14:30:29] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:30:29] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:30:29] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:30:29] [BOT] ================================================================================
+[2025-11-21 14:30:29] [BOT] 2025-11-21 14:30:29,028 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:30:29] [BOT] 2025-11-21 14:30:29,028 - ERROR - Failed to connect to MT5
+[2025-11-21 14:30:39] [BOT] 2025-11-21 14:30:39,034 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:30:39] [BOT] 2025-11-21 14:30:39,036 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:30:39] [BOT] 2025-11-21 14:30:39,037 - INFO -
+[2025-11-21 14:30:39] [BOT] ================================================================================
+[2025-11-21 14:30:39] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:30:39] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:30:39] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:30:39] [BOT] ================================================================================
+[2025-11-21 14:30:39] [BOT] 2025-11-21 14:30:39,043 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:30:39] [BOT] 2025-11-21 14:30:39,044 - ERROR - Failed to connect to MT5
+[2025-11-21 14:30:49] [BOT] 2025-11-21 14:30:49,050 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:30:49] [BOT] 2025-11-21 14:30:49,057 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:30:49] [BOT] 2025-11-21 14:30:49,058 - INFO -
+[2025-11-21 14:30:49] [BOT] ================================================================================
+[2025-11-21 14:30:49] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:30:49] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:30:49] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:30:49] [BOT] ================================================================================
+[2025-11-21 14:30:49] [BOT] 2025-11-21 14:30:49,076 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:30:49] [BOT] 2025-11-21 14:30:49,077 - ERROR - Failed to connect to MT5
+[2025-11-21 14:30:59] [BOT] 2025-11-21 14:30:59,089 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:30:59] [BOT] 2025-11-21 14:30:59,091 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:30:59] [BOT] 2025-11-21 14:30:59,092 - INFO -
+[2025-11-21 14:30:59] [BOT] ================================================================================
+[2025-11-21 14:30:59] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:30:59] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:30:59] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:30:59] [BOT] ================================================================================
+[2025-11-21 14:30:59] [BOT] 2025-11-21 14:30:59,100 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:30:59] [BOT] 2025-11-21 14:30:59,100 - ERROR - Failed to connect to MT5
+[2025-11-21 14:31:09] [BOT] 2025-11-21 14:31:09,114 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:31:09] [BOT] 2025-11-21 14:31:09,121 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:31:09] [BOT] 2025-11-21 14:31:09,122 - INFO -
+[2025-11-21 14:31:09] [BOT] ================================================================================
+[2025-11-21 14:31:09] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:31:09] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:31:09] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:31:09] [BOT] ================================================================================
+[2025-11-21 14:31:09] [BOT] 2025-11-21 14:31:09,132 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:31:09] [BOT] 2025-11-21 14:31:09,132 - ERROR - Failed to connect to MT5
+[2025-11-21 14:31:19] [BOT] 2025-11-21 14:31:19,143 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:31:19] [BOT] 2025-11-21 14:31:19,145 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:31:19] [BOT] 2025-11-21 14:31:19,145 - INFO -
+[2025-11-21 14:31:19] [BOT] ================================================================================
+[2025-11-21 14:31:19] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:31:19] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:31:19] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:31:19] [BOT] ================================================================================
+[2025-11-21 14:31:19] [BOT] 2025-11-21 14:31:19,158 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:31:19] [BOT] 2025-11-21 14:31:19,160 - ERROR - Failed to connect to MT5
+[2025-11-21 14:31:29] [BOT] 2025-11-21 14:31:29,166 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:31:29] [BOT] 2025-11-21 14:31:29,172 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:31:29] [BOT] 2025-11-21 14:31:29,174 - INFO -
+[2025-11-21 14:31:29] [BOT] ================================================================================
+[2025-11-21 14:31:29] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:31:29] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:31:29] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:31:29] [BOT] ================================================================================
+[2025-11-21 14:31:29] [BOT] 2025-11-21 14:31:29,190 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:31:29] [BOT] 2025-11-21 14:31:29,193 - ERROR - Failed to connect to MT5
+[2025-11-21 14:31:39] [BOT] 2025-11-21 14:31:39,216 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:31:39] [BOT] 2025-11-21 14:31:39,220 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:31:39] [BOT] 2025-11-21 14:31:39,221 - INFO -
+[2025-11-21 14:31:39] [BOT] ================================================================================
+[2025-11-21 14:31:39] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:31:39] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:31:39] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:31:39] [BOT] ================================================================================
+[2025-11-21 14:31:39] [BOT] 2025-11-21 14:31:39,232 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:31:39] [BOT] 2025-11-21 14:31:39,233 - ERROR - Failed to connect to MT5
+[2025-11-21 14:31:49] [BOT] 2025-11-21 14:31:49,245 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:31:49] [BOT] 2025-11-21 14:31:49,251 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:31:49] [BOT] 2025-11-21 14:31:49,251 - INFO -
+[2025-11-21 14:31:49] [BOT] ================================================================================
+[2025-11-21 14:31:49] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:31:49] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:31:49] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:31:49] [BOT] ================================================================================
+[2025-11-21 14:31:49] [BOT] 2025-11-21 14:31:49,264 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:31:49] [BOT] 2025-11-21 14:31:49,264 - ERROR - Failed to connect to MT5
+[2025-11-21 14:31:59] [BOT] 2025-11-21 14:31:59,280 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:31:59] [BOT] 2025-11-21 14:31:59,283 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:31:59] [BOT] 2025-11-21 14:31:59,284 - INFO -
+[2025-11-21 14:31:59] [BOT] ================================================================================
+[2025-11-21 14:31:59] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:31:59] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:31:59] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:31:59] [BOT] ================================================================================
+[2025-11-21 14:31:59] [BOT] 2025-11-21 14:31:59,290 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:31:59] [BOT] 2025-11-21 14:31:59,291 - ERROR - Failed to connect to MT5
+[2025-11-21 14:32:09] [BOT] 2025-11-21 14:32:09,296 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:32:09] [BOT] 2025-11-21 14:32:09,299 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:32:09] [BOT] 2025-11-21 14:32:09,299 - INFO -
+[2025-11-21 14:32:09] [BOT] ================================================================================
+[2025-11-21 14:32:09] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:32:09] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:32:09] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:32:09] [BOT] ================================================================================
+[2025-11-21 14:32:09] [BOT] 2025-11-21 14:32:09,316 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:32:09] [BOT] 2025-11-21 14:32:09,318 - ERROR - Failed to connect to MT5
+[2025-11-21 14:32:19] [BOT] 2025-11-21 14:32:19,326 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:32:19] [BOT] 2025-11-21 14:32:19,329 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:32:19] [BOT] 2025-11-21 14:32:19,330 - INFO -
+[2025-11-21 14:32:19] [BOT] ================================================================================
+[2025-11-21 14:32:19] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:32:19] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:32:19] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:32:19] [BOT] ================================================================================
+[2025-11-21 14:32:19] [BOT] 2025-11-21 14:32:19,349 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:32:19] [BOT] 2025-11-21 14:32:19,349 - ERROR - Failed to connect to MT5
+[2025-11-21 14:32:29] [BOT] 2025-11-21 14:32:29,361 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:32:29] [BOT] 2025-11-21 14:32:29,370 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:32:29] [BOT] 2025-11-21 14:32:29,371 - INFO -
+[2025-11-21 14:32:29] [BOT] ================================================================================
+[2025-11-21 14:32:29] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:32:29] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:32:29] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:32:29] [BOT] ================================================================================
+[2025-11-21 14:32:29] [BOT] 2025-11-21 14:32:29,383 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:32:29] [BOT] 2025-11-21 14:32:29,384 - ERROR - Failed to connect to MT5
+[2025-11-21 14:32:39] [BOT] 2025-11-21 14:32:39,393 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:32:39] [BOT] 2025-11-21 14:32:39,400 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:32:39] [BOT] 2025-11-21 14:32:39,402 - INFO -
+[2025-11-21 14:32:39] [BOT] ================================================================================
+[2025-11-21 14:32:39] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:32:39] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:32:39] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:32:39] [BOT] ================================================================================
+[2025-11-21 14:32:39] [BOT] 2025-11-21 14:32:39,413 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:32:39] [BOT] 2025-11-21 14:32:39,413 - ERROR - Failed to connect to MT5
+[2025-11-21 14:32:49] [BOT] 2025-11-21 14:32:49,419 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:32:49] [BOT] 2025-11-21 14:32:49,421 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:32:49] [BOT] 2025-11-21 14:32:49,422 - INFO -
+[2025-11-21 14:32:49] [BOT] ================================================================================
+[2025-11-21 14:32:49] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:32:49] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:32:49] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:32:49] [BOT] ================================================================================
+[2025-11-21 14:32:49] [BOT] 2025-11-21 14:32:49,427 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:32:49] [BOT] 2025-11-21 14:32:49,437 - ERROR - Failed to connect to MT5
+[2025-11-21 14:32:59] [BOT] 2025-11-21 14:32:59,448 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:32:59] [BOT] 2025-11-21 14:32:59,451 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:32:59] [BOT] 2025-11-21 14:32:59,452 - INFO -
+[2025-11-21 14:32:59] [BOT] ================================================================================
+[2025-11-21 14:32:59] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:32:59] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:32:59] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:32:59] [BOT] ================================================================================
+[2025-11-21 14:32:59] [BOT] 2025-11-21 14:32:59,456 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:32:59] [BOT] 2025-11-21 14:32:59,457 - ERROR - Failed to connect to MT5
+[2025-11-21 14:33:09] [BOT] 2025-11-21 14:33:09,511 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:33:09] [BOT] 2025-11-21 14:33:09,541 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:33:09] [BOT] 2025-11-21 14:33:09,542 - INFO -
+[2025-11-21 14:33:09] [BOT] ================================================================================
+[2025-11-21 14:33:09] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:33:09] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:33:09] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:33:09] [BOT] ================================================================================
+[2025-11-21 14:33:09] [BOT] 2025-11-21 14:33:09,550 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:33:09] [BOT] 2025-11-21 14:33:09,551 - ERROR - Failed to connect to MT5
+[2025-11-21 14:33:19] [BOT] 2025-11-21 14:33:19,573 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:33:19] [BOT] 2025-11-21 14:33:19,576 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:33:19] [BOT] 2025-11-21 14:33:19,576 - INFO -
+[2025-11-21 14:33:19] [BOT] ================================================================================
+[2025-11-21 14:33:19] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:33:19] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:33:19] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:33:19] [BOT] ================================================================================
+[2025-11-21 14:33:19] [BOT] 2025-11-21 14:33:19,583 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:33:19] [BOT] 2025-11-21 14:33:19,583 - ERROR - Failed to connect to MT5
+[2025-11-21 14:33:29] [BOT] 2025-11-21 14:33:29,607 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:33:29] [BOT] 2025-11-21 14:33:29,625 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:33:29] [BOT] 2025-11-21 14:33:29,625 - INFO -
+[2025-11-21 14:33:29] [BOT] ================================================================================
+[2025-11-21 14:33:29] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:33:29] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:33:29] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:33:29] [BOT] ================================================================================
+[2025-11-21 14:33:29] [BOT] 2025-11-21 14:33:29,640 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:33:29] [BOT] 2025-11-21 14:33:29,643 - ERROR - Failed to connect to MT5
+[2025-11-21 14:33:39] [BOT] 2025-11-21 14:33:39,663 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:33:39] [BOT] 2025-11-21 14:33:39,671 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:33:39] [BOT] 2025-11-21 14:33:39,673 - INFO -
+[2025-11-21 14:33:39] [BOT] ================================================================================
+[2025-11-21 14:33:39] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:33:39] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:33:39] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:33:39] [BOT] ================================================================================
+[2025-11-21 14:33:39] [BOT] 2025-11-21 14:33:39,687 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:33:39] [BOT] 2025-11-21 14:33:39,695 - ERROR - Failed to connect to MT5
+[2025-11-21 14:33:49] [BOT] 2025-11-21 14:33:49,705 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:33:49] [BOT] 2025-11-21 14:33:49,708 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:33:49] [BOT] 2025-11-21 14:33:49,708 - INFO -
+[2025-11-21 14:33:49] [BOT] ================================================================================
+[2025-11-21 14:33:49] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:33:49] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:33:49] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:33:49] [BOT] ================================================================================
+[2025-11-21 14:33:49] [BOT] 2025-11-21 14:33:49,726 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:33:49] [BOT] 2025-11-21 14:33:49,726 - ERROR - Failed to connect to MT5
+[2025-11-21 14:33:59] [BOT] 2025-11-21 14:33:59,781 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:33:59] [BOT] 2025-11-21 14:33:59,790 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:33:59] [BOT] 2025-11-21 14:33:59,791 - INFO -
+[2025-11-21 14:33:59] [BOT] ================================================================================
+[2025-11-21 14:33:59] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:33:59] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:33:59] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:33:59] [BOT] ================================================================================
+[2025-11-21 14:33:59] [BOT] 2025-11-21 14:33:59,801 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:33:59] [BOT] 2025-11-21 14:33:59,801 - ERROR - Failed to connect to MT5
+[2025-11-21 14:34:09] [BOT] 2025-11-21 14:34:09,819 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:34:09] [BOT] 2025-11-21 14:34:09,821 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:34:09] [BOT] 2025-11-21 14:34:09,823 - INFO -
+[2025-11-21 14:34:09] [BOT] ================================================================================
+[2025-11-21 14:34:09] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:34:09] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:34:09] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:34:09] [BOT] ================================================================================
+[2025-11-21 14:34:09] [BOT] 2025-11-21 14:34:09,839 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:34:09] [BOT] 2025-11-21 14:34:09,839 - ERROR - Failed to connect to MT5
+[2025-11-21 14:34:19] [BOT] 2025-11-21 14:34:19,857 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:34:19] [BOT] 2025-11-21 14:34:19,861 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:34:19] [BOT] 2025-11-21 14:34:19,861 - INFO -
+[2025-11-21 14:34:19] [BOT] ================================================================================
+[2025-11-21 14:34:19] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:34:19] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:34:19] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:34:19] [BOT] ================================================================================
+[2025-11-21 14:34:19] [BOT] 2025-11-21 14:34:19,875 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:34:19] [BOT] 2025-11-21 14:34:19,876 - ERROR - Failed to connect to MT5
+[2025-11-21 14:34:29] [BOT] 2025-11-21 14:34:29,889 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:34:29] [BOT] 2025-11-21 14:34:29,891 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:34:29] [BOT] 2025-11-21 14:34:29,891 - INFO -
+[2025-11-21 14:34:29] [BOT] ================================================================================
+[2025-11-21 14:34:29] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:34:29] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:34:29] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:34:29] [BOT] ================================================================================
+[2025-11-21 14:34:29] [BOT] 2025-11-21 14:34:29,895 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:34:29] [BOT] 2025-11-21 14:34:29,901 - ERROR - Failed to connect to MT5
+[2025-11-21 14:34:39] [BOT] 2025-11-21 14:34:39,920 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:34:39] [BOT] 2025-11-21 14:34:39,934 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:34:39] [BOT] 2025-11-21 14:34:39,936 - INFO -
+[2025-11-21 14:34:39] [BOT] ================================================================================
+[2025-11-21 14:34:39] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:34:39] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:34:39] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:34:39] [BOT] ================================================================================
+[2025-11-21 14:34:39] [BOT] 2025-11-21 14:34:39,945 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:34:39] [BOT] 2025-11-21 14:34:39,945 - ERROR - Failed to connect to MT5
+[2025-11-21 14:34:49] [BOT] 2025-11-21 14:34:49,955 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:34:49] [BOT] 2025-11-21 14:34:49,957 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:34:49] [BOT] 2025-11-21 14:34:49,957 - INFO -
+[2025-11-21 14:34:49] [BOT] ================================================================================
+[2025-11-21 14:34:49] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:34:49] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:34:49] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:34:49] [BOT] ================================================================================
+[2025-11-21 14:34:49] [BOT] 2025-11-21 14:34:49,976 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:34:49] [BOT] 2025-11-21 14:34:49,978 - ERROR - Failed to connect to MT5
+[2025-11-21 14:34:59] [BOT] 2025-11-21 14:34:59,985 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:34:59] [BOT] 2025-11-21 14:34:59,987 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:34:59] [BOT] 2025-11-21 14:34:59,987 - INFO -
+[2025-11-21 14:34:59] [BOT] ================================================================================
+[2025-11-21 14:34:59] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:34:59] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:34:59] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:35:00] [BOT] ================================================================================
+[2025-11-21 14:35:00] [BOT] 2025-11-21 14:35:00,010 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:35:00] [BOT] 2025-11-21 14:35:00,010 - ERROR - Failed to connect to MT5
+[2025-11-21 14:35:10] [BOT] 2025-11-21 14:35:10,051 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:35:10] [BOT] 2025-11-21 14:35:10,059 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:35:10] [BOT] 2025-11-21 14:35:10,062 - INFO -
+[2025-11-21 14:35:10] [BOT] ================================================================================
+[2025-11-21 14:35:10] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:35:10] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:35:10] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:35:10] [BOT] ================================================================================
+[2025-11-21 14:35:10] [BOT] 2025-11-21 14:35:10,094 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:35:10] [BOT] 2025-11-21 14:35:10,094 - ERROR - Failed to connect to MT5
+[2025-11-21 14:35:20] [BOT] 2025-11-21 14:35:20,106 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:35:20] [BOT] 2025-11-21 14:35:20,108 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:35:20] [BOT] 2025-11-21 14:35:20,109 - INFO -
+[2025-11-21 14:35:20] [BOT] ================================================================================
+[2025-11-21 14:35:20] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:35:20] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:35:20] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:35:20] [BOT] ================================================================================
+[2025-11-21 14:35:20] [BOT] 2025-11-21 14:35:20,125 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:35:20] [BOT] 2025-11-21 14:35:20,125 - ERROR - Failed to connect to MT5
+[2025-11-21 14:35:30] [BOT] 2025-11-21 14:35:30,223 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:35:30] [BOT] 2025-11-21 14:35:30,230 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:35:30] [BOT] 2025-11-21 14:35:30,232 - INFO -
+[2025-11-21 14:35:30] [BOT] ================================================================================
+[2025-11-21 14:35:30] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:35:30] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:35:30] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:35:30] [BOT] ================================================================================
+[2025-11-21 14:35:30] [BOT] 2025-11-21 14:35:30,255 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:35:30] [BOT] 2025-11-21 14:35:30,256 - ERROR - Failed to connect to MT5
+[2025-11-21 14:35:40] [BOT] 2025-11-21 14:35:40,385 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:35:40] [BOT] 2025-11-21 14:35:40,395 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:35:40] [BOT] 2025-11-21 14:35:40,403 - INFO -
+[2025-11-21 14:35:40] [BOT] ================================================================================
+[2025-11-21 14:35:40] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:35:40] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:35:40] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:35:40] [BOT] ================================================================================
+[2025-11-21 14:35:40] [BOT] 2025-11-21 14:35:40,414 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:35:40] [BOT] 2025-11-21 14:35:40,415 - ERROR - Failed to connect to MT5
+[2025-11-21 14:35:50] [BOT] 2025-11-21 14:35:50,418 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:35:50] [BOT] 2025-11-21 14:35:50,420 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:35:50] [BOT] 2025-11-21 14:35:50,421 - INFO -
+[2025-11-21 14:35:50] [BOT] ================================================================================
+[2025-11-21 14:35:50] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:35:50] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:35:50] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:35:50] [BOT] ================================================================================
+[2025-11-21 14:35:50] [BOT] 2025-11-21 14:35:50,428 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:35:50] [BOT] 2025-11-21 14:35:50,430 - ERROR - Failed to connect to MT5
+[2025-11-21 14:36:00] [BOT] 2025-11-21 14:36:00,439 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:36:00] [BOT] 2025-11-21 14:36:00,442 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:36:00] [BOT] 2025-11-21 14:36:00,443 - INFO -
+[2025-11-21 14:36:00] [BOT] ================================================================================
+[2025-11-21 14:36:00] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:36:00] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:36:00] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:36:00] [BOT] ================================================================================
+[2025-11-21 14:36:00] [BOT] 2025-11-21 14:36:00,447 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:36:00] [BOT] 2025-11-21 14:36:00,447 - ERROR - Failed to connect to MT5
+[2025-11-21 14:36:10] [BOT] 2025-11-21 14:36:10,464 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:36:10] [BOT] 2025-11-21 14:36:10,466 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:36:10] [BOT] 2025-11-21 14:36:10,467 - INFO -
+[2025-11-21 14:36:10] [BOT] ================================================================================
+[2025-11-21 14:36:10] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:36:10] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:36:10] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:36:10] [BOT] ================================================================================
+[2025-11-21 14:36:10] [BOT] 2025-11-21 14:36:10,474 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:36:10] [BOT] 2025-11-21 14:36:10,474 - ERROR - Failed to connect to MT5
+[2025-11-21 14:36:20] [BOT] 2025-11-21 14:36:20,492 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:36:20] [BOT] 2025-11-21 14:36:20,495 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:36:20] [BOT] 2025-11-21 14:36:20,495 - INFO -
+[2025-11-21 14:36:20] [BOT] ================================================================================
+[2025-11-21 14:36:20] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:36:20] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:36:20] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:36:20] [BOT] ================================================================================
+[2025-11-21 14:36:20] [BOT] 2025-11-21 14:36:20,498 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:36:20] [BOT] 2025-11-21 14:36:20,498 - ERROR - Failed to connect to MT5
+[2025-11-21 14:36:30] [BOT] 2025-11-21 14:36:30,510 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:36:30] [BOT] 2025-11-21 14:36:30,513 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:36:30] [BOT] 2025-11-21 14:36:30,514 - INFO -
+[2025-11-21 14:36:30] [BOT] ================================================================================
+[2025-11-21 14:36:30] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:36:30] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:36:30] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:36:30] [BOT] ================================================================================
+[2025-11-21 14:36:30] [BOT] 2025-11-21 14:36:30,519 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:36:30] [BOT] 2025-11-21 14:36:30,519 - ERROR - Failed to connect to MT5
+[2025-11-21 14:36:40] [BOT] 2025-11-21 14:36:40,533 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:36:40] [BOT] 2025-11-21 14:36:40,536 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:36:40] [BOT] 2025-11-21 14:36:40,536 - INFO -
+[2025-11-21 14:36:40] [BOT] ================================================================================
+[2025-11-21 14:36:40] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:36:40] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:36:40] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:36:40] [BOT] ================================================================================
+[2025-11-21 14:36:40] [BOT] 2025-11-21 14:36:40,540 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:36:40] [BOT] 2025-11-21 14:36:40,540 - ERROR - Failed to connect to MT5
+[2025-11-21 14:36:50] [BOT] 2025-11-21 14:36:50,549 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:36:50] [BOT] 2025-11-21 14:36:50,550 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:36:50] [BOT] 2025-11-21 14:36:50,552 - INFO -
+[2025-11-21 14:36:50] [BOT] ================================================================================
+[2025-11-21 14:36:50] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:36:50] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:36:50] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:36:50] [BOT] ================================================================================
+[2025-11-21 14:36:50] [BOT] 2025-11-21 14:36:50,556 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:36:50] [BOT] 2025-11-21 14:36:50,556 - ERROR - Failed to connect to MT5
+[2025-11-21 14:37:00] [BOT] 2025-11-21 14:37:00,572 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:37:00] [BOT] 2025-11-21 14:37:00,575 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:37:00] [BOT] 2025-11-21 14:37:00,576 - INFO -
+[2025-11-21 14:37:00] [BOT] ================================================================================
+[2025-11-21 14:37:00] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:37:00] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:37:00] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:37:00] [BOT] ================================================================================
+[2025-11-21 14:37:00] [BOT] 2025-11-21 14:37:00,581 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:37:00] [BOT] 2025-11-21 14:37:00,582 - ERROR - Failed to connect to MT5
+[2025-11-21 14:37:10] [BOT] 2025-11-21 14:37:10,594 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:37:10] [BOT] 2025-11-21 14:37:10,596 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:37:10] [BOT] 2025-11-21 14:37:10,597 - INFO -
+[2025-11-21 14:37:10] [BOT] ================================================================================
+[2025-11-21 14:37:10] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:37:10] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:37:10] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:37:10] [BOT] ================================================================================
+[2025-11-21 14:37:10] [BOT] 2025-11-21 14:37:10,604 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:37:10] [BOT] 2025-11-21 14:37:10,605 - ERROR - Failed to connect to MT5
+[2025-11-21 14:37:20] [BOT] 2025-11-21 14:37:20,609 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:37:20] [BOT] 2025-11-21 14:37:20,611 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:37:20] [BOT] 2025-11-21 14:37:20,612 - INFO -
+[2025-11-21 14:37:20] [BOT] ================================================================================
+[2025-11-21 14:37:20] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:37:20] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:37:20] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:37:20] [BOT] ================================================================================
+[2025-11-21 14:37:20] [BOT] 2025-11-21 14:37:20,618 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:37:20] [BOT] 2025-11-21 14:37:20,618 - ERROR - Failed to connect to MT5
+[2025-11-21 14:37:30] [BOT] 2025-11-21 14:37:30,636 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:37:30] [BOT] 2025-11-21 14:37:30,637 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:37:30] [BOT] 2025-11-21 14:37:30,638 - INFO -
+[2025-11-21 14:37:30] [BOT] ================================================================================
+[2025-11-21 14:37:30] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:37:30] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:37:30] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:37:30] [BOT] ================================================================================
+[2025-11-21 14:37:30] [BOT] 2025-11-21 14:37:30,650 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:37:30] [BOT] 2025-11-21 14:37:30,652 - ERROR - Failed to connect to MT5
+[2025-11-21 14:37:40] [BOT] 2025-11-21 14:37:40,664 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:37:40] [BOT] 2025-11-21 14:37:40,668 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:37:40] [BOT] 2025-11-21 14:37:40,671 - INFO -
+[2025-11-21 14:37:40] [BOT] ================================================================================
+[2025-11-21 14:37:40] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:37:40] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:37:40] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:37:40] [BOT] ================================================================================
+[2025-11-21 14:37:40] [BOT] 2025-11-21 14:37:40,692 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:37:40] [BOT] 2025-11-21 14:37:40,699 - ERROR - Failed to connect to MT5
+[2025-11-21 14:37:50] [BOT] 2025-11-21 14:37:50,715 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:37:50] [BOT] 2025-11-21 14:37:50,720 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:37:50] [BOT] 2025-11-21 14:37:50,721 - INFO -
+[2025-11-21 14:37:50] [BOT] ================================================================================
+[2025-11-21 14:37:50] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:37:50] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:37:50] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:37:50] [BOT] ================================================================================
+[2025-11-21 14:37:50] [BOT] 2025-11-21 14:37:50,729 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:37:50] [BOT] 2025-11-21 14:37:50,730 - ERROR - Failed to connect to MT5
+[2025-11-21 14:38:00] [BOT] 2025-11-21 14:38:00,750 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:38:00] [BOT] 2025-11-21 14:38:00,753 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:38:00] [BOT] 2025-11-21 14:38:00,754 - INFO -
+[2025-11-21 14:38:00] [BOT] ================================================================================
+[2025-11-21 14:38:00] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:38:00] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:38:00] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:38:00] [BOT] ================================================================================
+[2025-11-21 14:38:00] [BOT] 2025-11-21 14:38:00,767 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:38:00] [BOT] 2025-11-21 14:38:00,770 - ERROR - Failed to connect to MT5
+[2025-11-21 14:38:10] [BOT] 2025-11-21 14:38:10,779 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:38:10] [BOT] 2025-11-21 14:38:10,782 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:38:10] [BOT] 2025-11-21 14:38:10,784 - INFO -
+[2025-11-21 14:38:10] [BOT] ================================================================================
+[2025-11-21 14:38:10] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:38:10] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:38:10] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:38:10] [BOT] ================================================================================
+[2025-11-21 14:38:10] [BOT] 2025-11-21 14:38:10,798 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:38:10] [BOT] 2025-11-21 14:38:10,799 - ERROR - Failed to connect to MT5
+[2025-11-21 14:38:20] [BOT] 2025-11-21 14:38:20,815 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:38:20] [BOT] 2025-11-21 14:38:20,817 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:38:20] [BOT] 2025-11-21 14:38:20,820 - INFO -
+[2025-11-21 14:38:20] [BOT] ================================================================================
+[2025-11-21 14:38:20] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:38:20] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:38:20] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:38:20] [BOT] ================================================================================
+[2025-11-21 14:38:20] [BOT] 2025-11-21 14:38:20,830 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:38:20] [BOT] 2025-11-21 14:38:20,832 - ERROR - Failed to connect to MT5
+[2025-11-21 14:38:30] [BOT] 2025-11-21 14:38:30,840 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:38:30] [BOT] 2025-11-21 14:38:30,842 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:38:30] [BOT] 2025-11-21 14:38:30,843 - INFO -
+[2025-11-21 14:38:30] [BOT] ================================================================================
+[2025-11-21 14:38:30] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:38:30] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:38:30] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:38:30] [BOT] ================================================================================
+[2025-11-21 14:38:30] [BOT] 2025-11-21 14:38:30,855 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:38:30] [BOT] 2025-11-21 14:38:30,855 - ERROR - Failed to connect to MT5
+[2025-11-21 14:38:40] [BOT] 2025-11-21 14:38:40,864 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:38:40] [BOT] 2025-11-21 14:38:40,874 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:38:40] [BOT] 2025-11-21 14:38:40,874 - INFO -
+[2025-11-21 14:38:40] [BOT] ================================================================================
+[2025-11-21 14:38:40] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:38:40] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:38:40] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:38:40] [BOT] ================================================================================
+[2025-11-21 14:38:40] [BOT] 2025-11-21 14:38:40,888 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:38:40] [BOT] 2025-11-21 14:38:40,889 - ERROR - Failed to connect to MT5
+[2025-11-21 14:38:50] [BOT] 2025-11-21 14:38:50,907 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:38:50] [BOT] 2025-11-21 14:38:50,911 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:38:50] [BOT] 2025-11-21 14:38:50,911 - INFO -
+[2025-11-21 14:38:50] [BOT] ================================================================================
+[2025-11-21 14:38:50] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:38:50] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:38:50] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:38:50] [BOT] ================================================================================
+[2025-11-21 14:38:50] [BOT] 2025-11-21 14:38:50,916 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:38:50] [BOT] 2025-11-21 14:38:50,916 - ERROR - Failed to connect to MT5
+[2025-11-21 14:39:00] [BOT] 2025-11-21 14:39:00,951 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:39:00] [BOT] 2025-11-21 14:39:00,974 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:39:00] [BOT] 2025-11-21 14:39:00,974 - INFO -
+[2025-11-21 14:39:00] [BOT] ================================================================================
+[2025-11-21 14:39:00] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:39:00] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:39:00] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:39:00] [BOT] ================================================================================
+[2025-11-21 14:39:00] [BOT] 2025-11-21 14:39:00,986 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:39:00] [BOT] 2025-11-21 14:39:00,992 - ERROR - Failed to connect to MT5
+[2025-11-21 14:39:11] [BOT] 2025-11-21 14:39:11,008 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:39:11] [BOT] 2025-11-21 14:39:11,014 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:39:11] [BOT] 2025-11-21 14:39:11,015 - INFO -
+[2025-11-21 14:39:11] [BOT] ================================================================================
+[2025-11-21 14:39:11] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:39:11] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:39:11] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:39:11] [BOT] ================================================================================
+[2025-11-21 14:39:11] [BOT] 2025-11-21 14:39:11,034 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:39:11] [BOT] 2025-11-21 14:39:11,035 - ERROR - Failed to connect to MT5
+[2025-11-21 14:39:21] [BOT] 2025-11-21 14:39:21,052 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:39:21] [BOT] 2025-11-21 14:39:21,057 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:39:21] [BOT] 2025-11-21 14:39:21,058 - INFO -
+[2025-11-21 14:39:21] [BOT] ================================================================================
+[2025-11-21 14:39:21] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:39:21] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:39:21] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:39:21] [BOT] ================================================================================
+[2025-11-21 14:39:21] [BOT] 2025-11-21 14:39:21,062 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:39:21] [BOT] 2025-11-21 14:39:21,062 - ERROR - Failed to connect to MT5
+[2025-11-21 14:39:31] [BOT] 2025-11-21 14:39:31,070 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:39:31] [BOT] 2025-11-21 14:39:31,072 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:39:31] [BOT] 2025-11-21 14:39:31,074 - INFO -
+[2025-11-21 14:39:31] [BOT] ================================================================================
+[2025-11-21 14:39:31] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:39:31] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:39:31] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:39:31] [BOT] ================================================================================
+[2025-11-21 14:39:31] [BOT] 2025-11-21 14:39:31,093 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:39:31] [BOT] 2025-11-21 14:39:31,093 - ERROR - Failed to connect to MT5
+[2025-11-21 14:39:41] [BOT] 2025-11-21 14:39:41,099 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:39:41] [BOT] 2025-11-21 14:39:41,102 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:39:41] [BOT] 2025-11-21 14:39:41,103 - INFO -
+[2025-11-21 14:39:41] [BOT] ================================================================================
+[2025-11-21 14:39:41] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:39:41] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:39:41] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:39:41] [BOT] ================================================================================
+[2025-11-21 14:39:41] [BOT] 2025-11-21 14:39:41,109 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:39:41] [BOT] 2025-11-21 14:39:41,121 - ERROR - Failed to connect to MT5
+[2025-11-21 14:39:51] [BOT] 2025-11-21 14:39:51,128 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:39:51] [BOT] 2025-11-21 14:39:51,132 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:39:51] [BOT] 2025-11-21 14:39:51,133 - INFO -
+[2025-11-21 14:39:51] [BOT] ================================================================================
+[2025-11-21 14:39:51] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:39:51] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:39:51] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:39:51] [BOT] ================================================================================
+[2025-11-21 14:39:51] [BOT] 2025-11-21 14:39:51,137 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:39:51] [BOT] 2025-11-21 14:39:51,139 - ERROR - Failed to connect to MT5
+[2025-11-21 14:40:01] [BOT] 2025-11-21 14:40:01,154 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:40:01] [BOT] 2025-11-21 14:40:01,157 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:40:01] [BOT] 2025-11-21 14:40:01,157 - INFO -
+[2025-11-21 14:40:01] [BOT] ================================================================================
+[2025-11-21 14:40:01] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:40:01] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:40:01] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:40:01] [BOT] ================================================================================
+[2025-11-21 14:40:01] [BOT] 2025-11-21 14:40:01,163 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:40:01] [BOT] 2025-11-21 14:40:01,164 - ERROR - Failed to connect to MT5
+[2025-11-21 14:40:11] [BOT] 2025-11-21 14:40:11,170 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:40:11] [BOT] 2025-11-21 14:40:11,173 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:40:11] [BOT] 2025-11-21 14:40:11,175 - INFO -
+[2025-11-21 14:40:11] [BOT] ================================================================================
+[2025-11-21 14:40:11] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:40:11] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:40:11] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:40:11] [BOT] ================================================================================
+[2025-11-21 14:40:11] [BOT] 2025-11-21 14:40:11,183 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:40:11] [BOT] 2025-11-21 14:40:11,183 - ERROR - Failed to connect to MT5
+[2025-11-21 14:40:21] [BOT] 2025-11-21 14:40:21,199 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:40:21] [BOT] 2025-11-21 14:40:21,201 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:40:21] [BOT] 2025-11-21 14:40:21,202 - INFO -
+[2025-11-21 14:40:21] [BOT] ================================================================================
+[2025-11-21 14:40:21] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:40:21] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:40:21] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:40:21] [BOT] ================================================================================
+[2025-11-21 14:40:21] [BOT] 2025-11-21 14:40:21,207 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:40:21] [BOT] 2025-11-21 14:40:21,208 - ERROR - Failed to connect to MT5
+[2025-11-21 14:40:31] [BOT] 2025-11-21 14:40:31,216 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:40:31] [BOT] 2025-11-21 14:40:31,219 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:40:31] [BOT] 2025-11-21 14:40:31,220 - INFO -
+[2025-11-21 14:40:31] [BOT] ================================================================================
+[2025-11-21 14:40:31] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:40:31] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:40:31] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:40:31] [BOT] ================================================================================
+[2025-11-21 14:40:31] [BOT] 2025-11-21 14:40:31,225 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:40:31] [BOT] 2025-11-21 14:40:31,225 - ERROR - Failed to connect to MT5
+[2025-11-21 14:40:41] [BOT] 2025-11-21 14:40:41,239 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:40:41] [BOT] 2025-11-21 14:40:41,242 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:40:41] [BOT] 2025-11-21 14:40:41,242 - INFO -
+[2025-11-21 14:40:41] [BOT] ================================================================================
+[2025-11-21 14:40:41] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:40:41] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:40:41] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:40:41] [BOT] ================================================================================
+[2025-11-21 14:40:41] [BOT] 2025-11-21 14:40:41,246 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:40:41] [BOT] 2025-11-21 14:40:41,246 - ERROR - Failed to connect to MT5
+[2025-11-21 14:40:51] [BOT] 2025-11-21 14:40:51,251 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:40:51] [BOT] 2025-11-21 14:40:51,254 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:40:51] [BOT] 2025-11-21 14:40:51,254 - INFO -
+[2025-11-21 14:40:51] [BOT] ================================================================================
+[2025-11-21 14:40:51] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:40:51] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:40:51] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:40:51] [BOT] ================================================================================
+[2025-11-21 14:40:51] [BOT] 2025-11-21 14:40:51,265 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:40:51] [BOT] 2025-11-21 14:40:51,266 - ERROR - Failed to connect to MT5
+[2025-11-21 14:41:01] [BOT] 2025-11-21 14:41:01,275 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:41:01] [BOT] 2025-11-21 14:41:01,279 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:41:01] [BOT] 2025-11-21 14:41:01,280 - INFO -
+[2025-11-21 14:41:01] [BOT] ================================================================================
+[2025-11-21 14:41:01] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:41:01] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:41:01] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:41:01] [BOT] ================================================================================
+[2025-11-21 14:41:01] [BOT] 2025-11-21 14:41:01,286 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:41:01] [BOT] 2025-11-21 14:41:01,286 - ERROR - Failed to connect to MT5
+[2025-11-21 14:41:11] [BOT] 2025-11-21 14:41:11,291 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:41:11] [BOT] 2025-11-21 14:41:11,295 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:41:11] [BOT] 2025-11-21 14:41:11,297 - INFO -
+[2025-11-21 14:41:11] [BOT] ================================================================================
+[2025-11-21 14:41:11] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:41:11] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:41:11] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:41:11] [BOT] ================================================================================
+[2025-11-21 14:41:11] [BOT] 2025-11-21 14:41:11,305 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:41:11] [BOT] 2025-11-21 14:41:11,307 - ERROR - Failed to connect to MT5
+[2025-11-21 14:41:21] [BOT] 2025-11-21 14:41:21,314 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:41:21] [BOT] 2025-11-21 14:41:21,315 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:41:21] [BOT] 2025-11-21 14:41:21,316 - INFO -
+[2025-11-21 14:41:21] [BOT] ================================================================================
+[2025-11-21 14:41:21] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:41:21] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:41:21] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:41:21] [BOT] ================================================================================
+[2025-11-21 14:41:21] [BOT] 2025-11-21 14:41:21,322 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:41:21] [BOT] 2025-11-21 14:41:21,322 - ERROR - Failed to connect to MT5
+[2025-11-21 14:41:31] [BOT] 2025-11-21 14:41:31,332 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:41:31] [BOT] 2025-11-21 14:41:31,334 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:41:31] [BOT] 2025-11-21 14:41:31,335 - INFO -
+[2025-11-21 14:41:31] [BOT] ================================================================================
+[2025-11-21 14:41:31] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:41:31] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:41:31] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:41:31] [BOT] ================================================================================
+[2025-11-21 14:41:31] [BOT] 2025-11-21 14:41:31,340 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:41:31] [BOT] 2025-11-21 14:41:31,340 - ERROR - Failed to connect to MT5
+[2025-11-21 14:41:41] [BOT] 2025-11-21 14:41:41,346 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:41:41] [BOT] 2025-11-21 14:41:41,349 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:41:41] [BOT] 2025-11-21 14:41:41,350 - INFO -
+[2025-11-21 14:41:41] [BOT] ================================================================================
+[2025-11-21 14:41:41] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:41:41] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:41:41] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:41:41] [BOT] ================================================================================
+[2025-11-21 14:41:41] [BOT] 2025-11-21 14:41:41,355 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:41:41] [BOT] 2025-11-21 14:41:41,355 - ERROR - Failed to connect to MT5
+[2025-11-21 14:41:51] [BOT] 2025-11-21 14:41:51,371 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:41:51] [BOT] 2025-11-21 14:41:51,373 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:41:51] [BOT] 2025-11-21 14:41:51,374 - INFO -
+[2025-11-21 14:41:51] [BOT] ================================================================================
+[2025-11-21 14:41:51] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:41:51] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:41:51] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:41:51] [BOT] ================================================================================
+[2025-11-21 14:41:51] [BOT] 2025-11-21 14:41:51,379 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:41:51] [BOT] 2025-11-21 14:41:51,381 - ERROR - Failed to connect to MT5
+[2025-11-21 14:42:01] [BOT] 2025-11-21 14:42:01,391 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:42:01] [BOT] 2025-11-21 14:42:01,394 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:42:01] [BOT] 2025-11-21 14:42:01,394 - INFO -
+[2025-11-21 14:42:01] [BOT] ================================================================================
+[2025-11-21 14:42:01] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:42:01] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:42:01] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:42:01] [BOT] ================================================================================
+[2025-11-21 14:42:01] [BOT] 2025-11-21 14:42:01,401 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:42:01] [BOT] 2025-11-21 14:42:01,401 - ERROR - Failed to connect to MT5
+[2025-11-21 14:42:11] [BOT] 2025-11-21 14:42:11,405 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:42:11] [BOT] 2025-11-21 14:42:11,408 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:42:11] [BOT] 2025-11-21 14:42:11,409 - INFO -
+[2025-11-21 14:42:11] [BOT] ================================================================================
+[2025-11-21 14:42:11] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:42:11] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:42:11] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:42:11] [BOT] ================================================================================
+[2025-11-21 14:42:11] [BOT] 2025-11-21 14:42:11,420 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:42:11] [BOT] 2025-11-21 14:42:11,420 - ERROR - Failed to connect to MT5
+[2025-11-21 14:42:21] [BOT] 2025-11-21 14:42:21,425 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:42:21] [BOT] 2025-11-21 14:42:21,430 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:42:21] [BOT] 2025-11-21 14:42:21,431 - INFO -
+[2025-11-21 14:42:21] [BOT] ================================================================================
+[2025-11-21 14:42:21] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:42:21] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:42:21] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:42:21] [BOT] ================================================================================
+[2025-11-21 14:42:21] [BOT] 2025-11-21 14:42:21,436 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:42:21] [BOT] 2025-11-21 14:42:21,437 - ERROR - Failed to connect to MT5
+[2025-11-21 14:42:31] [BOT] 2025-11-21 14:42:31,452 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:42:31] [BOT] 2025-11-21 14:42:31,455 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:42:31] [BOT] 2025-11-21 14:42:31,456 - INFO -
+[2025-11-21 14:42:31] [BOT] ================================================================================
+[2025-11-21 14:42:31] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:42:31] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:42:31] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:42:31] [BOT] ================================================================================
+[2025-11-21 14:42:31] [BOT] 2025-11-21 14:42:31,460 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:42:31] [BOT] 2025-11-21 14:42:31,461 - ERROR - Failed to connect to MT5
+[2025-11-21 14:42:41] [BOT] 2025-11-21 14:42:41,470 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:42:41] [BOT] 2025-11-21 14:42:41,473 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:42:41] [BOT] 2025-11-21 14:42:41,473 - INFO -
+[2025-11-21 14:42:41] [BOT] ================================================================================
+[2025-11-21 14:42:41] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:42:41] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:42:41] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:42:41] [BOT] ================================================================================
+[2025-11-21 14:42:41] [BOT] 2025-11-21 14:42:41,476 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:42:41] [BOT] 2025-11-21 14:42:41,476 - ERROR - Failed to connect to MT5
+[2025-11-21 14:42:51] [BOT] 2025-11-21 14:42:51,482 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:42:51] [BOT] 2025-11-21 14:42:51,484 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:42:51] [BOT] 2025-11-21 14:42:51,485 - INFO -
+[2025-11-21 14:42:51] [BOT] ================================================================================
+[2025-11-21 14:42:51] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:42:51] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:42:51] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:42:51] [BOT] ================================================================================
+[2025-11-21 14:42:51] [BOT] 2025-11-21 14:42:51,493 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:42:51] [BOT] 2025-11-21 14:42:51,493 - ERROR - Failed to connect to MT5
+[2025-11-21 14:43:01] [BOT] 2025-11-21 14:43:01,500 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:43:01] [BOT] 2025-11-21 14:43:01,502 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:43:01] [BOT] 2025-11-21 14:43:01,503 - INFO -
+[2025-11-21 14:43:01] [BOT] ================================================================================
+[2025-11-21 14:43:01] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:43:01] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:43:01] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:43:01] [BOT] ================================================================================
+[2025-11-21 14:43:01] [BOT] 2025-11-21 14:43:01,508 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:43:01] [BOT] 2025-11-21 14:43:01,509 - ERROR - Failed to connect to MT5
+[2025-11-21 14:43:11] [BOT] 2025-11-21 14:43:11,515 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:43:11] [BOT] 2025-11-21 14:43:11,517 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:43:11] [BOT] 2025-11-21 14:43:11,517 - INFO -
+[2025-11-21 14:43:11] [BOT] ================================================================================
+[2025-11-21 14:43:11] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:43:11] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:43:11] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:43:11] [BOT] ================================================================================
+[2025-11-21 14:43:11] [BOT] 2025-11-21 14:43:11,533 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:43:11] [BOT] 2025-11-21 14:43:11,533 - ERROR - Failed to connect to MT5
+[2025-11-21 14:43:21] [BOT] 2025-11-21 14:43:21,547 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:43:21] [BOT] 2025-11-21 14:43:21,550 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:43:21] [BOT] 2025-11-21 14:43:21,550 - INFO -
+[2025-11-21 14:43:21] [BOT] ================================================================================
+[2025-11-21 14:43:21] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:43:21] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:43:21] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:43:21] [BOT] ================================================================================
+[2025-11-21 14:43:21] [BOT] 2025-11-21 14:43:21,565 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:43:21] [BOT] 2025-11-21 14:43:21,566 - ERROR - Failed to connect to MT5
+[2025-11-21 14:43:31] [BOT] 2025-11-21 14:43:31,571 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:43:31] [BOT] 2025-11-21 14:43:31,575 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:43:31] [BOT] 2025-11-21 14:43:31,575 - INFO -
+[2025-11-21 14:43:31] [BOT] ================================================================================
+[2025-11-21 14:43:31] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:43:31] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:43:31] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:43:31] [BOT] ================================================================================
+[2025-11-21 14:43:31] [BOT] 2025-11-21 14:43:31,577 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:43:31] [BOT] 2025-11-21 14:43:31,578 - ERROR - Failed to connect to MT5
+[2025-11-21 14:43:41] [BOT] 2025-11-21 14:43:41,596 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:43:41] [BOT] 2025-11-21 14:43:41,599 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:43:41] [BOT] 2025-11-21 14:43:41,599 - INFO -
+[2025-11-21 14:43:41] [BOT] ================================================================================
+[2025-11-21 14:43:41] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:43:41] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:43:41] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:43:41] [BOT] ================================================================================
+[2025-11-21 14:43:41] [BOT] 2025-11-21 14:43:41,607 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:43:41] [BOT] 2025-11-21 14:43:41,608 - ERROR - Failed to connect to MT5
+[2025-11-21 14:43:51] [BOT] 2025-11-21 14:43:51,625 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:43:51] [BOT] 2025-11-21 14:43:51,628 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:43:51] [BOT] 2025-11-21 14:43:51,628 - INFO -
+[2025-11-21 14:43:51] [BOT] ================================================================================
+[2025-11-21 14:43:51] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:43:51] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:43:51] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:43:51] [BOT] ================================================================================
+[2025-11-21 14:43:51] [BOT] 2025-11-21 14:43:51,634 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:43:51] [BOT] 2025-11-21 14:43:51,635 - ERROR - Failed to connect to MT5
+[2025-11-21 14:44:01] [BOT] 2025-11-21 14:44:01,645 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:44:01] [BOT] 2025-11-21 14:44:01,652 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:44:01] [BOT] 2025-11-21 14:44:01,653 - INFO -
+[2025-11-21 14:44:01] [BOT] ================================================================================
+[2025-11-21 14:44:01] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:44:01] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:44:01] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:44:01] [BOT] ================================================================================
+[2025-11-21 14:44:01] [BOT] 2025-11-21 14:44:01,667 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:44:01] [BOT] 2025-11-21 14:44:01,668 - ERROR - Failed to connect to MT5
+[2025-11-21 14:44:11] [BOT] 2025-11-21 14:44:11,684 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:44:11] [BOT] 2025-11-21 14:44:11,688 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:44:11] [BOT] 2025-11-21 14:44:11,688 - INFO -
+[2025-11-21 14:44:11] [BOT] ================================================================================
+[2025-11-21 14:44:11] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:44:11] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:44:11] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:44:11] [BOT] ================================================================================
+[2025-11-21 14:44:11] [BOT] 2025-11-21 14:44:11,701 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:44:11] [BOT] 2025-11-21 14:44:11,701 - ERROR - Failed to connect to MT5
+[2025-11-21 14:44:21] [BOT] 2025-11-21 14:44:21,717 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:44:21] [BOT] 2025-11-21 14:44:21,720 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:44:21] [BOT] 2025-11-21 14:44:21,720 - INFO -
+[2025-11-21 14:44:21] [BOT] ================================================================================
+[2025-11-21 14:44:21] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:44:21] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:44:21] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:44:21] [BOT] ================================================================================
+[2025-11-21 14:44:21] [BOT] 2025-11-21 14:44:21,723 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:44:21] [BOT] 2025-11-21 14:44:21,724 - ERROR - Failed to connect to MT5
+[2025-11-21 14:44:31] [BOT] 2025-11-21 14:44:31,765 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:44:31] [BOT] 2025-11-21 14:44:31,773 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:44:31] [BOT] 2025-11-21 14:44:31,774 - INFO -
+[2025-11-21 14:44:31] [BOT] ================================================================================
+[2025-11-21 14:44:31] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:44:31] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:44:31] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:44:31] [BOT] ================================================================================
+[2025-11-21 14:44:31] [BOT] 2025-11-21 14:44:31,783 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:44:31] [BOT] 2025-11-21 14:44:31,783 - ERROR - Failed to connect to MT5
+[2025-11-21 14:44:41] [BOT] 2025-11-21 14:44:41,787 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:44:41] [BOT] 2025-11-21 14:44:41,790 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:44:41] [BOT] 2025-11-21 14:44:41,791 - INFO -
+[2025-11-21 14:44:41] [BOT] ================================================================================
+[2025-11-21 14:44:41] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:44:41] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:44:41] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:44:41] [BOT] ================================================================================
+[2025-11-21 14:44:41] [BOT] 2025-11-21 14:44:41,797 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:44:41] [BOT] 2025-11-21 14:44:41,797 - ERROR - Failed to connect to MT5
+[2025-11-21 14:44:51] [BOT] 2025-11-21 14:44:51,808 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:44:51] [BOT] 2025-11-21 14:44:51,811 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:44:51] [BOT] 2025-11-21 14:44:51,811 - INFO -
+[2025-11-21 14:44:51] [BOT] ================================================================================
+[2025-11-21 14:44:51] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:44:51] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:44:51] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:44:51] [BOT] ================================================================================
+[2025-11-21 14:44:51] [BOT] 2025-11-21 14:44:51,814 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:44:51] [BOT] 2025-11-21 14:44:51,815 - ERROR - Failed to connect to MT5
+[2025-11-21 14:45:01] [BOT] 2025-11-21 14:45:01,830 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:45:01] [BOT] 2025-11-21 14:45:01,832 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:45:01] [BOT] 2025-11-21 14:45:01,839 - INFO -
+[2025-11-21 14:45:01] [BOT] ================================================================================
+[2025-11-21 14:45:01] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:45:01] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:45:01] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:45:01] [BOT] ================================================================================
+[2025-11-21 14:45:01] [BOT] 2025-11-21 14:45:01,848 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:45:01] [BOT] 2025-11-21 14:45:01,849 - ERROR - Failed to connect to MT5
+[2025-11-21 14:45:11] [BOT] 2025-11-21 14:45:11,854 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:45:11] [BOT] 2025-11-21 14:45:11,857 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:45:11] [BOT] 2025-11-21 14:45:11,857 - INFO -
+[2025-11-21 14:45:11] [BOT] ================================================================================
+[2025-11-21 14:45:11] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:45:11] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:45:11] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:45:11] [BOT] ================================================================================
+[2025-11-21 14:45:11] [BOT] 2025-11-21 14:45:11,860 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:45:11] [BOT] 2025-11-21 14:45:11,860 - ERROR - Failed to connect to MT5
+[2025-11-21 14:45:21] [BOT] 2025-11-21 14:45:21,878 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:45:21] [BOT] 2025-11-21 14:45:21,882 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:45:21] [BOT] 2025-11-21 14:45:21,882 - INFO -
+[2025-11-21 14:45:21] [BOT] ================================================================================
+[2025-11-21 14:45:21] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:45:21] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:45:21] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:45:21] [BOT] ================================================================================
+[2025-11-21 14:45:21] [BOT] 2025-11-21 14:45:21,904 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:45:21] [BOT] 2025-11-21 14:45:21,905 - ERROR - Failed to connect to MT5
+[2025-11-21 14:45:31] [BOT] 2025-11-21 14:45:31,918 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:45:31] [BOT] 2025-11-21 14:45:31,923 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:45:31] [BOT] 2025-11-21 14:45:31,923 - INFO -
+[2025-11-21 14:45:31] [BOT] ================================================================================
+[2025-11-21 14:45:31] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:45:31] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:45:31] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:45:31] [BOT] ================================================================================
+[2025-11-21 14:45:31] [BOT] 2025-11-21 14:45:31,937 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:45:31] [BOT] 2025-11-21 14:45:31,937 - ERROR - Failed to connect to MT5
+[2025-11-21 14:45:41] [BOT] 2025-11-21 14:45:41,946 - INFO - Configuration loaded from C:\Users\Sal\Desktop\Eden\infrastructure\config.yaml
+[2025-11-21 14:45:41] [BOT] 2025-11-21 14:45:41,949 - INFO - Exit Logic v2 enabled: Adaptive holds, trailing stops, dynamic TP
+[2025-11-21 14:45:41] [BOT] 2025-11-21 14:45:41,950 - INFO -
+[2025-11-21 14:45:41] [BOT] ================================================================================
+[2025-11-21 14:45:41] [BOT] Eden v1.0.0 - MA(3,10) Strategy | M5 Timeframe
+[2025-11-21 14:45:41] [BOT] HOLD=5 bars | Symbols=6
+[2025-11-21 14:45:41] [BOT] Risk Cap: None% | Max Positions: 10
+[2025-11-21 14:45:41] [BOT] ================================================================================
+[2025-11-21 14:45:41] [BOT] 2025-11-21 14:45:41,965 - ERROR - MT5 initialization failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found')
+[2025-11-21 14:45:41] [BOT] 2025-11-21 14:45:41,966 - ERROR - Failed to connect to MT5

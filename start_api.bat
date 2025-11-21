@@ -1,3 +1,3 @@
 @echo off
-cd /d C:\Users\Administrator\Eden\infrastructure
+cd /d "%~dp0infrastructure"
 call start_api.bat

@@ -31,8 +31,6 @@ from app.models import (
 )
 from app.db_models import (
     Trade as TradeDB, 
-    Position as PositionDB,
-    PerformanceSnapshot
 )
 from app.notifications import NotificationService
 

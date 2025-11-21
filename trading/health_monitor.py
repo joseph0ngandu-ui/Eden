@@ -109,8 +109,9 @@ class HealthMonitor:
             True if MT5 is connected, False otherwise
         """
         try:
-            if mt5.last_error()[0] == 0:
-                # API is responsive
+            # Check if terminal info can be retrieved
+            info = mt5.terminal_info()
+            if info is not None:
                 self.mt5_connected = True
                 return True
         except Exception:

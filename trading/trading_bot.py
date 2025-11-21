@@ -206,13 +206,15 @@ class TradingBot:
         default MetaTrader5 discovery so we don't get spurious 'x64 not found' errors.
         """
         # Prefer explicit path if provided
-        mt5_path = os.getenv("MT5_PATH", r"C:\\Program Files\\MetaTrader 5 Terminal\\terminal64.exe")
+        mt5_path = os.getenv("MT5_PATH", r"C:\Program Files\MetaTrader 5 Terminal\terminal64.exe")
         initialized = False
 
         # Try with explicit path first
         try:
+            logger.info(f"Attempting to connect to MT5 at: {mt5_path}")
             initialized = mt5.initialize(path=mt5_path)
-        except Exception:
+        except Exception as e:
+            logger.error(f"Explicit path initialization failed: {e}")
             initialized = False
 
         # Fallback to default discovery if needed

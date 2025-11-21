@@ -19,14 +19,14 @@ class APIService: ObservableObject {
         learningRate: Double = 0.001
     ) async throws {
         let endpoint = "/ml/train"
-        let body = TrainingRequest(
-            symbol: symbol,
-            model_type: modelType.lowercased(),
-            data_length: dataLength,
-            epochs: epochs,
-            batch_size: 32,
-            learning_rate: learningRate
-        )
+        let body: [String: Any] = [
+            "symbol": symbol,
+            "model_type": modelType.lowercased(),
+            "data_length": dataLength,
+            "epochs": epochs,
+            "batch_size": 32,
+            "learning_rate": learningRate,
+        ]
 
         guard let url = URL(string: baseURL + endpoint) else {
             throw APIError.invalidURL

@@ -103,6 +103,21 @@
 
 ---
 
+## Strategy Management Endpoints
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/strategies` | List all strategies | Yes |
+| POST | `/strategies` | Upload new strategy | Yes |
+| GET | `/strategies/validated` | List validated strategies | Yes |
+| GET | `/strategies/active` | List active strategies | Yes |
+| PUT | `/strategies/{id}/activate` | Activate a strategy | Yes |
+| PUT | `/strategies/{id}/deactivate` | Deactivate a strategy | Yes |
+| PUT | `/strategies/{id}/promote` | Promote strategy to LIVE mode | Yes |
+| PATCH | `/strategies/{id}/policy` | Update strategy policy | Yes |
+
+---
+
 ## System Endpoints
 
 | Method | Endpoint | Description | Auth Required |

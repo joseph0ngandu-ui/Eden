@@ -4,7 +4,7 @@ Pydantic models for Eden Trading Bot API
 """
 
 from datetime import datetime, date
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 from pydantic import BaseModel, Field, EmailStr
 from enum import Enum
 
@@ -191,6 +191,17 @@ class StrategyConfig(BaseSchema):
     ]
     
     description: Optional[str] = "MOST PROFITABLE: UltraSmall Mode V75 - 172.5% return, Grid-search optimized"
+
+class StrategyItem(BaseSchema):
+    """Strategy item model for list endpoints."""
+    id: str
+    name: str
+    type: str
+    is_active: bool = False
+    is_validated: bool = False
+    parameters: Dict[str, Any] = Field(default_factory=dict)
+    performance: Dict[str, Any] = Field(default_factory=dict)
+
 
 # ============================================================================
 # RISK MANAGEMENT MODELS

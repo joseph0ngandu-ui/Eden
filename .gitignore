@@ -100,3 +100,14 @@ EdenIOSApp/**/DerivedData/
 
 # Temp
 openapi.json
+
+# Log files
+*.log
+
+# Debug/output text files
+bot_*.txt
+*_output.txt
+*_debug.txt
+
+# API logs
+backend/api.log

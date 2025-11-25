@@ -15,44 +15,6 @@ import pandas as pd
 import numpy as np
 import logging
 from dataclasses import dataclass
-from typing import Dict, List, Optional, Tuple
-from pathlib import Path
-
-logger = logging.getLogger("Eden.VolatilityBurst")
-
-
-@dataclass
-class Trade:
-    """Trade signal object."""
-    symbol: str
-    direction: str  # "LONG" or "SHORT"
-    entry_price: float
-    tp: float
-    sl: float
-    confidence: float
-    atr: float
-    entry_time: pd.Timestamp
-    bar_index: int
-
-
-@dataclass
-class Position:
-    """Open position tracking."""
-    symbol: str
-    direction: str
-    entry_price: float
-    tp: float
-    sl: float
-    entry_bar_index: int
-    entry_time: pd.Timestamp
-    atr: float
-    confidence: float
-    stop_moved: bool = False
-
-
-class VolatilityBurst:
-    """
-    Enhanced Volatility Burst v1.3 Strategy
     
     Detects squeeze conditions using Bollinger Bands inside Keltner Channels,
     then trades breakouts with confidence-based filtering and ATR-based exits.
@@ -394,77 +356,6 @@ class VolatilityBurst:
             trades.append(Trade(
                 symbol=sym,
                 direction=dirn,
-                entry_price=entry,
-                tp=float(tp),
-                sl=float(sl),
-                confidence=float(confidence.iloc[idx]),
-                atr=atr_val,
-                entry_time=row['time'] if 'time' in df.columns else pd.Timestamp.now(),
-                bar_index=int(idx)
-            ))
-        
-        return trades
-
-    def evaluate_live(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
-        """
-        Evaluate live data for entry signal.
-        Used in live trading mode.
-        """
-        # Check daily trade limit
-        if self.daily_trades.get(symbol, 0) >= self.max_trades_per_day:
-            return None
-        
-        # Check if position already open
-        if symbol in self.open_positions:
-            return None
-        
-        # Generate signals and return the latest one
-        df.attrs['symbol'] = symbol
-        signals = self.generate_signals(df)
-        
-        if signals:
-            trade = signals[-1]  # Take the most recent signal
-            
-            # Register the trade
-            self.daily_trades[symbol] = self.daily_trades.get(symbol, 0) + 1
-            
-            # Create position tracking
-            position = Position(
-                symbol=symbol,
-                direction=trade.direction,
-                entry_price=trade.entry_price,
-                tp=trade.tp,
-                sl=trade.sl,
-                entry_bar_index=trade.bar_index,
-                entry_time=trade.entry_time,
-                atr=trade.atr,
-                confidence=trade.confidence
-            )
-            self.open_positions[symbol] = position
-            
-            return trade
-        
-        return None
-    
-    def on_trade_open(self, trade: Trade):
-        """Register an opened trade (used by backtests or live)."""
-        self.daily_trades[trade.symbol] = self.daily_trades.get(trade.symbol, 0) + 1
-        self.open_positions[trade.symbol] = Position(
-            symbol=trade.symbol,
-            direction=trade.direction,
-            entry_price=trade.entry_price,
-            tp=trade.tp,
-            sl=trade.sl,
-            entry_bar_index=trade.bar_index,
-            entry_time=trade.entry_time,
-            atr=trade.atr,
-            confidence=trade.confidence
-        )
-        logger.info(f"{trade.symbol} Trade opened: {trade.direction} @ {trade.entry_price:.2f} | TP {trade.tp:.2f} | SL {trade.sl:.2f}")
-
-    def manage_position(self, df: pd.DataFrame, symbol: str) -> List[Dict]:
-        """
-        Manage open position for given symbol.
         Returns list of actions to take.
         """
         if symbol not in self.open_positions:

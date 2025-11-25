@@ -4,26 +4,35 @@ Strategies API Router
 """
 
 from fastapi import APIRouter, HTTPException, Body
-from typing import Dict, Any
+from typing import Dict, Any, List
 from pathlib import Path
 import json
 from datetime import datetime
+from app.models import StrategyItem
 
 router = APIRouter(prefix="/strategies", tags=["strategies"])
 
-DATA_DIR = (Path(__file__).resolve().parents[1] / 'data')
+DATA_DIR = (Path(__file__).resolve().parents[3] / 'data')
 DATA_DIR.mkdir(exist_ok=True)
 STRATEGIES_FILE = DATA_DIR / 'strategies.json'
 VALIDATED_FILE = DATA_DIR / 'validated_strategies.json'
 
 
 def _load_json(path: Path) -> Dict:
+    print(f"DEBUG: Loading JSON from {path}")
+    print(f"DEBUG: Path exists? {path.exists()}")
+    print(f"DEBUG: Absolute path: {path.absolute()}")
     if path.exists():
         try:
-            return json.load(open(path, 'r'))
-        except Exception:
-            return {}
-    return {}
+            with open(path, 'r') as f:
+                data = json.load(f)
+                print(f"DEBUG: Loaded {len(data)} items")
+                return data
+        except Exception as e:
+            print(f"DEBUG: Error loading JSON: {e}")
+            return {"error": str(e), "path": str(path)}
+    print("DEBUG: Path does not exist")
+    return {"error": "Path does not exist", "path": str(path)}
 
 
 def _save_json(path: Path, data: Dict):
@@ -51,20 +60,49 @@ async def upload_strategy(strategy: Dict[str, Any] = Body(...)):
     return {"status": "success", "message": "Strategy uploaded", "id": strategy_id}
 
 
-@router.get("")
+@router.get("", response_model=List[StrategyItem])
 async def list_strategies():
-    return _load_json(STRATEGIES_FILE)
+    data = _load_json(STRATEGIES_FILE)
+    if not data or "error" in data:
+        return []
+    
+    strategies = []
+    for s_id, s_data in data.items():
+        # Ensure ID is present
+        if "id" not in s_data:
+            s_data["id"] = s_id
+            
+        strategies.append(s_data)
+    return strategies
 
 
-@router.get("/validated")
+@router.get("/validated", response_model=List[StrategyItem])
 async def list_validated_strategies():
-    return _load_json(VALIDATED_FILE)
+    data = _load_json(VALIDATED_FILE)
+    if not data or "error" in data:
+        return []
+        
+    strategies = []
+    for s_id, s_data in data.items():
+        if "id" not in s_data:
+            s_data["id"] = s_id
+        strategies.append(s_data)
+    return strategies
 
 
-@router.get("/active")
+@router.get("/active", response_model=List[StrategyItem])
 async def list_active_strategies():
     all_strats = _load_json(STRATEGIES_FILE)
-    return {k: v for k, v in all_strats.items() if v.get('is_active')}
+    if not all_strats or "error" in all_strats:
+        return []
+        
+    strategies = []
+    for s_id, s_data in all_strats.items():
+        if s_data.get('is_active'):
+            if "id" not in s_data:
+                s_data["id"] = s_id
+            strategies.append(s_data)
+    return strategies
 
 
 @router.put("/{strategy_id}/activate")

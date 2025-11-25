@@ -14,13 +14,12 @@ from pathlib import Path
 # Ensure trading modules are importable when running as a script
 import sys
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-TRADING_DIR = PROJECT_ROOT / 'trading'
-if str(TRADING_DIR) not in sys.path:
-    sys.path.insert(0, str(TRADING_DIR))
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-from trading_bot import TradingBot
+from trading.trading_bot import TradingBot
 
-DATA_DIR = Path(__file__).resolve().parent / 'data'
+DATA_DIR = PROJECT_ROOT / 'data'
 STRATEGIES_FILE = DATA_DIR / 'strategies.json'
 
 

@@ -1,96 +1,215 @@
-# Eden Web Dashboard
+# Eden Trading Bot
 
-A web dashboard for Eden with full server connectivity. The app is a single-page application (SPA) that automatically detects your deployment environment and connects to your server or uses the included PHP proxy for InfinityFree hosting.
+A professional algorithmic trading system built with Python and MetaTrader 5, featuring advanced ICT (Inner Circle Trader) strategies, real-time market analysis, and autonomous optimization capabilities.
 
-## Structure
+## 🚀 Features
 
-- `index.html` — main SPA container
-- `assets/css/styles.css` — styles
-- `assets/js/storage.js` — token-based authentication storage
-- `assets/js/deploy-config.js` — automatic deployment detection
-- `assets/js/config.js` — server configuration (can override deploy-config)
-- `assets/js/api.js` — server-connected API layer
-- `assets/js/router.js` — tiny hash router
-- `assets/js/app.js` — views and event wiring
-- `api.php` — PHP proxy for InfinityFree deployment
+- **Advanced Trading Strategies**
+  - Volatility Burst v1.3 with enhanced entry/exit logic
+  - ICT 2023 Silver Bullet Strategy
+  - ICT 2024 Unicorn Model
+  - ICT 2025 Venom Strategy
+  
+- **Backend API (FastAPI)**
+  - RESTful API with comprehensive endpoints
+  - WebSocket support for real-time updates
+  - JWT authentication
+  - Systematic status monitoring
+  
+- **Autonomous Optimization**
+  - Real-time parameter tuning
+  - Performance-based adjustments
+  - Risk management optimization
+  
+- **Professional Infrastructure**
+  - Health monitoring and watchdog systems
+  - Comprehensive logging and error tracking
+  - Trade journaling and performance analytics
+  - SSL/HTTPS support
 
-## Run locally
+## 📋 Prerequisites
 
-Just open `index.html` in a browser, or use a static server:
+- Python 3.10+
+- MetaTrader 5 terminal
+- Windows OS (for MT5 integration)
+- Active MT5 account (demo or live)
 
+## 🛠️ Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/Eden.git
+   cd Eden
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configure environment**
+   - Copy `.env.example` to `.env`
+   - Update with your MT5 credentials and settings
+   ```env
+   MT5_LOGIN=your_account
+   MT5_PASSWORD=your_password
+   MT5_SERVER=your_broker_server
+   ```
+
+4. **Configure strategies**
+   - Edit `data/strategies.json` to enable/configure strategies
+   - Adjust risk parameters in `config/risk_config.json`
+
+## 🎯 Quick Start
+
+### Start the Backend API
 ```bash
-# Python
-python -m http.server 8080
-# or Node
-npx serve .
+cd backend
+python main.py
+```
+The API will be available at `https://localhost:8443`
+
+### Run the Trading Bot
+```bash
+python infrastructure/bot_runner.py
 ```
 
-## Server Integration
-
-Your server needs to expose the following REST endpoints:
-
-```
-POST /auth/login      - Login with email/password
-POST /auth/logout     - Logout
-GET  /tasks          - List tasks
-POST /tasks          - Create task
-PUT  /tasks/:id      - Update task
-DELETE /tasks/:id    - Delete task
-GET  /notifications  - List notifications
-PUT  /notifications/:id - Mark notification as read
-GET  /messages       - List messages
-POST /messages       - Send message
-GET  /insights       - Get analytics data
-GET  /settings       - Get user settings
-PUT  /settings       - Update settings
+### Complete System Restart
+```powershell
+.\restart_all.ps1
 ```
 
-Your server should return JSON responses with this structure:
+## 📁 Project Structure
 
+```
+Eden/
+├── backend/              # FastAPI backend server
+│   ├── app/             # API application
+│   │   ├── routers/     # API endpoints
+│   │   ├── models.py    # Pydantic models
+│   │   └── ...
+│   └── main.py          # API entry point
+├── trading/             # Trading bot core
+│   ├── trading_bot.py   # Main bot logic
+│   ├── ict_strategies.py # ICT strategy implementations
+│   ├── volatility_burst_enhanced.py
+│   ├── models.py        # Shared trading models
+│   └── ...
+├── infrastructure/      # System infrastructure
+│   ├── bot_runner.py    # Bot execution wrapper
+│   └── ...
+├── config/              # Configuration files
+├── data/                # Strategy configs and data
+├── scripts/             # Utility scripts
+│   └── debug/          # Debug and verification tools
+├── tests/               # Unit and integration tests
+└── docs/                # Additional documentation
+```
+
+## 🔌 API Documentation
+
+See [API_ENDPOINTS.md](API_ENDPOINTS.md) for complete API documentation.
+
+Key endpoints:
+- `GET /health` - System health status
+- `GET /strategies` - List all strategies
+- `GET /trades` - Trade history
+- `GET /performance` - Performance metrics
+- `WebSocket /ws` - Real-time updates
+
+## 📊 Trading Strategies
+
+### Volatility Burst v1.3
+High-frequency strategy that identifies and exploits sudden volatility spikes with precise entry and exit logic.
+
+### ICT Silver Bullet (2023)
+Trades specific killzone timeframes (2-5 AM / 10-11 AM NY) targeting liquidity sweeps and fair value gaps.
+
+### ICT Unicorn Model (2024)
+Advanced pattern recognition for high-probability setups using orderblock validation and liquidity analysis.
+
+### ICT Venom (2025)
+Cutting-edge multi-timeframe strategy combining all ICT concepts for maximum accuracy.
+
+## 🔧 Configuration
+
+### Risk Management
+Edit `config/risk_config.json`:
 ```json
-// Login response
 {
-  "user": { "id": "...", "name": "...", "email": "..." },
-  "token": "jwt-token-here",
-  "refreshToken": "optional-refresh-token"
+  "max_risk_per_trade": 0.02,
+  "max_daily_drawdown": 0.05,
+  "position_sizing": "dynamic"
 }
-
-// Error responses
-{ "message": "Error description" }
 ```
 
-## Deploy to InfinityFree
+### Strategy Selection
+Edit `data/strategies.json` to enable/disable strategies:
+```json
+{
+  "strategies": [
+    {
+      "name": "Volatility Burst v1.3",
+      "enabled": true,
+      "version": "1.3.0"
+    }
+  ]
+}
+```
 
-1. Create a new site in InfinityFree and open the File Manager (or use FTP).
-2. Update the API endpoint in `assets/js/config.js`:
-   ```
-   API_URL: 'https://edenbot.duckdns.org:8443'  // Live Eden backend with Let's Encrypt
-   ```
-3. Upload the entire project folder contents to the document root (usually `htdocs/`).
-4. Ensure `index.html` and `api.php` are in the root of `htdocs/`.
-5. Visit your site URL and the dashboard should connect to your server.
+## 🧪 Testing
 
-The dashboard includes a PHP proxy (`api.php`) that handles CORS issues and forwards requests to your server. When deployed on InfinityFree, the configuration will automatically detect this and use the proxy.
-
-## Deploy to other hosting
-
-The codebase is compatible with any hosting that can serve static files. Simply update the `API_URL` in `assets/js/config.js` to point to your server and upload the files.
-
-## Git setup
-
+Run unit tests:
 ```bash
-git init
-git add .
-git commit -m "feat: Eden dashboard with server integration"
-# Create a new repo on your Git host and add it as origin:
-# git remote add origin https://github.com/your-username/eden-dashboard.git
-# git branch -M main
-# git push -u origin main
+pytest tests/
 ```
 
-## Notes
+Run specific strategy tests:
+```bash
+pytest tests/test_ict_strategies.py -v
+```
 
-- This project uses only vanilla HTML/CSS/JS for maximum compatibility with hosting platforms.
-- The dashboard automatically detects InfinityFree hosting and configures itself to use the PHP proxy.
-- Authentication tokens are stored in localStorage and automatically included in all API requests.
-- The PHP proxy will forward authentication headers and responses between the browser and your server.
+## 📈 Monitoring
+
+### Health Checks
+```bash
+python check_bot.ps1
+```
+
+### View Logs
+- Backend: `backend/api.log`
+- Trading: `logs/trading_*.log`
+- System: `watchdog.log`
+
+### Performance Reports
+Generated in `reports/` directory with CSV and JSON formats.
+
+## 🔐 Security
+
+- JWT-based authentication for API access
+- Environment variables for sensitive data
+- SSL/HTTPS encryption for all communications
+- No hardcoded credentials
+
+## 📝 License
+
+This project is proprietary software. All rights reserved.
+
+## 🤝 Contributing
+
+This is a private trading system. Contact the repository owner for collaboration inquiries.
+
+## ⚠️ Disclaimer
+
+Trading forex and CFDs involves significant risk. This software is provided for educational and research purposes. Always test strategies in a demo environment before live trading. Past performance does not guarantee future results.
+
+## 📞 Support
+
+For questions or issues:
+- Check [QUICKSTART.md](QUICKSTART.md) for setup help
+- Review [API_ENDPOINTS.md](API_ENDPOINTS.md) for API details
+- See [STRUCTURE.md](STRUCTURE.md) for architecture overview
+
+---
+
+**Built with ❤️ for algorithmic trading excellence**

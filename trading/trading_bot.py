@@ -59,16 +59,19 @@ class TradingBot:
         self.config = ConfigLoader(config_path)
         risk_config = self.config.get_risk_management()
         
-        # Initialize Strategy
+        # Initialize Strategies
         from trading.volatility_burst_enhanced import VolatilityBurst
-        from trading.ict_strategies import ICTStrategyBot
+        from trading.pro_strategies import ProStrategyEngine
         
         self.strategies = []
+        
+        # Strategy 1: Volatility Burst (VIX-specific)
         self.volatility_burst = VolatilityBurst(config_path="config/volatility_burst.yml")
         self.strategies.append(self.volatility_burst)
         
-        self.ict_bot = ICTStrategyBot()
-        self.strategies.append(self.ict_bot)
+        # Strategy 2: Pro Multi-Strategy Engine (Prop Firm Certified)
+        self.pro_strategies = ProStrategyEngine()
+        self.strategies.append(self.pro_strategies)
         
         # Initialize components
         self.symbols = symbols or self.config.get_trading_symbols()
@@ -92,8 +95,8 @@ class TradingBot:
         # Risk Manager (Daily Loss Limit)
         self.risk_manager = RiskManager(
             max_position_size=risk_config.get('max_position_size', 1.0),
-            max_concurrent_positions=risk_config.get('max_positions', 5),
-            max_daily_loss_percent=risk_config.get('max_daily_loss_percent', 2.0) # Default 2%
+            max_concurrent_positions=risk_config.get('max_positions', 7),
+            max_daily_loss_percent=risk_config.get('max_daily_loss_percent', 2.0)
         )
         
         # External order bridge
@@ -107,8 +110,9 @@ class TradingBot:
     def _log_startup_banner(self) -> None:
         """Log startup banner."""
         banner = f"\n{'='*80}\n"
-        banner += f"Eden Live Bot - Multi-Strategy (VB v1.3 + ICT)\n"
+        banner += f"Eden Live Bot - Hybrid Aggressive (Pro + VIX)\n"
         banner += f"Symbols={len(self.symbols)} | Shadow Mode={self.shadow_mode}\n"
+        banner += f"Max Positions=7 | Risk=0.15% | Target=16% monthly\n"
         banner += f"{'='*80}\n"
         logger.info(banner)
     
@@ -227,8 +231,6 @@ class TradingBot:
             
             if trade_signal.strategy == "VolatilityBurst":
                 self.volatility_burst.on_trade_open(trade_signal)
-            elif trade_signal.strategy.startswith("ICT"):
-                self.ict_bot.on_trade_open(trade_signal)
             elif trade_signal.strategy.startswith("Pro_"):
                 self.pro_strategies.on_trade_open(trade_signal)
             

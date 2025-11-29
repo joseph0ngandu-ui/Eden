@@ -4,27 +4,6 @@ Volatility Burst v1.3 Strategy - Enhanced Version
 
 Core Principle: Detect low-volatility squeeze zones (BB inside KC) and trade the momentum
 breakout with ATR-based exits and confidence scoring.
-
-Squeeze Detection: Bollinger Bands inside Keltner Channels
-Breakout Signal: Price closes outside Bollinger Bands with high confidence
-Risk Management: ATR-based TP/SL with trailing stops and time-based exits
-"""
-
-import yaml
-import pandas as pd
-import numpy as np
-import logging
-from dataclasses import dataclass
-    
-    Detects squeeze conditions using Bollinger Bands inside Keltner Channels,
-    then trades breakouts with confidence-based filtering and ATR-based exits.
-    """
-    
-    def __init__(self, config_path: str = None):
-        """Initialize strategy with configuration."""
-        self.config_path = config_path or "config/volatility_burst.yml"
-        self.config = self._load_config()
-        self.open_positions: Dict[str, Position] = {}
         self.daily_trades: Dict[str, int] = {}
         self.bars_since_open = 0
         
@@ -348,21 +327,6 @@ from dataclasses import dataclass
                 continue
             entry = float(row['close'])
             if dirn == 'LONG':
-                tp = entry + (atr_val * self.tp_atr_mult)
-                sl = entry - (atr_val * self.sl_atr_mult)
-            else:
-                tp = entry - (atr_val * self.tp_atr_mult)
-                sl = entry + (atr_val * self.sl_atr_mult)
-            trades.append(Trade(
-                symbol=sym,
-                direction=dirn,
-        Returns list of actions to take.
-        """
-        if symbol not in self.open_positions:
-            return []
-        
-        actions = []
-        pos = self.open_positions[symbol]
         current_idx = len(df) - 1
         current_bar = df.iloc[-1]
         

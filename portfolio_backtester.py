@@ -315,6 +315,35 @@ def run_portfolio_simulation(data_map: Dict[str, pd.DataFrame]) -> Dict:
         'initial_equity': initial_equity
     }
 
+def run_monte_carlo(trades: List[Dict], iterations: int = 1000) -> Dict:
+    """Run Monte Carlo simulation on trade sequence."""
+    pnls = [t['pnl_dollars'] for t in trades]
+    max_drawdowns = []
+    
+    import random
+    
+    for _ in range(iterations):
+        shuffled = pnls.copy()
+        random.shuffle(shuffled)
+        equity = 100000
+        peak = 100000
+        max_dd = 0
+        
+        for pnl in shuffled:
+            equity += pnl
+            if equity > peak: peak = equity
+            dd = (peak - equity) / peak * 100
+            max_dd = max(max_dd, dd)
+            
+        max_drawdowns.append(max_dd)
+        
+    max_drawdowns.sort()
+    return {
+        'median_dd': max_drawdowns[int(iterations * 0.5)],
+        '95_percentile_dd': max_drawdowns[int(iterations * 0.95)],
+        'worst_case_dd': max_drawdowns[-1]
+    }
+
 def analyze_results(results: Dict):
     trades = results['trades']
     if not trades:
@@ -326,7 +355,7 @@ def analyze_results(results: Dict):
     df_trades.set_index('time', inplace=True)
     
     # Monthly stats
-    monthly = df_trades.resample('M')['pnl_dollars'].sum()
+    monthly = df_trades.resample('ME')['pnl_dollars'].sum()
     monthly_pct = (monthly / 100000) * 100
     
     print("\n" + "="*60)
@@ -337,14 +366,12 @@ def analyze_results(results: Dict):
     print(f"Total Return: {((results['final_equity'] - 100000)/100000)*100:.2f}%")
     
     # Drawdown
-    # Reconstruct equity curve
-    equity_curve = [100000]
     running_equity = 100000
     peak = 100000
     max_dd = 0
     
     for t in trades:
-        running_equity = t['equity'] # This is already cumulative in the list
+        running_equity = t['equity']
         if running_equity > peak:
             peak = running_equity
         dd = (peak - running_equity) / peak * 100
@@ -355,6 +382,36 @@ def analyze_results(results: Dict):
     print("\nMONTHLY BREAKDOWN:")
     for date, val in monthly_pct.items():
         print(f"{date.strftime('%Y-%m')}: {val:>6.2f}%")
+        
+    # --- STRESS TESTS ---
+    print("\n" + "="*60)
+    print("STRESS TEST RESULTS")
+    print("="*60)
+    
+    # 1. Monte Carlo
+    print("\n[1] Monte Carlo Simulation (1000 runs):")
+    mc = run_monte_carlo(trades)
+    print(f"  Median MaxDD: {mc['median_dd']:.2f}%")
+    print(f"  95% Confidence MaxDD: {mc['95_percentile_dd']:.2f}%")
+    print(f"  Worst Case MaxDD: {mc['worst_case_dd']:.2f}%")
+    
+    # 2. Slippage Stress Test
+    slippage_cost = 15.0
+    adjusted_equity = 100000
+    adj_peak = 100000
+    adj_max_dd = 0
+    
+    for t in trades:
+        pnl = t['pnl_dollars'] - slippage_cost
+        adjusted_equity += pnl
+        if adjusted_equity > adj_peak: adj_peak = adjusted_equity
+        dd = (adj_peak - adjusted_equity) / adj_peak * 100
+        adj_max_dd = max(adj_max_dd, dd)
+        
+    print(f"\n[2] Slippage Stress Test (~2.0 pips / $15 per trade):")
+    print(f"  Adjusted Return: {((adjusted_equity - 100000)/100000)*100:.2f}%")
+    print(f"  Adjusted MaxDD: {adj_max_dd:.2f}%")
+    print(f"  Still Profitable: {'YES' if adjusted_equity > 100000 else 'NO'}")
 
 if __name__ == "__main__":
     symbols = ["EURUSD", "GBPUSD", "USDJPY", "AUDJPY", "XAUUSD"]

@@ -1,0 +1,11 @@
+{
+  "performance": {
+    "total_trades": 1583,
+    "win_rate": 34.933670246367654,
+    "total_return_pct": 15.824596732698875,
+    "monthly_return_avg": 5.274865577566292,
+    "max_dd_pct": 92.34040981162302,
+    "final_equity": 115824.59673269888
+  },
+  "trades": 1583
+}

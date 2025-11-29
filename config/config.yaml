@@ -6,12 +6,12 @@ trading:
   - Vol100
   - VIX 100
   lot_size: 0.01
-  max_positions: 3
-  max_daily_trades: 10
+  max_positions: 5
+  max_daily_trades: 50
   stop_loss_pips: 50
   take_profit_pips: 100
-  max_drawdown_percent: 5
-  risk_per_trade_percent: 1
+  max_drawdown_percent: 8
+  risk_per_trade_percent: 0.15
   trading_hours:
     start: 07:00
     end: '21:00'

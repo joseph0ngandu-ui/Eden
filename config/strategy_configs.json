@@ -9,7 +9,10 @@
       "allocation_percent": 70,
       "priority": 1,
       "max_daily_trades": 50,
-      "trade_tags": ["momentum_breakout", "trend_follow"],
+      "trade_tags": [
+        "momentum_breakout",
+        "trend_follow"
+      ],
       "performance_metrics": {
         "historical_sharpe": 0.92,
         "historical_win_rate": 63.78,
@@ -18,7 +21,7 @@
       }
     },
     "momentum_M5": {
-      "name": "momentum", 
+      "name": "momentum",
       "timeframe": "M5",
       "min_confidence": 0.7,
       "stop_atr_multiplier": 1.6,
@@ -26,7 +29,10 @@
       "allocation_percent": 30,
       "priority": 2,
       "max_daily_trades": 5,
-      "trade_tags": ["momentum_surge", "breakout_confirm"],
+      "trade_tags": [
+        "momentum_surge",
+        "breakout_confirm"
+      ],
       "performance_metrics": {
         "historical_sharpe": 2.08,
         "historical_win_rate": 30.77,
@@ -38,7 +44,7 @@
   "fallback_strategies": {
     "ml_generated_M5": {
       "name": "ml_generated",
-      "timeframe": "M5", 
+      "timeframe": "M5",
       "min_confidence": 0.65,
       "stop_atr_multiplier": 1.4,
       "tp_atr_multiplier": 1.8,
@@ -56,12 +62,12 @@
     }
   },
   "risk_rules": {
-    "max_concurrent_trades": 10,
+    "max_concurrent_trades": 5,
     "max_correlation_exposure": 0.7,
-    "daily_loss_limit_percent": 5.0,
-    "weekly_loss_limit_percent": 15.0,
-    "monthly_loss_limit_percent": 35.0,
-    "emergency_stop_percent": 50.0,
+    "daily_loss_limit_percent": 2.0,
+    "weekly_loss_limit_percent": 5.0,
+    "monthly_loss_limit_percent": 10.0,
+    "emergency_stop_percent": 20.0,
     "rebalance_frequency_days": 7
   },
   "execution_rules": {

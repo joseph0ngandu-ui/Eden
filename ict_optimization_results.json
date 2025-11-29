@@ -1,0 +1,80 @@
+{
+  "SilverBullet_EURUSD": {
+    "params": {
+      "rr_ratio": 2.0
+    },
+    "sharpe": -0.5537889039086578,
+    "sortino": -1.2193802426558202,
+    "calmar": -0.3370960486323125,
+    "max_dd_pct": 0.9848825026193537,
+    "win_rate": 36.77685950413223,
+    "profit_factor": 0.911466666666651,
+    "total_trades": 242,
+    "total_pnl": -0.0033200000000006558
+  },
+  "Unicorn_EURUSD": {
+    "params": {
+      "rr_ratio": 3.5
+    },
+    "sharpe": -0.26228736928974933,
+    "sortino": -0.5911517123973429,
+    "calmar": -0.5722620088883389,
+    "max_dd_pct": 1.120116292962488,
+    "win_rate": 28.01857585139319,
+    "profit_factor": 0.9416211293260991,
+    "total_trades": 646,
+    "total_pnl": -0.006409999999994254
+  },
+  "SilverBullet_GBPUSD": {
+    "params": {
+      "rr_ratio": 3.5
+    },
+    "sharpe": 1.0419077888840347,
+    "sortino": 3.0168202445235797,
+    "calmar": 1.6239533980581915,
+    "max_dd_pct": 0.5655950479232363,
+    "win_rate": 30.434782608695656,
+    "profit_factor": 1.2005458515283356,
+    "total_trades": 230,
+    "total_pnl": 0.009184999999997334
+  },
+  "Unicorn_GBPUSD": {
+    "params": {
+      "rr_ratio": 3.0
+    },
+    "sharpe": 0.7250244270273757,
+    "sortino": 1.6867698349459257,
+    "calmar": 1.956755443851726,
+    "max_dd_pct": 0.9132464691054994,
+    "win_rate": 34.06940063091483,
+    "profit_factor": 1.1646245969599747,
+    "total_trades": 634,
+    "total_pnl": 0.017870000000004715
+  },
+  "SilverBullet_USDJPY": {
+    "params": {
+      "rr_ratio": 2.5
+    },
+    "sharpe": 0.9536048939699442,
+    "sortino": 2.6240099059287054,
+    "calmar": 1.7872309027779145,
+    "max_dd_pct": 25.37444933920319,
+    "win_rate": 36.607142857142854,
+    "profit_factor": 1.1051228558182598,
+    "total_trades": 224,
+    "total_pnl": 0.4534999999999627
+  },
+  "Unicorn_USDJPY": {
+    "params": {
+      "rr_ratio": 3.0
+    },
+    "sharpe": 0.9921057220058215,
+    "sortino": 2.5470670486253577,
+    "calmar": 4.130829971179857,
+    "max_dd_pct": 54.516889238026586,
+    "win_rate": 33.7442218798151,
+    "profit_factor": 1.1598410107175277,
+    "total_trades": 649,
+    "total_pnl": 2.2519999999993274
+  }
+}

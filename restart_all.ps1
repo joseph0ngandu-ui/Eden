@@ -10,12 +10,12 @@ Start-Sleep -Seconds 2
 
 # Step 2: Start Backend
 Write-Host "Step 2: Starting backend..."
-$backendArgs = '/k "cd /d c:\Users\Administrator\Desktop\Eden\backend && python -m uvicorn main:app --host 0.0.0.0 --port 8443 --ssl-keyfile ssl/key.pem --ssl-certfile ssl/cert.pem"'
+$backendArgs = '/k "cd /d c:\Users\opc\Desktop\Eden\backend && "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\python.exe" -m uvicorn main:app --host 127.0.0.1 --port 8443"'
 Start-Process -FilePath "cmd.exe" -ArgumentList $backendArgs -WindowStyle Minimized
 
 # Step 3: Start Bot
 Write-Host "Step 3: Starting bot..."
-$botArgs = '/k "cd /d c:\Users\Administrator\Desktop\Eden && python watchdog.py"'
+$botArgs = '/k "cd /d c:\Users\opc\Desktop\Eden && "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\python.exe" watchdog.py"'
 Start-Process -FilePath "cmd.exe" -ArgumentList $botArgs -WindowStyle Minimized
 
 # Step 4: Wait
@@ -24,8 +24,8 @@ Start-Sleep -Seconds 15
 
 # Step 5: Verify
 Write-Host "Step 5: Running verification..."
-Set-Location "c:\Users\Administrator\Desktop\Eden"
-python verify_api_contract.py
+Set-Location "c:\Users\opc\Desktop\Eden"
+& "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\python.exe" verify_api_contract.py
 
 Write-Host "================================================================================"
 Write-Host "Restart Sequence Complete"

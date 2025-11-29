@@ -89,6 +89,13 @@ class TradingBot:
             health_check_callback=self._on_health_change
         )
         
+        # Risk Manager (Daily Loss Limit)
+        self.risk_manager = RiskManager(
+            max_position_size=risk_config.get('max_position_size', 1.0),
+            max_concurrent_positions=risk_config.get('max_positions', 5),
+            max_daily_loss_percent=risk_config.get('max_daily_loss_percent', 2.0) # Default 2%
+        )
+        
         # External order bridge
         self.order_queue_path = Path(__file__).resolve().parent.parent / 'logs' / 'order_queue.jsonl'
         
@@ -152,6 +159,11 @@ class TradingBot:
     def place_order(self, trade_signal) -> bool:
         """Place order based on Trade object."""
         try:
+            # Check Daily Loss Limit
+            if self.risk_manager.is_daily_loss_limit_reached(self.initial_balance):
+                logger.warning(f"SKIPPING TRADE: Daily loss limit reached ({self.risk_manager.daily_pnl:.2f})")
+                return False
+
             symbol = trade_signal.symbol
             volume = 0.01 # Fixed for now, or use dynamic sizing
             
@@ -217,6 +229,8 @@ class TradingBot:
                 self.volatility_burst.on_trade_open(trade_signal)
             elif trade_signal.strategy.startswith("ICT"):
                 self.ict_bot.on_trade_open(trade_signal)
+            elif trade_signal.strategy.startswith("Pro_"):
+                self.pro_strategies.on_trade_open(trade_signal)
             
             # Log to journal
             self.trade_journal.add_trade(
@@ -274,6 +288,17 @@ class TradingBot:
         result = mt5.order_send(req)
         if result.retcode == mt5.TRADE_RETCODE_DONE:
             logger.info(f"Closed {symbol}: {reason}")
+            
+            # Calculate realized PnL (approximate)
+            # In production, fetch actual deal profit from history
+            try:
+                deal_profit = result.profit if hasattr(result, 'profit') else 0.0
+                # Fallback: Estimate based on price diff if profit not returned immediately
+                # For now, we rely on history or balance update in next cycle
+                pass
+            except:
+                pass
+                
             return True
         return False
 

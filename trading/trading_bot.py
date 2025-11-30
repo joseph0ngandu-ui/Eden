@@ -60,18 +60,18 @@ class TradingBot:
         risk_config = self.config.get_risk_management()
         
         # Initialize Strategies
-        from trading.volatility_burst_enhanced import VolatilityBurst
         from trading.pro_strategies import ProStrategyEngine
         
         self.strategies = []
         
-        # Strategy 1: Volatility Burst (VIX-specific)
-        self.volatility_burst = VolatilityBurst(config_path="config/volatility_burst.yml")
-        self.strategies.append(self.volatility_burst)
-        
-        # Strategy 2: Pro Multi-Strategy Engine (Prop Firm Certified)
+        # Strategy 1: Pro Multi-Strategy Engine (Prop Firm Certified)
         self.pro_strategies = ProStrategyEngine()
         self.strategies.append(self.pro_strategies)
+        
+        # Strategy 2: Gold Strategy (Side Quest)
+        from trading.gold_strategy import GoldMomentumStrategy
+        self.gold_strategy = GoldMomentumStrategy()
+        self.strategies.append(self.gold_strategy)
         
         # Initialize components
         self.symbols = symbols or self.config.get_trading_symbols()
@@ -110,9 +110,9 @@ class TradingBot:
     def _log_startup_banner(self) -> None:
         """Log startup banner."""
         banner = f"\n{'='*80}\n"
-        banner += f"Eden Live Bot - Hybrid Aggressive (Pro + VIX)\n"
+        banner += f"Eden Live Bot - Hybrid Aggressive + Gold Quest\n"
         banner += f"Symbols={len(self.symbols)} | Shadow Mode={self.shadow_mode}\n"
-        banner += f"Max Positions=7 | Risk=0.15% | Target=16% monthly\n"
+        banner += f"Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)\n"
         banner += f"{'='*80}\n"
         logger.info(banner)
     

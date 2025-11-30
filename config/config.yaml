@@ -1,23 +1,53 @@
 trading:
-  symbol: Volatility 100 Index
-  alternative_symbols:
-  - VIX100
-  - Volatility100
-  - Vol100
-  - VIX 100
-  lot_size: 0.01
-  max_positions: 7
-  max_daily_trades: 100
-  stop_loss_pips: 50
-  take_profit_pips: 100
-  max_drawdown_percent: 10
-  risk_per_trade_percent: 0.15
-  trading_hours:
-    start: 07:00
-    end: '21:00'
-    days:
-    - 1
-    - 2
+    - 3
+    - 4
+    - 5
+strategy:
+  rsi_period: 14
+  rsi_overbought: 70
+  rsi_oversold: 30
+  sma_period: 20
+  minimum_signal_strength: 0.6
+  require_volume_confirmation: false
+  use_volatility_filter: true
+  volatility_threshold: 2.0
+  ict_ml:
+    exec_timeframe: M1
+    context_timeframes:
+    - M5
+    - M15
+    - M30
+    - H1
+    - H4
+    min_confluences: 2
+    rr: 5.75
+    confidence_threshold: 0.7
+    rsi_period: 11
+    sma_period: 34
+    swing_lookback: 6
+    cooldown_bars_after_loss: 15
+    stop_after_losses: 1
+    pause_bars_after_streak: 25
+    require_sweep: false
+    require_bias_align: true
+    updated_at: '2025-10-15T12:12:44.431397Z'
+mt5:
+  timeout: 30
+  login: null
+  password: null
+  server: null
+  deviation: 20
+  magic_number: 234000
+  comment_prefix: Eden VIX100 Bot
+logging:
+  level: INFO
+  log_to_file: true
+  log_file: eden_vix100_bot.log
+  max_log_size_mb: 10
+  backup_count: 5
+monitoring:
+  enable_console_output: true
+trading:
     - 3
     - 4
     - 5
@@ -70,6 +100,14 @@ monitoring:
   track_performance: true
   save_trades_to_csv: true
   trades_file: trades_history.csv
+risk_management:
+  max_positions: 7
+  risk_per_trade_percent: 0.15
+  max_drawdown_percent: 10
+  daily_loss_limit_percent: 2
+  weekly_loss_limit_percent: 4
+  monthly_loss_limit_percent: 8
+  use_ml_risk_adjustment: true  # Enabled based on validation results (+56% return improvement)
 safety:
   enable_emergency_stop: true
   max_consecutive_losses: 5

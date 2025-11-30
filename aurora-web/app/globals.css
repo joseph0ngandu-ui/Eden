@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Performance optimizations for 120fps */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: hsl(222, 47%, 11%);
+  color: hsl(213, 31%, 91%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  overscroll-behavior: none;
+}
+
+/* Use CSS containment for performance */
+.card {
+  contain: layout style paint;
+}
+
+/* Hardware-accelerated transforms */
+.animate-smooth {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(217, 33%, 17%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(217, 28%, 30%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(217, 28%, 40%);
+}

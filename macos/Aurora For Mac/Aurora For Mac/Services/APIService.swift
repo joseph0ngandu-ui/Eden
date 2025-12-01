@@ -139,6 +139,42 @@ class APIService: ObservableObject {
             throw APIError.uploadFailed
         }
     }
+    
+    // MARK: - Generic Request Method
+    
+    func performRequest(
+        endpoint: String,
+        method: String,
+        body: Data? = nil
+    ) async throws -> Data {
+        guard let url = URL(string: "\(baseURL)\(endpoint)") else {
+            throw APIError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = method
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let token = authToken {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        if let body = body {
+            request.httpBody = body
+        }
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+        
+        guard (200...299).contains(httpResponse.statusCode) else {
+            throw APIError.requestFailed
+        }
+        
+        return data
+    }
 
     // MARK: - Supporting Types
 

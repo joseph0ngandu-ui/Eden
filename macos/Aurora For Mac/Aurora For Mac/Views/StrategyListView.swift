@@ -34,13 +34,22 @@ struct StrategyListView: View {
             }
             .padding()
 
+            // Filter Tabs
+            Picker("Filter", selection: $viewModel.filterMode) {
+                ForEach(StrategyViewModel.FilterMode.allCases, id: \.self) { mode in
+                    Text(mode.rawValue).tag(mode)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding(.horizontal)
+
             Divider()
 
             // Content
             if viewModel.isLoading {
                 ProgressView("Loading strategies...")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-            } else if viewModel.strategies.isEmpty {
+            } else if viewModel.filteredStrategies.isEmpty {
                 ContentUnavailableView {
                     Label("No Strategies", systemImage: "chart.line.uptrend.xyaxis")
                 } description: {
@@ -48,8 +57,8 @@ struct StrategyListView: View {
                 }
             } else {
                 List(selection: $selectedStrategy) {
-                    ForEach(viewModel.strategies) { strategy in
-                        StrategyRow(strategy: strategy)
+                    ForEach(viewModel.filteredStrategies) { strategy in
+                        StrategyRow(strategy: strategy, viewModel: viewModel)
                             .tag(strategy)
                             .contextMenu {
                                 Button("Edit") {
@@ -61,6 +70,30 @@ struct StrategyListView: View {
                                     let duplicate = strategy.duplicated()
                                     editingStrategy = duplicate
                                     showingEditor = true
+                                }
+                                
+                                Divider()
+                                
+                                if strategy.isActive {
+                                    Button("Deactivate") {
+                                        Task {
+                                            await viewModel.deactivateStrategy(strategy)
+                                        }
+                                    }
+                                } else {
+                                    Button("Activate") {
+                                        Task {
+                                            await viewModel.activateStrategy(strategy)
+                                        }
+                                    }
+                                }
+                                
+                                if strategy.mode == "PAPER" && strategy.validated == true {
+                                    Button("Promote to LIVE") {
+                                        Task {
+                                            await viewModel.promoteStrategy(strategy)
+                                        }
+                                    }
                                 }
 
                                 Divider()
@@ -109,17 +142,43 @@ struct StrategyListView: View {
 
 struct StrategyRow: View {
     let strategy: Strategy
+    let viewModel: StrategyViewModel
+    @State private var showPromoteConfirmation = false
 
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                Text(strategy.name)
-                    .font(.headline)
+                HStack {
+                    Text(strategy.name)
+                        .font(.headline)
+                    
+                    // Status Badge
+                    if let mode = strategy.mode {
+                        Text(mode)
+                            .font(.caption2)
+                            .fontWeight(.semibold)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(
+                                mode == "LIVE" ? Color.green.opacity(0.2) : Color.orange.opacity(0.2)
+                            )
+                            .foregroundColor(mode == "LIVE" ? .green : .orange)
+                            .cornerRadius(4)
+                    }
+                    
+                    // Validated Badge
+                    if strategy.validated == true {
+                        Image(systemName: "checkmark.seal.fill")
+                            .foregroundColor(.blue)
+                            .font(.caption)
+                    }
+                }
 
                 if let description = strategy.description {
                     Text(description)
                         .font(.caption)
                         .foregroundColor(.secondary)
+                        .lineLimit(2)
                 }
 
                 HStack(spacing: 12) {
@@ -135,26 +194,57 @@ struct StrategyRow: View {
 
             Spacer()
 
-            VStack(alignment: .trailing, spacing: 4) {
+            VStack(alignment: .trailing, spacing: 8) {
+                // Active Status
                 if strategy.isActive {
                     Label("Active", systemImage: "checkmark.circle.fill")
                         .font(.caption)
                         .foregroundColor(.green)
                 }
-
-                if let mode = strategy.mode {
-                    Text(mode)
-                        .font(.caption2)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 2)
-                        .background(
-                            mode == "LIVE" ? Color.green.opacity(0.2) : Color.orange.opacity(0.2)
-                        )
-                        .cornerRadius(4)
+                
+                // Action Buttons
+                HStack(spacing: 8) {
+                    // Activate/Deactivate Button
+                    Button {
+                        Task {
+                            if strategy.isActive {
+                                await viewModel.deactivateStrategy(strategy)
+                            } else {
+                                await viewModel.activateStrategy(strategy)
+                            }
+                        }
+                    } label: {
+                        Image(systemImage: strategy.isActive ? "pause.circle" : "play.circle")
+                            .foregroundColor(strategy.isActive ? .orange : .green)
+                    }
+                    .buttonStyle(.plain)
+                    .help(strategy.isActive ? "Deactivate" : "Activate")
+                    
+                    // Promote to LIVE Button
+                    if strategy.mode == "PAPER" && strategy.validated == true {
+                        Button {
+                            showPromoteConfirmation = true
+                        } label: {
+                            Image(systemImage: "arrow.up.circle.fill")
+                                .foregroundColor(.blue)
+                        }
+                        .buttonStyle(.plain)
+                        .help("Promote to LIVE")
+                    }
                 }
             }
         }
         .padding(.vertical, 4)
+        .alert("Promote to LIVE?", isPresented: $showPromoteConfirmation) {
+            Button("Cancel", role: .cancel) {}
+            Button("Promote", role: .destructive) {
+                Task {
+                    await viewModel.promoteStrategy(strategy)
+                }
+            }
+        } message: {
+            Text("This will promote '\(strategy.name)' from PAPER to LIVE trading mode. Real money will be at risk. Are you sure?")
+        }
     }
 }
 

@@ -98,7 +98,42 @@ class StrategyService: ObservableObject {
             endpoint: "/strategies/\(id)/policy", method: "PATCH", body: data)
         try await fetchStrategies()
     }
+    
+    // MARK: - Filtered Strategies
+    
+    func getActiveStrategies() async throws -> [Strategy] {
+        let data = try await apiService.performRequest(endpoint: "/strategies/active", method: "GET")
+        let strategyDict = try JSONDecoder.iso8601.decode([String: Strategy].self, from: data)
+        return Array(strategyDict.values).sorted { $0.displayName < $1.displayName }
+    }
+    
+    func getValidatedStrategies() async throws -> [Strategy] {
+        let data = try await apiService.performRequest(endpoint: "/strategies/validated", method: "GET")
+        let strategyDict = try JSONDecoder.iso8601.decode([String: Strategy].self, from: data)
+        return Array(strategyDict.values).sorted { $0.displayName < $1.displayName }
+    }
+    
+    // MARK: - Configuration Management
+    
+    func getStrategyConfig() async throws -> StrategyConfig {
+        let data = try await apiService.performRequest(endpoint: "/strategy/config", method: "GET")
+        return try JSONDecoder.iso8601.decode(StrategyConfig.self, from: data)
+    }
+    
+    func updateStrategyConfig(_ config: StrategyConfig) async throws {
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(config)
+        _ = try await apiService.performRequest(
+            endpoint: "/strategy/config", method: "POST", body: data)
+    }
+    
+    func getTradableSymbols() async throws -> [String] {
+        let data = try await apiService.performRequest(endpoint: "/strategy/symbols", method: "GET")
+        let response = try JSONDecoder().decode([String: [String]].self, from: data)
+        return response["symbols"] ?? []
+    }
 }
+
 
 // Extension for ISO8601 decoding
 extension JSONDecoder {

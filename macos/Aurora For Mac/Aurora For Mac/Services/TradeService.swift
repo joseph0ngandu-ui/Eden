@@ -164,15 +164,40 @@ class TradeService: ObservableObject {
         return String(data: data, encoding: .utf8) ?? ""
     }
 
-    // MARK: - Auto-refresh
+    // MARK: - Auto-refresh & Real-time Updates
 
     func startAutoRefresh(interval: TimeInterval = 3.0) {
-        Timer.publish(every: interval, on: .main, in: .common)
-            .autoconnect()
-            .sink { [weak self] _ in
+        // 1. Initial fetch
+        Task {
+            try? await getOpenPositions()
+            try? await getRecentTrades(limit: 10)
+        }
+
+        // 2. Subscribe to WebSocket updates
+        WebSocketService.shared.tradeUpdateSubject
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] trades in
+                // When we get a trade update, refresh positions and history
+                // Ideally the WS sends the full state, but if it sends just the new trade,
+                // we should append it or re-fetch to be safe.
+                // For now, let's trigger a refresh to ensure consistency.
                 Task {
                     try? await self?.getOpenPositions()
                     try? await self?.getRecentTrades(limit: 10)
+                }
+            }
+            .store(in: &cancellables)
+
+        // 3. Fallback polling (optional)
+        Timer.publish(every: interval, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in
+                // Only poll if WebSocket is disconnected
+                if !WebSocketService.shared.isTradesConnected {
+                    Task {
+                        try? await self?.getOpenPositions()
+                        try? await self?.getRecentTrades(limit: 10)
+                    }
                 }
             }
             .store(in: &cancellables)

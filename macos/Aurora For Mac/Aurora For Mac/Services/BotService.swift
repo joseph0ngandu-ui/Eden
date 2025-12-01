@@ -109,14 +109,31 @@ class BotService: ObservableObject {
         try await getBotStatus()
     }
 
-    // MARK: - Auto-refresh
+    // MARK: - Auto-refresh & Real-time Updates
 
     func startAutoRefresh(interval: TimeInterval = 5.0) {
+        // 1. Initial fetch
+        Task {
+            try? await getBotStatus()
+        }
+
+        // 2. Subscribe to WebSocket updates
+        WebSocketService.shared.botStatusSubject
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] status in
+                self?.botStatus = status
+            }
+            .store(in: &cancellables)
+
+        // 3. Fallback polling (optional, kept for robustness)
         Timer.publish(every: interval, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
-                Task {
-                    try? await self?.getBotStatus()
+                // Only poll if WebSocket is disconnected
+                if !WebSocketService.shared.isUpdatesConnected {
+                    Task {
+                        try? await self?.getBotStatus()
+                    }
                 }
             }
             .store(in: &cancellables)

@@ -8,8 +8,24 @@ class NotificationManager: ObservableObject {
 
     @Published var permissionGranted = false
 
+    private var cancellables = Set<AnyCancellable>()
+
     private init() {
         requestPermission()
+        setupSubscriptions()
+    }
+
+    private func setupSubscriptions() {
+        // Subscribe to trade updates
+        WebSocketService.shared.tradeUpdateSubject
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] trades in
+                // Notify for the most recent trade if it's new (simple logic for now)
+                if let latestTrade = trades.first {
+                    self?.sendTradeNotification(trade: latestTrade)
+                }
+            }
+            .store(in: &cancellables)
     }
 
     func requestPermission() {
@@ -25,8 +41,9 @@ class NotificationManager: ObservableObject {
         guard permissionGranted else { return }
 
         let content = UNMutableNotificationContent()
-        content.title = "New Trade Executed"
-        content.body = "\(trade.type.rawValue) \(trade.symbol) @ \(trade.price)"
+        content.title = "Trade Executed: \(trade.symbol)"
+        content.body =
+            "\(trade.side.rawValue) \(trade.type.rawValue) @ $\(String(format: "%.2f", trade.price))"
         content.sound = .default
 
         let request = UNNotificationRequest(

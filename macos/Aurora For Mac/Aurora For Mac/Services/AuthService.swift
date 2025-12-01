@@ -1,6 +1,6 @@
+import Combine
 import Foundation
 import Security
-import Combine
 
 @MainActor
 class AuthService: ObservableObject {
@@ -24,6 +24,9 @@ class AuthService: ObservableObject {
         await MainActor.run {
             self.isAuthenticated = true
             self.currentUser = email
+
+            // Connect WebSockets
+            WebSocketService.shared.connectAll()
         }
     }
 
@@ -31,11 +34,16 @@ class AuthService: ObservableObject {
         deleteFromKeychain()
         isAuthenticated = false
         currentUser = nil
+
+        // Disconnect WebSockets
+        WebSocketService.shared.disconnectAll()
     }
 
     private func checkAuthStatus() {
         if loadFromKeychain() != nil {
             isAuthenticated = true
+            // Connect WebSockets if already logged in
+            WebSocketService.shared.connectAll()
         }
     }
 

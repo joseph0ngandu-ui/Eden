@@ -42,8 +42,61 @@ class GoldMomentumStrategy:
         self.asian_low = None
         self.daily_trades = 0
         self.last_trade_day = None
-        
-    def generate_signal(self, df: pd.DataFrame) -> Optional[Dict]:
+        self.open_positions = {} # Fix: Add open_positions attribute
+
+    def manage_position(self, df: pd.DataFrame, symbol: str) -> List[Dict]:
+        """Manage open positions."""
+        if symbol not in self.open_positions:
+            return []
+            
+        actions = []
+        try:
+            pos = self.open_positions[symbol]
+            current_bar = df.iloc[-1]
+            
+            # Simple TP/SL check
+            if pos.direction == "LONG":
+                if current_bar['high'] >= pos.tp:
+                    actions.append({"action": "close", "symbol": symbol, "price": pos.tp, "reason": "tp_hit"})
+                    del self.open_positions[symbol]
+                elif current_bar['low'] <= pos.sl:
+                    actions.append({"action": "close", "symbol": symbol, "price": pos.sl, "reason": "sl_hit"})
+                    del self.open_positions[symbol]
+                    
+            elif pos.direction == "SHORT":
+                if current_bar['low'] <= pos.tp:
+                    actions.append({"action": "close", "symbol": symbol, "price": pos.tp, "reason": "tp_hit"})
+                    del self.open_positions[symbol]
+                elif current_bar['high'] >= pos.sl:
+                    actions.append({"action": "close", "symbol": symbol, "price": pos.sl, "reason": "sl_hit"})
+                    del self.open_positions[symbol]
+        except Exception as e:
+            logger.error(f"Error managing position for {symbol}: {e}")
+            
+        return actions
+
+    def on_trade_open(self, trade):
+        """Register new position."""
+        try:
+            # Create a simple position object if not imported
+            # Assuming trade object has necessary fields
+            from trading.models import Position
+            self.open_positions[trade.symbol] = Position(
+                symbol=trade.symbol,
+                direction=trade.direction,
+                entry_price=trade.entry_price,
+                tp=trade.tp,
+                sl=trade.sl,
+                entry_bar_index=trade.bar_index,
+                entry_time=trade.entry_time,
+                atr=trade.atr,
+                confidence=trade.confidence,
+                strategy=trade.strategy
+            )
+        except Exception as e:
+            logger.error(f"Error registering position for {trade.symbol}: {e}")
+
+    def evaluate_live(self, df: pd.DataFrame, symbol: str) -> Optional[Dict]:
         """
         Generate trade signal for the current bar.
         Expects df to have OHLCV data and 'time' index or column.

@@ -49,6 +49,9 @@ def main():
             bot.start(check_interval=300)
         except Exception as e:
             # Backoff and retry on failure
+            print(f"CRITICAL ERROR: {e}")
+            import traceback
+            traceback.print_exc()
             time.sleep(30)
         finally:
             # If bot exits (stop or error), sleep then re-evaluate gating and restart

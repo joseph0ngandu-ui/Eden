@@ -118,7 +118,7 @@ struct TradeHistoryView: View {
                 ScrollView {
                     LazyVStack(spacing: 12) {
                         ForEach(filteredTrades) { trade in
-                            TradeRow(trade: trade)
+                            TradeHistoryRow(trade: trade)
                         }
                     }
                     .padding()
@@ -132,6 +132,15 @@ struct TradeHistoryView: View {
             Button("OK", role: .cancel) {}
         } message: {
             Text(errorMessage)
+        }
+    }
+
+    private func loadPositions() async {
+        do {
+            try await tradeService.getOpenPositions()
+        } catch {
+            errorMessage = error.localizedDescription
+            showError = true
         }
     }
 
@@ -156,7 +165,7 @@ struct TradeHistoryView: View {
 
 // MARK: - Trade Row
 
-struct TradeRow: View {
+struct TradeHistoryRow: View {
     let trade: Trade
 
     var body: some View {

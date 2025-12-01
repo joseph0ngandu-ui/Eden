@@ -88,7 +88,7 @@ struct StrategyListView: View {
                                     }
                                 }
                                 
-                                if strategy.mode == "PAPER" && strategy.validated == true {
+                                if strategy.mode == .paper && strategy.validated == true {
                                     Button("Promote to LIVE") {
                                         Task {
                                             await viewModel.promoteStrategy(strategy)
@@ -153,18 +153,16 @@ struct StrategyRow: View {
                         .font(.headline)
                     
                     // Status Badge
-                    if let mode = strategy.mode {
-                        Text(mode)
-                            .font(.caption2)
-                            .fontWeight(.semibold)
-                            .padding(.horizontal, 6)
-                            .padding(.vertical, 2)
-                            .background(
-                                mode == "LIVE" ? Color.green.opacity(0.2) : Color.orange.opacity(0.2)
-                            )
-                            .foregroundColor(mode == "LIVE" ? .green : .orange)
-                            .cornerRadius(4)
-                    }
+                    Text(strategy.mode.rawValue)
+                        .font(.caption2)
+                        .fontWeight(.semibold)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(
+                            strategy.mode == .live ? Color.green.opacity(0.2) : Color.orange.opacity(0.2)
+                        )
+                        .foregroundColor(strategy.mode == .live ? .green : .orange)
+                        .cornerRadius(4)
                     
                     // Validated Badge
                     if strategy.validated == true {
@@ -182,10 +180,10 @@ struct StrategyRow: View {
                 }
 
                 HStack(spacing: 12) {
-                    Label(strategy.parameters.timeframe, systemImage: "clock")
-                    Label("\(strategy.parameters.maxPositions) pos", systemImage: "chart.bar")
+                    Label(strategy.parametersModel.timeframe, systemImage: "clock")
+                    Label("\(strategy.parametersModel.maxPositions) pos", systemImage: "chart.bar")
                     Label(
-                        "\(String(format: "%.1f%%", strategy.parameters.riskPerTrade))",
+                        "\(String(format: "%.1f%%", strategy.parametersModel.riskPerTrade))",
                         systemImage: "percent")
                 }
                 .font(.caption2)
@@ -221,7 +219,7 @@ struct StrategyRow: View {
                     .help(strategy.isActive ? "Deactivate" : "Activate")
                     
                     // Promote to LIVE Button
-                    if strategy.mode == "PAPER" && strategy.validated == true {
+                    if strategy.mode == .paper && strategy.validated == true {
                         Button {
                             showPromoteConfirmation = true
                         } label: {
@@ -253,4 +251,3 @@ struct StrategyRow: View {
         .environmentObject(StrategyViewModel())
         .frame(width: 800, height: 600)
 }
-

@@ -43,18 +43,16 @@ struct StrategyDetailView: View {
                                             .foregroundColor(.gray)
                                     }
                                     
-                                    if let mode = strategy.mode {
-                                        Text(mode)
-                                            .font(.caption)
-                                            .fontWeight(.semibold)
-                                            .padding(.horizontal, 8)
-                                            .padding(.vertical, 4)
-                                            .background(
-                                                mode == "LIVE" ? Color.green.opacity(0.2) : Color.orange.opacity(0.2)
-                                            )
-                                            .foregroundColor(mode == "LIVE" ? .green : .orange)
-                                            .cornerRadius(4)
-                                    }
+                                    Text(strategy.mode.rawValue)
+                                        .font(.caption)
+                                        .fontWeight(.semibold)
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 4)
+                                        .background(
+                                            strategy.mode == .live ? Color.green.opacity(0.2) : Color.orange.opacity(0.2)
+                                        )
+                                        .foregroundColor(strategy.mode == .live ? .green : .orange)
+                                        .cornerRadius(4)
                                     
                                     if strategy.validated == true {
                                         Image(systemName: "checkmark.seal.fill")
@@ -77,11 +75,11 @@ struct StrategyDetailView: View {
                     // MARK: - Parameters Section
                     GroupBox("Parameters") {
                         VStack(alignment: .leading, spacing: 12) {
-                            DetailRow(label: "Timeframe", value: strategy.parameters.timeframe)
-                            DetailRow(label: "Max Positions", value: "\(strategy.parameters.maxPositions)")
-                            DetailRow(label: "Risk per Trade", value: String(format: "%.1f%%", strategy.parameters.riskPerTrade))
-                            DetailRow(label: "Stop Loss", value: String(format: "%.1f%%", strategy.parameters.stopLossPercent))
-                            DetailRow(label: "Take Profit", value: String(format: "%.1f%%", strategy.parameters.takeProfitPercent))
+                            DetailRow(label: "Timeframe", value: strategy.parametersModel.timeframe)
+                            DetailRow(label: "Max Positions", value: "\(strategy.parametersModel.maxPositions)")
+                            DetailRow(label: "Risk per Trade", value: String(format: "%.1f%%", strategy.parametersModel.riskPerTrade))
+                            DetailRow(label: "Stop Loss", value: String(format: "%.1f%%", strategy.parametersModel.stopLossPercent))
+                            DetailRow(label: "Take Profit", value: String(format: "%.1f%%", strategy.parametersModel.takeProfitPercent))
                         }
                     }
                     
@@ -110,7 +108,7 @@ struct StrategyDetailView: View {
                                     Text("Max Positions:")
                                     Spacer()
                                     TextField("", value: Binding(
-                                        get: { policy.maxPositions ?? strategy.parameters.maxPositions },
+                                        get: { policy.maxPositions ?? strategy.parametersModel.maxPositions },
                                         set: { policy.maxPositions = $0 }
                                     ), format: .number)
                                     .frame(width: 80)
@@ -121,7 +119,7 @@ struct StrategyDetailView: View {
                                     Text("Risk per Trade:")
                                     Spacer()
                                     TextField("", value: Binding(
-                                        get: { policy.riskPerTrade ?? strategy.parameters.riskPerTrade },
+                                        get: { policy.riskPerTrade ?? strategy.parametersModel.riskPerTrade },
                                         set: { policy.riskPerTrade = $0 }
                                     ), format: .number)
                                     .frame(width: 80)
@@ -193,7 +191,7 @@ struct StrategyDetailView: View {
                             }
                             
                             // Promote to LIVE
-                            if strategy.mode == "PAPER" && strategy.validated == true {
+                            if strategy.mode == .paper && strategy.validated == true {
                                 Button {
                                     showPromoteConfirmation = true
                                 } label: {
@@ -285,11 +283,13 @@ struct DetailRow: View {
 #Preview {
     StrategyDetailView(
         strategy: Strategy(
+            id: UUID().uuidString,
             name: "Test Strategy",
             description: "A test strategy for preview",
             isActive: true,
-            mode: "PAPER",
-            validated: true
+            mode: .paper,
+            validated: true,
+            parametersModel: .default
         ),
         viewModel: StrategyViewModel()
     )

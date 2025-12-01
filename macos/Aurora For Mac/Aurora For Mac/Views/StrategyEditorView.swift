@@ -29,20 +29,20 @@ struct StrategyEditorView: View {
                     HStack {
                         Text("Risk per Trade")
                         Spacer()
-                        TextField("", value: $strategy.parameters.riskPerTrade, format: .number)
+                        TextField("", value: $strategy.parametersModel.riskPerTrade, format: .number)
                             .multilineTextAlignment(.trailing)
                             .frame(width: 100)
                         Text("%")
                     }
 
                     Stepper(
-                        "Max Positions: \(strategy.parameters.maxPositions)",
-                        value: $strategy.parameters.maxPositions, in: 1...10)
+                        "Max Positions: \(strategy.parametersModel.maxPositions)",
+                        value: $strategy.parametersModel.maxPositions, in: 1...10)
 
                     HStack {
                         Text("Stop Loss")
                         Spacer()
-                        TextField("", value: $strategy.parameters.stopLossPercent, format: .number)
+                        TextField("", value: $strategy.parametersModel.stopLossPercent, format: .number)
                             .multilineTextAlignment(.trailing)
                             .frame(width: 100)
                         Text("%")
@@ -52,14 +52,14 @@ struct StrategyEditorView: View {
                         Text("Take Profit")
                         Spacer()
                         TextField(
-                            "", value: $strategy.parameters.takeProfitPercent, format: .number
+                            "", value: $strategy.parametersModel.takeProfitPercent, format: .number
                         )
                         .multilineTextAlignment(.trailing)
                         .frame(width: 100)
                         Text("%")
                     }
 
-                    Picker("Timeframe", selection: $strategy.parameters.timeframe) {
+                    Picker("Timeframe", selection: $strategy.parametersModel.timeframe) {
                         Text("5 Minutes").tag("M5")
                         Text("15 Minutes").tag("M15")
                         Text("1 Hour").tag("H1")

@@ -51,7 +51,6 @@ struct PositionsView: View {
                     Spacer()
                 }
             } else {
-            } else {
                 List {
                     ForEach(tradeService.openPositions) { position in
                         PositionCard(position: position) {
@@ -69,7 +68,6 @@ struct PositionsView: View {
                     }
                 }
                 .listStyle(.inset)
-            }
             }
         }
         .task {

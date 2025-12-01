@@ -16,7 +16,7 @@ class WebSocketService: ObservableObject {
     private var tradesSocket: URLSessionWebSocketTask?
     private let apiService = APIService.shared
     
-    private var is intentionalDisconnect = false
+    private var isIntentionalDisconnect = false
     
     private init() {}
     
@@ -28,13 +28,13 @@ class WebSocketService: ObservableObject {
             return
         }
         
-        intentionalDisconnect = false
+        isIntentionalDisconnect = false
         connectUpdates(token: token)
         connectTrades(token: token)
     }
     
     func disconnectAll() {
-        intentionalDisconnect = true
+        isIntentionalDisconnect = true
         updatesSocket?.cancel(with: .goingAway, reason: nil)
         tradesSocket?.cancel(with: .goingAway, reason: nil)
         updatesSocket = nil
@@ -59,7 +59,7 @@ class WebSocketService: ObservableObject {
     
     private func listenForUpdates() {
         updatesSocket?.receive { [weak self] result in
-            guard let self = self, !self.is intentionalDisconnect else { return }
+            guard let self = self, !self.isIntentionalDisconnect else { return }
             
             switch result {
             case .success(let message):
@@ -93,7 +93,7 @@ class WebSocketService: ObservableObject {
     }
     
     private func reconnectUpdates() {
-        guard !intentionalDisconnect else { return }
+        guard !isIntentionalDisconnect else { return }
         DispatchQueue.global().asyncAfter(deadline: .now() + 3) { [weak self] in
             if let token = self?.apiService.authToken {
                 self?.connectUpdates(token: token)
@@ -117,7 +117,7 @@ class WebSocketService: ObservableObject {
     
     private func listenForTrades() {
         tradesSocket?.receive { [weak self] result in
-            guard let self = self, !self.is intentionalDisconnect else { return }
+            guard let self = self, !self.isIntentionalDisconnect else { return }
             
             switch result {
             case .success(let message):
@@ -152,7 +152,7 @@ class WebSocketService: ObservableObject {
     }
     
     private func reconnectTrades() {
-        guard !intentionalDisconnect else { return }
+        guard !isIntentionalDisconnect else { return }
         DispatchQueue.global().asyncAfter(deadline: .now() + 3) { [weak self] in
             if let token = self?.apiService.authToken {
                 self?.connectTrades(token: token)

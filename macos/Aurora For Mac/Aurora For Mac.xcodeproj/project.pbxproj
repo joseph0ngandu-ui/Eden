@@ -7,32 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A87F26D22ED0A80900346574 /* PositionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C02ED0A80900346574 /* PositionCard.swift */; };
-		A87F26D32ED0A80900346574 /* Aurora_For_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26CE2ED0A80900346574 /* Aurora_For_MacApp.swift */; };
-		A87F26D42ED0A80900346574 /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C12ED0A80900346574 /* StatCard.swift */; };
-		A87F26D52ED0A80900346574 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C52ED0A80900346574 /* ContentView.swift */; };
-		A87F26D62ED0A80900346574 /* Trade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B62ED0A80900346574 /* Trade.swift */; };
-		A87F26D72ED0A80900346574 /* StrategyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B02ED0A80900346574 /* StrategyViewModel.swift */; };
-		A87F26D82ED0A80900346574 /* MLTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C72ED0A80900346574 /* MLTrainingView.swift */; };
-		A87F26D92ED0A80900346574 /* BacktestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C42ED0A80900346574 /* BacktestView.swift */; };
-		A87F26DA2ED0A80900346574 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B92ED0A80900346574 /* AuthService.swift */; };
-		A87F26DB2ED0A80900346574 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26BD2ED0A80900346574 /* ErrorPresenter.swift */; };
-		A87F26DC2ED0A80900346574 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B52ED0A80900346574 /* Strategy.swift */; };
-		A87F26DD2ED0A80900346574 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B82ED0A80900346574 /* APIService.swift */; };
-		A87F26DE2ED0A80900346574 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C92ED0A80900346574 /* SettingsView.swift */; };
-		A87F26DF2ED0A80900346574 /* MLTrainingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B32ED0A80900346574 /* MLTrainingSession.swift */; };
-		A87F26E02ED0A80900346574 /* StrategyEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26CA2ED0A80900346574 /* StrategyEditorView.swift */; };
-		A87F26E12ED0A80900346574 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C82ED0A80900346574 /* MonitorView.swift */; };
-		A87F26E22ED0A80900346574 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26BB2ED0A80900346574 /* WebSocketService.swift */; };
-		A87F26E32ED0A80900346574 /* BacktestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B22ED0A80900346574 /* BacktestResult.swift */; };
-		A87F26E42ED0A80900346574 /* StrategyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26CB2ED0A80900346574 /* StrategyListView.swift */; };
-		A87F26E52ED0A80900346574 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B42ED0A80900346574 /* Position.swift */; };
-		A87F26E62ED0A80900346574 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26BA2ED0A80900346574 /* NotificationManager.swift */; };
-		A87F26E72ED0A80900346574 /* TradeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C22ED0A80900346574 /* TradeRow.swift */; };
-		A87F26E82ED0A80900346574 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C62ED0A80900346574 /* LoginView.swift */; };
-		A87F26E92ED0A80900346574 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A87F26D02ED0A80900346574 /* README.md */; };
-		A87F26EA2ED0A80900346574 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A87F26CF2ED0A80900346574 /* Info.plist */; };
-		A87F26EC2ED0A81500346574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87F26EB2ED0A81500346574 /* Assets.xcassets */; };
+		A8B0D3252EDE034E0003F8A1 /* StrategyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2FF2EDE034E0003F8A1 /* StrategyService.swift */; };
+		A8B0D3262EDE034E0003F8A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3112EDE034E0003F8A1 /* LoginView.swift */; };
+		A8B0D3272EDE034E0003F8A1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2FD2EDE034E0003F8A1 /* NotificationService.swift */; };
+		A8B0D3282EDE034E0003F8A1 /* SymbolManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D31B2EDE034E0003F8A1 /* SymbolManagementView.swift */; };
+		A8B0D3292EDE034E0003F8A1 /* StrategyEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3192EDE034E0003F8A1 /* StrategyEditorView.swift */; };
+		A8B0D32A2EDE034E0003F8A1 /* MT5AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3142EDE034E0003F8A1 /* MT5AccountsView.swift */; };
+		A8B0D32B2EDE034E0003F8A1 /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3092EDE034E0003F8A1 /* StatCard.swift */; };
+		A8B0D32C2EDE034E0003F8A1 /* MLTrainingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2F22EDE034E0003F8A1 /* MLTrainingSession.swift */; };
+		A8B0D32E2EDE034E0003F8A1 /* TradeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D30A2EDE034E0003F8A1 /* TradeRow.swift */; };
+		A8B0D32F2EDE034E0003F8A1 /* BacktestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2F02EDE034E0003F8A1 /* BacktestResult.swift */; };
+		A8B0D3302EDE034E0003F8A1 /* EditMT5AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3102EDE034E0003F8A1 /* EditMT5AccountView.swift */; };
+		A8B0D3312EDE034E0003F8A1 /* PerformanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2FE2EDE034E0003F8A1 /* PerformanceService.swift */; };
+		A8B0D3322EDE034E0003F8A1 /* PerformanceStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2F32EDE034E0003F8A1 /* PerformanceStats.swift */; };
+		A8B0D3332EDE034E0003F8A1 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3032EDE034E0003F8A1 /* ErrorPresenter.swift */; };
+		A8B0D3342EDE034E0003F8A1 /* AddMT5AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D30C2EDE034E0003F8A1 /* AddMT5AccountView.swift */; };
+		A8B0D3352EDE034E0003F8A1 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2F42EDE034E0003F8A1 /* Position.swift */; };
+		A8B0D3362EDE034E0003F8A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D30F2EDE034E0003F8A1 /* ContentView.swift */; };
+		A8B0D3372EDE034E0003F8A1 /* PositionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3082EDE034E0003F8A1 /* PositionCard.swift */; };
+		A8B0D3382EDE034E0003F8A1 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3012EDE034E0003F8A1 /* WebSocketService.swift */; };
+		A8B0D3392EDE034E0003F8A1 /* MT5AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3052EDE034E0003F8A1 /* MT5AccountViewModel.swift */; };
+		A8B0D33A2EDE034E0003F8A1 /* MT5AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2FB2EDE034E0003F8A1 /* MT5AccountService.swift */; };
+		A8B0D33B2EDE034E0003F8A1 /* PositionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3162EDE034E0003F8A1 /* PositionsView.swift */; };
+		A8B0D33C2EDE034E0003F8A1 /* PerformanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3152EDE034E0003F8A1 /* PerformanceView.swift */; };
+		A8B0D33D2EDE034E0003F8A1 /* TradeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3002EDE034E0003F8A1 /* TradeService.swift */; };
+		A8B0D33E2EDE034E0003F8A1 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D31C2EDE034E0003F8A1 /* TestingView.swift */; };
+		A8B0D33F2EDE034E0003F8A1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2F92EDE034E0003F8A1 /* AuthService.swift */; };
+		A8B0D3402EDE034E0003F8A1 /* BotControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D30E2EDE034E0003F8A1 /* BotControlView.swift */; };
+		A8B0D3412EDE034E0003F8A1 /* MLTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3122EDE034E0003F8A1 /* MLTrainingView.swift */; };
+		A8B0D3422EDE034E0003F8A1 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2F82EDE034E0003F8A1 /* APIService.swift */; };
+		A8B0D3432EDE034E0003F8A1 /* Trade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2F62EDE034E0003F8A1 /* Trade.swift */; };
+		A8B0D3442EDE034E0003F8A1 /* TradeHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D31D2EDE034E0003F8A1 /* TradeHistoryView.swift */; };
+		A8B0D3452EDE034E0003F8A1 /* BacktestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D30D2EDE034E0003F8A1 /* BacktestView.swift */; };
+		A8B0D3462EDE034E0003F8A1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3172EDE034E0003F8A1 /* SettingsView.swift */; };
+		A8B0D3472EDE034E0003F8A1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2FC2EDE034E0003F8A1 /* NotificationManager.swift */; };
+		A8B0D3482EDE034E0003F8A1 /* BotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2FA2EDE034E0003F8A1 /* BotService.swift */; };
+		A8B0D3492EDE034E0003F8A1 /* StrategyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D31A2EDE034E0003F8A1 /* StrategyListView.swift */; };
+		A8B0D34A2EDE034E0003F8A1 /* StrategyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3062EDE034E0003F8A1 /* StrategyViewModel.swift */; };
+		A8B0D34B2EDE034E0003F8A1 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2F52EDE034E0003F8A1 /* Strategy.swift */; };
+		A8B0D34C2EDE034E0003F8A1 /* BotStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D2F12EDE034E0003F8A1 /* BotStatus.swift */; };
+		A8B0D34D2EDE034E0003F8A1 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3132EDE034E0003F8A1 /* MonitorView.swift */; };
+		A8B0D34F2EDE034E0003F8A1 /* StrategyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3182EDE034E0003F8A1 /* StrategyDetailView.swift */; };
+		A8B0D3512EDE034E0003F8A1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A8B0D3232EDE034E0003F8A1 /* README.md */; };
+		A8B0D3532EDE034E0003F8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B0D31F2EDE034E0003F8A1 /* Assets.xcassets */; };
+		A8B0D3552EDE04EB0003F8A1 /* Aurora_For_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3542EDE04EB0003F8A1 /* Aurora_For_MacApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,33 +74,50 @@
 		A87F25172ED0792200346574 /* Aurora For Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aurora For Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87F25242ED0792400346574 /* Aurora For MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aurora For MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87F252E2ED0792400346574 /* Aurora For MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aurora For MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A87F26B02ED0A80900346574 /* StrategyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyViewModel.swift; sourceTree = "<group>"; };
-		A87F26B22ED0A80900346574 /* BacktestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacktestResult.swift; sourceTree = "<group>"; };
-		A87F26B32ED0A80900346574 /* MLTrainingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTrainingSession.swift; sourceTree = "<group>"; };
-		A87F26B42ED0A80900346574 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
-		A87F26B52ED0A80900346574 /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
-		A87F26B62ED0A80900346574 /* Trade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trade.swift; sourceTree = "<group>"; };
-		A87F26B82ED0A80900346574 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		A87F26B92ED0A80900346574 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		A87F26BA2ED0A80900346574 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		A87F26BB2ED0A80900346574 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
-		A87F26BD2ED0A80900346574 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
-		A87F26C02ED0A80900346574 /* PositionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCard.swift; sourceTree = "<group>"; };
-		A87F26C12ED0A80900346574 /* StatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCard.swift; sourceTree = "<group>"; };
-		A87F26C22ED0A80900346574 /* TradeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeRow.swift; sourceTree = "<group>"; };
-		A87F26C42ED0A80900346574 /* BacktestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacktestView.swift; sourceTree = "<group>"; };
-		A87F26C52ED0A80900346574 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A87F26C62ED0A80900346574 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		A87F26C72ED0A80900346574 /* MLTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTrainingView.swift; sourceTree = "<group>"; };
-		A87F26C82ED0A80900346574 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
-		A87F26C92ED0A80900346574 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A87F26CA2ED0A80900346574 /* StrategyEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyEditorView.swift; sourceTree = "<group>"; };
-		A87F26CB2ED0A80900346574 /* StrategyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyListView.swift; sourceTree = "<group>"; };
-		A87F26CD2ED0A80900346574 /* Aurora_For_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aurora_For_Mac.entitlements; sourceTree = "<group>"; };
-		A87F26CE2ED0A80900346574 /* Aurora_For_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aurora_For_MacApp.swift; sourceTree = "<group>"; };
-		A87F26CF2ED0A80900346574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A87F26D02ED0A80900346574 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A87F26EB2ED0A81500346574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A8B0D2F02EDE034E0003F8A1 /* BacktestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacktestResult.swift; sourceTree = "<group>"; };
+		A8B0D2F12EDE034E0003F8A1 /* BotStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotStatus.swift; sourceTree = "<group>"; };
+		A8B0D2F22EDE034E0003F8A1 /* MLTrainingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTrainingSession.swift; sourceTree = "<group>"; };
+		A8B0D2F32EDE034E0003F8A1 /* PerformanceStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceStats.swift; sourceTree = "<group>"; };
+		A8B0D2F42EDE034E0003F8A1 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		A8B0D2F52EDE034E0003F8A1 /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
+		A8B0D2F62EDE034E0003F8A1 /* Trade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trade.swift; sourceTree = "<group>"; };
+		A8B0D2F82EDE034E0003F8A1 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		A8B0D2F92EDE034E0003F8A1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A8B0D2FA2EDE034E0003F8A1 /* BotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotService.swift; sourceTree = "<group>"; };
+		A8B0D2FB2EDE034E0003F8A1 /* MT5AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MT5AccountService.swift; sourceTree = "<group>"; };
+		A8B0D2FC2EDE034E0003F8A1 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A8B0D2FD2EDE034E0003F8A1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		A8B0D2FE2EDE034E0003F8A1 /* PerformanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceService.swift; sourceTree = "<group>"; };
+		A8B0D2FF2EDE034E0003F8A1 /* StrategyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyService.swift; sourceTree = "<group>"; };
+		A8B0D3002EDE034E0003F8A1 /* TradeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeService.swift; sourceTree = "<group>"; };
+		A8B0D3012EDE034E0003F8A1 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
+		A8B0D3032EDE034E0003F8A1 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		A8B0D3052EDE034E0003F8A1 /* MT5AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MT5AccountViewModel.swift; sourceTree = "<group>"; };
+		A8B0D3062EDE034E0003F8A1 /* StrategyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyViewModel.swift; sourceTree = "<group>"; };
+		A8B0D3082EDE034E0003F8A1 /* PositionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCard.swift; sourceTree = "<group>"; };
+		A8B0D3092EDE034E0003F8A1 /* StatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCard.swift; sourceTree = "<group>"; };
+		A8B0D30A2EDE034E0003F8A1 /* TradeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeRow.swift; sourceTree = "<group>"; };
+		A8B0D30C2EDE034E0003F8A1 /* AddMT5AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMT5AccountView.swift; sourceTree = "<group>"; };
+		A8B0D30D2EDE034E0003F8A1 /* BacktestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacktestView.swift; sourceTree = "<group>"; };
+		A8B0D30E2EDE034E0003F8A1 /* BotControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotControlView.swift; sourceTree = "<group>"; };
+		A8B0D30F2EDE034E0003F8A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A8B0D3102EDE034E0003F8A1 /* EditMT5AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMT5AccountView.swift; sourceTree = "<group>"; };
+		A8B0D3112EDE034E0003F8A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A8B0D3122EDE034E0003F8A1 /* MLTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTrainingView.swift; sourceTree = "<group>"; };
+		A8B0D3132EDE034E0003F8A1 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
+		A8B0D3142EDE034E0003F8A1 /* MT5AccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MT5AccountsView.swift; sourceTree = "<group>"; };
+		A8B0D3152EDE034E0003F8A1 /* PerformanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceView.swift; sourceTree = "<group>"; };
+		A8B0D3162EDE034E0003F8A1 /* PositionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionsView.swift; sourceTree = "<group>"; };
+		A8B0D3172EDE034E0003F8A1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A8B0D3182EDE034E0003F8A1 /* StrategyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyDetailView.swift; sourceTree = "<group>"; };
+		A8B0D3192EDE034E0003F8A1 /* StrategyEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyEditorView.swift; sourceTree = "<group>"; };
+		A8B0D31A2EDE034E0003F8A1 /* StrategyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyListView.swift; sourceTree = "<group>"; };
+		A8B0D31B2EDE034E0003F8A1 /* SymbolManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolManagementView.swift; sourceTree = "<group>"; };
+		A8B0D31C2EDE034E0003F8A1 /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
+		A8B0D31D2EDE034E0003F8A1 /* TradeHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeHistoryView.swift; sourceTree = "<group>"; };
+		A8B0D31F2EDE034E0003F8A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A8B0D3232EDE034E0003F8A1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A8B0D3542EDE04EB0003F8A1 /* Aurora_For_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aurora_For_MacApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +148,7 @@
 		A87F250E2ED0792200346574 = {
 			isa = PBXGroup;
 			children = (
-				A87F26D12ED0A80900346574 /* Aurora For Mac */,
+				A8B0D3242EDE034E0003F8A1 /* Aurora For Mac */,
 				A87F25182ED0792200346574 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -128,100 +163,101 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A87F26AF2ED0A80900346574 /* ML */ = {
+		A8B0D2F72EDE034E0003F8A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = ML;
-			sourceTree = "<group>";
-		};
-		A87F26B12ED0A80900346574 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				A87F26B02ED0A80900346574 /* StrategyViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		A87F26B72ED0A80900346574 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A87F26B12ED0A80900346574 /* ViewModels */,
-				A87F26B22ED0A80900346574 /* BacktestResult.swift */,
-				A87F26B32ED0A80900346574 /* MLTrainingSession.swift */,
-				A87F26B42ED0A80900346574 /* Position.swift */,
-				A87F26B52ED0A80900346574 /* Strategy.swift */,
-				A87F26B62ED0A80900346574 /* Trade.swift */,
+				A8B0D2F02EDE034E0003F8A1 /* BacktestResult.swift */,
+				A8B0D2F12EDE034E0003F8A1 /* BotStatus.swift */,
+				A8B0D2F22EDE034E0003F8A1 /* MLTrainingSession.swift */,
+				A8B0D2F32EDE034E0003F8A1 /* PerformanceStats.swift */,
+				A8B0D2F42EDE034E0003F8A1 /* Position.swift */,
+				A8B0D2F52EDE034E0003F8A1 /* Strategy.swift */,
+				A8B0D2F62EDE034E0003F8A1 /* Trade.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A87F26BC2ED0A80900346574 /* Services */ = {
+		A8B0D3022EDE034E0003F8A1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A87F26B82ED0A80900346574 /* APIService.swift */,
-				A87F26B92ED0A80900346574 /* AuthService.swift */,
-				A87F26BA2ED0A80900346574 /* NotificationManager.swift */,
-				A87F26BB2ED0A80900346574 /* WebSocketService.swift */,
+				A8B0D2F82EDE034E0003F8A1 /* APIService.swift */,
+				A8B0D2F92EDE034E0003F8A1 /* AuthService.swift */,
+				A8B0D2FA2EDE034E0003F8A1 /* BotService.swift */,
+				A8B0D2FB2EDE034E0003F8A1 /* MT5AccountService.swift */,
+				A8B0D2FC2EDE034E0003F8A1 /* NotificationManager.swift */,
+				A8B0D2FD2EDE034E0003F8A1 /* NotificationService.swift */,
+				A8B0D2FE2EDE034E0003F8A1 /* PerformanceService.swift */,
+				A8B0D2FF2EDE034E0003F8A1 /* StrategyService.swift */,
+				A8B0D3002EDE034E0003F8A1 /* TradeService.swift */,
+				A8B0D3012EDE034E0003F8A1 /* WebSocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		A87F26BE2ED0A80900346574 /* Utilities */ = {
+		A8B0D3042EDE034E0003F8A1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A87F26BD2ED0A80900346574 /* ErrorPresenter.swift */,
+				A8B0D3032EDE034E0003F8A1 /* ErrorPresenter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		A87F26BF2ED0A80900346574 /* ViewModels */ = {
+		A8B0D3072EDE034E0003F8A1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A8B0D3052EDE034E0003F8A1 /* MT5AccountViewModel.swift */,
+				A8B0D3062EDE034E0003F8A1 /* StrategyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		A87F26C32ED0A80900346574 /* Components */ = {
+		A8B0D30B2EDE034E0003F8A1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A87F26C02ED0A80900346574 /* PositionCard.swift */,
-				A87F26C12ED0A80900346574 /* StatCard.swift */,
-				A87F26C22ED0A80900346574 /* TradeRow.swift */,
+				A8B0D3082EDE034E0003F8A1 /* PositionCard.swift */,
+				A8B0D3092EDE034E0003F8A1 /* StatCard.swift */,
+				A8B0D30A2EDE034E0003F8A1 /* TradeRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		A87F26CC2ED0A80900346574 /* Views */ = {
+		A8B0D31E2EDE034E0003F8A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A87F26C32ED0A80900346574 /* Components */,
-				A87F26C42ED0A80900346574 /* BacktestView.swift */,
-				A87F26C52ED0A80900346574 /* ContentView.swift */,
-				A87F26C62ED0A80900346574 /* LoginView.swift */,
-				A87F26C72ED0A80900346574 /* MLTrainingView.swift */,
-				A87F26C82ED0A80900346574 /* MonitorView.swift */,
-				A87F26C92ED0A80900346574 /* SettingsView.swift */,
-				A87F26CA2ED0A80900346574 /* StrategyEditorView.swift */,
-				A87F26CB2ED0A80900346574 /* StrategyListView.swift */,
+				A8B0D30B2EDE034E0003F8A1 /* Components */,
+				A8B0D30C2EDE034E0003F8A1 /* AddMT5AccountView.swift */,
+				A8B0D30D2EDE034E0003F8A1 /* BacktestView.swift */,
+				A8B0D30E2EDE034E0003F8A1 /* BotControlView.swift */,
+				A8B0D30F2EDE034E0003F8A1 /* ContentView.swift */,
+				A8B0D3102EDE034E0003F8A1 /* EditMT5AccountView.swift */,
+				A8B0D3112EDE034E0003F8A1 /* LoginView.swift */,
+				A8B0D3122EDE034E0003F8A1 /* MLTrainingView.swift */,
+				A8B0D3132EDE034E0003F8A1 /* MonitorView.swift */,
+				A8B0D3142EDE034E0003F8A1 /* MT5AccountsView.swift */,
+				A8B0D3152EDE034E0003F8A1 /* PerformanceView.swift */,
+				A8B0D3162EDE034E0003F8A1 /* PositionsView.swift */,
+				A8B0D3172EDE034E0003F8A1 /* SettingsView.swift */,
+				A8B0D3182EDE034E0003F8A1 /* StrategyDetailView.swift */,
+				A8B0D3192EDE034E0003F8A1 /* StrategyEditorView.swift */,
+				A8B0D31A2EDE034E0003F8A1 /* StrategyListView.swift */,
+				A8B0D31B2EDE034E0003F8A1 /* SymbolManagementView.swift */,
+				A8B0D31C2EDE034E0003F8A1 /* TestingView.swift */,
+				A8B0D31D2EDE034E0003F8A1 /* TradeHistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A87F26D12ED0A80900346574 /* Aurora For Mac */ = {
+		A8B0D3242EDE034E0003F8A1 /* Aurora For Mac */ = {
 			isa = PBXGroup;
 			children = (
-				A87F26AF2ED0A80900346574 /* ML */,
-				A87F26B72ED0A80900346574 /* Models */,
-				A87F26BC2ED0A80900346574 /* Services */,
-				A87F26BE2ED0A80900346574 /* Utilities */,
-				A87F26BF2ED0A80900346574 /* ViewModels */,
-				A87F26CC2ED0A80900346574 /* Views */,
-				A87F26CD2ED0A80900346574 /* Aurora_For_Mac.entitlements */,
-				A87F26CE2ED0A80900346574 /* Aurora_For_MacApp.swift */,
-				A87F26CF2ED0A80900346574 /* Info.plist */,
-				A87F26D02ED0A80900346574 /* README.md */,
-				A87F26EB2ED0A81500346574 /* Assets.xcassets */,
+				A8B0D3542EDE04EB0003F8A1 /* Aurora_For_MacApp.swift */,
+				A8B0D2F72EDE034E0003F8A1 /* Models */,
+				A8B0D3022EDE034E0003F8A1 /* Services */,
+				A8B0D3042EDE034E0003F8A1 /* Utilities */,
+				A8B0D3072EDE034E0003F8A1 /* ViewModels */,
+				A8B0D31E2EDE034E0003F8A1 /* Views */,
+				A8B0D31F2EDE034E0003F8A1 /* Assets.xcassets */,
+				A8B0D3232EDE034E0003F8A1 /* README.md */,
 			);
 			path = "Aurora For Mac";
 			sourceTree = "<group>";
@@ -337,9 +373,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A87F26E92ED0A80900346574 /* README.md in Resources */,
-				A87F26EC2ED0A81500346574 /* Assets.xcassets in Resources */,
-				A87F26EA2ED0A80900346574 /* Info.plist in Resources */,
+				A8B0D3512EDE034E0003F8A1 /* README.md in Resources */,
+				A8B0D3532EDE034E0003F8A1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,29 +399,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A87F26D22ED0A80900346574 /* PositionCard.swift in Sources */,
-				A87F26D32ED0A80900346574 /* Aurora_For_MacApp.swift in Sources */,
-				A87F26D42ED0A80900346574 /* StatCard.swift in Sources */,
-				A87F26D52ED0A80900346574 /* ContentView.swift in Sources */,
-				A87F26D62ED0A80900346574 /* Trade.swift in Sources */,
-				A87F26D72ED0A80900346574 /* StrategyViewModel.swift in Sources */,
-				A87F26D82ED0A80900346574 /* MLTrainingView.swift in Sources */,
-				A87F26D92ED0A80900346574 /* BacktestView.swift in Sources */,
-				A87F26DA2ED0A80900346574 /* AuthService.swift in Sources */,
-				A87F26DB2ED0A80900346574 /* ErrorPresenter.swift in Sources */,
-				A87F26DC2ED0A80900346574 /* Strategy.swift in Sources */,
-				A87F26DD2ED0A80900346574 /* APIService.swift in Sources */,
-				A87F26DE2ED0A80900346574 /* SettingsView.swift in Sources */,
-				A87F26DF2ED0A80900346574 /* MLTrainingSession.swift in Sources */,
-				A87F26E02ED0A80900346574 /* StrategyEditorView.swift in Sources */,
-				A87F26E12ED0A80900346574 /* MonitorView.swift in Sources */,
-				A87F26E22ED0A80900346574 /* WebSocketService.swift in Sources */,
-				A87F26E32ED0A80900346574 /* BacktestResult.swift in Sources */,
-				A87F26E42ED0A80900346574 /* StrategyListView.swift in Sources */,
-				A87F26E52ED0A80900346574 /* Position.swift in Sources */,
-				A87F26E62ED0A80900346574 /* NotificationManager.swift in Sources */,
-				A87F26E72ED0A80900346574 /* TradeRow.swift in Sources */,
-				A87F26E82ED0A80900346574 /* LoginView.swift in Sources */,
+				A8B0D3252EDE034E0003F8A1 /* StrategyService.swift in Sources */,
+				A8B0D3262EDE034E0003F8A1 /* LoginView.swift in Sources */,
+				A8B0D3272EDE034E0003F8A1 /* NotificationService.swift in Sources */,
+				A8B0D3282EDE034E0003F8A1 /* SymbolManagementView.swift in Sources */,
+				A8B0D3292EDE034E0003F8A1 /* StrategyEditorView.swift in Sources */,
+				A8B0D32A2EDE034E0003F8A1 /* MT5AccountsView.swift in Sources */,
+				A8B0D32B2EDE034E0003F8A1 /* StatCard.swift in Sources */,
+				A8B0D32C2EDE034E0003F8A1 /* MLTrainingSession.swift in Sources */,
+				A8B0D32E2EDE034E0003F8A1 /* TradeRow.swift in Sources */,
+				A8B0D32F2EDE034E0003F8A1 /* BacktestResult.swift in Sources */,
+				A8B0D3302EDE034E0003F8A1 /* EditMT5AccountView.swift in Sources */,
+				A8B0D3312EDE034E0003F8A1 /* PerformanceService.swift in Sources */,
+				A8B0D3322EDE034E0003F8A1 /* PerformanceStats.swift in Sources */,
+				A8B0D3332EDE034E0003F8A1 /* ErrorPresenter.swift in Sources */,
+				A8B0D3342EDE034E0003F8A1 /* AddMT5AccountView.swift in Sources */,
+				A8B0D3352EDE034E0003F8A1 /* Position.swift in Sources */,
+				A8B0D3362EDE034E0003F8A1 /* ContentView.swift in Sources */,
+				A8B0D3372EDE034E0003F8A1 /* PositionCard.swift in Sources */,
+				A8B0D3382EDE034E0003F8A1 /* WebSocketService.swift in Sources */,
+				A8B0D3392EDE034E0003F8A1 /* MT5AccountViewModel.swift in Sources */,
+				A8B0D33A2EDE034E0003F8A1 /* MT5AccountService.swift in Sources */,
+				A8B0D33B2EDE034E0003F8A1 /* PositionsView.swift in Sources */,
+				A8B0D33C2EDE034E0003F8A1 /* PerformanceView.swift in Sources */,
+				A8B0D33D2EDE034E0003F8A1 /* TradeService.swift in Sources */,
+				A8B0D33E2EDE034E0003F8A1 /* TestingView.swift in Sources */,
+				A8B0D33F2EDE034E0003F8A1 /* AuthService.swift in Sources */,
+				A8B0D3402EDE034E0003F8A1 /* BotControlView.swift in Sources */,
+				A8B0D3412EDE034E0003F8A1 /* MLTrainingView.swift in Sources */,
+				A8B0D3422EDE034E0003F8A1 /* APIService.swift in Sources */,
+				A8B0D3432EDE034E0003F8A1 /* Trade.swift in Sources */,
+				A8B0D3442EDE034E0003F8A1 /* TradeHistoryView.swift in Sources */,
+				A8B0D3452EDE034E0003F8A1 /* BacktestView.swift in Sources */,
+				A8B0D3462EDE034E0003F8A1 /* SettingsView.swift in Sources */,
+				A8B0D3552EDE04EB0003F8A1 /* Aurora_For_MacApp.swift in Sources */,
+				A8B0D3472EDE034E0003F8A1 /* NotificationManager.swift in Sources */,
+				A8B0D3482EDE034E0003F8A1 /* BotService.swift in Sources */,
+				A8B0D3492EDE034E0003F8A1 /* StrategyListView.swift in Sources */,
+				A8B0D34A2EDE034E0003F8A1 /* StrategyViewModel.swift in Sources */,
+				A8B0D34B2EDE034E0003F8A1 /* Strategy.swift in Sources */,
+				A8B0D34C2EDE034E0003F8A1 /* BotStatus.swift in Sources */,
+				A8B0D34D2EDE034E0003F8A1 /* MonitorView.swift in Sources */,
+				A8B0D34F2EDE034E0003F8A1 /* StrategyDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +608,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -586,6 +641,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

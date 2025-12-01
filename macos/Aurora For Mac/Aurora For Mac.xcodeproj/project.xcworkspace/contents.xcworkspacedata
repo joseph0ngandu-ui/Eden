@@ -4,4 +4,7 @@
    <FileRef
       location = "self:">
    </FileRef>
+   <FileRef
+      location = "group:MT5Account.swift">
+   </FileRef>
 </Workspace>

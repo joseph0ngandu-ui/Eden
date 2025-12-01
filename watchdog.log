@@ -1,0 +1,1117 @@
+[2025-12-01 11:37:25] Watchdog started
+[2025-12-01 11:37:25] Starting trading bot...
+[2025-12-01 11:37:25] Trading bot started with PID: 8764
+[2025-12-01 11:37:28] [BOT] Traceback (most recent call last):
+[2025-12-01 11:37:28] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:37:28] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:37:28] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:37:28] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:37:28] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:37:28] [BOT] import yaml
+[2025-12-01 11:37:28] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:37:28] Trading bot terminated with code: 1
+[2025-12-01 11:37:28] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:37:58] Starting trading bot...
+[2025-12-01 11:37:58] Trading bot started with PID: 1344
+[2025-12-01 11:37:59] [BOT] Traceback (most recent call last):
+[2025-12-01 11:37:59] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:37:59] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:37:59] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:37:59] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:37:59] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:37:59] [BOT] import yaml
+[2025-12-01 11:37:59] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:37:59] Trading bot terminated with code: 1
+[2025-12-01 11:37:59] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:38:29] Starting trading bot...
+[2025-12-01 11:38:29] Trading bot started with PID: 3724
+[2025-12-01 11:38:29] [BOT] Traceback (most recent call last):
+[2025-12-01 11:38:29] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:38:29] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:38:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:38:29] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:38:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:38:29] [BOT] import yaml
+[2025-12-01 11:38:29] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:38:29] Trading bot terminated with code: 1
+[2025-12-01 11:38:29] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:38:59] Starting trading bot...
+[2025-12-01 11:38:59] Trading bot started with PID: 1064
+[2025-12-01 11:39:00] [BOT] Traceback (most recent call last):
+[2025-12-01 11:39:00] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:39:00] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:39:00] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:39:00] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:39:00] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:39:00] [BOT] import yaml
+[2025-12-01 11:39:00] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:39:00] Trading bot terminated with code: 1
+[2025-12-01 11:39:00] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:39:30] Starting trading bot...
+[2025-12-01 11:39:32] Trading bot started with PID: 5156
+[2025-12-01 11:39:32] [BOT] Traceback (most recent call last):
+[2025-12-01 11:39:32] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:39:32] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:39:32] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:39:32] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:39:32] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:39:32] [BOT] import yaml
+[2025-12-01 11:39:32] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:39:32] Trading bot terminated with code: 1
+[2025-12-01 11:39:32] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:40:02] Starting trading bot...
+[2025-12-01 11:40:02] Trading bot started with PID: 8836
+[2025-12-01 11:40:03] [BOT] Traceback (most recent call last):
+[2025-12-01 11:40:03] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:40:03] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:40:03] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:40:03] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:40:03] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:40:03] [BOT] import yaml
+[2025-12-01 11:40:03] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:40:03] Trading bot terminated with code: 1
+[2025-12-01 11:40:03] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:40:33] Starting trading bot...
+[2025-12-01 11:40:33] Trading bot started with PID: 5220
+[2025-12-01 11:40:34] [BOT] Traceback (most recent call last):
+[2025-12-01 11:40:34] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:40:34] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:40:34] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:40:34] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:40:34] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:40:34] [BOT] import yaml
+[2025-12-01 11:40:34] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:40:34] Trading bot terminated with code: 1
+[2025-12-01 11:40:34] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:41:04] Starting trading bot...
+[2025-12-01 11:41:04] Trading bot started with PID: 3356
+[2025-12-01 11:41:04] [BOT] Traceback (most recent call last):
+[2025-12-01 11:41:04] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:41:04] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:41:04] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:41:04] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:41:04] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:41:04] [BOT] import yaml
+[2025-12-01 11:41:04] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:41:04] Trading bot terminated with code: 1
+[2025-12-01 11:41:04] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:41:34] Starting trading bot...
+[2025-12-01 11:41:34] Trading bot started with PID: 5532
+[2025-12-01 11:41:35] [BOT] Traceback (most recent call last):
+[2025-12-01 11:41:35] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:41:35] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:41:35] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:41:35] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:41:35] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:41:35] [BOT] import yaml
+[2025-12-01 11:41:35] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:41:35] Trading bot terminated with code: 1
+[2025-12-01 11:41:35] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:42:05] Starting trading bot...
+[2025-12-01 11:42:05] Trading bot started with PID: 5356
+[2025-12-01 11:42:06] [BOT] Traceback (most recent call last):
+[2025-12-01 11:42:06] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:42:06] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:42:06] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:42:06] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:42:06] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:42:06] [BOT] import yaml
+[2025-12-01 11:42:06] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:42:06] Trading bot terminated with code: 1
+[2025-12-01 11:42:06] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:42:36] Starting trading bot...
+[2025-12-01 11:42:36] Trading bot started with PID: 5396
+[2025-12-01 11:42:36] [BOT] Traceback (most recent call last):
+[2025-12-01 11:42:36] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:42:36] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:42:36] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:42:36] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:42:36] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:42:36] [BOT] import yaml
+[2025-12-01 11:42:36] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:42:36] Trading bot terminated with code: 1
+[2025-12-01 11:42:36] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:43:06] Starting trading bot...
+[2025-12-01 11:43:06] Trading bot started with PID: 5828
+[2025-12-01 11:43:07] [BOT] Traceback (most recent call last):
+[2025-12-01 11:43:07] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:43:07] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:43:07] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:43:07] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:43:07] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:43:07] [BOT] import yaml
+[2025-12-01 11:43:07] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:43:07] Trading bot terminated with code: 1
+[2025-12-01 11:43:07] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:43:37] Starting trading bot...
+[2025-12-01 11:43:37] Trading bot started with PID: 6008
+[2025-12-01 11:43:38] [BOT] Traceback (most recent call last):
+[2025-12-01 11:43:38] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:43:38] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:43:38] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:43:38] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:43:38] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:43:38] [BOT] import yaml
+[2025-12-01 11:43:38] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:43:38] Trading bot terminated with code: 1
+[2025-12-01 11:43:38] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:44:08] Starting trading bot...
+[2025-12-01 11:44:08] Trading bot started with PID: 3832
+[2025-12-01 11:44:08] [BOT] Traceback (most recent call last):
+[2025-12-01 11:44:08] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:44:08] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:44:08] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:44:08] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:44:08] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:44:08] [BOT] import yaml
+[2025-12-01 11:44:08] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:44:08] Trading bot terminated with code: 1
+[2025-12-01 11:44:08] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:44:38] Starting trading bot...
+[2025-12-01 11:44:38] Trading bot started with PID: 5616
+[2025-12-01 11:44:39] [BOT] Traceback (most recent call last):
+[2025-12-01 11:44:39] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 20, in <module>
+[2025-12-01 11:44:39] [BOT] from trading.trading_bot import TradingBot
+[2025-12-01 11:44:39] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 27, in <module>
+[2025-12-01 11:44:39] [BOT] from .config_loader import ConfigLoader
+[2025-12-01 11:44:39] [BOT] File "C:\Users\opc\Desktop\Eden\trading\config_loader.py", line 9, in <module>
+[2025-12-01 11:44:39] [BOT] import yaml
+[2025-12-01 11:44:39] [BOT] ModuleNotFoundError: No module named 'yaml'
+[2025-12-01 11:44:39] Trading bot terminated with code: 1
+[2025-12-01 11:44:39] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 11:52:01] Watchdog started
+[2025-12-01 11:52:01] Starting trading bot...
+[2025-12-01 11:52:01] Trading bot started with PID: 7668
+[2025-12-01 11:52:07] [BOT] 2025-12-01 11:52:07,620 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:52:07] [BOT] 2025-12-01 11:52:07,625 - INFO -
+[2025-12-01 11:52:07] [BOT] ================================================================================
+[2025-12-01 11:52:07] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:52:07] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:52:07] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:52:07] [BOT] ================================================================================
+[2025-12-01 11:52:15] [BOT] 2025-12-01 11:52:15,998 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:52:15] [BOT] 2025-12-01 11:52:15,998 - INFO - Started. Polling every 300s
+[2025-12-01 11:52:16] [BOT] 2025-12-01 11:52:16,048 - INFO - Disconnected from MT5
+[2025-12-01 11:52:56] [BOT] 2025-12-01 11:52:56,051 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:52:56] [BOT] 2025-12-01 11:52:56,052 - INFO -
+[2025-12-01 11:52:56] [BOT] ================================================================================
+[2025-12-01 11:52:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:52:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:52:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:52:56] [BOT] ================================================================================
+[2025-12-01 11:52:56] [BOT] 2025-12-01 11:52:56,053 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:52:56] [BOT] 2025-12-01 11:52:56,053 - INFO - Started. Polling every 300s
+[2025-12-01 11:52:56] [BOT] 2025-12-01 11:52:56,058 - INFO - Disconnected from MT5
+[2025-12-01 11:53:36] [BOT] 2025-12-01 11:53:36,059 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:53:36] [BOT] 2025-12-01 11:53:36,060 - INFO -
+[2025-12-01 11:53:36] [BOT] ================================================================================
+[2025-12-01 11:53:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:53:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:53:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:53:36] [BOT] ================================================================================
+[2025-12-01 11:53:36] [BOT] 2025-12-01 11:53:36,061 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:53:36] [BOT] 2025-12-01 11:53:36,061 - INFO - Started. Polling every 300s
+[2025-12-01 11:53:36] [BOT] 2025-12-01 11:53:36,064 - INFO - Disconnected from MT5
+[2025-12-01 11:54:16] [BOT] 2025-12-01 11:54:16,066 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:54:16] [BOT] 2025-12-01 11:54:16,067 - INFO -
+[2025-12-01 11:54:16] [BOT] ================================================================================
+[2025-12-01 11:54:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:54:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:54:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:54:16] [BOT] ================================================================================
+[2025-12-01 11:54:16] [BOT] 2025-12-01 11:54:16,069 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:54:16] [BOT] 2025-12-01 11:54:16,069 - INFO - Started. Polling every 300s
+[2025-12-01 11:54:16] [BOT] 2025-12-01 11:54:16,073 - INFO - Disconnected from MT5
+[2025-12-01 11:54:56] [BOT] 2025-12-01 11:54:56,077 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:54:56] [BOT] 2025-12-01 11:54:56,079 - INFO -
+[2025-12-01 11:54:56] [BOT] ================================================================================
+[2025-12-01 11:54:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:54:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:54:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:54:56] [BOT] ================================================================================
+[2025-12-01 11:54:56] [BOT] 2025-12-01 11:54:56,079 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:54:56] [BOT] 2025-12-01 11:54:56,080 - INFO - Started. Polling every 300s
+[2025-12-01 11:54:56] [BOT] 2025-12-01 11:54:56,083 - INFO - Disconnected from MT5
+[2025-12-01 11:55:36] [BOT] 2025-12-01 11:55:36,087 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:55:36] [BOT] 2025-12-01 11:55:36,089 - INFO -
+[2025-12-01 11:55:36] [BOT] ================================================================================
+[2025-12-01 11:55:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:55:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:55:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:55:36] [BOT] ================================================================================
+[2025-12-01 11:55:36] [BOT] 2025-12-01 11:55:36,089 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:55:36] [BOT] 2025-12-01 11:55:36,089 - INFO - Started. Polling every 300s
+[2025-12-01 11:55:36] [BOT] 2025-12-01 11:55:36,093 - INFO - Disconnected from MT5
+[2025-12-01 11:56:16] [BOT] 2025-12-01 11:56:16,094 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:56:16] [BOT] 2025-12-01 11:56:16,095 - INFO -
+[2025-12-01 11:56:16] [BOT] ================================================================================
+[2025-12-01 11:56:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:56:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:56:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:56:16] [BOT] ================================================================================
+[2025-12-01 11:56:16] [BOT] 2025-12-01 11:56:16,096 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:56:16] [BOT] 2025-12-01 11:56:16,096 - INFO - Started. Polling every 300s
+[2025-12-01 11:56:16] [BOT] 2025-12-01 11:56:16,099 - INFO - Disconnected from MT5
+[2025-12-01 11:56:56] [BOT] 2025-12-01 11:56:56,137 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:56:56] [BOT] 2025-12-01 11:56:56,140 - INFO -
+[2025-12-01 11:56:56] [BOT] ================================================================================
+[2025-12-01 11:56:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:56:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:56:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:56:56] [BOT] ================================================================================
+[2025-12-01 11:56:56] [BOT] 2025-12-01 11:56:56,144 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:56:56] [BOT] 2025-12-01 11:56:56,145 - INFO - Started. Polling every 300s
+[2025-12-01 11:56:56] [BOT] 2025-12-01 11:56:56,149 - INFO - Disconnected from MT5
+[2025-12-01 11:57:36] [BOT] 2025-12-01 11:57:36,150 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:57:36] [BOT] 2025-12-01 11:57:36,151 - INFO -
+[2025-12-01 11:57:36] [BOT] ================================================================================
+[2025-12-01 11:57:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:57:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:57:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:57:36] [BOT] ================================================================================
+[2025-12-01 11:57:36] [BOT] 2025-12-01 11:57:36,152 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:57:36] [BOT] 2025-12-01 11:57:36,152 - INFO - Started. Polling every 300s
+[2025-12-01 11:57:36] [BOT] 2025-12-01 11:57:36,155 - INFO - Disconnected from MT5
+[2025-12-01 11:58:16] [BOT] 2025-12-01 11:58:16,157 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:58:16] [BOT] 2025-12-01 11:58:16,158 - INFO -
+[2025-12-01 11:58:16] [BOT] ================================================================================
+[2025-12-01 11:58:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:58:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:58:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:58:16] [BOT] ================================================================================
+[2025-12-01 11:58:16] [BOT] 2025-12-01 11:58:16,160 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:58:16] [BOT] 2025-12-01 11:58:16,160 - INFO - Started. Polling every 300s
+[2025-12-01 11:58:16] [BOT] 2025-12-01 11:58:16,163 - INFO - Disconnected from MT5
+[2025-12-01 11:58:56] [BOT] 2025-12-01 11:58:56,167 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:58:56] [BOT] 2025-12-01 11:58:56,169 - INFO -
+[2025-12-01 11:58:56] [BOT] ================================================================================
+[2025-12-01 11:58:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:58:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:58:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:58:56] [BOT] ================================================================================
+[2025-12-01 11:58:56] [BOT] 2025-12-01 11:58:56,169 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:58:56] [BOT] 2025-12-01 11:58:56,169 - INFO - Started. Polling every 300s
+[2025-12-01 11:58:56] [BOT] 2025-12-01 11:58:56,173 - INFO - Disconnected from MT5
+[2025-12-01 11:59:36] [BOT] 2025-12-01 11:59:36,175 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 11:59:36] [BOT] 2025-12-01 11:59:36,177 - INFO -
+[2025-12-01 11:59:36] [BOT] ================================================================================
+[2025-12-01 11:59:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 11:59:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 11:59:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 11:59:36] [BOT] ================================================================================
+[2025-12-01 11:59:36] [BOT] 2025-12-01 11:59:36,178 - INFO - Connected. Balance: 9970.21
+[2025-12-01 11:59:36] [BOT] 2025-12-01 11:59:36,178 - INFO - Started. Polling every 300s
+[2025-12-01 11:59:36] [BOT] 2025-12-01 11:59:36,191 - INFO - Disconnected from MT5
+[2025-12-01 12:00:16] [BOT] 2025-12-01 12:00:16,193 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:00:16] [BOT] 2025-12-01 12:00:16,195 - INFO -
+[2025-12-01 12:00:16] [BOT] ================================================================================
+[2025-12-01 12:00:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:00:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:00:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:00:16] [BOT] ================================================================================
+[2025-12-01 12:00:16] [BOT] 2025-12-01 12:00:16,199 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:00:16] [BOT] 2025-12-01 12:00:16,199 - INFO - Started. Polling every 300s
+[2025-12-01 12:00:16] [BOT] 2025-12-01 12:00:16,215 - INFO - Disconnected from MT5
+[2025-12-01 12:00:56] [BOT] 2025-12-01 12:00:56,217 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:00:56] [BOT] 2025-12-01 12:00:56,218 - INFO -
+[2025-12-01 12:00:56] [BOT] ================================================================================
+[2025-12-01 12:00:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:00:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:00:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:00:56] [BOT] ================================================================================
+[2025-12-01 12:00:56] [BOT] 2025-12-01 12:00:56,219 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:00:56] [BOT] 2025-12-01 12:00:56,219 - INFO - Started. Polling every 300s
+[2025-12-01 12:00:56] [BOT] 2025-12-01 12:00:56,222 - INFO - Disconnected from MT5
+[2025-12-01 12:01:36] [BOT] 2025-12-01 12:01:36,224 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:01:36] [BOT] 2025-12-01 12:01:36,226 - INFO -
+[2025-12-01 12:01:36] [BOT] ================================================================================
+[2025-12-01 12:01:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:01:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:01:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:01:36] [BOT] ================================================================================
+[2025-12-01 12:01:36] [BOT] 2025-12-01 12:01:36,227 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:01:36] [BOT] 2025-12-01 12:01:36,227 - INFO - Started. Polling every 300s
+[2025-12-01 12:01:36] [BOT] 2025-12-01 12:01:36,232 - INFO - Disconnected from MT5
+[2025-12-01 12:02:16] [BOT] 2025-12-01 12:02:16,233 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:02:16] [BOT] 2025-12-01 12:02:16,234 - INFO -
+[2025-12-01 12:02:16] [BOT] ================================================================================
+[2025-12-01 12:02:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:02:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:02:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:02:16] [BOT] ================================================================================
+[2025-12-01 12:02:16] [BOT] 2025-12-01 12:02:16,235 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:02:16] [BOT] 2025-12-01 12:02:16,235 - INFO - Started. Polling every 300s
+[2025-12-01 12:02:16] [BOT] 2025-12-01 12:02:16,240 - INFO - Disconnected from MT5
+[2025-12-01 12:02:56] [BOT] 2025-12-01 12:02:56,388 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:02:56] [BOT] 2025-12-01 12:02:56,394 - INFO -
+[2025-12-01 12:02:56] [BOT] ================================================================================
+[2025-12-01 12:02:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:02:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:02:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:02:56] [BOT] ================================================================================
+[2025-12-01 12:02:56] [BOT] 2025-12-01 12:02:56,394 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:02:56] [BOT] 2025-12-01 12:02:56,394 - INFO - Started. Polling every 300s
+[2025-12-01 12:02:56] [BOT] 2025-12-01 12:02:56,398 - INFO - Disconnected from MT5
+[2025-12-01 12:03:36] [BOT] 2025-12-01 12:03:36,400 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:03:36] [BOT] 2025-12-01 12:03:36,401 - INFO -
+[2025-12-01 12:03:36] [BOT] ================================================================================
+[2025-12-01 12:03:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:03:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:03:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:03:36] [BOT] ================================================================================
+[2025-12-01 12:03:36] [BOT] 2025-12-01 12:03:36,402 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:03:36] [BOT] 2025-12-01 12:03:36,402 - INFO - Started. Polling every 300s
+[2025-12-01 12:03:36] [BOT] 2025-12-01 12:03:36,406 - INFO - Disconnected from MT5
+[2025-12-01 12:04:16] [BOT] 2025-12-01 12:04:16,407 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:04:16] [BOT] 2025-12-01 12:04:16,408 - INFO -
+[2025-12-01 12:04:16] [BOT] ================================================================================
+[2025-12-01 12:04:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:04:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:04:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:04:16] [BOT] ================================================================================
+[2025-12-01 12:04:16] [BOT] 2025-12-01 12:04:16,409 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:04:16] [BOT] 2025-12-01 12:04:16,409 - INFO - Started. Polling every 300s
+[2025-12-01 12:04:16] [BOT] 2025-12-01 12:04:16,412 - INFO - Disconnected from MT5
+[2025-12-01 12:04:56] [BOT] 2025-12-01 12:04:56,415 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:04:56] [BOT] 2025-12-01 12:04:56,417 - INFO -
+[2025-12-01 12:04:56] [BOT] ================================================================================
+[2025-12-01 12:04:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:04:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:04:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:04:56] [BOT] ================================================================================
+[2025-12-01 12:04:56] [BOT] 2025-12-01 12:04:56,419 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:04:56] [BOT] 2025-12-01 12:04:56,419 - INFO - Started. Polling every 300s
+[2025-12-01 12:04:56] [BOT] 2025-12-01 12:04:56,427 - INFO - Disconnected from MT5
+[2025-12-01 12:05:36] [BOT] 2025-12-01 12:05:36,428 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:05:36] [BOT] 2025-12-01 12:05:36,429 - INFO -
+[2025-12-01 12:05:36] [BOT] ================================================================================
+[2025-12-01 12:05:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:05:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:05:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:05:36] [BOT] ================================================================================
+[2025-12-01 12:05:36] [BOT] 2025-12-01 12:05:36,430 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:05:36] [BOT] 2025-12-01 12:05:36,431 - INFO - Started. Polling every 300s
+[2025-12-01 12:05:36] [BOT] 2025-12-01 12:05:36,433 - INFO - Disconnected from MT5
+[2025-12-01 12:06:16] [BOT] 2025-12-01 12:06:16,435 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:06:16] [BOT] 2025-12-01 12:06:16,436 - INFO -
+[2025-12-01 12:06:16] [BOT] ================================================================================
+[2025-12-01 12:06:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:06:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:06:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:06:16] [BOT] ================================================================================
+[2025-12-01 12:06:16] [BOT] 2025-12-01 12:06:16,437 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:06:16] [BOT] 2025-12-01 12:06:16,437 - INFO - Started. Polling every 300s
+[2025-12-01 12:06:16] [BOT] 2025-12-01 12:06:16,440 - INFO - Disconnected from MT5
+[2025-12-01 12:06:56] [BOT] 2025-12-01 12:06:56,443 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:06:56] [BOT] 2025-12-01 12:06:56,444 - INFO -
+[2025-12-01 12:06:56] [BOT] ================================================================================
+[2025-12-01 12:06:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:06:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:06:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:06:56] [BOT] ================================================================================
+[2025-12-01 12:06:56] [BOT] 2025-12-01 12:06:56,446 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:06:56] [BOT] 2025-12-01 12:06:56,446 - INFO - Started. Polling every 300s
+[2025-12-01 12:06:56] [BOT] 2025-12-01 12:06:56,449 - INFO - Disconnected from MT5
+[2025-12-01 12:07:36] [BOT] 2025-12-01 12:07:36,453 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:07:36] [BOT] 2025-12-01 12:07:36,454 - INFO -
+[2025-12-01 12:07:36] [BOT] ================================================================================
+[2025-12-01 12:07:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:07:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:07:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:07:36] [BOT] ================================================================================
+[2025-12-01 12:07:36] [BOT] 2025-12-01 12:07:36,454 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:07:36] [BOT] 2025-12-01 12:07:36,454 - INFO - Started. Polling every 300s
+[2025-12-01 12:07:36] [BOT] 2025-12-01 12:07:36,458 - INFO - Disconnected from MT5
+[2025-12-01 12:08:16] [BOT] 2025-12-01 12:08:16,460 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:08:16] [BOT] 2025-12-01 12:08:16,461 - INFO -
+[2025-12-01 12:08:16] [BOT] ================================================================================
+[2025-12-01 12:08:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:08:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:08:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:08:16] [BOT] ================================================================================
+[2025-12-01 12:08:16] [BOT] 2025-12-01 12:08:16,462 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:08:16] [BOT] 2025-12-01 12:08:16,462 - INFO - Started. Polling every 300s
+[2025-12-01 12:08:16] [BOT] 2025-12-01 12:08:16,466 - INFO - Disconnected from MT5
+[2025-12-01 12:08:36] Watchdog started
+[2025-12-01 12:08:36] Starting trading bot...
+[2025-12-01 12:08:36] Trading bot started with PID: 3656
+[2025-12-01 12:08:37] Received signal 2, shutting down...
+[2025-12-01 12:08:56] [BOT] 2025-12-01 12:08:56,468 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:08:56] [BOT] 2025-12-01 12:08:56,469 - INFO -
+[2025-12-01 12:08:56] [BOT] ================================================================================
+[2025-12-01 12:08:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:08:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:08:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:08:56] [BOT] ================================================================================
+[2025-12-01 12:08:56] [BOT] 2025-12-01 12:08:56,470 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:08:56] [BOT] 2025-12-01 12:08:56,471 - INFO - Started. Polling every 300s
+[2025-12-01 12:08:56] [BOT] 2025-12-01 12:08:56,475 - INFO - Disconnected from MT5
+[2025-12-01 12:09:36] [BOT] 2025-12-01 12:09:36,476 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:09:36] [BOT] 2025-12-01 12:09:36,477 - INFO -
+[2025-12-01 12:09:36] [BOT] ================================================================================
+[2025-12-01 12:09:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:09:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:09:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:09:36] [BOT] ================================================================================
+[2025-12-01 12:09:36] [BOT] 2025-12-01 12:09:36,479 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:09:36] [BOT] 2025-12-01 12:09:36,479 - INFO - Started. Polling every 300s
+[2025-12-01 12:09:36] [BOT] 2025-12-01 12:09:36,483 - INFO - Disconnected from MT5
+[2025-12-01 12:10:16] [BOT] 2025-12-01 12:10:16,484 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:10:16] [BOT] 2025-12-01 12:10:16,485 - INFO -
+[2025-12-01 12:10:16] [BOT] ================================================================================
+[2025-12-01 12:10:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:10:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:10:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:10:16] [BOT] ================================================================================
+[2025-12-01 12:10:16] [BOT] 2025-12-01 12:10:16,485 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:10:16] [BOT] 2025-12-01 12:10:16,485 - INFO - Started. Polling every 300s
+[2025-12-01 12:10:16] [BOT] 2025-12-01 12:10:16,487 - INFO - Disconnected from MT5
+[2025-12-01 12:10:56] [BOT] 2025-12-01 12:10:56,491 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:10:56] [BOT] 2025-12-01 12:10:56,492 - INFO -
+[2025-12-01 12:10:56] [BOT] ================================================================================
+[2025-12-01 12:10:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:10:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:10:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:10:56] [BOT] ================================================================================
+[2025-12-01 12:10:56] [BOT] 2025-12-01 12:10:56,494 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:10:56] [BOT] 2025-12-01 12:10:56,494 - INFO - Started. Polling every 300s
+[2025-12-01 12:10:56] [BOT] 2025-12-01 12:10:56,498 - INFO - Disconnected from MT5
+[2025-12-01 12:11:36] [BOT] 2025-12-01 12:11:36,500 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:11:36] [BOT] 2025-12-01 12:11:36,500 - INFO -
+[2025-12-01 12:11:36] [BOT] ================================================================================
+[2025-12-01 12:11:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:11:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:11:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:11:36] [BOT] ================================================================================
+[2025-12-01 12:11:36] [BOT] 2025-12-01 12:11:36,500 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:11:36] [BOT] 2025-12-01 12:11:36,500 - INFO - Started. Polling every 300s
+[2025-12-01 12:11:36] [BOT] 2025-12-01 12:11:36,500 - INFO - Disconnected from MT5
+[2025-12-01 12:12:16] [BOT] 2025-12-01 12:12:16,506 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:12:16] [BOT] 2025-12-01 12:12:16,506 - INFO -
+[2025-12-01 12:12:16] [BOT] ================================================================================
+[2025-12-01 12:12:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:12:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:12:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:12:16] [BOT] ================================================================================
+[2025-12-01 12:12:16] [BOT] 2025-12-01 12:12:16,506 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:12:16] [BOT] 2025-12-01 12:12:16,506 - INFO - Started. Polling every 300s
+[2025-12-01 12:12:16] [BOT] 2025-12-01 12:12:16,512 - INFO - Disconnected from MT5
+[2025-12-01 12:12:56] [BOT] 2025-12-01 12:12:56,514 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:12:56] [BOT] 2025-12-01 12:12:56,515 - INFO -
+[2025-12-01 12:12:56] [BOT] ================================================================================
+[2025-12-01 12:12:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:12:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:12:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:12:56] [BOT] ================================================================================
+[2025-12-01 12:12:56] [BOT] 2025-12-01 12:12:56,515 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:12:56] [BOT] 2025-12-01 12:12:56,515 - INFO - Started. Polling every 300s
+[2025-12-01 12:12:56] [BOT] 2025-12-01 12:12:56,519 - INFO - Disconnected from MT5
+[2025-12-01 12:13:36] [BOT] 2025-12-01 12:13:36,521 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:13:36] [BOT] 2025-12-01 12:13:36,521 - INFO -
+[2025-12-01 12:13:36] [BOT] ================================================================================
+[2025-12-01 12:13:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:13:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:13:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:13:36] [BOT] ================================================================================
+[2025-12-01 12:13:36] [BOT] 2025-12-01 12:13:36,521 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:13:36] [BOT] 2025-12-01 12:13:36,521 - INFO - Started. Polling every 300s
+[2025-12-01 12:13:36] [BOT] 2025-12-01 12:13:36,524 - INFO - Disconnected from MT5
+[2025-12-01 12:14:16] [BOT] 2025-12-01 12:14:16,527 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:14:16] [BOT] 2025-12-01 12:14:16,529 - INFO -
+[2025-12-01 12:14:16] [BOT] ================================================================================
+[2025-12-01 12:14:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:14:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:14:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:14:16] [BOT] ================================================================================
+[2025-12-01 12:14:16] [BOT] 2025-12-01 12:14:16,529 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:14:16] [BOT] 2025-12-01 12:14:16,529 - INFO - Started. Polling every 300s
+[2025-12-01 12:14:16] [BOT] 2025-12-01 12:14:16,532 - INFO - Disconnected from MT5
+[2025-12-01 12:14:56] [BOT] 2025-12-01 12:14:56,535 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:14:56] [BOT] 2025-12-01 12:14:56,535 - INFO -
+[2025-12-01 12:14:56] [BOT] ================================================================================
+[2025-12-01 12:14:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:14:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:14:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:14:56] [BOT] ================================================================================
+[2025-12-01 12:14:56] [BOT] 2025-12-01 12:14:56,535 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:14:56] [BOT] 2025-12-01 12:14:56,535 - INFO - Started. Polling every 300s
+[2025-12-01 12:14:56] [BOT] 2025-12-01 12:14:56,540 - INFO - Disconnected from MT5
+[2025-12-01 12:15:36] [BOT] 2025-12-01 12:15:36,542 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:15:36] [BOT] 2025-12-01 12:15:36,542 - INFO -
+[2025-12-01 12:15:36] [BOT] ================================================================================
+[2025-12-01 12:15:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:15:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:15:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:15:36] [BOT] ================================================================================
+[2025-12-01 12:15:36] [BOT] 2025-12-01 12:15:36,542 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:15:36] [BOT] 2025-12-01 12:15:36,542 - INFO - Started. Polling every 300s
+[2025-12-01 12:15:36] [BOT] 2025-12-01 12:15:36,547 - INFO - Disconnected from MT5
+[2025-12-01 12:16:16] [BOT] 2025-12-01 12:16:16,550 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:16:16] [BOT] 2025-12-01 12:16:16,550 - INFO -
+[2025-12-01 12:16:16] [BOT] ================================================================================
+[2025-12-01 12:16:16] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:16:16] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:16:16] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:16:16] [BOT] ================================================================================
+[2025-12-01 12:16:16] [BOT] 2025-12-01 12:16:16,550 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:16:16] [BOT] 2025-12-01 12:16:16,550 - INFO - Started. Polling every 300s
+[2025-12-01 12:16:16] [BOT] 2025-12-01 12:16:16,552 - INFO - Disconnected from MT5
+[2025-12-01 12:16:56] [BOT] 2025-12-01 12:16:56,555 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:16:56] [BOT] 2025-12-01 12:16:56,555 - INFO -
+[2025-12-01 12:16:56] [BOT] ================================================================================
+[2025-12-01 12:16:56] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:16:56] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:16:56] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:16:56] [BOT] ================================================================================
+[2025-12-01 12:16:56] [BOT] 2025-12-01 12:16:56,555 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:16:56] [BOT] 2025-12-01 12:16:56,555 - INFO - Started. Polling every 300s
+[2025-12-01 12:16:56] [BOT] 2025-12-01 12:16:56,555 - INFO - Disconnected from MT5
+[2025-12-01 12:17:36] [BOT] 2025-12-01 12:17:36,563 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:17:36] [BOT] 2025-12-01 12:17:36,564 - INFO -
+[2025-12-01 12:17:36] [BOT] ================================================================================
+[2025-12-01 12:17:36] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:17:36] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:17:36] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:17:36] [BOT] ================================================================================
+[2025-12-01 12:17:36] [BOT] 2025-12-01 12:17:36,566 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:17:36] [BOT] 2025-12-01 12:17:36,566 - INFO - Started. Polling every 300s
+[2025-12-01 12:17:36] [BOT] 2025-12-01 12:17:36,569 - INFO - Disconnected from MT5
+[2025-12-01 12:18:19] [BOT] 2025-12-01 12:18:19,366 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:18:21] [BOT] 2025-12-01 12:18:19,404 - INFO -
+[2025-12-01 12:18:30] [BOT] ================================================================================
+[2025-12-01 12:18:31] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:18:31] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:18:31] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:18:31] [BOT] ================================================================================
+[2025-12-01 12:18:31] [BOT] 2025-12-01 12:18:19,404 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:18:31] [BOT] 2025-12-01 12:18:19,404 - INFO - Started. Polling every 300s
+[2025-12-01 12:18:32] [BOT] 2025-12-01 12:18:19,634 - INFO - Disconnected from MT5
+[2025-12-01 12:18:59] [BOT] 2025-12-01 12:18:59,647 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:18:59] [BOT] 2025-12-01 12:18:59,647 - INFO -
+[2025-12-01 12:18:59] [BOT] ================================================================================
+[2025-12-01 12:18:59] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:18:59] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:18:59] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:18:59] [BOT] ================================================================================
+[2025-12-01 12:18:59] [BOT] 2025-12-01 12:18:59,647 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:18:59] [BOT] 2025-12-01 12:18:59,647 - INFO - Started. Polling every 300s
+[2025-12-01 12:18:59] [BOT] 2025-12-01 12:18:59,651 - INFO - Disconnected from MT5
+[2025-12-01 12:19:39] [BOT] 2025-12-01 12:19:39,659 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:19:39] [BOT] 2025-12-01 12:19:39,661 - INFO -
+[2025-12-01 12:19:39] [BOT] ================================================================================
+[2025-12-01 12:19:39] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:19:39] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:19:39] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:19:39] [BOT] ================================================================================
+[2025-12-01 12:19:39] [BOT] 2025-12-01 12:19:39,661 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:19:39] [BOT] 2025-12-01 12:19:39,661 - INFO - Started. Polling every 300s
+[2025-12-01 12:19:39] [BOT] 2025-12-01 12:19:39,665 - INFO - Disconnected from MT5
+[2025-12-01 12:20:19] [BOT] 2025-12-01 12:20:19,667 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:20:19] [BOT] 2025-12-01 12:20:19,667 - INFO -
+[2025-12-01 12:20:19] [BOT] ================================================================================
+[2025-12-01 12:20:19] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:20:19] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:20:19] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:20:19] [BOT] ================================================================================
+[2025-12-01 12:20:19] [BOT] 2025-12-01 12:20:19,667 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:20:19] [BOT] 2025-12-01 12:20:19,667 - INFO - Started. Polling every 300s
+[2025-12-01 12:20:19] [BOT] 2025-12-01 12:20:19,672 - INFO - Disconnected from MT5
+[2025-12-01 12:21:03] [BOT] 2025-12-01 12:21:03,511 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:21:19] [BOT] 2025-12-01 12:21:03,554 - INFO -
+[2025-12-01 12:21:28] [BOT] ================================================================================
+[2025-12-01 12:21:38] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:21:45] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:21:46] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:21:46] [BOT] ================================================================================
+[2025-12-01 12:21:46] [BOT] 2025-12-01 12:21:03,554 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:21:47] [BOT] 2025-12-01 12:21:03,554 - INFO - Started. Polling every 300s
+[2025-12-01 12:21:47] [BOT] 2025-12-01 12:21:03,597 - INFO - Disconnected from MT5
+[2025-12-01 12:21:49] [BOT] 2025-12-01 12:21:45,504 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:21:53] [BOT] 2025-12-01 12:21:45,505 - INFO -
+[2025-12-01 12:21:55] [BOT] ================================================================================
+[2025-12-01 12:21:55] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:21:55] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:21:55] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:21:55] [BOT] ================================================================================
+[2025-12-01 12:21:55] [BOT] 2025-12-01 12:21:45,505 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:21:55] [BOT] 2025-12-01 12:21:45,506 - INFO - Started. Polling every 300s
+[2025-12-01 12:21:55] [BOT] 2025-12-01 12:21:45,508 - INFO - Disconnected from MT5
+[2025-12-01 12:22:25] [BOT] 2025-12-01 12:22:25,509 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:22:25] [BOT] 2025-12-01 12:22:25,510 - INFO -
+[2025-12-01 12:22:25] [BOT] ================================================================================
+[2025-12-01 12:22:25] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:22:25] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:22:25] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:22:25] [BOT] ================================================================================
+[2025-12-01 12:22:25] [BOT] 2025-12-01 12:22:25,511 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:22:25] [BOT] 2025-12-01 12:22:25,511 - INFO - Started. Polling every 300s
+[2025-12-01 12:22:25] [BOT] 2025-12-01 12:22:25,515 - INFO - Disconnected from MT5
+[2025-12-01 12:23:05] [BOT] 2025-12-01 12:23:05,517 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:23:05] [BOT] 2025-12-01 12:23:05,517 - INFO -
+[2025-12-01 12:23:05] [BOT] ================================================================================
+[2025-12-01 12:23:05] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:23:05] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:23:05] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:23:05] [BOT] ================================================================================
+[2025-12-01 12:23:05] [BOT] 2025-12-01 12:23:05,517 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:23:05] [BOT] 2025-12-01 12:23:05,517 - INFO - Started. Polling every 300s
+[2025-12-01 12:23:05] [BOT] 2025-12-01 12:23:05,521 - INFO - Disconnected from MT5
+[2025-12-01 12:23:45] [BOT] 2025-12-01 12:23:45,523 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:23:45] [BOT] 2025-12-01 12:23:45,523 - INFO -
+[2025-12-01 12:23:45] [BOT] ================================================================================
+[2025-12-01 12:23:45] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:23:45] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:23:45] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:23:45] [BOT] ================================================================================
+[2025-12-01 12:23:45] [BOT] 2025-12-01 12:23:45,523 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:23:45] [BOT] 2025-12-01 12:23:45,523 - INFO - Started. Polling every 300s
+[2025-12-01 12:23:45] [BOT] 2025-12-01 12:23:45,528 - INFO - Disconnected from MT5
+[2025-12-01 12:24:25] [BOT] 2025-12-01 12:24:25,661 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:24:25] [BOT] 2025-12-01 12:24:25,661 - INFO -
+[2025-12-01 12:24:25] [BOT] ================================================================================
+[2025-12-01 12:24:25] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:24:25] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:24:25] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:24:25] [BOT] ================================================================================
+[2025-12-01 12:24:25] [BOT] 2025-12-01 12:24:25,664 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:24:25] [BOT] 2025-12-01 12:24:25,664 - INFO - Started. Polling every 300s
+[2025-12-01 12:24:25] [BOT] 2025-12-01 12:24:25,664 - INFO - Disconnected from MT5
+[2025-12-01 12:25:05] [BOT] 2025-12-01 12:25:05,671 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:25:05] [BOT] 2025-12-01 12:25:05,672 - INFO -
+[2025-12-01 12:25:05] [BOT] ================================================================================
+[2025-12-01 12:25:05] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:25:05] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:25:05] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:25:05] [BOT] ================================================================================
+[2025-12-01 12:25:05] [BOT] 2025-12-01 12:25:05,673 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:25:05] [BOT] 2025-12-01 12:25:05,673 - INFO - Started. Polling every 300s
+[2025-12-01 12:25:05] [BOT] 2025-12-01 12:25:05,677 - INFO - Disconnected from MT5
+[2025-12-01 12:25:45] [BOT] 2025-12-01 12:25:45,678 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:25:45] [BOT] 2025-12-01 12:25:45,678 - INFO -
+[2025-12-01 12:25:45] [BOT] ================================================================================
+[2025-12-01 12:25:45] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:25:45] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:25:45] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:25:45] [BOT] ================================================================================
+[2025-12-01 12:25:45] [BOT] 2025-12-01 12:25:45,678 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:25:45] [BOT] 2025-12-01 12:25:45,678 - INFO - Started. Polling every 300s
+[2025-12-01 12:25:45] [BOT] 2025-12-01 12:25:45,683 - INFO - Disconnected from MT5
+[2025-12-01 12:26:25] [BOT] 2025-12-01 12:26:25,686 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:26:25] [BOT] 2025-12-01 12:26:25,687 - INFO -
+[2025-12-01 12:26:25] [BOT] ================================================================================
+[2025-12-01 12:26:25] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:26:25] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:26:25] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:26:25] [BOT] ================================================================================
+[2025-12-01 12:26:25] [BOT] 2025-12-01 12:26:25,688 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:26:25] [BOT] 2025-12-01 12:26:25,688 - INFO - Started. Polling every 300s
+[2025-12-01 12:26:25] [BOT] 2025-12-01 12:26:25,692 - INFO - Disconnected from MT5
+[2025-12-01 12:27:05] [BOT] 2025-12-01 12:27:05,763 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:27:05] [BOT] 2025-12-01 12:27:05,765 - INFO -
+[2025-12-01 12:27:05] [BOT] ================================================================================
+[2025-12-01 12:27:05] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:27:05] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:27:05] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:27:05] [BOT] ================================================================================
+[2025-12-01 12:27:05] [BOT] 2025-12-01 12:27:05,766 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:27:05] [BOT] 2025-12-01 12:27:05,766 - INFO - Started. Polling every 300s
+[2025-12-01 12:27:05] [BOT] 2025-12-01 12:27:05,769 - INFO - Disconnected from MT5
+[2025-12-01 12:27:45] [BOT] 2025-12-01 12:27:45,788 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:27:45] [BOT] 2025-12-01 12:27:45,790 - INFO -
+[2025-12-01 12:27:45] [BOT] ================================================================================
+[2025-12-01 12:27:45] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:27:45] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:27:45] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:27:45] [BOT] ================================================================================
+[2025-12-01 12:27:45] [BOT] 2025-12-01 12:27:45,791 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:27:45] [BOT] 2025-12-01 12:27:45,791 - INFO - Started. Polling every 300s
+[2025-12-01 12:27:45] [BOT] 2025-12-01 12:27:45,794 - INFO - Disconnected from MT5
+[2025-12-01 12:35:22] Watchdog started
+[2025-12-01 12:35:22] Starting trading bot...
+[2025-12-01 12:35:23] Trading bot started with PID: 7396
+[2025-12-01 12:35:24] [BOT] 2025-12-01 12:35:24,304 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:35:24] [BOT] 2025-12-01 12:35:24,307 - INFO -
+[2025-12-01 12:35:24] [BOT] ================================================================================
+[2025-12-01 12:35:24] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:35:24] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:35:24] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:35:24] [BOT] ================================================================================
+[2025-12-01 12:35:24] [BOT] 2025-12-01 12:35:24,310 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:35:24] [BOT] 2025-12-01 12:35:24,310 - INFO - Started. Polling every 300s
+[2025-12-01 12:35:24] [BOT] 2025-12-01 12:35:24,314 - INFO - Disconnected from MT5
+[2025-12-01 12:35:24] [BOT] Traceback (most recent call last):
+[2025-12-01 12:35:24] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:35:24] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:35:24] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:35:24] [BOT] self.run_cycle()
+[2025-12-01 12:35:24] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 339, in run_cycle
+[2025-12-01 12:35:24] [BOT] self.manage_positions()
+[2025-12-01 12:35:24] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 257, in manage_positions
+[2025-12-01 12:35:24] [BOT] for symbol in list(strategy.open_positions.keys()):
+[2025-12-01 12:35:24] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:35:24] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'open_positions'
+[2025-12-01 12:36:04] [BOT] 2025-12-01 12:36:04,567 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:36:04] [BOT] 2025-12-01 12:36:04,569 - INFO -
+[2025-12-01 12:36:04] [BOT] ================================================================================
+[2025-12-01 12:36:04] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:36:04] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:36:04] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:36:04] [BOT] ================================================================================
+[2025-12-01 12:36:04] [BOT] 2025-12-01 12:36:04,569 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:36:04] [BOT] 2025-12-01 12:36:04,569 - INFO - Started. Polling every 300s
+[2025-12-01 12:36:04] [BOT] 2025-12-01 12:36:04,573 - INFO - Disconnected from MT5
+[2025-12-01 12:36:04] [BOT] Traceback (most recent call last):
+[2025-12-01 12:36:04] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:36:04] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:36:04] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:36:04] [BOT] self.run_cycle()
+[2025-12-01 12:36:04] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 339, in run_cycle
+[2025-12-01 12:36:04] [BOT] self.manage_positions()
+[2025-12-01 12:36:04] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 257, in manage_positions
+[2025-12-01 12:36:04] [BOT] for symbol in list(strategy.open_positions.keys()):
+[2025-12-01 12:36:04] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:36:04] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'open_positions'
+[2025-12-01 12:36:44] [BOT] 2025-12-01 12:36:44,578 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:36:44] [BOT] 2025-12-01 12:36:44,579 - INFO -
+[2025-12-01 12:36:44] [BOT] ================================================================================
+[2025-12-01 12:36:44] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:36:44] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:36:44] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:36:44] [BOT] ================================================================================
+[2025-12-01 12:36:44] [BOT] 2025-12-01 12:36:44,580 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:36:44] [BOT] 2025-12-01 12:36:44,580 - INFO - Started. Polling every 300s
+[2025-12-01 12:36:44] [BOT] 2025-12-01 12:36:44,585 - INFO - Disconnected from MT5
+[2025-12-01 12:36:44] [BOT] Traceback (most recent call last):
+[2025-12-01 12:36:44] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:36:44] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:36:44] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:36:44] [BOT] self.run_cycle()
+[2025-12-01 12:36:44] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 339, in run_cycle
+[2025-12-01 12:36:44] [BOT] self.manage_positions()
+[2025-12-01 12:36:44] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 257, in manage_positions
+[2025-12-01 12:36:44] [BOT] for symbol in list(strategy.open_positions.keys()):
+[2025-12-01 12:36:44] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:36:44] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'open_positions'
+[2025-12-01 12:37:24] [BOT] 2025-12-01 12:37:24,744 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:37:24] [BOT] 2025-12-01 12:37:24,746 - INFO -
+[2025-12-01 12:37:25] [BOT] ================================================================================
+[2025-12-01 12:37:25] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:37:26] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:37:26] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:37:26] [BOT] ================================================================================
+[2025-12-01 12:37:26] [BOT] 2025-12-01 12:37:24,747 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:37:26] [BOT] 2025-12-01 12:37:24,747 - INFO - Started. Polling every 300s
+[2025-12-01 12:37:26] [BOT] 2025-12-01 12:37:24,751 - INFO - Disconnected from MT5
+[2025-12-01 12:37:26] [BOT] Traceback (most recent call last):
+[2025-12-01 12:37:26] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:37:26] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:37:27] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:37:27] [BOT] self.run_cycle()
+[2025-12-01 12:37:27] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 339, in run_cycle
+[2025-12-01 12:37:27] [BOT] self.manage_positions()
+[2025-12-01 12:37:27] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 257, in manage_positions
+[2025-12-01 12:37:27] [BOT] for symbol in list(strategy.open_positions.keys()):
+[2025-12-01 12:37:27] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:37:28] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'open_positions'
+[2025-12-01 12:38:04] [BOT] 2025-12-01 12:38:04,753 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:38:04] [BOT] 2025-12-01 12:38:04,755 - INFO -
+[2025-12-01 12:38:04] [BOT] ================================================================================
+[2025-12-01 12:38:04] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:38:04] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:38:04] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:38:04] [BOT] ================================================================================
+[2025-12-01 12:38:04] [BOT] 2025-12-01 12:38:04,756 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:38:04] [BOT] 2025-12-01 12:38:04,756 - INFO - Started. Polling every 300s
+[2025-12-01 12:38:04] [BOT] 2025-12-01 12:38:04,759 - INFO - Disconnected from MT5
+[2025-12-01 12:38:04] [BOT] Traceback (most recent call last):
+[2025-12-01 12:38:04] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:38:04] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:38:04] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:38:04] [BOT] self.run_cycle()
+[2025-12-01 12:38:04] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 339, in run_cycle
+[2025-12-01 12:38:04] [BOT] self.manage_positions()
+[2025-12-01 12:38:04] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 257, in manage_positions
+[2025-12-01 12:38:04] [BOT] for symbol in list(strategy.open_positions.keys()):
+[2025-12-01 12:38:04] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:38:04] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'open_positions'
+[2025-12-01 12:38:45] [BOT] 2025-12-01 12:38:45,107 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:38:45] [BOT] 2025-12-01 12:38:45,109 - INFO -
+[2025-12-01 12:38:45] [BOT] ================================================================================
+[2025-12-01 12:38:45] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:38:45] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:38:45] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:38:45] [BOT] ================================================================================
+[2025-12-01 12:38:45] [BOT] 2025-12-01 12:38:45,109 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:38:45] [BOT] 2025-12-01 12:38:45,109 - INFO - Started. Polling every 300s
+[2025-12-01 12:38:45] [BOT] 2025-12-01 12:38:45,113 - INFO - Disconnected from MT5
+[2025-12-01 12:38:45] [BOT] Traceback (most recent call last):
+[2025-12-01 12:38:45] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:38:45] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:38:45] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:38:45] [BOT] self.run_cycle()
+[2025-12-01 12:38:45] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 339, in run_cycle
+[2025-12-01 12:38:45] [BOT] self.manage_positions()
+[2025-12-01 12:38:45] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 257, in manage_positions
+[2025-12-01 12:38:45] [BOT] for symbol in list(strategy.open_positions.keys()):
+[2025-12-01 12:38:45] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:38:45] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'open_positions'
+[2025-12-01 12:39:25] [BOT] 2025-12-01 12:39:25,115 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:39:25] [BOT] 2025-12-01 12:39:25,118 - INFO -
+[2025-12-01 12:39:25] [BOT] ================================================================================
+[2025-12-01 12:39:25] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:39:25] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:39:25] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:39:25] [BOT] ================================================================================
+[2025-12-01 12:39:25] [BOT] 2025-12-01 12:39:25,122 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:39:25] [BOT] 2025-12-01 12:39:25,122 - INFO - Started. Polling every 300s
+[2025-12-01 12:39:25] [BOT] 2025-12-01 12:39:25,127 - INFO - Disconnected from MT5
+[2025-12-01 12:39:25] [BOT] Traceback (most recent call last):
+[2025-12-01 12:39:25] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:39:25] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:39:25] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:39:25] [BOT] self.run_cycle()
+[2025-12-01 12:39:25] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 339, in run_cycle
+[2025-12-01 12:39:25] [BOT] self.manage_positions()
+[2025-12-01 12:39:25] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 257, in manage_positions
+[2025-12-01 12:39:25] [BOT] for symbol in list(strategy.open_positions.keys()):
+[2025-12-01 12:39:25] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:39:25] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'open_positions'
+[2025-12-01 12:40:05] [BOT] 2025-12-01 12:40:05,131 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:40:05] [BOT] 2025-12-01 12:40:05,132 - INFO -
+[2025-12-01 12:40:05] [BOT] ================================================================================
+[2025-12-01 12:40:05] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:40:05] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:40:05] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:40:05] [BOT] ================================================================================
+[2025-12-01 12:40:05] [BOT] 2025-12-01 12:40:05,133 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:40:05] [BOT] 2025-12-01 12:40:05,134 - INFO - Started. Polling every 300s
+[2025-12-01 12:40:05] [BOT] 2025-12-01 12:40:05,137 - INFO - Disconnected from MT5
+[2025-12-01 12:40:05] [BOT] Traceback (most recent call last):
+[2025-12-01 12:40:05] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:40:05] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:40:05] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:40:05] [BOT] self.run_cycle()
+[2025-12-01 12:40:05] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 339, in run_cycle
+[2025-12-01 12:40:05] [BOT] self.manage_positions()
+[2025-12-01 12:40:05] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 257, in manage_positions
+[2025-12-01 12:40:05] [BOT] for symbol in list(strategy.open_positions.keys()):
+[2025-12-01 12:40:05] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:40:05] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'open_positions'
+[2025-12-01 12:40:45] [BOT] 2025-12-01 12:40:45,140 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:40:45] [BOT] 2025-12-01 12:40:45,141 - INFO -
+[2025-12-01 12:40:45] [BOT] ================================================================================
+[2025-12-01 12:40:45] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:40:45] [BOT] Symbols=6 | Shadow Mode=True
+[2025-12-01 12:40:45] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:40:45] [BOT] ================================================================================
+[2025-12-01 12:40:45] [BOT] 2025-12-01 12:40:45,142 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:40:45] [BOT] 2025-12-01 12:40:45,142 - INFO - Started. Polling every 300s
+[2025-12-01 12:40:45] [BOT] 2025-12-01 12:40:45,145 - INFO - Disconnected from MT5
+[2025-12-01 12:40:45] [BOT] Traceback (most recent call last):
+[2025-12-01 12:40:45] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:40:45] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:40:45] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:40:45] [BOT] self.run_cycle()
+[2025-12-01 12:40:45] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 339, in run_cycle
+[2025-12-01 12:40:45] [BOT] self.manage_positions()
+[2025-12-01 12:40:45] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 257, in manage_positions
+[2025-12-01 12:40:45] [BOT] for symbol in list(strategy.open_positions.keys()):
+[2025-12-01 12:40:45] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:40:45] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'open_positions'
+[2025-12-01 12:41:17] Trading bot terminated with code: 1
+[2025-12-01 12:41:17] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 12:41:22] Watchdog started
+[2025-12-01 12:41:22] Starting trading bot...
+[2025-12-01 12:41:22] Trading bot started with PID: 1100
+[2025-12-01 12:41:23] [BOT] 2025-12-01 12:41:23,551 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:41:23] [BOT] 2025-12-01 12:41:23,557 - INFO -
+[2025-12-01 12:41:23] [BOT] ================================================================================
+[2025-12-01 12:41:23] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:41:23] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:41:23] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:41:23] [BOT] ================================================================================
+[2025-12-01 12:41:23] [BOT] 2025-12-01 12:41:23,559 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:41:23] [BOT] 2025-12-01 12:41:23,559 - INFO - Started. Polling every 300s
+[2025-12-01 12:41:23] [BOT] 2025-12-01 12:41:23,565 - INFO - Disconnected from MT5
+[2025-12-01 12:41:23] [BOT] Traceback (most recent call last):
+[2025-12-01 12:41:23] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:41:23] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:41:23] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:41:23] [BOT] self.run_cycle()
+[2025-12-01 12:41:23] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 343, in run_cycle
+[2025-12-01 12:41:23] [BOT] trade_signal = strategy.evaluate_live(df, symbol)
+[2025-12-01 12:41:23] [BOT] ^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:41:23] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'evaluate_live'
+[2025-12-01 12:41:47] Starting trading bot...
+[2025-12-01 12:41:47] Trading bot started with PID: 5904
+[2025-12-01 12:41:48] [BOT] 2025-12-01 12:41:48,827 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:41:48] [BOT] 2025-12-01 12:41:48,835 - INFO -
+[2025-12-01 12:41:48] [BOT] ================================================================================
+[2025-12-01 12:41:48] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:41:48] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:41:48] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:41:48] [BOT] ================================================================================
+[2025-12-01 12:41:48] [BOT] 2025-12-01 12:41:48,837 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:41:48] [BOT] 2025-12-01 12:41:48,837 - INFO - Started. Polling every 300s
+[2025-12-01 12:41:48] [BOT] 2025-12-01 12:41:48,843 - INFO - Disconnected from MT5
+[2025-12-01 12:41:48] [BOT] Traceback (most recent call last):
+[2025-12-01 12:41:48] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:41:48] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:41:48] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:41:48] [BOT] self.run_cycle()
+[2025-12-01 12:41:48] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 343, in run_cycle
+[2025-12-01 12:41:48] [BOT] trade_signal = strategy.evaluate_live(df, symbol)
+[2025-12-01 12:41:48] [BOT] ^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:41:48] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'evaluate_live'
+[2025-12-01 12:42:03] [BOT] 2025-12-01 12:42:03,605 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:42:03] [BOT] 2025-12-01 12:42:03,606 - INFO -
+[2025-12-01 12:42:03] [BOT] ================================================================================
+[2025-12-01 12:42:03] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:42:03] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:42:03] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:42:03] [BOT] ================================================================================
+[2025-12-01 12:42:03] [BOT] 2025-12-01 12:42:03,607 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:42:03] [BOT] 2025-12-01 12:42:03,607 - INFO - Started. Polling every 300s
+[2025-12-01 12:42:03] [BOT] 2025-12-01 12:42:03,612 - INFO - Disconnected from MT5
+[2025-12-01 12:42:03] [BOT] Traceback (most recent call last):
+[2025-12-01 12:42:03] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:42:03] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:42:03] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:42:03] [BOT] self.run_cycle()
+[2025-12-01 12:42:03] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 343, in run_cycle
+[2025-12-01 12:42:03] [BOT] trade_signal = strategy.evaluate_live(df, symbol)
+[2025-12-01 12:42:03] [BOT] ^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:42:03] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'evaluate_live'
+[2025-12-01 12:42:28] [BOT] 2025-12-01 12:42:28,924 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:42:28] [BOT] 2025-12-01 12:42:28,926 - INFO -
+[2025-12-01 12:42:28] [BOT] ================================================================================
+[2025-12-01 12:42:28] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:42:28] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:42:28] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:42:28] [BOT] ================================================================================
+[2025-12-01 12:42:28] [BOT] 2025-12-01 12:42:28,927 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:42:28] [BOT] 2025-12-01 12:42:28,927 - INFO - Started. Polling every 300s
+[2025-12-01 12:42:28] [BOT] 2025-12-01 12:42:28,933 - INFO - Disconnected from MT5
+[2025-12-01 12:42:28] [BOT] Traceback (most recent call last):
+[2025-12-01 12:42:28] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:42:28] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:42:28] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:42:28] [BOT] self.run_cycle()
+[2025-12-01 12:42:28] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 343, in run_cycle
+[2025-12-01 12:42:28] [BOT] trade_signal = strategy.evaluate_live(df, symbol)
+[2025-12-01 12:42:28] [BOT] ^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:42:28] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'evaluate_live'
+[2025-12-01 12:42:43] [BOT] 2025-12-01 12:42:43,615 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:42:43] [BOT] 2025-12-01 12:42:43,616 - INFO -
+[2025-12-01 12:42:43] [BOT] ================================================================================
+[2025-12-01 12:42:43] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:42:43] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:42:43] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:42:43] [BOT] ================================================================================
+[2025-12-01 12:42:43] [BOT] 2025-12-01 12:42:43,620 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:42:43] [BOT] 2025-12-01 12:42:43,620 - INFO - Started. Polling every 300s
+[2025-12-01 12:42:43] [BOT] 2025-12-01 12:42:43,624 - INFO - Disconnected from MT5
+[2025-12-01 12:42:43] [BOT] Traceback (most recent call last):
+[2025-12-01 12:42:43] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:42:43] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:42:43] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:42:43] [BOT] self.run_cycle()
+[2025-12-01 12:42:43] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 343, in run_cycle
+[2025-12-01 12:42:43] [BOT] trade_signal = strategy.evaluate_live(df, symbol)
+[2025-12-01 12:42:43] [BOT] ^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:42:43] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'evaluate_live'
+[2025-12-01 12:43:08] [BOT] 2025-12-01 12:43:08,935 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:43:08] [BOT] 2025-12-01 12:43:08,937 - INFO -
+[2025-12-01 12:43:08] [BOT] ================================================================================
+[2025-12-01 12:43:08] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:43:08] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:43:08] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:43:08] [BOT] ================================================================================
+[2025-12-01 12:43:08] [BOT] 2025-12-01 12:43:08,938 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:43:08] [BOT] 2025-12-01 12:43:08,938 - INFO - Started. Polling every 300s
+[2025-12-01 12:43:08] [BOT] 2025-12-01 12:43:08,943 - INFO - Disconnected from MT5
+[2025-12-01 12:43:08] [BOT] Traceback (most recent call last):
+[2025-12-01 12:43:08] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:43:08] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:43:08] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:43:08] [BOT] self.run_cycle()
+[2025-12-01 12:43:08] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 343, in run_cycle
+[2025-12-01 12:43:08] [BOT] trade_signal = strategy.evaluate_live(df, symbol)
+[2025-12-01 12:43:08] [BOT] ^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:43:08] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'evaluate_live'
+[2025-12-01 12:43:23] [BOT] 2025-12-01 12:43:23,628 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:43:23] [BOT] 2025-12-01 12:43:23,630 - INFO -
+[2025-12-01 12:43:23] [BOT] ================================================================================
+[2025-12-01 12:43:23] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:43:23] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:43:23] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:43:23] [BOT] ================================================================================
+[2025-12-01 12:43:23] [BOT] 2025-12-01 12:43:23,630 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:43:23] [BOT] 2025-12-01 12:43:23,630 - INFO - Started. Polling every 300s
+[2025-12-01 12:43:23] [BOT] 2025-12-01 12:43:23,635 - INFO - Disconnected from MT5
+[2025-12-01 12:43:23] [BOT] Traceback (most recent call last):
+[2025-12-01 12:43:23] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:43:23] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:43:23] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:43:23] [BOT] self.run_cycle()
+[2025-12-01 12:43:23] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 343, in run_cycle
+[2025-12-01 12:43:23] [BOT] trade_signal = strategy.evaluate_live(df, symbol)
+[2025-12-01 12:43:23] [BOT] ^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:43:23] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'evaluate_live'
+[2025-12-01 12:43:48] [BOT] 2025-12-01 12:43:48,947 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:43:48] [BOT] 2025-12-01 12:43:48,948 - INFO -
+[2025-12-01 12:43:48] [BOT] ================================================================================
+[2025-12-01 12:43:48] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:43:48] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:43:48] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:43:48] [BOT] ================================================================================
+[2025-12-01 12:43:48] [BOT] 2025-12-01 12:43:48,950 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:43:48] [BOT] 2025-12-01 12:43:48,950 - INFO - Started. Polling every 300s
+[2025-12-01 12:43:48] [BOT] 2025-12-01 12:43:48,955 - INFO - Disconnected from MT5
+[2025-12-01 12:43:48] [BOT] Traceback (most recent call last):
+[2025-12-01 12:43:48] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-01 12:43:48] [BOT] bot.start(check_interval=300)
+[2025-12-01 12:43:48] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 355, in start
+[2025-12-01 12:43:48] [BOT] self.run_cycle()
+[2025-12-01 12:43:48] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 343, in run_cycle
+[2025-12-01 12:43:48] [BOT] trade_signal = strategy.evaluate_live(df, symbol)
+[2025-12-01 12:43:48] [BOT] ^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-01 12:43:48] [BOT] AttributeError: 'GoldMomentumStrategy' object has no attribute 'evaluate_live'
+[2025-12-01 12:43:56] Trading bot terminated with code: 1
+[2025-12-01 12:43:56] Trading bot terminated with code: 1
+[2025-12-01 12:43:56] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 12:43:56] Bot stopped, waiting 30 seconds before restart...
+[2025-12-01 12:44:01] Watchdog started
+[2025-12-01 12:44:01] Starting trading bot...
+[2025-12-01 12:44:01] Trading bot started with PID: 8040
+[2025-12-01 12:44:04] [BOT] 2025-12-01 12:44:04,202 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:44:04] [BOT] 2025-12-01 12:44:04,216 - INFO -
+[2025-12-01 12:44:04] [BOT] ================================================================================
+[2025-12-01 12:44:04] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:44:04] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:44:04] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:44:04] [BOT] ================================================================================
+[2025-12-01 12:44:04] [BOT] 2025-12-01 12:44:04,220 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:44:04] [BOT] 2025-12-01 12:44:04,220 - INFO - Started. Polling every 300s
+[2025-12-01 12:44:26] Starting trading bot...
+[2025-12-01 12:44:26] Trading bot started with PID: 5956
+[2025-12-01 12:44:26] Starting trading bot...
+[2025-12-01 12:44:26] Trading bot started with PID: 5556
+[2025-12-01 12:44:27] [BOT] 2025-12-01 12:44:27,759 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:44:27] [BOT] 2025-12-01 12:44:27,764 - INFO -
+[2025-12-01 12:44:27] [BOT] ================================================================================
+[2025-12-01 12:44:27] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:44:27] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:44:27] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:44:27] [BOT] ================================================================================
+[2025-12-01 12:44:27] [BOT] 2025-12-01 12:44:27,766 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:44:27] [BOT] 2025-12-01 12:44:27,766 - INFO - Started. Polling every 300s
+[2025-12-01 12:44:27] [BOT] 2025-12-01 12:44:27,954 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-01 12:44:27] [BOT] 2025-12-01 12:44:27,960 - INFO -
+[2025-12-01 12:44:27] [BOT] ================================================================================
+[2025-12-01 12:44:27] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-01 12:44:27] [BOT] Symbols=6 | Shadow Mode=False
+[2025-12-01 12:44:27] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-01 12:44:27] [BOT] ================================================================================
+[2025-12-01 12:44:27] [BOT] 2025-12-01 12:44:27,963 - INFO - Connected. Balance: 9970.21
+[2025-12-01 12:44:27] [BOT] 2025-12-01 12:44:27,963 - INFO - Started. Polling every 300s

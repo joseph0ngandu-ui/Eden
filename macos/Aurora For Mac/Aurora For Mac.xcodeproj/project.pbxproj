@@ -1,0 +1,729 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A87F26D22ED0A80900346574 /* PositionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C02ED0A80900346574 /* PositionCard.swift */; };
+		A87F26D32ED0A80900346574 /* Aurora_For_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26CE2ED0A80900346574 /* Aurora_For_MacApp.swift */; };
+		A87F26D42ED0A80900346574 /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C12ED0A80900346574 /* StatCard.swift */; };
+		A87F26D52ED0A80900346574 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C52ED0A80900346574 /* ContentView.swift */; };
+		A87F26D62ED0A80900346574 /* Trade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B62ED0A80900346574 /* Trade.swift */; };
+		A87F26D72ED0A80900346574 /* StrategyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B02ED0A80900346574 /* StrategyViewModel.swift */; };
+		A87F26D82ED0A80900346574 /* MLTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C72ED0A80900346574 /* MLTrainingView.swift */; };
+		A87F26D92ED0A80900346574 /* BacktestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C42ED0A80900346574 /* BacktestView.swift */; };
+		A87F26DA2ED0A80900346574 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B92ED0A80900346574 /* AuthService.swift */; };
+		A87F26DB2ED0A80900346574 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26BD2ED0A80900346574 /* ErrorPresenter.swift */; };
+		A87F26DC2ED0A80900346574 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B52ED0A80900346574 /* Strategy.swift */; };
+		A87F26DD2ED0A80900346574 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B82ED0A80900346574 /* APIService.swift */; };
+		A87F26DE2ED0A80900346574 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C92ED0A80900346574 /* SettingsView.swift */; };
+		A87F26DF2ED0A80900346574 /* MLTrainingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B32ED0A80900346574 /* MLTrainingSession.swift */; };
+		A87F26E02ED0A80900346574 /* StrategyEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26CA2ED0A80900346574 /* StrategyEditorView.swift */; };
+		A87F26E12ED0A80900346574 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C82ED0A80900346574 /* MonitorView.swift */; };
+		A87F26E22ED0A80900346574 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26BB2ED0A80900346574 /* WebSocketService.swift */; };
+		A87F26E32ED0A80900346574 /* BacktestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B22ED0A80900346574 /* BacktestResult.swift */; };
+		A87F26E42ED0A80900346574 /* StrategyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26CB2ED0A80900346574 /* StrategyListView.swift */; };
+		A87F26E52ED0A80900346574 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26B42ED0A80900346574 /* Position.swift */; };
+		A87F26E62ED0A80900346574 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26BA2ED0A80900346574 /* NotificationManager.swift */; };
+		A87F26E72ED0A80900346574 /* TradeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C22ED0A80900346574 /* TradeRow.swift */; };
+		A87F26E82ED0A80900346574 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F26C62ED0A80900346574 /* LoginView.swift */; };
+		A87F26E92ED0A80900346574 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A87F26D02ED0A80900346574 /* README.md */; };
+		A87F26EA2ED0A80900346574 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A87F26CF2ED0A80900346574 /* Info.plist */; };
+		A87F26EC2ED0A81500346574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87F26EB2ED0A81500346574 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A87F25252ED0792400346574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A87F250F2ED0792200346574 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A87F25162ED0792200346574;
+			remoteInfo = "Aurora For Mac";
+		};
+		A87F252F2ED0792400346574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A87F250F2ED0792200346574 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A87F25162ED0792200346574;
+			remoteInfo = "Aurora For Mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A87F25172ED0792200346574 /* Aurora For Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aurora For Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A87F25242ED0792400346574 /* Aurora For MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aurora For MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A87F252E2ED0792400346574 /* Aurora For MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aurora For MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A87F26B02ED0A80900346574 /* StrategyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyViewModel.swift; sourceTree = "<group>"; };
+		A87F26B22ED0A80900346574 /* BacktestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacktestResult.swift; sourceTree = "<group>"; };
+		A87F26B32ED0A80900346574 /* MLTrainingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTrainingSession.swift; sourceTree = "<group>"; };
+		A87F26B42ED0A80900346574 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		A87F26B52ED0A80900346574 /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
+		A87F26B62ED0A80900346574 /* Trade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trade.swift; sourceTree = "<group>"; };
+		A87F26B82ED0A80900346574 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		A87F26B92ED0A80900346574 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A87F26BA2ED0A80900346574 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A87F26BB2ED0A80900346574 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
+		A87F26BD2ED0A80900346574 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		A87F26C02ED0A80900346574 /* PositionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCard.swift; sourceTree = "<group>"; };
+		A87F26C12ED0A80900346574 /* StatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCard.swift; sourceTree = "<group>"; };
+		A87F26C22ED0A80900346574 /* TradeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeRow.swift; sourceTree = "<group>"; };
+		A87F26C42ED0A80900346574 /* BacktestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacktestView.swift; sourceTree = "<group>"; };
+		A87F26C52ED0A80900346574 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A87F26C62ED0A80900346574 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A87F26C72ED0A80900346574 /* MLTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTrainingView.swift; sourceTree = "<group>"; };
+		A87F26C82ED0A80900346574 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
+		A87F26C92ED0A80900346574 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A87F26CA2ED0A80900346574 /* StrategyEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyEditorView.swift; sourceTree = "<group>"; };
+		A87F26CB2ED0A80900346574 /* StrategyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyListView.swift; sourceTree = "<group>"; };
+		A87F26CD2ED0A80900346574 /* Aurora_For_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aurora_For_Mac.entitlements; sourceTree = "<group>"; };
+		A87F26CE2ED0A80900346574 /* Aurora_For_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aurora_For_MacApp.swift; sourceTree = "<group>"; };
+		A87F26CF2ED0A80900346574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A87F26D02ED0A80900346574 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A87F26EB2ED0A81500346574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A87F25142ED0792200346574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A87F25212ED0792400346574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A87F252B2ED0792400346574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A87F250E2ED0792200346574 = {
+			isa = PBXGroup;
+			children = (
+				A87F26D12ED0A80900346574 /* Aurora For Mac */,
+				A87F25182ED0792200346574 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A87F25182ED0792200346574 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A87F25172ED0792200346574 /* Aurora For Mac.app */,
+				A87F25242ED0792400346574 /* Aurora For MacTests.xctest */,
+				A87F252E2ED0792400346574 /* Aurora For MacUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A87F26AF2ED0A80900346574 /* ML */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ML;
+			sourceTree = "<group>";
+		};
+		A87F26B12ED0A80900346574 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26B02ED0A80900346574 /* StrategyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A87F26B72ED0A80900346574 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26B12ED0A80900346574 /* ViewModels */,
+				A87F26B22ED0A80900346574 /* BacktestResult.swift */,
+				A87F26B32ED0A80900346574 /* MLTrainingSession.swift */,
+				A87F26B42ED0A80900346574 /* Position.swift */,
+				A87F26B52ED0A80900346574 /* Strategy.swift */,
+				A87F26B62ED0A80900346574 /* Trade.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A87F26BC2ED0A80900346574 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26B82ED0A80900346574 /* APIService.swift */,
+				A87F26B92ED0A80900346574 /* AuthService.swift */,
+				A87F26BA2ED0A80900346574 /* NotificationManager.swift */,
+				A87F26BB2ED0A80900346574 /* WebSocketService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A87F26BE2ED0A80900346574 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26BD2ED0A80900346574 /* ErrorPresenter.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A87F26BF2ED0A80900346574 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A87F26C32ED0A80900346574 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26C02ED0A80900346574 /* PositionCard.swift */,
+				A87F26C12ED0A80900346574 /* StatCard.swift */,
+				A87F26C22ED0A80900346574 /* TradeRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A87F26CC2ED0A80900346574 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26C32ED0A80900346574 /* Components */,
+				A87F26C42ED0A80900346574 /* BacktestView.swift */,
+				A87F26C52ED0A80900346574 /* ContentView.swift */,
+				A87F26C62ED0A80900346574 /* LoginView.swift */,
+				A87F26C72ED0A80900346574 /* MLTrainingView.swift */,
+				A87F26C82ED0A80900346574 /* MonitorView.swift */,
+				A87F26C92ED0A80900346574 /* SettingsView.swift */,
+				A87F26CA2ED0A80900346574 /* StrategyEditorView.swift */,
+				A87F26CB2ED0A80900346574 /* StrategyListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A87F26D12ED0A80900346574 /* Aurora For Mac */ = {
+			isa = PBXGroup;
+			children = (
+				A87F26AF2ED0A80900346574 /* ML */,
+				A87F26B72ED0A80900346574 /* Models */,
+				A87F26BC2ED0A80900346574 /* Services */,
+				A87F26BE2ED0A80900346574 /* Utilities */,
+				A87F26BF2ED0A80900346574 /* ViewModels */,
+				A87F26CC2ED0A80900346574 /* Views */,
+				A87F26CD2ED0A80900346574 /* Aurora_For_Mac.entitlements */,
+				A87F26CE2ED0A80900346574 /* Aurora_For_MacApp.swift */,
+				A87F26CF2ED0A80900346574 /* Info.plist */,
+				A87F26D02ED0A80900346574 /* README.md */,
+				A87F26EB2ED0A81500346574 /* Assets.xcassets */,
+			);
+			path = "Aurora For Mac";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A87F25162ED0792200346574 /* Aurora For Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A87F25382ED0792400346574 /* Build configuration list for PBXNativeTarget "Aurora For Mac" */;
+			buildPhases = (
+				A87F25132ED0792200346574 /* Sources */,
+				A87F25142ED0792200346574 /* Frameworks */,
+				A87F25152ED0792200346574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Aurora For Mac";
+			packageProductDependencies = (
+			);
+			productName = "Aurora For Mac";
+			productReference = A87F25172ED0792200346574 /* Aurora For Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A87F25232ED0792400346574 /* Aurora For MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A87F253B2ED0792400346574 /* Build configuration list for PBXNativeTarget "Aurora For MacTests" */;
+			buildPhases = (
+				A87F25202ED0792400346574 /* Sources */,
+				A87F25212ED0792400346574 /* Frameworks */,
+				A87F25222ED0792400346574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A87F25262ED0792400346574 /* PBXTargetDependency */,
+			);
+			name = "Aurora For MacTests";
+			packageProductDependencies = (
+			);
+			productName = "Aurora For MacTests";
+			productReference = A87F25242ED0792400346574 /* Aurora For MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A87F252D2ED0792400346574 /* Aurora For MacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A87F253E2ED0792400346574 /* Build configuration list for PBXNativeTarget "Aurora For MacUITests" */;
+			buildPhases = (
+				A87F252A2ED0792400346574 /* Sources */,
+				A87F252B2ED0792400346574 /* Frameworks */,
+				A87F252C2ED0792400346574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A87F25302ED0792400346574 /* PBXTargetDependency */,
+			);
+			name = "Aurora For MacUITests";
+			packageProductDependencies = (
+			);
+			productName = "Aurora For MacUITests";
+			productReference = A87F252E2ED0792400346574 /* Aurora For MacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A87F250F2ED0792200346574 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2610;
+				LastUpgradeCheck = 2610;
+				TargetAttributes = {
+					A87F25162ED0792200346574 = {
+						CreatedOnToolsVersion = 26.1.1;
+					};
+					A87F25232ED0792400346574 = {
+						CreatedOnToolsVersion = 26.1.1;
+						TestTargetID = A87F25162ED0792200346574;
+					};
+					A87F252D2ED0792400346574 = {
+						CreatedOnToolsVersion = 26.1.1;
+						TestTargetID = A87F25162ED0792200346574;
+					};
+				};
+			};
+			buildConfigurationList = A87F25122ED0792200346574 /* Build configuration list for PBXProject "Aurora For Mac" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A87F250E2ED0792200346574;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A87F25182ED0792200346574 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A87F25162ED0792200346574 /* Aurora For Mac */,
+				A87F25232ED0792400346574 /* Aurora For MacTests */,
+				A87F252D2ED0792400346574 /* Aurora For MacUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A87F25152ED0792200346574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A87F26E92ED0A80900346574 /* README.md in Resources */,
+				A87F26EC2ED0A81500346574 /* Assets.xcassets in Resources */,
+				A87F26EA2ED0A80900346574 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A87F25222ED0792400346574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A87F252C2ED0792400346574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A87F25132ED0792200346574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A87F26D22ED0A80900346574 /* PositionCard.swift in Sources */,
+				A87F26D32ED0A80900346574 /* Aurora_For_MacApp.swift in Sources */,
+				A87F26D42ED0A80900346574 /* StatCard.swift in Sources */,
+				A87F26D52ED0A80900346574 /* ContentView.swift in Sources */,
+				A87F26D62ED0A80900346574 /* Trade.swift in Sources */,
+				A87F26D72ED0A80900346574 /* StrategyViewModel.swift in Sources */,
+				A87F26D82ED0A80900346574 /* MLTrainingView.swift in Sources */,
+				A87F26D92ED0A80900346574 /* BacktestView.swift in Sources */,
+				A87F26DA2ED0A80900346574 /* AuthService.swift in Sources */,
+				A87F26DB2ED0A80900346574 /* ErrorPresenter.swift in Sources */,
+				A87F26DC2ED0A80900346574 /* Strategy.swift in Sources */,
+				A87F26DD2ED0A80900346574 /* APIService.swift in Sources */,
+				A87F26DE2ED0A80900346574 /* SettingsView.swift in Sources */,
+				A87F26DF2ED0A80900346574 /* MLTrainingSession.swift in Sources */,
+				A87F26E02ED0A80900346574 /* StrategyEditorView.swift in Sources */,
+				A87F26E12ED0A80900346574 /* MonitorView.swift in Sources */,
+				A87F26E22ED0A80900346574 /* WebSocketService.swift in Sources */,
+				A87F26E32ED0A80900346574 /* BacktestResult.swift in Sources */,
+				A87F26E42ED0A80900346574 /* StrategyListView.swift in Sources */,
+				A87F26E52ED0A80900346574 /* Position.swift in Sources */,
+				A87F26E62ED0A80900346574 /* NotificationManager.swift in Sources */,
+				A87F26E72ED0A80900346574 /* TradeRow.swift in Sources */,
+				A87F26E82ED0A80900346574 /* LoginView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A87F25202ED0792400346574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A87F252A2ED0792400346574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A87F25262ED0792400346574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A87F25162ED0792200346574 /* Aurora For Mac */;
+			targetProxy = A87F25252ED0792400346574 /* PBXContainerItemProxy */;
+		};
+		A87F25302ED0792400346574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A87F25162ED0792200346574 /* Aurora For Mac */;
+			targetProxy = A87F252F2ED0792400346574 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A87F25362ED0792400346574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D8HF4C9TYU;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A87F25372ED0792400346574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D8HF4C9TYU;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		A87F25392ED0792400346574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8HF4C9TYU;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eden.joseph.Aurora-For-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A87F253A2ED0792400346574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8HF4C9TYU;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eden.joseph.Aurora-For-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A87F253C2ED0792400346574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8HF4C9TYU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eden.joseph.Aurora-For-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aurora For Mac.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Aurora For Mac";
+			};
+			name = Debug;
+		};
+		A87F253D2ED0792400346574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8HF4C9TYU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eden.joseph.Aurora-For-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aurora For Mac.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Aurora For Mac";
+			};
+			name = Release;
+		};
+		A87F253F2ED0792400346574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8HF4C9TYU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eden.joseph.Aurora-For-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Aurora For Mac";
+			};
+			name = Debug;
+		};
+		A87F25402ED0792400346574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8HF4C9TYU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eden.joseph.Aurora-For-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Aurora For Mac";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A87F25122ED0792200346574 /* Build configuration list for PBXProject "Aurora For Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A87F25362ED0792400346574 /* Debug */,
+				A87F25372ED0792400346574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A87F25382ED0792400346574 /* Build configuration list for PBXNativeTarget "Aurora For Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A87F25392ED0792400346574 /* Debug */,
+				A87F253A2ED0792400346574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A87F253B2ED0792400346574 /* Build configuration list for PBXNativeTarget "Aurora For MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A87F253C2ED0792400346574 /* Debug */,
+				A87F253D2ED0792400346574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A87F253E2ED0792400346574 /* Build configuration list for PBXNativeTarget "Aurora For MacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A87F253F2ED0792400346574 /* Debug */,
+				A87F25402ED0792400346574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A87F250F2ED0792200346574 /* Project object */;
+}

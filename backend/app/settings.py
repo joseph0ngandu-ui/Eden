@@ -61,6 +61,10 @@ class Settings(BaseSettings):
     mt5_server: Optional[str] = os.getenv("MT5_SERVER")
     mt5_account: Optional[int] = os.getenv("MT5_ACCOUNT")
     
+    # Deriv API
+    DERIV_APP_ID: int = int(os.getenv("DERIV_APP_ID", "1089"))  # Default to public app ID
+    DERIV_API_TOKEN: Optional[str] = os.getenv("DERIV_API_TOKEN")
+    
     class Config:
         env_file = ".env"
         extra = "ignore"  # Ignore extra fields from .env file

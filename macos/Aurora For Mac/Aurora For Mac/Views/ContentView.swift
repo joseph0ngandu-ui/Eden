@@ -13,6 +13,7 @@ struct ContentView: View {
         case training
         case backtest
         case monitor
+        case accounts
     }
 
     var body: some View {
@@ -48,6 +49,11 @@ struct ContentView: View {
                     Label("Monitor", systemImage: "chart.xyaxis.line")
                         .tag(Tab.monitor)
                 }
+                
+                Section("Configuration") {
+                    Label("MT5 Accounts", systemImage: "server.rack")
+                        .tag(Tab.accounts)
+                }
             }
             .navigationTitle("Aurora")
             .navigationSplitViewColumnWidth(min: 200, ideal: 200)
@@ -71,6 +77,8 @@ struct ContentView: View {
                     BacktestView()
                 case .monitor:
                     MonitorView()
+                case .accounts:
+                    MT5AccountsView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

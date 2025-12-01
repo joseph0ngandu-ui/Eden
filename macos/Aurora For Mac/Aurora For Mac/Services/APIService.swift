@@ -4,7 +4,7 @@ import Foundation
 class APIService: ObservableObject {
     static let shared = APIService()
 
-    @Published var baseURL: String = "https://edenbot.duckdns.org:8443"
+    @Published var baseURL: String = "http://localhost:8000"
 
     private var authToken: String? {
         get { UserDefaults.standard.string(forKey: "authToken") }

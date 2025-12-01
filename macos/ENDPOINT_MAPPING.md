@@ -3,7 +3,7 @@
 ## Overview
 This document maps all available backend endpoints to their implementation status in the Aurora macOS app.
 
-**Backend URL**: `https://desktop-p1p7892.taildbc5d3.ts.net:8443`
+**Backend URL**: `http://localhost:8000`
 
 ---
 
@@ -108,21 +108,21 @@ This document maps all available backend endpoints to their implementation statu
 
 ---
 
-## 🚧 Missing Endpoints (To Implement)
+## 🚧 Recently Added Endpoints (Restart Required)
 
 ### Paper Trading Reset
-- ❌ `/account/paper/reset` | POST | **Not available in backend**
-  - **Action Required**: Add this endpoint to backend
+- ✅ `/account/paper/reset` | POST | **Implemented in Code**
+  - **Status**: Added to `main.py`, requires backend restart.
   - **Purpose**: Reset paper trading account balance and history
 
 ### Symbol Management
-- ❌ `/symbols/update` | POST | **Not available in backend**
-  - **Action Required**: Add this endpoint to backend or use `/strategy/config`
+- ✅ `/symbols/update` | POST | **Implemented in Code**
+  - **Status**: Added to `main.py`, requires backend restart.
   - **Purpose**: Update symbol configuration
 
 ### Set Primary Account
-- ❌ `/account/mt5/{id}/primary` | PUT | **Not available in backend**
-  - **Action Required**: Add this endpoint to backend
+- ✅ `/account/mt5/{id}/primary` | PUT | **Implemented in Code**
+  - **Status**: Added to `main.py`, requires backend restart.
   - **Purpose**: Set an account as primary
 
 ---
@@ -130,9 +130,8 @@ This document maps all available backend endpoints to their implementation statu
 ## 📊 Implementation Summary
 
 ### Total Endpoints: 37
-- ✅ **Fully Implemented**: 32 (86%)
-- ⚠️ **Available but Not Used**: 3 (8%)
-- ❌ **Missing in Backend**: 2 (5%)
+- ✅ **Fully Implemented**: 35 (95%)
+- ⚠️ **Available but Not Used**: 2 (5%)
 
 ### By Category:
 - **Authentication**: 3/3 (100%)

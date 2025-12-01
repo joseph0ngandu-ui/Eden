@@ -12,7 +12,7 @@ from datetime import datetime
 # Disable SSL warnings for local testing
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-BASE_URL = "https://localhost:8443"
+BASE_URL = "http://localhost:8000"
 TOKEN = None  # Will be set after login
 
 def log(message, level="INFO"):
@@ -86,29 +86,41 @@ def main():
     # ===== AUTHENTICATION =====
     log("\n🔐 Testing Authentication Endpoints...")
     
-    # Register new user
-    register_data = {
-        "email": "tester@eden.com",
-        "password": "test12345",
-        "full_name": "API Tester"
-    }
-    results.append(test_endpoint("POST", "/auth/register-local", register_data, 
-                                 description="Register local user"))
-    
-    # Login to get token
+    # Try login first (in case user exists)
     login_data = {
         "email": "tester@eden.com",
         "password": "test12345"
     }
     login_result = test_endpoint("POST", "/auth/login-local", login_data, 
                                  description="Login local user")
-    results.append(login_result)
     
-    # Extract token if login successful
-    if login_result["status"] == "✅ PASS" and "response" in login_result:
+    if login_result["status"] == "✅ PASS":
+        results.append(login_result)
         TOKEN = login_result["response"].get("access_token")
-        if TOKEN:
-            log(f"✓ JWT Token obtained: {TOKEN[:50]}...")
+        log("✓ Login successful, skipping registration")
+    else:
+        # Register new user
+        register_data = {
+            "email": "tester@eden.com",
+            "password": "test12345",
+            "full_name": "API Tester"
+        }
+        reg_result = test_endpoint("POST", "/auth/register-local", register_data, 
+                                     description="Register local user")
+        results.append(reg_result)
+        
+        # Login after registration
+        login_result = test_endpoint("POST", "/auth/login-local", login_data, 
+                                     description="Login local user")
+        results.append(login_result)
+        
+        if login_result["status"] == "✅ PASS":
+            TOKEN = login_result["response"].get("access_token")
+
+    if TOKEN:
+        log(f"✓ JWT Token obtained: {TOKEN[:20]}...")
+    else:
+        log("❌ Failed to obtain token, subsequent tests will fail", "ERROR")
     
     # ===== BOT CONTROL =====
     log("\n🤖 Testing Bot Control Endpoints...")
@@ -123,6 +135,7 @@ def main():
     results.append(test_endpoint("GET", "/trades/history?limit=10", auth=True, description="Get trade history"))
     results.append(test_endpoint("GET", "/trades/recent?days=7", auth=True, description="Get recent trades"))
     results.append(test_endpoint("GET", "/trades/logs?limit=10", description="Get trade logs"))
+    results.append(test_endpoint("POST", "/trades/close?symbol=TEST", auth=True, description="Close position (test)"))
     
     # Test order
     test_order = {
@@ -142,6 +155,10 @@ def main():
     log("\n🎯 Testing Strategy Configuration Endpoints...")
     results.append(test_endpoint("GET", "/strategy/config", description="Get strategy config (public)"))
     results.append(test_endpoint("GET", "/strategy/symbols", auth=True, description="Get trading symbols"))
+    
+    # Test symbol update
+    symbols_update = {"symbols": ["EURUSD", "GBPUSD"]}
+    results.append(test_endpoint("POST", "/symbols/update", symbols_update, auth=True, description="Update symbols"))
     
     # ===== STRATEGY MANAGEMENT =====
     log("\n🧬 Testing Strategy Management Endpoints...")
@@ -172,8 +189,20 @@ def main():
         "password": "testpass",
         "is_primary": False
     }
-    results.append(test_endpoint("POST", "/account/mt5", mt5_account, auth=True, 
-                                 description="Create MT5 account"))
+    create_result = test_endpoint("POST", "/account/mt5", mt5_account, auth=True, 
+                                 description="Create MT5 account")
+    results.append(create_result)
+    
+    if create_result["status"] == "✅ PASS":
+        acc_id = create_result["response"].get("id")
+        if acc_id:
+            # Test set primary
+            results.append(test_endpoint("PUT", f"/account/mt5/{acc_id}/primary", auth=True, description="Set primary account"))
+            # Test delete
+            results.append(test_endpoint("DELETE", f"/account/mt5/{acc_id}", auth=True, description="Delete account"))
+
+    # Test paper reset
+    results.append(test_endpoint("POST", "/account/paper/reset", auth=True, description="Reset paper account"))
     
     # ===== SYSTEM =====
     log("\n⚙️ Testing System Endpoints...")

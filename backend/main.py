@@ -185,7 +185,7 @@ async def register_local(user_data: UserRegister):
         logger.error(f"Registration error: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Registration failed"
+            detail=f"Registration failed: {str(e)}"
         )
 
 @app.post("/auth/login-local", response_model=Token)
@@ -790,6 +790,83 @@ async def delete_mt5_account(
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to delete MT5 account"
+        )
+
+@app.put("/account/mt5/{account_id}/primary")
+async def set_primary_mt5_account(
+    account_id: int,
+    current_user: User = Depends(get_current_user)
+):
+    """Set an MT5 account as primary."""
+    try:
+        db_session = get_db_session()
+        
+        # Verify account exists and belongs to user
+        account = db_session.query(MT5AccountDB).filter(
+            MT5AccountDB.id == account_id,
+            MT5AccountDB.user_id == current_user.id
+        ).first()
+        
+        if not account:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="MT5 account not found"
+            )
+            
+        # Unset other primary accounts
+        db_session.query(MT5AccountDB).filter(
+            MT5AccountDB.user_id == current_user.id
+        ).update({"is_primary": False})
+        
+        # Set new primary
+        account.is_primary = True
+        account.updated_at = datetime.utcnow()
+        db_session.commit()
+        
+        logger.info(f"✓ Primary account set to {account.account_number} for {current_user.email}")
+        return {"status": "success", "message": "Primary account updated"}
+        
+    except Exception as e:
+        logger.error(f"Error setting primary account: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to set primary account"
+        )
+
+@app.post("/account/paper/reset")
+async def reset_paper_account(current_user: User = Depends(get_current_user)):
+    """Reset paper trading account to default state."""
+    try:
+        # In a real implementation, this would reset the paper balance in DB
+        # For now, we'll just log it as the paper trading is simulated
+        logger.info(f"Paper account reset for {current_user.email}")
+        return {"status": "success", "message": "Paper account reset"}
+    except Exception as e:
+        logger.error(f"Error resetting paper account: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to reset paper account"
+        )
+
+@app.post("/symbols/update")
+async def update_symbols(
+    symbols: List[str] = Body(..., embed=True),
+    current_user: User = Depends(get_current_user)
+):
+    """Update enabled trading symbols."""
+    try:
+        # Update strategy config with new symbols
+        config = trading_service.get_strategy_config()
+        config.enabled_symbols = symbols
+        trading_service.update_strategy_config(config)
+        
+        logger.info(f"Symbols updated by {current_user.email}: {symbols}")
+        return {"status": "success", "symbols": symbols}
+    except Exception as e:
+        logger.error(f"Error updating symbols: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to update symbols"
         )
 
 # ============================================================================

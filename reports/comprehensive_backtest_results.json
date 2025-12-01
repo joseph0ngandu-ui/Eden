@@ -1,0 +1,18 @@
+{
+  "test_date": "2025-12-01T10:22:24.730298",
+  "criteria": {
+    "min_monthly_return": 13.0,
+    "max_daily_dd": 2.0,
+    "max_overall_dd": 10.0
+  },
+  "results": {
+    "Pro_Overlap_Scalper": {
+      "total_trades": 668,
+      "total_return_pct": 5.654008086390997,
+      "monthly_return_pct": 1.8846693621303323,
+      "max_drawdown_pct": 2.5234889372820937,
+      "max_daily_dd_pct": 1.4134825574410634,
+      "win_rate_pct": 31.736526946107784,
+      "profit_factor": 1.1598128023191139,
+      "final_equity": 105654.008086391,
+      "meets_criteria": 

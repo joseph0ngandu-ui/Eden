@@ -1,0 +1,47 @@
+{
+  "test_date": "2025-12-01T11:29:32.258626",
+  "portfolio_results": {
+    "total_trades": 3261,
+    "monthly_return_pct": 17.00559244788241,
+    "max_drawdown_pct": 4.768018859031876,
+    "max_daily_dd_pct": 1.5226530315547069,
+    "win_rate_pct": 24.409690279055503,
+    "profit_factor": 1.2910648633810509,
+    "final_equity": 151016.77734364723,
+    "meets_criteria": true
+  },
+  "individual_results": {
+    "Pro_Overlap_Scalper": {
+      "monthly_return": 1.88,
+      "daily_dd": 1.41,
+      "max_dd": 2.52,
+      "trades": 668,
+      "win_rate": 31.7,
+      "pf": 1.16
+    },
+    "Pro_Asian_Fade": {
+      "monthly_return": 8.92,
+      "daily_dd": 6.21,
+      "max_dd": 2.79,
+      "trades": 1352,
+      "win_rate": 20.0,
+      "pf": 1.38
+    },
+    "Pro_Gold_Breakout": {
+      "monthly_return": 0.32,
+      "daily_dd": 0.08,
+      "max_dd": 0.33,
+      "trades": 26,
+      "win_rate": 42.3,
+      "pf": 1.84
+    },
+    "Pro_Volatility_Expansion": {
+      "monthly_return": 6.83,
+      "daily_dd": 2.0,
+      "max_dd": 2.13,
+      "trades": 1398,
+      "win_rate": 25.9,
+      "pf": 1.28
+    }
+  }
+}

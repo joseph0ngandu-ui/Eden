@@ -51,17 +51,25 @@ struct PositionsView: View {
                     Spacer()
                 }
             } else {
-                ScrollView {
-                    LazyVStack(spacing: 12) {
-                        ForEach(tradeService.openPositions) { position in
-                            PositionCard(position: position) {
+            } else {
+                List {
+                    ForEach(tradeService.openPositions) { position in
+                        PositionCard(position: position) {
+                            selectedPosition = position
+                            showCloseConfirmation = true
+                        }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(role: .destructive) {
                                 selectedPosition = position
                                 showCloseConfirmation = true
+                            } label: {
+                                Label("Close", systemImage: "xmark.circle")
                             }
                         }
                     }
-                    .padding()
                 }
+                .listStyle(.inset)
+            }
             }
         }
         .task {

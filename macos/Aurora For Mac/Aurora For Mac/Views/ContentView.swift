@@ -14,6 +14,8 @@ struct ContentView: View {
         case backtest
         case monitor
         case accounts
+        case symbols
+        case testing
     }
 
     var body: some View {
@@ -53,6 +55,12 @@ struct ContentView: View {
                 Section("Configuration") {
                     Label("MT5 Accounts", systemImage: "server.rack")
                         .tag(Tab.accounts)
+                        
+                    Label("Symbols", systemImage: "list.dash")
+                        .tag(Tab.symbols)
+                        
+                    Label("Testing", systemImage: "testtube.2")
+                        .tag(Tab.testing)
                 }
             }
             .navigationTitle("Aurora")
@@ -79,6 +87,10 @@ struct ContentView: View {
                     MonitorView()
                 case .accounts:
                     MT5AccountsView()
+                case .symbols:
+                    SymbolManagementView()
+                case .testing:
+                    TestingView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

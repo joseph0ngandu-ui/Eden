@@ -68,4 +68,10 @@ class MT5AccountService: ObservableObject {
             endpoint: "/account/mt5/\(id)/primary", method: "PUT")
         try await fetchAccounts()
     }
+    
+    func resetPaperAccount() async throws {
+        _ = try await apiService.performRequest(
+            endpoint: "/account/paper/reset", method: "POST")
+        try await fetchAccounts()
+    }
 }

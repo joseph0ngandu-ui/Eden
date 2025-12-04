@@ -2945,3 +2945,47 @@
 [2025-12-04 19:31:43] [BOT] ================================================================================
 [2025-12-04 19:31:43] [BOT] 2025-12-04 19:31:43,378 - INFO - Connected. Balance: 9993.47
 [2025-12-04 19:31:43] [BOT] 2025-12-04 19:31:43,378 - INFO - Started. Polling every 300s
+[2025-12-04 19:52:49] Watchdog started
+[2025-12-04 19:52:49] Starting trading bot...
+[2025-12-04 19:52:49] Trading bot started with PID: 55668
+[2025-12-04 19:52:54] [BOT] 2025-12-04 19:52:54,195 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-04 19:52:54] [BOT] 2025-12-04 19:52:54,243 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-04 19:52:57] [BOT] 2025-12-04 19:52:57,311 - ERROR - Failed to load ML model: <class 'numpy.random._mt19937.MT19937'> is not a known BitGenerator module.
+[2025-12-04 19:52:57] [BOT] 2025-12-04 19:52:57,312 - INFO -
+[2025-12-04 19:52:57] [BOT] ================================================================================
+[2025-12-04 19:52:57] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-04 19:52:57] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-04 19:52:57] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-04 19:52:57] [BOT] ================================================================================
+[2025-12-04 19:52:57] [BOT] 2025-12-04 19:52:57,314 - INFO - Connected. Balance: 9986.23
+[2025-12-04 19:52:57] [BOT] 2025-12-04 19:52:57,314 - INFO - Started. Polling every 300s
+[2025-12-04 20:02:57] [BOT] 2025-12-04 20:02:57,426 - INFO - SIGNAL FOUND: USDJPYm via volatility_expansion
+[2025-12-04 20:02:57] [BOT] 2025-12-04 20:02:57,426 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 20:03:59] Watchdog started
+[2025-12-04 20:03:59] Starting trading bot...
+[2025-12-04 20:03:59] Trading bot started with PID: 58884
+[2025-12-04 20:04:02] [BOT] 2025-12-04 20:04:02,480 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-04 20:04:02] [BOT] 2025-12-04 20:04:02,494 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-04 20:04:17] [BOT] 2025-12-04 20:04:17,350 - ERROR - Failed to load ML model: <class 'numpy.random._mt19937.MT19937'> is not a known BitGenerator module.
+[2025-12-04 20:04:17] [BOT] 2025-12-04 20:04:17,351 - INFO -
+[2025-12-04 20:04:17] [BOT] ================================================================================
+[2025-12-04 20:04:17] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-04 20:04:17] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-04 20:04:17] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-04 20:04:17] [BOT] ================================================================================
+[2025-12-04 20:04:17] [BOT] 2025-12-04 20:04:17,359 - INFO - Connected. Balance: 9986.23
+[2025-12-04 20:04:17] [BOT] 2025-12-04 20:04:17,359 - INFO - Started. Polling every 300s
+[2025-12-04 20:46:01] Watchdog started
+[2025-12-04 20:46:01] Starting trading bot...
+[2025-12-04 20:46:01] Trading bot started with PID: 61272
+[2025-12-04 20:46:04] [BOT] 2025-12-04 20:46:04,118 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-04 20:46:04] [BOT] 2025-12-04 20:46:04,128 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-04 20:46:06] [BOT] 2025-12-04 20:46:06,899 - ERROR - Failed to load ML model: <class 'numpy.random._mt19937.MT19937'> is not a known BitGenerator module.
+[2025-12-04 20:46:06] [BOT] 2025-12-04 20:46:06,900 - INFO -
+[2025-12-04 20:46:06] [BOT] ================================================================================
+[2025-12-04 20:46:06] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-04 20:46:06] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-04 20:46:06] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-04 20:46:06] [BOT] ================================================================================
+[2025-12-04 20:46:06] [BOT] 2025-12-04 20:46:06,901 - INFO - Connected. Balance: 9986.23
+[2025-12-04 20:46:06] [BOT] 2025-12-04 20:46:06,902 - INFO - Started. Polling every 300s

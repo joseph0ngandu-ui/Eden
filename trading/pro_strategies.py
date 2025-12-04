@@ -26,9 +26,33 @@ class ProStrategyEngine:
         ]
         self.open_positions: Dict[str, Position] = {}
         
+    def adopt_position(self, pos):
+        """Adopt an existing MT5 position."""
+        try:
+            direction = "LONG" if pos.type == 0 else "SHORT" # 0=Buy, 1=Sell
+            self.open_positions[pos.symbol] = Position(
+                symbol=pos.symbol,
+                direction=direction,
+                entry_price=pos.price_open,
+                tp=pos.tp,
+                sl=pos.sl,
+                entry_bar_index=0, # Unknown
+                entry_time=datetime.fromtimestamp(pos.time),
+                atr=0.0, # Unknown
+                confidence=0.0, # Unknown
+                strategy="Recovered"
+            )
+            logger.info(f"Adopted position: {pos.symbol} ({direction})")
+        except Exception as e:
+            logger.error(f"Error adopting position {pos.ticket}: {e}")
+
     def calculate_atr(self, df: pd.DataFrame, period: int = 14) -> float:
         try:
-            if len(df) < 2: return 0.001
+            if len(df) < 2: 
+                # Fallback: 0.2% of price if available, else 0.001
+                if not df.empty and 'close' in df.columns:
+                    return df['close'].iloc[-1] * 0.002
+                return 0.001
             tr = df['high'] - df['low']
             return tr.rolling(period).mean().iloc[-1] if len(tr) > period else tr.mean()
         except Exception as e:
@@ -70,18 +94,18 @@ class ProStrategyEngine:
             
             # Check TP/SL
             if pos.direction == "LONG":
-                if current_bar['high'] >= pos.tp:
+                if current_bar['high'] >= pos.tp and pos.tp > 0:
                     actions.append({"action": "close", "symbol": symbol, "price": pos.tp, "reason": "tp_hit"})
                     del self.open_positions[symbol]
-                elif current_bar['low'] <= pos.sl:
+                elif current_bar['low'] <= pos.sl and pos.sl > 0:
                     actions.append({"action": "close", "symbol": symbol, "price": pos.sl, "reason": "sl_hit"})
                     del self.open_positions[symbol]
                     
             elif pos.direction == "SHORT":
-                if current_bar['low'] <= pos.tp:
+                if current_bar['low'] <= pos.tp and pos.tp > 0:
                     actions.append({"action": "close", "symbol": symbol, "price": pos.tp, "reason": "tp_hit"})
                     del self.open_positions[symbol]
-                elif current_bar['high'] >= pos.sl:
+                elif current_bar['high'] >= pos.sl and pos.sl > 0:
                     actions.append({"action": "close", "symbol": symbol, "price": pos.sl, "reason": "sl_hit"})
                     del self.open_positions[symbol]
         except Exception as e:
@@ -110,12 +134,21 @@ class ProStrategyEngine:
 
     def overlap_scalper(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
         """London/NY Overlap Scalper (EURUSD, GBPUSD)"""
-        if symbol not in ['EURUSD', 'GBPUSD']: return None
+        # Support 'm' suffix
+        base_symbol = symbol.replace('m', '')
+        if base_symbol not in ['EURUSD', 'GBPUSD']: return None
         
         row = df.iloc[-1]
+        # Use UTC time if available, else assume local
+        # Ideally, convert to UTC explicitly
+        # For now, assuming df['time'] is timezone-naive local, we might need to adjust
+        # But better to rely on hour logic if VPS is in UTC or similar.
+        # Let's assume df['time'] is from MT5 which is usually Broker Server Time (often GMT+2/3)
+        # London/NY Overlap is 13:00-17:00 Broker Time (approx)
         hour = row['time'].hour
         
-        # 12:00-16:00 GMT
+        # 12:00-16:00 GMT -> approx 14:00-18:00 Broker Time (GMT+2)
+        # Let's stick to the original 12-16 logic but acknowledge the timezone risk
         if not (12 <= hour < 16): return None
         
         # Momentum
@@ -152,7 +185,8 @@ class ProStrategyEngine:
 
     def asian_fade(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
         """Asian Range Fade (USDJPY, AUDJPY)"""
-        if symbol not in ['USDJPY', 'AUDJPY']: return None
+        base_symbol = symbol.replace('m', '')
+        if base_symbol not in ['USDJPY', 'AUDJPY']: return None
         
         row = df.iloc[-1]
         hour = row['time'].hour
@@ -204,7 +238,7 @@ class ProStrategyEngine:
 
     def gold_london_breakout(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
         """Gold London Breakout"""
-        if symbol != 'XAUUSD': return None
+        if 'XAU' not in symbol: return None
         
         row = df.iloc[-1]
         hour = row['time'].hour

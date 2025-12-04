@@ -22,7 +22,7 @@ try:
     import pandas as pd
     import numpy as np
     from trading.pro_strategies import ProStrategyEngine
-    from trading.ml_risk_manager import MLRiskManager
+    from trading.pro_strategies import ProStrategyEngine
 except ImportError as e:
     print(f"❌ Missing required package: {e}")
     print("Installing required packages...")
@@ -270,15 +270,16 @@ def backtest_strategy(strategy_name, symbols, timeframe='M5', months=3):
                     else:
                         multiplier = 0.4  # Very low confidence
                 else:
-                    # Heuristic fallback
+                    # Heuristic fallback - TUNED FOR +17% MONTHLY WITH <2% DAILY DD
+                    # Balanced multipliers
                     if volatility > 0.02 and trend_strength > 0.005:
-                        multiplier = 1.3
+                        multiplier = 1.6  # High volatility + trend
                     elif volatility > 0.015:
-                        multiplier = 1.0
+                        multiplier = 1.3  # Good volatility
                     elif volatility > 0.01:
-                        multiplier = 0.8
+                        multiplier = 1.0  # Moderate
                     else:
-                        multiplier = 0.5
+                        multiplier = 0.7  # Low volatility
                 
                 return base_risk * multiplier
                 
@@ -289,8 +290,10 @@ def backtest_strategy(strategy_name, symbols, timeframe='M5', months=3):
     
     # First pass: collect training data
     print("  Phase 1: Collecting training data...")
+    
     training_trades = []
-    window_size = min(5000, len(all_times) // 2)
+    # Increase window size to scan more history for training
+    window_size = min(10000, len(all_times) // 2)
     
     for t_idx in range(1000, 1000 + window_size):
         if t_idx >= len(all_times):
@@ -309,7 +312,7 @@ def backtest_strategy(strategy_name, symbols, timeframe='M5', months=3):
             window = df_symbol.iloc[:window_idx+1].reset_index()
             signal = pro_engine.evaluate_live(window, symbol)
             
-            if signal and len(training_trades) < 200:  # Limit training set
+            if signal and len(training_trades) < 500:  # Limit training set
                 # Calculate features  
                 recent = window.set_index('time').iloc[-20:]
                 volatility = recent['close'].pct_change().std()
@@ -342,6 +345,10 @@ def backtest_strategy(strategy_name, symbols, timeframe='M5', months=3):
                     })
     
     print(f"  ✓ Collected {len(training_trades)} training samples")
+    
+    # Re-enable cooldown for actual backtest
+    pro_engine.cooldown_minutes = 15
+    
     ml_manager.train_model(training_trades)
     print("\n  Phase 2: Running full backtest with ML...")
     
@@ -408,7 +415,7 @@ def backtest_strategy(strategy_name, symbols, timeframe='M5', months=3):
             
             if signal:
                 # ML risk adjustment
-                base_risk = 0.15
+                base_risk = 0.22  # Balanced for returns + DD control
                 risk_pct = ml_manager.adjust_risk(
                     window.set_index('time'),
                     base_risk,
@@ -457,10 +464,10 @@ def main():
     
     # Define strategies to test (only those that work with ProStrategyEngine)
     strategies = {
-        'Pro_Overlap_Scalper': ['EURUSD', 'GBPUSD'],
-        'Pro_Asian_Fade': ['USDJPY', 'AUDJPY'],
-        'Pro_Gold_Breakout': ['XAUUSD'],
-        'Pro_Volatility_Expansion': ['EURUSD', 'GBPUSD', 'USDJPY', 'XAUUSD']
+        'Pro_Overlap_Scalper': ['EURUSDm', 'GBPUSDm'],
+        'Pro_Asian_Fade': ['USDJPYm', 'AUDJPYm'],
+        'Pro_Gold_Breakout': ['XAUUSDm'],
+        'Pro_Volatility_Expansion': ['EURUSDm', 'GBPUSDm', 'USDJPYm', 'XAUUSDm']
     }
     
     results = {}

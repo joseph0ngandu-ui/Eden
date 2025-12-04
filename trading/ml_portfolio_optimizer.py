@@ -124,10 +124,12 @@ class PortfolioMLOptimizer:
         """Calculate position size with ML-optimized risk and Daily DD limits"""
         
         # DAILY DD CIRCUIT BREAKER
-        if daily_dd_pct > 1.5:
+        if daily_dd_pct >= 2.0:
             return 0.0
+        elif daily_dd_pct > 1.5:
+            base_risk *= 0.25  # High caution near limit
         elif daily_dd_pct > 1.0:
-            base_risk *= 0.5
+            base_risk *= 0.5   # Caution zone
         
         # Get strategy-specific metrics
         strategy_data = self.individual_results.get(strategy_name, self.individual_results['default'])

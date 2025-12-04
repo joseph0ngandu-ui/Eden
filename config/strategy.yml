@@ -68,7 +68,7 @@ risk_management:
   position_size: 1.0  # 1 lot per trade (base, overridden by growth_mode if enabled)
   max_concurrent_positions: 10
   max_drawdown_percent: 10.0  # Auto-disable live trading when breached
-  max_daily_loss_percent: 5.0  # Max daily loss percentage
+  max_daily_loss_percent: 2.0  # Max daily loss percentage
   
   # News Event Filter - Avoid trading during high-impact news (wider spreads)
   news_filter_enabled: true  # Enable/disable news filter

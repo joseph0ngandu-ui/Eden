@@ -86,14 +86,13 @@ class ConfigLoader:
         if symbols:
             return symbols
         
-        # Fallback to defaults (6 profitable symbols only)
+        # Fallback to defaults (Exness broker format with 'm' suffix)
         return [
-            "Volatility 75 Index",    # $1,229,078 ✓
-            "Volatility 100 Index",   # $28,027 ✓
-            "Boom 1000 Index",        # $17,731 ✓
-            "Boom 500 Index",         # $87,321 ✓
-            "Crash 500 Index",        # $36,948 ✓
-            "XAUUSD",                 # $23,681 ✓
+            "EURUSDm",      # Pro_Overlap_Scalper, Pro_Volatility_Expansion
+            "GBPUSDm",      # Pro_Overlap_Scalper, Pro_Volatility_Expansion
+            "USDJPYm",      # Pro_Asian_Fade, Pro_Volatility_Expansion
+            "AUDJPYm",      # Pro_Asian_Fade, Pro_Volatility_Expansion
+            "XAUUSDm",      # Pro_Gold_Breakout
         ]
     
     def get_risk_management(self) -> Dict[str, Any]:

@@ -16,19 +16,22 @@ parameters:
   entry_signal: "MA crossover (fast > slow)"
   exit_signal: "Fixed 5-bar hold duration"
 
-# Symbols to trade (6 profitable symbols after backtest optimization)
+# Symbols to trade - Updated for Exness-MT5Trial9 (all symbols have 'm' suffix)
+# Note: Volatility indices NOT supported on this broker
 trading_symbols:
-  - "Volatility 75 Index"    # $1,229,078 ✓ PRIMARY DRIVER
-  - "Volatility 100 Index"   # $28,027 ✓
-  - "Boom 1000 Index"        # $17,731 ✓ (marginal, can be removed)
-  - "Boom 500 Index"         # $87,321 ✓ SECONDARY DRIVER
-  - "Crash 500 Index"        # $36,948 ✓ (highest win rate 57.3%)
-  - "XAUUSD"                 # $23,681 ✓ DIVERSIFICATION
-  # REMOVED (Unprofitable, backtest losses):
-  # - "Volatility 50 Index"   # -$869.91 ✗
-  # - "Volatility 25 Index"   # -$59,924.50 ✗ (MAJOR LOSS)
-  # - "Step Index"            # -$20,220.00 ✗
-  # - "Crash 1000 Index"      # -$18,640.80 ✗
+  - "EURUSDm"       # Pro_Overlap_Scalper, Pro_Volatility_Expansion
+  - "GBPUSDm"       # Pro_Overlap_Scalper, Pro_Volatility_Expansion  
+  - "USDJPYm"       # Pro_Asian_Fade, Pro_Volatility_Expansion
+  - "AUDJPYm"       # Pro_Asian_Fade, Pro_Volatility_Expansion
+  - "XAUUSDm"       # Pro_Gold_Breakout (Gold)
+  - "AUDUSDm"       # Additional forex pair
+  - "USDCADm"       # Additional forex pair
+  # Previous symbols (NOT available on new broker):
+  # - "Volatility 75 Index"    # Not supported
+  # - "Volatility 100 Index"   # Not supported
+  # - "Boom 1000 Index"        # Not supported
+  # - "Boom 500 Index"         # Not supported
+  # - "Crash 500 Index"        # Not supported
 
 # Historical Performance (Backtested Aug 1 - Oct 31, 2025)
 performance:
@@ -66,6 +69,11 @@ risk_management:
   max_concurrent_positions: 10
   max_drawdown_percent: 10.0  # Auto-disable live trading when breached
   max_daily_loss_percent: 5.0  # Max daily loss percentage
+  
+  # News Event Filter - Avoid trading during high-impact news (wider spreads)
+  news_filter_enabled: true  # Enable/disable news filter
+  news_buffer_minutes: 30    # Minutes before/after news to block trading
+  
   stop_loss_pips: null  # Not used - fixed hold exit
   take_profit_pips: null  # Not used - fixed hold exit
 

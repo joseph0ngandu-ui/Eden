@@ -2,13 +2,12 @@
 """
 Production Live Trading Bot
 
-Implements real-time trading using the winning MA(3,10) strategy on M5 timeframe.
-- Entry: MA(3) crosses above MA(10)
-- Exit: Fixed 5-bar hold duration
-- Risk Management: Configurable position sizing and stop losses
+Implements profitable prop-firm strategies with ML optimization:
+- Pro Strategies: Volatility Expansion, Asian Fade, Overlap Scalper, Gold Breakout
+- ML Portfolio Optimizer: Dynamic position sizing and allocation
+- Risk Management: Daily DD limits, Kelly Criterion sizing
 - Health Monitoring: MT5 API and internet connectivity checks
-- Trade Journaling: Automatic CSV export to logs/trade_history.csv
-- Volatility Adaptation: Adaptive parameters based on market conditions
+- Trade Journaling: Automatic CSV export
 """
 
 import MetaTrader5 as mt5
@@ -27,9 +26,7 @@ import json
 from .config_loader import ConfigLoader
 from .trade_journal import TradeJournal
 from .health_monitor import HealthMonitor, RiskManager, HealthStatus, RiskLevel
-from .volatility_adapter import VolatilityAdapter
-from .risk_ladder import RiskLadder, PositionSizer, RiskTier
-from .exit_logic import ExitManager, ExitConfig  # v1.2: Advanced exit logic
+from .news_filter import get_news_filter
 
 logging.basicConfig(
     level=logging.INFO,
@@ -43,12 +40,12 @@ from trading.models import LiveOrder, OrderStatus, Trade, Position
 
 class TradingBot:
     """
-    Production live trading bot using Volatility Burst v1.3 strategy.
+    Production live trading bot using profitable Pro Strategies.
     
     Configuration:
-    - Strategy: Volatility Burst (Squeeze + Breakout)
+    - Strategies: 4 Profitable Prop-Firm Strategies (Forex + Gold)
     - Timeframe: M5
-    - Risk Management: ATR-based dynamic sizing
+    - Risk Management: ML-optimized portfolio allocation
     """
     
     TIMEFRAME = mt5.TIMEFRAME_M5
@@ -99,11 +96,24 @@ class TradingBot:
             max_daily_loss_percent=risk_config.get('max_daily_loss_percent', 2.0)
         )
         
+        # ML Portfolio Optimizer
+        from trading.ml_portfolio_optimizer import PortfolioMLOptimizer
+        self.ml_optimizer = PortfolioMLOptimizer(model_path="ml_portfolio_model.pkl")
+
+        # News Event Filter (blocks trades during high-impact news)
+        news_buffer = risk_config.get('news_buffer_minutes', 30)
+        self.news_filter = get_news_filter(buffer_before=news_buffer, buffer_after=news_buffer)
+        self.news_filter_enabled = risk_config.get('news_filter_enabled', True)
+        
         # External order bridge
         self.order_queue_path = Path(__file__).resolve().parent.parent / 'logs' / 'order_queue.jsonl'
         
         self.is_running = False
         self.initial_balance = 0.0
+        
+        # Daily reset tracking
+        self.current_trading_day = None  # Track current day (YYYY-MM-DD)
+        self.start_of_day_balance = 0.0  # Balance at start of trading day
         
         self._log_startup_banner()
     
@@ -138,6 +148,8 @@ class TradingBot:
         account_info = mt5.account_info()
         if account_info:
             self.initial_balance = account_info.balance
+            self.start_of_day_balance = account_info.balance  # Initialize for first day
+            self.current_trading_day = datetime.now().strftime('%Y-%m-%d')  # Set current day
             self.health_monitor.peak_balance = self.initial_balance
             logger.info(f"Connected. Balance: {self.initial_balance:.2f}")
         
@@ -159,6 +171,23 @@ class TradingBot:
         except Exception as e:
             logger.error(f"Error fetching data for {symbol}: {e}")
             return None
+    
+    def _check_and_reset_daily_balance(self) -> None:
+        """Check if new trading day has started and reset daily balance tracking."""
+        from datetime import datetime
+        
+        current_date = datetime.now().strftime('%Y-%m-%d')
+        
+        # Check if we've entered a new day
+        if self.current_trading_day != current_date:
+            account_info = mt5.account_info()
+            if account_info:
+                self.start_of_day_balance = account_info.balance
+                self.current_trading_day = current_date
+                logger.info(f"📅 NEW TRADING DAY: {current_date} | Starting Balance: ${self.start_of_day_balance:.2f}")
+            else:
+                logger.warning("Could not get account info for daily reset")
+
 
     def place_order(self, trade_signal) -> bool:
         """Place order based on Trade object."""
@@ -168,16 +197,90 @@ class TradingBot:
                 logger.warning(f"SKIPPING TRADE: Daily loss limit reached ({self.risk_manager.daily_pnl:.2f})")
                 return False
 
+            # Check News Events (avoid trading during high-impact news)
+            if self.news_filter_enabled:
+                is_news_time, news_reason = self.news_filter.is_news_time([trade_signal.symbol])
+                if is_news_time:
+                    logger.warning(f"SKIPPING TRADE: {news_reason}")
+                    return False
+
             symbol = trade_signal.symbol
-            volume = 0.01 # Fixed for now, or use dynamic sizing
+            
+            # ML-Optimized Position Sizing
+            current_equity = mt5.account_info().equity if mt5.account_info() else self.initial_balance
+            
+            # Calculate DAILY drawdown (from start of day, not bot start)
+            daily_dd_pct = 0.0
+            if self.start_of_day_balance > 0:
+                daily_pnl = current_equity - self.start_of_day_balance
+                if daily_pnl < 0:
+                    daily_dd_pct = abs(daily_pnl / self.start_of_day_balance) * 100
+            
+            # Get allocation (pass active strategy names for ML optimization)
+            strategies_active = ['Pro_Volatility_Expansion', 'Pro_Asian_Fade', 'Pro_Overlap_Scalper', 'Pro_Gold_Breakout']
+            allocation = self.ml_optimizer.get_allocation({}, daily_dd_pct, strategies_active)
+            allocation_weight = allocation.get(trade_signal.strategy, 0.25)
+            
+            # Calculate risk percentage
+            risk_pct = self.ml_optimizer.calculate_position_size(
+                trade_signal.strategy,
+                base_risk=0.25, # Base risk 0.25%
+                allocation_weight=allocation_weight,
+                current_equity=current_equity,
+                daily_dd_pct=daily_dd_pct
+            )
+            
+            if risk_pct <= 0:
+                logger.warning(f"SKIPPING TRADE: ML Risk is 0% (Daily DD: {daily_dd_pct:.2f}%)")
+                return False
+                
+            # Convert risk % to volume
+            # Volume = (Equity * Risk%) / (SL_Distance * TickValue)
+            # Simplified: Volume = (Equity * Risk%) / (StopLossAmount)
+            # We need SL distance.
+            sl_dist = abs(trade_signal.entry_price - trade_signal.sl)
+            if sl_dist == 0:
+                volume = 0.01
+            else:
+                risk_amount = current_equity * (risk_pct / 100.0)
+                # Estimate tick value (simplified, assuming 1 USD per point for indices/standard pairs, needs refinement for specific assets)
+                # For VIX75, 1 point = ? 
+                # Better to use a safe default or a proper calculation if symbol info available.
+                # For now, let's use a conservative calculation or keep 0.01 if unsure, but user wants ML.
+                # Let's try to calculate volume based on risk amount.
+                
+                symbol_info = mt5.symbol_info(symbol)
+                if symbol_info:
+                    tick_size = symbol_info.trade_tick_size
+                    tick_value = symbol_info.trade_tick_value
+                    if tick_size > 0 and tick_value > 0:
+                        sl_pips = sl_dist / tick_size
+                        volume = risk_amount / (sl_pips * tick_value)
+                    else:
+                        volume = 0.01 # Fallback
+                else:
+                    volume = 0.01
+            
+            # Round volume to step
+            if symbol_info:
+                step = symbol_info.volume_step
+                volume = round(volume / step) * step
+                volume = max(volume, symbol_info.volume_min)
+                volume = min(volume, symbol_info.volume_max)
+            else:
+                volume = max(0.01, volume)
+                
+            logger.info(f"ML Sizing: Risk={risk_pct:.3f}% | Vol={volume} | Alloc={allocation_weight:.2f}")
+
             
             # Shadow mode check
             if self.shadow_mode:
                 logger.info(f"PAPER TRADE: {trade_signal.direction} {symbol} @ {trade_signal.entry_price} ({trade_signal.strategy})")
-                if trade_signal.strategy == "VolatilityBurst":
-                    self.volatility_burst.on_trade_open(trade_signal)
-                elif trade_signal.strategy.startswith("ICT"):
-                    self.ict_bot.on_trade_open(trade_signal)
+                # Register position with strategy
+                if trade_signal.strategy.startswith("Pro_"):
+                    self.pro_strategies.on_trade_open(trade_signal)
+                elif hasattr(self, 'gold_strategy'):
+                    self.gold_strategy.on_trade_open(trade_signal)
                 return True
 
             # Get symbol info
@@ -227,12 +330,12 @@ class TradingBot:
                 return False
                 
             logger.info(f"LIVE TRADE: {trade_signal.direction} {symbol} #{result.order}")
-            logger.info(f"LIVE TRADE: {trade_signal.direction} {symbol} #{result.order}")
             
-            if trade_signal.strategy == "VolatilityBurst":
-                self.volatility_burst.on_trade_open(trade_signal)
-            elif trade_signal.strategy.startswith("Pro_"):
+            # Register position with strategy
+            if trade_signal.strategy.startswith("Pro_"):
                 self.pro_strategies.on_trade_open(trade_signal)
+            elif hasattr(self, 'gold_strategy'):
+                self.gold_strategy.on_trade_open(trade_signal)
             
             # Log to journal
             self.trade_journal.add_trade(
@@ -325,11 +428,11 @@ class TradingBot:
 
     def run_cycle(self) -> None:
         """Run one trading cycle."""
+        # Check and reset daily balance if new day
+        self._check_and_reset_daily_balance()
+        
         self.health_monitor.check_health()
         if not self.health_monitor.trading_enabled: return
-        
-        # Reset daily counters if new day (simplified check)
-        # self.strategy.reset_daily_trades() # Implement proper day check
         
         for symbol in self.symbols:
             df = self.fetch_recent_data(symbol, bars=100)

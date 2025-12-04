@@ -256,11 +256,11 @@ class ProStrategyEngine:
         """Volatility Expansion (All Pairs)"""
         row = df.iloc[-1]
         
-        current_atr = self.calculate_atr(df.iloc[-15:])
-        avg_atr = self.calculate_atr(df.iloc[-41:])
+        current_atr = self.calculate_atr(df, period=14)
+        avg_atr = self.calculate_atr(df, period=40)
         
         if avg_atr == 0: return None
-        if current_atr > avg_atr * 0.7: return None # Must be compressed
+        if current_atr > avg_atr * 0.9: return None # Relaxed from 0.7 for VIX
         
         recent_3 = df.iloc[-3:]
         move = abs(recent_3['close'].iloc[-1] - recent_3['close'].iloc[0])

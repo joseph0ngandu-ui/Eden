@@ -2905,3 +2905,43 @@
 [2025-12-04 19:13:54] [BOT] ================================================================================
 [2025-12-04 19:13:54] [BOT] 2025-12-04 19:13:54,712 - INFO - Connected. Balance: 10000.00
 [2025-12-04 19:13:54] [BOT] 2025-12-04 19:13:54,712 - INFO - Started. Polling every 300s
+[2025-12-04 19:18:54] [BOT] 2025-12-04 19:18:54,808 - INFO - SIGNAL FOUND: AUDJPYm via volatility_expansion
+[2025-12-04 19:18:58] [BOT] 2025-12-04 19:18:58,383 - WARNING - Failed to fetch news: HTTP 403
+[2025-12-04 19:18:59] [BOT] 2025-12-04 19:18:58,418 - INFO - ML Sizing: Risk=0.063% | Vol=0.22 | Alloc=0.25
+[2025-12-04 19:18:59] [BOT] 2025-12-04 19:18:58,787 - INFO - LIVE TRADE: SHORT AUDJPYm #2032833266
+[2025-12-04 19:19:00] [BOT] 2025-12-04 19:18:58,787 - INFO - Position registered: AUDJPYm (SHORT)
+[2025-12-04 19:19:00] [BOT] 2025-12-04 19:18:58,796 - INFO - Trade history exported: logs\trade_history.csv (7 trades)
+[2025-12-04 19:23:58] [BOT] 2025-12-04 19:23:58,818 - INFO - SIGNAL FOUND: AUDJPYm via volatility_expansion
+[2025-12-04 19:23:59] [BOT] 2025-12-04 19:23:59,144 - WARNING - Failed to fetch news: HTTP 403
+[2025-12-04 19:24:00] [BOT] 2025-12-04 19:23:59,147 - INFO - ML Sizing: Risk=0.063% | Vol=0.22 | Alloc=0.25
+[2025-12-04 19:24:01] [BOT] 2025-12-04 19:23:59,545 - INFO - LIVE TRADE: SHORT AUDJPYm #2032860604
+[2025-12-04 19:24:02] [BOT] 2025-12-04 19:23:59,546 - INFO - Position registered: AUDJPYm (SHORT)
+[2025-12-04 19:24:02] [BOT] 2025-12-04 19:24:01,062 - INFO - Trade history exported: logs\trade_history.csv (8 trades)
+[2025-12-04 19:25:22] Watchdog started
+[2025-12-04 19:25:22] Starting trading bot...
+[2025-12-04 19:25:22] Trading bot started with PID: 54604
+[2025-12-04 19:25:25] [BOT] 2025-12-04 19:25:25,058 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-04 19:25:25] [BOT] 2025-12-04 19:25:25,084 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-04 19:25:27] [BOT] 2025-12-04 19:25:27,406 - ERROR - Failed to load ML model: <class 'numpy.random._mt19937.MT19937'> is not a known BitGenerator module.
+[2025-12-04 19:25:27] [BOT] 2025-12-04 19:25:27,407 - INFO -
+[2025-12-04 19:25:27] [BOT] ================================================================================
+[2025-12-04 19:25:27] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-04 19:25:27] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-04 19:25:27] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-04 19:25:27] [BOT] ================================================================================
+[2025-12-04 19:25:27] [BOT] 2025-12-04 19:25:27,409 - INFO - Connected. Balance: 9993.47
+[2025-12-04 19:25:27] [BOT] 2025-12-04 19:25:27,409 - INFO - Started. Polling every 300s
+[2025-12-04 19:31:36] Watchdog started
+[2025-12-04 19:31:36] Starting trading bot...
+[2025-12-04 19:31:36] Trading bot started with PID: 59192
+[2025-12-04 19:31:40] [BOT] 2025-12-04 19:31:40,802 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-04 19:31:40] [BOT] 2025-12-04 19:31:40,810 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-04 19:31:43] [BOT] 2025-12-04 19:31:43,375 - ERROR - Failed to load ML model: <class 'numpy.random._mt19937.MT19937'> is not a known BitGenerator module.
+[2025-12-04 19:31:43] [BOT] 2025-12-04 19:31:43,375 - INFO -
+[2025-12-04 19:31:43] [BOT] ================================================================================
+[2025-12-04 19:31:43] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-04 19:31:43] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-04 19:31:43] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-04 19:31:43] [BOT] ================================================================================
+[2025-12-04 19:31:43] [BOT] 2025-12-04 19:31:43,378 - INFO - Connected. Balance: 9993.47
+[2025-12-04 19:31:43] [BOT] 2025-12-04 19:31:43,378 - INFO - Started. Polling every 300s

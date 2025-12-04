@@ -74,6 +74,9 @@ risk_management:
   news_filter_enabled: true  # Enable/disable news filter
   news_buffer_minutes: 30    # Minutes before/after news to block trading
   
+  # Spread Filter
+  max_spread_pips: 5.0       # Skip trade if spread > 5 pips (avoid news spikes/low liquidity)
+  
   stop_loss_pips: null  # Not used - fixed hold exit
   take_profit_pips: null  # Not used - fixed hold exit
 

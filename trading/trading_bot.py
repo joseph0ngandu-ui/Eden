@@ -104,6 +104,7 @@ class TradingBot:
         news_buffer = risk_config.get('news_buffer_minutes', 30)
         self.news_filter = get_news_filter(buffer_before=news_buffer, buffer_after=news_buffer)
         self.news_filter_enabled = risk_config.get('news_filter_enabled', True)
+        self.max_spread_pips = risk_config.get('max_spread_pips', 5.0)
         
         # External order bridge
         self.order_queue_path = Path(__file__).resolve().parent.parent / 'logs' / 'order_queue.jsonl'
@@ -206,6 +207,25 @@ class TradingBot:
 
             symbol = trade_signal.symbol
             
+            # Check Spread
+            symbol_info = mt5.symbol_info(symbol)
+            if not symbol_info:
+                logger.error(f"Symbol {symbol} not found")
+                return False
+                
+            spread_points = symbol_info.spread
+            point_size = symbol_info.point
+            
+            # Calculate spread in pips (assuming standard 10 points = 1 pip for forex)
+            # For JPY pairs (3 digits), 0.001 is a pip. For others (5 digits), 0.0001 is a pip.
+            # MT5 'spread' is usually in points.
+            # Standard conversion: 10 points = 1 pip
+            current_spread_pips = spread_points / 10.0
+            
+            if current_spread_pips > self.max_spread_pips:
+                logger.warning(f"SKIPPING TRADE: Spread too high ({current_spread_pips:.1f} pips > {self.max_spread_pips} pips)")
+                return False
+            
             # ML-Optimized Position Sizing
             current_equity = mt5.account_info().equity if mt5.account_info() else self.initial_balance
             
@@ -292,15 +312,31 @@ class TradingBot:
             action = mt5.ORDER_TYPE_BUY if trade_signal.direction == "LONG" else mt5.ORDER_TYPE_SELL
             price = mt5.symbol_info_tick(symbol).ask if action == mt5.ORDER_TYPE_BUY else mt5.symbol_info_tick(symbol).bid
             
+            # Smart SL/TP Adjustment for Spread
+            # Sell orders close at Ask price, so we must add spread to SL/TP to match chart levels (which show Bid)
+            adjusted_sl = trade_signal.sl
+            adjusted_tp = trade_signal.tp
+            
+            spread_val = spread_points * point_size
+            
+            if action == mt5.ORDER_TYPE_SELL:
+                # For Sell: SL and TP are Buy orders (executed at Ask)
+                # If chart shows Bid reaching X, Ask is X + Spread
+                # So we shift SL/TP up by spread to align with Bid-based chart analysis
+                if adjusted_sl > 0:
+                    adjusted_sl += spread_val
+                if adjusted_tp > 0:
+                    adjusted_tp += spread_val
+                logger.info(f"Spread Adj (SELL): SL {trade_signal.sl}->{adjusted_sl:.5f} | TP {trade_signal.tp}->{adjusted_tp:.5f} (+{spread_val:.5f})")
+            
             base_request = {
                 "action": mt5.TRADE_ACTION_DEAL,
                 "symbol": symbol,
                 "volume": volume,
                 "type": action,
                 "price": price,
-                "sl": trade_signal.sl,
-                "tp": trade_signal.tp,
-                "deviation": 20,
+                "sl": adjusted_sl,
+                "tp": adjusted_tp,
                 "deviation": 20,
                 "comment": f"{trade_signal.strategy} {trade_signal.confidence:.2f}",
             }

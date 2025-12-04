@@ -1,6 +1,7 @@
 import AppKit
 import Foundation
 import UserNotifications
+import Combine
 
 class NotificationService: NSObject, ObservableObject {
     static let shared = NotificationService()
@@ -14,16 +15,14 @@ class NotificationService: NSObject, ObservableObject {
     }
 
     func requestPermissions() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {
-            granted, error in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
             if granted {
                 DispatchQueue.main.async {
                     NSApplication.shared.registerForRemoteNotifications()
                 }
             } else if let error = error {
                 DispatchQueue.main.async {
-                    self.errorMessage =
-                        "Failed to request permissions: \(error.localizedDescription)"
+                    self.errorMessage = "Failed to request permissions: \(error.localizedDescription)"
                 }
             }
         }
@@ -80,8 +79,7 @@ extension NotificationService: UNUserNotificationCenterDelegate {
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification,
-        withCompletionHandler completionHandler:
-            @escaping (UNNotificationPresentationOptions) -> Void
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
         completionHandler([.banner, .sound])
     }

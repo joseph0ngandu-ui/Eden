@@ -132,16 +132,12 @@ struct MT5AccountRow: View {
             Spacer()
             
             VStack(alignment: .trailing, spacing: 4) {
-                if let balance = account.balance {
-                    Text(balance, format: .currency(code: "USD"))
-                        .fontWeight(.medium)
-                }
+                Text(account.balance, format: .currency(code: "USD"))
+                    .fontWeight(.medium)
                 
-                if let equity = account.equity {
-                    Text("Equity: \(equity.formatted(.currency(code: "USD")))")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
+                Text("Equity: \(account.equity.formatted(.currency(code: "USD")))")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
             }
             .padding(.trailing, 8)
             

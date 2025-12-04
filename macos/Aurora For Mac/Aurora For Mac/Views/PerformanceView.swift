@@ -321,37 +321,6 @@ struct DailySummaryTab: View {
     }
 }
 
-// MARK: - Stat Card
-
-struct StatCard: View {
-    let title: String
-    let value: String
-    let icon: String
-    let color: Color
-
-    var body: some View {
-        VStack(spacing: 12) {
-            Image(systemName: icon)
-                .font(.system(size: 40))
-                .foregroundColor(color)
-
-            Text(value)
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(color)
-
-            Text(title)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-        }
-        .frame(maxWidth: .infinity)
-        .padding()
-        .background(Color(nsColor: .controlBackgroundColor))
-        .cornerRadius(12)
-        .shadow(radius: 2)
-    }
-}
-
 // MARK: - Detail Card
 
 struct DetailCard: View {

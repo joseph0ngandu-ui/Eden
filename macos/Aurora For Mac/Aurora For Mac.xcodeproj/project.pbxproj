@@ -51,6 +51,8 @@
 		A8B0D3512EDE034E0003F8A1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A8B0D3232EDE034E0003F8A1 /* README.md */; };
 		A8B0D3532EDE034E0003F8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B0D31F2EDE034E0003F8A1 /* Assets.xcassets */; };
 		A8B0D3552EDE04EB0003F8A1 /* Aurora_For_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3542EDE04EB0003F8A1 /* Aurora_For_MacApp.swift */; };
+		A8B0D3572EDE1C5F0003F8A1 /* MT5Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3562EDE1C5F0003F8A1 /* MT5Account.swift */; };
+		A8B0D3592EDE1D5D0003F8A1 /* StrategyConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B0D3582EDE1D5D0003F8A1 /* StrategyConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		A8B0D31F2EDE034E0003F8A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8B0D3232EDE034E0003F8A1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A8B0D3542EDE04EB0003F8A1 /* Aurora_For_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aurora_For_MacApp.swift; sourceTree = "<group>"; };
+		A8B0D3562EDE1C5F0003F8A1 /* MT5Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MT5Account.swift; sourceTree = "<group>"; };
+		A8B0D3582EDE1D5D0003F8A1 /* StrategyConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +228,7 @@
 		A8B0D31E2EDE034E0003F8A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A8B0D3562EDE1C5F0003F8A1 /* MT5Account.swift */,
 				A8B0D30B2EDE034E0003F8A1 /* Components */,
 				A8B0D30C2EDE034E0003F8A1 /* AddMT5AccountView.swift */,
 				A8B0D30D2EDE034E0003F8A1 /* BacktestView.swift */,
@@ -243,6 +248,7 @@
 				A8B0D31B2EDE034E0003F8A1 /* SymbolManagementView.swift */,
 				A8B0D31C2EDE034E0003F8A1 /* TestingView.swift */,
 				A8B0D31D2EDE034E0003F8A1 /* TradeHistoryView.swift */,
+				A8B0D3582EDE1D5D0003F8A1 /* StrategyConfig.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -406,6 +412,7 @@
 				A8B0D3292EDE034E0003F8A1 /* StrategyEditorView.swift in Sources */,
 				A8B0D32A2EDE034E0003F8A1 /* MT5AccountsView.swift in Sources */,
 				A8B0D32B2EDE034E0003F8A1 /* StatCard.swift in Sources */,
+				A8B0D3572EDE1C5F0003F8A1 /* MT5Account.swift in Sources */,
 				A8B0D32C2EDE034E0003F8A1 /* MLTrainingSession.swift in Sources */,
 				A8B0D32E2EDE034E0003F8A1 /* TradeRow.swift in Sources */,
 				A8B0D32F2EDE034E0003F8A1 /* BacktestResult.swift in Sources */,
@@ -430,6 +437,7 @@
 				A8B0D3422EDE034E0003F8A1 /* APIService.swift in Sources */,
 				A8B0D3432EDE034E0003F8A1 /* Trade.swift in Sources */,
 				A8B0D3442EDE034E0003F8A1 /* TradeHistoryView.swift in Sources */,
+				A8B0D3592EDE1D5D0003F8A1 /* StrategyConfig.swift in Sources */,
 				A8B0D3452EDE034E0003F8A1 /* BacktestView.swift in Sources */,
 				A8B0D3462EDE034E0003F8A1 /* SettingsView.swift in Sources */,
 				A8B0D3552EDE04EB0003F8A1 /* Aurora_For_MacApp.swift in Sources */,

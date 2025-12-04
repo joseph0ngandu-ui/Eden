@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 struct LoginView: View {
     @EnvironmentObject var authService: AuthService

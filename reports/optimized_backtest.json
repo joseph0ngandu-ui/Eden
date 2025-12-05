@@ -1,0 +1,13 @@
+{
+  "date": "2025-12-05T06:15:11.801920",
+  "metrics": {
+    "total_trades": 2563,
+    "monthly_return_pct": 103.48464220329822,
+    "max_daily_dd_pct": 36.00311852013118,
+    "max_drawdown_pct": 7.0758898777505586,
+    "win_rate_pct": 20.132657042528287,
+    "profit_factor": 1.4718300480265203,
+    "final_equity": 410453.92660989467,
+    "meets_criteria": false
+  }
+}

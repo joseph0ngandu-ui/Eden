@@ -121,9 +121,9 @@ class TradingBot:
     def _log_startup_banner(self) -> None:
         """Log startup banner."""
         banner = f"\n{'='*80}\n"
-        banner += f"Eden Live Bot - Hybrid Aggressive + Gold Quest\n"
+        banner += f"Eden Live Bot - Asian Fade Solo [AGGRESSIVE]\n"
         banner += f"Symbols={len(self.symbols)} | Shadow Mode={self.shadow_mode}\n"
-        banner += f"Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)\n"
+        banner += f"Max Positions=2 | Risk=0.8% (Target: 13%+ Monthly)\n"
         banner += f"{'='*80}\n"
         logger.info(banner)
     
@@ -168,7 +168,8 @@ class TradingBot:
                 return None
             df = pd.DataFrame(rates)
             df['time'] = pd.to_datetime(df['time'], unit='s')
-            return df.sort_values('time').reset_index(drop=True)
+            df.set_index('time', inplace=True)
+            return df.sort_index()
         except Exception as e:
             logger.error(f"Error fetching data for {symbol}: {e}")
             return None
@@ -244,14 +245,15 @@ class TradingBot:
                     return False
 
             # Get allocation (pass active strategy names for ML optimization)
-            strategies_active = ['Pro_Volatility_Expansion', 'Pro_Asian_Fade', 'Pro_Overlap_Scalper', 'Pro_Gold_Breakout']
+            # ASIAN FADE SOLO CONFIGURATION
+            strategies_active = ['Pro_Asian_Fade'] 
             allocation = self.ml_optimizer.get_allocation({}, daily_dd_pct, strategies_active)
-            allocation_weight = allocation.get(trade_signal.strategy, 0.25)
+            allocation_weight = allocation.get(trade_signal.strategy, 1.0) # Default to 1.0 if focused
             
             # Calculate risk percentage
             risk_pct = self.ml_optimizer.calculate_position_size(
                 trade_signal.strategy,
-                base_risk=0.25, # Base risk 0.25%
+                base_risk=0.8, # Base risk 0.8% (Asian Fade Solo)
                 allocation_weight=allocation_weight,
                 current_equity=current_equity,
                 daily_dd_pct=daily_dd_pct

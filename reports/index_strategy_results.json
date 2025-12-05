@@ -1,0 +1,39 @@
+{
+  "test_date": "2025-12-05T09:40:10.868393",
+  "results": [
+    {
+      "strategy": "Pro_Index_Mean_Reversion",
+      "trades": 538,
+      "win_rate": 22.676579925650557,
+      "monthly_return": 12.349912105998191,
+      "max_dd": 24.531460323000847,
+      "max_daily_dd": 11.498199960467009,
+      "profit_factor": 1.1781237322980507,
+      "final_equity": 137049.73631799457,
+      "meets_criteria": "False"
+    },
+    {
+      "strategy": "Pro_Index_Momentum",
+      "trades": 564,
+      "win_rate": 33.86524822695036,
+      "monthly_return": 12.111111111111212,
+      "max_dd": 12.415654520917489,
+      "max_daily_dd": 7.464454976303244,
+      "profit_factor": 1.194816800714925,
+      "final_equity": 136333.33333333363,
+      "meets_criteria": "False"
+    },
+    {
+      "strategy": "Pro_Index_NY_Breakout",
+      "trades": 354,
+      "win_rate": 36.440677966101696,
+      "monthly_return": 5.764886293049572,
+      "max_dd": 10.643732172633756,
+      "max_daily_dd": 4.588158606351474,
+      "profit_factor": 1.1537303011479887,
+      "final_equity": 117294.65887914872,
+      "meets_criteria": "False"
+    }
+  ],
+  "passing_strategies": []
+}

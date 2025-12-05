@@ -2989,3 +2989,620 @@
 [2025-12-04 20:46:06] [BOT] ================================================================================
 [2025-12-04 20:46:06] [BOT] 2025-12-04 20:46:06,901 - INFO - Connected. Balance: 9986.23
 [2025-12-04 20:46:06] [BOT] 2025-12-04 20:46:06,902 - INFO - Started. Polling every 300s
+[2025-12-04 21:46:07] [BOT] 2025-12-04 21:46:07,120 - INFO - SIGNAL FOUND: AUDJPYm via volatility_expansion
+[2025-12-04 21:46:07] [BOT] 2025-12-04 21:46:07,120 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 22:01:07] [BOT] 2025-12-04 22:01:07,195 - INFO - SIGNAL FOUND: EURUSDm via volatility_expansion
+[2025-12-04 22:01:07] [BOT] 2025-12-04 22:01:07,195 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 22:01:07] [BOT] 2025-12-04 22:01:07,198 - INFO - SIGNAL FOUND: GBPUSDm via volatility_expansion
+[2025-12-04 22:01:08] [BOT] 2025-12-04 22:01:07,198 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 22:01:08] [BOT] 2025-12-04 22:01:07,199 - INFO - SIGNAL FOUND: USDJPYm via volatility_expansion
+[2025-12-04 22:01:09] [BOT] 2025-12-04 22:01:07,200 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 22:06:07] [BOT] 2025-12-04 22:06:07,227 - INFO - SIGNAL FOUND: AUDJPYm via volatility_expansion
+[2025-12-04 22:06:07] [BOT] 2025-12-04 22:06:07,227 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 22:11:07] [BOT] 2025-12-04 22:11:07,241 - INFO - SIGNAL FOUND: GBPUSDm via volatility_expansion
+[2025-12-04 22:11:07] [BOT] 2025-12-04 22:11:07,242 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 22:11:07] [BOT] 2025-12-04 22:11:07,245 - INFO - SIGNAL FOUND: AUDJPYm via volatility_expansion
+[2025-12-04 22:11:11] [BOT] 2025-12-04 22:11:07,245 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 22:31:07] [BOT] 2025-12-04 22:31:07,304 - INFO - SIGNAL FOUND: GBPUSDm via volatility_expansion
+[2025-12-04 22:31:08] [BOT] 2025-12-04 22:31:07,304 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:01:07] [BOT] 2025-12-04 23:01:07,455 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:01:09] [BOT] 2025-12-04 23:01:07,455 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:06:07] [BOT] 2025-12-04 23:06:07,471 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:06:07] [BOT] 2025-12-04 23:06:07,471 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:11:07] [BOT] 2025-12-04 23:11:07,488 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:11:07] [BOT] 2025-12-04 23:11:07,488 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:16:07] [BOT] 2025-12-04 23:16:07,504 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:16:07] [BOT] 2025-12-04 23:16:07,504 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:21:07] [BOT] 2025-12-04 23:21:07,523 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:21:07] [BOT] 2025-12-04 23:21:07,523 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:26:07] [BOT] 2025-12-04 23:26:07,540 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:26:07] [BOT] 2025-12-04 23:26:07,540 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:31:07] [BOT] 2025-12-04 23:31:07,558 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:31:07] [BOT] 2025-12-04 23:31:07,558 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:36:07] [BOT] 2025-12-04 23:36:07,574 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:36:07] [BOT] 2025-12-04 23:36:07,575 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:41:07] [BOT] 2025-12-04 23:41:07,591 - INFO - SIGNAL FOUND: USDJPYm via volatility_expansion
+[2025-12-04 23:41:07] [BOT] 2025-12-04 23:41:07,591 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:46:07] [BOT] 2025-12-04 23:46:07,608 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:46:07] [BOT] 2025-12-04 23:46:07,608 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:51:07] [BOT] 2025-12-04 23:51:07,624 - INFO - SIGNAL FOUND: GBPUSDm via volatility_expansion
+[2025-12-04 23:51:07] [BOT] 2025-12-04 23:51:07,624 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:51:07] [BOT] 2025-12-04 23:51:07,625 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:51:07] [BOT] 2025-12-04 23:51:07,625 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-04 23:56:07] [BOT] 2025-12-04 23:56:07,642 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-04 23:56:07] [BOT] 2025-12-04 23:56:07,642 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:01:07] [BOT] 2025-12-05 00:01:07,652 - INFO - \U0001f4c5 NEW TRADING DAY: 2025-12-05 | Starting Balance: $9986.23
+[2025-12-05 00:01:07] [BOT] 2025-12-05 00:01:07,703 - INFO - SIGNAL FOUND: EURUSDm via volatility_expansion
+[2025-12-05 00:01:07] [BOT] 2025-12-05 00:01:07,703 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:01:07] [BOT] 2025-12-05 00:01:07,750 - INFO - SIGNAL FOUND: GBPUSDm via volatility_expansion
+[2025-12-05 00:01:07] [BOT] 2025-12-05 00:01:07,751 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:01:07] [BOT] 2025-12-05 00:01:07,789 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-05 00:01:07] [BOT] 2025-12-05 00:01:07,789 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:06:09] [BOT] 2025-12-05 00:06:09,370 - INFO - SIGNAL FOUND: GBPUSDm via volatility_expansion
+[2025-12-05 00:06:09] [BOT] 2025-12-05 00:06:09,370 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:06:09] [BOT] 2025-12-05 00:06:09,370 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-05 00:06:09] [BOT] 2025-12-05 00:06:09,370 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:11:09] [BOT] 2025-12-05 00:11:09,384 - INFO - SIGNAL FOUND: EURUSDm via volatility_expansion
+[2025-12-05 00:11:09] [BOT] 2025-12-05 00:11:09,384 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:11:09] [BOT] 2025-12-05 00:11:09,384 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-05 00:11:09] [BOT] 2025-12-05 00:11:09,384 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:11:09] [BOT] 2025-12-05 00:11:09,384 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 00:11:09] [BOT] 2025-12-05 00:11:09,384 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:16:09] [BOT] 2025-12-05 00:16:09,403 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-05 00:16:09] [BOT] 2025-12-05 00:16:09,403 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:16:09] [BOT] 2025-12-05 00:16:09,403 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 00:16:09] [BOT] 2025-12-05 00:16:09,403 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:21:09] [BOT] 2025-12-05 00:21:09,417 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-05 00:21:09] [BOT] 2025-12-05 00:21:09,417 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:21:09] [BOT] 2025-12-05 00:21:09,417 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 00:21:09] [BOT] 2025-12-05 00:21:09,417 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:31:09] [BOT] 2025-12-05 00:31:09,447 - INFO - SIGNAL FOUND: USDJPYm via asian_fade
+[2025-12-05 00:31:09] [BOT] 2025-12-05 00:31:09,447 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 00:31:09] [BOT] 2025-12-05 00:31:09,447 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 00:31:09] [BOT] 2025-12-05 00:31:09,447 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 01:31:09] [BOT] 2025-12-05 01:31:09,630 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 01:31:09] [BOT] 2025-12-05 01:31:09,630 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 01:41:09] [BOT] 2025-12-05 01:41:09,682 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 01:41:09] [BOT] 2025-12-05 01:41:09,682 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 02:06:09] [BOT] 2025-12-05 02:06:09,775 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 02:06:09] [BOT] 2025-12-05 02:06:09,776 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 02:21:09] [BOT] 2025-12-05 02:21:09,820 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 02:21:09] [BOT] 2025-12-05 02:21:09,820 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 02:31:09] [BOT] 2025-12-05 02:31:09,853 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 02:31:09] [BOT] 2025-12-05 02:31:09,853 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 02:36:09] [BOT] 2025-12-05 02:36:09,868 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 02:36:09] [BOT] 2025-12-05 02:36:09,868 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 02:41:09] [BOT] 2025-12-05 02:41:09,886 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 02:41:09] [BOT] 2025-12-05 02:41:09,886 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 02:46:09] [BOT] 2025-12-05 02:46:09,900 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 02:46:09] [BOT] 2025-12-05 02:46:09,901 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 02:51:09] [BOT] 2025-12-05 02:51:09,916 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 02:51:09] [BOT] 2025-12-05 02:51:09,916 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 02:56:09] [BOT] 2025-12-05 02:56:09,932 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 02:56:09] [BOT] 2025-12-05 02:56:09,932 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 03:01:09] [BOT] 2025-12-05 03:01:09,947 - INFO - SIGNAL FOUND: AUDJPYm via asian_fade
+[2025-12-05 03:01:09] [BOT] 2025-12-05 03:01:09,947 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 03:29:15] Trading bot terminated with code: 3221225786
+[2025-12-05 03:51:01] Watchdog started
+[2025-12-05 03:51:01] Starting trading bot...
+[2025-12-05 03:51:01] Trading bot started with PID: 60792
+[2025-12-05 03:51:02] [BOT] 2025-12-05 03:51:02,910 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-05 03:51:02] [BOT] 2025-12-05 03:51:02,917 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,826 - INFO - Loaded Portfolio ML model from ml_portfolio_model.pkl
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,826 - INFO -
+[2025-12-05 03:51:03] [BOT] ================================================================================
+[2025-12-05 03:51:03] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-05 03:51:03] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-05 03:51:03] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-05 03:51:03] [BOT] ================================================================================
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,826 - INFO - Connected. Balance: 9986.23
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,826 - INFO - Started. Polling every 300s
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,834 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,839 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,842 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,845 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,845 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,846 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,848 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,852 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 03:51:03] [BOT] 2025-12-05 03:51:03,852 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,860 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,860 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,860 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,860 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,869 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,869 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,869 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,869 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,876 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,876 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 03:56:03] [BOT] 2025-12-05 03:56:03,876 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,887 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,891 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,893 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,893 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,894 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,895 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,895 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,896 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,900 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,902 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:01:03] [BOT] 2025-12-05 04:01:03,902 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,911 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,914 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,918 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,918 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,918 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,918 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,918 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,918 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,918 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,923 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:06:03] [BOT] 2025-12-05 04:06:03,923 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:11:03] [BOT] 2025-12-05 04:11:03,934 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:11:03] [BOT] 2025-12-05 04:11:03,939 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:11:03] [BOT] 2025-12-05 04:11:03,942 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:11:03] [BOT] 2025-12-05 04:11:03,945 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:11:03] [BOT] 2025-12-05 04:11:03,946 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 04:11:03] [BOT] 2025-12-05 04:11:03,946 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:11:03] [BOT] 2025-12-05 04:11:03,947 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:11:03] [BOT] 2025-12-05 04:11:03,949 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:11:03] [BOT] 2025-12-05 04:11:03,949 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,958 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,960 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,960 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,962 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,964 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,964 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,965 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,968 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,969 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,969 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,970 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,972 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:16:03] [BOT] 2025-12-05 04:16:03,972 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:21:03] [BOT] 2025-12-05 04:21:03,981 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:21:04] [BOT] 2025-12-05 04:21:03,985 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:21:04] [BOT] 2025-12-05 04:21:03,987 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 04:21:04] [BOT] 2025-12-05 04:21:03,987 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:21:04] [BOT] 2025-12-05 04:21:03,988 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:21:04] [BOT] 2025-12-05 04:21:03,991 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:21:04] [BOT] 2025-12-05 04:21:03,995 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:21:04] [BOT] 2025-12-05 04:21:03,996 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:21:04] [BOT] 2025-12-05 04:21:03,996 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,006 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,010 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,011 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,011 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,012 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,016 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,017 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,017 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,018 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,020 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:26:04] [BOT] 2025-12-05 04:26:04,020 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,029 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,030 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,031 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,032 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,034 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,034 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,035 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,036 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,036 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,037 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,041 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,043 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:31:04] [BOT] 2025-12-05 04:31:04,043 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,053 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,054 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,054 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,055 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,057 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,057 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,058 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,060 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,060 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,061 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,065 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,067 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:36:04] [BOT] 2025-12-05 04:36:04,067 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:38:13] Watchdog started
+[2025-12-05 04:38:13] Starting trading bot...
+[2025-12-05 04:38:13] Trading bot started with PID: 61208
+[2025-12-05 04:38:16] [BOT] 2025-12-05 04:38:15,999 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-05 04:38:16] [BOT] 2025-12-05 04:38:16,007 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-05 04:38:17] [BOT] 2025-12-05 04:38:17,076 - INFO - Loaded Portfolio ML model from ml_portfolio_model.pkl
+[2025-12-05 04:38:17] [BOT] 2025-12-05 04:38:17,076 - INFO -
+[2025-12-05 04:38:17] [BOT] ================================================================================
+[2025-12-05 04:38:17] [BOT] Eden Live Bot - Hybrid Aggressive + Gold Quest
+[2025-12-05 04:38:17] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-05 04:38:17] [BOT] Max Positions=7 | Risk=0.15% (Pro) / 0.5% (Gold)
+[2025-12-05 04:38:17] [BOT] ================================================================================
+[2025-12-05 04:38:17] [BOT] 2025-12-05 04:38:17,077 - INFO - Connected. Balance: 9986.23
+[2025-12-05 04:38:17] [BOT] 2025-12-05 04:38:17,077 - INFO - Started. Polling every 300s
+[2025-12-05 04:38:17] [BOT] 2025-12-05 04:38:17,084 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:38:17] [BOT] 2025-12-05 04:38:17,088 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:38:17] [BOT] 2025-12-05 04:38:17,089 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:38:17] [BOT] 2025-12-05 04:38:17,092 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,080 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,081 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,081 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,083 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,084 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,084 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,086 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,087 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,087 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,088 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,092 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,094 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:41:04] [BOT] 2025-12-05 04:41:04,094 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:43:17] [BOT] 2025-12-05 04:43:17,106 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:43:17] [BOT] 2025-12-05 04:43:17,108 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:43:17] [BOT] 2025-12-05 04:43:17,109 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:43:17] [BOT] 2025-12-05 04:43:17,111 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,104 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,107 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,107 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,108 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,110 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,110 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,111 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,112 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,112 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,113 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,118 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,119 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:46:04] [BOT] 2025-12-05 04:46:04,120 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:48:17] [BOT] 2025-12-05 04:48:17,126 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:48:17] [BOT] 2025-12-05 04:48:17,128 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:48:17] [BOT] 2025-12-05 04:48:17,129 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:48:17] [BOT] 2025-12-05 04:48:17,131 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,130 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,132 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,132 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,133 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,134 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,134 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,135 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,137 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,137 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,138 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,141 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,142 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:51:04] [BOT] 2025-12-05 04:51:04,142 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:53:17] [BOT] 2025-12-05 04:53:17,146 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:53:17] [BOT] 2025-12-05 04:53:17,149 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:53:17] [BOT] 2025-12-05 04:53:17,150 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:53:17] [BOT] 2025-12-05 04:53:17,152 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,149 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,153 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,153 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,153 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,155 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,155 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,173 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,173 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,173 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,173 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,173 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,180 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 04:56:04] [BOT] 2025-12-05 04:56:04,180 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 04:58:17] [BOT] 2025-12-05 04:58:17,180 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:58:17] [BOT] 2025-12-05 04:58:17,180 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 04:58:17] [BOT] 2025-12-05 04:58:17,180 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 04:58:17] [BOT] 2025-12-05 04:58:17,187 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,192 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,194 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,194 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,194 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,194 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,194 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,198 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,199 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,199 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,199 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,202 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,202 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:01:04] [BOT] 2025-12-05 05:01:04,202 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:03:17] [BOT] 2025-12-05 05:03:17,202 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:03:17] [BOT] 2025-12-05 05:03:17,204 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:03:17] [BOT] 2025-12-05 05:03:17,204 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:03:17] [BOT] 2025-12-05 05:03:17,204 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,214 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,217 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,217 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,217 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,222 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,222 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,222 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,224 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,224 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,226 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,229 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,230 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:06:04] [BOT] 2025-12-05 05:06:04,230 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:08:17] [BOT] 2025-12-05 05:08:17,220 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:08:17] [BOT] 2025-12-05 05:08:17,223 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:08:17] [BOT] 2025-12-05 05:08:17,223 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:08:17] [BOT] 2025-12-05 05:08:17,226 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,241 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,242 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,242 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,243 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,245 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,245 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,246 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,248 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,248 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,249 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,254 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,256 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:11:04] [BOT] 2025-12-05 05:11:04,256 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:13:17] [BOT] 2025-12-05 05:13:17,241 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:13:17] [BOT] 2025-12-05 05:13:17,245 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:13:17] [BOT] 2025-12-05 05:13:17,246 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:13:17] [BOT] 2025-12-05 05:13:17,248 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,265 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,266 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,267 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,268 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,270 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,270 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,271 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,273 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,273 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,274 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,277 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,279 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:16:04] [BOT] 2025-12-05 05:16:04,279 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:18:17] [BOT] 2025-12-05 05:18:17,263 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:18:17] [BOT] 2025-12-05 05:18:17,266 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:18:17] [BOT] 2025-12-05 05:18:17,267 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:18:17] [BOT] 2025-12-05 05:18:17,270 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,288 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,290 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,290 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,291 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,293 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,293 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,294 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,296 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,296 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,297 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,298 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,298 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:21:04] [BOT] 2025-12-05 05:21:04,299 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:23:17] [BOT] 2025-12-05 05:23:17,283 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:23:17] [BOT] 2025-12-05 05:23:17,286 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:23:17] [BOT] 2025-12-05 05:23:17,287 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:23:17] [BOT] 2025-12-05 05:23:17,289 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,312 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,314 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,314 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,316 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,317 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,317 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,318 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,320 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,320 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,321 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,322 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,322 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,324 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,326 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:26:04] [BOT] 2025-12-05 05:26:04,326 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:28:17] [BOT] 2025-12-05 05:28:17,303 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:28:17] [BOT] 2025-12-05 05:28:17,306 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:28:17] [BOT] 2025-12-05 05:28:17,307 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:28:17] [BOT] 2025-12-05 05:28:17,309 - INFO - SIGNAL FOUND: USDJPYm via mean_reversion
+[2025-12-05 05:28:17] [BOT] 2025-12-05 05:28:17,309 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:28:17] [BOT] 2025-12-05 05:28:17,310 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:28:17] [BOT] 2025-12-05 05:28:17,312 - INFO - SIGNAL FOUND: AUDJPYm via mean_reversion
+[2025-12-05 05:28:17] [BOT] 2025-12-05 05:28:17,312 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,335 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,338 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,338 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,339 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,340 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,340 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,341 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,343 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,343 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,344 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,346 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,346 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,347 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,348 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:31:04] [BOT] 2025-12-05 05:31:04,348 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:33:17] [BOT] 2025-12-05 05:33:17,326 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:33:17] [BOT] 2025-12-05 05:33:17,329 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:33:17] [BOT] 2025-12-05 05:33:17,330 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:33:17] [BOT] 2025-12-05 05:33:17,331 - INFO - SIGNAL FOUND: USDJPYm via mean_reversion
+[2025-12-05 05:33:17] [BOT] 2025-12-05 05:33:17,331 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:33:17] [BOT] 2025-12-05 05:33:17,333 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:33:17] [BOT] 2025-12-05 05:33:17,334 - INFO - SIGNAL FOUND: AUDJPYm via mean_reversion
+[2025-12-05 05:33:17] [BOT] 2025-12-05 05:33:17,334 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,358 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,360 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,360 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,361 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,363 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,363 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,364 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,366 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,366 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,367 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,369 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,369 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,371 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,374 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:36:04] [BOT] 2025-12-05 05:36:04,374 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:38:17] [BOT] 2025-12-05 05:38:17,344 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:38:17] [BOT] 2025-12-05 05:38:17,350 - INFO - SIGNAL FOUND: GBPUSDm via mean_reversion
+[2025-12-05 05:38:17] [BOT] 2025-12-05 05:38:17,350 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:38:17] [BOT] 2025-12-05 05:38:17,350 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:38:17] [BOT] 2025-12-05 05:38:17,353 - INFO - SIGNAL FOUND: USDJPYm via mean_reversion
+[2025-12-05 05:38:17] [BOT] 2025-12-05 05:38:17,353 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:38:17] [BOT] 2025-12-05 05:38:17,353 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:38:17] [BOT] 2025-12-05 05:38:17,355 - INFO - SIGNAL FOUND: AUDJPYm via mean_reversion
+[2025-12-05 05:38:17] [BOT] 2025-12-05 05:38:17,355 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,383 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,385 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,385 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,386 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,388 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,388 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,389 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,390 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,390 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,391 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,393 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,393 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,394 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,396 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:41:04] [BOT] 2025-12-05 05:41:04,396 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:43:17] [BOT] 2025-12-05 05:43:17,368 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:43:17] [BOT] 2025-12-05 05:43:17,371 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:43:17] [BOT] 2025-12-05 05:43:17,372 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:43:17] [BOT] 2025-12-05 05:43:17,374 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,404 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,406 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,406 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,407 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,410 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,410 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,411 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,412 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,412 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,413 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,415 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,415 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,416 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,417 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:46:04] [BOT] 2025-12-05 05:46:04,417 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:48:17] [BOT] 2025-12-05 05:48:17,389 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:48:17] [BOT] 2025-12-05 05:48:17,391 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:48:17] [BOT] 2025-12-05 05:48:17,392 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:48:17] [BOT] 2025-12-05 05:48:17,395 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,426 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,428 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,428 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,429 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,431 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,431 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,433 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,435 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,435 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,436 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,438 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,438 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,439 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,440 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:51:04] [BOT] 2025-12-05 05:51:04,440 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:53:17] [BOT] 2025-12-05 05:53:17,409 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:53:17] [BOT] 2025-12-05 05:53:17,412 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:53:17] [BOT] 2025-12-05 05:53:17,413 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:53:17] [BOT] 2025-12-05 05:53:17,415 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,449 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,451 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,451 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,453 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,454 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,454 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,456 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,458 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,458 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,459 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,461 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,461 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,461 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,461 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 05:56:04] [BOT] 2025-12-05 05:56:04,461 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 05:58:17] [BOT] 2025-12-05 05:58:17,431 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:58:17] [BOT] 2025-12-05 05:58:17,433 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 05:58:17] [BOT] 2025-12-05 05:58:17,435 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 05:58:17] [BOT] 2025-12-05 05:58:17,437 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,474 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,476 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,476 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,478 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,480 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,480 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,481 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,483 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,483 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,484 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,486 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,486 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,488 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,490 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 06:01:04] [BOT] 2025-12-05 06:01:04,490 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 06:03:17] [BOT] 2025-12-05 06:03:17,450 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 06:03:17] [BOT] 2025-12-05 06:03:17,452 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 06:03:17] [BOT] 2025-12-05 06:03:17,454 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:03:17] [BOT] 2025-12-05 06:03:17,456 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,499 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,501 - INFO - SIGNAL FOUND: EURUSDm via trend_follower
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,501 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,502 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,504 - INFO - SIGNAL FOUND: GBPUSDm via trend_follower
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,504 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,505 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,507 - INFO - SIGNAL FOUND: USDJPYm via trend_follower
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,507 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,507 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,509 - INFO - SIGNAL FOUND: AUDJPYm via trend_follower
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,510 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,511 - ERROR - Strategy error (gold_london_breakout) on XAUUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,511 - INFO - SIGNAL FOUND: XAUUSDm via trend_follower
+[2025-12-05 06:06:04] [BOT] 2025-12-05 06:06:04,511 - ERROR - Error placing order: name 'symbol' is not defined
+[2025-12-05 06:08:17] [BOT] 2025-12-05 06:08:17,492 - ERROR - Strategy error (overlap_scalper) on EURUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 06:08:17] [BOT] 2025-12-05 06:08:17,495 - ERROR - Strategy error (overlap_scalper) on GBPUSDm: 'int' object has no attribute 'hour'
+[2025-12-05 06:08:17] [BOT] 2025-12-05 06:08:17,496 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:08:17] [BOT] 2025-12-05 06:08:17,499 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:08:46] Watchdog started
+[2025-12-05 06:08:46] Starting trading bot...
+[2025-12-05 06:08:46] Trading bot started with PID: 4716
+[2025-12-05 06:08:47] [BOT] 2025-12-05 06:08:47,753 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-05 06:08:47] [BOT] 2025-12-05 06:08:47,767 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-05 06:08:48] [BOT] 2025-12-05 06:08:48,908 - INFO - Loaded Portfolio ML model from ml_portfolio_model.pkl
+[2025-12-05 06:08:48] [BOT] 2025-12-05 06:08:48,909 - INFO -
+[2025-12-05 06:08:48] [BOT] ================================================================================
+[2025-12-05 06:08:48] [BOT] Eden Live Bot - Asian Fade Solo [AGGRESSIVE]
+[2025-12-05 06:08:48] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-05 06:08:48] [BOT] Max Positions=2 | Risk=0.8% (Target: 13%+ Monthly)
+[2025-12-05 06:08:48] [BOT] ================================================================================
+[2025-12-05 06:08:48] [BOT] 2025-12-05 06:08:48,916 - INFO - Connected. Balance: 9986.23
+[2025-12-05 06:08:48] [BOT] 2025-12-05 06:08:48,916 - INFO - Started. Polling every 300s
+[2025-12-05 06:08:48] [BOT] 2025-12-05 06:08:48,923 - ERROR - Strategy error (asian_fade) on USDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:08:48] [BOT] 2025-12-05 06:08:48,924 - ERROR - Strategy error (asian_fade) on AUDJPYm: 'int' object has no attribute 'hour'
+[2025-12-05 06:10:18] Watchdog started
+[2025-12-05 06:10:18] Starting trading bot...
+[2025-12-05 06:10:19] Trading bot started with PID: 8128
+[2025-12-05 06:10:20] [BOT] 2025-12-05 06:10:20,239 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-05 06:10:20] [BOT] 2025-12-05 06:10:20,247 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-05 06:10:21] [BOT] 2025-12-05 06:10:21,226 - INFO - Loaded Portfolio ML model from ml_portfolio_model.pkl
+[2025-12-05 06:10:21] [BOT] 2025-12-05 06:10:21,227 - INFO -
+[2025-12-05 06:10:21] [BOT] ================================================================================
+[2025-12-05 06:10:21] [BOT] Eden Live Bot - Asian Fade Solo [AGGRESSIVE]
+[2025-12-05 06:10:21] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-05 06:10:21] [BOT] Max Positions=2 | Risk=0.8% (Target: 13%+ Monthly)
+[2025-12-05 06:10:21] [BOT] ================================================================================
+[2025-12-05 06:10:21] [BOT] 2025-12-05 06:10:21,230 - INFO - Connected. Balance: 9986.23
+[2025-12-05 06:10:21] [BOT] 2025-12-05 06:10:21,230 - INFO - Started. Polling every 300s
+[2025-12-05 06:23:03] Watchdog started
+[2025-12-05 06:23:03] Starting trading bot...
+[2025-12-05 06:23:03] Trading bot started with PID: 61356
+[2025-12-05 06:23:05] [BOT] 2025-12-05 06:23:05,014 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-05 06:23:05] [BOT] 2025-12-05 06:23:05,023 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-05 06:23:05] [BOT] 2025-12-05 06:23:05,979 - INFO - Loaded Portfolio ML model from ml_portfolio_model.pkl
+[2025-12-05 06:23:05] [BOT] 2025-12-05 06:23:05,980 - INFO -
+[2025-12-05 06:23:05] [BOT] ================================================================================
+[2025-12-05 06:23:05] [BOT] Eden Live Bot - Asian Fade Solo [AGGRESSIVE]
+[2025-12-05 06:23:05] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-05 06:23:05] [BOT] Max Positions=2 | Risk=0.8% (Target: 13%+ Monthly)
+[2025-12-05 06:23:05] [BOT] ================================================================================
+[2025-12-05 06:23:05] [BOT] 2025-12-05 06:23:05,983 - INFO - Connected. Balance: 9986.23
+[2025-12-05 06:23:05] [BOT] 2025-12-05 06:23:05,983 - INFO - Started. Polling every 300s

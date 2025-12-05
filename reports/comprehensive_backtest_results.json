@@ -1,18 +1,29 @@
 {
-  "test_date": "2025-12-04T21:01:35.545801",
+  "test_date": "2025-12-05T09:37:41.237537",
   "criteria": {
     "min_monthly_return": 13.0,
     "max_daily_dd": 2.0,
     "max_overall_dd": 10.0
   },
   "results": {
-    "Pro_Overlap_Scalper": {
-      "total_trades": 988,
-      "total_return_pct": -0.4273616132530587,
-      "monthly_return_pct": -0.1424538710843529,
-      "max_drawdown_pct": 6.83389791482389,
-      "max_daily_dd_pct": 3.0521044755474462,
-      "win_rate_pct": 28.036437246963565,
-      "profit_factor": 0.9961449407402546,
-      "final_equity": 99572.63838674694,
+    "Pro_Asian_Fade": {
+      "total_trades": 1322,
+      "total_return_pct": 48.011952071612676,
+      "monthly_return_pct": 16.003984023870892,
+      "max_drawdown_pct": 5.758470156365098,
+      "max_daily_dd_pct": 6.793860766102711,
+      "win_rate_pct": 20.499243570347957,
+      "profit_factor": 1.3319155321005656,
+      "final_equity": 148011.95207161267,
+      "meets_criteria": false
+    },
+    "Pro_Volatility_Expansion": {
+      "total_trades": 647,
+      "total_return_pct": 28.128831928592803,
+      "monthly_return_pct": 9.376277309530934,
+      "max_drawdown_pct": 2.585188464186565,
+      "max_daily_dd_pct": 5.779521319003629,
+      "win_rate_pct": 20.86553323029366,
+      "profit_factor": 1.4270527743607526,
+      "final_equity": 128128.8319285928,
       "meets_criteria": 

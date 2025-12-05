@@ -309,12 +309,12 @@ def backtest_strategy(strategy_name, symbols, timeframe='M5', months=3):
             if window_idx < 600:
                 continue
             
-            window = df_symbol.iloc[:window_idx+1].reset_index()
+            window = df_symbol.iloc[:window_idx+1]  # Keep datetime index
             signal = pro_engine.evaluate_live(window, symbol)
             
             if signal and len(training_trades) < 500:  # Limit training set
                 # Calculate features  
-                recent = window.set_index('time').iloc[-20:]
+                recent = window.iloc[-20:]  # 'time' is already the index
                 volatility = recent['close'].pct_change().std()
                 sma_20 = recent['close'].rolling(20).mean().iloc[-1]
                 trend_strength = abs((recent['close'].iloc[-1] - sma_20) / sma_20)
@@ -410,14 +410,14 @@ def backtest_strategy(strategy_name, symbols, timeframe='M5', months=3):
             if window_idx < 600:
                 continue
             
-            window = df_symbol.iloc[:window_idx+1].reset_index()
+            window = df_symbol.iloc[:window_idx+1]  # Keep datetime index
             signal = pro_engine.evaluate_live(window, symbol)
             
             if signal:
                 # ML risk adjustment
                 base_risk = 0.22  # Balanced for returns + DD control
                 risk_pct = ml_manager.adjust_risk(
-                    window.set_index('time'),
+                    window,  # Already has datetime index
                     base_risk,
                     signal.direction,
                     symbol
@@ -467,7 +467,9 @@ def main():
         'Pro_Overlap_Scalper': ['EURUSDm', 'GBPUSDm'],
         'Pro_Asian_Fade': ['USDJPYm', 'AUDJPYm'],
         'Pro_Gold_Breakout': ['XAUUSDm'],
-        'Pro_Volatility_Expansion': ['EURUSDm', 'GBPUSDm', 'USDJPYm', 'XAUUSDm']
+        'Pro_Volatility_Expansion': ['EURUSDm', 'GBPUSDm', 'USDJPYm', 'XAUUSDm'],
+        # NEW: US Index Strategies
+        'Pro_Index_Momentum': ['US30m', 'US500m', 'USTECm'],
     }
     
     results = {}

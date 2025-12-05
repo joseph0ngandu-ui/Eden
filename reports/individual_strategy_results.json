@@ -1,0 +1,65 @@
+[
+  {
+    "strategy": "Pro_Asian_Fade",
+    "trades": 1557,
+    "win_rate": 8.156711624919717,
+    "monthly_return": 144.76534213909693,
+    "max_dd": 31.154854314399955,
+    "profit_factor": 1.4347307571744652,
+    "final_equity": 534296.0264172908
+  },
+  {
+    "strategy": "Pro_Mean_Reversion",
+    "trades": 1584,
+    "win_rate": 36.17424242424242,
+    "monthly_return": 42.680947182941644,
+    "max_dd": 27.348116730129274,
+    "profit_factor": 1.1266496949048719,
+    "final_equity": 228042.84154882492
+  },
+  {
+    "strategy": "Pro_Overlap_Scalper",
+    "trades": 538,
+    "win_rate": 18.21561338289963,
+    "monthly_return": 16.666666666667492,
+    "max_dd": 32.846715328467695,
+    "profit_factor": 1.1136363636363693,
+    "final_equity": 150000.00000000247
+  },
+  {
+    "strategy": "Pro_Trend_Follower",
+    "trades": 2687,
+    "win_rate": 25.2326014142166,
+    "monthly_return": 8.33333333333186,
+    "max_dd": 39.33333333333469,
+    "profit_factor": 1.012444001991038,
+    "final_equity": 124999.99999999558
+  },
+  {
+    "strategy": "Pro_Gold_Breakout",
+    "trades": 39,
+    "win_rate": 10.256410256410255,
+    "monthly_return": -6.333333333333343,
+    "max_dd": 19.00000000000003,
+    "profit_factor": 0.4571428571428562,
+    "final_equity": 80999.99999999997
+  },
+  {
+    "strategy": "Pro_RSI_Momentum",
+    "trades": 2259,
+    "win_rate": 24.43559096945551,
+    "monthly_return": -17.0000000000008,
+    "max_dd": 87.5968992248096,
+    "profit_factor": 0.9701230228470987,
+    "final_equity": 48999.999999997606
+  },
+  {
+    "strategy": "Pro_Volatility_Expansion",
+    "trades": 748,
+    "win_rate": 24.86631016042781,
+    "monthly_return": -22.00000000000207,
+    "max_dd": 70.32258064516502,
+    "profit_factor": 0.8825622775800602,
+    "final_equity": 33999.999999993786
+  }
+]

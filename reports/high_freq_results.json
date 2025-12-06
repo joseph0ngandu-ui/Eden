@@ -1,0 +1,71 @@
+{
+  "results": {
+    "EURUSDm_VWAP": {
+      "name": "VWAP Reversion",
+      "symbol": "EURUSDm",
+      "trades": 2550,
+      "exp": 0.16923232568541602,
+      "wr": 7.803921568627451
+    },
+    "EURUSDm_Breakout": {
+      "name": "Donchian Breakout",
+      "symbol": "EURUSDm",
+      "trades": 744,
+      "exp": -0.051157714822238555,
+      "wr": 3.8978494623655915
+    },
+    "EURUSDm_MicroMom": {
+      "name": "Micro Momentum",
+      "symbol": "EURUSDm",
+      "trades": 182,
+      "exp": -0.1043512240686683,
+      "wr": 37.91208791208791
+    },
+    "GBPUSDm_VWAP": {
+      "name": "VWAP Reversion",
+      "symbol": "GBPUSDm",
+      "trades": 2252,
+      "exp": 0.17483329735106684,
+      "wr": 8.481349911190053
+    },
+    "GBPUSDm_Breakout": {
+      "name": "Donchian Breakout",
+      "symbol": "GBPUSDm",
+      "trades": 721,
+      "exp": -0.09848943269999116,
+      "wr": 3.467406380027739
+    },
+    "GBPUSDm_MicroMom": {
+      "name": "Micro Momentum",
+      "symbol": "GBPUSDm",
+      "trades": 198,
+      "exp": -0.20584238881235264,
+      "wr": 32.82828282828283
+    },
+    "USDJPYm_VWAP": {
+      "name": "VWAP Reversion",
+      "symbol": "USDJPYm",
+      "trades": 2697,
+      "exp": -0.02130837125083182,
+      "wr": 5.376344086021505
+    },
+    "USDJPYm_Breakout": {
+      "name": "Donchian Breakout",
+      "symbol": "USDJPYm",
+      "trades": 698,
+      "exp": -0.017406661571754935,
+      "wr": 6.017191977077363
+    },
+    "USDJPYm_MicroMom": {
+      "name": "Micro Momentum",
+      "symbol": "USDJPYm",
+      "trades": 221,
+      "exp": -0.12249221176951018,
+      "wr": 36.65158371040724
+    }
+  },
+  "viable": [
+    "GBPUSDm_VWAP",
+    "EURUSDm_VWAP"
+  ]
+}

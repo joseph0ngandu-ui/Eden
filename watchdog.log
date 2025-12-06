@@ -3606,3 +3606,20 @@
 [2025-12-05 06:23:05] [BOT] ================================================================================
 [2025-12-05 06:23:05] [BOT] 2025-12-05 06:23:05,983 - INFO - Connected. Balance: 9986.23
 [2025-12-05 06:23:05] [BOT] 2025-12-05 06:23:05,983 - INFO - Started. Polling every 300s
+[2025-12-05 20:33:12] [BOT] 2025-12-05 20:33:12,860 - WARNING - Internet connectivity check failed
+[2025-12-05 20:38:12] [BOT] 2025-12-05 20:38:12,874 - INFO - \u2713 Reconnected after 300.0s
+[2025-12-06 00:03:14] [BOT] 2025-12-06 00:03:14,331 - INFO - \U0001f4c5 NEW TRADING DAY: 2025-12-06 | Starting Balance: $9986.23
+[2025-12-06 07:20:36] Watchdog started
+[2025-12-06 07:20:36] Starting trading bot...
+[2025-12-06 07:20:36] Trading bot started with PID: 30252
+[2025-12-06 07:20:37] [BOT] 2025-12-06 07:20:37,360 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\infrastructure\config.yaml
+[2025-12-06 07:20:37] [BOT] 2025-12-06 07:20:37,385 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-06 07:20:55] [BOT] 2025-12-06 07:20:55,228 - INFO - Loaded Portfolio ML model from ml_portfolio_model.pkl
+[2025-12-06 07:20:55] [BOT] 2025-12-06 07:20:55,229 - INFO -
+[2025-12-06 07:20:55] [BOT] ================================================================================
+[2025-12-06 07:20:56] [BOT] Eden Live Bot - Asian Fade Solo [AGGRESSIVE]
+[2025-12-06 07:20:58] [BOT] Symbols=5 | Shadow Mode=False
+[2025-12-06 07:20:58] [BOT] Max Positions=2 | Risk=0.8% (Target: 13%+ Monthly)
+[2025-12-06 07:20:59] [BOT] ================================================================================
+[2025-12-06 07:20:59] [BOT] 2025-12-06 07:20:55,231 - INFO - Connected. Balance: 9986.23
+[2025-12-06 07:21:00] [BOT] 2025-12-06 07:20:55,231 - INFO - Started. Polling every 300s

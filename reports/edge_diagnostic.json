@@ -1,0 +1,87 @@
+{
+  "test_date": "2025-12-05T19:46:09.136234",
+  "test_months": 6,
+  "risk_per_trade": "1%",
+  "results": [
+    {
+      "strategy": "supply_demand_reversal",
+      "trades": 1813,
+      "win_rate": 55.488141202426924,
+      "avg_win_r": 1.5000000000001368,
+      "avg_loss_r": 1.0,
+      "expectancy": 0.3872035300607489,
+      "profit_factor": 1.868029739777122,
+      "monthly_return": 116.75000000002278,
+      "max_dd": 8.778625954198368,
+      "score": 19.360176503037447,
+      "trades_per_month": 302.1666666666667
+    },
+    {
+      "strategy": "asian_fade",
+      "trades": 2629,
+      "win_rate": 20.235831114492203,
+      "avg_win_r": 4.621216659143838,
+      "avg_loss_r": 1.0,
+      "expectancy": 0.1374999097240479,
+      "profit_factor": 1.1723830532496522,
+      "monthly_return": 60.24787711075365,
+      "max_dd": 49.20959250005838,
+      "score": 6.874995486202396,
+      "trades_per_month": 438.1666666666667
+    },
+    {
+      "strategy": "index_momentum_trend",
+      "trades": 1020,
+      "win_rate": 31.862745098039213,
+      "avg_win_r": 2.3333333333333286,
+      "avg_loss_r": 1.0,
+      "expectancy": 0.0620915032679723,
+      "profit_factor": 1.0911270983213395,
+      "monthly_return": 10.55555555555532,
+      "max_dd": 20.99567099567122,
+      "score": 3.104575163398615,
+      "trades_per_month": 170.0
+    },
+    {
+      "strategy": "session_breakout_retest",
+      "trades": 821,
+      "win_rate": 34.22655298416565,
+      "avg_win_r": 2.0000000000000004,
+      "avg_loss_r": 1.0,
+      "expectancy": 0.02679658952496955,
+      "profit_factor": 1.040740740740741,
+      "monthly_return": 3.666666666666686,
+      "max_dd": 22.292993630573203,
+      "score": 1.3398294762484775,
+      "trades_per_month": 136.83333333333334
+    },
+    {
+      "strategy": "engulfing_momentum",
+      "trades": 3137,
+      "win_rate": 24.705132291998723,
+      "avg_win_r": 3.0,
+      "avg_loss_r": 1.0,
+      "expectancy": -0.01179470832005114,
+      "profit_factor": 0.9843353090601186,
+      "monthly_return": -6.166666666666657,
+      "max_dd": 103.44827586206891
+    },
+    {
+      "strategy": "power_three_setup",
+      "trades": 87,
+      "win_rate": 11.494252873563218,
+      "avg_win_r": 4.0,
+      "avg_loss_r": 1.0,
+      "expectancy": -0.4252873563218391,
+      "profit_factor": 0.5194805194805194,
+      "monthly_return": -6.166666666666667,
+      "max_dd": 38.23529411764706
+    }
+  ],
+  "allocations": {
+    "supply_demand_reversal": 63.104444814301985,
+    "asian_fade": 22.409029855154888,
+    "index_momentum_trend": 10.119354647402282,
+    "session_breakout_retest": 4.367170683140834
+  }
+}

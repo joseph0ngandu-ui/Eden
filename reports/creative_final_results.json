@@ -1,0 +1,33 @@
+{
+  "date": "2025-12-05T21:08:31.324105",
+  "results": {
+    "EURUSDm_Vol Squeeze": {
+      "name": "Vol Squeeze",
+      "trades": 27,
+      "win_rate": 55.55555555555556,
+      "expectancy": 0.06731731268396456,
+      "pf": 1.6928603608268589
+    },
+    "USDJPYm_Hourly Range Rev": {
+      "name": "Hourly Range Rev",
+      "trades": 121,
+      "win_rate": 41.32231404958678,
+      "expectancy": 0.1420021177888326,
+      "pf": 1.2520361166594545
+    },
+    "USDJPYm_Vol Squeeze": {
+      "name": "Vol Squeeze",
+      "trades": 25,
+      "win_rate": 80.0,
+      "expectancy": 0.1566222935724918,
+      "pf": 2.7726299974022055
+    },
+    "XAUUSDm_Hourly Range Rev": {
+      "name": "Hourly Range Rev",
+      "trades": 106,
+      "win_rate": 31.132075471698112,
+      "expectancy": 0.01572312594999099,
+      "pf": 1.0237152925208488
+    }
+  }
+}

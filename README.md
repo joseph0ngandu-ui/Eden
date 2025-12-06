@@ -119,17 +119,22 @@ Key endpoints:
 
 ## 📊 Trading Strategies
 
-### Volatility Burst v1.3
-High-frequency strategy that identifies and exploits sudden volatility spikes with precise entry and exit logic.
+### Volatility Squeeze (H1)
+Trend following strategy running on 28 Pairs. Identifies volatility contractions followed by explosive breakouts.
+- **Edge:** +15.5R (High Win Rate)
+- **Timeframe:** H1
+- **Role:** Portfolio Anchor (Wide & Slow)
 
-### ICT Silver Bullet (2023)
-Trades specific killzone timeframes (2-5 AM / 10-11 AM NY) targeting liquidity sweeps and fair value gaps.
+### Quiet Before Storm (H1)
+Sniper strategy for GBP and XAUUSD. Capitalizes on rare, extreme volatility contractions.
+- **Edge:** +0.6R
+- **Role:** High Impact / Low Frequency
 
-### ICT Unicorn Model (2024)
-Advanced pattern recognition for high-probability setups using orderblock validation and liquidity analysis.
-
-### ICT Venom (2025)
-Cutting-edge multi-timeframe strategy combining all ICT concepts for maximum accuracy.
+### VWAP Reversion (M5)
+High-frequency mean reversion strategy fading 3-ATR deviations from Intraday VWAP.
+- **Edge:** +1200R Gross (Spread Sensitive)
+- **Volume:** ~15,000 trades/month
+- **Role:** Cash Flow (User Enabled)
 
 ## 🔧 Configuration
 

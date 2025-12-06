@@ -1,0 +1,68 @@
+{
+  "date": "2025-12-05T21:20:25.552092",
+  "results": {
+    "EURUSDm_MACD Momentum": {
+      "name": "MACD Momentum",
+      "symbol": "EURUSDm",
+      "trades": 176,
+      "win_rate": 47.72727272727273,
+      "exp": 0.0848119496163075,
+      "pf": 1.2592140225153698,
+      "verdict": "WEAK"
+    },
+    "GBPUSDm_MACD Momentum": {
+      "name": "MACD Momentum",
+      "symbol": "GBPUSDm",
+      "trades": 186,
+      "win_rate": 48.38709677419355,
+      "exp": 0.020892428752635247,
+      "pf": 1.0667154754935144,
+      "verdict": "WEAK"
+    },
+    "USDJPYm_MACD Momentum": {
+      "name": "MACD Momentum",
+      "symbol": "USDJPYm",
+      "trades": 153,
+      "win_rate": 49.01960784313725,
+      "exp": 0.021861608681243042,
+      "pf": 1.0608818944119667,
+      "verdict": "WEAK"
+    },
+    "USDJPYm_Multi Confluence": {
+      "name": "Multi Confluence",
+      "symbol": "USDJPYm",
+      "trades": 1066,
+      "win_rate": 43.90243902439025,
+      "exp": 0.008585619353631104,
+      "pf": 1.0201659552010145,
+      "verdict": "WEAK"
+    },
+    "XAUUSDm_RSI Divergence": {
+      "name": "RSI Divergence",
+      "symbol": "XAUUSDm",
+      "trades": 124,
+      "win_rate": 41.12903225806452,
+      "exp": 0.028984058448669702,
+      "pf": 1.0496511421335708,
+      "verdict": "WEAK"
+    },
+    "XAUUSDm_MACD Momentum": {
+      "name": "MACD Momentum",
+      "symbol": "XAUUSDm",
+      "trades": 154,
+      "win_rate": 47.4025974025974,
+      "exp": 0.054322344979151456,
+      "pf": 1.1712812152553933,
+      "verdict": "WEAK"
+    }
+  },
+  "strong": [],
+  "weak": [
+    "EURUSDm_MACD Momentum",
+    "XAUUSDm_MACD Momentum",
+    "XAUUSDm_RSI Divergence",
+    "USDJPYm_MACD Momentum",
+    "GBPUSDm_MACD Momentum",
+    "USDJPYm_Multi Confluence"
+  ]
+}

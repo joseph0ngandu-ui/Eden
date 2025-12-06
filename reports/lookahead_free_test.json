@@ -1,0 +1,78 @@
+{
+  "test_date": "2025-12-05T20:51:57.055068",
+  "results": {
+    "Three Bar Reversal": {
+      "TRAIN": {
+        "trades": 975,
+        "win_rate": 33.02564102564103,
+        "expectancy": -0.11542800771845563,
+        "profit_factor": 0.8446731038109101,
+        "monthly_return": -38.13810025573792,
+        "max_dd": 110.98292146239157
+      },
+      "TEST": {
+        "trades": 1075,
+        "win_rate": 29.30232558139535,
+        "expectancy": -0.24465690793386607,
+        "profit_factor": 0.689586509221149,
+        "monthly_return": -90.14636600932941,
+        "max_dd": 262.27490116587626
+      }
+    },
+    "EMA Pullback": {
+      "TRAIN": {
+        "trades": 1893,
+        "win_rate": 29.265715795034335,
+        "expectancy": -0.2304315388448548,
+        "profit_factor": 0.7060487560782497,
+        "monthly_return": -147.82087701872257,
+        "max_dd": 419.415113868921
+      },
+      "TEST": {
+        "trades": 2077,
+        "win_rate": 28.117477130476647,
+        "expectancy": -0.27450241219586,
+        "profit_factor": 0.6583698300005106,
+        "monthly_return": -194.23094682309997,
+        "max_dd": 532.3794334326938
+      }
+    },
+    "Inside Bar Breakout": {
+      "TRAIN": {
+        "trades": 1233,
+        "win_rate": 30.008110300081103,
+        "expectancy": -0.1998823893930003,
+        "profit_factor": 0.7408476460833369,
+        "monthly_return": -83.51814687202568,
+        "max_dd": 254.28638855278854
+      },
+      "TEST": {
+        "trades": 1244,
+        "win_rate": 30.064308681672024,
+        "expectancy": -0.19526436556675952,
+        "profit_factor": 0.7463407134409352,
+        "monthly_return": -82.31644676511466,
+        "max_dd": 245.99173410035112
+      }
+    },
+    "Momentum Continuation": {
+      "TRAIN": {
+        "trades": 729,
+        "win_rate": 27.709190672153632,
+        "expectancy": -0.2860476424065228,
+        "profit_factor": 0.6383164284325271,
+        "monthly_return": -72.70901628408791,
+        "max_dd": 210.33720885532085
+      },
+      "TEST": {
+        "trades": 695,
+        "win_rate": 23.597122302158276,
+        "expectancy": -0.42583805352157234,
+        "profit_factor": 0.5103708923265595,
+        "monthly_return": -100.28807281224272,
+        "max_dd": 295.0446735798132
+      }
+    }
+  },
+  "viable_strategies": []
+}

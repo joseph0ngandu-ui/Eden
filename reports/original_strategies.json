@@ -1,0 +1,175 @@
+{
+  "date": "2025-12-06T06:12:08.091328",
+  "results": {
+    "USDJPYm_Exhaustion Reversal": {
+      "name": "Exhaustion Reversal",
+      "symbol": "USDJPYm",
+      "total_trades": 137,
+      "test_trades": 55,
+      "exp": -0.13564822843395163,
+      "pf": 0.7760697498657686,
+      "verdict": "NONE"
+    },
+    "USDJPYm_Range Extreme Snap": {
+      "name": "Range Extreme Snap",
+      "symbol": "USDJPYm",
+      "total_trades": 1286,
+      "test_trades": 515,
+      "exp": -0.178183958448535,
+      "pf": 0.47629098342020043,
+      "verdict": "NONE"
+    },
+    "USDJPYm_Triple Candle Breakout": {
+      "name": "Triple Candle Breakout",
+      "symbol": "USDJPYm",
+      "total_trades": 38,
+      "test_trades": 16,
+      "exp": 0.4449908180191559,
+      "pf": 2.452709514174485,
+      "verdict": "STRONG"
+    },
+    "AUDJPYm_Exhaustion Reversal": {
+      "name": "Exhaustion Reversal",
+      "symbol": "AUDJPYm",
+      "total_trades": 111,
+      "test_trades": 45,
+      "exp": -0.15271649100443577,
+      "pf": 0.7458413734462984,
+      "verdict": "NONE"
+    },
+    "AUDJPYm_Range Extreme Snap": {
+      "name": "Range Extreme Snap",
+      "symbol": "AUDJPYm",
+      "total_trades": 1329,
+      "test_trades": 532,
+      "exp": -0.20889902213854872,
+      "pf": 0.4294817515006901,
+      "verdict": "NONE"
+    },
+    "AUDJPYm_Triple Candle Breakout": {
+      "name": "Triple Candle Breakout",
+      "symbol": "AUDJPYm",
+      "total_trades": 26,
+      "test_trades": 11,
+      "exp": 0.27172864297789845,
+      "pf": 1.807773700964531,
+      "verdict": "STRONG"
+    },
+    "EURUSDm_Quiet Before Storm": {
+      "name": "Quiet Before Storm",
+      "symbol": "EURUSDm",
+      "total_trades": 31,
+      "test_trades": 13,
+      "exp": -0.027642515508956186,
+      "pf": 0.9208190276115534,
+      "verdict": "NONE"
+    },
+    "EURUSDm_Exhaustion Reversal": {
+      "name": "Exhaustion Reversal",
+      "symbol": "EURUSDm",
+      "total_trades": 105,
+      "test_trades": 42,
+      "exp": -0.3432508603584235,
+      "pf": 0.496929016400723,
+      "verdict": "NONE"
+    },
+    "EURUSDm_Range Extreme Snap": {
+      "name": "Range Extreme Snap",
+      "symbol": "EURUSDm",
+      "total_trades": 1705,
+      "test_trades": 682,
+      "exp": -0.22684878995291272,
+      "pf": 0.3464197569552465,
+      "verdict": "NONE"
+    },
+    "EURUSDm_Triple Candle Breakout": {
+      "name": "Triple Candle Breakout",
+      "symbol": "EURUSDm",
+      "total_trades": 23,
+      "test_trades": 10,
+      "exp": -0.002591797756819636,
+      "pf": 0.9956803370719672,
+      "verdict": "NONE"
+    },
+    "GBPUSDm_Quiet Before Storm": {
+      "name": "Quiet Before Storm",
+      "symbol": "GBPUSDm",
+      "total_trades": 32,
+      "test_trades": 13,
+      "exp": 0.5985264530063924,
+      "pf": 3.2970072387118834,
+      "verdict": "STRONG"
+    },
+    "GBPUSDm_Exhaustion Reversal": {
+      "name": "Exhaustion Reversal",
+      "symbol": "GBPUSDm",
+      "total_trades": 113,
+      "test_trades": 46,
+      "exp": -0.26286894129003635,
+      "pf": 0.5816843218406176,
+      "verdict": "NONE"
+    },
+    "GBPUSDm_Range Extreme Snap": {
+      "name": "Range Extreme Snap",
+      "symbol": "GBPUSDm",
+      "total_trades": 1636,
+      "test_trades": 655,
+      "exp": -0.26070972955460675,
+      "pf": 0.29864223106851384,
+      "verdict": "NONE"
+    },
+    "GBPUSDm_Triple Candle Breakout": {
+      "name": "Triple Candle Breakout",
+      "symbol": "GBPUSDm",
+      "total_trades": 27,
+      "test_trades": 11,
+      "exp": 0.2281754864855672,
+      "pf": 1.501986070268248,
+      "verdict": "STRONG"
+    },
+    "XAUUSDm_Quiet Before Storm": {
+      "name": "Quiet Before Storm",
+      "symbol": "XAUUSDm",
+      "total_trades": 20,
+      "test_trades": 8,
+      "exp": 0.2203410470988985,
+      "pf": 2.117377622626173,
+      "verdict": "STRONG"
+    },
+    "XAUUSDm_Exhaustion Reversal": {
+      "name": "Exhaustion Reversal",
+      "symbol": "XAUUSDm",
+      "total_trades": 128,
+      "test_trades": 52,
+      "exp": -0.4191240897020885,
+      "pf": 0.40136206533519814,
+      "verdict": "NONE"
+    },
+    "XAUUSDm_Range Extreme Snap": {
+      "name": "Range Extreme Snap",
+      "symbol": "XAUUSDm",
+      "total_trades": 809,
+      "test_trades": 324,
+      "exp": -0.16625610342620015,
+      "pf": 0.5457777000422611,
+      "verdict": "NONE"
+    },
+    "XAUUSDm_Triple Candle Breakout": {
+      "name": "Triple Candle Breakout",
+      "symbol": "XAUUSDm",
+      "total_trades": 27,
+      "test_trades": 11,
+      "exp": -0.13493947223638936,
+      "pf": 0.7919114941219155,
+      "verdict": "NONE"
+    }
+  },
+  "strong": [
+    "GBPUSDm_Quiet Before Storm",
+    "USDJPYm_Triple Candle Breakout",
+    "AUDJPYm_Triple Candle Breakout",
+    "GBPUSDm_Triple Candle Breakout",
+    "XAUUSDm_Quiet Before Storm"
+  ],
+  "weak": []
+}

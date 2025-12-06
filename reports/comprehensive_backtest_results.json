@@ -1,29 +1,66 @@
 {
-  "test_date": "2025-12-05T09:37:41.237537",
+  "test_date": "2025-12-05T19:52:39.539376",
   "criteria": {
     "min_monthly_return": 13.0,
     "max_daily_dd": 2.0,
     "max_overall_dd": 10.0
   },
   "results": {
+    "Pro_Overlap_Scalper": {
+      "total_trades": 446,
+      "total_return_pct": -9.743858478304595,
+      "monthly_return_pct": -3.247952826101532,
+      "max_drawdown_pct": 10.365976635056562,
+      "max_daily_dd_pct": 1.3780191078185307,
+      "win_rate_pct": 52.91479820627802,
+      "profit_factor": 0.7931714174446827,
+      "final_equity": 90256.1415216954,
+      "meets_criteria": false
+    },
     "Pro_Asian_Fade": {
-      "total_trades": 1322,
-      "total_return_pct": 48.011952071612676,
-      "monthly_return_pct": 16.003984023870892,
-      "max_drawdown_pct": 5.758470156365098,
-      "max_daily_dd_pct": 6.793860766102711,
-      "win_rate_pct": 20.499243570347957,
-      "profit_factor": 1.3319155321005656,
-      "final_equity": 148011.95207161267,
+      "total_trades": 1573,
+      "total_return_pct": 36.016690834048525,
+      "monthly_return_pct": 12.005563611349508,
+      "max_drawdown_pct": 6.3405455578676095,
+      "max_daily_dd_pct": 7.419286403186319,
+      "win_rate_pct": 29.243483788938335,
+      "profit_factor": 1.2115456824800173,
+      "final_equity": 136016.69083404852,
+      "meets_criteria": false
+    },
+    "Pro_Gold_Breakout": {
+      "total_trades": 228,
+      "total_return_pct": -8.304250272914375,
+      "monthly_return_pct": -2.7680834243047916,
+      "max_drawdown_pct": 8.726421251675205,
+      "max_daily_dd_pct": 0.9970353691241505,
+      "win_rate_pct": 54.385964912280706,
+      "profit_factor": 0.6761329437077613,
+      "final_equity": 91695.74972708563,
       "meets_criteria": false
     },
     "Pro_Volatility_Expansion": {
-      "total_trades": 647,
-      "total_return_pct": 28.128831928592803,
-      "monthly_return_pct": 9.376277309530934,
-      "max_drawdown_pct": 2.585188464186565,
-      "max_daily_dd_pct": 5.779521319003629,
-      "win_rate_pct": 20.86553323029366,
-      "profit_factor": 1.4270527743607526,
-      "final_equity": 128128.8319285928,
-      "meets_criteria": 
+      "total_trades": 1442,
+      "total_return_pct": 3.904880296022486,
+      "monthly_return_pct": 1.3016267653408287,
+      "max_drawdown_pct": 7.648250834440086,
+      "max_daily_dd_pct": 4.811959355426055,
+      "win_rate_pct": 41.33148404993065,
+      "profit_factor": 1.0262047723879253,
+      "final_equity": 103904.88029602249,
+      "meets_criteria": false
+    },
+    "Pro_Index_Momentum": {
+      "total_trades": 1070,
+      "total_return_pct": -2.4682357707245246,
+      "monthly_return_pct": -0.8227452569081749,
+      "max_drawdown_pct": 10.397583175485664,
+      "max_daily_dd_pct": 3.2612339234763836,
+      "win_rate_pct": 44.299065420560744,
+      "profit_factor": 0.9785388360389677,
+      "final_equity": 97531.76422927548,
+      "meets_criteria": false
+    }
+  },
+  "passing_strategies": []
+}

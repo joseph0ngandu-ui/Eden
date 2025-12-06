@@ -1,0 +1,196 @@
+{
+  "date": "2025-12-05T21:14:25.568926",
+  "months": 24,
+  "results": {
+    "EURUSDm_Vol Squeeze": {
+      "strategy": "Vol Squeeze",
+      "symbol": "EURUSDm",
+      "total_trades": 175,
+      "train": {
+        "trades": 105,
+        "win_rate": 50.476190476190474,
+        "exp": -0.001327864174899181,
+        "pf": 0.9930416819828919
+      },
+      "test": {
+        "trades": 70,
+        "win_rate": 57.14285714285714,
+        "exp": 0.09020392322091086,
+        "pf": 1.866602008244542
+      },
+      "verdict": "WEAK"
+    },
+    "EURUSDm_Hourly Range Rev": {
+      "strategy": "Hourly Range Rev",
+      "symbol": "EURUSDm",
+      "total_trades": 474,
+      "train": {
+        "trades": 284,
+        "win_rate": 34.50704225352113,
+        "exp": 0.044401248034856,
+        "pf": 1.0735698885838398
+      },
+      "test": {
+        "trades": 190,
+        "win_rate": 32.631578947368425,
+        "exp": -0.09796789142381783,
+        "pf": 0.8479692740146927
+      },
+      "verdict": "NONE"
+    },
+    "GBPUSDm_Vol Squeeze": {
+      "strategy": "Vol Squeeze",
+      "symbol": "GBPUSDm",
+      "total_trades": 117,
+      "train": {
+        "trades": 70,
+        "win_rate": 48.57142857142857,
+        "exp": 0.017836467208921698,
+        "pf": 1.116636669352941
+      },
+      "test": {
+        "trades": 47,
+        "win_rate": 53.191489361702125,
+        "exp": 0.034809868470653725,
+        "pf": 1.1801691273440522
+      },
+      "verdict": "WEAK"
+    },
+    "GBPUSDm_Hourly Range Rev": {
+      "strategy": "Hourly Range Rev",
+      "symbol": "GBPUSDm",
+      "total_trades": 498,
+      "train": {
+        "trades": 298,
+        "win_rate": 32.88590604026846,
+        "exp": -0.02967296663144544,
+        "pf": 0.9522067964276083
+      },
+      "test": {
+        "trades": 200,
+        "win_rate": 29.5,
+        "exp": -0.18850590422585348,
+        "pf": 0.7128148002698832
+      },
+      "verdict": "NONE"
+    },
+    "USDJPYm_Vol Squeeze": {
+      "strategy": "Vol Squeeze",
+      "symbol": "USDJPYm",
+      "total_trades": 144,
+      "train": {
+        "trades": 86,
+        "win_rate": 59.30232558139535,
+        "exp": 0.08870852306035147,
+        "pf": 1.828255704824786
+      },
+      "test": {
+        "trades": 58,
+        "win_rate": 74.13793103448276,
+        "exp": 0.18493729552151947,
+        "pf": 3.0493584878015714
+      },
+      "verdict": "STRONG"
+    },
+    "USDJPYm_Hourly Range Rev": {
+      "strategy": "Hourly Range Rev",
+      "symbol": "USDJPYm",
+      "total_trades": 550,
+      "train": {
+        "trades": 330,
+        "win_rate": 34.24242424242424,
+        "exp": -0.16727559094971797,
+        "pf": 0.7240829666427634
+      },
+      "test": {
+        "trades": 220,
+        "win_rate": 40.0,
+        "exp": 0.1016817740871339,
+        "pf": 1.1771074241410484
+      },
+      "verdict": "STRONG"
+    },
+    "AUDJPYm_Vol Squeeze": {
+      "strategy": "Vol Squeeze",
+      "symbol": "AUDJPYm",
+      "total_trades": 80,
+      "train": {
+        "trades": 48,
+        "win_rate": 47.91666666666667,
+        "exp": -0.003563644649511329,
+        "pf": 0.9727124149916914
+      },
+      "test": {
+        "trades": 32,
+        "win_rate": 50.0,
+        "exp": 0.013631708452663758,
+        "pf": 1.127828339187493
+      },
+      "verdict": "WEAK"
+    },
+    "AUDJPYm_Hourly Range Rev": {
+      "strategy": "Hourly Range Rev",
+      "symbol": "AUDJPYm",
+      "total_trades": 550,
+      "train": {
+        "trades": 330,
+        "win_rate": 36.96969696969697,
+        "exp": -0.04070046622975793,
+        "pf": 0.9315956788739658
+      },
+      "test": {
+        "trades": 220,
+        "win_rate": 40.0,
+        "exp": 0.058572888386070956,
+        "pf": 1.1022929473271765
+      },
+      "verdict": "WEAK"
+    },
+    "XAUUSDm_Vol Squeeze": {
+      "strategy": "Vol Squeeze",
+      "symbol": "XAUUSDm",
+      "total_trades": 102,
+      "train": {
+        "trades": 61,
+        "win_rate": 52.459016393442624,
+        "exp": 0.08408245140843165,
+        "pf": 1.6563256532785382
+      },
+      "test": {
+        "trades": 41,
+        "win_rate": 31.70731707317073,
+        "exp": -0.16574608799998264,
+        "pf": 0.4411816064224015
+      },
+      "verdict": "NONE"
+    },
+    "XAUUSDm_Hourly Range Rev": {
+      "strategy": "Hourly Range Rev",
+      "symbol": "XAUUSDm",
+      "total_trades": 469,
+      "train": {
+        "trades": 281,
+        "win_rate": 34.16370106761566,
+        "exp": -0.03238060365868748,
+        "pf": 0.9461817302300074
+      },
+      "test": {
+        "trades": 188,
+        "win_rate": 27.127659574468083,
+        "exp": -0.126586420862859,
+        "pf": 0.8137626216602288
+      },
+      "verdict": "NONE"
+    }
+  },
+  "strong_edge": [
+    "USDJPYm_Vol Squeeze",
+    "USDJPYm_Hourly Range Rev"
+  ],
+  "weak_edge": [
+    "EURUSDm_Vol Squeeze",
+    "AUDJPYm_Hourly Range Rev",
+    "GBPUSDm_Vol Squeeze",
+    "AUDJPYm_Vol Squeeze"
+  ]
+}

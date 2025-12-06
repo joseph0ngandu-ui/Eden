@@ -502,6 +502,10 @@ def main():
     output_file.parent.mkdir(exist_ok=True)
     
     with open(output_file, 'w') as f:
+        def numpy_converter(obj):
+            if hasattr(obj, 'item'):
+                return obj.item()
+            raise TypeError(f'Object of type {type(obj)} is not JSON serializable')
         json.dump({
             'test_date': datetime.now().isoformat(),
             'criteria': {
@@ -511,7 +515,8 @@ def main():
             },
             'results': results,
             'passing_strategies': passing_strategies
-        }, f, indent=2)
+        }, f, indent=2, default=numpy_converter)
+
     
     print(f"\n✓ Results saved to: {output_file}")
     mt5.shutdown()

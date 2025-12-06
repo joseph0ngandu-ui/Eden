@@ -1,0 +1,26 @@
+{
+  "test_date": "2025-12-05T20:41:05.397075",
+  "methodology": "Next-bar entry, spread, slippage, 50/50 split",
+  "results": {
+    "TRAIN": {
+      "trades": 855,
+      "win_rate": 45.380116959064324,
+      "avg_win_r": 1.297923567109142,
+      "avg_loss_r": 2.2641334155497184,
+      "expectancy": -0.6476677906706101,
+      "profit_factor": 0.23288444290287924,
+      "monthly_return": -357.87622956696214,
+      "max_dd": 1031.869760224485
+    },
+    "TEST": {
+      "trades": 889,
+      "win_rate": 47.69403824521935,
+      "avg_win_r": 1.2506936308316376,
+      "avg_loss_r": 1.931501971434301,
+      "expectancy": -0.41378438385189553,
+      "profit_factor": 0.3023915100966229,
+      "monthly_return": -276.72347734435425,
+      "max_dd": 816.5438971638331
+    }
+  }
+}

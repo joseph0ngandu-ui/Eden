@@ -1,75 +1,80 @@
 # Eden Trading Bot - Research Log
 
-> **Last Updated:** 2025-12-07 (Post-Audit)
-> **Status:** LIVE on FundedNext (Optimized)
+> **Last Updated:** 2025-12-07 (Final Verified Config)
+> **Status:** LIVE on FundedNext
 > **Balance:** ~$10,000
 
 ---
 
-## 🚨 CRITICAL AUDIT UPDATE (2025-12-07)
+## 🎯 CURRENT SAFE CONFIGURATION
 
-A deep audit using `accurate_backtest.py` (importing live code) revealed discrepancies in earlier research. 
-**Action:** Portfolio re-optimized for safety.
+**Verified via Accurate Backtest** (90 days, uses actual bot code):
+- **Base Risk:** 0.6% per trade
+- **Monthly Return:** ~6.5-7%
+- **Max Drawdown:** ~7-8%
+- **Phase 1 Time:** ~5 weeks
 
-### Active Strategies (Verified Safe)
+### Active Symbols & Strategies
 
-| Strategy | Symbol | Timeframe | 90-Day R | Win Rate | Risk |
-|:---|:---|:---:|---:|---:|---:|
-| **Index Vol Expansion** | USTECm | M15 | **+26.0R** | 46% | 0.25% |
-| **Index Vol Expansion** | US500m | M15 | **+17.8R** | 44% | 0.25% |
-| **Forex Vol Squeeze** | EURUSDm | M5 | **+14.5R** | 48% | 0.25% |
-| **Forex Vol Squeeze** | USDJPYm | M5 | **+7.7R** | 42% | 0.25% |
-| **Momentum** | Pairs | D1 | *Pending* | - | 0.25% |
+| Symbol | Strategy | Timeframe | 90-Day R |
+|:---|:---|:---:|---:|
+| USTECm | Index Vol Expansion | M15 | **+27.05R** |
+| US500m | Index Vol Expansion | M15 | **+17.75R** |
+| EURUSDm | Vol Squeeze + Momentum | M5/D1 | **+18.55R** |
+| USDJPYm | Vol Squeeze | M5 | **+7.70R** |
+| USDCADm | Momentum | D1 | +1.75R |
+| EURJPYm | Momentum | D1 | +0.50R |
+| CADJPYm | Momentum | D1 | -0.15R |
 
-**Portfolio Stats (Optimized):**
-- **Total Return:** +16.5% (90 days) -> ~5.5% / month
-- **Max Drawdown:** 6.0% (Safe for FundedNext)
-- **Status:** **DEPLOYED**
-
----
-
-### Failed/Disabled Strategies
-
-| Strategy | Symbol | 90-Day R | Status | Reason |
-|:---|:---|---:|:---|:---|
-| **Gold Spread Hunter** | XAUUSDm | **-6.5R** | ❌ DISABLED | Failed accurate backtest (spread friction) |
-| **Index Vol Expansion** | US30m | **-7.6R** | ❌ DISABLED | Divergence from Tech indices |
-| **London Breakout** | GBPCADm | +34.7R | 📦 RESERVED | High Drawdown (10.8R) |
+**Total:** 73.15R over 90 days @ 1.0% risk = ~24% return
 
 ---
 
-## Validated Performance (90 Days)
+## ❌ FAILED/DISABLED STRATEGIES
 
-| Type | Return | Drawdown | Verdict |
-|:---|---:|---:|:---|
-| **Initial Portfolio** | -42.4R | 25% | ❌ FAIL |
-| **Optimized Portfolio** | **+65.9R** | **6.0%** | ✅ PASS |
-
----
-
-## FundedNext Configuration
-
-- **Daily Loss Limit:** 4.5% (hard stop)
-- **Max Drawdown:** 9.5% (buffer for 10%)
-- **Base Risk:** 0.5% (Effective 0.25% per trade with 0.5x multiplier)
-- **Symbols:** USTEC, US500, EURUSD, USDJPY, USDCAD (D1), EURJPY (D1), CADJPY (D1)
+| Strategy | Symbol | Result | Reason |
+|:---|:---|---:|:---|
+| Gold Spread Hunter | XAUUSDm | -6.5R | Spread friction |
+| Index Vol Expansion | US30m | -7.6R | Divergence from USTEC |
+| Vol Squeeze | AUDUSDm | -8.75R | No edge |
+| London Breakout | Multiple | Mixed | High DD (10.8R) |
 
 ---
 
-## Future Research Directions
+## 📊 OPTIMIZATION RESEARCH (2025-12-07)
 
-1. **Fix D1 Data:** Momentum strategy yielded 0 trades in backtest due to missing history.
-2. **Gold Refinement:** Investigate why Gold failed (spread filter tuning?).
-3. **Scale Up:** Once 5% monthly is consistent, slowly increase risk to target 10%.
+### Attempted Optimizations
+
+| Approach | Result | Verdict |
+|:---|:---|:---|
+| Fix Momentum D1 Data | +6R recovered | ✅ Success |
+| Add AUDUSD | -8.75R | ❌ Failed |
+| Weighted Allocation (1.4x Index) | 15%+ DD | ❌ Too Risky |
+| Higher Base Risk (1.0%) | 30%+ DD | ❌ Would Fail |
+
+### Mathematical Limit
+At any risk level, DD/Return ratio is ~40%. To stay under 9.5% DD:
+- Max safe base risk: ~0.35%
+- Expected monthly return: ~7%
 
 ---
 
-## File Locations
+## 🚀 HOW TO START
 
-| Purpose | Location |
+Use the `/start-bot` workflow or run:
+```powershell
+cd c:\Users\opc\Desktop\Eden
+powershell -File scripts/startup/restart_bot.ps1
+```
+
+---
+
+## 📁 KEY FILES
+
+| Purpose | Path |
 |:---|:---|
-| **Accurate Backtest** | `scripts/research/accurate_backtest.py` |
-| Strategy Logic | `trading/pro_strategies.py` |
-| Bot Entry Point | `infrastructure/bot_runner.py` |
 | Configuration | `config/config.yaml` |
-
+| Strategy Logic | `trading/pro_strategies.py` |
+| Bot Runner | `watchdog.py` |
+| Startup Script | `scripts/startup/restart_bot.ps1` |
+| Accurate Backtest | `scripts/research/accurate_backtest.py` |

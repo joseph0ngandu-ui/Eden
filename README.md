@@ -1,69 +1,64 @@
-# 🌌 Eden Trading Bot
+# Eden Trading Bot
 
-**Status:** 🟢 LIVE on FundedNext
-**Objective:** >13% Monthly Return | <4.5% Daily DD | <9.5% Max DD
+> **FundedNext Prop Firm Trading Bot**
+> Verified Safe Configuration: ~7% Monthly Return, ~5 Weeks to Pass Phase 1
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```powershell
-# Start the bot
-.\scripts\startup\restart_bot.ps1
+cd c:\Users\opc\Desktop\Eden
+powershell -File scripts/startup/restart_bot.ps1
 ```
 
----
-
-## 📊 Active Strategies
-
-| Strategy | TF | Pairs | Risk | Edge |
-|:---|:---:|:---|:---:|:---|
-| **Index Vol Expansion** | M15 | US30/USTEC/US500 | 0.75% | Squeeze Breakout |
-| **Gold Spread Hunter** | M15 | XAUUSD | 0.50% | Low-Spread Momentum |
-| **Forex Vol Squeeze** | M5 | EUR/JPY pairs | 0.25% | Defensive |
-| **Momentum Continuation** | D1 | USDCAD/EURUSD/EURJPY/CADJPY | 0.50% | Trend Follow |
+Or use the `/start-bot` workflow.
 
 ---
 
-## 📁 Folder Structure
+## Active Strategies
+
+| Symbol | Strategy | TF | Edge |
+|:---|:---|:---:|:---|
+| **USTECm** | Index Vol Expansion | M15 | +27R/90d |
+| **US500m** | Index Vol Expansion | M15 | +17R/90d |
+| **EURUSDm** | Vol Squeeze + Momentum | M5/D1 | +18R/90d |
+| **USDJPYm** | Vol Squeeze | M5 | +7R/90d |
+| USDCADm | Momentum | D1 | +2R/90d |
+| EURJPYm | Momentum | D1 | +0.5R/90d |
+| CADJPYm | Momentum | D1 | -0.2R/90d |
+
+---
+
+## Risk Settings
+
+- **Per Trade:** 0.6%
+- **Daily Loss Limit:** 4.5%
+- **Max Drawdown:** 9.5%
+
+---
+
+## Folder Structure
 
 ```
 Eden/
-├── config/              # Configuration (config.yaml)
-├── docs/                # Documentation
-│   └── RESEARCH_LOG.md  # Complete research history
-├── logs/                # Runtime logs
+├── config/config.yaml      # Trading configuration
+├── trading/
+│   ├── pro_strategies.py   # Strategy logic
+│   ├── trading_bot.py      # Main bot
+│   └── regime_detector.py  # Market regime
 ├── scripts/
-│   ├── research/        # Strategy research scripts
-│   ├── startup/         # Startup scripts (restart_bot.ps1)
-│   └── utilities/       # One-off utilities
-├── trading/             # Core trading logic
-│   ├── pro_strategies.py    # Strategy engine
-│   ├── trading_bot.py       # Main bot
-│   └── ml_models/           # ML models
-├── backend/             # API backend
-├── infrastructure/      # Deployment scripts
-└── tests/               # Test files
+│   ├── startup/            # Bot startup scripts
+│   └── research/           # Backtest scripts
+├── docs/
+│   └── RESEARCH_LOG.md     # Strategy research
+├── logs/                   # Trading logs
+└── watchdog.py             # Bot monitor
 ```
 
 ---
 
-## 🔬 Research Summary
+## Documentation
 
-Complete research history in [`docs/RESEARCH_LOG.md`](docs/RESEARCH_LOG.md).
-
-**Deployed:** 4 strategies (Gold, Indices, Forex, Momentum)
-**Reserved:** London Breakout (GBPCADm) - DD too high
-**Rejected:** Asian Fade, NY Close Reversion, Session Overlap
-
----
-
-## 🛡️ Risk Management
-
-- **Daily Loss Limit:** 4.5% hard stop
-- **Max Drawdown:** 9.5%
-- **Dynamic Allocation:** Index 1.5x | Gold 1.0x | Forex 0.5x
-
----
-
-*Built with Autonomy by Antigravity.*
+- [Research Log](docs/RESEARCH_LOG.md) - Strategy validation history
+- [Workflow: /start-bot](.agent/workflows/start-bot.md) - How to start

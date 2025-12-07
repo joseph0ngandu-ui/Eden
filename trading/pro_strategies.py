@@ -196,7 +196,7 @@ class ProStrategyEngine:
 
     def volatility_squeeze(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
         # FILTER: Only EURUSD and USDJPY proved profitable in audit.
-        if "EUR" not in symbol and "JPY" not in symbol and "AUD" not in symbol: return None
+        if "EUR" not in symbol and "JPY" not in symbol: return None
         # Exclude Indices explicitly (safety)
         if "US30" in symbol or "USTEC" in symbol or "US500" in symbol: return None
         

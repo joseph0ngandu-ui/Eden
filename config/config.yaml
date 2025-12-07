@@ -1,36 +1,40 @@
+# PRO TRADING BOT CONFIGURATION
+# Optimized for: Exness Standard/Raw
+# Strategy: H1 Trend + M5 VWAP (Hybrid)
+# Risk: Kelly Criterion + 4.5% Daily Hard Stop
+
 trading:
-    - 3
-    - 4
-    - 5
+  symbols:
+    - EURUSDm
+    - GBPUSDm
+    - USDJPYm
+    - XAUUSDm
+    - AUDUSDm
+    - USDCADm     # Momentum Continuation (D1)
+    - EURJPYm     # Momentum Continuation (D1)
+    - CADJPYm     # Momentum Continuation (D1)
+    - USTECm      # Index Volatility Expansion (M15)
+    - US500m      # Index Volatility Expansion (M15)
+    - US30m       # Index Volatility Expansion (M15)
+  timeframes:
+    - 60   # H1
+    - 5    # M5
+    - 15   # M15 (Spread Hunter)
+    - 1440 # D1 (Momentum Continuation)
+
 strategy:
+  # General Strategy Settings
   rsi_period: 14
   rsi_overbought: 70
   rsi_oversold: 30
   sma_period: 20
   minimum_signal_strength: 0.6
-  require_volume_confirmation: false
-  use_volatility_filter: true
-  volatility_threshold: 2.0
+  
+  # ML / ICT Config
   ict_ml:
-    exec_timeframe: M1
-    context_timeframes:
-    - M5
-    - M15
-    - M30
-    - H1
-    - H4
-    min_confluences: 2
-    rr: 5.75
+    model_version: "v4_pro"
     confidence_threshold: 0.7
-    rsi_period: 11
-    sma_period: 34
-    swing_lookback: 6
-    cooldown_bars_after_loss: 15
-    stop_after_losses: 1
-    pause_bars_after_streak: 25
-    require_sweep: false
-    require_bias_align: true
-    updated_at: '2025-10-15T12:12:44.431397Z'
+
 mt5:
   timeout: 30
   login: null
@@ -38,198 +42,47 @@ mt5:
   server: null
   deviation: 20
   magic_number: 234000
-  comment_prefix: Eden VIX100 Bot
+  comment_prefix: Eden Pro
+
 logging:
   level: INFO
   log_to_file: true
-  log_file: eden_vix100_bot.log
+  log_file: logs/eden_trading.log
   max_log_size_mb: 10
   backup_count: 5
-monitoring:
-  enable_console_output: true
-trading:
-    - 3
-    - 4
-    - 5
-strategy:
-  rsi_period: 14
-  rsi_overbought: 70
-  rsi_oversold: 30
-  sma_period: 20
-  minimum_signal_strength: 0.6
-  require_volume_confirmation: false
-  use_volatility_filter: true
-  volatility_threshold: 2.0
-  ict_ml:
-    exec_timeframe: M1
-    context_timeframes:
-    - M5
-    - M15
-    - M30
-    - H1
-    - H4
-    min_confluences: 2
-    rr: 5.75
-    confidence_threshold: 0.7
-    rsi_period: 11
-    sma_period: 34
-    swing_lookback: 6
-    cooldown_bars_after_loss: 15
-    stop_after_losses: 1
-    pause_bars_after_streak: 25
-    require_sweep: false
-    require_bias_align: true
-    updated_at: '2025-10-15T12:12:44.431397Z'
-mt5:
-  timeout: 30
-  login: null
-  password: null
-  server: null
-  deviation: 20
-  magic_number: 234000
-  comment_prefix: Eden VIX100 Bot
-logging:
-  level: INFO
-  log_to_file: true
-  log_file: eden_vix100_bot.log
-  max_log_size_mb: 10
-  backup_count: 5
+
 monitoring:
   enable_console_output: true
   update_interval: 60
   track_performance: true
   save_trades_to_csv: true
   trades_file: trades_history.csv
+
 risk_management:
-  max_positions: 7
-trading:
-    - 3
-    - 4
-    - 5
-strategy:
-  rsi_period: 14
-  rsi_overbought: 70
-  rsi_oversold: 30
-  sma_period: 20
-  minimum_signal_strength: 0.6
-  require_volume_confirmation: false
-  use_volatility_filter: true
-  volatility_threshold: 2.0
-  ict_ml:
-    exec_timeframe: M1
-    context_timeframes:
-    - M5
-    - M15
-    - M30
-    - H1
-    - H4
-    min_confluences: 2
-    rr: 5.75
-    confidence_threshold: 0.7
-    rsi_period: 11
-    sma_period: 34
-    swing_lookback: 6
-    cooldown_bars_after_loss: 15
-    stop_after_losses: 1
-    pause_bars_after_streak: 25
-    require_sweep: false
-    require_bias_align: true
-    updated_at: '2025-10-15T12:12:44.431397Z'
-mt5:
-  timeout: 30
-  login: null
-  password: null
-  server: null
-  deviation: 20
-  magic_number: 234000
-  comment_prefix: Eden VIX100 Bot
-logging:
-  level: INFO
-  log_to_file: true
-  log_file: eden_vix100_bot.log
-  max_log_size_mb: 10
-  backup_count: 5
-monitoring:
-  enable_console_output: true
-trading:
-    - 3
-    - 4
-    - 5
-strategy:
-  rsi_period: 14
-  rsi_overbought: 70
-  rsi_oversold: 30
-  sma_period: 20
-  minimum_signal_strength: 0.6
-  require_volume_confirmation: false
-  use_volatility_filter: true
-  volatility_threshold: 2.0
-  ict_ml:
-    exec_timeframe: M1
-    context_timeframes:
-    - M5
-    - M15
-    - M30
-    - H1
-    - H4
-    min_confluences: 2
-    rr: 5.75
-    confidence_threshold: 0.7
-    rsi_period: 11
-    sma_period: 34
-    swing_lookback: 6
-    cooldown_bars_after_loss: 15
-    stop_after_losses: 1
-    pause_bars_after_streak: 25
-    require_sweep: false
-    require_bias_align: true
-    updated_at: '2025-10-15T12:12:44.431397Z'
-mt5:
-  timeout: 30
-  login: null
-  password: null
-  server: null
-  deviation: 20
-  magic_number: 234000
-  comment_prefix: Eden VIX100 Bot
-logging:
-  level: INFO
-  log_to_file: true
-  log_file: eden_vix100_bot.log
-  max_log_size_mb: 10
-  backup_count: 5
-monitoring:
-  enable_console_output: true
-  update_interval: 60
-  track_performance: true
-  save_trades_to_csv: true
-  trades_file: trades_history.csv
-risk_management:
-  max_positions: 7
-  risk_per_trade_percent: 0.15
-  max_drawdown_percent: 10
-  daily_loss_limit_percent: 2
-  weekly_loss_limit_percent: 4
-  monthly_loss_limit_percent: 8
-  use_ml_risk_adjustment: true  # Enabled based on validation results (+56% return improvement)
-safetyrisk:
-  max_daily_drawdown: 1.5  # Strict 1.5% limit from Golden Config
-  max_portfolio_drawdown: 5.0  # 5% max DD trigger
-  max_position_size: 2.0
-  risk_per_trade: 0.25
-  leverage: 100
+  # Base Risk (Dynamic Scaled in Bot)
+  risk_per_trade: 0.5 
+  
+  # Hard Stops (FundedNext)
+  max_daily_loss_percent: 4.5
+  max_drawdown_percent: 9.5
+  
+  # Limits
+  max_positions: 5
+  max_leverage_used: 50
+  
+  # ML Risk Engine
+  use_ml_risk_adjustment: true
   
 ml:
   enabled: true
-  model_path: "ml_portfolio_model.pkl"
+  model_path: "trading/ml_models/ml_portfolio_model.pkl"
   min_confidence: 0.6
   retrain_interval_days: 7
 
 development:
-  demo_mode: false  # LIVE TRADING
+  demo_mode: false  # LIVE
   simulation_mode: false
   log_all_signals: true
+
 notifications:
   enabled: false
-  email: null
-  webhook_url: null

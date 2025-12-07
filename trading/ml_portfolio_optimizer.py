@@ -148,8 +148,39 @@ class PortfolioMLOptimizer:
         
         return adjusted_weights
     
-    def calculate_position_size(self, strategy_name: str, base_risk: float, allocation_weight: float, current_equity: float, daily_dd_pct: float = 0) -> float:
-        """Calculate position size with ML-optimized risk and Daily DD limits"""
+    def calculate_kelly_fraction(self, win_rate: float, payoff: float) -> float:
+        """Calculate Kelly Fraction: f* = (p(b+1) - 1) / b"""
+        if payoff <= 0: return 0.0
+        kelly = (win_rate * (payoff + 1) - 1) / payoff
+        return max(0.0, kelly) # No negative sizing
+
+    def calculate_position_size(self, strategy_name: str, base_risk: float, allocation_weight: float, current_equity: float, daily_dd_pct: float = 0, recent_trades: List[Dict] = None, current_time: Any = None) -> float:
+        """Calculate position size with Kelly Optimization & Streak Cooldown"""
+        
+        # 1. COOLDOWN LOGIC (Streak Breaker)
+        if recent_trades and len(recent_trades) >= 3:
+            # Filter for this strategy
+            strat_trades = [t for t in recent_trades if t.get('strategy') == strategy_name]
+            if len(strat_trades) >= 3:
+                # Check outcome of last 3
+                last_3 = strat_trades[-3:]
+                outcomes = [t.get('pnl', 0) for t in last_3]
+                if all(p < 0 for p in outcomes):
+                    # 3 Consecutive Losses -> Check time since last
+                    last_loss_time = last_3[-1].get('close_time')
+                    
+                    if last_loss_time and current_time:
+                        try:
+                            # Parse potential string timestamps
+                            t_curr = pd.to_datetime(current_time)
+                            t_last = pd.to_datetime(last_loss_time)
+                            
+                            # COOLDOWN PERIOD: 60 Minutes (or 4 hours?)
+                            # Let's say 60 mins for H1/M5? M5 -> 12 bars.
+                            if (t_curr - t_last).total_seconds() < 3600:
+                                return 0.0 # Cooldown Active
+                        except Exception as e:
+                            logger.warning(f"Cooldown check error: {e}")
         
         # Check if strategy is disabled
         strategy_data = self.individual_results.get(strategy_name, self.individual_results['default'])
@@ -163,23 +194,33 @@ class PortfolioMLOptimizer:
             base_risk *= 0.30  # Critical zone
         elif daily_dd_pct > 2.0:
             base_risk *= 0.60  # Caution zone
-        elif daily_dd_pct > 1.5:
-            base_risk *= 0.80  # Light caution
         
-        # Adjust risk based on expectancy (from edge diagnostic)
-        strategy_data = self.individual_results.get(strategy_name, self.individual_results['default'])
-        expectancy = strategy_data.get('expectancy', 0.1)
-        pf = strategy_data['pf']
-        
-        # Boost risk for high-edge strategies
-        if expectancy > 0.1 and pf > 1.15:
-            edge_boost = 1.3  # High edge
-        elif expectancy > 0.05 and pf > 1.08:
-            edge_boost = 1.1  # Moderate edge
+        # 2. KELLY CRITERION SIZING
+        # Instead of arbitrary edge boost, use Kelly
+        win_rate = strategy_data.get('win_rate', 25.0) / 100.0
+        # Estimate payoff ratio from PF and WR? 
+        # PF = (AvgWin * nWin) / (AvgLoss * nLoss)
+        # PF = b * (p / (1-p)) --> b = PF * (1-p)/p
+        pf = strategy_data.get('pf', 1.0)
+        p = win_rate
+        if p > 0:
+            b = pf * (1 - p) / p
         else:
-            edge_boost = 0.8  # Low or no edge
+            b = 1.0
+            
+        kelly_pct = self.calculate_kelly_fraction(p, b)
         
-        # Combined risk
-        final_risk_pct = base_risk * allocation_weight * edge_boost
+        # Safety: Tenth Kelly (0.10) - Ultra Conservative for < 9.5% DD
+        safe_kelly = kelly_pct * 0.10 
         
+        # Cap at max risk (e.g. 1%)
+        final_risk_pct = min(safe_kelly, 0.01)
+        
+        # Apply Allocation Weight
+        final_risk_pct *= allocation_weight
+        
+        # Fallback to base_risk if Kelly fails (e.g. erratic stats)
+        if final_risk_pct < 0.001: 
+             final_risk_pct = base_risk * 0.5 # Conservative fallback
+             
         return final_risk_pct

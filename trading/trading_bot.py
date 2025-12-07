@@ -27,6 +27,7 @@ from .config_loader import ConfigLoader
 from .trade_journal import TradeJournal
 from .health_monitor import HealthMonitor, RiskManager, HealthStatus, RiskLevel
 from .news_filter import get_news_filter
+from .regime_detector import RegimeDetector, get_regime_detector
 
 logging.basicConfig(
     level=logging.INFO,
@@ -48,13 +49,17 @@ class TradingBot:
     - Risk Management: ML-optimized portfolio allocation
     """
     
-    TIMEFRAME = mt5.TIMEFRAME_M5
+    # TIMEFRAME = mt5.TIMEFRAME_M5 (Deprecated, using config)
     
     def __init__(self, symbols: List[str], account_id: Optional[int] = None, password: Optional[str] = None, server: Optional[str] = None, config_path: Optional[str] = None):
         """Initialize trading bot."""
         # Load configuration
         self.config = ConfigLoader(config_path)
         risk_config = self.config.get_risk_management()
+        self.timeframes = self.config.get_parameter('trading.timeframes', [5])
+        
+        # Initialize Regime Detector
+        self.regime_detector = get_regime_detector()
         
         # Initialize Strategies
         from trading.pro_strategies import ProStrategyEngine
@@ -121,9 +126,9 @@ class TradingBot:
     def _log_startup_banner(self) -> None:
         """Log startup banner."""
         banner = f"\n{'='*80}\n"
-        banner += f"Eden Live Bot - Asian Fade Solo [AGGRESSIVE]\n"
+        banner += f"Eden Live Bot - FUNDED NEXT (Verified)\n"
         banner += f"Symbols={len(self.symbols)} | Shadow Mode={self.shadow_mode}\n"
-        banner += f"Max Positions=2 | Risk=0.8% (Target: 13%+ Monthly)\n"
+        banner += f"Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)\n"
         banner += f"{'='*80}\n"
         logger.info(banner)
     
@@ -160,10 +165,10 @@ class TradingBot:
         mt5.shutdown()
         logger.info("Disconnected from MT5")
     
-    def fetch_recent_data(self, symbol: str, bars: int = 100) -> Optional[pd.DataFrame]:
+    def fetch_recent_data(self, symbol: str, timeframe: int, bars: int = 100) -> Optional[pd.DataFrame]:
         """Fetch recent OHLC data."""
         try:
-            rates = mt5.copy_rates_from_pos(symbol, self.TIMEFRAME, 0, bars)
+            rates = mt5.copy_rates_from_pos(symbol, timeframe, 0, bars)
             if rates is None:
                 return None
             df = pd.DataFrame(rates)
@@ -244,16 +249,60 @@ class TradingBot:
                     logger.warning(f"SKIPPING TRADE: Daily loss limit reached (PnL: {daily_pnl:.2f} <= -{max_loss_amt:.2f})")
                     return False
 
-            # Get allocation (pass active strategy names for ML optimization)
-            # ASIAN FADE SOLO CONFIGURATION
-            strategies_active = ['Pro_Asian_Fade'] 
-            allocation = self.ml_optimizer.get_allocation({}, daily_dd_pct, strategies_active)
-            allocation_weight = allocation.get(trade_signal.strategy, 1.0) # Default to 1.0 if focused
+            # ALLOCATION LOGIC (Dynamic Risk)
+            # 1. Determine active strategies for ML context
+            strategies_active = [trade_signal.strategy]
             
-            # Calculate risk percentage
+            # 2. Get Base Risk from Config (Default 0.5%)
+            base_risk_param = self.config.get_parameter('risk_management.risk_per_trade', 0.5)
+            
+            # 3. Apply "Barbell" Weighting based on Verified Edge
+            risk_multiplier = 1.0
+            if "Index" in trade_signal.strategy:
+                risk_multiplier = 1.5 # High Edge (0.75%)
+            elif "SpreadHunter" in trade_signal.strategy or "Gold" in trade_signal.strategy:
+                risk_multiplier = 1.0 # Standard Edge (0.50%)
+            elif "VolSqueeze" in trade_signal.strategy:
+                risk_multiplier = 0.5 # Defensive (0.25%)
+            elif "Momentum" in trade_signal.strategy:
+                risk_multiplier = 1.0 # Verified Edge (0.50%, +15.7R, MaxDD 2.7R)
+            
+            # 4. Regime-Based Adjustment
+            try:
+                h1_df = self.fetch_recent_data(symbol, 60, 100)  # H1 for regime
+                if h1_df is not None and len(h1_df) > 50:
+                    regime = self.regime_detector.detect(h1_df, symbol)
+                    
+                    # Apply regime risk multiplier
+                    risk_multiplier *= regime.risk_multiplier
+                    
+                    # Log regime context
+                    logger.info(f"[REGIME] {symbol}: {regime} → Risk: {risk_multiplier:.2f}x")
+                    
+                    # NOTE: Strategy skip is DISABLED until backtested
+                    # strategy_type = "breakout" if "Index" in trade_signal.strategy else "trend"
+                    # should_trade, reason = self.regime_detector.should_trade_strategy(regime, strategy_type)
+                    # if not should_trade:
+                    #     logger.warning(f"[REGIME SKIP] {symbol}: {reason}")
+            except Exception as e:
+                logger.debug(f"Regime detection error for {symbol}: {e}")
+            
+            target_risk = base_risk_param * risk_multiplier
+            
+            # 4. ML Optimization (Fine tuning)
+            daily_dd_pct = 0.0
+            if self.start_of_day_balance > 0:
+                 current_pnl = current_equity - self.start_of_day_balance
+                 if current_pnl < 0:
+                     daily_dd_pct = abs(current_pnl / self.start_of_day_balance) * 100
+
+            allocation = self.ml_optimizer.get_allocation({}, daily_dd_pct, strategies_active)
+            allocation_weight = allocation.get(trade_signal.strategy, 1.0)
+            
+            # Calculate final risk percentage
             risk_pct = self.ml_optimizer.calculate_position_size(
                 trade_signal.strategy,
-                base_risk=0.8, # Base risk 0.8% (Asian Fade Solo)
+                base_risk=target_risk, 
                 allocation_weight=allocation_weight,
                 current_equity=current_equity,
                 daily_dd_pct=daily_dd_pct
@@ -506,14 +555,16 @@ class TradingBot:
         self.manage_positions()
         
         # 3. Check for new entries
-        for symbol in self.symbols:
-            df = self.fetch_recent_data(symbol, bars=100)
-            if df is None: continue
-            
-            for strategy in self.strategies:
-                trade_signal = strategy.evaluate_live(df, symbol)
-                if trade_signal:
-                    self.place_order(trade_signal)
+        for tf in self.timeframes:
+            for symbol in self.symbols:
+                df = self.fetch_recent_data(symbol, timeframe=tf, bars=100)
+                if df is None: continue
+                
+                for strategy in self.strategies:
+                    # Pass timeframe to strategies
+                    trade_signal = strategy.evaluate_live(df, symbol, timeframe=tf)
+                    if trade_signal:
+                        self.place_order(trade_signal)
 
     def start(self, check_interval: int = 60) -> None:
         """Start the bot."""

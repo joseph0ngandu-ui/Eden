@@ -96,11 +96,15 @@ class GoldMomentumStrategy:
         except Exception as e:
             logger.error(f"Error registering position for {trade.symbol}: {e}")
 
-    def evaluate_live(self, df: pd.DataFrame, symbol: str) -> Optional[Dict]:
+    def evaluate_live(self, df: pd.DataFrame, symbol: str, timeframe: int = 5) -> Optional[Dict]:
         """
         Generate trade signal for the current bar.
         Expects df to have OHLCV data and 'time' index or column.
+        Only runs on M5 (timeframe=5).
         """
+        if timeframe != 5:
+            return None
+            
         if len(df) < 600: # Need enough data for EMA
             return None
             

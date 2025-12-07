@@ -45,7 +45,7 @@ def main():
 
             # Start bot
             # Symbols and params come from TradingBot ConfigLoader defaults or config.yaml
-            bot = TradingBot(symbols=None, config_path=str(Path(__file__).resolve().parent / 'config.yaml'))
+            bot = TradingBot(symbols=None, config_path=str(PROJECT_ROOT / 'config' / 'config.yaml'))
             bot.start(check_interval=300)
         except Exception as e:
             # Backoff and retry on failure

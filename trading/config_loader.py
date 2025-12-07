@@ -81,8 +81,8 @@ class ConfigLoader:
     
     def get_trading_symbols(self) -> list:
         """Get list of trading symbols."""
-        # Try to get from strategy config
-        symbols = self.get_parameter('trading_symbols', [])
+        # Look in trading.symbols (dot notation supported)
+        symbols = self.get_parameter('trading.symbols', [])
         if symbols:
             return symbols
         

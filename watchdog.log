@@ -115,3 +115,14 @@
 [2025-12-07 14:09:54] Watchdog started
 [2025-12-07 14:09:54] Starting trading bot...
 [2025-12-07 14:09:54] Trading bot started with PID: 59628
+[2025-12-07 14:10:06] [BOT] 2025-12-07 14:10:06,218 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-07 14:10:06] [BOT] 2025-12-07 14:10:06,243 - INFO - Loaded 8 existing trades from logs\trade_history.csv
+[2025-12-07 14:10:06] [BOT] 2025-12-07 14:10:06,503 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-07 14:10:06] [BOT] 2025-12-07 14:10:06,504 - INFO -
+[2025-12-07 14:10:08] [BOT] ================================================================================
+[2025-12-07 14:10:08] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-07 14:10:08] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-07 14:10:08] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-07 14:10:08] [BOT] ================================================================================
+[2025-12-07 14:10:08] [BOT] 2025-12-07 14:10:06,613 - INFO - Connected. Balance: 9986.23
+[2025-12-07 14:10:09] [BOT] 2025-12-07 14:10:06,613 - INFO - Started. Polling every 300s

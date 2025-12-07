@@ -44,8 +44,13 @@ class AccurateBacktester:
             # FOREX M5 (Winners)
             {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_M5, "type": "forex"},
             {"symbol": "USDJPYm", "tf": mt5.TIMEFRAME_M5, "type": "forex"},
+            {"symbol": "AUDUSDm", "tf": mt5.TIMEFRAME_M5, "type": "forex"}, # Research Candidate
             
-            # MOMENTUM D1 (Excluded for now due to data issue)
+            # MOMENTUM D1 (Now Fixed)
+            {"symbol": "USDCADm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
+            {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
+            {"symbol": "EURJPYm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
+            {"symbol": "CADJPYm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
         ]
 
     def get_risk_multiplier(self, strategy_type: str) -> float:
@@ -135,8 +140,14 @@ class AccurateBacktester:
             # actually ProStrategyEngine stores state in dicts by symbol, so we can reuse instance
             
             rates = mt5.copy_rates_range(symbol, tf, start_date, end_date)
-            if rates is None or len(rates) < 200:
-                print(f"  No data for {symbol}")
+            
+            # Adjust min bars based on timeframe
+            min_bars = 200
+            if tf == mt5.TIMEFRAME_D1:
+                min_bars = 20 
+            
+            if rates is None or len(rates) < min_bars:
+                print(f"  No data for {symbol} (Got {len(rates) if rates is not None else 0}, Need {min_bars})")
                 continue
                 
             df = pd.DataFrame(rates)
@@ -153,8 +164,11 @@ class AccurateBacktester:
             # Simulate Bar-by-Bar
             # We need a warm-up period for indicators
             LOOKBACK = 100
+            if stype == "momentum":
+                LOOKBACK = 20
             
             for i in range(LOOKBACK, len(df)-1):
+                # Slice window for strategy
                 # Slice window for strategy
                 # Strategy typically looks at last 50-100 bars
                 window = df.iloc[i-LOOKBACK:i+1] # Include current bar i as 'closed' or forming?
@@ -269,6 +283,18 @@ class AccurateBacktester:
             
             print(f"{base_risk:<9}% | {total_ret:>8.2f}% | {max_dd:>8.2f}% | {monthly_ret:>8.2f}% | {verdict}")
 
+        print(f"{base_risk:<9}% | {total_ret:>8.2f}% | {max_dd:>8.2f}% | {monthly_ret:>8.2f}% | {verdict}")
+    
+        print("\nBreakdown by Symbol (0.6% Risk):")
+        # Calc breakdown for 0.6 risk
+        base_risk = 0.6
+        df['pnl_0.6'] = df['r'] * 0.5 * base_risk # 0.5 is multiplier
+        summary = df.groupby('symbol').agg({
+            'r': ['count', 'sum'],
+            'pnl_0.6': 'sum'
+        })
+        print(summary)
+            
         return df
 
 if __name__ == "__main__":

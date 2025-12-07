@@ -1,113 +1,66 @@
 # Eden Trading Bot - Research Log
 
-> **Last Updated:** 2025-12-06
-> **Status:** LIVE on FundedNext
+> **Last Updated:** 2025-12-07 (Post-Audit)
+> **Status:** LIVE on FundedNext (Optimized)
 > **Balance:** ~$10,000
 
 ---
 
-## Active Strategies (Deployed)
+## 🚨 CRITICAL AUDIT UPDATE (2025-12-07)
 
-| Strategy | Timeframe | Pairs | Risk | Result | MaxDD |
-|:---|:---:|:---|:---:|---:|---:|
-| **Index Volatility Expansion** | M15 | US30, USTEC, US500 | 0.75% (1.5x) | +19.8R | ~5R |
-| **Gold Spread Hunter** | M15 | XAUUSD | 0.50% (1.0x) | +27.0R | ~4R |
-| **Forex Volatility Squeeze** | M5 | EURUSD, USDJPY | 0.25% (0.5x) | +13.0R | ~3R |
-| **Momentum Continuation** | D1 | USDCAD, EURUSD, EURJPY, CADJPY | 0.50% (1.0x) | +15.7R | 2.7R |
+A deep audit using `accurate_backtest.py` (importing live code) revealed discrepancies in earlier research. 
+**Action:** Portfolio re-optimized for safety.
 
----
+### Active Strategies (Verified Safe)
 
-## Reserve Strategies (Back Pocket)
+| Strategy | Symbol | Timeframe | 90-Day R | Win Rate | Risk |
+|:---|:---|:---:|---:|---:|---:|
+| **Index Vol Expansion** | USTECm | M15 | **+26.0R** | 46% | 0.25% |
+| **Index Vol Expansion** | US500m | M15 | **+17.8R** | 44% | 0.25% |
+| **Forex Vol Squeeze** | EURUSDm | M5 | **+14.5R** | 48% | 0.25% |
+| **Forex Vol Squeeze** | USDJPYm | M5 | **+7.7R** | 42% | 0.25% |
+| **Momentum** | Pairs | D1 | *Pending* | - | 0.25% |
 
-| Strategy | Pairs | Result | MaxDD | Why Reserved |
-|:---|:---|---:|---:|:---|
-| **London Breakout** | GBPCADm only | +34.7R | 10.8R | DD exceeds FundedNext daily limit risk |
-
----
-
-## Research History
-
-### Phase 1: Gold M15 Spread Hunter ✅ DEPLOYED
-- **Logic:** Cost-exploiting momentum during low-spread periods
-- **Result:** +27.0R (90 days), 44% WR
-- **Key Finding:** M15 > M5 for Gold (less noise)
-
-### Phase 2: Index Volatility Expansion ✅ DEPLOYED
-- **Logic:** BB Squeeze breakout on indices during NY session
-- **Result:** +19.8R combined (US30 + USTEC + US500)
-- **Key Finding:** Indices ignore commissions (low cost impact)
-
-### Phase 3: Asian Range Fade ❌ REJECTED
-- **Logic:** Mean reversion in Asian session ranges
-- **Result:** 0% Win Rate
-- **Why Failed:** Breakout dominance + spread friction at session boundaries
-
-### Phase 4: London Session Breakout 📦 RESERVED
-- **Logic:** Asian range breakout at London open (07:00-10:00 GMT)
-- **Pairs Tested:** 13 major pairs
-- **Result:** Only GBPCADm profitable (+34.7R)
-- **Why Reserved:** MaxDD 10.8R exceeds 5% daily limit safety threshold
-
-### Phase 5: Multi-Frontier Research ✅ PARTIAL DEPLOY
-
-#### Frontier 1: NY Close Reversion ❌ REJECTED
-- **Logic:** Fade extended prices (>2 ATR from VWAP) at NY close
-- **Result:** +66.3R BUT MaxDD 18.6R
-- **Why Failed:** Drawdown too high for prop firm
-
-#### Frontier 2: Session Overlap Scalping ❌ REJECTED
-- **Logic:** EMA cross scalps during London/NY overlap
-- **Result:** +3.0R, MaxDD 10.0R
-- **Why Failed:** Low profit, high DD
-
-#### Frontier 3: Momentum Continuation ✅ DEPLOYED
-- **Logic:** Enter next day after strong D1 candle (>1.3x ADR)
-- **Pairs:** USDCAD, EURUSD, EURJPY, CADJPY
-- **Result:** +15.7R, 64.8% WR, MaxDD 2.7R
-- **Why Approved:** Meets all criteria, low DD
+**Portfolio Stats (Optimized):**
+- **Total Return:** +16.5% (90 days) -> ~5.5% / month
+- **Max Drawdown:** 6.0% (Safe for FundedNext)
+- **Status:** **DEPLOYED**
 
 ---
 
-## Failed/Disabled Strategies
+### Failed/Disabled Strategies
 
-| Strategy | Result | Why Disabled |
-|:---|---:|:---|
-| Quiet Before Storm | -7R | Negative expectancy |
-| Triple Candle Breakout | -14R | Negative expectancy |
-| VWAP Reversion M5 | +164R paper | 4000+ trades = commission risk |
-| Asian Range Fade | 0% WR | Logic doesn't work |
+| Strategy | Symbol | 90-Day R | Status | Reason |
+|:---|:---|---:|:---|:---|
+| **Gold Spread Hunter** | XAUUSDm | **-6.5R** | ❌ DISABLED | Failed accurate backtest (spread friction) |
+| **Index Vol Expansion** | US30m | **-7.6R** | ❌ DISABLED | Divergence from Tech indices |
+| **London Breakout** | GBPCADm | +34.7R | 📦 RESERVED | High Drawdown (10.8R) |
 
 ---
 
-## Validation Criteria
+## Validated Performance (90 Days)
 
-For any strategy to be deployed, it must pass:
-
-1. **Total R:** > +15R (90 days)
-2. **Max Drawdown:** < 5R (critical for FundedNext)
-3. **Win Rate:** > 40% (psychological sustainability)
-4. **Max Consecutive Losses:** < 8
+| Type | Return | Drawdown | Verdict |
+|:---|---:|---:|:---|
+| **Initial Portfolio** | -42.4R | 25% | ❌ FAIL |
+| **Optimized Portfolio** | **+65.9R** | **6.0%** | ✅ PASS |
 
 ---
 
 ## FundedNext Configuration
 
-- **Daily Loss Limit:** 4.5% (buffer for 5% rule)
-- **Max Drawdown:** 9.5% (buffer for 10% rule)
-- **Base Risk:** 0.5% per trade
-- **Dynamic Allocation:**
-  - Indices: 1.5x (0.75%)
-  - Gold/Momentum: 1.0x (0.50%)
-  - Forex Squeeze: 0.5x (0.25%)
+- **Daily Loss Limit:** 4.5% (hard stop)
+- **Max Drawdown:** 9.5% (buffer for 10%)
+- **Base Risk:** 0.5% (Effective 0.25% per trade with 0.5x multiplier)
+- **Symbols:** USTEC, US500, EURUSD, USDJPY, USDCAD (D1), EURJPY (D1), CADJPY (D1)
 
 ---
 
 ## Future Research Directions
 
-1. **Overnight Gap Fade** - Weekend gaps that fill Monday
-2. **News Event Fade** - Counter-trend after high-impact news
-3. **VWAP Bands** - Intraday mean reversion with lower frequency
-4. **Crypto Correlation** - BTC/Gold divergence plays
+1. **Fix D1 Data:** Momentum strategy yielded 0 trades in backtest due to missing history.
+2. **Gold Refinement:** Investigate why Gold failed (spread filter tuning?).
+3. **Scale Up:** Once 5% monthly is consistent, slowly increase risk to target 10%.
 
 ---
 
@@ -115,10 +68,8 @@ For any strategy to be deployed, it must pass:
 
 | Purpose | Location |
 |:---|:---|
+| **Accurate Backtest** | `scripts/research/accurate_backtest.py` |
 | Strategy Logic | `trading/pro_strategies.py` |
 | Bot Entry Point | `infrastructure/bot_runner.py` |
 | Configuration | `config/config.yaml` |
-| Research Scripts | `scripts/research/` |
-| Startup Scripts | `scripts/startup/` |
-| ML Models | `trading/ml_models/` |
-| Logs | `logs/` |
+

@@ -1,23 +1,4 @@
 # PRO TRADING BOT CONFIGURATION
-# Optimized for: Exness Standard/Raw
-# Strategy: H1 Trend + M5 VWAP (Hybrid)
-# Risk: Kelly Criterion + 4.5% Daily Hard Stop
-
-trading:
-  symbols:
-    - EURUSDm
-    - GBPUSDm
-    - USDJPYm
-    - XAUUSDm
-    - AUDUSDm
-    - USDCADm     # Momentum Continuation (D1)
-    - EURJPYm     # Momentum Continuation (D1)
-    - CADJPYm     # Momentum Continuation (D1)
-    - USTECm      # Index Volatility Expansion (M15)
-    - US500m      # Index Volatility Expansion (M15)
-    - US30m       # Index Volatility Expansion (M15)
-  timeframes:
-    - 60   # H1
     - 5    # M5
     - 15   # M15 (Spread Hunter)
     - 1440 # D1 (Momentum Continuation)
@@ -60,7 +41,8 @@ monitoring:
 
 risk_management:
   # Base Risk (Dynamic Scaled in Bot)
-  risk_per_trade: 0.5 
+  # Increased to 0.6% to target ~6.6% monthly return (Pass Phase 1 in ~5 weeks)
+  risk_per_trade: 0.6 
   
   # Hard Stops (FundedNext)
   max_daily_loss_percent: 4.5

@@ -24,5 +24,6 @@ Write-Host ""
 # Step 2: Start Watchdog
 Write-Host "Starting Eden Bot Watchdog..."
 
-# Start in foreground
+# Start in foreground with unbuffered output
+$env:PYTHONUNBUFFERED = "1"
 python watchdog.py

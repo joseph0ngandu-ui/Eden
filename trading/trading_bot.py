@@ -199,6 +199,7 @@ class TradingBot:
     def place_order(self, trade_signal) -> bool:
         """Place order based on Trade object."""
         try:
+            symbol = trade_signal.symbol
             # Check Spread
             symbol_info = mt5.symbol_info(symbol)
             if not symbol_info:

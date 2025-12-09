@@ -641,3 +641,1944 @@
 [2025-12-08 19:06:29] [BOT] df = self.fetch_recent_data(symbol, bars=50)
 [2025-12-08 19:06:29] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 [2025-12-08 19:06:29] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:07:09] [BOT] 2025-12-08 19:07:09,652 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:07:09] [BOT] 2025-12-08 19:07:09,656 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:07:09] [BOT] 2025-12-08 19:07:09,656 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:07:09] [BOT] 2025-12-08 19:07:09,656 - INFO -
+[2025-12-08 19:07:09] [BOT] ================================================================================
+[2025-12-08 19:07:09] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:07:09] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:07:09] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:07:09] [BOT] ================================================================================
+[2025-12-08 19:07:09] [BOT] 2025-12-08 19:07:09,657 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:07:09] [BOT] 2025-12-08 19:07:09,657 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:07:09] [BOT] 2025-12-08 19:07:09,657 - INFO - Started. Polling every 60s
+[2025-12-08 19:07:09] [BOT] 2025-12-08 19:07:09,659 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:07:09] [BOT] 2025-12-08 19:07:09,659 - INFO - Disconnected from MT5
+[2025-12-08 19:07:09] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:07:09] [BOT] Traceback (most recent call last):
+[2025-12-08 19:07:09] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:07:09] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:07:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:07:09] [BOT] self.run_cycle()
+[2025-12-08 19:07:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:07:09] [BOT] self.manage_positions()
+[2025-12-08 19:07:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:07:09] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:07:09] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:07:09] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:07:49] [BOT] 2025-12-08 19:07:49,665 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:07:49] [BOT] 2025-12-08 19:07:49,668 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:07:49] [BOT] 2025-12-08 19:07:49,668 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:07:49] [BOT] 2025-12-08 19:07:49,668 - INFO -
+[2025-12-08 19:07:49] [BOT] ================================================================================
+[2025-12-08 19:07:49] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:07:49] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:07:49] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:07:49] [BOT] ================================================================================
+[2025-12-08 19:07:49] [BOT] 2025-12-08 19:07:49,669 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:07:49] [BOT] 2025-12-08 19:07:49,669 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:07:49] [BOT] 2025-12-08 19:07:49,669 - INFO - Started. Polling every 60s
+[2025-12-08 19:07:49] [BOT] 2025-12-08 19:07:49,671 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:07:49] [BOT] 2025-12-08 19:07:49,671 - INFO - Disconnected from MT5
+[2025-12-08 19:07:49] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:07:49] [BOT] Traceback (most recent call last):
+[2025-12-08 19:07:49] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:07:49] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:07:49] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:07:49] [BOT] self.run_cycle()
+[2025-12-08 19:07:49] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:07:49] [BOT] self.manage_positions()
+[2025-12-08 19:07:49] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:07:49] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:07:49] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:07:49] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:08:29] [BOT] 2025-12-08 19:08:29,677 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:08:29] [BOT] 2025-12-08 19:08:29,680 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:08:29] [BOT] 2025-12-08 19:08:29,680 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:08:29] [BOT] 2025-12-08 19:08:29,682 - INFO -
+[2025-12-08 19:08:29] [BOT] ================================================================================
+[2025-12-08 19:08:29] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:08:29] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:08:29] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:08:29] [BOT] ================================================================================
+[2025-12-08 19:08:29] [BOT] 2025-12-08 19:08:29,683 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:08:29] [BOT] 2025-12-08 19:08:29,683 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:08:29] [BOT] 2025-12-08 19:08:29,683 - INFO - Started. Polling every 60s
+[2025-12-08 19:08:29] [BOT] 2025-12-08 19:08:29,685 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:08:29] [BOT] 2025-12-08 19:08:29,685 - INFO - Disconnected from MT5
+[2025-12-08 19:08:29] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:08:29] [BOT] Traceback (most recent call last):
+[2025-12-08 19:08:29] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:08:29] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:08:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:08:29] [BOT] self.run_cycle()
+[2025-12-08 19:08:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:08:29] [BOT] self.manage_positions()
+[2025-12-08 19:08:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:08:29] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:08:29] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:08:29] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:09:09] [BOT] 2025-12-08 19:09:09,690 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:09:09] [BOT] 2025-12-08 19:09:09,695 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:09:09] [BOT] 2025-12-08 19:09:09,695 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:09:09] [BOT] 2025-12-08 19:09:09,695 - INFO -
+[2025-12-08 19:09:09] [BOT] ================================================================================
+[2025-12-08 19:09:09] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:09:09] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:09:09] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:09:09] [BOT] ================================================================================
+[2025-12-08 19:09:09] [BOT] 2025-12-08 19:09:09,696 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:09:09] [BOT] 2025-12-08 19:09:09,696 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:09:09] [BOT] 2025-12-08 19:09:09,696 - INFO - Started. Polling every 60s
+[2025-12-08 19:09:09] [BOT] 2025-12-08 19:09:09,698 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:09:09] [BOT] 2025-12-08 19:09:09,698 - INFO - Disconnected from MT5
+[2025-12-08 19:09:09] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:09:09] [BOT] Traceback (most recent call last):
+[2025-12-08 19:09:09] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:09:09] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:09:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:09:09] [BOT] self.run_cycle()
+[2025-12-08 19:09:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:09:09] [BOT] self.manage_positions()
+[2025-12-08 19:09:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:09:09] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:09:09] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:09:09] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:09:49] [BOT] 2025-12-08 19:09:49,899 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:09:49] [BOT] 2025-12-08 19:09:49,902 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:09:49] [BOT] 2025-12-08 19:09:49,902 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:09:49] [BOT] 2025-12-08 19:09:49,902 - INFO -
+[2025-12-08 19:09:49] [BOT] ================================================================================
+[2025-12-08 19:09:49] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:09:49] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:09:49] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:09:49] [BOT] ================================================================================
+[2025-12-08 19:09:49] [BOT] 2025-12-08 19:09:49,903 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:09:49] [BOT] 2025-12-08 19:09:49,903 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:09:49] [BOT] 2025-12-08 19:09:49,903 - INFO - Started. Polling every 60s
+[2025-12-08 19:09:49] [BOT] 2025-12-08 19:09:49,905 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:09:49] [BOT] 2025-12-08 19:09:49,905 - INFO - Disconnected from MT5
+[2025-12-08 19:09:49] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:09:49] [BOT] Traceback (most recent call last):
+[2025-12-08 19:09:49] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:09:49] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:09:49] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:09:49] [BOT] self.run_cycle()
+[2025-12-08 19:09:49] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:09:49] [BOT] self.manage_positions()
+[2025-12-08 19:09:49] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:09:49] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:09:49] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:09:49] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:10:29] [BOT] 2025-12-08 19:10:29,911 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:10:29] [BOT] 2025-12-08 19:10:29,915 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:10:29] [BOT] 2025-12-08 19:10:29,915 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:10:29] [BOT] 2025-12-08 19:10:29,917 - INFO -
+[2025-12-08 19:10:29] [BOT] ================================================================================
+[2025-12-08 19:10:29] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:10:29] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:10:29] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:10:29] [BOT] ================================================================================
+[2025-12-08 19:10:29] [BOT] 2025-12-08 19:10:29,919 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:10:29] [BOT] 2025-12-08 19:10:29,919 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:10:29] [BOT] 2025-12-08 19:10:29,919 - INFO - Started. Polling every 60s
+[2025-12-08 19:10:29] [BOT] 2025-12-08 19:10:29,922 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:10:29] [BOT] 2025-12-08 19:10:29,922 - INFO - Disconnected from MT5
+[2025-12-08 19:10:29] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:10:29] [BOT] Traceback (most recent call last):
+[2025-12-08 19:10:29] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:10:29] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:10:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:10:29] [BOT] self.run_cycle()
+[2025-12-08 19:10:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:10:29] [BOT] self.manage_positions()
+[2025-12-08 19:10:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:10:29] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:10:29] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:10:29] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:11:09] [BOT] 2025-12-08 19:11:09,928 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:11:09] [BOT] 2025-12-08 19:11:09,930 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:11:09] [BOT] 2025-12-08 19:11:09,930 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:11:09] [BOT] 2025-12-08 19:11:09,931 - INFO -
+[2025-12-08 19:11:09] [BOT] ================================================================================
+[2025-12-08 19:11:09] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:11:09] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:11:09] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:11:09] [BOT] ================================================================================
+[2025-12-08 19:11:09] [BOT] 2025-12-08 19:11:09,932 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:11:09] [BOT] 2025-12-08 19:11:09,932 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:11:09] [BOT] 2025-12-08 19:11:09,932 - INFO - Started. Polling every 60s
+[2025-12-08 19:11:09] [BOT] 2025-12-08 19:11:09,934 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:11:09] [BOT] 2025-12-08 19:11:09,934 - INFO - Disconnected from MT5
+[2025-12-08 19:11:09] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:11:09] [BOT] Traceback (most recent call last):
+[2025-12-08 19:11:09] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:11:09] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:11:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:11:09] [BOT] self.run_cycle()
+[2025-12-08 19:11:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:11:09] [BOT] self.manage_positions()
+[2025-12-08 19:11:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:11:09] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:11:09] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:11:09] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:11:49] [BOT] 2025-12-08 19:11:49,940 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:11:49] [BOT] 2025-12-08 19:11:49,943 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:11:49] [BOT] 2025-12-08 19:11:49,944 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:11:49] [BOT] 2025-12-08 19:11:49,944 - INFO -
+[2025-12-08 19:11:49] [BOT] ================================================================================
+[2025-12-08 19:11:49] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:11:49] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:11:49] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:11:49] [BOT] ================================================================================
+[2025-12-08 19:11:49] [BOT] 2025-12-08 19:11:49,945 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:11:49] [BOT] 2025-12-08 19:11:49,945 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:11:49] [BOT] 2025-12-08 19:11:49,945 - INFO - Started. Polling every 60s
+[2025-12-08 19:11:49] [BOT] 2025-12-08 19:11:49,948 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:11:49] [BOT] 2025-12-08 19:11:49,948 - INFO - Disconnected from MT5
+[2025-12-08 19:11:49] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:11:49] [BOT] Traceback (most recent call last):
+[2025-12-08 19:11:49] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:11:49] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:11:49] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:11:49] [BOT] self.run_cycle()
+[2025-12-08 19:11:49] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:11:49] [BOT] self.manage_positions()
+[2025-12-08 19:11:49] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:11:49] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:11:49] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:11:49] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:12:29] [BOT] 2025-12-08 19:12:29,951 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:12:29] [BOT] 2025-12-08 19:12:29,958 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:12:29] [BOT] 2025-12-08 19:12:29,958 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:12:29] [BOT] 2025-12-08 19:12:29,958 - INFO -
+[2025-12-08 19:12:29] [BOT] ================================================================================
+[2025-12-08 19:12:29] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:12:29] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:12:29] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:12:29] [BOT] ================================================================================
+[2025-12-08 19:12:29] [BOT] 2025-12-08 19:12:29,958 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:12:29] [BOT] 2025-12-08 19:12:29,958 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:12:29] [BOT] 2025-12-08 19:12:29,958 - INFO - Started. Polling every 60s
+[2025-12-08 19:12:29] [BOT] 2025-12-08 19:12:29,958 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:12:29] [BOT] 2025-12-08 19:12:29,958 - INFO - Disconnected from MT5
+[2025-12-08 19:12:29] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:12:29] [BOT] Traceback (most recent call last):
+[2025-12-08 19:12:29] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:12:29] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:12:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:12:29] [BOT] self.run_cycle()
+[2025-12-08 19:12:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:12:29] [BOT] self.manage_positions()
+[2025-12-08 19:12:29] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:12:29] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:12:29] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:12:29] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:13:09] [BOT] 2025-12-08 19:13:09,966 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:13:09] [BOT] 2025-12-08 19:13:09,966 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:13:09] [BOT] 2025-12-08 19:13:09,966 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:13:09] [BOT] 2025-12-08 19:13:09,971 - INFO -
+[2025-12-08 19:13:09] [BOT] ================================================================================
+[2025-12-08 19:13:09] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:13:09] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:13:09] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:13:09] [BOT] ================================================================================
+[2025-12-08 19:13:09] [BOT] 2025-12-08 19:13:09,971 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:13:09] [BOT] 2025-12-08 19:13:09,971 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:13:09] [BOT] 2025-12-08 19:13:09,971 - INFO - Started. Polling every 60s
+[2025-12-08 19:13:09] [BOT] 2025-12-08 19:13:09,974 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:13:09] [BOT] 2025-12-08 19:13:09,974 - INFO - Disconnected from MT5
+[2025-12-08 19:13:09] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:13:09] [BOT] Traceback (most recent call last):
+[2025-12-08 19:13:09] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:13:09] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:13:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:13:09] [BOT] self.run_cycle()
+[2025-12-08 19:13:09] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:13:09] [BOT] self.manage_positions()
+[2025-12-08 19:13:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:13:10] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:13:10] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:13:10] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:13:50] [BOT] 2025-12-08 19:13:50,119 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:13:50] [BOT] 2025-12-08 19:13:50,119 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:13:50] [BOT] 2025-12-08 19:13:50,119 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:13:50] [BOT] 2025-12-08 19:13:50,119 - INFO -
+[2025-12-08 19:13:50] [BOT] ================================================================================
+[2025-12-08 19:13:50] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:13:50] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:13:50] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:13:50] [BOT] ================================================================================
+[2025-12-08 19:13:50] [BOT] 2025-12-08 19:13:50,127 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:13:50] [BOT] 2025-12-08 19:13:50,127 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:13:50] [BOT] 2025-12-08 19:13:50,127 - INFO - Started. Polling every 60s
+[2025-12-08 19:13:50] [BOT] 2025-12-08 19:13:50,129 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:13:50] [BOT] 2025-12-08 19:13:50,129 - INFO - Disconnected from MT5
+[2025-12-08 19:13:50] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:13:50] [BOT] Traceback (most recent call last):
+[2025-12-08 19:13:50] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:13:50] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:13:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:13:50] [BOT] self.run_cycle()
+[2025-12-08 19:13:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:13:50] [BOT] self.manage_positions()
+[2025-12-08 19:13:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:13:50] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:13:50] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:13:50] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:14:30] [BOT] 2025-12-08 19:14:30,134 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:14:30] [BOT] 2025-12-08 19:14:30,134 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:14:30] [BOT] 2025-12-08 19:14:30,134 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:14:30] [BOT] 2025-12-08 19:14:30,134 - INFO -
+[2025-12-08 19:14:30] [BOT] ================================================================================
+[2025-12-08 19:14:30] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:14:30] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:14:30] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:14:30] [BOT] ================================================================================
+[2025-12-08 19:14:30] [BOT] 2025-12-08 19:14:30,134 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:14:30] [BOT] 2025-12-08 19:14:30,134 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:14:30] [BOT] 2025-12-08 19:14:30,134 - INFO - Started. Polling every 60s
+[2025-12-08 19:14:30] [BOT] 2025-12-08 19:14:30,141 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:14:30] [BOT] 2025-12-08 19:14:30,141 - INFO - Disconnected from MT5
+[2025-12-08 19:14:30] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:14:30] [BOT] Traceback (most recent call last):
+[2025-12-08 19:14:30] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:14:30] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:14:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:14:30] [BOT] self.run_cycle()
+[2025-12-08 19:14:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:14:30] [BOT] self.manage_positions()
+[2025-12-08 19:14:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:14:30] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:14:30] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:14:30] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:15:10] [BOT] 2025-12-08 19:15:10,146 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:15:10] [BOT] 2025-12-08 19:15:10,149 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:15:10] [BOT] 2025-12-08 19:15:10,149 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:15:10] [BOT] 2025-12-08 19:15:10,149 - INFO -
+[2025-12-08 19:15:10] [BOT] ================================================================================
+[2025-12-08 19:15:10] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:15:10] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:15:10] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:15:10] [BOT] ================================================================================
+[2025-12-08 19:15:10] [BOT] 2025-12-08 19:15:10,149 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:15:10] [BOT] 2025-12-08 19:15:10,149 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:15:10] [BOT] 2025-12-08 19:15:10,149 - INFO - Started. Polling every 60s
+[2025-12-08 19:15:10] [BOT] 2025-12-08 19:15:10,149 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:15:10] [BOT] 2025-12-08 19:15:10,149 - INFO - Disconnected from MT5
+[2025-12-08 19:15:10] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:15:10] [BOT] Traceback (most recent call last):
+[2025-12-08 19:15:10] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:15:10] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:15:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:15:10] [BOT] self.run_cycle()
+[2025-12-08 19:15:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:15:10] [BOT] self.manage_positions()
+[2025-12-08 19:15:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:15:10] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:15:10] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:15:10] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:15:50] [BOT] 2025-12-08 19:15:50,158 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:15:50] [BOT] 2025-12-08 19:15:50,161 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:15:50] [BOT] 2025-12-08 19:15:50,161 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:15:50] [BOT] 2025-12-08 19:15:50,161 - INFO -
+[2025-12-08 19:15:50] [BOT] ================================================================================
+[2025-12-08 19:15:50] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:15:50] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:15:50] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:15:50] [BOT] ================================================================================
+[2025-12-08 19:15:50] [BOT] 2025-12-08 19:15:50,161 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:15:50] [BOT] 2025-12-08 19:15:50,161 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:15:50] [BOT] 2025-12-08 19:15:50,161 - INFO - Started. Polling every 60s
+[2025-12-08 19:15:50] [BOT] 2025-12-08 19:15:50,166 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:15:50] [BOT] 2025-12-08 19:15:50,166 - INFO - Disconnected from MT5
+[2025-12-08 19:15:50] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:15:50] [BOT] Traceback (most recent call last):
+[2025-12-08 19:15:50] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:15:50] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:15:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:15:50] [BOT] self.run_cycle()
+[2025-12-08 19:15:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:15:50] [BOT] self.manage_positions()
+[2025-12-08 19:15:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:15:50] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:15:50] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:15:50] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:16:30] [BOT] 2025-12-08 19:16:30,170 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:16:30] [BOT] 2025-12-08 19:16:30,174 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:16:30] [BOT] 2025-12-08 19:16:30,174 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:16:30] [BOT] 2025-12-08 19:16:30,174 - INFO -
+[2025-12-08 19:16:30] [BOT] ================================================================================
+[2025-12-08 19:16:30] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:16:30] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:16:30] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:16:30] [BOT] ================================================================================
+[2025-12-08 19:16:30] [BOT] 2025-12-08 19:16:30,174 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:16:30] [BOT] 2025-12-08 19:16:30,174 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:16:30] [BOT] 2025-12-08 19:16:30,174 - INFO - Started. Polling every 60s
+[2025-12-08 19:16:30] [BOT] 2025-12-08 19:16:30,174 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:16:30] [BOT] 2025-12-08 19:16:30,174 - INFO - Disconnected from MT5
+[2025-12-08 19:16:30] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:16:30] [BOT] Traceback (most recent call last):
+[2025-12-08 19:16:30] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:16:30] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:16:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:16:30] [BOT] self.run_cycle()
+[2025-12-08 19:16:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:16:30] [BOT] self.manage_positions()
+[2025-12-08 19:16:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:16:30] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:16:30] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:16:30] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:17:10] [BOT] 2025-12-08 19:17:10,185 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:17:10] [BOT] 2025-12-08 19:17:10,187 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:17:10] [BOT] 2025-12-08 19:17:10,187 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:17:10] [BOT] 2025-12-08 19:17:10,187 - INFO -
+[2025-12-08 19:17:10] [BOT] ================================================================================
+[2025-12-08 19:17:10] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:17:10] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:17:10] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:17:10] [BOT] ================================================================================
+[2025-12-08 19:17:10] [BOT] 2025-12-08 19:17:10,191 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:17:10] [BOT] 2025-12-08 19:17:10,191 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:17:10] [BOT] 2025-12-08 19:17:10,191 - INFO - Started. Polling every 60s
+[2025-12-08 19:17:10] [BOT] 2025-12-08 19:17:10,193 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:17:10] [BOT] 2025-12-08 19:17:10,193 - INFO - Disconnected from MT5
+[2025-12-08 19:17:10] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:17:10] [BOT] Traceback (most recent call last):
+[2025-12-08 19:17:10] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:17:10] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:17:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:17:10] [BOT] self.run_cycle()
+[2025-12-08 19:17:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:17:10] [BOT] self.manage_positions()
+[2025-12-08 19:17:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:17:10] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:17:10] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:17:10] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:17:50] [BOT] 2025-12-08 19:17:50,197 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:17:50] [BOT] 2025-12-08 19:17:50,197 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:17:50] [BOT] 2025-12-08 19:17:50,197 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:17:50] [BOT] 2025-12-08 19:17:50,202 - INFO -
+[2025-12-08 19:17:50] [BOT] ================================================================================
+[2025-12-08 19:17:50] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:17:50] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:17:50] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:17:50] [BOT] ================================================================================
+[2025-12-08 19:17:50] [BOT] 2025-12-08 19:17:50,203 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:17:50] [BOT] 2025-12-08 19:17:50,203 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:17:50] [BOT] 2025-12-08 19:17:50,203 - INFO - Started. Polling every 60s
+[2025-12-08 19:17:50] [BOT] 2025-12-08 19:17:50,203 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:17:50] [BOT] 2025-12-08 19:17:50,203 - INFO - Disconnected from MT5
+[2025-12-08 19:17:50] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:17:50] [BOT] Traceback (most recent call last):
+[2025-12-08 19:17:50] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:17:50] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:17:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:17:50] [BOT] self.run_cycle()
+[2025-12-08 19:17:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:17:50] [BOT] self.manage_positions()
+[2025-12-08 19:17:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:17:50] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:17:50] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:17:50] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:18:30] [BOT] 2025-12-08 19:18:30,211 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:18:30] [BOT] 2025-12-08 19:18:30,214 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:18:30] [BOT] 2025-12-08 19:18:30,214 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:18:30] [BOT] 2025-12-08 19:18:30,214 - INFO -
+[2025-12-08 19:18:30] [BOT] ================================================================================
+[2025-12-08 19:18:30] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:18:30] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:18:30] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:18:30] [BOT] ================================================================================
+[2025-12-08 19:18:30] [BOT] 2025-12-08 19:18:30,214 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:18:30] [BOT] 2025-12-08 19:18:30,214 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:18:30] [BOT] 2025-12-08 19:18:30,214 - INFO - Started. Polling every 60s
+[2025-12-08 19:18:30] [BOT] 2025-12-08 19:18:30,214 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:18:30] [BOT] 2025-12-08 19:18:30,214 - INFO - Disconnected from MT5
+[2025-12-08 19:18:30] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:18:30] [BOT] Traceback (most recent call last):
+[2025-12-08 19:18:30] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:18:30] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:18:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:18:30] [BOT] self.run_cycle()
+[2025-12-08 19:18:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:18:30] [BOT] self.manage_positions()
+[2025-12-08 19:18:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:18:30] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:18:30] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:18:30] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:19:10] [BOT] 2025-12-08 19:19:10,223 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:19:10] [BOT] 2025-12-08 19:19:10,226 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:19:10] [BOT] 2025-12-08 19:19:10,226 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:19:10] [BOT] 2025-12-08 19:19:10,226 - INFO -
+[2025-12-08 19:19:10] [BOT] ================================================================================
+[2025-12-08 19:19:10] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:19:10] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:19:10] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:19:10] [BOT] ================================================================================
+[2025-12-08 19:19:10] [BOT] 2025-12-08 19:19:10,226 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:19:10] [BOT] 2025-12-08 19:19:10,226 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:19:10] [BOT] 2025-12-08 19:19:10,226 - INFO - Started. Polling every 60s
+[2025-12-08 19:19:10] [BOT] 2025-12-08 19:19:10,226 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:19:10] [BOT] 2025-12-08 19:19:10,226 - INFO - Disconnected from MT5
+[2025-12-08 19:19:10] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:19:10] [BOT] Traceback (most recent call last):
+[2025-12-08 19:19:10] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:19:10] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:19:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:19:10] [BOT] self.run_cycle()
+[2025-12-08 19:19:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:19:10] [BOT] self.manage_positions()
+[2025-12-08 19:19:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:19:10] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:19:10] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:19:10] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:19:50] [BOT] 2025-12-08 19:19:50,236 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:19:50] [BOT] 2025-12-08 19:19:50,239 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:19:50] [BOT] 2025-12-08 19:19:50,239 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:19:50] [BOT] 2025-12-08 19:19:50,239 - INFO -
+[2025-12-08 19:19:50] [BOT] ================================================================================
+[2025-12-08 19:19:50] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:19:50] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:19:50] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:19:50] [BOT] ================================================================================
+[2025-12-08 19:19:50] [BOT] 2025-12-08 19:19:50,242 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:19:50] [BOT] 2025-12-08 19:19:50,242 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:19:50] [BOT] 2025-12-08 19:19:50,242 - INFO - Started. Polling every 60s
+[2025-12-08 19:19:50] [BOT] 2025-12-08 19:19:50,243 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:19:50] [BOT] 2025-12-08 19:19:50,243 - INFO - Disconnected from MT5
+[2025-12-08 19:19:50] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:19:50] [BOT] Traceback (most recent call last):
+[2025-12-08 19:19:50] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:19:50] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:19:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:19:50] [BOT] self.run_cycle()
+[2025-12-08 19:19:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:19:50] [BOT] self.manage_positions()
+[2025-12-08 19:19:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:19:50] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:19:50] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:19:50] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:20:30] [BOT] 2025-12-08 19:20:30,488 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:20:30] [BOT] 2025-12-08 19:20:30,492 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:20:30] [BOT] 2025-12-08 19:20:30,492 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:20:30] [BOT] 2025-12-08 19:20:30,493 - INFO -
+[2025-12-08 19:20:30] [BOT] ================================================================================
+[2025-12-08 19:20:30] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:20:30] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:20:30] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:20:30] [BOT] ================================================================================
+[2025-12-08 19:20:30] [BOT] 2025-12-08 19:20:30,493 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:20:30] [BOT] 2025-12-08 19:20:30,493 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:20:30] [BOT] 2025-12-08 19:20:30,493 - INFO - Started. Polling every 60s
+[2025-12-08 19:20:30] [BOT] 2025-12-08 19:20:30,495 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:20:30] [BOT] 2025-12-08 19:20:30,495 - INFO - Disconnected from MT5
+[2025-12-08 19:20:30] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:20:30] [BOT] Traceback (most recent call last):
+[2025-12-08 19:20:30] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:20:30] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:20:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:20:30] [BOT] self.run_cycle()
+[2025-12-08 19:20:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:20:30] [BOT] self.manage_positions()
+[2025-12-08 19:20:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:20:30] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:20:30] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:20:30] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:21:10] [BOT] 2025-12-08 19:21:10,503 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:21:10] [BOT] 2025-12-08 19:21:10,506 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:21:10] [BOT] 2025-12-08 19:21:10,507 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:21:10] [BOT] 2025-12-08 19:21:10,507 - INFO -
+[2025-12-08 19:21:10] [BOT] ================================================================================
+[2025-12-08 19:21:10] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:21:10] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:21:10] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:21:10] [BOT] ================================================================================
+[2025-12-08 19:21:10] [BOT] 2025-12-08 19:21:10,509 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:21:10] [BOT] 2025-12-08 19:21:10,509 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:21:10] [BOT] 2025-12-08 19:21:10,509 - INFO - Started. Polling every 60s
+[2025-12-08 19:21:10] [BOT] 2025-12-08 19:21:10,511 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:21:10] [BOT] 2025-12-08 19:21:10,511 - INFO - Disconnected from MT5
+[2025-12-08 19:21:10] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:21:10] [BOT] Traceback (most recent call last):
+[2025-12-08 19:21:10] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:21:10] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:21:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:21:10] [BOT] self.run_cycle()
+[2025-12-08 19:21:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:21:10] [BOT] self.manage_positions()
+[2025-12-08 19:21:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:21:10] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:21:10] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:21:10] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:21:50] [BOT] 2025-12-08 19:21:50,517 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:21:50] [BOT] 2025-12-08 19:21:50,520 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:21:50] [BOT] 2025-12-08 19:21:50,520 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:21:50] [BOT] 2025-12-08 19:21:50,521 - INFO -
+[2025-12-08 19:21:50] [BOT] ================================================================================
+[2025-12-08 19:21:50] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:21:50] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:21:50] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:21:50] [BOT] ================================================================================
+[2025-12-08 19:21:50] [BOT] 2025-12-08 19:21:50,522 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:21:50] [BOT] 2025-12-08 19:21:50,522 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:21:50] [BOT] 2025-12-08 19:21:50,522 - INFO - Started. Polling every 60s
+[2025-12-08 19:21:50] [BOT] 2025-12-08 19:21:50,524 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:21:50] [BOT] 2025-12-08 19:21:50,524 - INFO - Disconnected from MT5
+[2025-12-08 19:21:50] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:21:50] [BOT] Traceback (most recent call last):
+[2025-12-08 19:21:50] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:21:50] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:21:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:21:50] [BOT] self.run_cycle()
+[2025-12-08 19:21:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:21:50] [BOT] self.manage_positions()
+[2025-12-08 19:21:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:21:50] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:21:50] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:21:50] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:22:30] [BOT] 2025-12-08 19:22:30,530 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:22:30] [BOT] 2025-12-08 19:22:30,533 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:22:30] [BOT] 2025-12-08 19:22:30,533 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:22:30] [BOT] 2025-12-08 19:22:30,534 - INFO -
+[2025-12-08 19:22:30] [BOT] ================================================================================
+[2025-12-08 19:22:30] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:22:30] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:22:30] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:22:30] [BOT] ================================================================================
+[2025-12-08 19:22:30] [BOT] 2025-12-08 19:22:30,535 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:22:30] [BOT] 2025-12-08 19:22:30,535 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:22:30] [BOT] 2025-12-08 19:22:30,535 - INFO - Started. Polling every 60s
+[2025-12-08 19:22:30] [BOT] 2025-12-08 19:22:30,537 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:22:30] [BOT] 2025-12-08 19:22:30,537 - INFO - Disconnected from MT5
+[2025-12-08 19:22:30] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:22:30] [BOT] Traceback (most recent call last):
+[2025-12-08 19:22:30] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:22:30] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:22:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:22:30] [BOT] self.run_cycle()
+[2025-12-08 19:22:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:22:30] [BOT] self.manage_positions()
+[2025-12-08 19:22:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:22:30] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:22:30] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:22:30] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:23:10] [BOT] 2025-12-08 19:23:10,542 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:23:10] [BOT] 2025-12-08 19:23:10,545 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:23:10] [BOT] 2025-12-08 19:23:10,546 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:23:10] [BOT] 2025-12-08 19:23:10,546 - INFO -
+[2025-12-08 19:23:10] [BOT] ================================================================================
+[2025-12-08 19:23:10] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:23:10] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:23:10] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:23:10] [BOT] ================================================================================
+[2025-12-08 19:23:10] [BOT] 2025-12-08 19:23:10,547 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:23:10] [BOT] 2025-12-08 19:23:10,547 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:23:10] [BOT] 2025-12-08 19:23:10,547 - INFO - Started. Polling every 60s
+[2025-12-08 19:23:10] [BOT] 2025-12-08 19:23:10,550 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:23:10] [BOT] 2025-12-08 19:23:10,550 - INFO - Disconnected from MT5
+[2025-12-08 19:23:10] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:23:10] [BOT] Traceback (most recent call last):
+[2025-12-08 19:23:10] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:23:10] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:23:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:23:10] [BOT] self.run_cycle()
+[2025-12-08 19:23:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:23:10] [BOT] self.manage_positions()
+[2025-12-08 19:23:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:23:10] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:23:10] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:23:10] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:23:50] [BOT] 2025-12-08 19:23:50,556 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:23:50] [BOT] 2025-12-08 19:23:50,559 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:23:50] [BOT] 2025-12-08 19:23:50,560 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:23:50] [BOT] 2025-12-08 19:23:50,561 - INFO -
+[2025-12-08 19:23:50] [BOT] ================================================================================
+[2025-12-08 19:23:50] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:23:50] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:23:50] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:23:50] [BOT] ================================================================================
+[2025-12-08 19:23:50] [BOT] 2025-12-08 19:23:50,562 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:23:50] [BOT] 2025-12-08 19:23:50,562 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:23:50] [BOT] 2025-12-08 19:23:50,562 - INFO - Started. Polling every 60s
+[2025-12-08 19:23:50] [BOT] 2025-12-08 19:23:50,563 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:23:50] [BOT] 2025-12-08 19:23:50,563 - INFO - Disconnected from MT5
+[2025-12-08 19:23:50] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:23:50] [BOT] Traceback (most recent call last):
+[2025-12-08 19:23:50] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:23:50] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:23:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:23:50] [BOT] self.run_cycle()
+[2025-12-08 19:23:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:23:50] [BOT] self.manage_positions()
+[2025-12-08 19:23:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:23:50] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:23:50] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:23:50] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:24:30] [BOT] 2025-12-08 19:24:30,571 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:24:30] [BOT] 2025-12-08 19:24:30,576 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:24:30] [BOT] 2025-12-08 19:24:30,576 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:24:30] [BOT] 2025-12-08 19:24:30,577 - INFO -
+[2025-12-08 19:24:30] [BOT] ================================================================================
+[2025-12-08 19:24:30] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:24:30] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:24:30] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:24:30] [BOT] ================================================================================
+[2025-12-08 19:24:30] [BOT] 2025-12-08 19:24:30,578 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:24:30] [BOT] 2025-12-08 19:24:30,578 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:24:30] [BOT] 2025-12-08 19:24:30,578 - INFO - Started. Polling every 60s
+[2025-12-08 19:24:30] [BOT] 2025-12-08 19:24:30,580 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:24:30] [BOT] 2025-12-08 19:24:30,580 - INFO - Disconnected from MT5
+[2025-12-08 19:24:30] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:24:30] [BOT] Traceback (most recent call last):
+[2025-12-08 19:24:30] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:24:30] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:24:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:24:30] [BOT] self.run_cycle()
+[2025-12-08 19:24:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:24:30] [BOT] self.manage_positions()
+[2025-12-08 19:24:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:24:30] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:24:30] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:24:30] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:25:10] [BOT] 2025-12-08 19:25:10,586 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:25:10] [BOT] 2025-12-08 19:25:10,589 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:25:10] [BOT] 2025-12-08 19:25:10,589 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:25:10] [BOT] 2025-12-08 19:25:10,590 - INFO -
+[2025-12-08 19:25:10] [BOT] ================================================================================
+[2025-12-08 19:25:10] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:25:10] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:25:10] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:25:10] [BOT] ================================================================================
+[2025-12-08 19:25:10] [BOT] 2025-12-08 19:25:10,591 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:25:10] [BOT] 2025-12-08 19:25:10,591 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:25:10] [BOT] 2025-12-08 19:25:10,591 - INFO - Started. Polling every 60s
+[2025-12-08 19:25:10] [BOT] 2025-12-08 19:25:10,593 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:25:10] [BOT] 2025-12-08 19:25:10,594 - INFO - Disconnected from MT5
+[2025-12-08 19:25:10] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:25:10] [BOT] Traceback (most recent call last):
+[2025-12-08 19:25:10] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:25:10] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:25:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:25:10] [BOT] self.run_cycle()
+[2025-12-08 19:25:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:25:10] [BOT] self.manage_positions()
+[2025-12-08 19:25:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:25:10] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:25:10] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:25:10] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:25:50] [BOT] 2025-12-08 19:25:50,603 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:25:50] [BOT] 2025-12-08 19:25:50,608 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:25:50] [BOT] 2025-12-08 19:25:50,608 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:25:50] [BOT] 2025-12-08 19:25:50,609 - INFO -
+[2025-12-08 19:25:50] [BOT] ================================================================================
+[2025-12-08 19:25:50] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:25:50] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:25:50] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:25:50] [BOT] ================================================================================
+[2025-12-08 19:25:50] [BOT] 2025-12-08 19:25:50,610 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:25:50] [BOT] 2025-12-08 19:25:50,610 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:25:50] [BOT] 2025-12-08 19:25:50,610 - INFO - Started. Polling every 60s
+[2025-12-08 19:25:50] [BOT] 2025-12-08 19:25:50,612 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:25:50] [BOT] 2025-12-08 19:25:50,612 - INFO - Disconnected from MT5
+[2025-12-08 19:25:50] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:25:50] [BOT] Traceback (most recent call last):
+[2025-12-08 19:25:50] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:25:50] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:25:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:25:50] [BOT] self.run_cycle()
+[2025-12-08 19:25:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:25:50] [BOT] self.manage_positions()
+[2025-12-08 19:25:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:25:50] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:25:50] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:25:50] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:26:30] [BOT] 2025-12-08 19:26:30,617 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:26:30] [BOT] 2025-12-08 19:26:30,620 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:26:30] [BOT] 2025-12-08 19:26:30,620 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:26:30] [BOT] 2025-12-08 19:26:30,621 - INFO -
+[2025-12-08 19:26:30] [BOT] ================================================================================
+[2025-12-08 19:26:30] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:26:30] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:26:30] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:26:30] [BOT] ================================================================================
+[2025-12-08 19:26:30] [BOT] 2025-12-08 19:26:30,622 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:26:30] [BOT] 2025-12-08 19:26:30,622 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:26:30] [BOT] 2025-12-08 19:26:30,622 - INFO - Started. Polling every 60s
+[2025-12-08 19:26:30] [BOT] 2025-12-08 19:26:30,625 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:26:30] [BOT] 2025-12-08 19:26:30,625 - INFO - Disconnected from MT5
+[2025-12-08 19:26:30] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:26:30] [BOT] Traceback (most recent call last):
+[2025-12-08 19:26:30] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:26:30] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:26:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:26:30] [BOT] self.run_cycle()
+[2025-12-08 19:26:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:26:30] [BOT] self.manage_positions()
+[2025-12-08 19:26:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:26:30] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:26:30] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:26:30] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:27:10] [BOT] 2025-12-08 19:27:10,631 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:27:10] [BOT] 2025-12-08 19:27:10,636 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:27:10] [BOT] 2025-12-08 19:27:10,636 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:27:10] [BOT] 2025-12-08 19:27:10,637 - INFO -
+[2025-12-08 19:27:10] [BOT] ================================================================================
+[2025-12-08 19:27:10] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:27:10] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:27:10] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:27:10] [BOT] ================================================================================
+[2025-12-08 19:27:10] [BOT] 2025-12-08 19:27:10,637 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:27:10] [BOT] 2025-12-08 19:27:10,637 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:27:10] [BOT] 2025-12-08 19:27:10,637 - INFO - Started. Polling every 60s
+[2025-12-08 19:27:10] [BOT] 2025-12-08 19:27:10,639 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:27:10] [BOT] 2025-12-08 19:27:10,639 - INFO - Disconnected from MT5
+[2025-12-08 19:27:10] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:27:10] [BOT] Traceback (most recent call last):
+[2025-12-08 19:27:10] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:27:10] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:27:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:27:10] [BOT] self.run_cycle()
+[2025-12-08 19:27:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:27:10] [BOT] self.manage_positions()
+[2025-12-08 19:27:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:27:10] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:27:10] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:27:10] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:27:50] [BOT] 2025-12-08 19:27:50,645 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:27:50] [BOT] 2025-12-08 19:27:50,649 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:27:50] [BOT] 2025-12-08 19:27:50,650 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:27:50] [BOT] 2025-12-08 19:27:50,651 - INFO -
+[2025-12-08 19:27:50] [BOT] ================================================================================
+[2025-12-08 19:27:50] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:27:50] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:27:50] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:27:50] [BOT] ================================================================================
+[2025-12-08 19:27:50] [BOT] 2025-12-08 19:27:50,652 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:27:50] [BOT] 2025-12-08 19:27:50,652 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:27:50] [BOT] 2025-12-08 19:27:50,652 - INFO - Started. Polling every 60s
+[2025-12-08 19:27:50] [BOT] 2025-12-08 19:27:50,654 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:27:50] [BOT] 2025-12-08 19:27:50,654 - INFO - Disconnected from MT5
+[2025-12-08 19:27:50] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:27:50] [BOT] Traceback (most recent call last):
+[2025-12-08 19:27:50] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:27:50] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:27:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:27:50] [BOT] self.run_cycle()
+[2025-12-08 19:27:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:27:50] [BOT] self.manage_positions()
+[2025-12-08 19:27:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:27:50] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:27:50] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:27:50] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:28:30] [BOT] 2025-12-08 19:28:30,661 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:28:30] [BOT] 2025-12-08 19:28:30,664 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:28:30] [BOT] 2025-12-08 19:28:30,664 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:28:30] [BOT] 2025-12-08 19:28:30,665 - INFO -
+[2025-12-08 19:28:30] [BOT] ================================================================================
+[2025-12-08 19:28:30] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:28:30] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:28:30] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:28:30] [BOT] ================================================================================
+[2025-12-08 19:28:30] [BOT] 2025-12-08 19:28:30,665 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:28:30] [BOT] 2025-12-08 19:28:30,666 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:28:30] [BOT] 2025-12-08 19:28:30,666 - INFO - Started. Polling every 60s
+[2025-12-08 19:28:30] [BOT] 2025-12-08 19:28:30,668 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:28:30] [BOT] 2025-12-08 19:28:30,668 - INFO - Disconnected from MT5
+[2025-12-08 19:28:30] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:28:30] [BOT] Traceback (most recent call last):
+[2025-12-08 19:28:30] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:28:30] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:28:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:28:30] [BOT] self.run_cycle()
+[2025-12-08 19:28:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:28:30] [BOT] self.manage_positions()
+[2025-12-08 19:28:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:28:30] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:28:30] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:28:30] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:29:10] [BOT] 2025-12-08 19:29:10,674 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:29:10] [BOT] 2025-12-08 19:29:10,679 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:29:10] [BOT] 2025-12-08 19:29:10,679 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:29:10] [BOT] 2025-12-08 19:29:10,679 - INFO -
+[2025-12-08 19:29:10] [BOT] ================================================================================
+[2025-12-08 19:29:10] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:29:10] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:29:10] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:29:10] [BOT] ================================================================================
+[2025-12-08 19:29:10] [BOT] 2025-12-08 19:29:10,680 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:29:10] [BOT] 2025-12-08 19:29:10,680 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:29:10] [BOT] 2025-12-08 19:29:10,680 - INFO - Started. Polling every 60s
+[2025-12-08 19:29:10] [BOT] 2025-12-08 19:29:10,682 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:29:10] [BOT] 2025-12-08 19:29:10,682 - INFO - Disconnected from MT5
+[2025-12-08 19:29:10] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:29:10] [BOT] Traceback (most recent call last):
+[2025-12-08 19:29:10] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:29:10] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:29:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:29:10] [BOT] self.run_cycle()
+[2025-12-08 19:29:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:29:10] [BOT] self.manage_positions()
+[2025-12-08 19:29:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:29:10] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:29:10] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:29:10] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:29:50] [BOT] 2025-12-08 19:29:50,688 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:29:50] [BOT] 2025-12-08 19:29:50,691 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:29:50] [BOT] 2025-12-08 19:29:50,692 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:29:50] [BOT] 2025-12-08 19:29:50,692 - INFO -
+[2025-12-08 19:29:50] [BOT] ================================================================================
+[2025-12-08 19:29:50] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:29:50] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:29:50] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:29:50] [BOT] ================================================================================
+[2025-12-08 19:29:50] [BOT] 2025-12-08 19:29:50,692 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:29:50] [BOT] 2025-12-08 19:29:50,692 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:29:50] [BOT] 2025-12-08 19:29:50,692 - INFO - Started. Polling every 60s
+[2025-12-08 19:29:50] [BOT] 2025-12-08 19:29:50,697 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:29:50] [BOT] 2025-12-08 19:29:50,697 - INFO - Disconnected from MT5
+[2025-12-08 19:29:50] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:29:50] [BOT] Traceback (most recent call last):
+[2025-12-08 19:29:50] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:29:50] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:29:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:29:50] [BOT] self.run_cycle()
+[2025-12-08 19:29:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:29:50] [BOT] self.manage_positions()
+[2025-12-08 19:29:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:29:50] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:29:50] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:29:50] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:30:30] [BOT] 2025-12-08 19:30:30,775 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:30:30] [BOT] 2025-12-08 19:30:30,775 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:30:30] [BOT] 2025-12-08 19:30:30,775 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:30:30] [BOT] 2025-12-08 19:30:30,775 - INFO -
+[2025-12-08 19:30:30] [BOT] ================================================================================
+[2025-12-08 19:30:30] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:30:30] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:30:30] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:30:30] [BOT] ================================================================================
+[2025-12-08 19:30:30] [BOT] 2025-12-08 19:30:30,775 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:30:30] [BOT] 2025-12-08 19:30:30,775 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:30:30] [BOT] 2025-12-08 19:30:30,775 - INFO - Started. Polling every 60s
+[2025-12-08 19:30:30] [BOT] 2025-12-08 19:30:30,791 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:30:30] [BOT] 2025-12-08 19:30:30,791 - INFO - Disconnected from MT5
+[2025-12-08 19:30:30] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:30:30] [BOT] Traceback (most recent call last):
+[2025-12-08 19:30:30] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:30:30] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:30:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:30:30] [BOT] self.run_cycle()
+[2025-12-08 19:30:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:30:30] [BOT] self.manage_positions()
+[2025-12-08 19:30:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:30:30] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:30:30] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:30:30] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:31:10] [BOT] 2025-12-08 19:31:10,796 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:31:10] [BOT] 2025-12-08 19:31:10,800 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:31:10] [BOT] 2025-12-08 19:31:10,800 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:31:10] [BOT] 2025-12-08 19:31:10,800 - INFO -
+[2025-12-08 19:31:10] [BOT] ================================================================================
+[2025-12-08 19:31:10] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:31:10] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:31:10] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:31:10] [BOT] ================================================================================
+[2025-12-08 19:31:10] [BOT] 2025-12-08 19:31:10,802 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:31:10] [BOT] 2025-12-08 19:31:10,802 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:31:10] [BOT] 2025-12-08 19:31:10,802 - INFO - Started. Polling every 60s
+[2025-12-08 19:31:10] [BOT] 2025-12-08 19:31:10,804 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:31:10] [BOT] 2025-12-08 19:31:10,804 - INFO - Disconnected from MT5
+[2025-12-08 19:31:10] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:31:10] [BOT] Traceback (most recent call last):
+[2025-12-08 19:31:10] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:31:10] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:31:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:31:10] [BOT] self.run_cycle()
+[2025-12-08 19:31:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:31:10] [BOT] self.manage_positions()
+[2025-12-08 19:31:10] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:31:10] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:31:10] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:31:10] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:31:50] [BOT] 2025-12-08 19:31:50,809 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:31:50] [BOT] 2025-12-08 19:31:50,812 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:31:50] [BOT] 2025-12-08 19:31:50,812 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:31:50] [BOT] 2025-12-08 19:31:50,812 - INFO -
+[2025-12-08 19:31:50] [BOT] ================================================================================
+[2025-12-08 19:31:50] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:31:50] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:31:50] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:31:50] [BOT] ================================================================================
+[2025-12-08 19:31:50] [BOT] 2025-12-08 19:31:50,812 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:31:50] [BOT] 2025-12-08 19:31:50,812 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:31:50] [BOT] 2025-12-08 19:31:50,812 - INFO - Started. Polling every 60s
+[2025-12-08 19:31:50] [BOT] 2025-12-08 19:31:50,816 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:31:50] [BOT] 2025-12-08 19:31:50,816 - INFO - Disconnected from MT5
+[2025-12-08 19:31:50] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:31:50] [BOT] Traceback (most recent call last):
+[2025-12-08 19:31:50] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:31:50] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:31:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:31:50] [BOT] self.run_cycle()
+[2025-12-08 19:31:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:31:50] [BOT] self.manage_positions()
+[2025-12-08 19:31:50] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:31:50] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:31:50] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:31:50] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:32:30] [BOT] 2025-12-08 19:32:30,820 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:32:30] [BOT] 2025-12-08 19:32:30,820 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:32:30] [BOT] 2025-12-08 19:32:30,820 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:32:30] [BOT] 2025-12-08 19:32:30,826 - INFO -
+[2025-12-08 19:32:30] [BOT] ================================================================================
+[2025-12-08 19:32:30] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:32:30] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:32:30] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:32:30] [BOT] ================================================================================
+[2025-12-08 19:32:30] [BOT] 2025-12-08 19:32:30,827 - INFO - Connected. Balance: 9986.23
+[2025-12-08 19:32:30] [BOT] 2025-12-08 19:32:30,827 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:32:30] [BOT] 2025-12-08 19:32:30,827 - INFO - Started. Polling every 60s
+[2025-12-08 19:32:30] [BOT] 2025-12-08 19:32:30,829 - INFO - Adopted position: CADJPYm (SHORT)
+[2025-12-08 19:32:30] [BOT] 2025-12-08 19:32:30,829 - INFO - Disconnected from MT5
+[2025-12-08 19:32:30] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:32:30] [BOT] Traceback (most recent call last):
+[2025-12-08 19:32:30] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:32:30] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:32:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:32:30] [BOT] self.run_cycle()
+[2025-12-08 19:32:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:32:30] [BOT] self.manage_positions()
+[2025-12-08 19:32:30] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:32:30] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:32:30] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:32:30] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:33:10] [BOT] 2025-12-08 19:33:10,836 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:33:10] [BOT] 2025-12-08 19:33:10,840 - INFO - Loaded 9 existing trades from logs\trade_history.csv
+[2025-12-08 19:33:10] [BOT] 2025-12-08 19:33:10,840 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:33:10] [BOT] 2025-12-08 19:33:10,841 - INFO -
+[2025-12-08 19:33:10] [BOT] ================================================================================
+[2025-12-08 19:33:10] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:33:10] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:33:10] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:33:10] [BOT] ================================================================================
+[2025-12-08 19:33:10] [BOT] 2025-12-08 19:33:10,842 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:33:10] [BOT] 2025-12-08 19:33:10,842 - INFO - Started. Polling every 60s
+[2025-12-08 19:35:10] [BOT] 2025-12-08 19:35:10,942 - INFO - SIGNAL FOUND: USDJPYm via volatility_squeeze (TF: 5m)
+[2025-12-08 19:35:10] [BOT] 2025-12-08 19:35:10,942 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-08 19:35:11] [BOT] 2025-12-08 19:35:11,001 - INFO - LIVE TRADE: LONG USDJPYm #2044451840
+[2025-12-08 19:35:11] [BOT] 2025-12-08 19:35:11,001 - INFO - Position registered: USDJPYm (LONG)
+[2025-12-08 19:35:11] [BOT] 2025-12-08 19:35:11,005 - INFO - Trade history exported: logs\trade_history.csv (10 trades)
+[2025-12-08 19:35:11] [BOT] 2025-12-08 19:35:11,010 - INFO - SIGNAL FOUND: EURJPYm via volatility_squeeze (TF: 5m)
+[2025-12-08 19:35:11] [BOT] 2025-12-08 19:35:11,011 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-08 19:35:11] [BOT] 2025-12-08 19:35:11,095 - INFO - LIVE TRADE: LONG EURJPYm #2044451842
+[2025-12-08 19:35:11] [BOT] 2025-12-08 19:35:11,095 - INFO - Position registered: EURJPYm (LONG)
+[2025-12-08 19:35:11] [BOT] 2025-12-08 19:35:11,099 - INFO - Trade history exported: logs\trade_history.csv (11 trades)
+[2025-12-08 19:36:11] [BOT] 2025-12-08 19:36:11,116 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:36:11] [BOT] 2025-12-08 19:36:11,116 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:36:11] [BOT] 2025-12-08 19:36:11,116 - INFO - Disconnected from MT5
+[2025-12-08 19:36:11] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:36:11] [BOT] Traceback (most recent call last):
+[2025-12-08 19:36:11] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:36:11] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:36:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:36:11] [BOT] self.run_cycle()
+[2025-12-08 19:36:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:36:11] [BOT] self.manage_positions()
+[2025-12-08 19:36:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:36:11] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:36:11] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:36:11] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,122 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,144 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,145 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,145 - INFO -
+[2025-12-08 19:36:51] [BOT] ================================================================================
+[2025-12-08 19:36:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:36:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:36:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:36:51] [BOT] ================================================================================
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,146 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,146 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,146 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,146 - INFO - Started. Polling every 60s
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,148 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,148 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:36:51] [BOT] 2025-12-08 19:36:51,148 - INFO - Disconnected from MT5
+[2025-12-08 19:36:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:36:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:36:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:36:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:36:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:36:51] [BOT] self.run_cycle()
+[2025-12-08 19:36:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:36:51] [BOT] self.manage_positions()
+[2025-12-08 19:36:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:36:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:36:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:36:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,153 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,156 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,156 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,157 - INFO -
+[2025-12-08 19:37:31] [BOT] ================================================================================
+[2025-12-08 19:37:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:37:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:37:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:37:31] [BOT] ================================================================================
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,158 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,158 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,158 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,158 - INFO - Started. Polling every 60s
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,159 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,159 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:37:31] [BOT] 2025-12-08 19:37:31,159 - INFO - Disconnected from MT5
+[2025-12-08 19:37:31] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:37:31] [BOT] Traceback (most recent call last):
+[2025-12-08 19:37:31] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:37:31] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:37:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:37:31] [BOT] self.run_cycle()
+[2025-12-08 19:37:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:37:31] [BOT] self.manage_positions()
+[2025-12-08 19:37:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:37:31] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:37:31] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:37:31] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,162 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,168 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,168 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,168 - INFO -
+[2025-12-08 19:38:11] [BOT] ================================================================================
+[2025-12-08 19:38:11] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:38:11] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:38:11] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:38:11] [BOT] ================================================================================
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,171 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,171 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,171 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,171 - INFO - Started. Polling every 60s
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,171 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,171 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:38:11] [BOT] 2025-12-08 19:38:11,171 - INFO - Disconnected from MT5
+[2025-12-08 19:38:11] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:38:11] [BOT] Traceback (most recent call last):
+[2025-12-08 19:38:11] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:38:11] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:38:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:38:11] [BOT] self.run_cycle()
+[2025-12-08 19:38:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:38:11] [BOT] self.manage_positions()
+[2025-12-08 19:38:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:38:11] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:38:11] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:38:11] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,180 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,180 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,180 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,184 - INFO -
+[2025-12-08 19:38:51] [BOT] ================================================================================
+[2025-12-08 19:38:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:38:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:38:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:38:51] [BOT] ================================================================================
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,184 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,184 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,184 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,184 - INFO - Started. Polling every 60s
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,184 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,184 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:38:51] [BOT] 2025-12-08 19:38:51,184 - INFO - Disconnected from MT5
+[2025-12-08 19:38:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:38:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:38:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:38:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:38:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:38:51] [BOT] self.run_cycle()
+[2025-12-08 19:38:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:38:51] [BOT] self.manage_positions()
+[2025-12-08 19:38:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:38:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:38:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:38:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,190 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,195 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,195 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,195 - INFO -
+[2025-12-08 19:39:31] [BOT] ================================================================================
+[2025-12-08 19:39:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:39:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:39:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:39:31] [BOT] ================================================================================
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,195 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,195 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,195 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,195 - INFO - Started. Polling every 60s
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,200 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,200 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:39:31] [BOT] 2025-12-08 19:39:31,200 - INFO - Disconnected from MT5
+[2025-12-08 19:39:31] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:39:31] [BOT] Traceback (most recent call last):
+[2025-12-08 19:39:31] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:39:31] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:39:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:39:31] [BOT] self.run_cycle()
+[2025-12-08 19:39:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:39:31] [BOT] self.manage_positions()
+[2025-12-08 19:39:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:39:31] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:39:31] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:39:31] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,202 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,208 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,208 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,208 - INFO -
+[2025-12-08 19:40:11] [BOT] ================================================================================
+[2025-12-08 19:40:11] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:40:11] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:40:11] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:40:11] [BOT] ================================================================================
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,209 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,209 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,209 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,209 - INFO - Started. Polling every 60s
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,211 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,211 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:40:11] [BOT] 2025-12-08 19:40:11,211 - INFO - Disconnected from MT5
+[2025-12-08 19:40:11] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:40:11] [BOT] Traceback (most recent call last):
+[2025-12-08 19:40:11] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:40:11] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:40:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:40:11] [BOT] self.run_cycle()
+[2025-12-08 19:40:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:40:11] [BOT] self.manage_positions()
+[2025-12-08 19:40:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:40:11] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:40:11] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:40:11] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,216 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,219 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,219 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,219 - INFO -
+[2025-12-08 19:40:51] [BOT] ================================================================================
+[2025-12-08 19:40:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:40:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:40:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:40:51] [BOT] ================================================================================
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,221 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,221 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,221 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,221 - INFO - Started. Polling every 60s
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,222 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,222 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:40:51] [BOT] 2025-12-08 19:40:51,222 - INFO - Disconnected from MT5
+[2025-12-08 19:40:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:40:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:40:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:40:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:40:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:40:51] [BOT] self.run_cycle()
+[2025-12-08 19:40:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:40:51] [BOT] self.manage_positions()
+[2025-12-08 19:40:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:40:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:40:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:40:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,228 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,228 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,228 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,232 - INFO -
+[2025-12-08 19:41:31] [BOT] ================================================================================
+[2025-12-08 19:41:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:41:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:41:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:41:31] [BOT] ================================================================================
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,232 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,232 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,232 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,232 - INFO - Started. Polling every 60s
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,232 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,232 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:41:31] [BOT] 2025-12-08 19:41:31,232 - INFO - Disconnected from MT5
+[2025-12-08 19:41:31] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:41:31] [BOT] Traceback (most recent call last):
+[2025-12-08 19:41:31] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:41:31] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:41:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:41:31] [BOT] self.run_cycle()
+[2025-12-08 19:41:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:41:31] [BOT] self.manage_positions()
+[2025-12-08 19:41:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:41:31] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:41:31] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:41:31] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - INFO -
+[2025-12-08 19:42:11] [BOT] ================================================================================
+[2025-12-08 19:42:11] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:42:11] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:42:11] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:42:11] [BOT] ================================================================================
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - INFO - Started. Polling every 60s
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:42:11] [BOT] 2025-12-08 19:42:11,239 - INFO - Disconnected from MT5
+[2025-12-08 19:42:11] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:42:11] [BOT] Traceback (most recent call last):
+[2025-12-08 19:42:11] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:42:11] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:42:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:42:11] [BOT] self.run_cycle()
+[2025-12-08 19:42:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:42:11] [BOT] self.manage_positions()
+[2025-12-08 19:42:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:42:11] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:42:11] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:42:11] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,252 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,252 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,252 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,252 - INFO -
+[2025-12-08 19:42:51] [BOT] ================================================================================
+[2025-12-08 19:42:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:42:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:42:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:42:51] [BOT] ================================================================================
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,252 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,258 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,258 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,258 - INFO - Started. Polling every 60s
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,260 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,260 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:42:51] [BOT] 2025-12-08 19:42:51,260 - INFO - Disconnected from MT5
+[2025-12-08 19:42:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:42:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:42:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:42:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:42:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:42:51] [BOT] self.run_cycle()
+[2025-12-08 19:42:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:42:51] [BOT] self.manage_positions()
+[2025-12-08 19:42:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:42:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:42:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:42:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,266 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,266 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,266 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,266 - INFO -
+[2025-12-08 19:43:31] [BOT] ================================================================================
+[2025-12-08 19:43:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:43:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:43:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:43:31] [BOT] ================================================================================
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,266 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,266 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,266 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,266 - INFO - Started. Polling every 60s
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,272 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,272 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:43:31] [BOT] 2025-12-08 19:43:31,272 - INFO - Disconnected from MT5
+[2025-12-08 19:43:31] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:43:31] [BOT] Traceback (most recent call last):
+[2025-12-08 19:43:31] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:43:31] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:43:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:43:31] [BOT] self.run_cycle()
+[2025-12-08 19:43:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:43:31] [BOT] self.manage_positions()
+[2025-12-08 19:43:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:43:31] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:43:31] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:43:31] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,276 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,276 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,276 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,281 - INFO -
+[2025-12-08 19:44:11] [BOT] ================================================================================
+[2025-12-08 19:44:11] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:44:11] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:44:11] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:44:11] [BOT] ================================================================================
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,281 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,281 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,283 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,283 - INFO - Started. Polling every 60s
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,285 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,285 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:44:11] [BOT] 2025-12-08 19:44:11,285 - INFO - Disconnected from MT5
+[2025-12-08 19:44:11] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:44:11] [BOT] Traceback (most recent call last):
+[2025-12-08 19:44:11] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:44:11] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:44:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:44:11] [BOT] self.run_cycle()
+[2025-12-08 19:44:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:44:11] [BOT] self.manage_positions()
+[2025-12-08 19:44:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:44:11] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:44:11] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:44:11] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,291 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,293 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,295 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,295 - INFO -
+[2025-12-08 19:44:51] [BOT] ================================================================================
+[2025-12-08 19:44:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:44:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:44:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:44:51] [BOT] ================================================================================
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,295 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,295 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,295 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,295 - INFO - Started. Polling every 60s
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,295 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,295 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:44:51] [BOT] 2025-12-08 19:44:51,295 - INFO - Disconnected from MT5
+[2025-12-08 19:44:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:44:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:44:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:44:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:44:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:44:51] [BOT] self.run_cycle()
+[2025-12-08 19:44:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:44:51] [BOT] self.manage_positions()
+[2025-12-08 19:44:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:44:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:44:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:44:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,301 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,301 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,301 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,307 - INFO -
+[2025-12-08 19:45:31] [BOT] ================================================================================
+[2025-12-08 19:45:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:45:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:45:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:45:31] [BOT] ================================================================================
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,307 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,307 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,307 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,307 - INFO - Started. Polling every 60s
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,309 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,309 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:45:31] [BOT] 2025-12-08 19:45:31,309 - INFO - Disconnected from MT5
+[2025-12-08 19:45:31] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:45:31] [BOT] Traceback (most recent call last):
+[2025-12-08 19:45:31] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:45:31] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:45:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:45:31] [BOT] self.run_cycle()
+[2025-12-08 19:45:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:45:31] [BOT] self.manage_positions()
+[2025-12-08 19:45:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:45:31] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:45:31] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:45:31] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,316 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,319 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,319 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,319 - INFO -
+[2025-12-08 19:46:11] [BOT] ================================================================================
+[2025-12-08 19:46:11] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:46:11] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:46:11] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:46:11] [BOT] ================================================================================
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,319 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,319 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,319 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,319 - INFO - Started. Polling every 60s
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,324 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,324 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:46:11] [BOT] 2025-12-08 19:46:11,324 - INFO - Disconnected from MT5
+[2025-12-08 19:46:11] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:46:11] [BOT] Traceback (most recent call last):
+[2025-12-08 19:46:11] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:46:11] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:46:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:46:11] [BOT] self.run_cycle()
+[2025-12-08 19:46:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:46:11] [BOT] self.manage_positions()
+[2025-12-08 19:46:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:46:11] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:46:11] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:46:11] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,328 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,328 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,328 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,334 - INFO -
+[2025-12-08 19:46:51] [BOT] ================================================================================
+[2025-12-08 19:46:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:46:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:46:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:46:51] [BOT] ================================================================================
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,334 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,334 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,334 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,334 - INFO - Started. Polling every 60s
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,338 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,338 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:46:51] [BOT] 2025-12-08 19:46:51,338 - INFO - Disconnected from MT5
+[2025-12-08 19:46:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:46:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:46:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:46:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:46:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:46:51] [BOT] self.run_cycle()
+[2025-12-08 19:46:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:46:51] [BOT] self.manage_positions()
+[2025-12-08 19:46:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:46:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:46:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:46:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:47:31] [BOT] 2025-12-08 19:47:31,347 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:47:31] [BOT] 2025-12-08 19:47:31,352 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:47:31] [BOT] 2025-12-08 19:47:31,352 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:47:31] [BOT] 2025-12-08 19:47:31,352 - INFO -
+[2025-12-08 19:47:31] [BOT] ================================================================================
+[2025-12-08 19:47:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:47:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:47:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:47:31] [BOT] ================================================================================
+[2025-12-08 19:47:31] [BOT] 2025-12-08 19:47:31,352 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:47:31] [BOT] 2025-12-08 19:47:31,352 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:47:31] [BOT] 2025-12-08 19:47:31,352 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:47:31] [BOT] 2025-12-08 19:47:31,352 - INFO - Started. Polling every 60s
+[2025-12-08 19:47:33] [BOT] 2025-12-08 19:47:31,355 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:47:35] [BOT] 2025-12-08 19:47:31,355 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:47:35] [BOT] 2025-12-08 19:47:31,355 - INFO - Disconnected from MT5
+[2025-12-08 19:47:35] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:47:37] [BOT] Traceback (most recent call last):
+[2025-12-08 19:47:39] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:47:44] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:47:44] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:47:44] [BOT] self.run_cycle()
+[2025-12-08 19:47:46] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:47:50] [BOT] self.manage_positions()
+[2025-12-08 19:47:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:47:56] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:48:00] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:48:03] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:48:11] [BOT] 2025-12-08 19:48:11,714 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:48:11] [BOT] 2025-12-08 19:48:11,714 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:48:12] [BOT] 2025-12-08 19:48:11,714 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:48:12] [BOT] 2025-12-08 19:48:11,714 - INFO -
+[2025-12-08 19:48:12] [BOT] ================================================================================
+[2025-12-08 19:48:12] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:48:12] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:48:12] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:48:12] [BOT] ================================================================================
+[2025-12-08 19:48:12] [BOT] 2025-12-08 19:48:11,714 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:48:12] [BOT] 2025-12-08 19:48:11,714 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:48:12] [BOT] 2025-12-08 19:48:11,714 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:48:12] [BOT] 2025-12-08 19:48:11,714 - INFO - Started. Polling every 60s
+[2025-12-08 19:48:12] [BOT] 2025-12-08 19:48:11,723 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:48:12] [BOT] 2025-12-08 19:48:11,723 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:48:12] [BOT] 2025-12-08 19:48:11,723 - INFO - Disconnected from MT5
+[2025-12-08 19:48:12] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:48:12] [BOT] Traceback (most recent call last):
+[2025-12-08 19:48:12] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:48:12] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:48:12] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:48:12] [BOT] self.run_cycle()
+[2025-12-08 19:48:12] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:48:12] [BOT] self.manage_positions()
+[2025-12-08 19:48:12] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:48:12] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:48:12] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:48:12] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,728 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,730 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,730 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,730 - INFO -
+[2025-12-08 19:48:51] [BOT] ================================================================================
+[2025-12-08 19:48:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:48:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:48:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:48:51] [BOT] ================================================================================
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,730 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,730 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,730 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,730 - INFO - Started. Polling every 60s
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,735 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,735 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:48:51] [BOT] 2025-12-08 19:48:51,735 - INFO - Disconnected from MT5
+[2025-12-08 19:48:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:48:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:48:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:48:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:48:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:48:51] [BOT] self.run_cycle()
+[2025-12-08 19:48:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:48:51] [BOT] self.manage_positions()
+[2025-12-08 19:48:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:48:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:48:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:48:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,739 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,739 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,739 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,739 - INFO -
+[2025-12-08 19:49:31] [BOT] ================================================================================
+[2025-12-08 19:49:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:49:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:49:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:49:31] [BOT] ================================================================================
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,745 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,745 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,745 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,745 - INFO - Started. Polling every 60s
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,748 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,748 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:49:31] [BOT] 2025-12-08 19:49:31,748 - INFO - Disconnected from MT5
+[2025-12-08 19:49:31] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:49:31] [BOT] Traceback (most recent call last):
+[2025-12-08 19:49:31] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:49:31] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:49:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:49:31] [BOT] self.run_cycle()
+[2025-12-08 19:49:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:49:31] [BOT] self.manage_positions()
+[2025-12-08 19:49:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:49:31] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:49:31] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:49:31] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,750 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,756 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,757 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,757 - INFO -
+[2025-12-08 19:50:11] [BOT] ================================================================================
+[2025-12-08 19:50:11] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:50:11] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:50:11] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:50:11] [BOT] ================================================================================
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,757 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,758 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,758 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,758 - INFO - Started. Polling every 60s
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,761 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,761 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:50:11] [BOT] 2025-12-08 19:50:11,761 - INFO - Disconnected from MT5
+[2025-12-08 19:50:11] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:50:11] [BOT] Traceback (most recent call last):
+[2025-12-08 19:50:11] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:50:11] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:50:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:50:11] [BOT] self.run_cycle()
+[2025-12-08 19:50:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:50:11] [BOT] self.manage_positions()
+[2025-12-08 19:50:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:50:11] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:50:11] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:50:11] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,763 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,768 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,768 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,768 - INFO -
+[2025-12-08 19:50:51] [BOT] ================================================================================
+[2025-12-08 19:50:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:50:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:50:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:50:51] [BOT] ================================================================================
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,770 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,770 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,770 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,770 - INFO - Started. Polling every 60s
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,772 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,772 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:50:51] [BOT] 2025-12-08 19:50:51,772 - INFO - Disconnected from MT5
+[2025-12-08 19:50:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:50:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:50:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:50:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:50:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:50:51] [BOT] self.run_cycle()
+[2025-12-08 19:50:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:50:51] [BOT] self.manage_positions()
+[2025-12-08 19:50:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:50:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:50:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:50:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,775 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,782 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,782 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,782 - INFO -
+[2025-12-08 19:51:31] [BOT] ================================================================================
+[2025-12-08 19:51:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:51:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:51:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:51:31] [BOT] ================================================================================
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,783 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,783 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,783 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,783 - INFO - Started. Polling every 60s
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,785 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,785 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:51:31] [BOT] 2025-12-08 19:51:31,785 - INFO - Disconnected from MT5
+[2025-12-08 19:51:31] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:51:31] [BOT] Traceback (most recent call last):
+[2025-12-08 19:51:31] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:51:31] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:51:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:51:31] [BOT] self.run_cycle()
+[2025-12-08 19:51:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:51:31] [BOT] self.manage_positions()
+[2025-12-08 19:51:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:51:31] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:51:31] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:51:31] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,791 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,791 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,791 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,791 - INFO -
+[2025-12-08 19:52:11] [BOT] ================================================================================
+[2025-12-08 19:52:11] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:52:11] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:52:11] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:52:11] [BOT] ================================================================================
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,791 - INFO - Connected. Balance: 9985.64
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,791 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,791 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,791 - INFO - Started. Polling every 60s
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,796 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,796 - INFO - Adopted position: EURJPYm (LONG)
+[2025-12-08 19:52:11] [BOT] 2025-12-08 19:52:11,796 - INFO - Disconnected from MT5
+[2025-12-08 19:52:11] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:52:11] [BOT] Traceback (most recent call last):
+[2025-12-08 19:52:11] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:52:11] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:52:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:52:11] [BOT] self.run_cycle()
+[2025-12-08 19:52:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:52:11] [BOT] self.manage_positions()
+[2025-12-08 19:52:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:52:11] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:52:11] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:52:11] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:52:51] [BOT] 2025-12-08 19:52:51,801 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:52:51] [BOT] 2025-12-08 19:52:51,801 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:52:51] [BOT] 2025-12-08 19:52:51,801 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:52:51] [BOT] 2025-12-08 19:52:51,807 - INFO -
+[2025-12-08 19:52:51] [BOT] ================================================================================
+[2025-12-08 19:52:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:52:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:52:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:52:51] [BOT] ================================================================================
+[2025-12-08 19:52:51] [BOT] 2025-12-08 19:52:51,807 - INFO - Connected. Balance: 9985.96
+[2025-12-08 19:52:51] [BOT] 2025-12-08 19:52:51,807 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:52:51] [BOT] 2025-12-08 19:52:51,807 - INFO - Started. Polling every 60s
+[2025-12-08 19:52:51] [BOT] 2025-12-08 19:52:51,809 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:52:51] [BOT] 2025-12-08 19:52:51,809 - INFO - Disconnected from MT5
+[2025-12-08 19:52:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:52:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:52:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:52:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:52:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:52:51] [BOT] self.run_cycle()
+[2025-12-08 19:52:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:52:51] [BOT] self.manage_positions()
+[2025-12-08 19:52:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:52:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:52:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:52:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:53:31] [BOT] 2025-12-08 19:53:31,813 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:53:31] [BOT] 2025-12-08 19:53:31,816 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:53:31] [BOT] 2025-12-08 19:53:31,816 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:53:31] [BOT] 2025-12-08 19:53:31,820 - INFO -
+[2025-12-08 19:53:31] [BOT] ================================================================================
+[2025-12-08 19:53:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:53:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:53:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:53:31] [BOT] ================================================================================
+[2025-12-08 19:53:31] [BOT] 2025-12-08 19:53:31,820 - INFO - Connected. Balance: 9985.96
+[2025-12-08 19:53:31] [BOT] 2025-12-08 19:53:31,820 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:53:31] [BOT] 2025-12-08 19:53:31,820 - INFO - Started. Polling every 60s
+[2025-12-08 19:53:31] [BOT] 2025-12-08 19:53:31,821 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:53:31] [BOT] 2025-12-08 19:53:31,821 - INFO - Disconnected from MT5
+[2025-12-08 19:53:31] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:53:31] [BOT] Traceback (most recent call last):
+[2025-12-08 19:53:31] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:53:31] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:53:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:53:31] [BOT] self.run_cycle()
+[2025-12-08 19:53:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:53:31] [BOT] self.manage_positions()
+[2025-12-08 19:53:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:53:31] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:53:31] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:53:31] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:54:11] [BOT] 2025-12-08 19:54:11,828 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:54:11] [BOT] 2025-12-08 19:54:11,828 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:54:11] [BOT] 2025-12-08 19:54:11,828 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:54:11] [BOT] 2025-12-08 19:54:11,828 - INFO -
+[2025-12-08 19:54:11] [BOT] ================================================================================
+[2025-12-08 19:54:11] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:54:11] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:54:11] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:54:11] [BOT] ================================================================================
+[2025-12-08 19:54:11] [BOT] 2025-12-08 19:54:11,828 - INFO - Connected. Balance: 9985.96
+[2025-12-08 19:54:11] [BOT] 2025-12-08 19:54:11,828 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:54:11] [BOT] 2025-12-08 19:54:11,828 - INFO - Started. Polling every 60s
+[2025-12-08 19:54:11] [BOT] 2025-12-08 19:54:11,835 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:54:11] [BOT] 2025-12-08 19:54:11,835 - INFO - Disconnected from MT5
+[2025-12-08 19:54:11] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:54:11] [BOT] Traceback (most recent call last):
+[2025-12-08 19:54:11] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:54:11] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:54:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:54:11] [BOT] self.run_cycle()
+[2025-12-08 19:54:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:54:11] [BOT] self.manage_positions()
+[2025-12-08 19:54:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:54:11] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:54:11] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:54:11] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:54:51] [BOT] 2025-12-08 19:54:51,840 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:54:51] [BOT] 2025-12-08 19:54:51,843 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:54:51] [BOT] 2025-12-08 19:54:51,843 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:54:51] [BOT] 2025-12-08 19:54:51,843 - INFO -
+[2025-12-08 19:54:51] [BOT] ================================================================================
+[2025-12-08 19:54:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:54:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:54:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:54:51] [BOT] ================================================================================
+[2025-12-08 19:54:51] [BOT] 2025-12-08 19:54:51,843 - INFO - Connected. Balance: 9985.96
+[2025-12-08 19:54:51] [BOT] 2025-12-08 19:54:51,843 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:54:51] [BOT] 2025-12-08 19:54:51,843 - INFO - Started. Polling every 60s
+[2025-12-08 19:54:51] [BOT] 2025-12-08 19:54:51,847 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:54:51] [BOT] 2025-12-08 19:54:51,847 - INFO - Disconnected from MT5
+[2025-12-08 19:54:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:54:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:54:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:54:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:54:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:54:51] [BOT] self.run_cycle()
+[2025-12-08 19:54:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:54:51] [BOT] self.manage_positions()
+[2025-12-08 19:54:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:54:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:54:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:54:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:55:31] [BOT] 2025-12-08 19:55:31,859 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:55:31] [BOT] 2025-12-08 19:55:31,864 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:55:31] [BOT] 2025-12-08 19:55:31,864 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:55:31] [BOT] 2025-12-08 19:55:31,864 - INFO -
+[2025-12-08 19:55:31] [BOT] ================================================================================
+[2025-12-08 19:55:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:55:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:55:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:55:31] [BOT] ================================================================================
+[2025-12-08 19:55:31] [BOT] 2025-12-08 19:55:31,865 - INFO - Connected. Balance: 9985.96
+[2025-12-08 19:55:31] [BOT] 2025-12-08 19:55:31,865 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:55:31] [BOT] 2025-12-08 19:55:31,865 - INFO - Started. Polling every 60s
+[2025-12-08 19:55:31] [BOT] 2025-12-08 19:55:31,868 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:55:31] [BOT] 2025-12-08 19:55:31,868 - INFO - Disconnected from MT5
+[2025-12-08 19:55:31] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:55:31] [BOT] Traceback (most recent call last):
+[2025-12-08 19:55:31] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:55:31] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:55:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:55:31] [BOT] self.run_cycle()
+[2025-12-08 19:55:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:55:31] [BOT] self.manage_positions()
+[2025-12-08 19:55:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:55:31] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:55:31] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:55:31] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:56:11] [BOT] 2025-12-08 19:56:11,873 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:56:11] [BOT] 2025-12-08 19:56:11,877 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:56:11] [BOT] 2025-12-08 19:56:11,878 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:56:11] [BOT] 2025-12-08 19:56:11,878 - INFO -
+[2025-12-08 19:56:11] [BOT] ================================================================================
+[2025-12-08 19:56:11] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:56:11] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:56:11] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:56:11] [BOT] ================================================================================
+[2025-12-08 19:56:11] [BOT] 2025-12-08 19:56:11,879 - INFO - Connected. Balance: 9985.96
+[2025-12-08 19:56:11] [BOT] 2025-12-08 19:56:11,879 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:56:11] [BOT] 2025-12-08 19:56:11,879 - INFO - Started. Polling every 60s
+[2025-12-08 19:56:11] [BOT] 2025-12-08 19:56:11,881 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:56:11] [BOT] 2025-12-08 19:56:11,881 - INFO - Disconnected from MT5
+[2025-12-08 19:56:11] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:56:11] [BOT] Traceback (most recent call last):
+[2025-12-08 19:56:11] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:56:11] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:56:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:56:11] [BOT] self.run_cycle()
+[2025-12-08 19:56:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:56:11] [BOT] self.manage_positions()
+[2025-12-08 19:56:11] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:56:11] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:56:11] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:56:11] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:56:51] [BOT] 2025-12-08 19:56:51,887 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:56:51] [BOT] 2025-12-08 19:56:51,891 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:56:51] [BOT] 2025-12-08 19:56:51,891 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:56:51] [BOT] 2025-12-08 19:56:51,891 - INFO -
+[2025-12-08 19:56:51] [BOT] ================================================================================
+[2025-12-08 19:56:51] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:56:51] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:56:51] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:56:51] [BOT] ================================================================================
+[2025-12-08 19:56:51] [BOT] 2025-12-08 19:56:51,892 - INFO - Connected. Balance: 9985.96
+[2025-12-08 19:56:51] [BOT] 2025-12-08 19:56:51,892 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:56:51] [BOT] 2025-12-08 19:56:51,893 - INFO - Started. Polling every 60s
+[2025-12-08 19:56:51] [BOT] 2025-12-08 19:56:51,894 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:56:51] [BOT] 2025-12-08 19:56:51,894 - INFO - Disconnected from MT5
+[2025-12-08 19:56:51] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:56:51] [BOT] Traceback (most recent call last):
+[2025-12-08 19:56:51] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:56:51] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:56:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:56:51] [BOT] self.run_cycle()
+[2025-12-08 19:56:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:56:51] [BOT] self.manage_positions()
+[2025-12-08 19:56:51] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:56:51] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:56:51] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:56:51] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:57:31] [BOT] 2025-12-08 19:57:31,901 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:57:31] [BOT] 2025-12-08 19:57:31,904 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:57:31] [BOT] 2025-12-08 19:57:31,905 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:57:31] [BOT] 2025-12-08 19:57:31,905 - INFO -
+[2025-12-08 19:57:31] [BOT] ================================================================================
+[2025-12-08 19:57:31] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:57:31] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:57:31] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:57:31] [BOT] ================================================================================
+[2025-12-08 19:57:31] [BOT] 2025-12-08 19:57:31,906 - INFO - Connected. Balance: 9985.96
+[2025-12-08 19:57:31] [BOT] 2025-12-08 19:57:31,907 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:57:31] [BOT] 2025-12-08 19:57:31,907 - INFO - Started. Polling every 60s
+[2025-12-08 19:57:31] [BOT] 2025-12-08 19:57:31,908 - INFO - Adopted position: USDJPYm (LONG)
+[2025-12-08 19:57:31] [BOT] 2025-12-08 19:57:31,908 - INFO - Disconnected from MT5
+[2025-12-08 19:57:31] [BOT] CRITICAL ERROR: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:57:31] [BOT] Traceback (most recent call last):
+[2025-12-08 19:57:31] [BOT] File "C:\Users\opc\Desktop\Eden\infrastructure\bot_runner.py", line 49, in main
+[2025-12-08 19:57:31] [BOT] bot.start(check_interval=60)
+[2025-12-08 19:57:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 586, in start
+[2025-12-08 19:57:31] [BOT] self.run_cycle()
+[2025-12-08 19:57:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 560, in run_cycle
+[2025-12-08 19:57:31] [BOT] self.manage_positions()
+[2025-12-08 19:57:31] [BOT] File "C:\Users\opc\Desktop\Eden\trading\trading_bot.py", line 429, in manage_positions
+[2025-12-08 19:57:31] [BOT] df = self.fetch_recent_data(symbol, bars=50)
+[2025-12-08 19:57:31] [BOT] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-08 19:57:31] [BOT] TypeError: TradingBot.fetch_recent_data() missing 1 required positional argument: 'timeframe'
+[2025-12-08 19:58:12] [BOT] 2025-12-08 19:58:12,196 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-08 19:58:12] [BOT] 2025-12-08 19:58:12,196 - INFO - Loaded 11 existing trades from logs\trade_history.csv
+[2025-12-08 19:58:12] [BOT] 2025-12-08 19:58:12,196 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-08 19:58:12] [BOT] 2025-12-08 19:58:12,196 - INFO -
+[2025-12-08 19:58:12] [BOT] ================================================================================
+[2025-12-08 19:58:12] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-08 19:58:12] [BOT] Symbols=7 | Shadow Mode=False
+[2025-12-08 19:58:12] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-08 19:58:12] [BOT] ================================================================================
+[2025-12-08 19:58:12] [BOT] 2025-12-08 19:58:12,196 - INFO - Connected. Balance: 9986.43
+[2025-12-08 19:58:12] [BOT] 2025-12-08 19:58:12,196 - INFO - Started. Polling every 60s

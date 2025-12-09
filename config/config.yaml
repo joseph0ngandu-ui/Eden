@@ -10,8 +10,9 @@ trading:
   symbols:
     - USTECm      # Index Vol Expansion (M15) +27R
     - US500m      # Index Vol Expansion (M15) +17R
-    - EURUSDm     # Vol Squeeze (M5) + Momentum (D1) +18R
-    - USDJPYm     # Vol Squeeze (M5) +7.7R
+    - XAUUSDm     # Gold Smart Sweep (M15)
+    - EURUSDm     # Vol Squeeze (M5) + Momentum (D1) + Asian Fade (M5)
+    - USDJPYm     # Vol Squeeze (M5) + Asian Fade (M5)
     - USDCADm     # Momentum Continuation (D1)
     - EURJPYm     # Momentum Continuation (D1)
     - CADJPYm     # Momentum Continuation (D1)
@@ -56,8 +57,8 @@ monitoring:
   trades_file: trades_history.csv
 
 risk_management:
-  # VERIFIED SAFE SETTINGS (Accurate Backtest: 7% DD, 20% Return/90d)
-  risk_per_trade: 0.6
+  # VERIFIED SAFE SETTINGS (Accurate Backtest: <9.5% DD, 13.6% Month Return)
+  risk_per_trade: 0.28
   
   # FundedNext Hard Limits
   max_daily_loss_percent: 4.5

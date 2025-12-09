@@ -37,9 +37,16 @@ class AccurateBacktester:
             {"symbol": "USTECm", "tf": mt5.TIMEFRAME_M15, "type": "index"},
             {"symbol": "US500m", "tf": mt5.TIMEFRAME_M15, "type": "index"},
             
+            # GOLD SMART SWEEP (High Alloc)
+            {"symbol": "XAUUSDm", "tf": mt5.TIMEFRAME_M15, "type": "gold_sweep"},
+            
             # FOREX M5 (Low Alloc 0.8x)
             {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_M5, "type": "forex"},
             {"symbol": "USDJPYm", "tf": mt5.TIMEFRAME_M5, "type": "forex"},
+            
+            # ASIAN FADE M5 (New - High Alpha)
+            {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_M5, "type": "asian_fade"},
+            # REMOVED USDJPYm (Performance Drag)
             
             # MOMENTUM D1 (High Alloc 1.4x)
             {"symbol": "USDCADm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
@@ -146,10 +153,12 @@ class AccurateBacktester:
                     signal = None
                     if stype == "index":
                         signal = self.engine.index_volatility_expansion(window, symbol)
-                    elif stype == "gold":
-                        signal = self.engine.spread_hunter_momentum(window, symbol)
+                    elif stype == "gold_sweep":
+                        signal = self.engine.gold_smart_sweep(window, symbol)
                     elif stype == "forex":
                         signal = self.engine.volatility_squeeze(window, symbol)
+                    elif stype == "asian_fade":
+                        signal = self.engine.asian_fade_range(window, symbol)
                     elif stype == "momentum":
                         signal = self.engine.momentum_continuation(window, symbol)
                     

@@ -1,0 +1,7 @@
+Strategy: LondonBO_GBPJPYm     | Trades: 0    | Total R:   0.00 | Max DD:  0.00R
+Strategy: LondonBO_GBPUSDm     | Trades: 0    | Total R:   0.00 | Max DD:  0.00R
+Strategy: AsianFade_EURUSDm    | Trades: 827  | Total R: 265.00 | Max DD: 24.00R
+Strategy: AsianFade_USDJPYm    | Trades: 732  | Total R:  93.00 | Max DD: 33.00R
+Strategy: ICT_FVG_XAUUSDm      | Trades: 804  | Total R:  -8.00 | Max DD: 36.00R
+Strategy: ICT_FVG_USTECm       | Trades: 844  | Total R: -26.00 | Max DD: 59.00R
+Strategy: ICT_FVG_EURUSDm      | Trades: 869  | Total R: -109.00 | Max DD: 115.00R

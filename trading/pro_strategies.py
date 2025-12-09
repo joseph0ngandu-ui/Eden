@@ -36,6 +36,14 @@ class ProStrategyEngine:
             self.momentum_continuation,
             
             # London Breakout: RESERVED (GBPCADm +34.7R, DD 10.8R)
+            
+            # 5. Asian Fade (Phase 7 Winner)
+            # Pairs: EURUSD, USDJPY
+            self.asian_fade_range,
+            
+            # 6. Gold Smart Sweep (Phase 7 Request)
+            # Pairs: XAUUSD only
+            self.gold_smart_sweep,
         ]
         self.open_positions: Dict[str, Position] = {}
         self.cooldown_minutes = 15
@@ -128,6 +136,13 @@ class ProStrategyEngine:
                 if timeframe != 5: continue
                 # Restrict legacy strategies from running on Indices (if passed M5)
                 if 'US30' in symbol or 'USTEC' in symbol or 'US500' in symbol: continue
+
+            # Routing for New Strategies
+            if strategy.__name__ == 'asian_fade_range':
+                if timeframe != 5: continue
+            elif strategy.__name__ == 'gold_smart_sweep':
+                if timeframe != 15: continue
+                if 'XAU' not in symbol: continue
             
             # Specific Filter for M5 VWAP
             if strategy.__name__ == 'vwap_reversion_m5':
@@ -424,12 +439,102 @@ class ProStrategyEngine:
             return Trade(symbol=symbol, direction="LONG", entry_price=entry,
                          sl=sl, tp=tp, confidence=0.75, atr=atr,
                          entry_time=today.name, bar_index=0, strategy="Momentum_Continuation")
-        else:
-            sl = yesterday['high']
-            risk = sl - entry
-            if risk <= 0: return None
-            tp = entry - risk * 1.5
             return Trade(symbol=symbol, direction="SHORT", entry_price=entry,
                          sl=sl, tp=tp, confidence=0.75, atr=atr,
                          entry_time=today.name, bar_index=0, strategy="Momentum_Continuation")
+
+    def asian_fade_range(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
+        """
+        Asian Fade (M5) - Phase 7 Winner (+265R)
+        Mean reversion during quiet Asian session (01:00-07:00).
+        RESTRICTION: EURUSD Only (USDJPY failed backtest audit).
+        """
+        if 'EUR' not in symbol: return None
+        if len(df) < 50: return None
+        
+        current = df.iloc[-1]
+        timestamp = current.name
+        
+        # Time Filter: 01:00 - 07:00 Server Time
+        hour = timestamp.hour if hasattr(timestamp, 'hour') else pd.to_datetime(timestamp).hour
+        if not (1 <= hour <= 7): return None
+        
+        # Bollinger Bands (20, 2)
+        closes = df['close']
+        sma_20 = closes.rolling(20).mean()
+        std_20 = closes.rolling(20).std()
+        upper = sma_20 + (std_20 * 2.0)
+        lower = sma_20 - (std_20 * 2.0)
+        
+        price = current['close']
+        atr = self.calculate_atr(df)
+        
+        # Short Fade
+        if price > upper.iloc[-1]:
+            sl = price + atr * 2.0  # Wide stop for mean reversion
+            tp = sma_20.iloc[-1]    # Target Mean
+            return Trade(symbol=symbol, direction="SHORT", entry_price=price,
+                         sl=sl, tp=tp, confidence=0.85, atr=atr,
+                         entry_time=timestamp, bar_index=0, strategy="Asian_Fade")
+            
+        # Long Fade
+        if price < lower.iloc[-1]:
+            sl = price - atr * 2.0
+            tp = sma_20.iloc[-1]
+            return Trade(symbol=symbol, direction="LONG", entry_price=price,
+                         sl=sl, tp=tp, confidence=0.85, atr=atr,
+                         entry_time=timestamp, bar_index=0, strategy="Asian_Fade")
+                         
+        return None
+
+    def gold_smart_sweep(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
+        """
+        Gold Smart Sweep (M15) - User Request
+        Liquidity Sweep of 20-period High/Low + Reversal.
+        """
+        if 'XAU' not in symbol: return None
+        if len(df) < 25: return None
+        
+        current = df.iloc[-1]
+        prev = df.iloc[-2]
+        timestamp = current.name
+        
+        # Time Filter: 08:00 - 16:00 (London/NY)
+        hour = timestamp.hour if hasattr(timestamp, 'hour') else pd.to_datetime(timestamp).hour
+        if not (8 <= hour <= 16): return None
+        
+        # 20-Period High/Low (excluding current/prev to define "Key Level")
+        lookback = df.iloc[-22:-2] # 20 bars prior to signal bar
+        key_high = lookback['high'].max()
+        key_low = lookback['low'].min()
+        
+        atr = self.calculate_atr(df)
+        
+        # SWEEP HIGH (Bearish)
+        # Prev bar High > Key High, but Close < Key High (Rejection)
+        if prev['high'] > key_high and prev['close'] < key_high:
+            # Enter Short
+            sl = prev['high'] + atr * 0.2
+            risk = sl - current['open']
+            if risk < atr * 0.1: return None # Too tight
+            tp = current['open'] - risk * 1.5
+            
+            return Trade(symbol=symbol, direction="SHORT", entry_price=current['open'],
+                         sl=sl, tp=tp, confidence=0.80, atr=atr,
+                         entry_time=timestamp, bar_index=0, strategy="Gold_Sweep")
+                         
+        # SWEEP LOW (Bullish)
+        # Prev bar Low < Key Low, but Close > Key Low (Rejection)
+        if prev['low'] < key_low and prev['close'] > key_low:
+            # Enter Long
+            sl = prev['low'] - atr * 0.2
+            risk = current['open'] - sl
+            if risk < atr * 0.1: return None
+            tp = current['open'] + risk * 1.5
+            
+            return Trade(symbol=symbol, direction="LONG", entry_price=current['open'],
+                         sl=sl, tp=tp, confidence=0.80, atr=atr,
+                         entry_time=timestamp, bar_index=0, strategy="Gold_Sweep")
+                         
+        return None
 

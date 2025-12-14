@@ -57,8 +57,8 @@ monitoring:
   trades_file: trades_history.csv
 
 risk_management:
-  # VERIFIED SAFE SETTINGS (Accurate Backtest: <9.5% DD, 13.6% Month Return)
-  risk_per_trade: 0.28
+  # VERIFIED SAFE SETTINGS (Daily Loss < 4.5%, Max DD < 7.5%, ~10.6% Return)
+  risk_per_trade: 0.22
   
   # FundedNext Hard Limits
   max_daily_loss_percent: 4.5

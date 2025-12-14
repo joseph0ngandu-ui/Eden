@@ -33,86 +33,107 @@ class AccurateBacktester:
         self.engine = ProStrategyEngine()
         self.regime_detector = RegimeDetector()
         self.strategies_config = [
-            # INDEX M15 (High Alloc 1.4x)
+            # INDEX M15 (High Alloc)
             {"symbol": "USTECm", "tf": mt5.TIMEFRAME_M15, "type": "index"},
             {"symbol": "US500m", "tf": mt5.TIMEFRAME_M15, "type": "index"},
             
             # GOLD SMART SWEEP (High Alloc)
             {"symbol": "XAUUSDm", "tf": mt5.TIMEFRAME_M15, "type": "gold_sweep"},
             
-            # FOREX M5 (Low Alloc 0.8x)
-            {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_M5, "type": "forex"},
-            {"symbol": "USDJPYm", "tf": mt5.TIMEFRAME_M5, "type": "forex"},
+            # SCALPING REMOVED (Failed Spread Stress Test)
             
-            # ASIAN FADE M5 (New - High Alpha)
-            {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_M5, "type": "asian_fade"},
-            # REMOVED USDJPYm (Performance Drag)
-            
-            # MOMENTUM D1 (High Alloc 1.4x)
+            # MOMENTUM D1 (High Alloc)
             {"symbol": "USDCADm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
             {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
             {"symbol": "EURJPYm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
             {"symbol": "CADJPYm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
         ]
 
-    def get_risk_multiplier(self, strategy_type: str) -> float:
-        # UNIFORM ALLOCATION (Find optimal base risk)
-        return 1.0
+    def get_spread(self, symbol: str) -> float:
+        # CONSERVATIVE ESTIMATES (FundedNext Challenge Conditions)
+        if "XAU" in symbol: return 0.25  # Gold 25 cents
+        if "USTEC" in symbol: return 1.5 # Nasdaq 1.5 points
+        if "US500" in symbol: return 0.4 # S&P 0.4 points
+        if "JPY" in symbol: return 0.012 # 1.2 pips
+        return 0.00012 # 1.2 pips for EURUSD/others
 
     def simulate_trade(self, trade: Trade, future_data: pd.DataFrame) -> Dict:
-        entry_price = trade.entry_price
+        # Apply Spread to Entry
+        spread = self.get_spread(trade.symbol)
+        
+        # Long enters at Ask (Price + Spread)
+        # Short enters at Bid (Price)
+        real_entry = trade.entry_price + spread if trade.direction == "LONG" else trade.entry_price
+        
         sl = trade.sl
         tp = trade.tp
         direction = trade.direction
         
-        exit_price = entry_price
+        exit_price = real_entry
         exit_time = future_data.index[-1]
         exit_reason = "end_of_data"
         
         for t, row in future_data.iterrows():
             if direction == "LONG":
+                # Exit Longs at Bid (Low/High from chart are Bid)
+                # Check SL (Bid <= SL)
                 if row['low'] <= sl: 
-                    exit_price = sl
+                    exit_price = sl # Executed at SL (Slippage handled by Commission pad? Add extra slippage?)
+                    exit_price -= spread * 0.1 # Slight slippage
                     exit_time = t
                     exit_reason = "sl"
                     break
+                # Check TP (Bid >= TP)
                 if row['high'] >= tp:
                     exit_price = tp
                     exit_time = t
                     exit_reason = "tp"
                     break
             else: # SHORT
-                if row['high'] >= sl:
-                    exit_price = sl
+                # Exit Shorts at Ask (Bid + Spread)
+                # Check SL (Ask >= SL -> Bid + Spread >= SL -> Bid >= SL - Spread)
+                # So if Chart High >= SL - Spread, we hit SL
+                if row['high'] >= (sl - spread):
+                    exit_price = sl + spread * 0.1 # Slippage
                     exit_time = t
                     exit_reason = "sl"
                     break
-                if row['low'] <= tp:
+                # Check TP (Ask <= TP -> Bid + Spread <= TP -> Bid <= TP - Spread)
+                if row['low'] <= (tp - spread):
                     exit_price = tp
                     exit_time = t
                     exit_reason = "tp"
                     break
         
-        risk_per_share = abs(entry_price - sl)
+        # Calculate Risk and PnL
+        # Risk is Distance from Ideal Entry to SL
+        risk_per_share = abs(trade.entry_price - sl)
+        
         if direction == "LONG":
-            pnl_amt = exit_price - entry_price
+            pnl_amt = exit_price - real_entry
         else:
-            pnl_amt = entry_price - exit_price
+            pnl_amt = real_entry - exit_price
             
         r_multiple = pnl_amt / risk_per_share if risk_per_share > 0 else 0
-        r_multiple -= 0.05  # Commission approximation
+        
+        # SUBTRACT COMMISSIONS (FundedNext ~$3/lot -> 0.03% of Notional?)
+        # 0.05R is a good dynamic proxy for Commission + Swap
+        r_multiple -= 0.05 
         
         return {
             "time": trade.entry_time,
             "symbol": trade.symbol,
             "direction": trade.direction,
-            "entry": entry_price,
+            "entry": real_entry,
             "exit": exit_price,
             "exit_time": exit_time,
             "r": r_multiple,
             "reason": exit_reason,
             "strategy": trade.strategy
         }
+
+    def get_risk_multiplier(self, strategy_type: str) -> float:
+        return 1.0
 
     def run(self, days=90):
         if not mt5.initialize():
@@ -171,7 +192,9 @@ class AccurateBacktester:
                             result['stype'] = stype
                             all_trades.append(result)
                 except Exception as e:
-                    pass
+                    import traceback
+                    traceback.print_exc()
+                    print(f"Error in backtest loop: {e}")
 
         mt5.shutdown()
         return all_trades
@@ -184,39 +207,119 @@ class AccurateBacktester:
         df = pd.DataFrame(trades)
         df.sort_values('time', inplace=True)
         
+        # Load Config Risk
+        import yaml
+        try:
+            with open("config/config.yaml", "r") as f:
+                config = yaml.safe_load(f)
+                risk_per_trade = config.get("risk_management", {}).get("risk_per_trade", 0.5)
+        except:
+            risk_per_trade = 0.5 # Default
+            
         print("\n" + "="*70)
-        print("WEIGHTED PORTFOLIO BACKTEST (90 Days)")
-        print("Index/Momentum: 1.4x | Forex: 0.8x")
+        print(f"FUNDED NEXT 10K CHALLENGE SIMULATION (90 Days)")
+        print(f"Configured Risk Per Trade: {risk_per_trade}%")
         print("="*70)
         
-        # Use uniform 1.0x multipliers, vary base risk
-        risk_levels = [0.50, 0.60, 0.70, 0.80, 0.90, 1.00]
+        INITIAL_BALANCE = 10000
+        balance = INITIAL_BALANCE
+        equity_curve = [INITIAL_BALANCE]
+        daily_balances = {} # For Daily DD check
         
-        print(f"{'Base Risk':<10} | {'Return':<10} | {'Max DD':<10} | {'Monthly':<10} | {'Verdict'}")
-        print("-" * 70)
+        metrics = {
+            "wins": 0, "losses": 0, "gross_profit": 0, "gross_loss": 0,
+            "max_dd_dollar": 0, "max_dd_percent": 0,
+            "max_daily_loss": 0
+        }
         
-        for base_risk in risk_levels:
-            current_pnl = []
-            for _, t in df.iterrows():
-                # Use the r_weighted which already has the multiplier applied
-                pnl = t['r_weighted'] * base_risk
-                current_pnl.append(pnl)
+        for idx, t in df.iterrows():
+            # Calculate PnL in Dollars
+            # r_weighted includes strategy allocations (1.4x / 0.8x)
+            # risk_amt = balance * (risk_per_trade / 100)
+            # pnl = risk_amt * t['r_weighted'] (since r_weighted is R * allocator)
+            # Wait, r_weighted was: result['r'] * risk_mult
             
-            equity = 100 + np.cumsum(current_pnl)
-            peak = np.maximum.accumulate(equity)
-            dd = (peak - equity)
-            max_dd = np.max(dd)
-            total_ret = equity[-1] - 100
-            monthly_ret = total_ret / 3
+            # Using FIXED balance risk (FundedNext usually static or equity based? Static is safer)
+            risk_amt = INITIAL_BALANCE * (risk_per_trade / 100.0)
+            pnl = risk_amt * t['r_weighted']
             
-            verdict = "✅ PASS" if max_dd < 9.5 and monthly_ret > 8 else "⚠️ SLOW" if max_dd < 9.5 else "❌ FAIL"
+            balance += pnl
+            equity_curve.append(balance)
             
-            print(f"{base_risk:<9}% | {total_ret:>8.2f}% | {max_dd:>8.2f}% | {monthly_ret:>8.2f}% | {verdict}")
-    
-        print("\nBreakdown by Symbol:")
-        summary = df.groupby('symbol').agg({
-            'r': ['count', 'sum'],
-            'r_weighted': 'sum'
+            # Metrics
+            if pnl > 0:
+                metrics["wins"] += 1
+                metrics["gross_profit"] += pnl
+            else:
+                metrics["losses"] += 1
+                metrics["gross_loss"] += abs(pnl)
+                
+            # Daily Loss Logic
+            date_str = t['time'].strftime('%Y-%m-%d')
+            if date_str not in daily_balances:
+                daily_balances[date_str] = {"start": equity_curve[-2], "low": balance}
+            else:
+                if balance < daily_balances[date_str]["low"]:
+                     daily_balances[date_str]["low"] = balance
+        
+        # Calculate DD
+        peak_equity = INITIAL_BALANCE
+        max_dd_dollar = 0
+        
+        for eq in equity_curve:
+            if eq > peak_equity: peak_equity = eq
+            dd = peak_equity - eq
+            if dd > max_dd_dollar: max_dd_dollar = dd
+            
+        metrics["max_dd_dollar"] = max_dd_dollar
+        metrics["max_dd_percent"] = (max_dd_dollar / INITIAL_BALANCE) * 100
+        
+        # Calculate Max Daily Loss
+        max_daily_dd = 0
+        for date, data in daily_balances.items():
+            start = data["start"]
+            low = data["low"]
+            loss = start - low
+            if loss > max_daily_dd: max_daily_dd = loss
+            
+        final_balance = balance
+        total_pnl = final_balance - INITIAL_BALANCE
+        return_pct = (total_pnl / INITIAL_BALANCE) * 100
+        
+        # Report
+        print(f"Initial Balance:   ${INITIAL_BALANCE:,.2f}")
+        print(f"Final Balance:     ${final_balance:,.2f}")
+        print(f"Net Profit:        ${total_pnl:,.2f} ({return_pct:.2f}%)")
+        print(f"Total Trades:      {len(df)}")
+        print(f"Win Rate:          {metrics['wins']/len(df)*100:.1f}%")
+        print("-" * 30)
+        print(f"Max Drawdown:      ${metrics['max_dd_dollar']:,.2f} ({metrics['max_dd_percent']:.2f}%) -> Limit: 9.5% ($950)")
+        print(f"Max Daily Loss:    ${max_daily_dd:,.2f} ({(max_daily_dd/INITIAL_BALANCE)*100:.2f}%) -> Limit: 4.5% ($450)")
+        print("-" * 30)
+        
+        passed = True
+        fail_reasons = []
+        if metrics["max_dd_percent"] >= 9.5: 
+            passed = False
+            fail_reasons.append("Max Drawdown Exceeded")
+        if (max_daily_dd/INITIAL_BALANCE)*100 >= 4.5:
+             passed = False
+             fail_reasons.append("Daily Loss Exceeded")
+             
+        # Target usually 8% ($800)
+        target_hit = return_pct >= 8.0
+        
+        if passed and target_hit:
+            print("🏆 VERDICT: CHALLENGE PASSED")
+        elif passed:
+            print("⚠️ VERDICT: PASSED SAFETY, PROFIT PENDING (Extend Time)")
+        else:
+            print(f"❌ VERDICT: FAILED ({', '.join(fail_reasons)})")
+            
+        print("\nBreakdown by Strategy Type:")
+        summary = df.groupby('stype').agg({
+            'r_weighted': 'sum',
+            'symbol': 'count'
         })
         print(summary)
             

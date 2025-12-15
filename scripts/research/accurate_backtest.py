@@ -40,13 +40,19 @@ class AccurateBacktester:
             # GOLD SMART SWEEP (High Alloc)
             {"symbol": "XAUUSDm", "tf": mt5.TIMEFRAME_M15, "type": "gold_sweep"},
             
-            # SCALPING REMOVED (Failed Spread Stress Test)
+            # SCALPING (RE-ENABLED FOR VERIFICATION)
+            {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_M5, "type": "asian_fade"},
+            {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_M5, "type": "forex"},
+            {"symbol": "USDJPYm", "tf": mt5.TIMEFRAME_M5, "type": "forex"},
             
             # MOMENTUM D1 (High Alloc)
             {"symbol": "USDCADm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
             {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
             {"symbol": "EURJPYm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
             {"symbol": "CADJPYm", "tf": mt5.TIMEFRAME_D1, "type": "momentum"},
+            
+            # PHASE 12: SILVER BULLET (New Alpha)
+            {"symbol": "EURUSDm", "tf": mt5.TIMEFRAME_M5, "type": "silver_bullet"},
         ]
 
     def get_spread(self, symbol: str) -> float:
@@ -165,6 +171,16 @@ class AccurateBacktester:
             df['time'] = pd.to_datetime(df['time'], unit='s')
             df.set_index('time', inplace=True)
             
+            # INJECT SIMULATED SPREAD for Smart Filter
+            simulated_spread = self.get_spread(symbol)
+            # Convert to points (approximate)
+            if "JPY" in symbol: points = simulated_spread * 1000
+            elif "XAU" in symbol: points = simulated_spread * 100
+            elif "US" in symbol: points = simulated_spread 
+            else: points = simulated_spread * 100000 
+            
+            df['spread'] = points # Populate column for ProStrategyEngine
+            
             LOOKBACK = 20 if stype == "momentum" else 100
             
             for i in range(LOOKBACK, len(df)-1):
@@ -182,6 +198,8 @@ class AccurateBacktester:
                         signal = self.engine.asian_fade_range(window, symbol)
                     elif stype == "momentum":
                         signal = self.engine.momentum_continuation(window, symbol)
+                    elif stype == "silver_bullet":
+                        signal = self.engine.silver_bullet_strategy(window, symbol)
                     
                     if signal:
                         future = df.iloc[i:i+101] if stype == "momentum" else df.iloc[i+1:i+101]

@@ -2582,3 +2582,36 @@
 [2025-12-08 19:58:12] [BOT] ================================================================================
 [2025-12-08 19:58:12] [BOT] 2025-12-08 19:58:12,196 - INFO - Connected. Balance: 9986.43
 [2025-12-08 19:58:12] [BOT] 2025-12-08 19:58:12,196 - INFO - Started. Polling every 60s
+[2025-12-14 22:01:48] Watchdog started
+[2025-12-14 22:01:48] Starting trading bot...
+[2025-12-14 22:01:48] Trading bot started with PID: 7104
+[2025-12-14 22:01:50] [BOT] 2025-12-14 22:01:50,864 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-14 22:01:50] [BOT] 2025-12-14 22:01:50,877 - INFO - Loaded 190 existing trades from logs\trade_history.csv
+[2025-12-14 22:01:52] [BOT] 2025-12-14 22:01:52,691 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-14 22:01:52] [BOT] 2025-12-14 22:01:52,692 - INFO -
+[2025-12-14 22:01:52] [BOT] ================================================================================
+[2025-12-14 22:01:52] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-14 22:01:53] [BOT] Symbols=8 | Shadow Mode=False
+[2025-12-14 22:01:56] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-14 22:01:56] [BOT] ================================================================================
+[2025-12-14 22:01:57] [BOT] 2025-12-14 22:01:52,693 - INFO - Connected. Balance: 9927.99
+[2025-12-14 22:02:00] [BOT] 2025-12-14 22:01:52,693 - INFO - Started. Polling every 60s
+[2025-12-14 22:21:46] Trading bot terminated with code: 4294967295
+[2025-12-14 22:21:46] Bot stopped, waiting 30 seconds before restart...
+[2025-12-14 22:21:58] Watchdog started
+[2025-12-14 22:21:59] Starting trading bot...
+[2025-12-14 22:22:00] Trading bot started with PID: 72416
+[2025-12-14 22:22:07] [BOT] 2025-12-14 22:22:07,337 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-14 22:22:07] [BOT] 2025-12-14 22:22:07,454 - INFO - Loaded 190 existing trades from logs\trade_history.csv
+[2025-12-14 22:22:09] [BOT] 2025-12-14 22:22:09,223 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-14 22:22:09] [BOT] 2025-12-14 22:22:09,225 - INFO -
+[2025-12-14 22:22:09] [BOT] ================================================================================
+[2025-12-14 22:22:09] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-14 22:22:09] [BOT] Symbols=8 | Shadow Mode=False
+[2025-12-14 22:22:09] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-14 22:22:09] [BOT] ================================================================================
+[2025-12-14 22:22:09] [BOT] 2025-12-14 22:22:09,227 - INFO - Connected. Balance: 9927.99
+[2025-12-14 22:22:09] [BOT] 2025-12-14 22:22:09,227 - INFO - Started. Polling every 60s
+[2025-12-15 00:00:11] [BOT] 2025-12-15 00:00:11,917 - INFO - \U0001f4c5 NEW TRADING DAY: 2025-12-15 | Starting Balance: $9927.99
+[2025-12-15 00:20:01] Trading bot terminated with code: 1073807364
+[2025-12-15 00:20:01] Bot stopped, waiting 30 seconds before restart...

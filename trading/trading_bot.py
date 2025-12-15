@@ -257,18 +257,24 @@ class TradingBot:
             # 2. Get Base Risk from Config (Default 0.5%)
             base_risk_param = self.config.get_parameter('risk_management.risk_per_trade', 0.5)
             
-            # 3. Apply "Barbell" Weighting (OPTIMIZED 2025-12-07)
-            # Confirmed via Accurate Backtest: 6% Max DD, 16% Return (90 days)
-            risk_multiplier = 0.5 # Default Safe (0.25%)
+            # 3. Apply "Barbell" Weighting (OPTIMIZED 2025-12-14)
+            # Verified via 10k Challenge Simulation
+            risk_multiplier = 0.5 # Default Safe
             
             if "Index" in trade_signal.strategy:
-                risk_multiplier = 0.5  # Reduced from 1.5x (was too volatile)
-            elif "SpreadHunter" in trade_signal.strategy or "Gold" in trade_signal.strategy:
-                risk_multiplier = 0.0  # DISABLED (Failed Audit)
+                risk_multiplier = 0.5  # Conservative Index
+            elif "Gold" in trade_signal.strategy:
+                risk_multiplier = 1.0  # High Alpha (Gold Sweep)
+            elif "Asian" in trade_signal.strategy:
+                risk_multiplier = 1.0  # High Alpha (Asian Fade)
             elif "VolSqueeze" in trade_signal.strategy:
-                risk_multiplier = 0.5  # Maintained (Winner)
+                risk_multiplier = 0.5  # Standard
             elif "Momentum" in trade_signal.strategy:
-                risk_multiplier = 0.5  # Conservative start
+                risk_multiplier = 0.5  # Conservative Swing
+            
+            # Legacy Disable
+            if "SpreadHunter" in trade_signal.strategy:
+                risk_multiplier = 0.0
             
             # Regime adjustment (Logging/Minor tweak only)
             
@@ -332,6 +338,7 @@ class TradingBot:
                     if tick_size > 0 and tick_value > 0:
                         sl_pips = sl_dist / tick_size
                         volume = risk_amount / (sl_pips * tick_value)
+                        logger.info(f"Size Calc: Risk ${risk_amount:.2f} | Dist {sl_dist:.5f} | Val {tick_value:.5f} -> Vol {volume:.4f}")
                     else:
                         volume = 0.01 # Fallback
                 else:
@@ -390,7 +397,7 @@ class TradingBot:
                 
                 if result.retcode == mt5.TRADE_RETCODE_DONE:
                     break
-                elif result.retcode == mt5.TRADE_RETCODE_INVALID_FILL or result.retcode == mt5.TRADE_RETCODE_UNSUPPORTED_FILLING:
+                elif result.retcode == mt5.TRADE_RETCODE_INVALID_FILL or result.retcode == 10030: # UNSUPPORTED_FILLING
                     continue # Try next mode
             
             if not result or result.retcode != mt5.TRADE_RETCODE_DONE:

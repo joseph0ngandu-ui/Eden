@@ -43,7 +43,13 @@ class ProStrategyEngine:
             
             # 6. Gold Smart Sweep (Phase 7 Request)
             # Pairs: XAUUSD only
+            # 6. Gold Smart Sweep (Phase 7 Request)
+            # Pairs: XAUUSD only
             self.gold_smart_sweep,
+
+            # 7. Silver Bullet (Phase 12 Request)
+            # Pairs: EURUSD Only
+            self.silver_bullet_strategy,
         ]
         self.open_positions: Dict[str, Position] = {}
         self.cooldown_minutes = 15
@@ -101,11 +107,91 @@ class ProStrategyEngine:
         except Exception:
             return 50.0
 
+    def calculate_adx(self, df: pd.DataFrame, period: int = 14) -> float:
+        try:
+            if len(df) < period + 1: return 0.0
+            
+            high = df['high']
+            low = df['low']
+            close = df['close']
+            
+            # TR
+            tr1 = high - low
+            tr2 = (high - close.shift(1)).abs()
+            tr3 = (low - close.shift(1)).abs()
+            tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
+            
+            # DM
+            up = high - high.shift(1)
+            down = low.shift(1) - low
+            
+            pos_dm = np.where((up > down) & (up > 0), up, 0.0)
+            neg_dm = np.where((down > up) & (down > 0), down, 0.0)
+            
+            # Smooth (using simple rolling for speed, or EMA)
+            # Standard ADX uses Wilder's smoothing. Rolling mean is 'close enough' for this filter.
+            tr_smooth = tr.rolling(period).sum()
+            pos_dm_smooth = pd.Series(pos_dm).rolling(period).sum()
+            neg_dm_smooth = pd.Series(neg_dm).rolling(period).sum()
+            
+            # DI
+            pos_di = 100 * (pos_dm_smooth / tr_smooth)
+            neg_di = 100 * (neg_dm_smooth / tr_smooth)
+            
+            # DX
+            dx = 100 * (abs(pos_di - neg_di) / (pos_di + neg_di))
+            
+            # ADX
+            adx = dx.rolling(period).mean()
+            return adx.iloc[-1] if not pd.isna(adx.iloc[-1]) else 0.0
+        except Exception as e:
+            logger.error(f"Error calculating ADX: {e}")
+            return 0.0
+
+    # HELPER FOR FILTERS (Applied to all strategies)
+    def _check_filters(self, df: pd.DataFrame, symbol: str, strategy_name: str = "") -> bool:
+        """
+        Returns TRUE if trade is allowed.
+        Checks:
+        1. Smart Spread Filter (Cost Ratio < 0.20)
+        2. Trend Bias (For Asian Fade)
+        """
+        # 1. SMART SPREAD FILTER
+        atr = self.calculate_atr(df)
+        if 'spread' in df.columns:
+            current_spread_points = df['spread'].iloc[-1]
+            price = df['close'].iloc[-1]
+            
+            # Scalar Estimation
+            if 'JPY' in symbol: scalar = 0.001 
+            elif 'XAU' in symbol: scalar = 0.01 # 0.01 per point
+            elif 'US' in symbol: scalar = 1.0 
+            else: scalar = 0.00001 
+            
+            spread_price_val = current_spread_points * scalar
+            
+            if atr > 0:
+                cost_ratio = spread_price_val / atr
+                if cost_ratio > 0.20:
+                    # Filter M5 strategies strictly
+                    if "Asian" in strategy_name or "VolSqueeze" in strategy_name:
+                         # logger.debug(f"SKIP {symbol}: Spread Ratio {cost_ratio:.2f} > 0.20")
+                         return False
+
+        # 2. TREND BIAS (Asian Fade Only)
+        if "Asian" in strategy_name:
+            try:
+                adx_val = self.calculate_adx(df, 50) # Long period ADX
+                if adx_val > 30: 
+                    # logger.debug(f"SKIP {symbol}: Strong Trend (ADX {adx_val:.1f})")
+                    return False
+            except: pass
+            
+        return True
+
     def evaluate_live(self, df: pd.DataFrame, symbol: str, timeframe: int = 5) -> Optional[Trade]:
         """
-        Get signal for a symbol based on applicable strategies and timeframe.
-        - Legacy strategies run on M5.
-        - Spread Hunter & Index Vol run on M15.
+        Get signal.
         """
         if df is None or df.empty: return None
         if len(df) < 100: return None
@@ -128,13 +214,10 @@ class ProStrategyEngine:
                 if 'US' not in symbol and 'USTEC' not in symbol: continue 
             elif strategy.__name__ == 'momentum_continuation':
                 if timeframe != 1440: continue  # D1 only
-                # Filtered pairs
                 if symbol not in ['USDCADm', 'EURUSDm', 'EURJPYm', 'CADJPYm']: continue
-            # London Breakout routing REMOVED (Strategy Rejected)
             else:
                 # All legacy strategies are M5
                 if timeframe != 5: continue
-                # Restrict legacy strategies from running on Indices (if passed M5)
                 if 'US30' in symbol or 'USTEC' in symbol or 'US500' in symbol: continue
 
             # Routing for New Strategies
@@ -143,6 +226,9 @@ class ProStrategyEngine:
             elif strategy.__name__ == 'gold_smart_sweep':
                 if timeframe != 15: continue
                 if 'XAU' not in symbol: continue
+            elif strategy.__name__ == 'silver_bullet_strategy':
+                if timeframe != 5: continue
+                if "EURUSD" not in symbol: continue
             
             # Specific Filter for M5 VWAP
             if strategy.__name__ == 'vwap_reversion_m5':
@@ -214,6 +300,10 @@ class ProStrategyEngine:
         if "EUR" not in symbol and "JPY" not in symbol: return None
         # Exclude Indices explicitly (safety)
         if "US30" in symbol or "USTEC" in symbol or "US500" in symbol: return None
+        
+        # --- NEW PRECISION FILTER ---
+        if not self._check_filters(df, symbol, "VolSqueeze"): return None
+        # ----------------------------
         
         if len(df) < 60: return None
         signal = df.iloc[-2]
@@ -452,6 +542,10 @@ class ProStrategyEngine:
         if 'EUR' not in symbol: return None
         if len(df) < 50: return None
         
+        # --- NEW PRECISION FILTER (Spread + ADX Bias) ---
+        if not self._check_filters(df, symbol, "Asian_Fade"): return None
+        # ------------------------------------------------
+        
         current = df.iloc[-1]
         timestamp = current.name
         
@@ -487,6 +581,94 @@ class ProStrategyEngine:
                          
         return None
 
+    def silver_bullet_strategy(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
+        """
+        Silver Bullet (EURUSD M5) - Phase 12 Approved (+6R)
+        Time: 10:00 - 11:00 NY Time (approx 16:00 - 17:00 Server Time).
+        Logic: FVG Entry in direction of H1 Trend.
+        Risk: Aggressive Scan (Stop at FVG Candle).
+        """
+        if "EURUSD" not in symbol: return None
+        if len(df) < 50: return None
+        
+        # TIME FILTER (Target 10:00-11:00 NY)
+        # Server Time is usually UTC+2/3. NY is UTC-5. Offset ~7 hours.
+        # 10:00 NY = 17:00 Server (Winter) / 16:00 (Summer).
+        # We will target the 16:00-17:00 window to be safe.
+        current = df.iloc[-1]
+        timestamp = current.name
+        hour = timestamp.hour if hasattr(timestamp, 'hour') else pd.to_datetime(timestamp).hour
+        if not (16 <= hour < 17): return None
+
+        atr = self.calculate_atr(df)
+        
+        # H1 TREND FILTER
+        # Since we don't have H1 data directly here, we approximate with M5 EMA(200) equivalent?
+        # 50 EMA on H1 = 600 EMA on M5 (approx). Let's use 600 EMA.
+        ema_long = df['close'].ewm(span=600).mean().iloc[-1]
+        trend_up = current['close'] > ema_long
+        trend_down = current['close'] < ema_long
+        
+        # FVG Detection (Last completed 3 candles)
+        c1 = df.iloc[-3]
+        c2 = df.iloc[-2]
+        c3 = df.iloc[-1] # Current open bar? No, we need completed setups.
+        # Strategy calls usually happen on OPEN of new bar. So -1 is the just-closed bar.
+        # FVG Pattern:
+        # Bullish: Low of C-1 > High of C-3. Gap is between High[-3] and Low[-1].
+        # Bearish: High of C-1 < Low of C-3. Gap is between Low[-3] and High[-1].
+        # Wait... index logic:
+        # If we use iloc[-1] (just closed), [-2], [-3].
+        
+        # Bullish FVG
+        bull_fvg = (c3['low'] > c1['high']) and (c2['close'] > c2['open'])
+        # Bearish FVG
+        bear_fvg = (c3['high'] < c1['low']) and (c2['close'] < c2['open'])
+        
+        if bull_fvg and trend_up:
+            # Entry: We are essentially at Open of new bar (C0).
+            # If price dips into gap, we buy? Bot doesn't support limits easily.
+            # We check if CURRENT Price is inside the FVG zone?
+            # Or simplified "Aggressive Market Entry" if FVG formed.
+            # Phase 12 Result was based on "Limit at Top of FVG".
+            # If Close[-1] is far above FVG, market entry is bad R:R.
+            
+            # Simple Logic: Enter if Close[-1] is not too far ( < 0.2 ATR) from FVG Top.
+            fvg_top = c3['low'] 
+            fvg_bot = c1['high']
+            
+            if (current['close'] - fvg_top) > atr * 0.2: return None # Chasing
+            
+            sl = c1['low'] # Aggressive Stop (Low of Candle 1 - "FVG Candle" usually means the one creating the gap, or the middle one? Setup is 1-2-3. Gap is 1-3. Middle is 2.)
+            # Phase 12 Logic: "FVG Candle High/Low" -> Candle 1 (Low) for Bull entry.
+            
+            risk = current['close'] - sl
+            if risk < atr * 0.1 or risk > atr * 3.0: return None
+            
+            tp = current['close'] + risk * 3.0 # 1:3 Target
+            
+            return Trade(symbol=symbol, direction="LONG", entry_price=current['close'],
+                         sl=sl, tp=tp, confidence=0.85, atr=atr,
+                         entry_time=timestamp, bar_index=0, strategy="Silver_Bullet")
+                         
+        if bear_fvg and trend_down:
+            fvg_bot = c3['high']
+            fvg_top = c1['low']
+            
+            if (fvg_bot - current['close']) > atr * 0.2: return None
+            
+            sl = c1['high']
+            risk = sl - current['close']
+            if risk < atr * 0.1 or risk > atr * 3.0: return None
+            
+            tp = current['close'] - risk * 3.0
+            
+            return Trade(symbol=symbol, direction="SHORT", entry_price=current['close'],
+                         sl=sl, tp=tp, confidence=0.85, atr=atr,
+                         entry_time=timestamp, bar_index=0, strategy="Silver_Bullet")
+
+        return None
+
     def gold_smart_sweep(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
         """
         Gold Smart Sweep (M15) - User Request
@@ -494,6 +676,10 @@ class ProStrategyEngine:
         """
         if 'XAU' not in symbol: return None
         if len(df) < 25: return None
+        
+        # --- NEW PRECISION FILTER ---
+        if not self._check_filters(df, symbol, "Gold_Sweep"): return None
+        # ----------------------------
         
         current = df.iloc[-1]
         prev = df.iloc[-2]

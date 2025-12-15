@@ -268,6 +268,46 @@ class ProStrategyEngine:
                 elif current_bar['high'] >= pos.sl and pos.sl > 0:
                     actions.append({"action": "close", "symbol": symbol, "price": pos.sl, "reason": "sl_hit"})
                     del self.open_positions[symbol]
+
+            # === ACTIVE MANAGEMENT (PHASE 13) ===
+            # Break-Even Logic for Silver Bullet
+            if symbol in self.open_positions and pos.strategy == "Silver_Bullet":
+                # Only if SL is not already at Entry (or better)
+                # Allowing for slight floating point diff
+                dist_to_entry = abs(pos.sl - pos.entry_price)
+                if dist_to_entry > 0.00001:
+                    # Calculate Initial Risk (TP is 3R, so Risk = Distance to TP / 3)
+                    # This relies on TP being exactly 3R. If manual intervention changed TP, this might be off.
+                    # Fallback: Use ATR from position info if available, or re-calc.
+                    # Position has .atr field!
+                    risk = 0.0
+                    if pos.tp > 0:
+                        reward_dist = abs(pos.tp - pos.entry_price)
+                        risk = reward_dist / 3.0
+                    elif pos.atr > 0:
+                         risk = pos.atr * 1.0 # Approximation if TP missing
+                    
+                    if risk > 0:
+                         current_price = current_bar['close']
+                         if pos.direction == "LONG":
+                             floating_profit = current_price - pos.entry_price
+                             if floating_profit >= risk:
+                                 # Trigger BE
+                                 # Add slight buffer + spread? "Entry" is safe.
+                                 new_sl = pos.entry_price
+                                 actions.append({"action": "trail_stop", "symbol": symbol, "new_sl": new_sl})
+                                 logger.info(f"Silver Bullet BE Triggered {symbol}: {current_price} >= {pos.entry_price}+{risk:.4f}")
+                                 # Update internal state immediately to prevent duplicate actions?
+                                 # No, TradingBot handles it. But we should update pos.sl locally.
+                                 pos.sl = new_sl
+                         else: # SHORT
+                             floating_profit = pos.entry_price - current_price
+                             if floating_profit >= risk:
+                                 new_sl = pos.entry_price
+                                 actions.append({"action": "trail_stop", "symbol": symbol, "new_sl": new_sl})
+                                 logger.info(f"Silver Bullet BE Triggered {symbol}")
+                                 pos.sl = new_sl
+
         except Exception as e:
             logger.error(f"Error managing position for {symbol}: {e}")
             

@@ -552,6 +552,37 @@ class TradingBot:
             return True
         return False
 
+    def modify_position(self, symbol: str, sl: float = None, tp: float = None) -> bool:
+        """Modify position SL/TP."""
+        if self.shadow_mode:
+            logger.info(f"PAPER MODIFY: {symbol} SL->{sl} TP->{tp}")
+            return True
+            
+        positions = mt5.positions_get(symbol=symbol)
+        if not positions: return False
+        
+        pos = positions[0] # Assuming one position per symbol for now
+        
+        # If SL/TP not provided, keep existing
+        sl = sl if sl is not None else pos.sl
+        tp = tp if tp is not None else pos.tp
+        
+        req = {
+            "action": mt5.TRADE_ACTION_SLTP,
+            "position": pos.ticket,
+            "symbol": symbol,
+            "sl": float(sl),
+            "tp": float(tp)
+        }
+        
+        result = mt5.order_send(req)
+        if result.retcode == mt5.TRADE_RETCODE_DONE:
+            logger.info(f"Modified {symbol}: SL->{sl:.5f}")
+            return True
+        else:
+            logger.error(f"Modify failed {symbol}: {result.comment}")
+            return False
+
     def run_cycle(self) -> None:
         """Run one trading cycle."""
         # Check and reset daily balance if new day

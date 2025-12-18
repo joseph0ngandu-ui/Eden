@@ -37,9 +37,13 @@ class ProStrategyEngine:
             
             # London Breakout: RESERVED (GBPCADm +34.7R, DD 10.8R)
             
-            # 5. Asian Fade (Phase 7 Winner)
-            # Pairs: EURUSD, USDJPY
-            self.asian_fade_range,
+            # 5. Asian Fade (Fixed Range Legacy)
+            # Pairs: EURUSD, USDJPY, AUDUSD, GBPUSD
+            self.asian_fade_range_legacy,
+            
+            # 5b. Asian Fade (Dynamic Bands)
+            # Pairs: EURUSD only
+            self.asian_fade_bands,
             
             # 6. Gold Smart Sweep (Phase 7 Request)
             # Pairs: XAUUSD only
@@ -221,7 +225,9 @@ class ProStrategyEngine:
                 if 'US30' in symbol or 'USTEC' in symbol or 'US500' in symbol: continue
 
             # Routing for New Strategies
-            if strategy.__name__ == 'asian_fade_range':
+            if strategy.__name__ == 'asian_fade_range_legacy':
+                if timeframe != 5: continue
+            elif strategy.__name__ == 'asian_fade_bands':
                 if timeframe != 5: continue
             elif strategy.__name__ == 'gold_smart_sweep':
                 if timeframe != 15: continue
@@ -573,17 +579,17 @@ class ProStrategyEngine:
                          sl=sl, tp=tp, confidence=0.75, atr=atr,
                          entry_time=today.name, bar_index=0, strategy="Momentum_Continuation")
 
-    def asian_fade_range(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
+    def asian_fade_bands(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
         """
         Asian Fade (M5) - Phase 7 Winner (+265R)
-        Mean reversion during quiet Asian session (01:00-07:00).
-        RESTRICTION: EURUSD Only (USDJPY failed backtest audit).
+        Mean reversion using Bollinger Bands during quiet Asian session (01:00-07:00).
+        RESTRICTION: EURUSD Only.
         """
         if 'EUR' not in symbol: return None
         if len(df) < 50: return None
         
         # --- NEW PRECISION FILTER (Spread + ADX Bias) ---
-        if not self._check_filters(df, symbol, "Asian_Fade"): return None
+        if not self._check_filters(df, symbol, "Asian_Bands"): return None
         # ------------------------------------------------
         
         current = df.iloc[-1]
@@ -605,11 +611,11 @@ class ProStrategyEngine:
         
         # Short Fade
         if price > upper.iloc[-1]:
-            sl = price + atr * 2.0  # Wide stop for mean reversion
-            tp = sma_20.iloc[-1]    # Target Mean
+            sl = price + atr * 2.0
+            tp = sma_20.iloc[-1]
             return Trade(symbol=symbol, direction="SHORT", entry_price=price,
                          sl=sl, tp=tp, confidence=0.85, atr=atr,
-                         entry_time=timestamp, bar_index=0, strategy="Asian_Fade")
+                         entry_time=timestamp, bar_index=0, strategy="Asian_Bands")
             
         # Long Fade
         if price < lower.iloc[-1]:
@@ -617,8 +623,69 @@ class ProStrategyEngine:
             tp = sma_20.iloc[-1]
             return Trade(symbol=symbol, direction="LONG", entry_price=price,
                          sl=sl, tp=tp, confidence=0.85, atr=atr,
-                         entry_time=timestamp, bar_index=0, strategy="Asian_Fade")
+                         entry_time=timestamp, bar_index=0, strategy="Asian_Bands")
                          
+        return None
+
+    def asian_fade_range_legacy(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:
+        """
+        Fixed Range Asian Fade (M5)
+        Thesis: During Asian Session (01:00 - 09:00), pairs range-bound between 20:00 (prev) and 00:00.
+        Pairs: EURUSD, USDJPY, AUDUSD, GBPUSD
+        """
+        if not any(x in symbol for x in ['EURUSD', 'USDJPY', 'AUDUSD', 'GBPUSD']): return None
+        if len(df) < 150: return None # Need enough data for range calculation
+        
+        current = df.iloc[-1]
+        timestamp = current.name
+        t = timestamp.time() if hasattr(timestamp, 'time') else pd.to_datetime(timestamp).time()
+        
+        # 1. Time Filter: Trade window (01:00 - 09:00 Server)
+        from datetime import time as dt_time, timedelta
+        if not (dt_time(1, 0) <= t <= dt_time(9, 0)):
+            return None
+            
+        # 2. Define Fixed Range Period (20:00 Prev Day - 00:00 Today)
+        today_date = timestamp.date() if hasattr(timestamp, 'date') else pd.to_datetime(timestamp).date()
+        range_start = pd.Timestamp.combine(today_date - timedelta(days=1), dt_time(20, 0))
+        range_end = pd.Timestamp.combine(today_date, dt_time(0, 0))
+        
+        # Ensure data covers the range
+        range_data = df[(df.index >= range_start) & (df.index < range_end)]
+        if len(range_data) < 10: return None
+            
+        range_high = range_data['high'].max()
+        range_low = range_data['low'].min()
+        range_width = range_high - range_low
+        
+        atr = self.calculate_atr(df)
+        if range_width > 2.0 * atr or range_width < 0.5 * atr:
+            return None
+            
+        # 3. Entry Logic
+        price = current['close']
+        rsi = self.calculate_rsi(df['close'])
+        
+        threshold = range_width * 0.1 # top/bottom 10%
+        
+        # Fade High
+        if price >= (range_high - threshold) and rsi > 60:
+            sl = range_high + atr
+            tp = range_low + (range_width * 0.5)
+            if (price - sl) != 0 and (tp - price)/(price - sl) > 1.0:
+                 return Trade(symbol=symbol, direction="SHORT", entry_price=price,
+                             sl=sl, tp=tp, confidence=0.85, atr=atr,
+                             entry_time=timestamp, bar_index=0, strategy="Asian_Fade_Legacy")
+
+        # Fade Low
+        if price <= (range_low + threshold) and rsi < 40:
+            sl = range_low - atr
+            tp = range_low + (range_width * 0.5)
+            if (sl - price) != 0 and (price - tp)/(sl - price) > 1.0:
+                 return Trade(symbol=symbol, direction="LONG", entry_price=price,
+                             sl=sl, tp=tp, confidence=0.85, atr=atr,
+                             entry_time=timestamp, bar_index=0, strategy="Asian_Fade_Legacy")
+
         return None
 
     def silver_bullet_strategy(self, df: pd.DataFrame, symbol: str) -> Optional[Trade]:

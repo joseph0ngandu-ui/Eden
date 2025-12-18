@@ -420,7 +420,7 @@ class TradingBot:
                 entry_time=datetime.utcnow(),
                 volume=volume,
                 notes=f"Ticket: {result.order} | Conf: {trade_signal.confidence:.2f}",
-                metadata={'strategy': trade_signal.strategy, 'ticket': result.order}
+                metadata={'strategy_name': trade_signal.strategy, 'ticket': result.order} # Fixed: strategy -> strategy_name
             )
             self.trade_journal.export_csv()
             return True
@@ -433,7 +433,7 @@ class TradingBot:
         """Manage open positions using strategy logic."""
         for strategy in self.strategies:
             for symbol in list(strategy.open_positions.keys()):
-                df = self.fetch_recent_data(symbol, bars=50)
+                df = self.fetch_recent_data(symbol, timeframe=5, bars=50) # Fixed: added timeframe=5
                 if df is None: continue
                 
                 actions = strategy.manage_position(df, symbol)

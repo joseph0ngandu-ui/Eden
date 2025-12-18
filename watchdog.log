@@ -3460,3 +3460,332 @@
 [2025-12-18 13:16:54] [BOT] 2025-12-18 13:16:54,628 - INFO - Size Calc: Risk $0.17 | Dist 0.00117 | Val 1.00000 -> Vol 0.0014
 [2025-12-18 13:16:54] [BOT] 2025-12-18 13:16:54,628 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
 [2025-12-18 13:16:54] [BOT] 2025-12-18 13:16:54,628 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:39:45] Watchdog started
+[2025-12-18 13:39:45] Starting trading bot...
+[2025-12-18 13:39:45] Trading bot started with PID: 8444
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,585 - INFO - Configuration loaded from C:\Users\opc\Desktop\Eden\config\config.yaml
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,596 - INFO - Loaded 190 existing trades from logs\trade_history.csv
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,832 - WARNING - ML model not found at ml_portfolio_model.pkl
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,832 - INFO -
+[2025-12-18 13:39:46] [BOT] ================================================================================
+[2025-12-18 13:39:46] [BOT] Eden Live Bot - FUNDED NEXT (Verified)
+[2025-12-18 13:39:46] [BOT] Symbols=8 | Shadow Mode=False
+[2025-12-18 13:39:46] [BOT] Allocation: Index (1.5x) | Gold (1.0x) | Forex (0.5x)
+[2025-12-18 13:39:46] [BOT] ================================================================================
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,832 - INFO - Connected. Balance: 9957.92
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,832 - INFO - Started. Polling every 60s
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,855 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,855 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,858 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,858 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,861 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,861 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,866 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,866 - INFO - Spread Adj (SELL): SL 155.83139999999997->155.84140 | TP 155.2654->155.27540 (+0.01000)
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,866 - INFO - Size Calc: Risk $0.17 | Dist 0.23640 | Val 0.64261 -> Vol 0.0011
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,866 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:39:46] [BOT] 2025-12-18 13:39:46,866 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,883 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,883 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,883 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,883 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,889 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,889 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,894 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,896 - INFO - Spread Adj (SELL): SL 155.83184999999997->155.84185 | TP 155.28722500000003->155.29723 (+0.01000)
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,896 - INFO - Size Calc: Risk $0.17 | Dist 0.22785 | Val 0.64257 -> Vol 0.0011
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,896 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:40:46] [BOT] 2025-12-18 13:40:46,896 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,911 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,911 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,917 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,917 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,919 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,919 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,924 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,924 - INFO - Spread Adj (SELL): SL 155.82985->155.83985 | TP 155.19022500000005->155.20023 (+0.01000)
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,924 - INFO - Size Calc: Risk $0.17 | Dist 0.26585 | Val 0.64274 -> Vol 0.0010
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,924 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:41:46] [BOT] 2025-12-18 13:41:46,925 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,944 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,944 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,947 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,947 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,947 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,947 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,954 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,954 - INFO - Spread Adj (SELL): SL 155.83035->155.84035 | TP 155.214475->155.22447 (+0.01000)
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,954 - INFO - Size Calc: Risk $0.17 | Dist 0.25635 | Val 0.64270 -> Vol 0.0010
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,954 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:42:46] [BOT] 2025-12-18 13:42:46,955 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:43:46] [BOT] 2025-12-18 13:43:46,974 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:43:46] [BOT] 2025-12-18 13:43:46,974 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:43:46] [BOT] 2025-12-18 13:43:46,977 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:43:46] [BOT] 2025-12-18 13:43:46,977 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:43:46] [BOT] 2025-12-18 13:43:46,977 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:43:47] [BOT] 2025-12-18 13:43:46,977 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:43:47] [BOT] 2025-12-18 13:43:46,984 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:43:47] [BOT] 2025-12-18 13:43:46,984 - INFO - Spread Adj (SELL): SL 155.8298->155.83980 | TP 155.1878->155.19780 (+0.01000)
+[2025-12-18 13:43:47] [BOT] 2025-12-18 13:43:46,984 - INFO - Size Calc: Risk $0.17 | Dist 0.26680 | Val 0.64274 -> Vol 0.0010
+[2025-12-18 13:43:47] [BOT] 2025-12-18 13:43:46,984 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:43:47] [BOT] 2025-12-18 13:43:46,984 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,004 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,004 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,007 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,007 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,009 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,009 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,014 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,014 - INFO - Spread Adj (SELL): SL 155.83025->155.84025 | TP 155.20962499999996->155.21962 (+0.01000)
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,014 - INFO - Size Calc: Risk $0.17 | Dist 0.25825 | Val 0.64271 -> Vol 0.0010
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,014 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:44:47] [BOT] 2025-12-18 13:44:47,015 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,034 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,034 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,036 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,037 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,039 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,039 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,044 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,044 - INFO - Spread Adj (SELL): SL 155.81365->155.82365 | TP 155.069525->155.07952 (+0.01000)
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,044 - INFO - Size Calc: Risk $0.17 | Dist 0.30765 | Val 0.64298 -> Vol 0.0008
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,044 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:45:47] [BOT] 2025-12-18 13:45:47,044 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,062 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,064 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,066 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,066 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,066 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,066 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,072 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,072 - INFO - Spread Adj (SELL): SL 155.8135->155.82350 | TP 155.06225->155.07225 (+0.01000)
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,072 - INFO - Size Calc: Risk $0.17 | Dist 0.31050 | Val 0.64299 -> Vol 0.0008
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,072 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:46:47] [BOT] 2025-12-18 13:46:47,073 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,088 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,091 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,091 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,091 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,095 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,095 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,095 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,095 - INFO - Size Calc: Risk $0.17 | Dist 0.00193 | Val 1.00000 -> Vol 0.0009
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,099 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,099 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,101 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,101 - INFO - Spread Adj (SELL): SL 155.816->155.82600 | TP 155.18349999999998->155.19350 (+0.01000)
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,101 - INFO - Size Calc: Risk $0.17 | Dist 0.26300 | Val 0.64279 -> Vol 0.0010
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,102 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:47:47] [BOT] 2025-12-18 13:47:47,102 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,116 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,122 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,122 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,122 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,124 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,124 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,129 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,129 - INFO - Size Calc: Risk $0.17 | Dist 0.00204 | Val 1.00000 -> Vol 0.0008
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,129 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,129 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,133 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,133 - INFO - Spread Adj (SELL): SL 155.815->155.82500 | TP 155.13500000000002->155.14500 (+0.01000)
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,133 - INFO - Size Calc: Risk $0.17 | Dist 0.28200 | Val 0.64287 -> Vol 0.0009
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,133 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:48:47] [BOT] 2025-12-18 13:48:47,134 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,159 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,159 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,161 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,161 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,164 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,165 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,167 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,168 - INFO - Size Calc: Risk $0.17 | Dist 0.00238 | Val 1.00000 -> Vol 0.0007
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,168 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,168 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,170 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,171 - INFO - Spread Adj (SELL): SL 155.81305->155.82305 | TP 155.04042499999997->155.05042 (+0.01000)
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,171 - INFO - Size Calc: Risk $0.17 | Dist 0.31905 | Val 0.64303 -> Vol 0.0008
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,171 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:49:47] [BOT] 2025-12-18 13:49:47,171 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,198 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,198 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,200 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,201 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,203 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,203 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,205 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,205 - INFO - Size Calc: Risk $0.17 | Dist 0.00297 | Val 1.00000 -> Vol 0.0006
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,205 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,206 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,208 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,208 - INFO - Spread Adj (SELL): SL 155.80975->155.81975 | TP 154.88037499999996->154.89037 (+0.01000)
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,208 - INFO - Size Calc: Risk $0.17 | Dist 0.38175 | Val 0.64330 -> Vol 0.0007
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,208 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:50:47] [BOT] 2025-12-18 13:50:47,208 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,228 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,228 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,230 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,231 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,233 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,233 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,236 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,236 - INFO - Size Calc: Risk $0.17 | Dist 0.00328 | Val 1.00000 -> Vol 0.0005
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,236 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,236 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,239 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,239 - INFO - Spread Adj (SELL): SL 155.81040000000002->155.82040 | TP 154.91189999999995->154.92190 (+0.01000)
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,239 - INFO - Size Calc: Risk $0.17 | Dist 0.36940 | Val 0.64325 -> Vol 0.0007
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,239 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:51:47] [BOT] 2025-12-18 13:51:47,240 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,259 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,259 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,261 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,261 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,264 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,264 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,266 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,267 - INFO - Size Calc: Risk $0.17 | Dist 0.00371 | Val 1.00000 -> Vol 0.0004
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,267 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,267 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,269 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,270 - INFO - Spread Adj (SELL): SL 155.80975->155.81975 | TP 154.88037499999996->154.89037 (+0.01000)
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,270 - INFO - Size Calc: Risk $0.17 | Dist 0.38175 | Val 0.64330 -> Vol 0.0007
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,270 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:52:47] [BOT] 2025-12-18 13:52:47,270 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,290 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,290 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,292 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,292 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,295 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,295 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,298 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,298 - INFO - Size Calc: Risk $0.17 | Dist 0.00345 | Val 1.00000 -> Vol 0.0005
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,298 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,298 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,301 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,301 - INFO - Spread Adj (SELL): SL 155.8124->155.82240 | TP 155.00890000000004->155.01890 (+0.01000)
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,301 - INFO - Size Calc: Risk $0.17 | Dist 0.33140 | Val 0.64308 -> Vol 0.0008
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,301 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:53:47] [BOT] 2025-12-18 13:53:47,301 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,326 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,326 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,328 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,329 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,331 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,331 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,334 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,334 - INFO - Size Calc: Risk $0.17 | Dist 0.00308 | Val 1.00000 -> Vol 0.0005
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,334 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,334 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,337 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,337 - INFO - Spread Adj (SELL): SL 155.8123->155.82230 | TP 155.00405->155.01405 (+0.01000)
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,337 - INFO - Size Calc: Risk $0.17 | Dist 0.33330 | Val 0.64309 -> Vol 0.0008
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,337 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:54:47] [BOT] 2025-12-18 13:54:47,338 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,350 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,350 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,359 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,359 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,359 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,362 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,362 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,365 - INFO - Size Calc: Risk $0.17 | Dist 0.00267 | Val 1.00000 -> Vol 0.0006
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,365 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,365 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,367 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,368 - INFO - Spread Adj (SELL): SL 155.81485->155.82485 | TP 155.12772499999997->155.13772 (+0.01000)
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,368 - INFO - Size Calc: Risk $0.17 | Dist 0.28485 | Val 0.64288 -> Vol 0.0009
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,368 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:55:47] [BOT] 2025-12-18 13:55:47,368 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,385 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,385 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,388 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,388 - WARNING - SKIPPING TRADE: Spread too high (6.4 pips > 5.0 pips)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,392 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,392 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,394 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,394 - INFO - Size Calc: Risk $0.17 | Dist 0.00295 | Val 1.00000 -> Vol 0.0006
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,394 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,394 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,397 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,397 - INFO - Spread Adj (SELL): SL 155.81295->155.82295 | TP 155.03557500000002->155.04558 (+0.01000)
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,397 - INFO - Size Calc: Risk $0.17 | Dist 0.32095 | Val 0.64304 -> Vol 0.0008
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,397 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:56:47] [BOT] 2025-12-18 13:56:47,397 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,416 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,417 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,418 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,418 - WARNING - SKIPPING TRADE: Spread too high (6.4 pips > 5.0 pips)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,418 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,418 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,423 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,423 - INFO - Size Calc: Risk $0.17 | Dist 0.00278 | Val 1.00000 -> Vol 0.0006
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,423 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,423 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,427 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,427 - INFO - Spread Adj (SELL): SL 155.81480000000002->155.82480 | TP 155.12529999999992->155.13530 (+0.01000)
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,427 - INFO - Size Calc: Risk $0.17 | Dist 0.28580 | Val 0.64288 -> Vol 0.0009
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,427 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:57:47] [BOT] 2025-12-18 13:57:47,427 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,443 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,443 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,447 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,447 - WARNING - SKIPPING TRADE: Spread too high (6.4 pips > 5.0 pips)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,447 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,447 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,453 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,453 - INFO - Size Calc: Risk $0.17 | Dist 0.00245 | Val 1.00000 -> Vol 0.0007
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,453 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,453 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,456 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,457 - INFO - Spread Adj (SELL): SL 155.81760000000003->155.82760 | TP 155.26109999999994->155.27110 (+0.01000)
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,457 - INFO - Size Calc: Risk $0.17 | Dist 0.23260 | Val 0.64265 -> Vol 0.0011
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,457 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:58:47] [BOT] 2025-12-18 13:58:47,457 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,475 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,475 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,477 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,477 - WARNING - SKIPPING TRADE: Spread too high (6.4 pips > 5.0 pips)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,477 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,477 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,477 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,477 - INFO - Size Calc: Risk $0.17 | Dist 0.00254 | Val 1.00000 -> Vol 0.0007
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,477 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,477 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,486 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,486 - INFO - Spread Adj (SELL): SL 155.8171->155.82710 | TP 155.23685->155.24685 (+0.01000)
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,486 - INFO - Size Calc: Risk $0.17 | Dist 0.24210 | Val 0.64269 -> Vol 0.0011
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,486 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 13:59:47] [BOT] 2025-12-18 13:59:47,487 - ERROR - Order failed: AutoTrading disabled by client (Retcode: 10027)
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,513 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,514 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,517 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,517 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,522 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,522 - INFO - Size Calc: Risk $0.17 | Dist 0.00211 | Val 1.00000 -> Vol 0.0008
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,522 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,606 - INFO - LIVE TRADE: LONG EURUSDm #2085020189
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,618 - INFO - Trade history exported: logs\trade_history.csv (191 trades)
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,622 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,622 - INFO - Spread Adj (SELL): SL 155.8016->155.81160 | TP 155.1976->155.20760 (+0.01000)
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,622 - INFO - Size Calc: Risk $0.17 | Dist 0.25160 | Val 0.64280 -> Vol 0.0010
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,622 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,710 - INFO - LIVE TRADE: SHORT USDJPYm #2085020206
+[2025-12-18 14:00:47] [BOT] 2025-12-18 14:00:47,717 - INFO - Trade history exported: logs\trade_history.csv (192 trades)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,742 - INFO - SIGNAL FOUND: USTECm via index_volatility_expansion (TF: 15m)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,742 - WARNING - SKIPPING TRADE: Spread too high (21.6 pips > 5.0 pips)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,745 - INFO - SIGNAL FOUND: US500m via index_volatility_expansion (TF: 15m)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,745 - WARNING - SKIPPING TRADE: Spread too high (7.2 pips > 5.0 pips)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,747 - INFO - SIGNAL FOUND: XAUUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,747 - WARNING - SKIPPING TRADE: Spread too high (16.0 pips > 5.0 pips)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,750 - INFO - SIGNAL FOUND: EURUSDm via index_volatility_expansion (TF: 15m)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,750 - INFO - Size Calc: Risk $0.17 | Dist 0.00241 | Val 1.00000 -> Vol 0.0007
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,750 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,848 - INFO - LIVE TRADE: LONG EURUSDm #2085031933
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,855 - INFO - Trade history exported: logs\trade_history.csv (193 trades)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,858 - INFO - SIGNAL FOUND: USDJPYm via index_volatility_expansion (TF: 15m)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,858 - INFO - Spread Adj (SELL): SL 155.79925->155.80925 | TP 155.083625->155.09363 (+0.01000)
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,858 - INFO - Size Calc: Risk $0.17 | Dist 0.29625 | Val 0.64299 -> Vol 0.0009
+[2025-12-18 14:01:47] [BOT] 2025-12-18 14:01:47,859 - INFO - ML Sizing: Risk=0.002% | Vol=0.01 | Alloc=0.20
+[2025-12-18 14:01:48] [BOT] 2025-12-18 14:01:48,066 - INFO - LIVE TRADE: SHORT USDJPYm #2085031943
+[2025-12-18 14:01:48] [BOT] 2025-12-18 14:01:48,073 - INFO - Trade history exported: logs\trade_history.csv (194 trades)

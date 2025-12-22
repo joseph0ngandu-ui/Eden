@@ -1,0 +1,167 @@
+{
+  "total_strategies_tested": 13,
+  "top_strategies": [
+    {
+      "symbol": "EURUSDm",
+      "strategy": "vol_squeeze",
+      "months": 6,
+      "net_return": 0.3119175163879622,
+      "gross_return": 0.31207513638796225,
+      "trading_costs": 15.76199999999996,
+      "win_rate": 0.5586928505358467,
+      "avg_trade_r": 1.0582601510074112,
+      "max_drawdown": 0.08007690184073758,
+      "total_trades": 222,
+      "profit_factor": 1.339752553505485,
+      "sharpe_ratio": 3.895224580595352,
+      "cost_impact": 0.0505070675685219
+    },
+    {
+      "symbol": "GBPUSDm",
+      "strategy": "vol_squeeze",
+      "months": 6,
+      "net_return": 0.336518490544755,
+      "gross_return": 0.336681210544755,
+      "trading_costs": 16.271999999999913,
+      "win_rate": 0.7221381700901016,
+      "avg_trade_r": 0.9799867307183294,
+      "max_drawdown": 0.09665542683388302,
+      "total_trades": 226,
+      "profit_factor": 2.5468983079215852,
+      "sharpe_ratio": 3.481630587831483,
+      "cost_impact": 0.04833058540353998
+    },
+    {
+      "symbol": "GBPUSDm",
+      "strategy": "asian_fade",
+      "months": 6,
+      "net_return": 0.2801121169546113,
+      "gross_return": 0.2803468369546113,
+      "trading_costs": 23.47199999999983,
+      "win_rate": 0.6337852977989622,
+      "avg_trade_r": 1.6469469294956034,
+      "max_drawdown": 0.09130791530639122,
+      "total_trades": 326,
+      "profit_factor": 2.8502699206118858,
+      "sharpe_ratio": 3.067774748932467,
+      "cost_impact": 0.08372486115761783
+    },
+    {
+      "symbol": "USDCADm",
+      "strategy": "momentum_continuation",
+      "months": 6,
+      "net_return": 0.23670346079825721,
+      "gross_return": 0.2368647407982572,
+      "trading_costs": 16.127999999999915,
+      "win_rate": 0.748450463691881,
+      "avg_trade_r": 2.2933932083108175,
+      "max_drawdown": 0.08694630198662412,
+      "total_trades": 224,
+      "profit_factor": 6.823670738496369,
+      "sharpe_ratio": 2.722409756250149,
+      "cost_impact": 0.06808949253335747
+    },
+    {
+      "symbol": "EURUSDm",
+      "strategy": "overlap_scalper",
+      "months": 6,
+      "net_return": 0.22213798168092502,
+      "gross_return": 0.222297731680925,
+      "trading_costs": 15.974999999999959,
+      "win_rate": 0.6135073039755388,
+      "avg_trade_r": 2.1582336420017496,
+      "max_drawdown": 0.08711198971001986,
+      "total_trades": 225,
+      "profit_factor": 3.4259175313626087,
+      "sharpe_ratio": 2.5500276416642804,
+      "cost_impact": 0.07186308145927617
+    },
+    {
+      "symbol": "AUDUSDm",
+      "strategy": "momentum_continuation",
+      "months": 6,
+      "net_return": 0.25653016566882897,
+      "gross_return": 0.25666768566882897,
+      "trading_costs": 13.75199999999994,
+      "win_rate": 0.6982847060345123,
+      "avg_trade_r": 2.1457520734809465,
+      "max_drawdown": 0.10149269437328194,
+      "total_trades": 191,
+      "profit_factor": 4.966091828361142,
+      "sharpe_ratio": 2.5275727209027647,
+      "cost_impact": 0.053579008063149886
+    },
+    {
+      "symbol": "GBPUSDm",
+      "strategy": "overlap_scalper",
+      "months": 6,
+      "net_return": 0.3144043699491295,
+      "gross_return": 0.3145742899491295,
+      "trading_costs": 16.991999999999905,
+      "win_rate": 0.6427263895823129,
+      "avg_trade_r": 2.4563188948821795,
+      "max_drawdown": 0.1482228253856982,
+      "total_trades": 236,
+      "profit_factor": 4.418856945870534,
+      "sharpe_ratio": 2.1211602810228576,
+      "cost_impact": 0.05401585743942018
+    },
+    {
+      "symbol": "US500m",
+      "strategy": "volatility_expansion",
+      "months": 6,
+      "net_return": 0.2952102915924232,
+      "gross_return": 0.29533877159242317,
+      "trading_costs": 12.848000000000045,
+      "win_rate": 0.693473099535583,
+      "avg_trade_r": 1.9607628270704558,
+      "max_drawdown": 0.14093856646428277,
+      "total_trades": 176,
+      "profit_factor": 4.435944359475704,
+      "sharpe_ratio": 2.0946026272179843,
+      "cost_impact": 0.04350258494922327
+    }
+  ],
+  "avg_cost_impact": 0.06374982900766916,
+  "best_symbols": [
+    "GBPUSDm",
+    "US500m",
+    "EURUSDm",
+    "AUDUSDm",
+    "USDCADm",
+    "XAUUSDm"
+  ],
+  "recommended_config": {
+    "trading": {
+      "symbols": [
+        "GBPUSDm",
+        "EURUSDm",
+        "AUDUSDm",
+        "US500m",
+        "USDCADm"
+      ],
+      "timeframes": [
+        5,
+        15,
+        60,
+        1440
+      ],
+      "raw_spread_mode": true,
+      "commission_per_lot": 7.0
+    },
+    "risk_management": {
+      "risk_per_trade": 0.18,
+      "max_daily_loss_percent": 4.0,
+      "max_drawdown_percent": 8.5,
+      "max_positions": 4,
+      "cost_adjustment": true
+    },
+    "strategy_weights": {
+      "vol_squeeze": 0.149,
+      "asian_fade": 0.124,
+      "momentum_continuation": 0.114,
+      "overlap_scalper": 0.14,
+      "volatility_expansion": 0.131
+    }
+  }
+}

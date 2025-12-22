@@ -1,0 +1,44 @@
+{
+  "daily_targets": {
+    "minimum_return": 0.35,
+    "target_return": 0.45,
+    "maximum_risk": 2.0
+  },
+  "weekly_targets": {
+    "week_1": 2.5,
+    "week_2": 2.5,
+    "week_3": 2.5,
+    "week_4": 2.5
+  },
+  "trading_schedule": {
+    "london_session": {
+      "time": "08:00-12:00 GMT",
+      "strategies": [
+        "vol_squeeze",
+        "asian_fade"
+      ],
+      "target_trades": 3
+    },
+    "ny_session": {
+      "time": "13:00-17:00 GMT",
+      "strategies": [
+        "volatility_expansion",
+        "momentum_scalp"
+      ],
+      "target_trades": 2
+    },
+    "overlap": {
+      "time": "13:00-16:00 GMT",
+      "strategies": [
+        "all"
+      ],
+      "target_trades": 4
+    }
+  },
+  "risk_escalation": {
+    "profitable_day": "Increase next day risk by 10%",
+    "losing_day": "Reduce next day risk by 15%",
+    "3_wins_row": "Increase risk by 20%",
+    "2_losses_row": "Reduce risk by 25%"
+  }
+}

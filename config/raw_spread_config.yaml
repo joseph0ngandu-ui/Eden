@@ -1,0 +1,26 @@
+risk_management:
+  cost_adjustment: true
+  max_daily_loss_percent: 4.0
+  max_drawdown_percent: 8.5
+  max_positions: 4
+  risk_per_trade: 0.18
+strategy_weights:
+  asian_fade: 0.124
+  momentum_continuation: 0.114
+  overlap_scalper: 0.14
+  vol_squeeze: 0.149
+  volatility_expansion: 0.131
+trading:
+  commission_per_lot: 7.0
+  raw_spread_mode: true
+  symbols:
+  - GBPUSDm
+  - EURUSDm
+  - AUDUSDm
+  - US500m
+  - USDCADm
+  timeframes:
+  - 5
+  - 15
+  - 60
+  - 1440

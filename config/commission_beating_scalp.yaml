@@ -1,0 +1,74 @@
+risk_management:
+  base_risk_per_trade: 0.25
+  break_even_pips: 15
+  max_concurrent_positions: 3
+  max_daily_loss_percent: 2.0
+  max_risk_per_trade: 0.35
+  min_win_rate: 0.75
+  trailing_stop: true
+strategies:
+  breakout_retest_scalp:
+    enabled: true
+    expected_monthly_return: 9.68
+    max_hold_minutes: 30
+    max_trades_per_day: 8
+    min_hold_minutes: 10
+    risk_multiplier: 1.2
+    stop_loss_pips: 30.0
+    take_profit_pips: 20.0
+    win_rate_target: 0.85
+  london_ny_overlap_scalp:
+    enabled: true
+    expected_monthly_return: 10.449999999999998
+    max_hold_minutes: 40
+    max_trades_per_day: 5
+    min_hold_minutes: 15
+    risk_multiplier: 1.14
+    stop_loss_pips: 45.0
+    take_profit_pips: 30.0
+    win_rate_target: 0.82
+  news_momentum_scalp:
+    enabled: true
+    expected_monthly_return: 9.68
+    max_hold_minutes: 60
+    max_trades_per_day: 4
+    min_hold_minutes: 20
+    risk_multiplier: 1.1
+    stop_loss_pips: 50.0
+    take_profit_pips: 35.0
+    win_rate_target: 0.8
+  session_momentum_scalp:
+    enabled: true
+    expected_monthly_return: 4.884000000000001
+    max_hold_minutes: 45
+    max_trades_per_day: 6
+    min_hold_minutes: 15
+    risk_multiplier: 1.06
+    stop_loss_pips: 40.0
+    take_profit_pips: 25.0
+    win_rate_target: 0.78
+trading:
+  commission_per_lot: 7.0
+  max_spread_pips: 0.8
+  min_pip_target: 20
+  mode: commission_beating_scalp
+  session_focus: true
+  symbols:
+  - EURUSDm
+  - GBPUSDm
+  - USDJPYm
+  - USDCADm
+  timeframe: 5
+trading_sessions:
+  london_session:
+    focus: breakout_retest, session_momentum
+    max_trades: 8
+    time: 08:00-12:00 GMT
+  ny_session:
+    focus: news_momentum, overlap_scalp
+    max_trades: 6
+    time: 13:00-17:00 GMT
+  overlap:
+    focus: london_ny_overlap
+    max_trades: 5
+    time: 13:00-16:00 GMT

@@ -1,0 +1,30 @@
+max_hold_time_minutes: 15
+min_win_rate: 0.82
+risk_management:
+  base_risk_per_trade: 0.25
+  commission_per_lot: 7.0
+  max_concurrent_positions: 3
+  max_daily_loss_percent: 2.0
+  max_risk_per_trade: 0.35
+  max_slippage_pips: 0.2
+  min_spread_pips: 0.5
+scalping_mode: true
+strategies: {}
+timeframe: 1
+trading_sessions:
+  london_close:
+    max_trades: 8
+    strategies:
+    - order_flow_scalp
+    time: 16:00-17:00 GMT
+  london_open:
+    max_trades: 15
+    strategies:
+    - mean_reversion_scalp
+    - london_open_scalp
+    time: 08:00-10:00 GMT
+  news_events:
+    max_trades: 5
+    strategies:
+    - news_fade_scalp
+    time: Event-driven
